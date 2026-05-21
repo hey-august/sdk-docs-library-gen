@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>util — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util" class="active">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="util">util</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/util&quot;</span>
+</code></pre></div>
+
+<p>Package util provides cross-cutting helpers used across the Go SDK.</p>
+<p>validate_url is the SSRF-prevention guard applied to user-supplied URLs before they are fetched. It must mirror the Python reference at signalwire.utils.url_validator.validate_url:</p>
+<ul>
+<li>require http or https scheme</li>
+<li>require a hostname</li>
+<li>allow_private bypass (param OR SWML_ALLOW_PRIVATE_URLS env var)</li>
+<li>resolve hostname; reject any IP that lands in a blocked network</li>
+</ul>
+<p>The blocked-network list is identical across all SDK ports.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#GetExecutionMode">func GetExecutionMode() string</a></li>
+<li><a href="#IsServerlessMode">func IsServerlessMode() bool</a></li>
+<li><a href="#ValidateURL">func ValidateURL(url_ string, allowPrivate bool) bool</a></li>
+</ul>
+<p><a name="GetExecutionMode"></a></p>
+<h2 id="func-getexecutionmode">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/util/execution_mode.go#L26">GetExecutionMode</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">GetExecutionMode</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetExecutionMode reports the SDK's deployment environment based on well-known environment variables. Returned values are: "cgi", "lambda", "google_cloud_function", "azure_function", "server".</p>
+<p><a name="IsServerlessMode"></a></p>
+<h2 id="func-isserverlessmode">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/util/execution_mode.go#L48">IsServerlessMode</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">IsServerlessMode</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>IsServerlessMode reports whether the SDK is running in any serverless invocation environment (i.e. not "server").</p>
+<p><a name="ValidateURL"></a></p>
+<h2 id="func-validateurl">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/util/url_validator.go#L73">ValidateURL</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">ValidateURL</span><span class="p">(</span><span class="nx">url_</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">allowPrivate</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>ValidateURL reports whether the supplied URL is safe to fetch.</p>
+<p>Mirrors Python's validate_url(url, allow_private=False) -&gt; bool. Returns false (without raising) for any of:</p>
+<ul>
+<li>parse failure</li>
+<li>scheme not http/https</li>
+<li>missing hostname</li>
+<li>DNS resolution failure</li>
+<li>any resolved IP in a blocked network</li>
+</ul>
+<p>When allowPrivate is true, or the SWML_ALLOW_PRIVATE_URLS env var is set to "1", "true" or "yes" (case-insensitive), the IP-blocklist check is skipped. Scheme + hostname checks still apply.</p>
+<p>This function is projected onto the Python free function name validate_url via internal/surface/tables.go.</p>
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

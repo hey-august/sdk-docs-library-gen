@@ -1,0 +1,2113 @@
+{
+  "source_base_path": "/airlock/sdks/_docs-poc/_build/dotnet",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Agent.AgentBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Agent.AgentBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Agent.AgentBase",
+      "Summary": "<p sourcefile=\"api/SignalWire.Agent.AgentBase.yml\" sourcestartlinenumber=\"1\">AI agent built on <xref href=\"SignalWire.SWML.Service\" data-throw-if-not-resolved=\"false\"></xref>. Provides prompt management, SWAIG tool dispatch,\ncontext switching, skill stubs, and a 5-phase SWML rendering pipeline.\nAll configuration methods return <code>this</code> for fluent chaining.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Agent.AgentOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Agent.AgentOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Agent.AgentOptions",
+      "Summary": "<p sourcefile=\"api/SignalWire.Agent.AgentOptions.yml\" sourcestartlinenumber=\"1\">Configuration options for an AI agent, extending the base SWML service options.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Agent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Agent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Agent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Contexts.Context.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Contexts.Context.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Contexts.Context",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Contexts.ContextBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Contexts.ContextBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Contexts.ContextBuilder",
+      "Summary": "<p sourcefile=\"api/SignalWire.Contexts.ContextBuilder.yml\" sourcestartlinenumber=\"1\">Builder for multi-step, multi-context AI agent workflows.</p>\n<p>A ContextBuilder owns one or more <xref href=\"SignalWire.Contexts.Context\" data-throw-if-not-resolved=\"false\"></xref>s; each\ncontext owns an ordered list of <xref href=\"SignalWire.Contexts.Step\" data-throw-if-not-resolved=\"false\"></xref>s. Only one context\nand one step is active at a time. Per chat turn, the runtime injects\nthe current step's instructions as a system message, then asks the LLM\nfor a response.</p>\n<p><b>Native tools auto-injected by the runtime:</b> When a step\n(or its enclosing context) declares valid_steps or valid_contexts, the\nruntime auto-injects two native tools so the model can navigate the\nflow: <code>next_step</code> and <code>change_context</code>. A third native tool,\n<code>gather_submit</code>, is injected during gather_info questioning.\nThese three names are reserved: <xref href=\"SignalWire.Contexts.ContextBuilder.Validate\" data-throw-if-not-resolved=\"false\"></xref> rejects any\nagent that defines a SWAIG tool with one of them. See\n<xref href=\"SignalWire.Contexts.ReservedToolNames.Reserved\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<p><b>Function whitelisting (<xref href=\"SignalWire.Contexts.Step.SetFunctions(System.Object)\" data-throw-if-not-resolved=\"false\"></xref>):</b>\nEach step may declare a functions whitelist. The whitelist is applied\nin-memory at the start of each LLM turn. CRITICALLY: if a step does\nNOT declare a functions field, it INHERITS the previous step's active\nset. See <xref href=\"SignalWire.Contexts.Step.SetFunctions(System.Object)\" data-throw-if-not-resolved=\"false\"></xref> for details and examples.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Contexts.GatherInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Contexts.GatherInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Contexts.GatherInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Contexts.GatherQuestion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Contexts.GatherQuestion.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Contexts.GatherQuestion",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Contexts.ReservedToolNames.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Contexts.ReservedToolNames.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Contexts.ReservedToolNames",
+      "Summary": "<p sourcefile=\"api/SignalWire.Contexts.ReservedToolNames.yml\" sourcestartlinenumber=\"1\">Reserved tool names auto-injected by the runtime when contexts/steps are\npresent. User-defined SWAIG tools must not collide with these names.</p>\n<ul><li><code>next_step</code> / <code>change_context</code> are injected when\nvalid_steps or valid_contexts is set so the model can navigate the flow.</li><li><code>gather_submit</code> is injected while a step's gather_info is\ncollecting answers.</li></ul>\n<p sourcefile=\"api/SignalWire.Contexts.ReservedToolNames.yml\" sourcestartlinenumber=\"8\"><xref href=\"SignalWire.Contexts.ContextBuilder.Validate\" data-throw-if-not-resolved=\"false\"></xref> rejects any agent that registers a\nuser tool sharing one of these names — the runtime would never call the\nuser tool because the native one wins.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Contexts.Step.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Contexts.Step.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Contexts.Step",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Contexts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Contexts.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Contexts",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.DataMap.DataMap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.DataMap.DataMap.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.DataMap.DataMap",
+      "Summary": "<p sourcefile=\"api/SignalWire.DataMap.DataMap.yml\" sourcestartlinenumber=\"1\">Builds a SWAIG data-map function definition with parameters, expressions, webhooks,\nand output configuration. All builder methods return <code>this</code> for fluent chaining.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.DataMap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.DataMap.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.DataMap",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Logging.LogLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Logging.LogLevel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Logging.LogLevel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Logging.Logger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Logging.Logger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Logging.Logger",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Logging.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Logging",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.POM.PomBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.POM.PomBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.POM.PomBuilder",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.POM.PromptObjectModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.POM.PromptObjectModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.POM.PromptObjectModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.POM.Section.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.POM.Section.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.POM.Section",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.POM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.POM.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.POM",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Prefabs.ConciergeAgent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Prefabs.ConciergeAgent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Prefabs.ConciergeAgent",
+      "Summary": "<p sourcefile=\"api/SignalWire.Prefabs.ConciergeAgent.yml\" sourcestartlinenumber=\"1\">Prefab concierge agent for venue/hotel style interactions.\nRegisters <code>check_availability</code> and <code>get_directions</code> tools.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Prefabs.FAQBotAgent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Prefabs.FAQBotAgent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Prefabs.FAQBotAgent",
+      "Summary": "<p sourcefile=\"api/SignalWire.Prefabs.FAQBotAgent.yml\" sourcestartlinenumber=\"1\">Prefab FAQ bot agent with keyword-scored search.\nRegisters a <code>search_faqs</code> tool.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Prefabs.InfoGathererAgent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Prefabs.InfoGathererAgent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Prefabs.InfoGathererAgent",
+      "Summary": "<p sourcefile=\"api/SignalWire.Prefabs.InfoGathererAgent.yml\" sourcestartlinenumber=\"1\">Prefab agent that gathers information by asking a series of questions.\nRegisters <code>start_questions</code> and <code>submit_answer</code> tools.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Prefabs.ReceptionistAgent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Prefabs.ReceptionistAgent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Prefabs.ReceptionistAgent",
+      "Summary": "<p sourcefile=\"api/SignalWire.Prefabs.ReceptionistAgent.yml\" sourcestartlinenumber=\"1\">Prefab agent that greets callers and transfers them to departments.\nRegisters <code>collect_caller_info</code> and <code>transfer_call</code> tools.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Prefabs.SurveyAgent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Prefabs.SurveyAgent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Prefabs.SurveyAgent",
+      "Summary": "<p sourcefile=\"api/SignalWire.Prefabs.SurveyAgent.yml\" sourcestartlinenumber=\"1\">Prefab agent that conducts surveys with typed question validation.\nRegisters <code>validate_response</code> and <code>log_response</code> tools.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Prefabs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Prefabs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Prefabs",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.CrudResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.CrudResource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.CrudResource",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.CrudResource.yml\" sourcestartlinenumber=\"1\">Generic CRUD wrapper around an <xref href=\"SignalWire.REST.HttpClient\" data-throw-if-not-resolved=\"false\"></xref> and a base API path.</p>\n<p sourcefile=\"api/SignalWire.REST.CrudResource.yml\" sourcestartlinenumber=\"3\">Provides List / Create / Get / Update / Delete for any REST resource that\nfollows the standard SignalWire collection+item URL pattern.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.CrudWithAddresses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.CrudWithAddresses.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.CrudWithAddresses",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.HttpClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.HttpClient.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.HttpClient",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.HttpClient.yml\" sourcestartlinenumber=\"1\">Low-level HTTP client for SignalWire REST APIs.</p>\n<p sourcefile=\"api/SignalWire.REST.HttpClient.yml\" sourcestartlinenumber=\"3\">Uses <xref href=\"System.Net.Http.HttpClient\" data-throw-if-not-resolved=\"false\"></xref> with Basic Auth,\nand returns parsed JSON responses as dictionaries.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.Addresses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.Addresses.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.Addresses",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.Addresses.yml\" sourcestartlinenumber=\"1\">Addresses namespace (Relay top-level addresses, no update).</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.Addresses.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.Addresses.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.addresses.AddressesResource</code>.\nInherits CrudResource for the standard list/create/get/delete surface.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CallFlowsHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CallFlowsHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CallFlowsHelper",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CallFlowsHelper.yml\" sourcestartlinenumber=\"1\">CallFlows helper providing the singular-path variants\n(<code sourcefile=\"api/SignalWire.REST.Namespaces.CallFlowsHelper.yml\" sourcestartlinenumber=\"2\">/api/fabric/resources/call_flow/{id}/{addresses,versions}</code>).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.Calling.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.Calling.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.Calling",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.Calling.yml\" sourcestartlinenumber=\"1\">Calling API namespace.</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.Calling.yml\" sourcestartlinenumber=\"3\">Provides 37 call-control command methods that each POST to\n/api/calling/calls with a JSON body containing the command name,\nan optional call ID, and parameters.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.Compat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.Compat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.Compat",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.Compat.yml\" sourcestartlinenumber=\"1\">Twilio-compatible (LaML) API namespace with AccountSid scoping.</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.Compat.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.Compat.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.compat.CompatNamespace</code>:\nthe entry-point exposes 12 sub-resources (accounts, calls, messages,\nfaxes, conferences, phone_numbers, applications, laml_bins, queues,\nrecordings, transcriptions, tokens) under a shared per-account prefix.</p>\n<p>Inherits from <xref href=\"SignalWire.REST.CrudResource\" data-throw-if-not-resolved=\"false\"></xref> so the historical\n``client.Compat.List()`` / ``Create`` / ``Get`` / ``Update`` / ``Delete``\nsurface continues to work; the per-account collection accessors are\nadded on top.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatAccounts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatAccounts.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatAccounts",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatAccounts.yml\" sourcestartlinenumber=\"1\">Compat account/subproject management. Lives at the top-level\n/api/laml/2010-04-01/Accounts collection (no AccountSid prefix).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatApplications.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatApplications.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatApplications",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatApplications.yml\" sourcestartlinenumber=\"1\">Compat applications (Twilio LaML voice/SMS apps).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatCalls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatCalls.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatCalls",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatCalls.yml\" sourcestartlinenumber=\"1\">Compat calls with recording + stream sub-resources.\nInherits standard CRUD; adds Twilio-style compat extensions.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatConferences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatConferences.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatConferences",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatConferences.yml\" sourcestartlinenumber=\"1\">Compat conferences with participant, recording, and stream sub-resources.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatFaxes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatFaxes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatFaxes",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatFaxes.yml\" sourcestartlinenumber=\"1\">Compat faxes with media sub-resources.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatLamlBins.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatLamlBins.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatLamlBins",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatLamlBins.yml\" sourcestartlinenumber=\"1\">Compat cXML / LaML script bins.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatMessages.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatMessages",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatMessages.yml\" sourcestartlinenumber=\"1\">Compat messages with media sub-resources.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatPhoneNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatPhoneNumbers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatPhoneNumbers",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatPhoneNumbers.yml\" sourcestartlinenumber=\"1\">Compat phone-number management with purchase, import, and search.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatQueues.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatQueues.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatQueues",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatQueues.yml\" sourcestartlinenumber=\"1\">Compat queues with member management.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatRecordings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatRecordings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatRecordings",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatRecordings.yml\" sourcestartlinenumber=\"1\">Compat recordings (read-only top-level resource).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatTokens.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatTokens.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatTokens",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatTokens.yml\" sourcestartlinenumber=\"1\">Compat API tokens — UPDATE uses PATCH (BaseResource style).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CompatTranscriptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CompatTranscriptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CompatTranscriptions",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CompatTranscriptions.yml\" sourcestartlinenumber=\"1\">Compat transcriptions (read-only top-level resource).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.ConferenceLogs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.ConferenceLogs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.ConferenceLogs",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.ConferenceLogs.yml\" sourcestartlinenumber=\"1\">Conference log queries (list-only).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.ConferenceRoomsHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.ConferenceRoomsHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.ConferenceRoomsHelper",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.ConferenceRoomsHelper.yml\" sourcestartlinenumber=\"1\">ConferenceRooms helper providing the singular-path variant\n(<code sourcefile=\"api/SignalWire.REST.Namespaces.ConferenceRoomsHelper.yml\" sourcestartlinenumber=\"2\">/api/fabric/resources/conference_room/{id}/addresses</code>).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.CxmlApplicationsHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.CxmlApplicationsHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.CxmlApplicationsHelper",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.CxmlApplicationsHelper.yml\" sourcestartlinenumber=\"1\">cXML applications helper. The API has no CREATE endpoint for cXML\napplications (POST is rejected); calling Create here throws\nNotImplementedException to mirror Python's deliberate behaviour.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.DatasphereDocuments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.DatasphereDocuments.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.DatasphereDocuments",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.DatasphereDocuments.yml\" sourcestartlinenumber=\"1\">Datasphere documents (CRUD + search + chunk methods).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.DatasphereNs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.DatasphereNs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.DatasphereNs",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.DatasphereNs.yml\" sourcestartlinenumber=\"1\">Datasphere namespace — documents with chunks/search.</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.DatasphereNs.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.DatasphereNs.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.datasphere.DatasphereNamespace</code>.\nExtends CrudResource — the legacy <code sourcefile=\"api/SignalWire.REST.Namespaces.DatasphereNs.yml\" sourcestartlinenumber=\"4\">client.Datasphere.List</code> etc went\nto /api/datasphere/documents directly; we preserve that surface and\nadd <code sourcefile=\"api/SignalWire.REST.Namespaces.DatasphereNs.yml\" sourcestartlinenumber=\"6\">Documents</code> accessor for chunk/search per Python parity.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.Fabric.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.Fabric.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.Fabric",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.Fabric.yml\" sourcestartlinenumber=\"1\">Fabric API namespace.</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.Fabric.yml\" sourcestartlinenumber=\"3\">Groups all Fabric sub-resources (subscribers, SIP endpoints, call flows,\nSWML scripts, conference rooms, AI agents, etc.) under a single object.\nEach sub-resource is lazily initialised as a <xref href=\"SignalWire.REST.CrudResource\" data-throw-if-not-resolved=\"false\"></xref>\npointing at the correct API path under /api/fabric/resources.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.FabricAddresses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.FabricAddresses.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.FabricAddresses",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.FabricAddresses.yml\" sourcestartlinenumber=\"1\">Read-only top-level Fabric addresses resource (lives at\n/api/fabric/addresses, NOT under /api/fabric/resources).</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.FabricAddresses.yml\" sourcestartlinenumber=\"4\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.FabricAddresses.yml\" sourcestartlinenumber=\"4\">signalwire.rest.namespaces.fabric.FabricAddresses</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.FabricResources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.FabricResources.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.FabricResources",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.FabricResources.yml\" sourcestartlinenumber=\"1\">Generic resource operations across all Fabric resource types.</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.FabricResources.yml\" sourcestartlinenumber=\"3\">Lives at /api/fabric/resources (the base) and dispatches to per-type\nsub-paths. Mirrors Python's\n<code sourcefile=\"api/SignalWire.REST.Namespaces.FabricResources.yml\" sourcestartlinenumber=\"5\">signalwire.rest.namespaces.fabric.GenericResources</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.FabricTokens.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.FabricTokens.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.FabricTokens",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.FabricTokens.yml\" sourcestartlinenumber=\"1\">Fabric tokens — subscriber/guest/invite/embed token creation.</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.FabricTokens.yml\" sourcestartlinenumber=\"3\">All endpoints sit under /api/fabric (NOT /api/fabric/resources or\n/api/fabric/tokens). Mirrors Python's\n<code sourcefile=\"api/SignalWire.REST.Namespaces.FabricTokens.yml\" sourcestartlinenumber=\"5\">signalwire.rest.namespaces.fabric.FabricTokens</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.FaxLogs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.FaxLogs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.FaxLogs",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.FaxLogs.yml\" sourcestartlinenumber=\"1\">Fax log queries.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.ImportedNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.ImportedNumbers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.ImportedNumbers",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.ImportedNumbers.yml\" sourcestartlinenumber=\"1\">Imported phone numbers (create only).</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.ImportedNumbers.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.ImportedNumbers.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.imported_numbers.ImportedNumbersResource</code>.\nExtends CrudResource so the legacy <code sourcefile=\"api/SignalWire.REST.Namespaces.ImportedNumbers.yml\" sourcestartlinenumber=\"4\">client.ImportedNumbers.BasePath</code>\nsurface keeps working; <code sourcefile=\"api/SignalWire.REST.Namespaces.ImportedNumbers.yml\" sourcestartlinenumber=\"5\">CreateAsync</code> is the only method Python\nexposes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.Logs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.Logs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.Logs",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.Logs.yml\" sourcestartlinenumber=\"1\">Logs API namespace — message, voice, fax, and conference logs (read-only).</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.Logs.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.Logs.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.logs.LogsNamespace</code>.\nEach kind of log lives at a different sub-API path.</p>\n<p>Inherits from <xref href=\"SignalWire.REST.CrudResource\" data-throw-if-not-resolved=\"false\"></xref> so the legacy\n``client.Logs.BasePath`` accessor still resolves; the new\nMessages/Voice/Fax/Conferences accessors point at the actual per-API\nlog endpoints.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.MessageLogs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.MessageLogs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.MessageLogs",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.MessageLogs.yml\" sourcestartlinenumber=\"1\">Message log queries.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.Mfa.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.Mfa.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.Mfa",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.Mfa.yml\" sourcestartlinenumber=\"1\">Multi-Factor Authentication namespace (sms / call / verify dispatch).</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.Mfa.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.Mfa.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.mfa.MfaResource</code>.\nExtends CrudResource so the legacy <code sourcefile=\"api/SignalWire.REST.Namespaces.Mfa.yml\" sourcestartlinenumber=\"4\">client.Mfa.BasePath</code> /\n<code sourcefile=\"api/SignalWire.REST.Namespaces.Mfa.yml\" sourcestartlinenumber=\"5\">client.Mfa.Create</code> surface keeps working.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.NumberGroups.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.NumberGroups.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.NumberGroups",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.NumberGroups.yml\" sourcestartlinenumber=\"1\">Number Groups (CRUD + membership operations; update via PUT).</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.NumberGroups.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.NumberGroups.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.number_groups.NumberGroupsResource</code>.\nNote delete_membership / get_membership target the top-level\n<code sourcefile=\"api/SignalWire.REST.Namespaces.NumberGroups.yml\" sourcestartlinenumber=\"5\">/api/relay/rest/number_group_memberships/{id}</code> path, NOT the\nnested per-group sub-collection.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.Project.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.Project.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.Project",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.Project.yml\" sourcestartlinenumber=\"1\">Project namespace — exposes ProjectTokens (PATCH update).</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.Project.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.Project.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.project.ProjectNamespace</code>.\nExtends CrudResource for the legacy <code sourcefile=\"api/SignalWire.REST.Namespaces.Project.yml\" sourcestartlinenumber=\"4\">client.Project.BasePath</code> test.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.ProjectTokens.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.ProjectTokens.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.ProjectTokens",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.ProjectTokens.yml\" sourcestartlinenumber=\"1\">Project API tokens — PATCH for update.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.Queues.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.Queues.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.Queues",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.Queues.yml\" sourcestartlinenumber=\"1\">Queues namespace (Relay queues with member operations).</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.Queues.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.Queues.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.queues.QueuesResource</code>.\nNote: per-port adapter mismatches with the legacy CrudResource at\n/api/fabric/resources/queues — this lives at /api/relay/rest/queues.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.Recordings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.Recordings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.Recordings",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.Recordings.yml\" sourcestartlinenumber=\"1\">Recordings namespace (Relay top-level recordings, list/get/delete).</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.Recordings.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.Recordings.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.recordings.RecordingsResource</code>.\nInherits CrudResource for the standard list/get/delete surface.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.Registry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.Registry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.Registry",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.Registry.yml\" sourcestartlinenumber=\"1\">10DLC Campaign Registry namespace — brands, campaigns, orders, numbers.</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.Registry.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.Registry.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.registry.RegistryNamespace</code>\n(everything under /api/relay/rest/registry/beta).</p>\n<p>Inherits from <xref href=\"SignalWire.REST.CrudResource\" data-throw-if-not-resolved=\"false\"></xref> so the legacy\n``client.Registry.BasePath`` accessor still resolves; the new\nBrands/Campaigns/Orders/Numbers accessors target the per-resource\nendpoints under /api/relay/rest/registry/beta.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.RegistryBrands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.RegistryBrands.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.RegistryBrands",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.RegistryBrands.yml\" sourcestartlinenumber=\"1\">10DLC brand management.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.RegistryCampaigns.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.RegistryCampaigns.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.RegistryCampaigns",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.RegistryCampaigns.yml\" sourcestartlinenumber=\"1\">10DLC campaign management — update via PUT.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.RegistryNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.RegistryNumbers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.RegistryNumbers",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.RegistryNumbers.yml\" sourcestartlinenumber=\"1\">10DLC number assignment management.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.RegistryOrders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.RegistryOrders.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.RegistryOrders",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.RegistryOrders.yml\" sourcestartlinenumber=\"1\">10DLC assignment order management (read-only).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.ShortCodes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.ShortCodes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.ShortCodes",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.ShortCodes.yml\" sourcestartlinenumber=\"1\">Short codes (list/get/update — no create/delete; update via PUT).</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.ShortCodes.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.ShortCodes.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.short_codes.ShortCodesResource</code>.\nExtends CrudResource — overrides UpdateAsync to use PUT (matching\nPython's _update_method = &quot;PUT&quot; on this resource).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.SipProfile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.SipProfile.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.SipProfile",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.SipProfile.yml\" sourcestartlinenumber=\"1\">Project SIP profile (singleton resource — get/update only, update via PUT).</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.SipProfile.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.SipProfile.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.sip_profile.SipProfileResource</code>.\nExtends CrudResource for the legacy <code sourcefile=\"api/SignalWire.REST.Namespaces.SipProfile.yml\" sourcestartlinenumber=\"4\">client.SipProfile.BasePath</code> test\n— the Python-parity singleton path is /api/relay/rest/sip_profile;\nthe legacy .NET path was /api/relay/rest/sip_profiles. The legacy\naccessor target is preserved while <code sourcefile=\"api/SignalWire.REST.Namespaces.SipProfile.yml\" sourcestartlinenumber=\"7\">GetAsync()/UpdateAsync(kwargs)</code>\nhit the singleton path.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.SubscribersHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.SubscribersHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.SubscribersHelper",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.SubscribersHelper.yml\" sourcestartlinenumber=\"1\">Subscribers helper exposing per-subscriber SIP-endpoint operations.</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.SubscribersHelper.yml\" sourcestartlinenumber=\"3\">Mirrors Python's <code sourcefile=\"api/SignalWire.REST.Namespaces.SubscribersHelper.yml\" sourcestartlinenumber=\"3\">SubscribersResource</code> SIP endpoint methods.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.Video.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.Video.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.Video",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.Video.yml\" sourcestartlinenumber=\"1\">Video API namespace.</p>\n<p sourcefile=\"api/SignalWire.REST.Namespaces.Video.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.Namespaces.Video.yml\" sourcestartlinenumber=\"3\">signalwire.rest.namespaces.video.VideoNamespace</code> —\nrooms, room sessions, room recordings, conferences, conference tokens,\nstreams.</p>\n<p>The legacy ``client.Video.List() / Create / Get / Delete`` surface\n(which targeted ``/api/video/rooms``) is preserved by inheriting from\n<xref href=\"SignalWire.REST.CrudResource\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.VideoConferenceTokens.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.VideoConferenceTokens.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.VideoConferenceTokens",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.VideoConferenceTokens.yml\" sourcestartlinenumber=\"1\">Video conference tokens: get + reset.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.VideoConferences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.VideoConferences.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.VideoConferences",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.VideoConferences.yml\" sourcestartlinenumber=\"1\">Video conferences (CRUD with PUT update + tokens/streams subresources).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.VideoRoomRecordings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.VideoRoomRecordings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.VideoRoomRecordings",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.VideoRoomRecordings.yml\" sourcestartlinenumber=\"1\">Video room recordings: list, get, delete, list_events.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.VideoRoomSessions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.VideoRoomSessions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.VideoRoomSessions",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.VideoRoomSessions.yml\" sourcestartlinenumber=\"1\">Video room sessions: list, get, list_events/_members/_recordings.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.VideoRoomTokens.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.VideoRoomTokens.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.VideoRoomTokens",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.VideoRoomTokens.yml\" sourcestartlinenumber=\"1\">Video room tokens (create-only).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.VideoRooms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.VideoRooms.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.VideoRooms",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.VideoRooms.yml\" sourcestartlinenumber=\"1\">Video rooms (CRUD + streams sub-resource).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.VideoStreams.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.VideoStreams.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.VideoStreams",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.VideoStreams.yml\" sourcestartlinenumber=\"1\">Video streams: get, update (PUT), delete.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.VoiceLogs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.VoiceLogs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces.VoiceLogs",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.Namespaces.VoiceLogs.yml\" sourcestartlinenumber=\"1\">Voice log queries with events sub-collection.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.Namespaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.Namespaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.Namespaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.PaginatedIterator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.PaginatedIterator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.PaginatedIterator",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.PaginatedIterator.yml\" sourcestartlinenumber=\"1\">Walks paged HTTP responses by following <code sourcefile=\"api/SignalWire.REST.PaginatedIterator.yml\" sourcestartlinenumber=\"1\">links.next</code> cursors.</p>\n<p sourcefile=\"api/SignalWire.REST.PaginatedIterator.yml\" sourcestartlinenumber=\"3\">Mirrors Python <code sourcefile=\"api/SignalWire.REST.PaginatedIterator.yml\" sourcestartlinenumber=\"3\">signalwire.rest._pagination.PaginatedIterator</code> —\nconstructor records inputs without fetching; iteration triggers\nthe first fetch and continues until a page is returned without a\n<code sourcefile=\"api/SignalWire.REST.PaginatedIterator.yml\" sourcestartlinenumber=\"6\">links.next</code> cursor.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.RestClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.RestClient.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.RestClient",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.RestClient.yml\" sourcestartlinenumber=\"1\">Top-level SignalWire REST client.</p>\n<p sourcefile=\"api/SignalWire.REST.RestClient.yml\" sourcestartlinenumber=\"3\">Provides lazy access to every API namespace (fabric, calling,\nphone_numbers, datasphere, video, compat, etc.). Credentials can be\nsupplied explicitly or pulled from environment variables.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.SignalWireRestError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.SignalWireRestError.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST.SignalWireRestError",
+      "Summary": "<p sourcefile=\"api/SignalWire.REST.SignalWireRestError.yml\" sourcestartlinenumber=\"1\">Exception thrown when a SignalWire REST API call returns a non-2xx status\nor encounters a transport-level error.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.REST.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.REST.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.REST",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.AIAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.AIAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.AIAction",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.AIAction.yml\" sourcestartlinenumber=\"1\">Handle for calling.ai operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.Action.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.Action.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.Action",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.Action.yml\" sourcestartlinenumber=\"1\">Base class for all RELAY call actions (play, record, collect, etc.).</p>\n<p sourcefile=\"api/SignalWire.Relay.Action.yml\" sourcestartlinenumber=\"3\">An Action is the client-side handle returned when you start an\nasynchronous operation on a call. It accumulates events, tracks\nstate, and resolves once the operation reaches a terminal state.</p>\n<p sourcefile=\"api/SignalWire.Relay.Action.yml\" sourcestartlinenumber=\"7\">Uses <xref href=\"System.Threading.Tasks.TaskCompletionSource\" data-throw-if-not-resolved=\"false\"></xref> for native async/await support.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.Call.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.Call.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.Call",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.Call.yml\" sourcestartlinenumber=\"1\">Represents a RELAY voice call.</p>\n<p sourcefile=\"api/SignalWire.Relay.Call.yml\" sourcestartlinenumber=\"3\">Holds call-level state, dispatches server events to registered listeners\nand to in-flight Action objects, and exposes every calling.* RPC method\nas a first-class C# method.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.Client.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.Client.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.Client",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.Client.yml\" sourcestartlinenumber=\"1\">RELAY Client -- manages the WebSocket connection to SignalWire, sends\nJSON-RPC 2.0 requests, and dispatches inbound events to the correct\nCall or Message objects.</p>\n<p sourcefile=\"api/SignalWire.Relay.Client.yml\" sourcestartlinenumber=\"5\">Uses async/await with <xref href=\"System.Threading.Tasks.TaskCompletionSource\" data-throw-if-not-resolved=\"false\"></xref> for the\nnative C# async pattern instead of polling loops.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.CollectAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.CollectAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.CollectAction",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.CollectAction.yml\" sourcestartlinenumber=\"1\">Handle for calling.collect (and play_and_collect) operations.</p>\n<p sourcefile=\"api/SignalWire.Relay.CollectAction.yml\" sourcestartlinenumber=\"3\">Note: play_and_collect emits intermediate calling.call.play events\nthat must be silently ignored so they do not pollute the collect\naction's state.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.Constants.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.Constants",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.Constants.yml\" sourcestartlinenumber=\"1\">Protocol constants for the RELAY WebSocket interface.\nDefines protocol version, call/dial/message states, terminal states,\nand per-event-type action terminal states.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.DetectAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.DetectAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.DetectAction",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.DetectAction.yml\" sourcestartlinenumber=\"1\">Handle for calling.detect operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.Event.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.Event.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.Event",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.Event.yml\" sourcestartlinenumber=\"1\">Represents a single RELAY event received from the server.\nCarries the event type, a timestamp, and the params dictionary\nfrom which call_id, node_id, control_id, tag, and state are extracted.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.FaxAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.FaxAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.FaxAction",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.FaxAction.yml\" sourcestartlinenumber=\"1\">Handle for calling.fax operations (send or receive).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.Message.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.Message.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.Message",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.Message.yml\" sourcestartlinenumber=\"1\">Represents a RELAY messaging message (SMS / MMS).</p>\n<p sourcefile=\"api/SignalWire.Relay.Message.yml\" sourcestartlinenumber=\"3\">A Message is created when you send or receive a message through the\nRELAY messaging namespace. It accumulates state-change events and\nresolves once the message reaches a terminal state (delivered,\nundelivered, or failed).</p>\n<p sourcefile=\"api/SignalWire.Relay.Message.yml\" sourcestartlinenumber=\"8\">Uses <xref href=\"System.Threading.Tasks.TaskCompletionSource\" data-throw-if-not-resolved=\"false\"></xref> for native async/await support.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.PayAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.PayAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.PayAction",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.PayAction.yml\" sourcestartlinenumber=\"1\">Handle for calling.pay operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.PlayAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.PlayAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.PlayAction",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.PlayAction.yml\" sourcestartlinenumber=\"1\">Handle for calling.play operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.RecordAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.RecordAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.RecordAction",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.RecordAction.yml\" sourcestartlinenumber=\"1\">Handle for calling.record operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.StreamAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.StreamAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.StreamAction",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.StreamAction.yml\" sourcestartlinenumber=\"1\">Handle for calling.stream operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.TapAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.TapAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.TapAction",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.TapAction.yml\" sourcestartlinenumber=\"1\">Handle for calling.tap operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.TranscribeAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.TranscribeAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.TranscribeAction",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.TranscribeAction.yml\" sourcestartlinenumber=\"1\">Handle for calling.transcribe operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.FunctionResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.FunctionResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.FunctionResult",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.FunctionResult.yml\" sourcestartlinenumber=\"1\">Builds a SWAIG function result with an optional response, actions, and post-processing flag.\nAll action methods return <code>this</code> for fluent chaining.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWML.Document.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWML.Document.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWML.Document",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWML.Document.yml\" sourcestartlinenumber=\"1\">Represents a SWML document containing versioned sections of verb instructions.\nEach section holds an ordered list of verb dictionaries that define call-flow logic.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWML.SWMLBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWML.SWMLBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWML.SWMLBuilder",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWML.Schema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWML.Schema.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWML.Schema",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWML.Schema.yml\" sourcestartlinenumber=\"1\">Thread-safe singleton that loads the SWML JSON schema from an embedded resource\nand exposes verb definitions parsed from $defs.SWMLMethod.anyOf.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWML.SchemaValidationError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWML.SchemaValidationError.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWML.SchemaValidationError",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWML.SchemaValidationError.yml\" sourcestartlinenumber=\"1\">Validation error raised by SchemaUtils.ValidateVerb when a\nverb config violates its schema. (Python parity:\n<code sourcefile=\"api/SignalWire.SWML.SchemaValidationError.yml\" sourcestartlinenumber=\"3\">signalwire.utils.schema_utils.SchemaValidationError</code>.)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWML.Service.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWML.Service.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWML.Service",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWML.Service.yml\" sourcestartlinenumber=\"1\">A SWML service that manages a Document, provides schema-driven verb methods,\nhandles HTTP requests with Basic authentication, and supports routing callbacks.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWML.ServiceOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWML.ServiceOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWML.ServiceOptions",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWML.ServiceOptions.yml\" sourcestartlinenumber=\"1\">Configuration options for a SWML service.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWML.SwmlRenderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWML.SwmlRenderer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWML.SwmlRenderer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWML.VerbInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWML.VerbInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWML.VerbInfo",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWML.VerbInfo.yml\" sourcestartlinenumber=\"1\">Metadata about a single SWML verb parsed from the schema.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWML.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWML.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWML",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Security.SessionManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Security.SessionManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Security.SessionManager",
+      "Summary": "<p sourcefile=\"api/SignalWire.Security.SessionManager.yml\" sourcestartlinenumber=\"1\">Generates and validates HMAC-SHA256 signed session tokens for SWAIG function calls.\nEach instance holds an independent 32-byte random secret.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Security.WebhookValidationMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Security.WebhookValidationMiddleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Security.WebhookValidationMiddleware",
+      "Summary": "<p sourcefile=\"api/SignalWire.Security.WebhookValidationMiddleware.yml\" sourcestartlinenumber=\"1\">HTTP middleware that validates the <code>X-SignalWire-Signature</code> header\non incoming requests using <xref href=\"SignalWire.Security.WebhookValidator\" data-throw-if-not-resolved=\"false\"></xref>. Designed for\nthe .NET port's HttpListener-based dispatch surface; adapts the same\ncontract Python's FastAPI dependency provides.</p>\n<p>Use <xref href=\"SignalWire.Security.WebhookValidationMiddleware.Validate(System.String%2cSystem.String%2cSystem.Collections.Generic.Dictionary%7bSystem.String%2cSystem.String%7d%2cSystem.String%2cSystem.String%2cSystem.Int32)\" data-throw-if-not-resolved=\"false\"></xref> to short-circuit invalid requests with\n403 before they reach an agent's POST handler. Returns null on success\nso the caller continues to dispatch.</p>\n<p>This is intentionally a non-async type: the underlying validator\nis pure CPU work and the dispatch surface uses synchronous strings.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Security.WebhookValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Security.WebhookValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Security.WebhookValidator",
+      "Summary": "<p sourcefile=\"api/SignalWire.Security.WebhookValidator.yml\" sourcestartlinenumber=\"1\">Validates SignalWire webhook signatures for both Scheme A (RELAY/JSON,\nhex HMAC-SHA1 over <code>url + rawBody</code>) and Scheme B (Compat/cXML form,\nbase64 HMAC-SHA1 over <code>url + sortedFormParams</code>) per\n<code>porting-sdk/webhooks.md</code>. The contract is byte-identical across all\nSignalWire SDK ports — see the cross-port test vectors in the spec.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Security.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Security.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Security",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Server.AgentServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Server.AgentServer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Server.AgentServer",
+      "Summary": "<p sourcefile=\"api/SignalWire.Server.AgentServer.yml\" sourcestartlinenumber=\"1\">Multi-agent HTTP server. Registers agents at routes, dispatches requests by\nlongest prefix match, serves static files with path-traversal protection,\nhandles health/ready/root-index, and supports SIP routing.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Server.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Server.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Server",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Serverless.Adapter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Serverless.Adapter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Serverless.Adapter",
+      "Summary": "<p sourcefile=\"api/SignalWire.Serverless.Adapter.yml\" sourcestartlinenumber=\"1\">Auto-detect and handle serverless environments (Lambda, Azure, GCF, CGI)\nor fall back to the built-in ASP.NET server.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Serverless.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Serverless.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Serverless",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.ApiNinjasTriviaSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.ApiNinjasTriviaSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.ApiNinjasTriviaSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.ApiNinjasTriviaSkill.yml\" sourcestartlinenumber=\"1\">Get trivia questions from API Ninjas (DataMap).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.ClaudeSkillsSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.ClaudeSkillsSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.ClaudeSkillsSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.ClaudeSkillsSkill.yml\" sourcestartlinenumber=\"1\">Load Claude SKILL.md files as agent tools.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.ClaudeSkillsSkill.yml\" sourcestartlinenumber=\"3\">Mirrors signalwire-python's <code>signalwire.skills.claude_skills.skill</code>.\nAt setup time, the skill walks <code>skills_path</code> for child directories\ncontaining <code>SKILL.md</code>; each such file is parsed for YAML\nfrontmatter (the bit between two <code>---</code> lines) plus a markdown\nbody. Each loaded skill becomes one SWAIG tool whose handler returns\nthe body with three substitutions:</p>\n<ul><li><code>$ARGUMENTS</code> / <code>$ARGUMENTS[N]</code> / <code>$N</code> — the\n    <code>arguments</code> string passed to the tool, optionally split into\n    positional pieces by whitespace.</li><li><code>${CLAUDE_SKILL_DIR}</code> — absolute path to the skill's\n    directory.</li><li><code>${CLAUDE_SESSION_ID}</code> — call id from raw_data.</li></ul>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.ClaudeSkillsSkill.yml\" sourcestartlinenumber=\"15\">The full Python implementation also runs a frontmatter-driven invocation\ngate (skip-tool / skip-prompt), tolerates supporting reference sections,\nand offers an opt-in shell-injection preprocessor (<code>!<code sourcefile=\"api/SignalWire.Skills.Builtin.ClaudeSkillsSkill.yml\" sourcestartlinenumber=\"17\">cmd</code></code>). The\n.NET port ships the discovery/parse/handler core; the optional shell\npreprocessor is left out by design (set <code>allow_shell_injection</code>\nto a no-op — the surface is preserved for future expansion).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.CustomSkillsSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.CustomSkillsSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.CustomSkillsSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.CustomSkillsSkill.yml\" sourcestartlinenumber=\"1\">Register user-defined custom tools.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.DatasphereServerlessSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.DatasphereServerlessSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.DatasphereServerlessSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.DatasphereServerlessSkill.yml\" sourcestartlinenumber=\"1\">Search knowledge using SignalWire DataSphere with serverless DataMap execution.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.DatasphereSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.DatasphereSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.DatasphereSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.DatasphereSkill.yml\" sourcestartlinenumber=\"1\">SignalWire DataSphere knowledge-base search skill.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.DatasphereSkill.yml\" sourcestartlinenumber=\"3\">Mirrors signalwire-python's <code>signalwire.skills.datasphere.skill</code>.\nPOSTs a JSON body to <code>https://&lt;space_name&gt;.signalwire.com\n/api/datasphere/documents/search</code> with HTTP Basic auth\n(project_id : token). Real DataSphere returns matches under\n<code>chunks</code>; the porting-sdk audit fixture uses <code>results</code>;\naccept either so the skill round-trips against the live API and the\noffline audit alike (matching the precedent already in Java/PHP/Perl/\nRust).</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.DatasphereSkill.yml\" sourcestartlinenumber=\"12\">Upstream URL override: <code>DATASPHERE_BASE_URL</code>. Path\n<code>/api/datasphere/documents/search</code> is preserved.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.DatetimeSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.DatetimeSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.DatetimeSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.DatetimeSkill.yml\" sourcestartlinenumber=\"1\">Get current date, time, and timezone information.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.GoogleMapsSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.GoogleMapsSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.GoogleMapsSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.GoogleMapsSkill.yml\" sourcestartlinenumber=\"1\">Validate addresses and compute driving routes using Google Maps (DataMap).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.InfoGathererSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.InfoGathererSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.InfoGathererSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.InfoGathererSkill.yml\" sourcestartlinenumber=\"1\">Gather answers to a configurable list of questions.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.JokeSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.JokeSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.JokeSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.JokeSkill.yml\" sourcestartlinenumber=\"1\">Tell jokes using the API Ninjas joke API (DataMap).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.MathSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.MathSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.MathSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.MathSkill.yml\" sourcestartlinenumber=\"1\">Perform basic mathematical calculations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.McpGatewaySkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.McpGatewaySkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.McpGatewaySkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.McpGatewaySkill.yml\" sourcestartlinenumber=\"1\">Bridge MCP (Model Context Protocol) servers with SWAIG functions.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.McpGatewaySkill.yml\" sourcestartlinenumber=\"3\">Mirrors signalwire-python's <code>signalwire.skills.mcp_gateway.skill</code>.\nEach configured service gets one or more SWAIG tools whose handler\nPOSTs to the gateway with the tool name, arguments, and per-call\nsession id (derived from <code>raw_data.global_data.mcp_call_id</code> if\npresent, else <code>raw_data.call_id</code>).</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.McpGatewaySkill.yml\" sourcestartlinenumber=\"9\">Auth: <code>auth_token</code> (Bearer) or <code>auth_user</code>/<code>auth_password</code>\n(Basic). The skill prefers Bearer when both are configured.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.McpGatewaySkill.yml\" sourcestartlinenumber=\"12\">Endpoint shape: <code>POST &lt;gateway_url&gt;/services/&lt;service&gt;/call</code>\nper the Python implementation. Audit fixtures point <code>gateway_url</code>\nat a loopback URL via the per-skill convention.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.NativeVectorSearchSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.NativeVectorSearchSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.NativeVectorSearchSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.NativeVectorSearchSkill.yml\" sourcestartlinenumber=\"1\">Vector / keyword similarity search.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.NativeVectorSearchSkill.yml\" sourcestartlinenumber=\"3\">Mirrors signalwire-python's <code>signalwire.skills.native_vector_search.skill</code>\nin <strong>remote mode only</strong>. Local-mode SQLite/pgvector\nindexing relies on Python-only deps (sentence-transformers, FAISS,\npgvector) and is not portable to the .NET BCL — recorded in\n<code>PORT_OMISSIONS.md</code>. The remote mode POSTs the query to the\nconfigured search server, which returns a real-shape response the\naudit verifies on the wire.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.NativeVectorSearchSkill.yml\" sourcestartlinenumber=\"11\">The handler reads <code>remote_url</code> from skill params; the audit\nfixture sets it to a loopback URL so the SDK exercises the real\ntransport against canned bytes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.PlayBackgroundFileSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.PlayBackgroundFileSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.PlayBackgroundFileSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.PlayBackgroundFileSkill.yml\" sourcestartlinenumber=\"1\">Control background file playback (DataMap).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.SpiderSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.SpiderSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.SpiderSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.SpiderSkill.yml\" sourcestartlinenumber=\"1\">Web scraping / crawling skill.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.SpiderSkill.yml\" sourcestartlinenumber=\"3\">Mirrors signalwire-python's <code>signalwire.skills.spider.skill</code>. The\nPython implementation uses lxml + BeautifulSoup for selector-based\nextraction; the .NET port ships a faithful HTTP fetch + regex-based\nHTML stripping (script/style removal, tag removal, whitespace\ncollapse, smart truncation). That covers the canonical\n<code>fast_text</code> / <code>clean_text</code> path the audit exercises;\nselector-driven structured extraction can be layered on later.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.SpiderSkill.yml\" sourcestartlinenumber=\"11\">Upstream URL override: <code>SPIDER_BASE_URL</code>. The skill rewrites the\nfetch host while preserving the requested URL's path + query so the\naudit fixture sees the documented page on the wire.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.SwmlTransferSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.SwmlTransferSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.SwmlTransferSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.SwmlTransferSkill.yml\" sourcestartlinenumber=\"1\">Transfer calls between agents based on pattern matching (DataMap).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.WeatherApiSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.WeatherApiSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.WeatherApiSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.WeatherApiSkill.yml\" sourcestartlinenumber=\"1\">Get current weather information from WeatherAPI.com (DataMap).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.WebSearchSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.WebSearchSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.WebSearchSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.WebSearchSkill.yml\" sourcestartlinenumber=\"1\">Web search skill backed by Google Custom Search.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.WebSearchSkill.yml\" sourcestartlinenumber=\"3\">Mirrors signalwire-python's <code>signalwire.skills.web_search.skill</code>\n(the <code>WebSearchSkill.search_and_scrape_best</code> path). The full\nPython implementation also scrapes each result URL and quality-scores\nthe extracted text — a Reddit-aware extractor, a per-domain weight\ntable, and a length/diversity scorer. The .NET port ships the search\ncall faithfully and falls back to formatted titles+snippets when the\nper-result scrape isn't requested. The audit only verifies that a\nreal GET to Google CSE is issued and that the response is parsed,\nso this surface is sufficient for parity. Per-result scraping can be\nlayered on top without breaking the audit contract.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.WebSearchSkill.yml\" sourcestartlinenumber=\"14\">Upstream URL override: <code>WEB_SEARCH_BASE_URL</code> (used by\naudit_skills_dispatch.py to point at a local fixture). When set, the\nURL is rewritten to the override host while the path\n<code>/customsearch/v1</code> is preserved.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.WikipediaSearchSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.WikipediaSearchSkill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin.WikipediaSearchSkill",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.WikipediaSearchSkill.yml\" sourcestartlinenumber=\"1\">Wikipedia search skill backed by the public Wikipedia REST API.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.WikipediaSearchSkill.yml\" sourcestartlinenumber=\"3\">Mirrors signalwire-python's <code>signalwire.skills.wikipedia_search.skill</code>.\nThe Python skill makes two API calls per query — first\n<code>action=query&amp;list=search</code> to find article titles, then\n<code>action=query&amp;prop=extracts</code> to fetch each article's intro\nextract. Returns the article(s) as <code><strong sourcefile=\"api/SignalWire.Skills.Builtin.WikipediaSearchSkill.yml\" sourcestartlinenumber=\"7\">Title</strong>\\n\\nExtract</code> joined\nby separators.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.WikipediaSearchSkill.yml\" sourcestartlinenumber=\"10\">Upstream URL override: <code>WIKIPEDIA_BASE_URL</code>. Path\n<code>/w/api.php</code> is preserved when the env var is set so the audit\nfixture sees the documented Wikipedia API path on the wire.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.Builtin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.Builtin.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.Builtin",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.SkillBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.SkillBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.SkillBase",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.SkillBase.yml\" sourcestartlinenumber=\"1\">Abstract base class for all skills. Provides lifecycle hooks, tool registration,\nhint/globalData/prompt merging, and a <xref href=\"SignalWire.Skills.SkillBase.DefineTool(System.String%2cSystem.String%2cSystem.Collections.Generic.Dictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Func%7bSystem.Collections.Generic.Dictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Collections.Generic.Dictionary%7bSystem.String%2cSystem.Object%7d%2cSignalWire.SWAIG.FunctionResult%7d)\" data-throw-if-not-resolved=\"false\"></xref> helper that\ndelegates to the owning agent.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.SkillManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.SkillManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.SkillManager",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.SkillManager.yml\" sourcestartlinenumber=\"1\">Loads, unloads, and queries skills on behalf of an <xref href=\"SignalWire.Agent.AgentBase\" data-throw-if-not-resolved=\"false\"></xref>.\nValidates env vars, calls Setup/RegisterTools, and merges hints/globalData/prompts.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.SkillRegistry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.SkillRegistry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.SkillRegistry",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.SkillRegistry.yml\" sourcestartlinenumber=\"1\">Thread-safe singleton that maps snake_case skill names to factory delegates.\nAll 18 built-in skills are registered lazily on first access.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Utils.ExecutionMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Utils.ExecutionMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Utils.ExecutionMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Utils.UrlValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Utils.UrlValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Utils.UrlValidator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Utils.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Utils",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

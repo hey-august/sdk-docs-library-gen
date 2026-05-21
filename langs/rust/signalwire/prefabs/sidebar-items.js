@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["bedrock","concierge","faq_bot","info_gatherer","receptionist","survey"]};

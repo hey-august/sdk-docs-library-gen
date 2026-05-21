@@ -1,0 +1,26 @@
+var structsignalwire_1_1relay_1_1Message =
+[
+    [ "CompletedCallback", "structsignalwire_1_1relay_1_1Message.html#a3c09f588e514814f9b6ddcd76b893f43", null ],
+    [ "Message", "structsignalwire_1_1relay_1_1Message.html#a19566440c226f7aa82d0e0c0479f0904", null ],
+    [ "Message", "structsignalwire_1_1relay_1_1Message.html#a76aea1737734b28f76a5292e0cd4d1ca", null ],
+    [ "~Message", "structsignalwire_1_1relay_1_1Message.html#a6bcdf1c075dc0671354abde4299a4cb4", null ],
+    [ "is_delivered", "structsignalwire_1_1relay_1_1Message.html#a6739fdebd8fd4d61b69fce0a1b5bb3a2", null ],
+    [ "is_failed", "structsignalwire_1_1relay_1_1Message.html#af5744c3c2d5529ef376ee1795af44576", null ],
+    [ "is_terminal", "structsignalwire_1_1relay_1_1Message.html#aa0dd5d3149ec60818f58ee3e6d6b5801", null ],
+    [ "on_completed", "structsignalwire_1_1relay_1_1Message.html#afcab7dcaa208ee0d0f2a40ec50011f09", null ],
+    [ "operator=", "structsignalwire_1_1relay_1_1Message.html#acc565fb66732a0da17d32d164975e788", null ],
+    [ "reason", "structsignalwire_1_1relay_1_1Message.html#a24fab07a8a82b4e37bf400c18421cd45", null ],
+    [ "set_reason", "structsignalwire_1_1relay_1_1Message.html#a1c71059a43982e5036499d604aabf3e5", null ],
+    [ "set_state", "structsignalwire_1_1relay_1_1Message.html#a75acbc08d05045bf579d782008e28d11", null ],
+    [ "state", "structsignalwire_1_1relay_1_1Message.html#a833a4b3639c0d3c89c084830759c1423", null ],
+    [ "update_state", "structsignalwire_1_1relay_1_1Message.html#a9c62e8b932beb94de74cb2f2d0bad48b", null ],
+    [ "wait", "structsignalwire_1_1relay_1_1Message.html#a11bedfe298bc164afb5e4f52349a5613", null ],
+    [ "body", "structsignalwire_1_1relay_1_1Message.html#a016079a0a37fba8cc90a16f4e2f2d6db", null ],
+    [ "direction", "structsignalwire_1_1relay_1_1Message.html#acd99f0c86798e8190c4fba2b94a14a51", null ],
+    [ "from", "structsignalwire_1_1relay_1_1Message.html#a81f13e6de7cfa9b20d8e6616aed56920", null ],
+    [ "media", "structsignalwire_1_1relay_1_1Message.html#a6fbe077ee21d47c921b4a1a1001f77cd", null ],
+    [ "message_id", "structsignalwire_1_1relay_1_1Message.html#a1c89a17068e4ab4c0998276bfe946406", null ],
+    [ "region", "structsignalwire_1_1relay_1_1Message.html#a5ce5e1f2f81ec3989c410a4b3775eed8", null ],
+    [ "tags", "structsignalwire_1_1relay_1_1Message.html#ab2c630b84c0acd45ebe5b8217436f2c6", null ],
+    [ "to", "structsignalwire_1_1relay_1_1Message.html#a4f5513e55e0693d3d749f17238171a5d", null ]
+];

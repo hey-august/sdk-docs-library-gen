@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace SignalWire.Skills.Builtin | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace SignalWire.Skills.Builtin | SignalWire .NET SDK ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.Skills.Builtin">
+
+  <h1 id="SignalWire_Skills_Builtin" data-uid="SignalWire.Skills.Builtin" class="text-break">Namespace SignalWire.Skills.Builtin</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.ApiNinjasTriviaSkill.html">ApiNinjasTriviaSkill</a></dt>
+      <dd><p>Get trivia questions from API Ninjas (DataMap).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.ClaudeSkillsSkill.html">ClaudeSkillsSkill</a></dt>
+      <dd><p>Load Claude SKILL.md files as agent tools.</p>
+<p>Mirrors signalwire-python's <code>signalwire.skills.claude_skills.skill</code>.
+At setup time, the skill walks <code>skills_path</code> for child directories
+containing <code>SKILL.md</code>; each such file is parsed for YAML
+frontmatter (the bit between two <code>---</code> lines) plus a markdown
+body. Each loaded skill becomes one SWAIG tool whose handler returns
+the body with three substitutions:</p>
+<ul><li><code>$ARGUMENTS</code> / <code>$ARGUMENTS[N]</code> / <code>$N</code> — the
+    <code>arguments</code> string passed to the tool, optionally split into
+    positional pieces by whitespace.</li><li><code>${CLAUDE_SKILL_DIR}</code> — absolute path to the skill's
+    directory.</li><li><code>${CLAUDE_SESSION_ID}</code> — call id from raw_data.</li></ul>
+<p>The full Python implementation also runs a frontmatter-driven invocation
+gate (skip-tool / skip-prompt), tolerates supporting reference sections,
+and offers an opt-in shell-injection preprocessor (<code>!<code>cmd</code></code>). The
+.NET port ships the discovery/parse/handler core; the optional shell
+preprocessor is left out by design (set <code>allow_shell_injection</code>
+to a no-op — the surface is preserved for future expansion).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.CustomSkillsSkill.html">CustomSkillsSkill</a></dt>
+      <dd><p>Register user-defined custom tools.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.DatasphereServerlessSkill.html">DatasphereServerlessSkill</a></dt>
+      <dd><p>Search knowledge using SignalWire DataSphere with serverless DataMap execution.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.DatasphereSkill.html">DatasphereSkill</a></dt>
+      <dd><p>SignalWire DataSphere knowledge-base search skill.</p>
+<p>Mirrors signalwire-python's <code>signalwire.skills.datasphere.skill</code>.
+POSTs a JSON body to <code>https://&lt;space_name&gt;.signalwire.com
+/api/datasphere/documents/search</code> with HTTP Basic auth
+(project_id : token). Real DataSphere returns matches under
+<code>chunks</code>; the porting-sdk audit fixture uses <code>results</code>;
+accept either so the skill round-trips against the live API and the
+offline audit alike (matching the precedent already in Java/PHP/Perl/
+Rust).</p>
+<p>Upstream URL override: <code>DATASPHERE_BASE_URL</code>. Path
+<code>/api/datasphere/documents/search</code> is preserved.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.DatetimeSkill.html">DatetimeSkill</a></dt>
+      <dd><p>Get current date, time, and timezone information.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.GoogleMapsSkill.html">GoogleMapsSkill</a></dt>
+      <dd><p>Validate addresses and compute driving routes using Google Maps (DataMap).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.InfoGathererSkill.html">InfoGathererSkill</a></dt>
+      <dd><p>Gather answers to a configurable list of questions.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.JokeSkill.html">JokeSkill</a></dt>
+      <dd><p>Tell jokes using the API Ninjas joke API (DataMap).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.MathSkill.html">MathSkill</a></dt>
+      <dd><p>Perform basic mathematical calculations.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.McpGatewaySkill.html">McpGatewaySkill</a></dt>
+      <dd><p>Bridge MCP (Model Context Protocol) servers with SWAIG functions.</p>
+<p>Mirrors signalwire-python's <code>signalwire.skills.mcp_gateway.skill</code>.
+Each configured service gets one or more SWAIG tools whose handler
+POSTs to the gateway with the tool name, arguments, and per-call
+session id (derived from <code>raw_data.global_data.mcp_call_id</code> if
+present, else <code>raw_data.call_id</code>).</p>
+<p>Auth: <code>auth_token</code> (Bearer) or <code>auth_user</code>/<code>auth_password</code>
+(Basic). The skill prefers Bearer when both are configured.</p>
+<p>Endpoint shape: <code>POST &lt;gateway_url&gt;/services/&lt;service&gt;/call</code>
+per the Python implementation. Audit fixtures point <code>gateway_url</code>
+at a loopback URL via the per-skill convention.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.NativeVectorSearchSkill.html">NativeVectorSearchSkill</a></dt>
+      <dd><p>Vector / keyword similarity search.</p>
+<p>Mirrors signalwire-python's <code>signalwire.skills.native_vector_search.skill</code>
+in <strong>remote mode only</strong>. Local-mode SQLite/pgvector
+indexing relies on Python-only deps (sentence-transformers, FAISS,
+pgvector) and is not portable to the .NET BCL — recorded in
+<code>PORT_OMISSIONS.md</code>. The remote mode POSTs the query to the
+configured search server, which returns a real-shape response the
+audit verifies on the wire.</p>
+<p>The handler reads <code>remote_url</code> from skill params; the audit
+fixture sets it to a loopback URL so the SDK exercises the real
+transport against canned bytes.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.PlayBackgroundFileSkill.html">PlayBackgroundFileSkill</a></dt>
+      <dd><p>Control background file playback (DataMap).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.SpiderSkill.html">SpiderSkill</a></dt>
+      <dd><p>Web scraping / crawling skill.</p>
+<p>Mirrors signalwire-python's <code>signalwire.skills.spider.skill</code>. The
+Python implementation uses lxml + BeautifulSoup for selector-based
+extraction; the .NET port ships a faithful HTTP fetch + regex-based
+HTML stripping (script/style removal, tag removal, whitespace
+collapse, smart truncation). That covers the canonical
+<code>fast_text</code> / <code>clean_text</code> path the audit exercises;
+selector-driven structured extraction can be layered on later.</p>
+<p>Upstream URL override: <code>SPIDER_BASE_URL</code>. The skill rewrites the
+fetch host while preserving the requested URL's path + query so the
+audit fixture sees the documented page on the wire.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.SwmlTransferSkill.html">SwmlTransferSkill</a></dt>
+      <dd><p>Transfer calls between agents based on pattern matching (DataMap).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.WeatherApiSkill.html">WeatherApiSkill</a></dt>
+      <dd><p>Get current weather information from WeatherAPI.com (DataMap).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.WebSearchSkill.html">WebSearchSkill</a></dt>
+      <dd><p>Web search skill backed by Google Custom Search.</p>
+<p>Mirrors signalwire-python's <code>signalwire.skills.web_search.skill</code>
+(the <code>WebSearchSkill.search_and_scrape_best</code> path). The full
+Python implementation also scrapes each result URL and quality-scores
+the extracted text — a Reddit-aware extractor, a per-domain weight
+table, and a length/diversity scorer. The .NET port ships the search
+call faithfully and falls back to formatted titles+snippets when the
+per-result scrape isn't requested. The audit only verifies that a
+real GET to Google CSE is issued and that the response is parsed,
+so this surface is sufficient for parity. Per-result scraping can be
+layered on top without breaking the audit contract.</p>
+<p>Upstream URL override: <code>WEB_SEARCH_BASE_URL</code> (used by
+audit_skills_dispatch.py to point at a local fixture). When set, the
+URL is rewritten to the override host while the path
+<code>/customsearch/v1</code> is preserved.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Skills.Builtin.WikipediaSearchSkill.html">WikipediaSearchSkill</a></dt>
+      <dd><p>Wikipedia search skill backed by the public Wikipedia REST API.</p>
+<p>Mirrors signalwire-python's <code>signalwire.skills.wikipedia_search.skill</code>.
+The Python skill makes two API calls per query — first
+<code>action=query&amp;list=search</code> to find article titles, then
+<code>action=query&amp;prop=extracts</code> to fetch each article's intro
+extract. Returns the article(s) as <code><strong>Title</strong>\n\nExtract</code> joined
+by separators.</p>
+<p>Upstream URL override: <code>WIKIPEDIA_BASE_URL</code>. Path
+<code>/w/api.php</code> is preserved when the env var is set so the audit
+fixture sees the documented Wikipedia API path on the wire.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

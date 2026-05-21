@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: SignalWire::Contexts
+  
+    &mdash; SignalWire Ruby SDK
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "SignalWire::Contexts";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span>
+     &raquo; 
+    <span class="title">Contexts</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: SignalWire::Contexts
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/signalwire/contexts/context_builder.rb
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Contexts/Context.html" title="SignalWire::Contexts::Context (class)">Context</a></span>, <span class='object_link'><a href="Contexts/ContextBuilder.html" title="SignalWire::Contexts::ContextBuilder (class)">ContextBuilder</a></span>, <span class='object_link'><a href="Contexts/GatherInfo.html" title="SignalWire::Contexts::GatherInfo (class)">GatherInfo</a></span>, <span class='object_link'><a href="Contexts/GatherQuestion.html" title="SignalWire::Contexts::GatherQuestion (class)">GatherQuestion</a></span>, <span class='object_link'><a href="Contexts/Step.html" title="SignalWire::Contexts::Step (class)">Step</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="MAX_CONTEXTS-constant" class="">MAX_CONTEXTS =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>50</span></pre></dd>
+      
+        <dt id="MAX_STEPS_PER_CONTEXT-constant" class="">MAX_STEPS_PER_CONTEXT =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>100</span></pre></dd>
+      
+        <dt id="RESERVED_NATIVE_TOOL_NAMES-constant" class="">RESERVED_NATIVE_TOOL_NAMES =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Reserved tool names auto-injected by the runtime when contexts/steps
+are present. User-defined SWAIG tools must not collide with these
+names.</p>
+<pre class="code ruby"><code class="ruby">- next_step / change_context are injected when valid_steps or
+valid_contexts is set so the model can navigate the flow.
+- gather_submit is injected while a step&#39;s gather_info is
+collecting answers.
+</code></pre>
+<p>ContextBuilder#validate! rejects any agent that registers a user
+tool sharing one of these names — the runtime would never call the
+user tool because the native one wins.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='qwords_beg'>%w[</span><span class='tstring_content'>next_step</span><span class='words_sep'> </span><span class='tstring_content'>change_context</span><span class='words_sep'> </span><span class='tstring_content'>gather_submit</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_simple_context-class_method" title="create_simple_context (class method)">.<strong>create_simple_context</strong>(name = &#39;default&#39;)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Helper to create a standalone context (not via ContextBuilder).</p></div></span>
+  
+</li>
+
+      
+    </ul>
+    
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="create_simple_context-class_method">
+  
+    .<strong>create_simple_context</strong>(name = &#39;default&#39;)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Helper to create a standalone context (not via ContextBuilder).</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+857
+858
+859</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/contexts/context_builder.rb', line 857</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_simple_context'>create_simple_context</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>default</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Contexts/Context.html" title="SignalWire::Contexts::Context (class)">Context</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Contexts/Context.html#initialize-instance_method" title="SignalWire::Contexts::Context#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu May 21 15:20:54 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.43 (ruby-3.1.4).
+</div>
+
+    </div>
+  </body>
+</html>

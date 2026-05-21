@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>lambda — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda" class="active">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="lambda">lambda</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/lambda&quot;</span>
+</code></pre></div>
+
+<p>Package lambda adapts a net/http handler produced by the SignalWire Agents SDK (typically agent.AsRouter()) so it can run inside AWS Lambda.</p>
+<p>The adapter translates a Lambda invocation event into a synthetic *http.Request, runs the underlying handler against an in-memory response recorder, and marshals the recorder's result back into the Lambda response type that matches the invoking event.</p>
+<p>Two event shapes are supported, because they are the two ways an AI agent is realistically exposed over HTTP on Lambda:</p>
+<ul>
+<li>
+<p>Lambda Function URLs (events.LambdaFunctionURLRequest / LambdaFunctionURLResponse). This is the simplest deployment and the one we recommend; no API Gateway is required.</p>
+</li>
+<li>
+<p>API Gateway HTTP API v2 (events.APIGatewayV2HTTPRequest / APIGatewayV2HTTPResponse). Identical payload shape in practice, but consumers with an API Gateway layer want the exact response type rather than an assignable alias.</p>
+</li>
+</ul>
+<p>The classic REST API (v1) payload is intentionally not supported as a first-class path to keep this package small. Users who need v1 can wrap it via github.com/awslabs/aws-lambda-go-api-proxy.</p>
+<h3 id="usage">Usage</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">package</span> <span class="n">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+    <span class="s2">&quot;github.com/aws/aws-lambda-go/lambda&quot;</span>
+    <span class="n">swlambda</span> <span class="s2">&quot;github.com/signalwire/signalwire-go/pkg/lambda&quot;</span>
+    <span class="s2">&quot;github.com/signalwire/signalwire-go/pkg/agent&quot;</span>
+<span class="p">)</span>
+
+<span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">NewAgentBase</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">WithName</span><span class="p">(</span><span class="s2">&quot;MyAgent&quot;</span><span class="p">),</span> <span class="n">agent</span><span class="o">.</span><span class="n">WithRoute</span><span class="p">(</span><span class="s2">&quot;/my-agent&quot;</span><span class="p">))</span>
+<span class="n">var</span> <span class="n">handler</span> <span class="o">=</span> <span class="n">swlambda</span><span class="o">.</span><span class="n">NewHandler</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">AsRouter</span><span class="p">())</span>
+
+<span class="n">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">lambda</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">handler</span><span class="o">.</span><span class="n">HandleFunctionURL</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Because agent.AsRouter() installs routes relative to the agent's Route (e.g. /my-agent, /my-agent/swaig), the Lambda event's RawPath must line up with that Route. Lambda Function URLs preserve the full request path unchanged, so no rewriting is needed in the common case.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#Handler">type Handler</a></li>
+<li><a href="#NewHandler">func NewHandler(h http.Handler) *Handler</a></li>
+<li><a href="#Handler.HandleAPIGatewayV2">func (l *Handler) HandleAPIGatewayV2(ctx context.Context, req events.APIGatewayV2HTTPRequest) (events.APIGatewayV2HTTPResponse, error)</a></li>
+<li><a href="#Handler.HandleFunctionURL">func (l *Handler) HandleFunctionURL(ctx context.Context, req events.LambdaFunctionURLRequest) (events.LambdaFunctionURLResponse, error)</a></li>
+</ul>
+<p><a name="Handler"></a></p>
+<h2 id="type-handler">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/lambda/lambda.go#L65-L67">Handler</a></h2>
+<p>Handler wraps an http.Handler so it can service AWS Lambda invocations. Construct one with NewHandler.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Handler</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewHandler"></a></p>
+<h3 id="func-newhandler">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/lambda/lambda.go#L75">NewHandler</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewHandler</span><span class="p">(</span><span class="nx">h</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Handler</span>
+</code></pre></div>
+
+<p>NewHandler returns a Handler that dispatches Lambda events to the given http.Handler. The handler is usually agent.AsRouter() but any http.Handler works.</p>
+<p>Panics if h is nil to fail loudly at cold-start rather than silently returning 500 on every invocation.</p>
+<p><a name="Handler.HandleAPIGatewayV2"></a></p>
+<h3 id="func-handler-handleapigatewayv2">func (*Handler) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/lambda/lambda.go#L107">HandleAPIGatewayV2</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">l</span><span class="w"> </span><span class="o">*</span><span class="nx">Handler</span><span class="p">)</span><span class="w"> </span><span class="nx">HandleAPIGatewayV2</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">req</span><span class="w"> </span><span class="nx">events</span><span class="p">.</span><span class="nx">APIGatewayV2HTTPRequest</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">events</span><span class="p">.</span><span class="nx">APIGatewayV2HTTPResponse</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>HandleAPIGatewayV2 processes an API Gateway HTTP API v2 invocation. The payload shape is virtually identical to Function URLs, but the response type differs, so we provide a dedicated entry point.</p>
+<p><a name="Handler.HandleFunctionURL"></a></p>
+<h3 id="func-handler-handlefunctionurl">func (*Handler) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/lambda/lambda.go#L84">HandleFunctionURL</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">l</span><span class="w"> </span><span class="o">*</span><span class="nx">Handler</span><span class="p">)</span><span class="w"> </span><span class="nx">HandleFunctionURL</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">req</span><span class="w"> </span><span class="nx">events</span><span class="p">.</span><span class="nx">LambdaFunctionURLRequest</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">events</span><span class="p">.</span><span class="nx">LambdaFunctionURLResponse</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>HandleFunctionURL processes a Lambda Function URL invocation. It is intended to be passed to github.com/aws/aws-lambda-go/lambda.Start.</p>
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

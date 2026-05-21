@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>skills — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills" class="active">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="skills">skills</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/skills&quot;</span>
+</code></pre></div>
+
+<p>Package skills provides the skills system for SignalWire AI agents. Skills are modular capabilities that can be loaded into agents to provide tools, prompt sections, speech hints, and global data.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#AddSkillDirectory">func AddSkillDirectory(path string) error</a></li>
+<li><a href="#GetSkillFactory">func GetSkillFactory(name string) func(params map[string]any) SkillBase</a></li>
+<li><a href="#ListSkills">func ListSkills() []string</a></li>
+<li><a href="#ListSkillsWithParams">func ListSkillsWithParams() map[string]map[string]map[string]any</a></li>
+<li><a href="#RegisterSkill">func RegisterSkill(name string, factory func(params map[string]any) SkillBase)</a></li>
+<li><a href="#BaseSkill">type BaseSkill</a></li>
+<li><a href="#BaseSkill.Cleanup">func (b *BaseSkill) Cleanup()</a></li>
+<li><a href="#BaseSkill.Description">func (b *BaseSkill) Description() string</a></li>
+<li><a href="#BaseSkill.GetGlobalData">func (b *BaseSkill) GetGlobalData() map[string]any</a></li>
+<li><a href="#BaseSkill.GetHints">func (b *BaseSkill) GetHints() []string</a></li>
+<li><a href="#BaseSkill.GetInstanceKey">func (b *BaseSkill) GetInstanceKey() string</a></li>
+<li><a href="#BaseSkill.GetParam">func (b *BaseSkill) GetParam(key string) (any, bool)</a></li>
+<li><a href="#BaseSkill.GetParamBool">func (b *BaseSkill) GetParamBool(key string, defaultVal bool) bool</a></li>
+<li><a href="#BaseSkill.GetParamFloat">func (b *BaseSkill) GetParamFloat(key string, defaultVal float64) float64</a></li>
+<li><a href="#BaseSkill.GetParamInt">func (b *BaseSkill) GetParamInt(key string, defaultVal int) int</a></li>
+<li><a href="#BaseSkill.GetParamString">func (b *BaseSkill) GetParamString(key, defaultVal string) string</a></li>
+<li><a href="#BaseSkill.GetParameterSchema">func (b *BaseSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#BaseSkill.GetPromptSections">func (b *BaseSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#BaseSkill.GetSkillData">func (b *BaseSkill) GetSkillData(rawData map[string]any) map[string]any</a></li>
+<li><a href="#BaseSkill.GetSkillNamespace">func (b *BaseSkill) GetSkillNamespace() string</a></li>
+<li><a href="#BaseSkill.Name">func (b *BaseSkill) Name() string</a></li>
+<li><a href="#BaseSkill.RequiredEnvVars">func (b *BaseSkill) RequiredEnvVars() []string</a></li>
+<li><a href="#BaseSkill.ShouldSkipPrompt">func (b *BaseSkill) ShouldSkipPrompt() bool</a></li>
+<li><a href="#BaseSkill.SupportsMultipleInstances">func (b *BaseSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#BaseSkill.UpdateSkillData">func (b <em>BaseSkill) UpdateSkillData(result </em>swaig.FunctionResult, data map[string]any) *swaig.FunctionResult</a></li>
+<li><a href="#BaseSkill.Version">func (b *BaseSkill) Version() string</a></li>
+<li><a href="#SkillBase">type SkillBase</a></li>
+<li><a href="#SkillManager">type SkillManager</a></li>
+<li><a href="#NewSkillManager">func NewSkillManager() *SkillManager</a></li>
+<li><a href="#SkillManager.GetSkill">func (sm *SkillManager) GetSkill(key string) SkillBase</a></li>
+<li><a href="#SkillManager.HasSkill">func (sm *SkillManager) HasSkill(key string) bool</a></li>
+<li><a href="#SkillManager.ListLoadedSkills">func (sm *SkillManager) ListLoadedSkills() []string</a></li>
+<li><a href="#SkillManager.LoadSkill">func (sm *SkillManager) LoadSkill(skill SkillBase) (bool, string)</a></li>
+<li><a href="#SkillManager.UnloadSkill">func (sm *SkillManager) UnloadSkill(key string) bool</a></li>
+<li><a href="#SkillRegistry">type SkillRegistry</a></li>
+<li><a href="#NewSkillRegistry">func NewSkillRegistry() *SkillRegistry</a></li>
+<li><a href="#SkillRegistry.AddSkillDirectory">func (r *SkillRegistry) AddSkillDirectory(path string) error</a></li>
+<li><a href="#SkillRegistry.ExternalPaths">func (r *SkillRegistry) ExternalPaths() []string</a></li>
+<li><a href="#ToolRegistration">type ToolRegistration</a></li>
+</ul>
+<p><a name="AddSkillDirectory"></a></p>
+<h2 id="func-addskilldirectory">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/registry.go#L135">AddSkillDirectory</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">AddSkillDirectory</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>AddSkillDirectory is a package-level shim that delegates to the shared `globalRegistry.AddSkillDirectory`. It mirrors Python's `signalwire.add_skill_directory` (which delegates to the module singleton `signalwire.skills.registry.skill_registry`).</p>
+<p>The path is validated (must exist and be a directory) and added (de-duplicated) to the global registry's external-paths list. Note that Go compiles to a static binary; dynamic on-disk skill loading is not implemented here, but the path-tracking surface is — so tools that introspect "what external directories has this agent registered?" get the same answer they'd get on the Python side.</p>
+<p><a name="GetSkillFactory"></a></p>
+<h2 id="func-getskillfactory">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/registry.go#L91">GetSkillFactory</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">GetSkillFactory</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>GetSkillFactory returns the factory function for a registered skill name. Returns nil if the skill is not registered.</p>
+<p><a name="ListSkills"></a></p>
+<h2 id="func-listskills">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/registry.go#L98">ListSkills</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">ListSkills</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>ListSkills returns sorted names of all registered skills.</p>
+<p><a name="ListSkillsWithParams"></a></p>
+<h2 id="func-listskillswithparams">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/registry.go#L113">ListSkillsWithParams</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">ListSkillsWithParams</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>ListSkillsWithParams returns the complete parameter schema for all registered skills. It instantiates each skill with nil params to obtain its GetParameterSchema output. This mirrors Python's skill_registry.get_all_skills_schema(). The returned map has skill names as keys and their parameter schemas as values.</p>
+<p><a name="RegisterSkill"></a></p>
+<h2 id="func-registerskill">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/registry.go#L83">RegisterSkill</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">RegisterSkill</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">factory</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">SkillBase</span><span class="p">)</span>
+</code></pre></div>
+
+<p>RegisterSkill registers a skill factory function by name. This is typically called from init() functions in builtin skill packages.</p>
+<p><a name="BaseSkill"></a></p>
+<h2 id="type-baseskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L55-L64">BaseSkill</a></h2>
+<p>BaseSkill provides default implementations for the SkillBase interface. Concrete skills should embed this struct and override methods as needed.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">BaseSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">SkillName</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">SkillDesc</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">SkillVer</span><span class="w">  </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Params</span><span class="w">    </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+<span class="w">    </span><span class="c1">// Logger is a named logger for this skill instance. It is initialized</span>
+<span class="w">    </span><span class="c1">// automatically when Name() is first called via NewBaseSkill, or can be</span>
+<span class="w">    </span><span class="c1">// set explicitly. Mirrors Python SkillBase.logger.</span>
+<span class="w">    </span><span class="nx">Logger</span><span class="w"> </span><span class="o">*</span><span class="nx">logging</span><span class="p">.</span><span class="nx">Logger</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="BaseSkill.Cleanup"></a></p>
+<h3 id="func-baseskill-cleanup">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L111">Cleanup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Cleanup</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Cleanup is a no-op by default.</p>
+<p><a name="BaseSkill.Description"></a></p>
+<h3 id="func-baseskill-description">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L70">Description</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Description</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>Description returns the skill description.</p>
+<p><a name="BaseSkill.GetGlobalData"></a></p>
+<h3 id="func-baseskill-getglobaldata">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L90">GetGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetGlobalData</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetGlobalData returns nil (no global data by default).</p>
+<p><a name="BaseSkill.GetHints"></a></p>
+<h3 id="func-baseskill-gethints">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L87">GetHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetHints returns nil (no hints by default).</p>
+<p><a name="BaseSkill.GetInstanceKey"></a></p>
+<h3 id="func-baseskill-getinstancekey">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L118">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetInstanceKey returns a unique key for tracking this skill instance. When SupportsMultipleInstances() returns true, the key is composed of the skill name and the "tool_name" parameter (defaulting to the skill name), matching Python's get_instance_key() behavior for multi-instance skills. When SupportsMultipleInstances() returns false, returns the skill name.</p>
+<p><a name="BaseSkill.GetParam"></a></p>
+<h3 id="func-baseskill-getparam">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L195">GetParam</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParam</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span>
+</code></pre></div>
+
+<p>GetParam retrieves a parameter value from the skill's Params map. Returns the value and true if found, or nil and false otherwise.</p>
+<p><a name="BaseSkill.GetParamBool"></a></p>
+<h3 id="func-baseskill-getparambool">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L262">GetParamBool</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParamBool</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">defaultVal</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>GetParamBool retrieves a boolean parameter, returning the default if not found.</p>
+<p><a name="BaseSkill.GetParamFloat"></a></p>
+<h3 id="func-baseskill-getparamfloat">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L241">GetParamFloat</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParamFloat</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">defaultVal</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="kt">float64</span>
+</code></pre></div>
+
+<p>GetParamFloat retrieves a float parameter, returning the default if not found.</p>
+<p><a name="BaseSkill.GetParamInt"></a></p>
+<h3 id="func-baseskill-getparamint">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L220">GetParamInt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParamInt</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">defaultVal</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span>
+</code></pre></div>
+
+<p>GetParamInt retrieves an integer parameter, returning the default if not found.</p>
+<p><a name="BaseSkill.GetParamString"></a></p>
+<h3 id="func-baseskill-getparamstring">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L204">GetParamString</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParamString</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">defaultVal</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetParamString retrieves a string parameter, returning the default if not found.</p>
+<p><a name="BaseSkill.GetParameterSchema"></a></p>
+<h3 id="func-baseskill-getparameterschema">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L129">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetParameterSchema returns the common parameters available to all skills. The "tool_name" parameter is only included when SupportsMultipleInstances() returns true, matching Python's conditional inclusion in get_parameter_schema().</p>
+<p><a name="BaseSkill.GetPromptSections"></a></p>
+<h3 id="func-baseskill-getpromptsections">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L103">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetPromptSections returns nil (no prompt sections by default). When skip_prompt is set to true in Params, returns nil even for concrete overrides — concrete overrides that inject prompt sections MUST call ShouldSkipPrompt() and return nil (or an empty slice) when it is true.</p>
+<p><a name="BaseSkill.GetSkillData"></a></p>
+<h3 id="func-baseskill-getskilldata">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L172">GetSkillData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetSkillData</span><span class="p">(</span><span class="nx">rawData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetSkillData reads this skill instance's namespaced state from rawData. rawData is the raw_data map passed to SWAIG function handlers, expected to contain a "global_data" key. Returns an empty map when not found. Mirrors Python's get_skill_data(raw_data).</p>
+<p><a name="BaseSkill.GetSkillNamespace"></a></p>
+<h3 id="func-baseskill-getskillnamespace">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L161">GetSkillNamespace</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetSkillNamespace</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetSkillNamespace returns the namespaced key used to store this skill instance's state in agent global_data. Uses the "prefix" parameter if set, otherwise falls back to the instance key. Mirrors Python's _get_skill_namespace().</p>
+<p>Example: a skill named "datasphere" with no prefix returns "skill:datasphere". With prefix "kb" it returns "skill:kb".</p>
+<p><a name="BaseSkill.Name"></a></p>
+<h3 id="func-baseskill-name">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L67">Name</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Name</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>Name returns the skill name.</p>
+<p><a name="BaseSkill.RequiredEnvVars"></a></p>
+<h3 id="func-baseskill-requiredenvvars">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L81">RequiredEnvVars</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RequiredEnvVars</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>RequiredEnvVars returns nil (no required env vars by default).</p>
+<p><a name="BaseSkill.ShouldSkipPrompt"></a></p>
+<h3 id="func-baseskill-shouldskipprompt">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L95">ShouldSkipPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">ShouldSkipPrompt</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>ShouldSkipPrompt returns true if the "skip_prompt" parameter is set to true. Concrete skill overrides of GetPromptSections should call this helper before returning prompt content, mirroring Python's get_prompt_sections() guard.</p>
+<p><a name="BaseSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-baseskill-supportsmultipleinstances">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L84">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>SupportsMultipleInstances returns false by default.</p>
+<p><a name="BaseSkill.UpdateSkillData"></a></p>
+<h3 id="func-baseskill-updateskilldata">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L187">UpdateSkillData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">UpdateSkillData</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="o">*</span><span class="nx">swaig</span><span class="p">.</span><span class="nx">FunctionResult</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">swaig</span><span class="p">.</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>UpdateSkillData writes this skill instance's namespaced state into result's global_data via result.UpdateGlobalData(). Returns result for method chaining. Mirrors Python's update_skill_data(result, data).</p>
+<p><a name="BaseSkill.Version"></a></p>
+<h3 id="func-baseskill-version">func (*BaseSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L73">Version</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">BaseSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Version</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>Version returns the skill version, defaulting to "1.0.0".</p>
+<p><a name="SkillBase"></a></p>
+<h2 id="type-skillbase">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L12-L40">SkillBase</a></h2>
+<p>SkillBase defines the interface that all skills must implement.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SkillBase</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Name returns the unique skill identifier.</span>
+<span class="w">    </span><span class="nx">Name</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Description returns a human-readable description of the skill.</span>
+<span class="w">    </span><span class="nx">Description</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Version returns the semantic version of the skill.</span>
+<span class="w">    </span><span class="nx">Version</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// RequiredEnvVars returns environment variable names that must be set.</span>
+<span class="w">    </span><span class="nx">RequiredEnvVars</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// SupportsMultipleInstances returns whether multiple instances are allowed.</span>
+<span class="w">    </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// Setup validates configuration and initializes the skill.</span>
+<span class="w">    </span><span class="c1">// Returns true if setup was successful.</span>
+<span class="w">    </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// RegisterTools returns tool registrations for this skill.</span>
+<span class="w">    </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">ToolRegistration</span>
+<span class="w">    </span><span class="c1">// GetHints returns speech recognition hints for this skill.</span>
+<span class="w">    </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// GetGlobalData returns data to add to the agent&#39;s global context.</span>
+<span class="w">    </span><span class="nx">GetGlobalData</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+<span class="w">    </span><span class="c1">// GetPromptSections returns prompt sections to inject into the agent.</span>
+<span class="w">    </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+<span class="w">    </span><span class="c1">// Cleanup releases resources when the skill is unloaded.</span>
+<span class="w">    </span><span class="nx">Cleanup</span><span class="p">()</span>
+<span class="w">    </span><span class="c1">// GetInstanceKey returns a unique key for tracking this skill instance.</span>
+<span class="w">    </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// GetParameterSchema returns metadata about all parameters the skill accepts.</span>
+<span class="w">    </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="SkillManager"></a></p>
+<h2 id="type-skillmanager">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/manager.go#L10-L13">SkillManager</a></h2>
+<p>SkillManager manages the lifecycle of loaded skill instances.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SkillManager</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewSkillManager"></a></p>
+<h3 id="func-newskillmanager">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/manager.go#L16">NewSkillManager</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewSkillManager</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">SkillManager</span>
+</code></pre></div>
+
+<p>NewSkillManager creates a new SkillManager.</p>
+<p><a name="SkillManager.GetSkill"></a></p>
+<h3 id="func-skillmanager-getskill">func (*SkillManager) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/manager.go#L98">GetSkill</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">sm</span><span class="w"> </span><span class="o">*</span><span class="nx">SkillManager</span><span class="p">)</span><span class="w"> </span><span class="nx">GetSkill</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>GetSkill returns the skill with the given instance key, or nil if not found.</p>
+<p><a name="SkillManager.HasSkill"></a></p>
+<h3 id="func-skillmanager-hasskill">func (*SkillManager) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/manager.go#L90">HasSkill</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">sm</span><span class="w"> </span><span class="o">*</span><span class="nx">SkillManager</span><span class="p">)</span><span class="w"> </span><span class="nx">HasSkill</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>HasSkill returns true if a skill with the given instance key is loaded.</p>
+<p><a name="SkillManager.ListLoadedSkills"></a></p>
+<h3 id="func-skillmanager-listloadedskills">func (*SkillManager) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/manager.go#L78">ListLoadedSkills</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">sm</span><span class="w"> </span><span class="o">*</span><span class="nx">SkillManager</span><span class="p">)</span><span class="w"> </span><span class="nx">ListLoadedSkills</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>ListLoadedSkills returns the instance keys of all loaded skills.</p>
+<p><a name="SkillManager.LoadSkill"></a></p>
+<h3 id="func-skillmanager-loadskill">func (*SkillManager) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/manager.go#L30">LoadSkill</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">sm</span><span class="w"> </span><span class="o">*</span><span class="nx">SkillManager</span><span class="p">)</span><span class="w"> </span><span class="nx">LoadSkill</span><span class="p">(</span><span class="nx">skill</span><span class="w"> </span><span class="nx">SkillBase</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>LoadSkill validates environment variables, calls Setup, and registers the skill. Returns (success bool, errorMessage string).</p>
+<p>When a skill with the same instance key is already loaded, the behavior depends on SupportsMultipleInstances():</p>
+<ul>
+<li>false (default): returns (false, error) — duplicate is an error.</li>
+<li>true: returns (true, "") — duplicate instance is silently accepted, matching Python's SkillManager.load_skill() warning-and-continue behavior.</li>
+</ul>
+<p><a name="SkillManager.UnloadSkill"></a></p>
+<h3 id="func-skillmanager-unloadskill">func (*SkillManager) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/manager.go#L63">UnloadSkill</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">sm</span><span class="w"> </span><span class="o">*</span><span class="nx">SkillManager</span><span class="p">)</span><span class="w"> </span><span class="nx">UnloadSkill</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>UnloadSkill removes a skill by its instance key. Returns true if found and removed.</p>
+<p><a name="SkillRegistry"></a></p>
+<h2 id="type-skillregistry">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/registry.go#L25-L28">SkillRegistry</a></h2>
+<p>SkillRegistry is the per-instance Python-parity surface mirroring `signalwire.skills.registry.SkillRegistry`. Each instance owns its own list of external skill directories, validated and de-duplicated on insert. The package-level `RegisterSkill` / `GetSkillFactory` / `ListSkills` functions remain the canonical Go API for static compile-time skill registration; `SkillRegistry` exists so the `add_skill_directory` parity case has a real owning object the audit and downstream callers can hold.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SkillRegistry</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewSkillRegistry"></a></p>
+<h3 id="func-newskillregistry">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/registry.go#L34">NewSkillRegistry</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewSkillRegistry</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">SkillRegistry</span>
+</code></pre></div>
+
+<p>NewSkillRegistry constructs a new SkillRegistry. The Python reference uses a singleton-per-module (`skill_registry`); Go callers can either construct their own via NewSkillRegistry() or use the global `globalRegistry` accessed through the package-level helpers.</p>
+<p><a name="SkillRegistry.AddSkillDirectory"></a></p>
+<h3 id="func-skillregistry-addskilldirectory">func (*SkillRegistry) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/registry.go#L49">AddSkillDirectory</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">SkillRegistry</span><span class="p">)</span><span class="w"> </span><span class="nx">AddSkillDirectory</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>AddSkillDirectory adds a directory to search for skills. Mirrors Python's `SkillRegistry.add_skill_directory`: validates that the path exists and is a directory, then appends it (de-duplicated) to the registry's external paths list. Returns an error (the Go analog of Python's `ValueError`) for non-existent paths or non-directories.</p>
+<p><a name="SkillRegistry.ExternalPaths"></a></p>
+<h3 id="func-skillregistry-externalpaths">func (*SkillRegistry) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/registry.go#L73">ExternalPaths</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">SkillRegistry</span><span class="p">)</span><span class="w"> </span><span class="nx">ExternalPaths</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>ExternalPaths returns a copy of the registered external skill directories. Parity surface for Python's `_external_paths`.</p>
+<p><a name="ToolRegistration"></a></p>
+<h2 id="type-toolregistration">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/skill_base.go#L43-L51">ToolRegistration</a></h2>
+<p>ToolRegistration describes a tool that a skill wants to register with the agent.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ToolRegistration</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">        </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Description</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Parameters</span><span class="w">  </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+<span class="w">    </span><span class="nx">Handler</span><span class="w">     </span><span class="nx">swaig</span><span class="p">.</span><span class="nx">ToolHandler</span>
+<span class="w">    </span><span class="nx">Secure</span><span class="w">      </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Fillers</span><span class="w">     </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">SwaigFields</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

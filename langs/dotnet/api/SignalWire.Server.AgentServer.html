@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AgentServer | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AgentServer | SignalWire .NET SDK ">
+      
+      <meta name="description" content="Multi-agent HTTP server. Registers agents at routes, dispatches requests by longest prefix match, serves static files with path-traversal protection, handles health/ready/root-index, and supports SIP routing.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.Server.AgentServer">
+
+
+
+  <h1 id="SignalWire_Server_AgentServer" data-uid="SignalWire.Server.AgentServer" class="text-break">
+Class AgentServer  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SignalWire.html">SignalWire</a>.<a class="xref" href="SignalWire.Server.html">Server</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SignalWire.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Multi-agent HTTP server. Registers agents at routes, dispatches requests by
+longest prefix match, serves static files with path-traversal protection,
+handles health/ready/root-index, and supports SIP routing.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AgentServer</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">AgentServer</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SignalWire_Server_AgentServer__ctor_" data-uid="SignalWire.Server.AgentServer.#ctor*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer__ctor_System_String_System_Nullable_System_Int32__System_String_" data-uid="SignalWire.Server.AgentServer.#ctor(System.String,System.Nullable{System.Int32},System.String)">
+  AgentServer(string, int?, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentServer(string host = &quot;0.0.0.0&quot;, int? port = null, string logLevel = &quot;info&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>host</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>port</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+    <dt><code>logLevel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SignalWire_Server_AgentServer_Host_" data-uid="SignalWire.Server.AgentServer.Host*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_Host" data-uid="SignalWire.Server.AgentServer.Host">
+  Host
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Host { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Server_AgentServer_IsSipRoutingEnabled_" data-uid="SignalWire.Server.AgentServer.IsSipRoutingEnabled*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_IsSipRoutingEnabled" data-uid="SignalWire.Server.AgentServer.IsSipRoutingEnabled">
+  IsSipRoutingEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSipRoutingEnabled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Server_AgentServer_Logger_" data-uid="SignalWire.Server.AgentServer.Logger*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_Logger" data-uid="SignalWire.Server.AgentServer.Logger">
+  Logger
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The agent_server logger. (Python parity:
+<code>AgentServer.logger</code> instance attribute.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Logger Logger { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Logging.Logger.html">Logger</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Server_AgentServer_Port_" data-uid="SignalWire.Server.AgentServer.Port*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_Port" data-uid="SignalWire.Server.AgentServer.Port">
+  Port
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Port { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SignalWire_Server_AgentServer_GetAgent_" data-uid="SignalWire.Server.AgentServer.GetAgent*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_GetAgent_System_String_" data-uid="SignalWire.Server.AgentServer.GetAgent(System.String)">
+  GetAgent(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase? GetAgent(string route)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>route</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Server_AgentServer_GetAgents_" data-uid="SignalWire.Server.AgentServer.GetAgents*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_GetAgents" data-uid="SignalWire.Server.AgentServer.GetAgents">
+  GetAgents()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return all registered routes (sorted).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; GetAgents()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Server_AgentServer_GetSipUsernameMapping_" data-uid="SignalWire.Server.AgentServer.GetSipUsernameMapping*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_GetSipUsernameMapping" data-uid="SignalWire.Server.AgentServer.GetSipUsernameMapping">
+  GetSipUsernameMapping()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, string&gt; GetSipUsernameMapping()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Server_AgentServer_HandleRequest_" data-uid="SignalWire.Server.AgentServer.HandleRequest*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_HandleRequest_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_String_" data-uid="SignalWire.Server.AgentServer.HandleRequest(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+  HandleRequest(string, string, Dictionary&lt;string, string&gt;?, string?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Handle an HTTP request. Returns (status, headers, body).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (int Status, Dictionary&lt;string, string&gt; Headers, string Body) HandleRequest(string method, string path, Dictionary&lt;string, string&gt;? headers = null, string? body = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>body</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.status">Status</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.headers">Headers</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.body">Body</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Server_AgentServer_Register_" data-uid="SignalWire.Server.AgentServer.Register*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_Register_SignalWire_Agent_AgentBase_System_String_" data-uid="SignalWire.Server.AgentServer.Register(SignalWire.Agent.AgentBase,System.String)">
+  Register(AgentBase, string?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Register an agent at a route. Throws if the route is already taken.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentServer Register(AgentBase agent, string? route = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>agent</code> <a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+    <dt><code>route</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Server.AgentServer.html">AgentServer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Server_AgentServer_RegisterSipUsername_" data-uid="SignalWire.Server.AgentServer.RegisterSipUsername*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_RegisterSipUsername_System_String_System_String_" data-uid="SignalWire.Server.AgentServer.RegisterSipUsername(System.String,System.String)">
+  RegisterSipUsername(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentServer RegisterSipUsername(string username, string route)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>username</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>route</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Server.AgentServer.html">AgentServer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Server_AgentServer_ServeStatic_" data-uid="SignalWire.Server.AgentServer.ServeStatic*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_ServeStatic_System_String_System_String_" data-uid="SignalWire.Server.AgentServer.ServeStatic(System.String,System.String)">
+  ServeStatic(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Serve static files from <code class="paramref">directory</code> under <code class="paramref">urlPrefix</code>.
+Throws if the directory does not exist.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentServer ServeStatic(string directory, string urlPrefix)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>directory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>urlPrefix</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Server.AgentServer.html">AgentServer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Server_AgentServer_SetupSipRouting_" data-uid="SignalWire.Server.AgentServer.SetupSipRouting*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_SetupSipRouting_System_String_System_Boolean_" data-uid="SignalWire.Server.AgentServer.SetupSipRouting(System.String,System.Boolean)">
+  SetupSipRouting(string, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable SIP routing on this server. <code>route</code> lets the caller pin
+a non-default SIP route prefix; <code>autoMap</code> opts agents into
+auto-mapped sip_username = agent name. Matches Python's
+<code>setup_sip_routing(self, route='/sip', auto_map=True)</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentServer SetupSipRouting(string route = &quot;/sip&quot;, bool autoMap = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>route</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>autoMap</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Server.AgentServer.html">AgentServer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Server_AgentServer_Unregister_" data-uid="SignalWire.Server.AgentServer.Unregister*"></a>
+
+  <h3 id="SignalWire_Server_AgentServer_Unregister_System_String_" data-uid="SignalWire.Server.AgentServer.Unregister(System.String)">
+  Unregister(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentServer Unregister(string route)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>route</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Server.AgentServer.html">AgentServer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

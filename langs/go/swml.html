@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>swml — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml" class="active">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="swml">swml</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/swml&quot;</span>
+</code></pre></div>
+
+<p>Package swml provides the SWML (SignalWire Markup Language) document model, builder, and rendering for the SignalWire AI platform.</p>
+<p>SWML documents define call flows, AI agent behavior, and telephony operations. The SignalWire platform fetches SWML from agents and executes it.</p>
+<p>Package swml — URL validation utility to prevent SSRF attacks. Ported from signalwire/utils/url_validator.py.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#ExtractSIPUsername">func ExtractSIPUsername(body map[string]any) string</a></li>
+<li><a href="#IsServerlessMode">func IsServerlessMode() bool</a></li>
+<li><a href="#ValidateURL">func ValidateURL(rawURL string, allowPrivate bool) (bool, error)</a></li>
+<li><a href="#AIVerbHandler">type AIVerbHandler</a></li>
+<li><a href="#NewAIVerbHandler">func NewAIVerbHandler() *AIVerbHandler</a></li>
+<li><a href="#AIVerbHandler.BuildConfig">func (h *AIVerbHandler) BuildConfig(params map[string]any) (map[string]any, error)</a></li>
+<li><a href="#AIVerbHandler.GetVerbName">func (h *AIVerbHandler) GetVerbName() string</a></li>
+<li><a href="#AIVerbHandler.ValidateConfig">func (h *AIVerbHandler) ValidateConfig(config map[string]any) (bool, []string)</a></li>
+<li><a href="#Document">type Document</a></li>
+<li><a href="#NewDocument">func NewDocument() *Document</a></li>
+<li><a href="#Document.AddSection">func (d *Document) AddSection(name string) bool</a></li>
+<li><a href="#Document.AddVerb">func (d *Document) AddVerb(verbName string, config any) error</a></li>
+<li><a href="#Document.AddVerbToSection">func (d *Document) AddVerbToSection(section, verbName string, config any) error</a></li>
+<li><a href="#Document.GetVerbs">func (d *Document) GetVerbs(section string) []Verb</a></li>
+<li><a href="#Document.HasSection">func (d *Document) HasSection(name string) bool</a></li>
+<li><a href="#Document.MarshalJSON">func (d *Document) MarshalJSON() ([]byte, error)</a></li>
+<li><a href="#Document.Render">func (d *Document) Render() (string, error)</a></li>
+<li><a href="#Document.RenderPretty">func (d *Document) RenderPretty() (string, error)</a></li>
+<li><a href="#Document.Reset">func (d *Document) Reset()</a></li>
+<li><a href="#Document.ToMap">func (d *Document) ToMap() map[string]any</a></li>
+<li><a href="#ExecutionMode">type ExecutionMode</a></li>
+<li><a href="#GetExecutionMode">func GetExecutionMode() ExecutionMode</a></li>
+<li><a href="#RoutingCallback">type RoutingCallback</a></li>
+<li><a href="#Schema">type Schema</a></li>
+<li><a href="#GetSchema">func GetSchema() (*Schema, error)</a></li>
+<li><a href="#LoadSchemaFromFile">func LoadSchemaFromFile(path string) (*Schema, error)</a></li>
+<li><a href="#Schema.GetAllVerbNames">func (s *Schema) GetAllVerbNames() []string</a></li>
+<li><a href="#Schema.GetVerb">func (s <em>Schema) GetVerb(name string) (</em>VerbInfo, bool)</a></li>
+<li><a href="#Schema.IsValidVerb">func (s *Schema) IsValidVerb(name string) bool</a></li>
+<li><a href="#Schema.VerbCount">func (s *Schema) VerbCount() int</a></li>
+<li><a href="#SchemaUtils">type SchemaUtils</a></li>
+<li><a href="#NewSchemaUtils">func NewSchemaUtils(schemaPath string, schemaValidation bool) *SchemaUtils</a></li>
+<li><a href="#SchemaUtils.FullValidationAvailable">func (s *SchemaUtils) FullValidationAvailable() bool</a></li>
+<li><a href="#SchemaUtils.GenerateMethodBody">func (s *SchemaUtils) GenerateMethodBody(verbName string) string</a></li>
+<li><a href="#SchemaUtils.GenerateMethodSignature">func (s *SchemaUtils) GenerateMethodSignature(verbName string) string</a></li>
+<li><a href="#SchemaUtils.GetAllVerbNames">func (s *SchemaUtils) GetAllVerbNames() []string</a></li>
+<li><a href="#SchemaUtils.GetVerbParameters">func (s *SchemaUtils) GetVerbParameters(verbName string) map[string]any</a></li>
+<li><a href="#SchemaUtils.GetVerbProperties">func (s *SchemaUtils) GetVerbProperties(verbName string) map[string]any</a></li>
+<li><a href="#SchemaUtils.GetVerbRequiredProperties">func (s *SchemaUtils) GetVerbRequiredProperties(verbName string) []string</a></li>
+<li><a href="#SchemaUtils.LoadSchema">func (s *SchemaUtils) LoadSchema() map[string]any</a></li>
+<li><a href="#SchemaUtils.ValidateDocument">func (s *SchemaUtils) ValidateDocument(document map[string]any) ValidationResult</a></li>
+<li><a href="#SchemaUtils.ValidateVerb">func (s *SchemaUtils) ValidateVerb(verbName string, verbConfig map[string]any) ValidationResult</a></li>
+<li><a href="#SchemaValidationError">type SchemaValidationError</a></li>
+<li><a href="#NewSchemaValidationError">func NewSchemaValidationError(verbName string, errors []string) *SchemaValidationError</a></li>
+<li><a href="#SchemaValidationError.Error">func (e *SchemaValidationError) Error() string</a></li>
+<li><a href="#SecurityConfig">type SecurityConfig</a></li>
+<li><a href="#Service">type Service</a></li>
+<li><a href="#NewService">func NewService(opts ...ServiceOption) *Service</a></li>
+<li><a href="#Service.AI">func (s <em>Service) AI(promptText </em>string, promptPOM []map[string]any, postPrompt, postPromptURL *string, swaig map[string]any, extra map[string]any) error</a></li>
+<li><a href="#Service.AddSection">func (s *Service) AddSection(name string) bool</a></li>
+<li><a href="#Service.AmazonBedrock">func (s *Service) AmazonBedrock(config map[string]any) error</a></li>
+<li><a href="#Service.Answer">func (s <em>Service) Answer(maxDuration </em>int, codecs *string) error</a></li>
+<li><a href="#Service.AsRouter">func (s *Service) AsRouter() http.Handler</a></li>
+<li><a href="#Service.BuildSwaigListToolsPayload">func (s *Service) BuildSwaigListToolsPayload() ([]byte, error)</a></li>
+<li><a href="#Service.Cond">func (s *Service) Cond(config map[string]any) error</a></li>
+<li><a href="#Service.Connect">func (s *Service) Connect(config map[string]any) error</a></li>
+<li><a href="#Service.DefineTool">func (s <em>Service) DefineTool(td </em>ToolDefinition) *Service</a></li>
+<li><a href="#Service.Denoise">func (s *Service) Denoise(config map[string]any) error</a></li>
+<li><a href="#Service.DetectMachine">func (s *Service) DetectMachine(config map[string]any) error</a></li>
+<li><a href="#Service.EnterQueue">func (s *Service) EnterQueue(config map[string]any) error</a></li>
+<li><a href="#Service.Execute">func (s *Service) Execute(config map[string]any) error</a></li>
+<li><a href="#Service.ExecuteVerb">func (s *Service) ExecuteVerb(verbName string, config any) error</a></li>
+<li><a href="#Service.ExecuteVerbToSection">func (s *Service) ExecuteVerbToSection(section, verbName string, config any) error</a></li>
+<li><a href="#Service.FullValidationEnabled">func (s *Service) FullValidationEnabled() bool</a></li>
+<li><a href="#Service.GetAuthInfo">func (s *Service) GetAuthInfo() map[string]any</a></li>
+<li><a href="#Service.GetBasicAuthCredentials">func (s *Service) GetBasicAuthCredentials() (string, string)</a></li>
+<li><a href="#Service.GetBasicAuthCredentialsWithSource">func (s *Service) GetBasicAuthCredentialsWithSource() (string, string, string)</a></li>
+<li><a href="#Service.GetDocument">func (s <em>Service) GetDocument() </em>Document</a></li>
+<li><a href="#Service.GetFullURL">func (s *Service) GetFullURL(includeAuth bool) string</a></li>
+<li><a href="#Service.GetVerbHandler">func (s *Service) GetVerbHandler(verbName string) VerbHandler</a></li>
+<li><a href="#Service.Goto">func (s *Service) Goto(config map[string]any) error</a></li>
+<li><a href="#Service.Hangup">func (s <em>Service) Hangup(reason </em>string) error</a></li>
+<li><a href="#Service.HasTool">func (s *Service) HasTool(name string) bool</a></li>
+<li><a href="#Service.HasVerbHandler">func (s *Service) HasVerbHandler(verbName string) bool</a></li>
+<li><a href="#Service.JoinConference">func (s *Service) JoinConference(config map[string]any) error</a></li>
+<li><a href="#Service.JoinRoom">func (s *Service) JoinRoom(config map[string]any) error</a></li>
+<li><a href="#Service.Label">func (s *Service) Label(config map[string]any) error</a></li>
+<li><a href="#Service.ListToolNames">func (s *Service) ListToolNames() []string</a></li>
+<li><a href="#Service.LiveTranscribe">func (s *Service) LiveTranscribe(config map[string]any) error</a></li>
+<li><a href="#Service.LiveTranslate">func (s *Service) LiveTranslate(config map[string]any) error</a></li>
+<li><a href="#Service.ManualSetProxyUrl">func (s *Service) ManualSetProxyUrl(url string)</a></li>
+<li><a href="#Service.OnFunctionCall">func (s *Service) OnFunctionCall(name string, args, rawData map[string]any) any</a></li>
+<li><a href="#Service.OnRequest">func (s *Service) OnRequest(requestData map[string]any, callbackPath string) map[string]any</a></li>
+<li><a href="#Service.Pay">func (s *Service) Pay(config map[string]any) error</a></li>
+<li><a href="#Service.Play">func (s <em>Service) Play(url </em>string, urls []string, volume <em>float64, sayVoice, sayLanguage, sayGender </em>string, autoAnswer *bool) error</a></li>
+<li><a href="#Service.Prompt">func (s *Service) Prompt(config map[string]any) error</a></li>
+<li><a href="#Service.ReceiveFax">func (s *Service) ReceiveFax(config map[string]any) error</a></li>
+<li><a href="#Service.Record">func (s *Service) Record(config map[string]any) error</a></li>
+<li><a href="#Service.RecordCall">func (s *Service) RecordCall(config map[string]any) error</a></li>
+<li><a href="#Service.RegisterAdditionalRoutes">func (s <em>Service) RegisterAdditionalRoutes(mux </em>http.ServeMux)</a></li>
+<li><a href="#Service.RegisterRoutingCallback">func (s *Service) RegisterRoutingCallback(path string, cb RoutingCallback)</a></li>
+<li><a href="#Service.RegisterSwaigFunction">func (s <em>Service) RegisterSwaigFunction(funcDef map[string]any) </em>Service</a></li>
+<li><a href="#Service.RegisterVerbHandler">func (s *Service) RegisterVerbHandler(h VerbHandler)</a></li>
+<li><a href="#Service.Render">func (s *Service) Render() (string, error)</a></li>
+<li><a href="#Service.RenderMainSwml">func (s <em>Service) RenderMainSwml(r </em>http.Request) map[string]any</a></li>
+<li><a href="#Service.RenderPretty">func (s *Service) RenderPretty() (string, error)</a></li>
+<li><a href="#Service.Request">func (s *Service) Request(config map[string]any) error</a></li>
+<li><a href="#Service.ResetDocument">func (s *Service) ResetDocument()</a></li>
+<li><a href="#Service.Return">func (s *Service) Return(config map[string]any) error</a></li>
+<li><a href="#Service.RoutingCallbackPaths">func (s *Service) RoutingCallbackPaths() []string</a></li>
+<li><a href="#Service.SIPRefer">func (s *Service) SIPRefer(config map[string]any) error</a></li>
+<li><a href="#Service.Say">func (s <em>Service) Say(text string, voice, language, gender </em>string, volume *float64) error</a></li>
+<li><a href="#Service.SchemaUtils">func (s <em>Service) SchemaUtils() </em>SchemaUtils</a></li>
+<li><a href="#Service.SendDigits">func (s *Service) SendDigits(config map[string]any) error</a></li>
+<li><a href="#Service.SendFax">func (s *Service) SendFax(config map[string]any) error</a></li>
+<li><a href="#Service.SendSMS">func (s *Service) SendSMS(config map[string]any) error</a></li>
+<li><a href="#Service.Serve">func (s *Service) Serve() error</a></li>
+<li><a href="#Service.Set">func (s *Service) Set(config map[string]any) error</a></li>
+<li><a href="#Service.Sleep">func (s *Service) Sleep(duration int) error</a></li>
+<li><a href="#Service.Stop">func (s *Service) Stop() error</a></li>
+<li><a href="#Service.StopDenoise">func (s *Service) StopDenoise(config map[string]any) error</a></li>
+<li><a href="#Service.StopRecordCall">func (s *Service) StopRecordCall(config map[string]any) error</a></li>
+<li><a href="#Service.StopTap">func (s *Service) StopTap(config map[string]any) error</a></li>
+<li><a href="#Service.SwaigPreDispatch">func (s <em>Service) SwaigPreDispatch(requestData map[string]any, funcName string) (target </em>Service, shortCircuit map[string]any)</a></li>
+<li><a href="#Service.Switch">func (s *Service) Switch(config map[string]any) error</a></li>
+<li><a href="#Service.TLSEnabled">func (s *Service) TLSEnabled() bool</a></li>
+<li><a href="#Service.Tap">func (s *Service) Tap(config map[string]any) error</a></li>
+<li><a href="#Service.Transfer">func (s *Service) Transfer(config map[string]any) error</a></li>
+<li><a href="#Service.Unset">func (s *Service) Unset(config map[string]any) error</a></li>
+<li><a href="#Service.UserEvent">func (s *Service) UserEvent(config map[string]any) error</a></li>
+<li><a href="#Service.VerifyAPIKey">func (s *Service) VerifyAPIKey(key string) bool</a></li>
+<li><a href="#Service.VerifyBasicAuth">func (s *Service) VerifyBasicAuth(username, password string) bool</a></li>
+<li><a href="#Service.VerifyBearerToken">func (s *Service) VerifyBearerToken(token string) bool</a></li>
+<li><a href="#ServiceOption">type ServiceOption</a></li>
+<li><a href="#WithAPIKey">func WithAPIKey(key, header string) ServiceOption</a></li>
+<li><a href="#WithBasicAuth">func WithBasicAuth(user, password string) ServiceOption</a></li>
+<li><a href="#WithBearerToken">func WithBearerToken(token string) ServiceOption</a></li>
+<li><a href="#WithConfigFile">func WithConfigFile(path string) ServiceOption</a></li>
+<li><a href="#WithDomain">func WithDomain(domain string) ServiceOption</a></li>
+<li><a href="#WithHost">func WithHost(host string) ServiceOption</a></li>
+<li><a href="#WithName">func WithName(name string) ServiceOption</a></li>
+<li><a href="#WithPort">func WithPort(port int) ServiceOption</a></li>
+<li><a href="#WithRoute">func WithRoute(route string) ServiceOption</a></li>
+<li><a href="#WithSchemaPath">func WithSchemaPath(path string) ServiceOption</a></li>
+<li><a href="#WithSchemaValidation">func WithSchemaValidation(enabled bool) ServiceOption</a></li>
+<li><a href="#WithSecurityConfig">func WithSecurityConfig(cfg SecurityConfig) ServiceOption</a></li>
+<li><a href="#WithTLS">func WithTLS(certFile, keyFile string) ServiceOption</a></li>
+<li><a href="#ToolDefinition">type ToolDefinition</a></li>
+<li><a href="#ToolHandler">type ToolHandler</a></li>
+<li><a href="#ValidationResult">type ValidationResult</a></li>
+<li><a href="#Verb">type Verb</a></li>
+<li><a href="#VerbHandler">type VerbHandler</a></li>
+<li><a href="#VerbInfo">type VerbInfo</a></li>
+</ul>
+<p><a name="ExtractSIPUsername"></a></p>
+<h2 id="func-extractsipusername">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1049">ExtractSIPUsername</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">ExtractSIPUsername</span><span class="p">(</span><span class="nx">body</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>ExtractSIPUsername extracts a SIP username from a request body.</p>
+<p><a name="IsServerlessMode"></a></p>
+<h2 id="func-isserverlessmode">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/execution_mode.go#L67">IsServerlessMode</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">IsServerlessMode</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>IsServerlessMode reports whether the process is running in any serverless environment (i.e. NOT in plain long-running server mode).</p>
+<p>Mirrors Python's is_serverless_mode():</p>
+<div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">is_serverless_mode</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">bool</span><span class="o">:</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="n">get_execution_mode</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&#39;server&#39;</span>
+</code></pre></div>
+
+<p><a name="ValidateURL"></a></p>
+<h2 id="func-validateurl">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/url_validator.go#L73">ValidateURL</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">ValidateURL</span><span class="p">(</span><span class="nx">rawURL</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">allowPrivate</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>ValidateURL reports whether rawURL is safe to fetch (i.e. does not point to a private or internal resource). It returns an error describing why the URL was rejected, or nil if the URL is acceptable.</p>
+<p>Behavior mirrors Python's validate_url(url, allow_private=False):</p>
+<ul>
+<li>Only http and https schemes are accepted.</li>
+<li>A non-empty hostname is required.</li>
+<li>When allowPrivate is false AND the SWML_ALLOW_PRIVATE_URLS env var is not set to "1", "true", or "yes" (case-insensitive), every IP address that the hostname resolves to is checked against the nine blocked CIDR ranges above. If any resolved IP falls in a blocked range the URL is rejected.</li>
+</ul>
+<p>Go idiom: returns (bool, error) instead of a bare bool so callers can log or propagate the rejection reason. Returning (false, nil) never happens — err is always non-nil when the bool is false.</p>
+<p><a name="AIVerbHandler"></a></p>
+<h2 id="type-aiverbhandler">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/ai_verb_handler.go#L20">AIVerbHandler</a></h2>
+<p>AIVerbHandler is a concrete VerbHandler for the SWML "ai" verb.</p>
+<p>It implements the VerbHandler interface and provides validation and configuration-building logic for the AI verb. This is the Go equivalent of the Python AIVerbHandler class in core/swml_handler.py.</p>
+<p>The AI verb is complex and requires specialized handling, particularly for managing prompts, SWAIG functions, and AI configurations.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">AIVerbHandler</span><span class="w"> </span><span class="kd">struct</span><span class="p">{}</span>
+</code></pre></div>
+
+<p><a name="NewAIVerbHandler"></a></p>
+<h3 id="func-newaiverbhandler">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/ai_verb_handler.go#L27">NewAIVerbHandler</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewAIVerbHandler</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">AIVerbHandler</span>
+</code></pre></div>
+
+<p>NewAIVerbHandler returns a new AIVerbHandler ready for registration.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>svc.RegisterVerbHandler(swml.NewAIVerbHandler())
+</code></pre></div>
+
+<p><a name="AIVerbHandler.BuildConfig"></a></p>
+<h3 id="func-aiverbhandler-buildconfig">func (*AIVerbHandler) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/ai_verb_handler.go#L112">BuildConfig</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">h</span><span class="w"> </span><span class="o">*</span><span class="nx">AIVerbHandler</span><span class="p">)</span><span class="w"> </span><span class="nx">BuildConfig</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>BuildConfig assembles an AI verb configuration map from the provided params.</p>
+<p>Recognised keys in params (ported from Python AIVerbHandler.build_config):</p>
+<ul>
+<li>"prompt_text" (string) — text prompt; mutually exclusive with "prompt_pom"</li>
+<li>"prompt_pom" ([]any or similar) — POM structure; mutually exclusive with "prompt_text"</li>
+<li>"contexts" (map[string]any) — optional contexts / steps configuration</li>
+<li>"post_prompt" (string) — optional post-prompt text; wrapped in {"text": value}</li>
+<li>"post_prompt_url" (string) — optional post-prompt URL</li>
+<li>"swaig" (map[string]any) — optional SWAIG configuration; emitted as "SWAIG"</li>
+</ul>
+<p>Additional keys in params are handled as follows (matching Python **kwargs logic):</p>
+<ul>
+<li>"languages", "hints", "pronounce", "global_data" — emitted as top-level keys.</li>
+<li>All other extra keys are collected under a nested "params" map.</li>
+</ul>
+<p>Returns (configMap, nil) on success, or (nil, error) if the parameters are contradictory (e.g. both prompt_text and prompt_pom supplied, or neither).</p>
+<p><a name="AIVerbHandler.GetVerbName"></a></p>
+<h3 id="func-aiverbhandler-getverbname">func (*AIVerbHandler) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/ai_verb_handler.go#L32">GetVerbName</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">h</span><span class="w"> </span><span class="o">*</span><span class="nx">AIVerbHandler</span><span class="p">)</span><span class="w"> </span><span class="nx">GetVerbName</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetVerbName returns "ai", the name of the SWML verb this handler handles.</p>
+<p><a name="AIVerbHandler.ValidateConfig"></a></p>
+<h3 id="func-aiverbhandler-validateconfig">func (*AIVerbHandler) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/ai_verb_handler.go#L45">ValidateConfig</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">h</span><span class="w"> </span><span class="o">*</span><span class="nx">AIVerbHandler</span><span class="p">)</span><span class="w"> </span><span class="nx">ValidateConfig</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>ValidateConfig validates the configuration map for the AI verb.</p>
+<p>Validation rules (ported from Python AIVerbHandler.validate_config):</p>
+<ul>
+<li>"prompt" key must be present and must be a map[string]any.</li>
+<li>"prompt" must contain exactly one of "text" or "pom" (mutually exclusive).</li>
+<li>If "prompt.contexts" is present it must be a map[string]any.</li>
+<li>If "SWAIG" is present it must be a map[string]any.</li>
+</ul>
+<p>Returns (true, nil) when the config is valid; (false, errors) when it is not.</p>
+<p><a name="Document"></a></p>
+<h2 id="type-document">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L15-L19">Document</a></h2>
+<p>Document represents a complete SWML document with version and sections.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Document</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Version</span><span class="w">  </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Sections</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="nx">Verb</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewDocument"></a></p>
+<h3 id="func-newdocument">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L26">NewDocument</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewDocument</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span>
+</code></pre></div>
+
+<p>NewDocument creates a new empty SWML document with default version.</p>
+<p><a name="Document.AddSection"></a></p>
+<h3 id="func-document-addsection">func (*Document) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L46">AddSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span><span class="p">)</span><span class="w"> </span><span class="nx">AddSection</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>AddSection creates a new named section in the document. Returns false if the section already exists.</p>
+<p><a name="Document.AddVerb"></a></p>
+<h3 id="func-document-addverb">func (*Document) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L66">AddVerb</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span><span class="p">)</span><span class="w"> </span><span class="nx">AddVerb</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>AddVerb appends a verb to the "main" section. Returns an error if the verb name is empty.</p>
+<p><a name="Document.AddVerbToSection"></a></p>
+<h3 id="func-document-addverbtosection">func (*Document) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L72">AddVerbToSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span><span class="p">)</span><span class="w"> </span><span class="nx">AddVerbToSection</span><span class="p">(</span><span class="nx">section</span><span class="p">,</span><span class="w"> </span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>AddVerbToSection appends a verb to a named section. Creates the section if it doesn't exist.</p>
+<p><a name="Document.GetVerbs"></a></p>
+<h3 id="func-document-getverbs">func (*Document) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L88">GetVerbs</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span><span class="p">)</span><span class="w"> </span><span class="nx">GetVerbs</span><span class="p">(</span><span class="nx">section</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">[]</span><span class="nx">Verb</span>
+</code></pre></div>
+
+<p>GetVerbs returns the verbs in a named section. Returns nil if the section doesn't exist.</p>
+<p><a name="Document.HasSection"></a></p>
+<h3 id="func-document-hassection">func (*Document) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L57">HasSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span><span class="p">)</span><span class="w"> </span><span class="nx">HasSection</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>HasSection returns whether a section exists in the document.</p>
+<p><a name="Document.MarshalJSON"></a></p>
+<h3 id="func-document-marshaljson">func (*Document) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L139">MarshalJSON</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span><span class="p">)</span><span class="w"> </span><span class="nx">MarshalJSON</span><span class="p">()</span><span class="w"> </span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>MarshalJSON implements the json.Marshaler interface.</p>
+<p><a name="Document.Render"></a></p>
+<h3 id="func-document-render">func (*Document) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L121">Render</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span><span class="p">)</span><span class="w"> </span><span class="nx">Render</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Render serializes the document to a JSON string.</p>
+<p><a name="Document.RenderPretty"></a></p>
+<h3 id="func-document-renderpretty">func (*Document) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L130">RenderPretty</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span><span class="p">)</span><span class="w"> </span><span class="nx">RenderPretty</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>RenderPretty serializes the document to an indented JSON string.</p>
+<p><a name="Document.Reset"></a></p>
+<h3 id="func-document-reset">func (*Document) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L36">Reset</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span><span class="p">)</span><span class="w"> </span><span class="nx">Reset</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Reset clears all sections and recreates the default "main" section.</p>
+<p><a name="Document.ToMap"></a></p>
+<h3 id="func-document-tomap">func (*Document) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L101">ToMap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span><span class="p">)</span><span class="w"> </span><span class="nx">ToMap</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>ToMap returns the document as a nested map suitable for JSON serialization.</p>
+<p><a name="ExecutionMode"></a></p>
+<h2 id="type-executionmode">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/execution_mode.go#L8">ExecutionMode</a></h2>
+<p>ExecutionMode identifies the runtime environment the service is executing in. The value is used to adjust URL construction, request parsing, and auth handling for platforms that do not provide a traditional TCP listener.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ExecutionMode</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="ModeServer"></a></p>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="c1">// ModeServer is the default long-running HTTP server mode.</span>
+<span class="w">    </span><span class="nx">ModeServer</span><span class="w"> </span><span class="nx">ExecutionMode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;server&quot;</span>
+<span class="w">    </span><span class="c1">// ModeCGI indicates the process was invoked by a CGI host</span>
+<span class="w">    </span><span class="c1">// (detected via GATEWAY_INTERFACE).</span>
+<span class="w">    </span><span class="nx">ModeCGI</span><span class="w"> </span><span class="nx">ExecutionMode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;cgi&quot;</span>
+<span class="w">    </span><span class="c1">// ModeLambda indicates the process is running inside AWS Lambda</span>
+<span class="w">    </span><span class="c1">// (detected via AWS_LAMBDA_FUNCTION_NAME or LAMBDA_TASK_ROOT).</span>
+<span class="w">    </span><span class="nx">ModeLambda</span><span class="w"> </span><span class="nx">ExecutionMode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;lambda&quot;</span>
+<span class="w">    </span><span class="c1">// ModeGoogleCloudFunction indicates a Google Cloud Functions</span>
+<span class="w">    </span><span class="c1">// runtime (detected via FUNCTION_TARGET, K_SERVICE, or</span>
+<span class="w">    </span><span class="c1">// GOOGLE_CLOUD_PROJECT).</span>
+<span class="w">    </span><span class="nx">ModeGoogleCloudFunction</span><span class="w"> </span><span class="nx">ExecutionMode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;google_cloud_function&quot;</span>
+<span class="w">    </span><span class="c1">// ModeAzureFunction indicates an Azure Functions runtime</span>
+<span class="w">    </span><span class="c1">// (detected via AZURE_FUNCTIONS_ENVIRONMENT, FUNCTIONS_WORKER_RUNTIME,</span>
+<span class="w">    </span><span class="c1">// or AzureWebJobsStorage).</span>
+<span class="w">    </span><span class="nx">ModeAzureFunction</span><span class="w"> </span><span class="nx">ExecutionMode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;azure_function&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p><a name="GetExecutionMode"></a></p>
+<h3 id="func-getexecutionmode">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/execution_mode.go#L40">GetExecutionMode</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">GetExecutionMode</span><span class="p">()</span><span class="w"> </span><span class="nx">ExecutionMode</span>
+</code></pre></div>
+
+<p>GetExecutionMode inspects the process environment and returns the detected runtime mode. The detection order matches the Python and TypeScript SDKs so that the same env vars resolve to the same mode across languages.</p>
+<p>Detection order:</p>
+<ol>
+<li>CGI (GATEWAY_INTERFACE)</li>
+<li>AWS Lambda (AWS_LAMBDA_FUNCTION_NAME or LAMBDA_TASK_ROOT)</li>
+<li>GCF (FUNCTION_TARGET, K_SERVICE, or GOOGLE_CLOUD_PROJECT)</li>
+<li>Azure (AZURE_FUNCTIONS_ENVIRONMENT, FUNCTIONS_WORKER_RUNTIME, or AzureWebJobsStorage)</li>
+<li>Server (default fallback)</li>
+</ol>
+<p><a name="RoutingCallback"></a></p>
+<h2 id="type-routingcallback">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L37">RoutingCallback</a></h2>
+<p>RoutingCallback is a function called on incoming requests to customize responses. It receives the request and request body, and returns an optional SWML JSON override. If it returns nil, the default document is used.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">RoutingCallback</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="Schema"></a></p>
+<h2 id="type-schema">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema.go#L29-L33">Schema</a></h2>
+<p>Schema holds the parsed SWML schema and provides verb metadata.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Schema</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="GetSchema"></a></p>
+<h3 id="func-getschema">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema.go#L42">GetSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">GetSchema</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">Schema</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>GetSchema returns the global singleton Schema loaded from the embedded schema.json.</p>
+<p><a name="LoadSchemaFromFile"></a></p>
+<h3 id="func-loadschemafromfile">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema.go#L163">LoadSchemaFromFile</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">LoadSchemaFromFile</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">Schema</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>LoadSchemaFromFile loads a SWML schema from the given file path instead of the embedded schema.json. Mirrors Python's schema_path constructor param.</p>
+<p><a name="Schema.GetAllVerbNames"></a></p>
+<h3 id="func-schema-getallverbnames">func (*Schema) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema.go#L136">GetAllVerbNames</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Schema</span><span class="p">)</span><span class="w"> </span><span class="nx">GetAllVerbNames</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetAllVerbNames returns all known verb names (the actual SWML names, not schema names).</p>
+<p><a name="Schema.GetVerb"></a></p>
+<h3 id="func-schema-getverb">func (*Schema) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema.go#L128">GetVerb</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Schema</span><span class="p">)</span><span class="w"> </span><span class="nx">GetVerb</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">VerbInfo</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span>
+</code></pre></div>
+
+<p>GetVerb returns metadata for a verb by its actual name (e.g., "sip_refer").</p>
+<p><a name="Schema.IsValidVerb"></a></p>
+<h3 id="func-schema-isvalidverb">func (*Schema) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema.go#L147">IsValidVerb</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Schema</span><span class="p">)</span><span class="w"> </span><span class="nx">IsValidVerb</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>IsValidVerb returns whether a name is a recognized SWML verb.</p>
+<p><a name="Schema.VerbCount"></a></p>
+<h3 id="func-schema-verbcount">func (*Schema) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema.go#L155">VerbCount</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Schema</span><span class="p">)</span><span class="w"> </span><span class="nx">VerbCount</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span>
+</code></pre></div>
+
+<p>VerbCount returns the number of verbs in the schema.</p>
+<p><a name="SchemaUtils"></a></p>
+<h2 id="type-schemautils">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L65-L80">SchemaUtils</a></h2>
+<p>SchemaUtils is the Go port of signalwire.utils.schema_utils.SchemaUtils.</p>
+<p>Construction rules:</p>
+<ul>
+<li>schemaPath empty + SWML_SKIP_SCHEMA_VALIDATION unset → load embedded.</li>
+<li>schemaPath set → load from file.</li>
+<li>schemaValidation=false OR SWML_SKIP_SCHEMA_VALIDATION=1 → no full validator (lightweight required-property check still runs).</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SchemaUtils</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewSchemaUtils"></a></p>
+<h3 id="func-newschemautils">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L88">NewSchemaUtils</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewSchemaUtils</span><span class="p">(</span><span class="nx">schemaPath</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">schemaValidation</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span>
+</code></pre></div>
+
+<p>NewSchemaUtils constructs a SchemaUtils. Mirrors Python's “SchemaUtils(schema_path, schema_validation=True)“.</p>
+<p>Pass schemaPath="" to use the embedded schema.json bundled with the SDK. schemaValidation=false disables validation; the env var SWML_SKIP_SCHEMA_VALIDATION=1/true/yes also disables it.</p>
+<p><a name="SchemaUtils.FullValidationAvailable"></a></p>
+<h3 id="func-schemautils-fullvalidationavailable">func (*SchemaUtils) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L199">FullValidationAvailable</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span><span class="p">)</span><span class="w"> </span><span class="nx">FullValidationAvailable</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>FullValidationAvailable reports whether the full JSON Schema validator is wired up. Mirrors Python's full_validation_available.</p>
+<p><a name="SchemaUtils.GenerateMethodBody"></a></p>
+<h3 id="func-schemautils-generatemethodbody">func (*SchemaUtils) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L358">GenerateMethodBody</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span><span class="p">)</span><span class="w"> </span><span class="nx">GenerateMethodBody</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GenerateMethodBody renders a Python-style method body for a verb. Mirrors Python's “generate_method_body(verb_name)“.</p>
+<p><a name="SchemaUtils.GenerateMethodSignature"></a></p>
+<h3 id="func-schemautils-generatemethodsignature">func (*SchemaUtils) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L317">GenerateMethodSignature</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span><span class="p">)</span><span class="w"> </span><span class="nx">GenerateMethodSignature</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GenerateMethodSignature renders a Python-style method signature for a verb — used by code-gen tooling. Mirrors Python's “generate_method_signature(verb_name)“.</p>
+<p><a name="SchemaUtils.GetAllVerbNames"></a></p>
+<h3 id="func-schemautils-getallverbnames">func (*SchemaUtils) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L205">GetAllVerbNames</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span><span class="p">)</span><span class="w"> </span><span class="nx">GetAllVerbNames</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetAllVerbNames returns the sorted list of all known verb names. Mirrors Python's “get_all_verb_names()“.</p>
+<p><a name="SchemaUtils.GetVerbParameters"></a></p>
+<h3 id="func-schemautils-getverbparameters">func (*SchemaUtils) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L253">GetVerbParameters</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span><span class="p">)</span><span class="w"> </span><span class="nx">GetVerbParameters</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetVerbParameters returns the parameter-definition block used for codegen — verb_props["properties"]. Mirrors Python's “get_verb_parameters(verb_name)“.</p>
+<p><a name="SchemaUtils.GetVerbProperties"></a></p>
+<h3 id="func-schemautils-getverbproperties">func (*SchemaUtils) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L217">GetVerbProperties</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span><span class="p">)</span><span class="w"> </span><span class="nx">GetVerbProperties</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetVerbProperties returns the inner “properties[verb_name]“ block for a verb, or an empty map when the verb is unknown. Mirrors Python's “get_verb_properties(verb_name)“.</p>
+<p><a name="SchemaUtils.GetVerbRequiredProperties"></a></p>
+<h3 id="func-schemautils-getverbrequiredproperties">func (*SchemaUtils) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L235">GetVerbRequiredProperties</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span><span class="p">)</span><span class="w"> </span><span class="nx">GetVerbRequiredProperties</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetVerbRequiredProperties returns the “required“ list for a verb. Mirrors Python's “get_verb_required_properties(verb_name)“.</p>
+<p><a name="SchemaUtils.LoadSchema"></a></p>
+<h3 id="func-schemautils-loadschema">func (*SchemaUtils) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L113">LoadSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span><span class="p">)</span><span class="w"> </span><span class="nx">LoadSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>LoadSchema reads and parses the JSON Schema. Mirrors Python's “load_schema()“.</p>
+<p><a name="SchemaUtils.ValidateDocument"></a></p>
+<h3 id="func-schemautils-validatedocument">func (*SchemaUtils) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L306">ValidateDocument</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span><span class="p">)</span><span class="w"> </span><span class="nx">ValidateDocument</span><span class="p">(</span><span class="nx">document</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">ValidationResult</span>
+</code></pre></div>
+
+<p>ValidateDocument validates a complete SWML document against the schema. Mirrors Python's “validate_document(document)“.</p>
+<p>When the full validator is unavailable Python returns “(False, ["Schema validator not initialized"])“; the Go port matches that contract bit-for-bit.</p>
+<p><a name="SchemaUtils.ValidateVerb"></a></p>
+<h3 id="func-schemautils-validateverb">func (*SchemaUtils) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L269">ValidateVerb</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span><span class="p">)</span><span class="w"> </span><span class="nx">ValidateVerb</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">verbConfig</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">ValidationResult</span>
+</code></pre></div>
+
+<p>ValidateVerb validates a verb config against the schema. Mirrors Python's “validate_verb(verb_name, verb_config)“.</p>
+<p>When validation is disabled returns Valid=true. When the verb name is unknown returns Valid=false with a single "Unknown verb" error. Otherwise runs the full validator if available, falling back to the lightweight required-property check.</p>
+<p><a name="SchemaValidationError"></a></p>
+<h2 id="type-schemavalidationerror">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L29-L32">SchemaValidationError</a></h2>
+<p>SchemaValidationError is the canonical error type raised when SWML schema validation fails. Mirrors Python's SchemaValidationError.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SchemaValidationError</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">VerbName</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Errors</span><span class="w">   </span><span class="p">[]</span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewSchemaValidationError"></a></p>
+<h3 id="func-newschemavalidationerror">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L36">NewSchemaValidationError</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewSchemaValidationError</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">errors</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaValidationError</span>
+</code></pre></div>
+
+<p>NewSchemaValidationError constructs a SchemaValidationError. Mirrors Python's SchemaValidationError.<strong>init</strong>(verb_name, errors).</p>
+<p><a name="SchemaValidationError.Error"></a></p>
+<h3 id="func-schemavalidationerror-error">func (*SchemaValidationError) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L41">Error</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaValidationError</span><span class="p">)</span><span class="w"> </span><span class="nx">Error</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>Error renders the validation failure as a single string.</p>
+<p><a name="SecurityConfig"></a></p>
+<h2 id="type-securityconfig">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L53-L59">SecurityConfig</a></h2>
+<p>SecurityConfig bundles configuration for all supported authentication methods: HTTP Basic Auth, Bearer token, and API key. Pass it to WithSecurityConfig to configure multiple auth methods in one call.</p>
+<p>Fields default to the zero value (disabled). Set only the fields you need.</p>
+<ul>
+<li>BasicAuthUser / BasicAuthPassword — HTTP Basic Auth credentials.</li>
+<li>BearerToken — Expected value of the "Authorization: Bearer <token>" header.</li>
+<li>APIKey — Expected API key value.</li>
+<li>APIKeyHeader — Header name to read the API key from (default "X-API-Key").</li>
+</ul>
+<p>Mirrors Python's SecurityConfig dataclass.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SecurityConfig</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">BasicAuthUser</span><span class="w">     </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">BasicAuthPassword</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">BearerToken</span><span class="w">       </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">APIKey</span><span class="w">            </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">APIKeyHeader</span><span class="w">      </span><span class="kt">string</span><span class="w"> </span><span class="c1">// defaults to &quot;X-API-Key&quot; when APIKey is set</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="Service"></a></p>
+<h2 id="type-service">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L63-L135">Service</a></h2>
+<p>Service is the base SWML service that manages documents, HTTP endpoints, and auth. It provides auto-vivified verb methods driven by the SWML schema.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Service</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">   </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Route</span><span class="w">  </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Host</span><span class="w">   </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Port</span><span class="w">   </span><span class="kt">int</span>
+<span class="w">    </span><span class="nx">Domain</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="c1">// Domain for TLS certificates and URL generation (SWML_DOMAIN env var)</span>
+<span class="w">    </span><span class="nx">Logger</span><span class="w"> </span><span class="o">*</span><span class="nx">logging</span><span class="p">.</span><span class="nx">Logger</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewService"></a></p>
+<h3 id="func-newservice">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L285">NewService</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewService</span><span class="p">(</span><span class="nx">opts</span><span class="w"> </span><span class="o">...</span><span class="nx">ServiceOption</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span>
+</code></pre></div>
+
+<p>NewService creates a new SWML service with the given options.</p>
+<p><a name="Service.AI"></a></p>
+<h3 id="func-service-ai">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L762">AI</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">AI</span><span class="p">(</span><span class="nx">promptText</span><span class="w"> </span><span class="o">*</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">promptPOM</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">postPrompt</span><span class="p">,</span><span class="w"> </span><span class="nx">postPromptURL</span><span class="w"> </span><span class="o">*</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">swaig</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">extra</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>AI adds the ai verb. AgentBase overrides this with its own AI rendering. promptText and promptPOM are mutually exclusive; providing both is an error. promptText sets a plain-text prompt; promptPOM sets a structured POM prompt. postPrompt and postPromptURL configure post-prompt behavior (optional). swaig supplies SWAIG configuration (optional). extra is a map of additional AI parameters merged into the verb config (optional). Mirrors Python SWMLBuilder.ai(prompt_text, prompt_pom, post_prompt, post_prompt_url, swaig, **kwargs).</p>
+<p><a name="Service.AddSection"></a></p>
+<h3 id="func-service-addsection">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L565">AddSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">AddSection</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>AddSection adds a new named section to the SWML document. Returns false if the section already exists. Delegates to Document.AddSection. Mirrors Python's add_section method which was only on the Document in Go but is on SWMLService in Python.</p>
+<p><a name="Service.AmazonBedrock"></a></p>
+<h3 id="func-service-amazonbedrock">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L792">AmazonBedrock</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">AmazonBedrock</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>AmazonBedrock adds the amazon_bedrock verb.</p>
+<p><a name="Service.Answer"></a></p>
+<h3 id="func-service-answer">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L637">Answer</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Answer</span><span class="p">(</span><span class="nx">maxDuration</span><span class="w"> </span><span class="o">*</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">codecs</span><span class="w"> </span><span class="o">*</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Answer adds the answer verb to the document. maxDuration sets the maximum call duration in seconds (optional). codecs sets a comma-separated list of allowed codecs (optional). Mirrors Python SWMLBuilder.answer(max_duration, codecs).</p>
+<p><a name="Service.AsRouter"></a></p>
+<h3 id="func-service-asrouter">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L572">AsRouter</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">AsRouter</span><span class="p">()</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span>
+</code></pre></div>
+
+<p>AsRouter returns an http.Handler that serves this service's endpoints. Use this to embed the service in a custom HTTP mux or router. Mirrors Python's as_router() -&gt; APIRouter method on SWMLService.</p>
+<p><a name="Service.BuildSwaigListToolsPayload"></a></p>
+<h3 id="func-service-buildswaiglisttoolspayload">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1117">BuildSwaigListToolsPayload</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">BuildSwaigListToolsPayload</span><span class="p">()</span><span class="w"> </span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>BuildSwaigListToolsPayload returns the JSON payload that --example mode expects between the sentinel markers: {"tools": [<definitions>]}. Each element echoes whatever the in-memory ToolDefinition stores (name, description, parameters); we deliberately do not normalize so the CLI can be permissive about field names.</p>
+<p>Exposed for tests so the env-var-driven exit branch in Serve() can be asserted without forking a process.</p>
+<p><a name="Service.Cond"></a></p>
+<h3 id="func-service-cond">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L797">Cond</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Cond</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Cond adds the cond verb (conditional logic).</p>
+<p><a name="Service.Connect"></a></p>
+<h3 id="func-service-connect">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L726">Connect</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Connect</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Connect adds the connect verb.</p>
+<p><a name="Service.DefineTool"></a></p>
+<h3 id="func-service-definetool">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1261">DefineTool</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">DefineTool</span><span class="p">(</span><span class="nx">td</span><span class="w"> </span><span class="o">*</span><span class="nx">ToolDefinition</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span>
+</code></pre></div>
+
+<p>DefineTool registers a SWAIG function the AI can call. Tool descriptions and parameter descriptions are LLM-facing prompt engineering — see PORTING_GUIDE for guidance.</p>
+<p><a name="Service.Denoise"></a></p>
+<h3 id="func-service-denoise">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L852">Denoise</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Denoise</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Denoise adds the denoise verb.</p>
+<p><a name="Service.DetectMachine"></a></p>
+<h3 id="func-service-detectmachine">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L892">DetectMachine</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">DetectMachine</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>DetectMachine adds the detect_machine verb.</p>
+<p><a name="Service.EnterQueue"></a></p>
+<h3 id="func-service-enterqueue">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L877">EnterQueue</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">EnterQueue</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>EnterQueue adds the enter_queue verb.</p>
+<p><a name="Service.Execute"></a></p>
+<h3 id="func-service-execute">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L807">Execute</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Execute</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Execute adds the execute verb (run another SWML section).</p>
+<p><a name="Service.ExecuteVerb"></a></p>
+<h3 id="func-service-executeverb">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L592">ExecuteVerb</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">ExecuteVerb</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>ExecuteVerb adds any SWML verb to the document, validated against the schema and any registered VerbHandler. This is the core method that all verb convenience methods delegate to. For most verbs, config should be a map[string]any of verb parameters. For "sleep", config should be an integer (milliseconds).</p>
+<p><a name="Service.ExecuteVerbToSection"></a></p>
+<h3 id="func-service-executeverbtosection">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L611">ExecuteVerbToSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">ExecuteVerbToSection</span><span class="p">(</span><span class="nx">section</span><span class="p">,</span><span class="w"> </span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>ExecuteVerbToSection adds a SWML verb to a named section.</p>
+<p><a name="Service.FullValidationEnabled"></a></p>
+<h3 id="func-service-fullvalidationenabled">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L555">FullValidationEnabled</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">FullValidationEnabled</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>FullValidationEnabled reports whether schema validation is active. Returns true when a schema was successfully loaded and schemaValidation is on. Mirrors Python's full_validation_enabled property.</p>
+<p><a name="Service.GetAuthInfo"></a></p>
+<h3 id="func-service-getauthinfo">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L513">GetAuthInfo</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">GetAuthInfo</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetAuthInfo returns a map describing every configured authentication method. The map mirrors the Python AuthHandler.get_auth_info() return value:</p>
+<ul>
+<li>"basic" → {"enabled": true, "username": "<user>"}</li>
+<li>"bearer" → {"enabled": true, "hint": "Use Authorization: Bearer <token>"}</li>
+<li>"api_key" → {"enabled": true, "header": "<hdr>", "hint": "Use <hdr>: <key>"}</li>
+</ul>
+<p>Only methods that are actively configured appear in the map. Basic auth is always present because the service always has a username/password (either explicit or auto-generated). Mirrors Python AuthHandler.get_auth_info() -&gt; Dict[str, Any].</p>
+<p><a name="Service.GetBasicAuthCredentials"></a></p>
+<h3 id="func-service-getbasicauthcredentials">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L428">GetBasicAuthCredentials</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">GetBasicAuthCredentials</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>GetBasicAuthCredentials returns the (username, password) for basic auth.</p>
+<p><a name="Service.GetBasicAuthCredentialsWithSource"></a></p>
+<h3 id="func-service-getbasicauthcredentialswithsource">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L435">GetBasicAuthCredentialsWithSource</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">GetBasicAuthCredentialsWithSource</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>GetBasicAuthCredentialsWithSource returns (username, password, source) where source is one of "environment", "explicit", or "auto-generated". Mirrors Python's get_basic_auth_credentials(include_source=True) three-tuple return.</p>
+<p><a name="Service.GetDocument"></a></p>
+<h3 id="func-service-getdocument">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L407">GetDocument</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">GetDocument</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">Document</span>
+</code></pre></div>
+
+<p>GetDocument returns the current SWML document.</p>
+<p><a name="Service.GetFullURL"></a></p>
+<h3 id="func-service-getfullurl">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L929">GetFullURL</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">GetFullURL</span><span class="p">(</span><span class="nx">includeAuth</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetFullURL returns the full URL for this service including auth.</p>
+<p>Base URL resolution order:</p>
+<ol>
+<li>SWML_PROXY_URL_BASE (explicit proxy override — always wins)</li>
+<li>Platform-specific base derived from GetExecutionMode() when running inside a serverless runtime (currently AWS Lambda)</li>
+<li>Local http://host:port base (default server mode)</li>
+</ol>
+<p>In every branch the agent's Route is appended to the base. Callers that need to serve SWAIG / post_prompt endpoints then append further path segments onto the result. This invariant is load-bearing: a Lambda-hosted agent at route "/my-agent" must emit SWAIG URLs like "https://xxx.lambda-url.us-east-1.on.aws/my-agent/swaig" — NOT "https://xxx.lambda-url.us-east-1.on.aws/swaig". See buildWebhookURL in pkg/agent/agent.go for the defensive HasSuffix re-check that enforces the same property downstream.</p>
+<p><a name="Service.GetVerbHandler"></a></p>
+<h3 id="func-service-getverbhandler">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/verb_handler.go#L57">GetVerbHandler</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">GetVerbHandler</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">VerbHandler</span>
+</code></pre></div>
+
+<p>GetVerbHandler returns the registered handler for verbName, or nil if no handler has been registered for that verb. This is the Go equivalent of Python's VerbHandlerRegistry.get_handler.</p>
+<p><a name="Service.Goto"></a></p>
+<h3 id="func-service-goto">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L817">Goto</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Goto</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Goto adds the goto verb.</p>
+<p><a name="Service.Hangup"></a></p>
+<h3 id="func-service-hangup">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L651">Hangup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Hangup</span><span class="p">(</span><span class="nx">reason</span><span class="w"> </span><span class="o">*</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Hangup adds the hangup verb. reason is an optional reason string for the hangup. Mirrors Python SWMLBuilder.hangup(reason).</p>
+<p><a name="Service.HasTool"></a></p>
+<h3 id="func-service-hastool">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1315">HasTool</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">HasTool</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>HasTool reports whether a tool with the given name has been registered.</p>
+<p><a name="Service.HasVerbHandler"></a></p>
+<h3 id="func-service-hasverbhandler">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/verb_handler.go#L65">HasVerbHandler</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">HasVerbHandler</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>HasVerbHandler reports whether a custom handler is registered for verbName. This is the Go equivalent of Python's VerbHandlerRegistry.has_handler.</p>
+<p><a name="Service.JoinConference"></a></p>
+<h3 id="func-service-joinconference">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L867">JoinConference</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">JoinConference</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>JoinConference adds the join_conference verb.</p>
+<p><a name="Service.JoinRoom"></a></p>
+<h3 id="func-service-joinroom">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L862">JoinRoom</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">JoinRoom</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>JoinRoom adds the join_room verb.</p>
+<p><a name="Service.Label"></a></p>
+<h3 id="func-service-label">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L822">Label</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Label</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Label adds the label verb.</p>
+<p><a name="Service.ListToolNames"></a></p>
+<h3 id="func-service-listtoolnames">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1323">ListToolNames</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">ListToolNames</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>ListToolNames returns the registered tool names in insertion order.</p>
+<p><a name="Service.LiveTranscribe"></a></p>
+<h3 id="func-service-livetranscribe">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L897">LiveTranscribe</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">LiveTranscribe</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>LiveTranscribe adds the live_transcribe verb.</p>
+<p><a name="Service.LiveTranslate"></a></p>
+<h3 id="func-service-livetranslate">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L902">LiveTranslate</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">LiveTranslate</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>LiveTranslate adds the live_translate verb.</p>
+<p><a name="Service.ManualSetProxyUrl"></a></p>
+<h3 id="func-service-manualsetproxyurl">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L579">ManualSetProxyUrl</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">ManualSetProxyUrl</span><span class="p">(</span><span class="nx">url</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>ManualSetProxyUrl overrides the proxy URL base used for URL generation. Call this at runtime to set or update the proxy URL (e.g. an ngrok URL). Mirrors Python's manual_set_proxy_url(proxy_url: str) on SWMLService.</p>
+<p><a name="Service.OnFunctionCall"></a></p>
+<h3 id="func-service-onfunctioncall">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1304">OnFunctionCall</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">OnFunctionCall</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="p">,</span><span class="w"> </span><span class="nx">rawData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">any</span>
+</code></pre></div>
+
+<p>OnFunctionCall dispatches a function call to the registered handler. Default implementation: looks up the tool in the registry and invokes its handler. Subclasses (AgentBase) may override at the type level by providing their own method (Go method dispatch is static — to override in a way that is callable through Service, use the SwaigPreDispatch extension hook to substitute a target).</p>
+<p><a name="Service.OnRequest"></a></p>
+<h3 id="func-service-onrequest">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1021">OnRequest</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">OnRequest</span><span class="p">(</span><span class="nx">requestData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">callbackPath</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>OnRequest generates the SWML response for an incoming request. It checks routing callbacks first, then returns the default document.</p>
+<p>The return value is a pointer to allow subclasses (AgentBase) to signal "no override" by returning nil — matching Python's Optional[dict] return type for on_request. Callers should treat a nil return as "use the default document unchanged".</p>
+<p><a name="Service.Pay"></a></p>
+<h3 id="func-service-pay">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L887">Pay</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Pay</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Pay adds the pay verb.</p>
+<p><a name="Service.Play"></a></p>
+<h3 id="func-service-play">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L665">Play</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Play</span><span class="p">(</span><span class="nx">url</span><span class="w"> </span><span class="o">*</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">urls</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">volume</span><span class="w"> </span><span class="o">*</span><span class="kt">float64</span><span class="p">,</span><span class="w"> </span><span class="nx">sayVoice</span><span class="p">,</span><span class="w"> </span><span class="nx">sayLanguage</span><span class="p">,</span><span class="w"> </span><span class="nx">sayGender</span><span class="w"> </span><span class="o">*</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">autoAnswer</span><span class="w"> </span><span class="o">*</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Play adds the play verb. Exactly one of url or urls must be provided; providing both is an error. volume sets the playback volume (-40 to 40, optional). sayVoice, sayLanguage, sayGender configure text-to-speech (optional). autoAnswer controls whether to auto-answer the call (optional). Mirrors Python SWMLBuilder.play(url, urls, volume, say_voice, say_language, say_gender, auto_answer).</p>
+<p><a name="Service.Prompt"></a></p>
+<h3 id="func-service-prompt">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L872">Prompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Prompt</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Prompt adds the prompt verb.</p>
+<p><a name="Service.ReceiveFax"></a></p>
+<h3 id="func-service-receivefax">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L746">ReceiveFax</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">ReceiveFax</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>ReceiveFax adds the receive_fax verb.</p>
+<p><a name="Service.Record"></a></p>
+<h3 id="func-service-record">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L706">Record</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Record</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Record adds the record verb.</p>
+<p><a name="Service.RecordCall"></a></p>
+<h3 id="func-service-recordcall">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L711">RecordCall</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">RecordCall</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>RecordCall adds the record_call verb.</p>
+<p><a name="Service.RegisterAdditionalRoutes"></a></p>
+<h3 id="func-service-registeradditionalroutes">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1252">RegisterAdditionalRoutes</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterAdditionalRoutes</span><span class="p">(</span><span class="nx">mux</span><span class="w"> </span><span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">ServeMux</span><span class="p">)</span>
+</code></pre></div>
+
+<p>RegisterAdditionalRoutes is an extension hook for subclasses (e.g. AgentBase) to mount additional routes (/post_prompt, /mcp). Default no-op. Composing types call this from their own buildMux equivalent.</p>
+<p><a name="Service.RegisterRoutingCallback"></a></p>
+<h3 id="func-service-registerroutingcallback">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L986">RegisterRoutingCallback</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterRoutingCallback</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cb</span><span class="w"> </span><span class="nx">RoutingCallback</span><span class="p">)</span>
+</code></pre></div>
+
+<p>RegisterRoutingCallback registers a callback for a specific path.</p>
+<p><a name="Service.RegisterSwaigFunction"></a></p>
+<h3 id="func-service-registerswaigfunction">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1277">RegisterSwaigFunction</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterSwaigFunction</span><span class="p">(</span><span class="nx">funcDef</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span>
+</code></pre></div>
+
+<p>RegisterSwaigFunction registers a raw SWAIG function definition (e.g. DataMap tools that have no local handler). The map must contain a "function" key giving the tool name.</p>
+<p><a name="Service.RegisterVerbHandler"></a></p>
+<h3 id="func-service-registerverbhandler">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/verb_handler.go#L45">RegisterVerbHandler</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterVerbHandler</span><span class="p">(</span><span class="nx">h</span><span class="w"> </span><span class="nx">VerbHandler</span><span class="p">)</span>
+</code></pre></div>
+
+<p>RegisterVerbHandler registers a custom handler for a SWML verb, keyed by the name returned by h.GetVerbName(). A subsequent call with the same verb name replaces the previous handler. This is the Go equivalent of Python's VerbHandlerRegistry.register_handler.</p>
+<p><a name="Service.Render"></a></p>
+<h3 id="func-service-render">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1039">Render</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Render</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Render returns the SWML document as a JSON string.</p>
+<p><a name="Service.RenderMainSwml"></a></p>
+<h3 id="func-service-rendermainswml">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1343">RenderMainSwml</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">RenderMainSwml</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>RenderMainSwml is an extension hook invoked for the main route and for GET /swaig. Default returns the currently-built document. AgentBase overrides to render with prompts + dynamic config.</p>
+<p><a name="Service.RenderPretty"></a></p>
+<h3 id="func-service-renderpretty">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1044">RenderPretty</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">RenderPretty</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>RenderPretty returns the SWML document as an indented JSON string.</p>
+<p><a name="Service.Request"></a></p>
+<h3 id="func-service-request">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L882">Request</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Request</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Request adds the request verb (HTTP request).</p>
+<p><a name="Service.ResetDocument"></a></p>
+<h3 id="func-service-resetdocument">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L414">ResetDocument</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">ResetDocument</span><span class="p">()</span>
+</code></pre></div>
+
+<p>ResetDocument resets the SWML document to empty.</p>
+<p><a name="Service.Return"></a></p>
+<h3 id="func-service-return">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L812">Return</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Return</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Return adds the return verb.</p>
+<p><a name="Service.RoutingCallbackPaths"></a></p>
+<h3 id="func-service-routingcallbackpaths">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L997">RoutingCallbackPaths</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">RoutingCallbackPaths</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>RoutingCallbackPaths returns the paths that have routing callbacks registered. Callers use this to register corresponding HTTP endpoints (mirrors Python web_mixin.py line 428 which iterates self._routing_callbacks to register callback endpoints on the router). Paths are returned in sorted order for deterministic HTTP registration.</p>
+<p><a name="Service.SIPRefer"></a></p>
+<h3 id="func-service-siprefer">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L751">SIPRefer</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">SIPRefer</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>SIPRefer adds the sip_refer verb.</p>
+<p><a name="Service.Say"></a></p>
+<h3 id="func-service-say">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L700">Say</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Say</span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">voice</span><span class="p">,</span><span class="w"> </span><span class="nx">language</span><span class="p">,</span><span class="w"> </span><span class="nx">gender</span><span class="w"> </span><span class="o">*</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">volume</span><span class="w"> </span><span class="o">*</span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Say adds a play verb with a "say:" prefix for text-to-speech. voice, language, and gender configure the TTS voice (optional). volume sets the playback volume (-40 to 40, optional). Mirrors Python SWMLBuilder.say(text, voice, language, gender, volume).</p>
+<p><a name="Service.SchemaUtils"></a></p>
+<h3 id="func-service-schemautils">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L423">SchemaUtils</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">SchemaUtils</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">SchemaUtils</span>
+</code></pre></div>
+
+<p>SchemaUtils returns the SchemaUtils helper bound to this Service. Mirrors Python's “self.schema_utils“ instance attribute exposed publicly on signalwire.core.swml_service.SWMLService.</p>
+<p><a name="Service.SendDigits"></a></p>
+<h3 id="func-service-senddigits">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L731">SendDigits</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">SendDigits</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>SendDigits adds the send_digits verb.</p>
+<p><a name="Service.SendFax"></a></p>
+<h3 id="func-service-sendfax">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L741">SendFax</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">SendFax</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>SendFax adds the send_fax verb.</p>
+<p><a name="Service.SendSMS"></a></p>
+<h3 id="func-service-sendsms">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L736">SendSMS</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">SendSMS</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>SendSMS adds the send_sms verb.</p>
+<p><a name="Service.Serve"></a></p>
+<h3 id="func-service-serve">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1170">Serve</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Serve</span><span class="p">()</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Serve starts the HTTP server. This is a blocking call.</p>
+<p>When TLS is configured via WithTLS (or SWML_SSL_CERT_PATH / SWML_SSL_KEY_PATH env vars), ListenAndServeTLS is called automatically. Mirrors Python's serve() ssl_cert / ssl_key / ssl_enabled parameter support.</p>
+<p>If SWAIG_LIST_TOOLS is set in the environment, Serve() does NOT bind a port; instead it prints the registered tool registry sandwiched by <strong>SWAIG_TOOLS_BEGIN</strong> / <strong>SWAIG_TOOLS_END</strong> sentinels to stdout and exits 0. This is how `swaig-test --example NAME` introspects a SWMLService-only binary without HTTP-walking rendered SWML.</p>
+<p><a name="Service.Set"></a></p>
+<h3 id="func-service-set">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L827">Set</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Set</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Set adds the set verb (set variables).</p>
+<p><a name="Service.Sleep"></a></p>
+<h3 id="func-service-sleep">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L721">Sleep</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">duration</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Sleep adds the sleep verb. Duration is in milliseconds.</p>
+<p><a name="Service.Stop"></a></p>
+<h3 id="func-service-stop">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1207">Stop</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Stop</span><span class="p">()</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Stop gracefully stops the HTTP server.</p>
+<p><a name="Service.StopDenoise"></a></p>
+<h3 id="func-service-stopdenoise">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L857">StopDenoise</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">StopDenoise</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>StopDenoise adds the stop_denoise verb.</p>
+<p><a name="Service.StopRecordCall"></a></p>
+<h3 id="func-service-stoprecordcall">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L716">StopRecordCall</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">StopRecordCall</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>StopRecordCall adds the stop_record_call verb.</p>
+<p><a name="Service.StopTap"></a></p>
+<h3 id="func-service-stoptap">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L847">StopTap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">StopTap</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>StopTap adds the stop_tap verb.</p>
+<p><a name="Service.SwaigPreDispatch"></a></p>
+<h3 id="func-service-swaigpredispatch">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L1336">SwaigPreDispatch</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">SwaigPreDispatch</span><span class="p">(</span><span class="nx">requestData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">funcName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">target</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">,</span><span class="w"> </span><span class="nx">shortCircuit</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span>
+</code></pre></div>
+
+<p>SwaigPreDispatch is an extension hook invoked between argument parsing and function dispatch on POST /swaig. It returns a target Service to dispatch on (defaults to s) and an optional short-circuit response. Subclasses (AgentBase) override to add session-token validation or ephemeral dynamic-config copies.</p>
+<p><a name="Service.Switch"></a></p>
+<h3 id="func-service-switch">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L802">Switch</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Switch</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Switch adds the switch verb.</p>
+<p><a name="Service.TLSEnabled"></a></p>
+<h3 id="func-service-tlsenabled">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L548">TLSEnabled</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">TLSEnabled</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>TLSEnabled reports whether TLS is configured for this service. Mirrors Python's ssl_enabled property on SWMLService.</p>
+<p><a name="Service.Tap"></a></p>
+<h3 id="func-service-tap">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L842">Tap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Tap</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Tap adds the tap verb (media tapping).</p>
+<p><a name="Service.Transfer"></a></p>
+<h3 id="func-service-transfer">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L837">Transfer</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Transfer</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Transfer adds the transfer verb.</p>
+<p><a name="Service.Unset"></a></p>
+<h3 id="func-service-unset">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L832">Unset</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">Unset</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Unset adds the unset verb.</p>
+<p><a name="Service.UserEvent"></a></p>
+<h3 id="func-service-userevent">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L907">UserEvent</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">UserEvent</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>UserEvent adds the user_event verb.</p>
+<p><a name="Service.VerifyAPIKey"></a></p>
+<h3 id="func-service-verifyapikey">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L493">VerifyAPIKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">VerifyAPIKey</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>VerifyAPIKey performs a timing-safe comparison of the supplied key value against the service's configured API key. Returns false when no API key is configured (i.e. WithAPIKey was not called).</p>
+<p>Callers typically read the key from the header returned by APIKeyHeader(). Mirrors Python AuthHandler.verify_api_key(api_key: str) -&gt; bool.</p>
+<p><a name="Service.VerifyBasicAuth"></a></p>
+<h3 id="func-service-verifybasicauth">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L462">VerifyBasicAuth</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">VerifyBasicAuth</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>VerifyBasicAuth performs a timing-safe comparison of the supplied credentials against the service's configured basic auth username and password. Returns true when both username and password match.</p>
+<p>This exposes the same check that withSecurity applies inside the HTTP middleware, making auth testable in isolation without an HTTP round-trip. Mirrors Python AuthHandler.verify_basic_auth(credentials) -&gt; bool using secrets.compare_digest (equivalent: crypto/subtle.ConstantTimeCompare).</p>
+<p><a name="Service.VerifyBearerToken"></a></p>
+<h3 id="func-service-verifybearertoken">func (*Service) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L478">VerifyBearerToken</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span><span class="w"> </span><span class="nx">VerifyBearerToken</span><span class="p">(</span><span class="nx">token</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>VerifyBearerToken performs a timing-safe comparison of the supplied token against the service's configured bearer token. Returns false when no bearer token is configured (i.e. WithBearerToken was not called).</p>
+<p>Callers typically extract the token from the "Authorization: Bearer <token>" header before calling this method. Mirrors Python AuthHandler.verify_bearer_token(credentials) -&gt; bool.</p>
+<p><a name="ServiceOption"></a></p>
+<h2 id="type-serviceoption">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L138">ServiceOption</a></h2>
+<p>ServiceOption is a functional option for configuring a Service.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ServiceOption</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">Service</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="WithAPIKey"></a></p>
+<h3 id="func-withapikey">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L184">WithAPIKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithAPIKey</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">header</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithAPIKey configures API key authentication. When set, the withSecurity middleware accepts requests where the header named by header equals key. header is the HTTP header name (e.g. "X-API-Key"); pass an empty string to use the default "X-API-Key". Mirrors Python's SecurityConfig.api_key / api_key_header fields and the AuthHandler verify_api_key / flask_decorator behaviour.</p>
+<p><a name="WithBasicAuth"></a></p>
+<h3 id="func-withbasicauth">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L161">WithBasicAuth</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithBasicAuth</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithBasicAuth sets explicit basic auth credentials.</p>
+<p><a name="WithBearerToken"></a></p>
+<h3 id="func-withbearertoken">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L174">WithBearerToken</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithBearerToken</span><span class="p">(</span><span class="nx">token</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithBearerToken configures Bearer token authentication. When set, the withSecurity middleware accepts requests carrying an "Authorization: Bearer <token>" header that matches token in addition to (or instead of) Basic Auth. Mirrors Python's SecurityConfig.bearer_token field and the AuthHandler verify_bearer_token / flask_decorator behaviour.</p>
+<p><a name="WithConfigFile"></a></p>
+<h3 id="func-withconfigfile">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L267">WithConfigFile</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithConfigFile</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithConfigFile loads a YAML configuration file and applies its `security` section to the Service. Mirrors Python's SecurityConfig(config_file=...) loader (signalwire/core/security_config.py _load_config_file). The expected schema is:</p>
+<div class="codehilite"><pre><span></span><code>security:
+  ssl_cert_path: /path/to/cert.pem
+  ssl_key_path: /path/to/key.pem
+  domain: example.com
+  auth:
+    basic:
+      user: alice
+      password: secret
+    bearer_token: &lt;token&gt;
+    api_key: &lt;key&gt;
+    api_key_header: X-API-Key
+</code></pre></div>
+
+<p>Settings from the file are applied AFTER the explicit WithBasicAuth / WithBearerToken / WithAPIKey / WithTLS / WithDomain options, so config-file values take precedence (matching Python's documented load order). If the file cannot be read or parsed, NewService logs a warning and keeps running with the previously-set values; this matches Python's "best-effort" load behaviour and avoids crashing services whose config is missing.</p>
+<p><a name="WithDomain"></a></p>
+<h3 id="func-withdomain">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L232">WithDomain</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithDomain</span><span class="p">(</span><span class="nx">domain</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithDomain sets the domain name used in URL generation when TLS is enabled. Mirrors Python's SecurityConfig.domain / SWML_DOMAIN env var.</p>
+<p><a name="WithHost"></a></p>
+<h3 id="func-withhost">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L151">WithHost</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithHost</span><span class="p">(</span><span class="nx">host</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithHost sets the HTTP server bind host.</p>
+<p><a name="WithName"></a></p>
+<h3 id="func-withname">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L141">WithName</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithName</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithName sets the service name.</p>
+<p><a name="WithPort"></a></p>
+<h3 id="func-withport">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L156">WithPort</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithPort</span><span class="p">(</span><span class="nx">port</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithPort sets the HTTP server port.</p>
+<p><a name="WithRoute"></a></p>
+<h3 id="func-withroute">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L146">WithRoute</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithRoute</span><span class="p">(</span><span class="nx">route</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithRoute sets the HTTP route path.</p>
+<p><a name="WithSchemaPath"></a></p>
+<h3 id="func-withschemapath">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L240">WithSchemaPath</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithSchemaPath</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithSchemaPath overrides the schema file path used for verb validation. By default the embedded schema.json is used. Pass a custom path when testing or when deploying a modified schema alongside your binary. Mirrors Python's schema_path constructor parameter.</p>
+<p><a name="WithSchemaValidation"></a></p>
+<h3 id="func-withschemavalidation">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L280">WithSchemaValidation</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithSchemaValidation</span><span class="p">(</span><span class="nx">enabled</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithSchemaValidation enables or disables SWML schema validation. Defaults to true (validation on). Set to false, or export SWML_SKIP_SCHEMA_VALIDATION=1, to bypass schema checks. Mirrors Python's schema_validation constructor parameter.</p>
+<p><a name="WithSecurityConfig"></a></p>
+<h3 id="func-withsecurityconfig">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L198">WithSecurityConfig</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithSecurityConfig</span><span class="p">(</span><span class="nx">cfg</span><span class="w"> </span><span class="nx">SecurityConfig</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithSecurityConfig applies a SecurityConfig bundle, setting Basic Auth, Bearer token, and API key configuration in one call. This is the Go equivalent of Python's AuthHandler(security_config=...) pattern: it maps each SecurityConfig field to the corresponding WithXxx option.</p>
+<p><a name="WithTLS"></a></p>
+<h3 id="func-withtls">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L223">WithTLS</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithTLS</span><span class="p">(</span><span class="nx">certFile</span><span class="p">,</span><span class="w"> </span><span class="nx">keyFile</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">ServiceOption</span>
+</code></pre></div>
+
+<p>WithTLS configures TLS for the service. When set, Serve() calls ListenAndServeTLS instead of ListenAndServe. Mirrors Python's ssl_cert / ssl_key serve() parameters and ssl_enabled property.</p>
+<p><a name="ToolDefinition"></a></p>
+<h2 id="type-tooldefinition">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L26-L32">ToolDefinition</a></h2>
+<p>ToolDefinition is a SWAIG tool registered on the Service.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ToolDefinition</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">        </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Description</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Parameters</span><span class="w">  </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+<span class="w">    </span><span class="nx">Handler</span><span class="w">     </span><span class="nx">ToolHandler</span>
+<span class="w">    </span><span class="nx">Secure</span><span class="w">      </span><span class="kt">bool</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="ToolHandler"></a></p>
+<h2 id="type-toolhandler">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/service.go#L23">ToolHandler</a></h2>
+<p>ToolHandler is the function signature for a registered SWAIG tool. Returns a result that will be JSON-encoded as the SWAIG response.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ToolHandler</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">args</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">rawData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="ValidationResult"></a></p>
+<h2 id="type-validationresult">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema_utils.go#L53-L56">ValidationResult</a></h2>
+<p>ValidationResult mirrors Python's “Tuple[bool, List[str]]“ return shape used by ValidateVerb / ValidateDocument.</p>
+<p>The cross-language type alias table maps this struct to the canonical “tuple<bool,list\<string>>“ so audits accept it as Python-shaped.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ValidationResult</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Valid</span><span class="w">  </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Errors</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="Verb"></a></p>
+<h2 id="type-verb">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/document.go#L23">Verb</a></h2>
+<p>Verb represents a single SWML verb (instruction) as a key-value pair. Example: {"play": {"url": "https://example.com/audio.mp3"}}</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Verb</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="VerbHandler"></a></p>
+<h2 id="type-verbhandler">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/verb_handler.go#L15-L39">VerbHandler</a></h2>
+<p>VerbHandler defines the contract for specialized SWML verb handlers.</p>
+<p>Implementations provide verb-specific validation and configuration-building logic for complex SWML verbs that cannot be handled generically. This is the Go equivalent of the Python SWMLVerbHandler abstract base class.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">VerbHandler</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// GetVerbName returns the name of the SWML verb this handler handles.</span>
+<span class="w">    </span><span class="c1">//</span>
+<span class="w">    </span><span class="c1">// The returned name must match the verb name used in SWML documents</span>
+<span class="w">    </span><span class="c1">// (e.g., &quot;ai&quot;, &quot;play&quot;, &quot;record&quot;).</span>
+<span class="w">    </span><span class="nx">GetVerbName</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+
+<span class="w">    </span><span class="c1">// ValidateConfig validates the configuration map for this verb.</span>
+<span class="w">    </span><span class="c1">//</span>
+<span class="w">    </span><span class="c1">// config is the configuration dictionary for this verb. It returns</span>
+<span class="w">    </span><span class="c1">// (isValid, errorMessages): isValid is true when the config passes all</span>
+<span class="w">    </span><span class="c1">// validation checks, and errorMessages contains human-readable descriptions</span>
+<span class="w">    </span><span class="c1">// of any validation failures. When isValid is true, errorMessages will be</span>
+<span class="w">    </span><span class="c1">// empty.</span>
+<span class="w">    </span><span class="nx">ValidateConfig</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// BuildConfig builds a configuration map for this verb from the provided</span>
+<span class="w">    </span><span class="c1">// parameters.</span>
+<span class="w">    </span><span class="c1">//</span>
+<span class="w">    </span><span class="c1">// params contains keyword arguments specific to this verb, mirroring the</span>
+<span class="w">    </span><span class="c1">// **kwargs pattern from Python. It returns the constructed configuration</span>
+<span class="w">    </span><span class="c1">// map, or an error if the provided parameters are insufficient or</span>
+<span class="w">    </span><span class="c1">// contradictory.</span>
+<span class="w">    </span><span class="nx">BuildConfig</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="VerbInfo"></a></p>
+<h2 id="type-verbinfo">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swml/schema.go#L19-L26">VerbInfo</a></h2>
+<p>VerbInfo holds metadata about a SWML verb extracted from the schema.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">VerbInfo</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Name is the actual SWML verb name (e.g., &quot;sip_refer&quot;, &quot;ai&quot;, &quot;play&quot;)</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// SchemaName is the PascalCase name from the schema definition (e.g., &quot;SIPRefer&quot;, &quot;AI&quot;, &quot;Play&quot;)</span>
+<span class="w">    </span><span class="nx">SchemaName</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Definition is the raw schema definition for this verb</span>
+<span class="w">    </span><span class="nx">Definition</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>pom — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom" class="active">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="pom">pom</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/pom&quot;</span>
+</code></pre></div>
+
+<p>Package pom provides a typed Prompt Object Model — a structured tree of sections that can be rendered to Markdown, XML, JSON, or YAML. The rendered output matches the Python reference at signalwire/signalwire/pom/pom.py byte-for-byte for the canonical scenarios covered by the cross-port parity tests in tests/unit/pom/test_pom_render_parity.py.</p>
+<p>Two types make up the API:</p>
+<ul>
+<li>Section: one node in the tree (title, body, bullets, subsections, numbered, numberedBullets).</li>
+<li>PromptObjectModel: the root container that holds the top-level sections and provides JSON / YAML round-trip helpers plus the Markdown / XML renderers.</li>
+</ul>
+<p>Both types are exported so callers can build a POM imperatively (NewPromptObjectModel + AddSection + AddSubsection) or by parsing a JSON/YAML document (FromJSON / FromYAML). The rendered output is the canonical wire format; user-facing helpers like AgentBase.Pom() return a *PromptObjectModel value to keep mutations off the agent's internal state.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#PromptObjectModel">type PromptObjectModel</a></li>
+<li><a href="#FromJSON">func FromJSON(jsonStr string) (*PromptObjectModel, error)</a></li>
+<li><a href="#FromList">func FromList(data []map[string]any) (*PromptObjectModel, error)</a></li>
+<li><a href="#FromYAML">func FromYAML(yamlStr string) (*PromptObjectModel, error)</a></li>
+<li><a href="#NewPromptObjectModel">func NewPromptObjectModel() *PromptObjectModel</a></li>
+<li><a href="#PromptObjectModel.AddPomAsSubsection">func (p <em>PromptObjectModel) AddPomAsSubsection(target any, pomToAdd </em>PromptObjectModel) error</a></li>
+<li><a href="#PromptObjectModel.AddSection">func (p <em>PromptObjectModel) AddSection(title string, opts ...SectionOption) (</em>Section, error)</a></li>
+<li><a href="#PromptObjectModel.Clone">func (p <em>PromptObjectModel) Clone() </em>PromptObjectModel</a></li>
+<li><a href="#PromptObjectModel.FindSection">func (p <em>PromptObjectModel) FindSection(title string) </em>Section</a></li>
+<li><a href="#PromptObjectModel.RenderMarkdown">func (p *PromptObjectModel) RenderMarkdown() string</a></li>
+<li><a href="#PromptObjectModel.RenderXML">func (p *PromptObjectModel) RenderXML() string</a></li>
+<li><a href="#PromptObjectModel.ToJSON">func (p *PromptObjectModel) ToJSON() (string, error)</a></li>
+<li><a href="#PromptObjectModel.ToList">func (p *PromptObjectModel) ToList() []map[string]any</a></li>
+<li><a href="#PromptObjectModel.ToYAML">func (p *PromptObjectModel) ToYAML() string</a></li>
+<li><a href="#Section">type Section</a></li>
+<li><a href="#NewSection">func NewSection(title string) *Section</a></li>
+<li><a href="#Section.AddBody">func (s *Section) AddBody(body string)</a></li>
+<li><a href="#Section.AddBullets">func (s *Section) AddBullets(bullets []string)</a></li>
+<li><a href="#Section.AddSubsection">func (s <em>Section) AddSubsection(title string, opts ...SectionOption) (</em>Section, error)</a></li>
+<li><a href="#Section.RenderMarkdown">func (s *Section) RenderMarkdown(level int, sectionNumber []int) string</a></li>
+<li><a href="#Section.RenderXML">func (s *Section) RenderXML(indent int, sectionNumber []int) string</a></li>
+<li><a href="#Section.ToMap">func (s *Section) ToMap() map[string]any</a></li>
+<li><a href="#SectionOption">type SectionOption</a></li>
+<li><a href="#WithBody">func WithBody(body string) SectionOption</a></li>
+<li><a href="#WithBullets">func WithBullets(bullets []string) SectionOption</a></li>
+<li><a href="#WithNumbered">func WithNumbered(v bool) SectionOption</a></li>
+<li><a href="#WithNumberedBullets">func WithNumberedBullets(v bool) SectionOption</a></li>
+</ul>
+<p><a name="PromptObjectModel"></a></p>
+<h2 id="type-promptobjectmodel">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L329-L336">PromptObjectModel</a></h2>
+<p>PromptObjectModel is the root container — a list of top-level Sections plus serialization / rendering helpers. Use NewPromptObjectModel() to construct one, or FromJSON / FromYAML to parse one.</p>
+<p>Python equivalent: signalwire.pom.pom.PromptObjectModel</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">PromptObjectModel</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Sections is the ordered list of top-level sections.  Only the</span>
+<span class="w">    </span><span class="c1">// first section may have a nil Title.</span>
+<span class="w">    </span><span class="nx">Sections</span><span class="w"> </span><span class="p">[]</span><span class="o">*</span><span class="nx">Section</span>
+<span class="w">    </span><span class="c1">// Debug, when true, prints rendering decisions to stderr (matches</span>
+<span class="w">    </span><span class="c1">// the Python flag).  Off by default.</span>
+<span class="w">    </span><span class="nx">Debug</span><span class="w"> </span><span class="kt">bool</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="FromJSON"></a></p>
+<h3 id="func-fromjson">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L577">FromJSON</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">FromJSON</span><span class="p">(</span><span class="nx">jsonStr</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>FromJSON parses a JSON string (an array of section maps) and returns a populated *PromptObjectModel. Subsections are validated to require a title; any section without body/bullets/subsections is rejected.</p>
+<p>Python equivalent: PromptObjectModel.from_json</p>
+<p><a name="FromList"></a></p>
+<h3 id="func-fromlist">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L603">FromList</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">FromList</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>FromList builds a POM from a pre-parsed []map[string]any (callers can use this when they already have the dict form, e.g. from a database row or another config source).</p>
+<p>Python equivalent: PromptObjectModel._from_dict (the internal helper shared by from_json / from_yaml).</p>
+<p><a name="FromYAML"></a></p>
+<h3 id="func-fromyaml">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L589">FromYAML</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">FromYAML</span><span class="p">(</span><span class="nx">yamlStr</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>FromYAML parses a YAML string (an array of section maps) and returns a populated *PromptObjectModel.</p>
+<p>Python equivalent: PromptObjectModel.from_yaml</p>
+<p><a name="NewPromptObjectModel"></a></p>
+<h3 id="func-newpromptobjectmodel">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L341">NewPromptObjectModel</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewPromptObjectModel</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span>
+</code></pre></div>
+
+<p>NewPromptObjectModel returns an empty POM ready for AddSection calls.</p>
+<p>Python equivalent: PromptObjectModel.<strong>init</strong></p>
+<p><a name="PromptObjectModel.AddPomAsSubsection"></a></p>
+<h3 id="func-promptobjectmodel-addpomassubsection">func (*PromptObjectModel) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L828">AddPomAsSubsection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">)</span><span class="w"> </span><span class="nx">AddPomAsSubsection</span><span class="p">(</span><span class="nx">target</span><span class="w"> </span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">pomToAdd</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>AddPomAsSubsection attaches every top-level section of pomToAdd underneath the section identified by target — either the title of an existing section in this POM, or a *Section pointer.</p>
+<p>Python equivalent: PromptObjectModel.add_pom_as_subsection</p>
+<p><a name="PromptObjectModel.AddSection"></a></p>
+<h3 id="func-promptobjectmodel-addsection">func (*PromptObjectModel) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L351">AddSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">)</span><span class="w"> </span><span class="nx">AddSection</span><span class="p">(</span><span class="nx">title</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">...</span><span class="nx">SectionOption</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">Section</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>AddSection appends a top-level section. title may be empty only for the first section (Python contract: "Only the first section can have no title"). The returned *Section can be configured further (for example, by calling AddSubsection on it).</p>
+<p>Python equivalent: PromptObjectModel.add_section</p>
+<p><a name="PromptObjectModel.Clone"></a></p>
+<h3 id="func-promptobjectmodel-clone">func (*PromptObjectModel) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L849">Clone</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">)</span><span class="w"> </span><span class="nx">Clone</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span>
+</code></pre></div>
+
+<p>Clone returns a deep copy of the POM. Useful when an agent wants to hand callers a snapshot without exposing internal mutable state.</p>
+<p><a name="PromptObjectModel.FindSection"></a></p>
+<h3 id="func-promptobjectmodel-findsection">func (*PromptObjectModel) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L372">FindSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">)</span><span class="w"> </span><span class="nx">FindSection</span><span class="p">(</span><span class="nx">title</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Section</span>
+</code></pre></div>
+
+<p>FindSection performs a recursive depth-first search for a section whose Title matches. Returns nil if no match is found.</p>
+<p>Python equivalent: PromptObjectModel.find_section</p>
+<p><a name="PromptObjectModel.RenderMarkdown"></a></p>
+<h3 id="func-promptobjectmodel-rendermarkdown">func (*PromptObjectModel) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L770">RenderMarkdown</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">)</span><span class="w"> </span><span class="nx">RenderMarkdown</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>RenderMarkdown renders the entire POM as a Markdown document.</p>
+<p>Python equivalent: PromptObjectModel.render_markdown</p>
+<p><a name="PromptObjectModel.RenderXML"></a></p>
+<h3 id="func-promptobjectmodel-renderxml">func (*PromptObjectModel) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L797">RenderXML</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">)</span><span class="w"> </span><span class="nx">RenderXML</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>RenderXML renders the entire POM as an XML document with the canonical “<?xml ...?><prompt> ... </prompt>“ envelope.</p>
+<p>Python equivalent: PromptObjectModel.render_xml</p>
+<p><a name="PromptObjectModel.ToJSON"></a></p>
+<h3 id="func-promptobjectmodel-tojson">func (*PromptObjectModel) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L404">ToJSON</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">)</span><span class="w"> </span><span class="nx">ToJSON</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>ToJSON serializes the POM to a JSON string. Matches Python's json.dumps(..., indent=2) byte-for-byte for the canonical fixtures.</p>
+<p>Python equivalent: PromptObjectModel.to_json</p>
+<p><a name="PromptObjectModel.ToList"></a></p>
+<h3 id="func-promptobjectmodel-tolist">func (*PromptObjectModel) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L392">ToList</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">)</span><span class="w"> </span><span class="nx">ToList</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>ToList returns the POM as []map[string]any (one entry per top-level section), matching Python's to_dict.</p>
+<p>Python equivalent: PromptObjectModel.to_dict</p>
+<p><a name="PromptObjectModel.ToYAML"></a></p>
+<h3 id="func-promptobjectmodel-toyaml">func (*PromptObjectModel) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L500">ToYAML</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">PromptObjectModel</span><span class="p">)</span><span class="w"> </span><span class="nx">ToYAML</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>ToYAML serializes the POM to a YAML string in the same shape as Python's yaml.dump(..., default_flow_style=False, sort_keys=False). PyYAML uses block-sequence-with-indent-0 by default (the leading "-" of each list item aligns with the parent's mapping key, not after it); gopkg.in/yaml.v3 cannot be configured to do the same, so this renderer writes the YAML structure manually for byte-for-byte parity.</p>
+<p>Python equivalent: PromptObjectModel.to_yaml</p>
+<p><a name="Section"></a></p>
+<h2 id="type-section">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L47-L62">Section</a></h2>
+<p>Section is one node in the POM tree.</p>
+<p>Python equivalent: signalwire.pom.pom.Section. The exported field names match the JSON / YAML schema:</p>
+<div class="codehilite"><pre><span></span><code>{&quot;title&quot;: &quot;...&quot;, &quot;body&quot;: &quot;...&quot;, &quot;bullets&quot;: [...],
+ &quot;subsections&quot;: [...], &quot;numbered&quot;: true, &quot;numberedBullets&quot;: true}
+</code></pre></div>
+
+<p>Title is a *string (not string) to faithfully model Python's "title may be None" semantics for the optional first top-level section. All other fields use zero values to mean "absent".</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Section</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Title is the section heading.  nil means untitled (only legal for</span>
+<span class="w">    </span><span class="c1">// the first top-level section in a PromptObjectModel).</span>
+<span class="w">    </span><span class="nx">Title</span><span class="w"> </span><span class="o">*</span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Body is a paragraph of free text (rendered before any bullets).</span>
+<span class="w">    </span><span class="nx">Body</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Bullets is the list of bullet points.  Empty means no bullet list.</span>
+<span class="w">    </span><span class="nx">Bullets</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Subsections is the list of nested child sections.</span>
+<span class="w">    </span><span class="nx">Subsections</span><span class="w"> </span><span class="p">[]</span><span class="o">*</span><span class="nx">Section</span>
+<span class="w">    </span><span class="c1">// Numbered, when non-nil, opts the section into (or out of) numeric</span>
+<span class="w">    </span><span class="c1">// section numbering.  nil means &quot;default&quot; (inherit sibling behavior).</span>
+<span class="w">    </span><span class="nx">Numbered</span><span class="w"> </span><span class="o">*</span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// NumberedBullets renders bullets as &quot;1.&quot; &quot;2.&quot; instead of &quot;-&quot;.</span>
+<span class="w">    </span><span class="nx">NumberedBullets</span><span class="w"> </span><span class="kt">bool</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewSection"></a></p>
+<h3 id="func-newsection">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L69">NewSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewSection</span><span class="p">(</span><span class="nx">title</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Section</span>
+</code></pre></div>
+
+<p>NewSection returns a new Section with the supplied title (which may be empty to indicate untitled). Body, bullets, and subsections start empty; populate them via AddBody / AddBullets / AddSubsection.</p>
+<p>Python equivalent: Section.<strong>init</strong></p>
+<p><a name="Section.AddBody"></a></p>
+<h3 id="func-section-addbody">func (*Section) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L78">AddBody</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Section</span><span class="p">)</span><span class="w"> </span><span class="nx">AddBody</span><span class="p">(</span><span class="nx">body</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>AddBody sets (or replaces) the section body text.</p>
+<p>Python equivalent: Section.add_body — the docstring says "Add OR REPLACE the body text"; this is a setter, not an appender.</p>
+<p><a name="Section.AddBullets"></a></p>
+<h3 id="func-section-addbullets">func (*Section) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L86">AddBullets</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Section</span><span class="p">)</span><span class="w"> </span><span class="nx">AddBullets</span><span class="p">(</span><span class="nx">bullets</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>AddBullets appends bullet points to the section.</p>
+<p>Python equivalent: Section.add_bullets — the Python contract is to extend (not replace) the existing bullet list.</p>
+<p><a name="Section.AddSubsection"></a></p>
+<h3 id="func-section-addsubsection">func (*Section) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L95">AddSubsection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Section</span><span class="p">)</span><span class="w"> </span><span class="nx">AddSubsection</span><span class="p">(</span><span class="nx">title</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">...</span><span class="nx">SectionOption</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">Section</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>AddSubsection creates and appends a subsection under this section. title must be non-empty (subsections always require a title). Returns the new *Section so callers can keep building.</p>
+<p>Python equivalent: Section.add_subsection</p>
+<p><a name="Section.RenderMarkdown"></a></p>
+<h3 id="func-section-rendermarkdown">func (*Section) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L196">RenderMarkdown</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Section</span><span class="p">)</span><span class="w"> </span><span class="nx">RenderMarkdown</span><span class="p">(</span><span class="nx">level</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">sectionNumber</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>RenderMarkdown returns this section (and its subsections) as a Markdown string. level controls the starting heading level (default 2 == "##"); sectionNumber is the optional dotted prefix the section inherits when its parent is numbered.</p>
+<p>Python equivalent: Section.render_markdown</p>
+<p><a name="Section.RenderXML"></a></p>
+<h3 id="func-section-renderxml">func (*Section) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L261">RenderXML</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Section</span><span class="p">)</span><span class="w"> </span><span class="nx">RenderXML</span><span class="p">(</span><span class="nx">indent</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">sectionNumber</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>RenderXML returns this section (and its subsections) as a chunk of XML. indent is the starting indent level (each level == 2 spaces).</p>
+<p>Python equivalent: Section.render_xml</p>
+<p><a name="Section.ToMap"></a></p>
+<h3 id="func-section-tomap">func (*Section) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L136">ToMap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Section</span><span class="p">)</span><span class="w"> </span><span class="nx">ToMap</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>ToMap returns the section as a map[string]any with keys in canonical order (title, body, bullets, subsections, numbered, numberedBullets). Empty-or-zero fields are omitted to match Python's to_dict behavior.</p>
+<p>The returned value is intended for JSON / YAML serialization; callers that need a plain Go map (and don't care about key order) can type-assert each value.</p>
+<p>Python equivalent: Section.to_dict</p>
+<p><a name="SectionOption"></a></p>
+<h2 id="type-sectionoption">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L109">SectionOption</a></h2>
+<p>SectionOption configures a Section at construction (used by AddSubsection and PromptObjectModel.AddSection).</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SectionOption</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">Section</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="WithBody"></a></p>
+<h3 id="func-withbody">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L112">WithBody</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithBody</span><span class="p">(</span><span class="nx">body</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">SectionOption</span>
+</code></pre></div>
+
+<p>WithBody sets the section body.</p>
+<p><a name="WithBullets"></a></p>
+<h3 id="func-withbullets">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L115">WithBullets</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithBullets</span><span class="p">(</span><span class="nx">bullets</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">SectionOption</span>
+</code></pre></div>
+
+<p>WithBullets sets the section bullets (replaces, not appends).</p>
+<p><a name="WithNumbered"></a></p>
+<h3 id="func-withnumbered">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L120">WithNumbered</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithNumbered</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">SectionOption</span>
+</code></pre></div>
+
+<p>WithNumbered marks the section as numbered (or explicitly un-numbered).</p>
+<p><a name="WithNumberedBullets"></a></p>
+<h3 id="func-withnumberedbullets">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/pom/pom.go#L123">WithNumberedBullets</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithNumberedBullets</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">SectionOption</span>
+</code></pre></div>
+
+<p>WithNumberedBullets switches bullet rendering to numbered form.</p>
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

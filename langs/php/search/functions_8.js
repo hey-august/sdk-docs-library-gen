@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['handleazure_0',['handleAzure',['../classSignalWire_1_1Serverless_1_1Adapter.html#a21b9a2b9ded95a8a1381f9b68f0bfcab',1,'SignalWire::Serverless::Adapter']]],
+  ['handlecgi_1',['handleCgi',['../classSignalWire_1_1Serverless_1_1Adapter.html#a6ac3a95c1bfee6324603e0e5fa5da159',1,'SignalWire::Serverless::Adapter']]],
+  ['handleevent_2',['handleEvent',['../classSignalWire_1_1Relay_1_1Action.html#ad1ad757bc49508376a513f0b81cf662e',1,'SignalWire\\Relay\\Action\\handleEvent()'],['../classSignalWire_1_1Relay_1_1CollectAction.html#abfaf1de845995c57bf958cc5ac5c5852',1,'SignalWire\\Relay\\CollectAction\\handleEvent()'],['../classSignalWire_1_1Relay_1_1Client.html#a6a8fa4b40c35ec67263b1693781866d7',1,'SignalWire\\Relay\\Client\\handleEvent()'],['../classSignalWire_1_1Relay_1_1Message.html#a12db9c2cff1f1aaf1f3c5ed8c654f671',1,'SignalWire\\Relay\\Message\\handleEvent()']]],
+  ['handlegcf_3',['handleGcf',['../classSignalWire_1_1Serverless_1_1Adapter.html#a7b765e402a97e53a71d1b0663fceef64',1,'SignalWire::Serverless::Adapter']]],
+  ['handlelambda_4',['handleLambda',['../classSignalWire_1_1Serverless_1_1Adapter.html#abd5032c9c32bbbe0eefe0e0b84eb0619',1,'SignalWire::Serverless::Adapter']]],
+  ['handlemessage_5',['handleMessage',['../classSignalWire_1_1Relay_1_1Client.html#acd4385453f10bae09479e0ab88a87cfb',1,'SignalWire::Relay::Client']]],
+  ['handlepostprompt_6',['handlePostPrompt',['../classSignalWire_1_1Agent_1_1AgentBase.html#ab24df181135d1fe11c87d9aff8df5fde',1,'SignalWire\\Agent\\AgentBase\\handlePostPrompt()'],['../classSignalWire_1_1SWML_1_1Service.html#a13cc9d4b1cb4b5efaeaa401117001a66',1,'SignalWire\\SWML\\Service\\handlePostPrompt()']]],
+  ['handlerequest_7',['handleRequest',['../classSignalWire_1_1Server_1_1AgentServer.html#ab3bd438328ebf3658133b16a92a3edba',1,'SignalWire\\Server\\AgentServer\\handleRequest()'],['../classSignalWire_1_1SWML_1_1Service.html#a153bdab630100b952b647be48704f4ac',1,'SignalWire\\SWML\\Service\\handleRequest(string $method, string $path, array $headers=[], ?string $body=null,)']]],
+  ['handleswaigrequest_8',['handleSwaigRequest',['../classSignalWire_1_1SWML_1_1Service.html#a2a2868bf3544ee5dd5649a19b3dc9cd1',1,'SignalWire::SWML::Service']]],
+  ['handleswmlrequest_9',['handleSwmlRequest',['../classSignalWire_1_1Agent_1_1AgentBase.html#a810265038a8b773173eeebbdaa360eb1',1,'SignalWire\\Agent\\AgentBase\\handleSwmlRequest()'],['../classSignalWire_1_1SWML_1_1Service.html#a8b7e87978fbc64fb32c6d5bdf01fe11e',1,'SignalWire\\SWML\\Service\\handleSwmlRequest()']]],
+  ['hangup_10',['hangup',['../classSignalWire_1_1Relay_1_1Call.html#a5e71e8c755ac5441b432928287cc8262',1,'SignalWire\\Relay\\Call\\hangup()'],['../classSignalWire_1_1SWAIG_1_1FunctionResult.html#a5deaaba36751a1e0c2d0f58387b2e253',1,'SignalWire\\SWAIG\\FunctionResult\\hangup()']]],
+  ['hascontexts_11',['hasContexts',['../classSignalWire_1_1Contexts_1_1ContextBuilder.html#a9fba9b57e83ac294b47a1f24d64e90d5',1,'SignalWire::Contexts::ContextBuilder']]],
+  ['hasfunction_12',['hasFunction',['../classSignalWire_1_1SWML_1_1Service.html#a35b405703d0a7cf6330316fa18e0660a',1,'SignalWire::SWML::Service']]],
+  ['hassection_13',['hasSection',['../classSignalWire_1_1SWML_1_1Document.html#a2e4b2713fc56e23d852610177b691996',1,'SignalWire::SWML::Document']]],
+  ['hasskill_14',['hasSkill',['../classSignalWire_1_1Agent_1_1AgentBase.html#a1110ddfeacac4f7a570b56269404162c',1,'SignalWire\\Agent\\AgentBase\\hasSkill()'],['../classSignalWire_1_1Skills_1_1SkillManager.html#ac9d3a1c972e6cfc6fa64095881d4cbe9',1,'SignalWire\\Skills\\SkillManager\\hasSkill()']]],
+  ['hold_15',['hold',['../classSignalWire_1_1Relay_1_1Call.html#a42223f4817d18ddfc437045cbe607617',1,'SignalWire\\Relay\\Call\\hold()'],['../classSignalWire_1_1SWAIG_1_1FunctionResult.html#ad50142fdb0391d073c9fb40ed619bfd5',1,'SignalWire\\SWAIG\\FunctionResult\\hold()']]]
+];

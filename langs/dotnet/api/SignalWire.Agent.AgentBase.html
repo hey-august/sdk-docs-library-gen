@@ -1,0 +1,3178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AgentBase | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AgentBase | SignalWire .NET SDK ">
+      
+      <meta name="description" content="AI agent built on . Provides prompt management, SWAIG tool dispatch, context switching, skill stubs, and a 5-phase SWML rendering pipeline. All configuration methods return this for fluent chaining.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.Agent.AgentBase">
+
+
+
+  <h1 id="SignalWire_Agent_AgentBase" data-uid="SignalWire.Agent.AgentBase" class="text-break">
+Class AgentBase  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SignalWire.html">SignalWire</a>.<a class="xref" href="SignalWire.Agent.html">Agent</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SignalWire.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>AI agent built on <a class="xref" href="SignalWire.SWML.Service.html">Service</a>. Provides prompt management, SWAIG tool dispatch,
+context switching, skill stubs, and a 5-phase SWML rendering pipeline.
+All configuration methods return <code>this</code> for fluent chaining.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AgentBase : Service</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="SignalWire.SWML.Service.html">Service</a></div>
+      <div><span class="xref">AgentBase</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="SignalWire.Prefabs.ConciergeAgent.html">ConciergeAgent</a></div>
+      <div><a class="xref" href="SignalWire.Prefabs.FAQBotAgent.html">FAQBotAgent</a></div>
+      <div><a class="xref" href="SignalWire.Prefabs.InfoGathererAgent.html">InfoGathererAgent</a></div>
+      <div><a class="xref" href="SignalWire.Prefabs.ReceptionistAgent.html">ReceptionistAgent</a></div>
+      <div><a class="xref" href="SignalWire.Prefabs.SurveyAgent.html">SurveyAgent</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service__tools">Service._tools</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service__toolOrder">Service._toolOrder</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Name">Service.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Route">Service.Route</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Host">Service.Host</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Port">Service.Port</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Document">Service.Document</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Verb_System_String_System_String_System_Object_">Service.Verb(string, string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Verb_System_String_System_Object_">Service.Verb(string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Sleep_System_Int32_System_String_">Service.Sleep(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_GetBasicAuthCredentials">Service.GetBasicAuthCredentials()</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_GetBasicAuthCredentialsWithSource">Service.GetBasicAuthCredentialsWithSource()</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_ValidateBasicAuth_System_String_System_String_">Service.ValidateBasicAuth(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_GetFullUrl_System_Boolean_">Service.GetFullUrl(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_RegisterRoutingCallback_System_String_System_Func_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__System_Object__">Service.RegisterRoutingCallback(string, Func&lt;Dictionary&lt;string, object&gt;, Dictionary&lt;string, string&gt;, object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_OnRequest_System_Collections_Generic_Dictionary_System_String_System_Object__System_String_">Service.OnRequest(Dictionary&lt;string, object&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_OnSwmlRequest_System_Collections_Generic_Dictionary_System_String_System_Object__System_String_">Service.OnSwmlRequest(Dictionary&lt;string, object&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_DefineTool_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Func_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__SignalWire_SWAIG_FunctionResult__System_Boolean_">Service.DefineTool(string, string, Dictionary&lt;string, object&gt;, Func&lt;Dictionary&lt;string, object&gt;, Dictionary&lt;string, object&gt;, FunctionResult&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_RegisterSwaigFunction_System_Collections_Generic_Dictionary_System_String_System_Object__">Service.RegisterSwaigFunction(Dictionary&lt;string, object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_HasFunction_System_String_">Service.HasFunction(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_GetFunction_System_String_">Service.GetFunction(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_GetAllFunctions">Service.GetAllFunctions()</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_RemoveFunction_System_String_">Service.RemoveFunction(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_DefineTools_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___">Service.DefineTools(List&lt;Dictionary&lt;string, object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_OnFunctionCall_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__">Service.OnFunctionCall(string, Dictionary&lt;string, object&gt;, Dictionary&lt;string, object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_ListToolNames">Service.ListToolNames()</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Tools">Service.Tools</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_SwaigPreDispatch_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__System_String_">Service.SwaigPreDispatch(Dictionary&lt;string, object&gt;, Dictionary&lt;string, string&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_HandleSwaigRequest_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__">Service.HandleSwaigRequest(string, Dictionary&lt;string, object&gt;, Dictionary&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_ExtractSipUsername_System_Collections_Generic_Dictionary_System_String_System_Object__">Service.ExtractSipUsername(Dictionary&lt;string, object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_GetProxyUrlBase_System_Collections_Generic_Dictionary_System_String_System_String__">Service.GetProxyUrlBase(Dictionary&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Run">Service.Run()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SignalWire_Agent_AgentBase__ctor_" data-uid="SignalWire.Agent.AgentBase.#ctor*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase__ctor_SignalWire_Agent_AgentOptions_" data-uid="SignalWire.Agent.AgentBase.#ctor(SignalWire.Agent.AgentOptions)">
+  AgentBase(AgentOptions)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase(AgentOptions options)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="SignalWire.Agent.AgentOptions.html">AgentOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="SignalWire_Agent_AgentBase_SupportedInternalFillerNames" data-uid="SignalWire.Agent.AgentBase.SupportedInternalFillerNames">
+  SupportedInternalFillerNames
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The complete set of internal SWAIG function names that accept
+fillers, matching the SWAIGInternalFiller schema definition. Any
+name outside this set is silently ignored by the runtime —
+<a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_SetInternalFillers_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_String____">SetInternalFillers(Dictionary&lt;string, Dictionary&lt;string, List&lt;string&gt;&gt;&gt;)</a>
+and <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_AddInternalFiller_System_String_System_String_System_Collections_Generic_List_System_String__">AddInternalFiller(string, string, List&lt;string&gt;)</a>
+warn if you pass an unknown name.</p>
+<p>Notable absences: <code>change_step</code>, <code>gather_submit</code>, or
+arbitrary user-defined SWAIG function names are NOT supported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IReadOnlySet&lt;string&gt; SupportedInternalFillerNames</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlyset-1">IReadOnlySet</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SignalWire_Agent_AgentBase_IsAutoMapSipUsernames_" data-uid="SignalWire.Agent.AgentBase.IsAutoMapSipUsernames*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_IsAutoMapSipUsernames" data-uid="SignalWire.Agent.AgentBase.IsAutoMapSipUsernames">
+  IsAutoMapSipUsernames
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAutoMapSipUsernames { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_IsWebhookSignatureValidationEnabled_" data-uid="SignalWire.Agent.AgentBase.IsWebhookSignatureValidationEnabled*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_IsWebhookSignatureValidationEnabled" data-uid="SignalWire.Agent.AgentBase.IsWebhookSignatureValidationEnabled">
+  IsWebhookSignatureValidationEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>True iff signature validation is enabled — i.e. either the
+<code>SigningKey</code> option or <code>SIGNALWIRE_SIGNING_KEY</code> env var
+was set at construction time. (Python parity:
+<code>bool(agent.signing_key)</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsWebhookSignatureValidationEnabled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_Pom_" data-uid="SignalWire.Agent.AgentBase.Pom*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_Pom" data-uid="SignalWire.Agent.AgentBase.Pom">
+  Pom
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The prompt as a <a class="xref" href="SignalWire.POM.PromptObjectModel.html">PromptObjectModel</a>
+instance (Python parity: <code>agent.pom</code>). Returns null when
+<code>UsePom</code> is false. Materialised on each access from the
+internal list-of-dicts so mutations stay round-trip-safe. To
+inspect raw section dicts, use <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_GetPromptSections">GetPromptSections()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PromptObjectModel? Pom { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.POM.PromptObjectModel.html">PromptObjectModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SigningKey_" data-uid="SignalWire.Agent.AgentBase.SigningKey*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SigningKey" data-uid="SignalWire.Agent.AgentBase.SigningKey">
+  SigningKey
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The configured Signing Key, or null when validation is
+disabled. Read-only — the resolution order
+(constructor arg → <code>SIGNALWIRE_SIGNING_KEY</code> env) is fixed at
+construction time. (Python parity: <code>agent.signing_key</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? SigningKey { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SkillManager_" data-uid="SignalWire.Agent.AgentBase.SkillManager*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SkillManager" data-uid="SignalWire.Agent.AgentBase.SkillManager">
+  SkillManager
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Skill manager (Python parity: <code>agent.skill_manager</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SkillManager SkillManager { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Skills.SkillManager.html">SkillManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SignalWire_Agent_AgentBase_AddAnswerVerb_" data-uid="SignalWire.Agent.AgentBase.AddAnswerVerb*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddAnswerVerb_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.AddAnswerVerb(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  AddAnswerVerb(Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Append config to the post-answer <code>answer</code> verb. Matches
+Python's <code>add_answer_verb(self, config)</code> shape where the verb name
+is implicit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddAnswerVerb(Dictionary&lt;string, object&gt; config)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>config</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddAnswerVerb_" data-uid="SignalWire.Agent.AgentBase.AddAnswerVerb*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddAnswerVerb_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.AddAnswerVerb(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+  AddAnswerVerb(string, Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Alias for <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_AddPostAnswerVerb_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__">AddPostAnswerVerb(string, Dictionary&lt;string, object&gt;)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddAnswerVerb(string verb, Dictionary&lt;string, object&gt; config)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>verb</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>config</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddFunctionInclude_" data-uid="SignalWire.Agent.AgentBase.AddFunctionInclude*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddFunctionInclude_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.AddFunctionInclude(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  AddFunctionInclude(Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddFunctionInclude(Dictionary&lt;string, object&gt; include)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>include</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddHint_" data-uid="SignalWire.Agent.AgentBase.AddHint*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddHint_System_String_" data-uid="SignalWire.Agent.AgentBase.AddHint(System.String)">
+  AddHint(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddHint(string hint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hint</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddHints_" data-uid="SignalWire.Agent.AgentBase.AddHints*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddHints_System_Collections_Generic_List_System_String__" data-uid="SignalWire.Agent.AgentBase.AddHints(System.Collections.Generic.List{System.String})">
+  AddHints(List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddHints(List&lt;string&gt; hints)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hints</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddInternalFiller_" data-uid="SignalWire.Agent.AgentBase.AddInternalFiller*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddInternalFiller_System_String_" data-uid="SignalWire.Agent.AgentBase.AddInternalFiller(System.String)">
+  AddInternalFiller(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddInternalFiller(string filler)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filler</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddInternalFiller_" data-uid="SignalWire.Agent.AgentBase.AddInternalFiller*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddInternalFiller_System_String_System_String_System_Collections_Generic_List_System_String__" data-uid="SignalWire.Agent.AgentBase.AddInternalFiller(System.String,System.String,System.Collections.Generic.List{System.String})">
+  AddInternalFiller(string, string, List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add internal fillers for a single internal function and language.</p>
+<p>See
+<a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_SetInternalFillers_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_String____">SetInternalFillers(Dictionary&lt;string, Dictionary&lt;string, List&lt;string&gt;&gt;&gt;)</a>
+for the complete list of supported function names and what fillers
+do. Names outside the supported set log a warning.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddInternalFiller(string functionName, string languageCode, List&lt;string&gt; fillers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>functionName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>languageCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>fillers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddLanguage_" data-uid="SignalWire.Agent.AgentBase.AddLanguage*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddLanguage_System_String_System_String_System_String_" data-uid="SignalWire.Agent.AgentBase.AddLanguage(System.String,System.String,System.String)">
+  AddLanguage(string, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddLanguage(string name, string code, string voice)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>voice</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddPatternHint_" data-uid="SignalWire.Agent.AgentBase.AddPatternHint*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddPatternHint_System_String_" data-uid="SignalWire.Agent.AgentBase.AddPatternHint(System.String)">
+  AddPatternHint(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddPatternHint(string pattern)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddPostAiVerb_" data-uid="SignalWire.Agent.AgentBase.AddPostAiVerb*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddPostAiVerb_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.AddPostAiVerb(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+  AddPostAiVerb(string, Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddPostAiVerb(string verb, Dictionary&lt;string, object&gt; config)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>verb</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>config</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddPostAnswerVerb_" data-uid="SignalWire.Agent.AgentBase.AddPostAnswerVerb*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddPostAnswerVerb_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.AddPostAnswerVerb(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+  AddPostAnswerVerb(string, Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddPostAnswerVerb(string verb, Dictionary&lt;string, object&gt; config)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>verb</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>config</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddPreAnswerVerb_" data-uid="SignalWire.Agent.AgentBase.AddPreAnswerVerb*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddPreAnswerVerb_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.AddPreAnswerVerb(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+  AddPreAnswerVerb(string, Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddPreAnswerVerb(string verb, Dictionary&lt;string, object&gt; config)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>verb</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>config</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddPronunciation_" data-uid="SignalWire.Agent.AgentBase.AddPronunciation*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddPronunciation_System_String_System_String_System_String_" data-uid="SignalWire.Agent.AgentBase.AddPronunciation(System.String,System.String,System.String)">
+  AddPronunciation(string, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddPronunciation(string replace, string with, string ignore = &quot;&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>replace</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>with</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>ignore</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddSkill_" data-uid="SignalWire.Agent.AgentBase.AddSkill*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddSkill_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.AddSkill(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+  AddSkill(string, Dictionary&lt;string, object&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Load and activate a skill by name. Resolves through <a class="xref" href="SignalWire.Skills.SkillRegistry.html">SkillRegistry</a>,
+validates env vars, calls Setup/RegisterTools, and merges hints/globalData/prompts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddSkill(string name, Dictionary&lt;string, object&gt;? parameters = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AddSwaigQueryParams_" data-uid="SignalWire.Agent.AgentBase.AddSwaigQueryParams*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AddSwaigQueryParams_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.Agent.AgentBase.AddSwaigQueryParams(System.Collections.Generic.Dictionary{System.String,System.String})">
+  AddSwaigQueryParams(Dictionary&lt;string, string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AddSwaigQueryParams(Dictionary&lt;string, string&gt; parameters)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_AutoMapSipUsernames_" data-uid="SignalWire.Agent.AgentBase.AutoMapSipUsernames*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_AutoMapSipUsernames" data-uid="SignalWire.Agent.AgentBase.AutoMapSipUsernames">
+  AutoMapSipUsernames()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable auto-mapping of SIP usernames to this agent's
+route (Python parity: <code>agent.auto_map_sip_usernames()</code>).
+Chainable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase AutoMapSipUsernames()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_BuildAiVerb_" data-uid="SignalWire.Agent.AgentBase.BuildAiVerb*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_BuildAiVerb_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.Agent.AgentBase.BuildAiVerb(System.Collections.Generic.Dictionary{System.String,System.String})">
+  BuildAiVerb(Dictionary&lt;string, string&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build the AI verb configuration block.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, object&gt; BuildAiVerb(Dictionary&lt;string, string&gt;? headers = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_ClearPostAiVerbs_" data-uid="SignalWire.Agent.AgentBase.ClearPostAiVerbs*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_ClearPostAiVerbs" data-uid="SignalWire.Agent.AgentBase.ClearPostAiVerbs">
+  ClearPostAiVerbs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase ClearPostAiVerbs()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_ClearPostAnswerVerbs_" data-uid="SignalWire.Agent.AgentBase.ClearPostAnswerVerbs*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_ClearPostAnswerVerbs" data-uid="SignalWire.Agent.AgentBase.ClearPostAnswerVerbs">
+  ClearPostAnswerVerbs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase ClearPostAnswerVerbs()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_ClearPreAnswerVerbs_" data-uid="SignalWire.Agent.AgentBase.ClearPreAnswerVerbs*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_ClearPreAnswerVerbs" data-uid="SignalWire.Agent.AgentBase.ClearPreAnswerVerbs">
+  ClearPreAnswerVerbs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase ClearPreAnswerVerbs()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_ClearSwaigQueryParams_" data-uid="SignalWire.Agent.AgentBase.ClearSwaigQueryParams*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_ClearSwaigQueryParams" data-uid="SignalWire.Agent.AgentBase.ClearSwaigQueryParams">
+  ClearSwaigQueryParams()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase ClearSwaigQueryParams()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_CloneForRequest_" data-uid="SignalWire.Agent.AgentBase.CloneForRequest*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_CloneForRequest" data-uid="SignalWire.Agent.AgentBase.CloneForRequest">
+  CloneForRequest()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a deep copy of this agent for per-request customisation.
+Collections are deeply copied; callbacks are preserved by reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase CloneForRequest()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_Contexts_" data-uid="SignalWire.Agent.AgentBase.Contexts*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_Contexts" data-uid="SignalWire.Agent.AgentBase.Contexts">
+  Contexts()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Alias for <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_DefineContexts">DefineContexts()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContextBuilder Contexts()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.ContextBuilder.html">ContextBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_CreateToolToken_" data-uid="SignalWire.Agent.AgentBase.CreateToolToken*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_CreateToolToken_System_String_System_String_" data-uid="SignalWire.Agent.AgentBase.CreateToolToken(System.String,System.String)">
+  CreateToolToken(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a per-call SWAIG-function token. Returns empty
+string on failure. (Python parity: <code>StateMixin._create_tool_token</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CreateToolToken(string toolName, string callId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>toolName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>callId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_DefineContexts_" data-uid="SignalWire.Agent.AgentBase.DefineContexts*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_DefineContexts" data-uid="SignalWire.Agent.AgentBase.DefineContexts">
+  DefineContexts()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return the ContextBuilder, creating it lazily on first access.
+The builder is wired to report registered SWAIG tool names back
+so its <a class="xref" href="SignalWire.Contexts.ContextBuilder.html#SignalWire_Contexts_ContextBuilder_Validate">Validate()</a> can check for
+collisions with reserved native tool names (<code>next_step</code>,
+<code>change_context</code>, <code>gather_submit</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContextBuilder DefineContexts()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.ContextBuilder.html">ContextBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_EnableDebugEvents_" data-uid="SignalWire.Agent.AgentBase.EnableDebugEvents*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_EnableDebugEvents_System_String_" data-uid="SignalWire.Agent.AgentBase.EnableDebugEvents(System.String)">
+  EnableDebugEvents(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase EnableDebugEvents(string level = &quot;all&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>level</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_EnableSipRouting_" data-uid="SignalWire.Agent.AgentBase.EnableSipRouting*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_EnableSipRouting_System_Boolean_System_String_" data-uid="SignalWire.Agent.AgentBase.EnableSipRouting(System.Boolean,System.String)">
+  EnableSipRouting(bool, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable SIP routing on this agent. <code>autoMap</code> opts into Python's
+auto-mapping behaviour (sip_username = agent name); <code>path</code> lets
+the caller pin a specific SIP route prefix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase EnableSipRouting(bool autoMap = false, string path = &quot;&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>autoMap</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_GetContexts_" data-uid="SignalWire.Agent.AgentBase.GetContexts*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_GetContexts" data-uid="SignalWire.Agent.AgentBase.GetContexts">
+  GetContexts()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return the contexts configuration if defined, else null.
+(Python parity: <code>PromptManager.get_contexts</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, object&gt;? GetContexts()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_GetName_" data-uid="SignalWire.Agent.AgentBase.GetName*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_GetName" data-uid="SignalWire.Agent.AgentBase.GetName">
+  GetName()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return the agent name (Python parity: <code>agent.get_name()</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetName()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_GetPostPrompt_" data-uid="SignalWire.Agent.AgentBase.GetPostPrompt*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_GetPostPrompt" data-uid="SignalWire.Agent.AgentBase.GetPostPrompt">
+  GetPostPrompt()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return the post-prompt text if set, else null.
+(Python parity: <code>PromptManager.get_post_prompt</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? GetPostPrompt()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_GetPrompt_" data-uid="SignalWire.Agent.AgentBase.GetPrompt*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_GetPrompt" data-uid="SignalWire.Agent.AgentBase.GetPrompt">
+  GetPrompt()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return the prompt payload: POM array if enabled and populated, otherwise raw text.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object GetPrompt()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_GetPromptSections_" data-uid="SignalWire.Agent.AgentBase.GetPromptSections*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_GetPromptSections" data-uid="SignalWire.Agent.AgentBase.GetPromptSections">
+  GetPromptSections()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The raw POM section dicts. Mirrors how the dotnet
+agent has historically stored its prompt-object data and how
+SWML rendering consumes it. Read-only snapshot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Dictionary&lt;string, object&gt;&gt; GetPromptSections()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_GetRawPrompt_" data-uid="SignalWire.Agent.AgentBase.GetRawPrompt*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_GetRawPrompt" data-uid="SignalWire.Agent.AgentBase.GetRawPrompt">
+  GetRawPrompt()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return the raw prompt text if set, else null.
+(Python parity: <code>PromptManager.get_raw_prompt</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? GetRawPrompt()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_GetSkillManager_" data-uid="SignalWire.Agent.AgentBase.GetSkillManager*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_GetSkillManager" data-uid="SignalWire.Agent.AgentBase.GetSkillManager">
+  GetSkillManager()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return the skill manager, creating it lazily on first access.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SkillManager GetSkillManager()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Skills.SkillManager.html">SkillManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_HandlePostPrompt_" data-uid="SignalWire.Agent.AgentBase.HandlePostPrompt*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_HandlePostPrompt_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.Agent.AgentBase.HandlePostPrompt(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String})">
+  HandlePostPrompt(Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Handle the post-prompt callback.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override (int, Dictionary&lt;string, string&gt;, string) HandlePostPrompt(Dictionary&lt;string, object?&gt;? requestData, Dictionary&lt;string, string&gt; headers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>requestData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.status">Status</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.headers">Headers</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.body">Body</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_HandleRequest_" data-uid="SignalWire.Agent.AgentBase.HandleRequest*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_HandleRequest_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_String_" data-uid="SignalWire.Agent.AgentBase.HandleRequest(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+  HandleRequest(string, string, Dictionary&lt;string, string&gt;, string?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Override the base dispatch to enforce webhook signature validation on
+POST requests targeting the signed routes (<code>/</code>, <code>/swaig</code>,
+<code>/post_prompt</code>) when <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_SigningKey">SigningKey</a> is configured.</p>
+<p>Validation is gated behind Basic Auth: callers must already
+satisfy the SWMLService basic-auth check (it always runs first in
+<a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_HandleRequest_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_String_">HandleRequest(string, string, Dictionary&lt;string, string&gt;, string?)</a>) before we even look at
+signatures, matching Python where <code>signing_key</code> is layered on
+top of <code>basic_auth</code>.</p>
+<p>On invalid signature: returns 403 directly without dispatching
+to the agent's POST handler. On valid signature (or non-POST, or
+non-signed route): delegates to <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_HandleRequest_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_String_">HandleRequest(string, string, Dictionary&lt;string, string&gt;, string?)</a>.
+</p>
+<p>(Python parity: <code>web_mixin._register_routes</code> wraps the
+signed POST routes in a FastAPI <code>Depends(sig_dep)</code> dependency
+when <code>signing_key</code> is set; this is the .NET equivalent.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override (int Status, Dictionary&lt;string, string&gt; Headers, string Body) HandleRequest(string method, string path, Dictionary&lt;string, string&gt; headers, string? body)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>body</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.status">Status</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.headers">Headers</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.body">Body</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_HandleSwmlRequest_" data-uid="SignalWire.Agent.AgentBase.HandleSwmlRequest*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_HandleSwmlRequest_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.Agent.AgentBase.HandleSwmlRequest(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String})">
+  HandleSwmlRequest(string, Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Handle the SWML document request. If a dynamic-config callback is registered,
+clone the agent, pass the clone to the callback, and render from the clone.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override (int, Dictionary&lt;string, string&gt;, string) HandleSwmlRequest(string method, Dictionary&lt;string, object?&gt;? requestData, Dictionary&lt;string, string&gt; headers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>requestData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.status">Status</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.headers">Headers</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.body">Body</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_HasSkill_" data-uid="SignalWire.Agent.AgentBase.HasSkill*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_HasSkill_System_String_" data-uid="SignalWire.Agent.AgentBase.HasSkill(System.String)">
+  HasSkill(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Check if a skill is loaded by instance key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasSkill(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_ListSkills_" data-uid="SignalWire.Agent.AgentBase.ListSkills*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_ListSkills" data-uid="SignalWire.Agent.AgentBase.ListSkills">
+  ListSkills()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>List all loaded skill instance keys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; ListSkills()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_ManualSetProxyUrl_" data-uid="SignalWire.Agent.AgentBase.ManualSetProxyUrl*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_ManualSetProxyUrl_System_String_" data-uid="SignalWire.Agent.AgentBase.ManualSetProxyUrl(System.String)">
+  ManualSetProxyUrl(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Manually override the proxy URL used for SWAIG webhook construction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase ManualSetProxyUrl(string url)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>url</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_OnDebugEvent_" data-uid="SignalWire.Agent.AgentBase.OnDebugEvent*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_OnDebugEvent_System_Action_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String___" data-uid="SignalWire.Agent.AgentBase.OnDebugEvent(System.Action{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String}})">
+  OnDebugEvent(Action&lt;Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase OnDebugEvent(Action&lt;Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;&gt; callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_OnSummary_" data-uid="SignalWire.Agent.AgentBase.OnSummary*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_OnSummary_System_Action_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String___" data-uid="SignalWire.Agent.AgentBase.OnSummary(System.Action{System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String}})">
+  OnSummary(Action&lt;string, Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase OnSummary(Action&lt;string, Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;&gt; callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-3">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_PromptAddSection_" data-uid="SignalWire.Agent.AgentBase.PromptAddSection*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_PromptAddSection_System_String_System_String_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___" data-uid="SignalWire.Agent.AgentBase.PromptAddSection(System.String,System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+  PromptAddSection(string, string, List&lt;string&gt;?, bool, bool, List&lt;Dictionary&lt;string, object&gt;&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a top-level POM section with an optional body, bullets,
+numbering, and subsections. (Python parity: <code>prompt_add_section</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase PromptAddSection(string title, string body = &quot;&quot;, List&lt;string&gt;? bullets = null, bool numbered = false, bool numberedBullets = false, List&lt;Dictionary&lt;string, object&gt;&gt;? subsections = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>title</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>body</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>bullets</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>numbered</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>numberedBullets</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>subsections</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_PromptAddSubsection_" data-uid="SignalWire.Agent.AgentBase.PromptAddSubsection*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_PromptAddSubsection_System_String_System_String_System_String_System_Collections_Generic_List_System_String__" data-uid="SignalWire.Agent.AgentBase.PromptAddSubsection(System.String,System.String,System.String,System.Collections.Generic.List{System.String})">
+  PromptAddSubsection(string, string, string, List&lt;string&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a subsection nested under an existing parent section.
+(Python parity: <code>prompt_add_subsection(parent_title, title, body, bullets)</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase PromptAddSubsection(string parentTitle, string title, string body = &quot;&quot;, List&lt;string&gt;? bullets = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parentTitle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>title</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>body</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>bullets</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_PromptAddToSection_" data-uid="SignalWire.Agent.AgentBase.PromptAddToSection*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_PromptAddToSection_System_String_System_String_System_String_System_Collections_Generic_List_System_String__" data-uid="SignalWire.Agent.AgentBase.PromptAddToSection(System.String,System.String,System.String,System.Collections.Generic.List{System.String})">
+  PromptAddToSection(string, string?, string?, List&lt;string&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Append body text, a single bullet, and/or bullets list to an
+existing section. (Python parity:
+<code>prompt_add_to_section(title, body, bullet, bullets)</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase PromptAddToSection(string title, string? body = null, string? bullet = null, List&lt;string&gt;? bullets = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>title</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>body</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>bullet</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>bullets</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_PromptHasSection_" data-uid="SignalWire.Agent.AgentBase.PromptHasSection*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_PromptHasSection_System_String_" data-uid="SignalWire.Agent.AgentBase.PromptHasSection(System.String)">
+  PromptHasSection(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Check whether a POM section with the given title exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PromptHasSection(string title)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>title</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_RegisterSipUsername_" data-uid="SignalWire.Agent.AgentBase.RegisterSipUsername*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_RegisterSipUsername_System_String_" data-uid="SignalWire.Agent.AgentBase.RegisterSipUsername(System.String)">
+  RegisterSipUsername(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Register a SIP username under this agent's own route — Python
+equivalent of <code>register_sip_username(self, sip_username)</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase RegisterSipUsername(string username)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>username</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_RegisterSipUsername_" data-uid="SignalWire.Agent.AgentBase.RegisterSipUsername*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_RegisterSipUsername_System_String_System_String_" data-uid="SignalWire.Agent.AgentBase.RegisterSipUsername(System.String,System.String)">
+  RegisterSipUsername(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase RegisterSipUsername(string username, string route = &quot;&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>username</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>route</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_RemoveSkill_" data-uid="SignalWire.Agent.AgentBase.RemoveSkill*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_RemoveSkill_System_String_" data-uid="SignalWire.Agent.AgentBase.RemoveSkill(System.String)">
+  RemoveSkill(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove a loaded skill by its instance key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase RemoveSkill(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_RenderSwml_" data-uid="SignalWire.Agent.AgentBase.RenderSwml*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_RenderSwml" data-uid="SignalWire.Agent.AgentBase.RenderSwml">
+  RenderSwml()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build the complete SWML document.</p>
+<p>Phases: 1) Pre-answer verbs 2) Answer 3) Record call
+4) Post-answer verbs 5) AI verb 6) Post-AI verbs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Dictionary&lt;string, object&gt; RenderSwml()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_RenderSwmlWithContext_" data-uid="SignalWire.Agent.AgentBase.RenderSwmlWithContext*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_RenderSwmlWithContext_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.Agent.AgentBase.RenderSwmlWithContext(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String})">
+  RenderSwmlWithContext(Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Render with request body and headers context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, object&gt; RenderSwmlWithContext(Dictionary&lt;string, object?&gt;? requestBody, Dictionary&lt;string, string&gt; headers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>requestBody</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_ResetContexts_" data-uid="SignalWire.Agent.AgentBase.ResetContexts*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_ResetContexts" data-uid="SignalWire.Agent.AgentBase.ResetContexts">
+  ResetContexts()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove all contexts, returning the agent to a no-contexts state.
+This is a convenience wrapper around <code>DefineContexts().Reset()</code>.
+Use it in a dynamic config callback when you need to rebuild
+contexts from scratch for a specific request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase ResetContexts()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetDynamicConfigCallback_" data-uid="SignalWire.Agent.AgentBase.SetDynamicConfigCallback*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetDynamicConfigCallback_System_Action_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__SignalWire_Agent_AgentBase__" data-uid="SignalWire.Agent.AgentBase.SetDynamicConfigCallback(System.Action{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String},SignalWire.Agent.AgentBase})">
+  SetDynamicConfigCallback(Action&lt;Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;, AgentBase&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetDynamicConfigCallback(Action&lt;Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;, AgentBase&gt; callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;, <a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetFunctionIncludes_" data-uid="SignalWire.Agent.AgentBase.SetFunctionIncludes*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetFunctionIncludes_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___" data-uid="SignalWire.Agent.AgentBase.SetFunctionIncludes(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+  SetFunctionIncludes(List&lt;Dictionary&lt;string, object&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetFunctionIncludes(List&lt;Dictionary&lt;string, object&gt;&gt; includes)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>includes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetGlobalData_" data-uid="SignalWire.Agent.AgentBase.SetGlobalData*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetGlobalData_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.SetGlobalData(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  SetGlobalData(Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetGlobalData(Dictionary&lt;string, object&gt; data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetInternalFillers_" data-uid="SignalWire.Agent.AgentBase.SetInternalFillers*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetInternalFillers_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_String____" data-uid="SignalWire.Agent.AgentBase.SetInternalFillers(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}}})">
+  SetInternalFillers(Dictionary&lt;string, Dictionary&lt;string, List&lt;string&gt;&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set internal fillers for native SWAIG functions.</p>
+<p>Internal fillers are short phrases the AI agent speaks (via
+TTS) while an internal/native function is running, so the caller
+doesn't hear dead air during transitions or background work.</p>
+<p>Supported function names (match the SWAIGInternalFiller
+schema): <code>hangup</code>, <code>check_time</code>, <code>wait_for_user</code>,
+<code>wait_seconds</code>, <code>adjust_response_latency</code>,
+<code>next_step</code>, <code>change_context</code>, <code>get_visual_input</code>,
+<code>get_ideal_strategy</code>. See
+<a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_SupportedInternalFillerNames">SupportedInternalFillerNames</a>.</p>
+<p>Notably NOT supported: <code>change_step</code>,
+<code>gather_submit</code>, or arbitrary user-defined SWAIG function
+names. The runtime only honors fillers for the names listed above;
+everything else is silently ignored at the SWML level. This method
+warns at registration time if you pass an unknown name so you
+catch the typo early.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetInternalFillers(Dictionary&lt;string, Dictionary&lt;string, List&lt;string&gt;&gt;&gt; fillers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fillers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetInternalFillers_" data-uid="SignalWire.Agent.AgentBase.SetInternalFillers*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetInternalFillers_System_Collections_Generic_List_System_String__" data-uid="SignalWire.Agent.AgentBase.SetInternalFillers(System.Collections.Generic.List{System.String})">
+  SetInternalFillers(List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetInternalFillers(List&lt;string&gt; fillers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fillers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetLanguages_" data-uid="SignalWire.Agent.AgentBase.SetLanguages*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetLanguages_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___" data-uid="SignalWire.Agent.AgentBase.SetLanguages(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+  SetLanguages(List&lt;Dictionary&lt;string, object&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetLanguages(List&lt;Dictionary&lt;string, object&gt;&gt; languages)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>languages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetNativeFunctions_" data-uid="SignalWire.Agent.AgentBase.SetNativeFunctions*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetNativeFunctions_System_Collections_Generic_List_System_String__" data-uid="SignalWire.Agent.AgentBase.SetNativeFunctions(System.Collections.Generic.List{System.String})">
+  SetNativeFunctions(List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetNativeFunctions(List&lt;string&gt; functions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>functions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetParam_" data-uid="SignalWire.Agent.AgentBase.SetParam*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetParam_System_String_System_Object_" data-uid="SignalWire.Agent.AgentBase.SetParam(System.String,System.Object)">
+  SetParam(string, object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetParam(string key, object value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetParams_" data-uid="SignalWire.Agent.AgentBase.SetParams*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetParams_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.SetParams(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  SetParams(Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetParams(Dictionary&lt;string, object&gt; parameters)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetPostPrompt_" data-uid="SignalWire.Agent.AgentBase.SetPostPrompt*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetPostPrompt_System_String_" data-uid="SignalWire.Agent.AgentBase.SetPostPrompt(System.String)">
+  SetPostPrompt(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetPostPrompt(string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetPostPromptLlmParams_" data-uid="SignalWire.Agent.AgentBase.SetPostPromptLlmParams*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetPostPromptLlmParams_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.SetPostPromptLlmParams(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  SetPostPromptLlmParams(Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetPostPromptLlmParams(Dictionary&lt;string, object&gt; parameters)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetPostPromptUrl_" data-uid="SignalWire.Agent.AgentBase.SetPostPromptUrl*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetPostPromptUrl_System_String_" data-uid="SignalWire.Agent.AgentBase.SetPostPromptUrl(System.String)">
+  SetPostPromptUrl(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetPostPromptUrl(string url)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>url</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetPromptLlmParams_" data-uid="SignalWire.Agent.AgentBase.SetPromptLlmParams*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetPromptLlmParams_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.SetPromptLlmParams(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  SetPromptLlmParams(Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetPromptLlmParams(Dictionary&lt;string, object&gt; parameters)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetPromptPom_" data-uid="SignalWire.Agent.AgentBase.SetPromptPom*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetPromptPom_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___" data-uid="SignalWire.Agent.AgentBase.SetPromptPom(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+  SetPromptPom(List&lt;Dictionary&lt;string, object&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set the prompt as a list-of-section dicts (POM form).
+Throws when <code>UsePom</code> is false. (Python parity:
+<code>PromptManager.set_prompt_pom</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetPromptPom(List&lt;Dictionary&lt;string, object&gt;&gt; pom)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pom</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetPromptText_" data-uid="SignalWire.Agent.AgentBase.SetPromptText*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetPromptText_System_String_" data-uid="SignalWire.Agent.AgentBase.SetPromptText(System.String)">
+  SetPromptText(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetPromptText(string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetPronunciations_" data-uid="SignalWire.Agent.AgentBase.SetPronunciations*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetPronunciations_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___" data-uid="SignalWire.Agent.AgentBase.SetPronunciations(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+  SetPronunciations(List&lt;Dictionary&lt;string, object&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetPronunciations(List&lt;Dictionary&lt;string, object&gt;&gt; pronunciations)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pronunciations</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_SetWebHookUrl_" data-uid="SignalWire.Agent.AgentBase.SetWebHookUrl*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_SetWebHookUrl_System_String_" data-uid="SignalWire.Agent.AgentBase.SetWebHookUrl(System.String)">
+  SetWebHookUrl(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase SetWebHookUrl(string url)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>url</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_UpdateGlobalData_" data-uid="SignalWire.Agent.AgentBase.UpdateGlobalData*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_UpdateGlobalData_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Agent.AgentBase.UpdateGlobalData(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  UpdateGlobalData(Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentBase UpdateGlobalData(Dictionary&lt;string, object&gt; data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Agent_AgentBase_ValidateToolToken_" data-uid="SignalWire.Agent.AgentBase.ValidateToolToken*"></a>
+
+  <h3 id="SignalWire_Agent_AgentBase_ValidateToolToken_System_String_System_String_System_String_" data-uid="SignalWire.Agent.AgentBase.ValidateToolToken(System.String,System.String,System.String)">
+  ValidateToolToken(string, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Validate a per-call SWAIG-function token. Rejects
+when the function is not registered, when the SessionManager
+rejects the token, or on any error. (Python parity:
+<code>StateMixin.validate_tool_token</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ValidateToolToken(string functionName, string token, string callId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>functionName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>callId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

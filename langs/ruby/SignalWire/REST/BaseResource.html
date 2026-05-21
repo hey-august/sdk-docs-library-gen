@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: SignalWire::REST::BaseResource
+  
+    &mdash; SignalWire Ruby SDK
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "SignalWire::REST::BaseResource";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (B)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../REST.html" title="SignalWire::REST (module)">REST</a></span></span>
+     &raquo; 
+    <span class="title">BaseResource</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: SignalWire::REST::BaseResource
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">SignalWire::REST::BaseResource</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/signalwire/rest/http_client.rb
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Base for all namespace/resource classes.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="CrudResource.html" title="SignalWire::REST::CrudResource (class)">CrudResource</a></span>, <span class='object_link'><a href="Namespaces/AddressesResource.html" title="SignalWire::REST::Namespaces::AddressesResource (class)">Namespaces::AddressesResource</a></span>, <span class='object_link'><a href="Namespaces/CallingNamespace.html" title="SignalWire::REST::Namespaces::CallingNamespace (class)">Namespaces::CallingNamespace</a></span>, <span class='object_link'><a href="Namespaces/ChatResource.html" title="SignalWire::REST::Namespaces::ChatResource (class)">Namespaces::ChatResource</a></span>, <span class='object_link'><a href="Namespaces/CompatAccounts.html" title="SignalWire::REST::Namespaces::CompatAccounts (class)">Namespaces::CompatAccounts</a></span>, <span class='object_link'><a href="Namespaces/CompatConferences.html" title="SignalWire::REST::Namespaces::CompatConferences (class)">Namespaces::CompatConferences</a></span>, <span class='object_link'><a href="Namespaces/CompatPhoneNumbers.html" title="SignalWire::REST::Namespaces::CompatPhoneNumbers (class)">Namespaces::CompatPhoneNumbers</a></span>, <span class='object_link'><a href="Namespaces/CompatRecordings.html" title="SignalWire::REST::Namespaces::CompatRecordings (class)">Namespaces::CompatRecordings</a></span>, <span class='object_link'><a href="Namespaces/CompatTokens.html" title="SignalWire::REST::Namespaces::CompatTokens (class)">Namespaces::CompatTokens</a></span>, <span class='object_link'><a href="Namespaces/CompatTranscriptions.html" title="SignalWire::REST::Namespaces::CompatTranscriptions (class)">Namespaces::CompatTranscriptions</a></span>, <span class='object_link'><a href="Namespaces/ConferenceLogs.html" title="SignalWire::REST::Namespaces::ConferenceLogs (class)">Namespaces::ConferenceLogs</a></span>, <span class='object_link'><a href="Namespaces/FabricAddresses.html" title="SignalWire::REST::Namespaces::FabricAddresses (class)">Namespaces::FabricAddresses</a></span>, <span class='object_link'><a href="Namespaces/FabricTokens.html" title="SignalWire::REST::Namespaces::FabricTokens (class)">Namespaces::FabricTokens</a></span>, <span class='object_link'><a href="Namespaces/FaxLogs.html" title="SignalWire::REST::Namespaces::FaxLogs (class)">Namespaces::FaxLogs</a></span>, <span class='object_link'><a href="Namespaces/GenericResources.html" title="SignalWire::REST::Namespaces::GenericResources (class)">Namespaces::GenericResources</a></span>, <span class='object_link'><a href="Namespaces/ImportedNumbersResource.html" title="SignalWire::REST::Namespaces::ImportedNumbersResource (class)">Namespaces::ImportedNumbersResource</a></span>, <span class='object_link'><a href="Namespaces/LookupResource.html" title="SignalWire::REST::Namespaces::LookupResource (class)">Namespaces::LookupResource</a></span>, <span class='object_link'><a href="Namespaces/MessageLogs.html" title="SignalWire::REST::Namespaces::MessageLogs (class)">Namespaces::MessageLogs</a></span>, <span class='object_link'><a href="Namespaces/MfaResource.html" title="SignalWire::REST::Namespaces::MfaResource (class)">Namespaces::MfaResource</a></span>, <span class='object_link'><a href="Namespaces/ProjectTokens.html" title="SignalWire::REST::Namespaces::ProjectTokens (class)">Namespaces::ProjectTokens</a></span>, <span class='object_link'><a href="Namespaces/PubSubResource.html" title="SignalWire::REST::Namespaces::PubSubResource (class)">Namespaces::PubSubResource</a></span>, <span class='object_link'><a href="Namespaces/RecordingsResource.html" title="SignalWire::REST::Namespaces::RecordingsResource (class)">Namespaces::RecordingsResource</a></span>, <span class='object_link'><a href="Namespaces/RegistryBrands.html" title="SignalWire::REST::Namespaces::RegistryBrands (class)">Namespaces::RegistryBrands</a></span>, <span class='object_link'><a href="Namespaces/RegistryCampaigns.html" title="SignalWire::REST::Namespaces::RegistryCampaigns (class)">Namespaces::RegistryCampaigns</a></span>, <span class='object_link'><a href="Namespaces/RegistryNumbers.html" title="SignalWire::REST::Namespaces::RegistryNumbers (class)">Namespaces::RegistryNumbers</a></span>, <span class='object_link'><a href="Namespaces/RegistryOrders.html" title="SignalWire::REST::Namespaces::RegistryOrders (class)">Namespaces::RegistryOrders</a></span>, <span class='object_link'><a href="Namespaces/ShortCodesResource.html" title="SignalWire::REST::Namespaces::ShortCodesResource (class)">Namespaces::ShortCodesResource</a></span>, <span class='object_link'><a href="Namespaces/SipProfileResource.html" title="SignalWire::REST::Namespaces::SipProfileResource (class)">Namespaces::SipProfileResource</a></span>, <span class='object_link'><a href="Namespaces/VideoConferenceTokens.html" title="SignalWire::REST::Namespaces::VideoConferenceTokens (class)">Namespaces::VideoConferenceTokens</a></span>, <span class='object_link'><a href="Namespaces/VideoRoomRecordings.html" title="SignalWire::REST::Namespaces::VideoRoomRecordings (class)">Namespaces::VideoRoomRecordings</a></span>, <span class='object_link'><a href="Namespaces/VideoRoomSessions.html" title="SignalWire::REST::Namespaces::VideoRoomSessions (class)">Namespaces::VideoRoomSessions</a></span>, <span class='object_link'><a href="Namespaces/VideoRoomTokens.html" title="SignalWire::REST::Namespaces::VideoRoomTokens (class)">Namespaces::VideoRoomTokens</a></span>, <span class='object_link'><a href="Namespaces/VideoStreams.html" title="SignalWire::REST::Namespaces::VideoStreams (class)">Namespaces::VideoStreams</a></span>, <span class='object_link'><a href="Namespaces/VoiceLogs.html" title="SignalWire::REST::Namespaces::VoiceLogs (class)">Namespaces::VoiceLogs</a></span></p>
+</div>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(http, base_path)  &#x21d2; BaseResource </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A new instance of BaseResource.</p></div></span>
+  
+</li>
+
+      
+    </ul>
+    
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(http, base_path)  &#x21d2; <tt><span class='object_link'><a href="" title="SignalWire::REST::BaseResource (class)">BaseResource</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns a new instance of BaseResource.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+115
+116
+117
+118</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/http_client.rb', line 115</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_http'>http</span><span class='comma'>,</span> <span class='id identifier rubyid_base_path'>base_path</span><span class='rparen'>)</span>
+  <span class='ivar'>@http</span>      <span class='op'>=</span> <span class='id identifier rubyid_http'>http</span>
+  <span class='ivar'>@base_path</span> <span class='op'>=</span> <span class='id identifier rubyid_base_path'>base_path</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+</div>
+
+      <div id="footer">
+  Generated on Thu May 21 15:20:55 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.43 (ruby-3.1.4).
+</div>
+
+    </div>
+  </body>
+</html>

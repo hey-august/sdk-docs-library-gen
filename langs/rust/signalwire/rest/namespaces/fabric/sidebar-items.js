@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["CallFlowsResource","ConferenceRoomsResource","CxmlApplicationsResource","Fabric","FabricAddresses","FabricTokens","GenericResources","SubscribersResource"]};

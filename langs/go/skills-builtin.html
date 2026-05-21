@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>skills.builtin — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin" class="active">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="builtin">builtin</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/skills/builtin&quot;</span>
+</code></pre></div>
+
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#NewAPINinjasTrivia">func NewAPINinjasTrivia(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewClaudeSkills">func NewClaudeSkills(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewCustomSkills">func NewCustomSkills(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewDataSphere">func NewDataSphere(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewDataSphereServerless">func NewDataSphereServerless(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewDateTime">func NewDateTime(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewGoogleMaps">func NewGoogleMaps(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewInfoGatherer">func NewInfoGatherer(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewJoke">func NewJoke(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewMCPGateway">func NewMCPGateway(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewMath">func NewMath(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewNativeVectorSearch">func NewNativeVectorSearch(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewPlayBackgroundFile">func NewPlayBackgroundFile(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewSWMLTransfer">func NewSWMLTransfer(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewSpider">func NewSpider(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewWeatherAPI">func NewWeatherAPI(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewWebSearch">func NewWebSearch(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#NewWikipediaSearch">func NewWikipediaSearch(params map[string]any) skills.SkillBase</a></li>
+<li><a href="#APINinjasTriviaSkill">type APINinjasTriviaSkill</a></li>
+<li><a href="#APINinjasTriviaSkill.GetHints">func (s *APINinjasTriviaSkill) GetHints() []string</a></li>
+<li><a href="#APINinjasTriviaSkill.GetInstanceKey">func (s *APINinjasTriviaSkill) GetInstanceKey() string</a></li>
+<li><a href="#APINinjasTriviaSkill.GetParameterSchema">func (s *APINinjasTriviaSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#APINinjasTriviaSkill.GetPromptSections">func (s *APINinjasTriviaSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#APINinjasTriviaSkill.RegisterTools">func (s *APINinjasTriviaSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#APINinjasTriviaSkill.RequiredEnvVars">func (s *APINinjasTriviaSkill) RequiredEnvVars() []string</a></li>
+<li><a href="#APINinjasTriviaSkill.Setup">func (s *APINinjasTriviaSkill) Setup() bool</a></li>
+<li><a href="#APINinjasTriviaSkill.SupportsMultipleInstances">func (s *APINinjasTriviaSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#ClaudeSkillsSkill">type ClaudeSkillsSkill</a></li>
+<li><a href="#ClaudeSkillsSkill.GetHints">func (s *ClaudeSkillsSkill) GetHints() []string</a></li>
+<li><a href="#ClaudeSkillsSkill.GetInstanceKey">func (s *ClaudeSkillsSkill) GetInstanceKey() string</a></li>
+<li><a href="#ClaudeSkillsSkill.GetParameterSchema">func (s *ClaudeSkillsSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#ClaudeSkillsSkill.GetPromptSections">func (s *ClaudeSkillsSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#ClaudeSkillsSkill.RegisterTools">func (s *ClaudeSkillsSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#ClaudeSkillsSkill.RequiredEnvVars">func (s *ClaudeSkillsSkill) RequiredEnvVars() []string</a></li>
+<li><a href="#ClaudeSkillsSkill.Setup">func (s *ClaudeSkillsSkill) Setup() bool</a></li>
+<li><a href="#ClaudeSkillsSkill.SupportsMultipleInstances">func (s *ClaudeSkillsSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#CustomSkillsSkill">type CustomSkillsSkill</a></li>
+<li><a href="#CustomSkillsSkill.GetInstanceKey">func (s *CustomSkillsSkill) GetInstanceKey() string</a></li>
+<li><a href="#CustomSkillsSkill.GetParameterSchema">func (s *CustomSkillsSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#CustomSkillsSkill.GetPromptSections">func (s *CustomSkillsSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#CustomSkillsSkill.RegisterTools">func (s *CustomSkillsSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#CustomSkillsSkill.Setup">func (s *CustomSkillsSkill) Setup() bool</a></li>
+<li><a href="#CustomSkillsSkill.SupportsMultipleInstances">func (s *CustomSkillsSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#DataSphereServerlessSkill">type DataSphereServerlessSkill</a></li>
+<li><a href="#DataSphereServerlessSkill.GetGlobalData">func (s *DataSphereServerlessSkill) GetGlobalData() map[string]any</a></li>
+<li><a href="#DataSphereServerlessSkill.GetInstanceKey">func (s *DataSphereServerlessSkill) GetInstanceKey() string</a></li>
+<li><a href="#DataSphereServerlessSkill.GetParameterSchema">func (s *DataSphereServerlessSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#DataSphereServerlessSkill.GetPromptSections">func (s *DataSphereServerlessSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#DataSphereServerlessSkill.RegisterTools">func (s *DataSphereServerlessSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#DataSphereServerlessSkill.RequiredEnvVars">func (s *DataSphereServerlessSkill) RequiredEnvVars() []string</a></li>
+<li><a href="#DataSphereServerlessSkill.Setup">func (s *DataSphereServerlessSkill) Setup() bool</a></li>
+<li><a href="#DataSphereServerlessSkill.SupportsMultipleInstances">func (s *DataSphereServerlessSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#DataSphereSkill">type DataSphereSkill</a></li>
+<li><a href="#DataSphereSkill.GetGlobalData">func (s *DataSphereSkill) GetGlobalData() map[string]any</a></li>
+<li><a href="#DataSphereSkill.GetInstanceKey">func (s *DataSphereSkill) GetInstanceKey() string</a></li>
+<li><a href="#DataSphereSkill.GetParameterSchema">func (s *DataSphereSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#DataSphereSkill.GetPromptSections">func (s *DataSphereSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#DataSphereSkill.RegisterTools">func (s *DataSphereSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#DataSphereSkill.RequiredEnvVars">func (s *DataSphereSkill) RequiredEnvVars() []string</a></li>
+<li><a href="#DataSphereSkill.Setup">func (s *DataSphereSkill) Setup() bool</a></li>
+<li><a href="#DataSphereSkill.SupportsMultipleInstances">func (s *DataSphereSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#DateTimeSkill">type DateTimeSkill</a></li>
+<li><a href="#DateTimeSkill.GetHints">func (s *DateTimeSkill) GetHints() []string</a></li>
+<li><a href="#DateTimeSkill.GetPromptSections">func (s *DateTimeSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#DateTimeSkill.RegisterTools">func (s *DateTimeSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#DateTimeSkill.Setup">func (s *DateTimeSkill) Setup() bool</a></li>
+<li><a href="#GoogleMapsSkill">type GoogleMapsSkill</a></li>
+<li><a href="#GoogleMapsSkill.GetHints">func (s *GoogleMapsSkill) GetHints() []string</a></li>
+<li><a href="#GoogleMapsSkill.GetParameterSchema">func (s *GoogleMapsSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#GoogleMapsSkill.GetPromptSections">func (s *GoogleMapsSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#GoogleMapsSkill.RegisterTools">func (s *GoogleMapsSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#GoogleMapsSkill.RequiredEnvVars">func (s *GoogleMapsSkill) RequiredEnvVars() []string</a></li>
+<li><a href="#GoogleMapsSkill.Setup">func (s *GoogleMapsSkill) Setup() bool</a></li>
+<li><a href="#InfoGathererSkill">type InfoGathererSkill</a></li>
+<li><a href="#InfoGathererSkill.GetGlobalData">func (s *InfoGathererSkill) GetGlobalData() map[string]any</a></li>
+<li><a href="#InfoGathererSkill.GetInstanceKey">func (s *InfoGathererSkill) GetInstanceKey() string</a></li>
+<li><a href="#InfoGathererSkill.GetParameterSchema">func (s *InfoGathererSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#InfoGathererSkill.GetPromptSections">func (s *InfoGathererSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#InfoGathererSkill.RegisterTools">func (s *InfoGathererSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#InfoGathererSkill.Setup">func (s *InfoGathererSkill) Setup() bool</a></li>
+<li><a href="#InfoGathererSkill.SupportsMultipleInstances">func (s *InfoGathererSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#JokeSkill">type JokeSkill</a></li>
+<li><a href="#JokeSkill.GetGlobalData">func (s *JokeSkill) GetGlobalData() map[string]any</a></li>
+<li><a href="#JokeSkill.GetHints">func (s *JokeSkill) GetHints() []string</a></li>
+<li><a href="#JokeSkill.GetPromptSections">func (s *JokeSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#JokeSkill.RegisterTools">func (s *JokeSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#JokeSkill.Setup">func (s *JokeSkill) Setup() bool</a></li>
+<li><a href="#MCPGatewaySkill">type MCPGatewaySkill</a></li>
+<li><a href="#MCPGatewaySkill.GetGlobalData">func (s *MCPGatewaySkill) GetGlobalData() map[string]any</a></li>
+<li><a href="#MCPGatewaySkill.GetHints">func (s *MCPGatewaySkill) GetHints() []string</a></li>
+<li><a href="#MCPGatewaySkill.GetParameterSchema">func (s *MCPGatewaySkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#MCPGatewaySkill.GetPromptSections">func (s *MCPGatewaySkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#MCPGatewaySkill.RegisterTools">func (s *MCPGatewaySkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#MCPGatewaySkill.Setup">func (s *MCPGatewaySkill) Setup() bool</a></li>
+<li><a href="#MathSkill">type MathSkill</a></li>
+<li><a href="#MathSkill.GetPromptSections">func (s *MathSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#MathSkill.RegisterTools">func (s *MathSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#MathSkill.Setup">func (s *MathSkill) Setup() bool</a></li>
+<li><a href="#NativeVectorSearchSkill">type NativeVectorSearchSkill</a></li>
+<li><a href="#NativeVectorSearchSkill.GetGlobalData">func (s *NativeVectorSearchSkill) GetGlobalData() map[string]any</a></li>
+<li><a href="#NativeVectorSearchSkill.GetHints">func (s *NativeVectorSearchSkill) GetHints() []string</a></li>
+<li><a href="#NativeVectorSearchSkill.GetInstanceKey">func (s *NativeVectorSearchSkill) GetInstanceKey() string</a></li>
+<li><a href="#NativeVectorSearchSkill.GetParameterSchema">func (s *NativeVectorSearchSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#NativeVectorSearchSkill.GetPromptSections">func (s *NativeVectorSearchSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#NativeVectorSearchSkill.RegisterTools">func (s *NativeVectorSearchSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#NativeVectorSearchSkill.Setup">func (s *NativeVectorSearchSkill) Setup() bool</a></li>
+<li><a href="#NativeVectorSearchSkill.SupportsMultipleInstances">func (s *NativeVectorSearchSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#PlayBackgroundFileSkill">type PlayBackgroundFileSkill</a></li>
+<li><a href="#PlayBackgroundFileSkill.GetInstanceKey">func (s *PlayBackgroundFileSkill) GetInstanceKey() string</a></li>
+<li><a href="#PlayBackgroundFileSkill.GetParameterSchema">func (s *PlayBackgroundFileSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#PlayBackgroundFileSkill.RegisterTools">func (s *PlayBackgroundFileSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#PlayBackgroundFileSkill.Setup">func (s *PlayBackgroundFileSkill) Setup() bool</a></li>
+<li><a href="#PlayBackgroundFileSkill.SupportsMultipleInstances">func (s *PlayBackgroundFileSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#SWMLTransferSkill">type SWMLTransferSkill</a></li>
+<li><a href="#SWMLTransferSkill.GetHints">func (s *SWMLTransferSkill) GetHints() []string</a></li>
+<li><a href="#SWMLTransferSkill.GetInstanceKey">func (s *SWMLTransferSkill) GetInstanceKey() string</a></li>
+<li><a href="#SWMLTransferSkill.GetParameterSchema">func (s *SWMLTransferSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#SWMLTransferSkill.GetPromptSections">func (s *SWMLTransferSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#SWMLTransferSkill.RegisterTools">func (s *SWMLTransferSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#SWMLTransferSkill.Setup">func (s *SWMLTransferSkill) Setup() bool</a></li>
+<li><a href="#SWMLTransferSkill.SupportsMultipleInstances">func (s *SWMLTransferSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#SpiderSkill">type SpiderSkill</a></li>
+<li><a href="#SpiderSkill.Cleanup">func (s *SpiderSkill) Cleanup()</a></li>
+<li><a href="#SpiderSkill.GetHints">func (s *SpiderSkill) GetHints() []string</a></li>
+<li><a href="#SpiderSkill.GetInstanceKey">func (s *SpiderSkill) GetInstanceKey() string</a></li>
+<li><a href="#SpiderSkill.GetParameterSchema">func (s *SpiderSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#SpiderSkill.RegisterTools">func (s *SpiderSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#SpiderSkill.Setup">func (s *SpiderSkill) Setup() bool</a></li>
+<li><a href="#SpiderSkill.SupportsMultipleInstances">func (s *SpiderSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#WeatherAPISkill">type WeatherAPISkill</a></li>
+<li><a href="#WeatherAPISkill.GetHints">func (s *WeatherAPISkill) GetHints() []string</a></li>
+<li><a href="#WeatherAPISkill.GetParameterSchema">func (s *WeatherAPISkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#WeatherAPISkill.GetPromptSections">func (s *WeatherAPISkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#WeatherAPISkill.RegisterTools">func (s *WeatherAPISkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#WeatherAPISkill.RequiredEnvVars">func (s *WeatherAPISkill) RequiredEnvVars() []string</a></li>
+<li><a href="#WeatherAPISkill.Setup">func (s *WeatherAPISkill) Setup() bool</a></li>
+<li><a href="#WebSearchSkill">type WebSearchSkill</a></li>
+<li><a href="#WebSearchSkill.GetGlobalData">func (s *WebSearchSkill) GetGlobalData() map[string]any</a></li>
+<li><a href="#WebSearchSkill.GetInstanceKey">func (s *WebSearchSkill) GetInstanceKey() string</a></li>
+<li><a href="#WebSearchSkill.GetParameterSchema">func (s *WebSearchSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#WebSearchSkill.GetPromptSections">func (s *WebSearchSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#WebSearchSkill.RegisterTools">func (s *WebSearchSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#WebSearchSkill.RequiredEnvVars">func (s *WebSearchSkill) RequiredEnvVars() []string</a></li>
+<li><a href="#WebSearchSkill.Setup">func (s *WebSearchSkill) Setup() bool</a></li>
+<li><a href="#WebSearchSkill.SupportsMultipleInstances">func (s *WebSearchSkill) SupportsMultipleInstances() bool</a></li>
+<li><a href="#WikipediaSearchSkill">type WikipediaSearchSkill</a></li>
+<li><a href="#WikipediaSearchSkill.GetParameterSchema">func (s *WikipediaSearchSkill) GetParameterSchema() map[string]map[string]any</a></li>
+<li><a href="#WikipediaSearchSkill.GetPromptSections">func (s *WikipediaSearchSkill) GetPromptSections() []map[string]any</a></li>
+<li><a href="#WikipediaSearchSkill.RegisterTools">func (s *WikipediaSearchSkill) RegisterTools() []skills.ToolRegistration</a></li>
+<li><a href="#WikipediaSearchSkill.Setup">func (s *WikipediaSearchSkill) Setup() bool</a></li>
+</ul>
+<p><a name="NewAPINinjasTrivia"></a></p>
+<h2 id="func-newapininjastrivia">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/api_ninjas_trivia.go#L42">NewAPINinjasTrivia</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewAPINinjasTrivia</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewAPINinjasTrivia creates a new APINinjasTriviaSkill.</p>
+<p><a name="NewClaudeSkills"></a></p>
+<h2 id="func-newclaudeskills">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/claude_skills.go#L103">NewClaudeSkills</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewClaudeSkills</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewClaudeSkills creates a new ClaudeSkillsSkill.</p>
+<p><a name="NewCustomSkills"></a></p>
+<h2 id="func-newcustomskills">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/custom_skills.go#L15">NewCustomSkills</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewCustomSkills</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewCustomSkills creates a new CustomSkillsSkill.</p>
+<p><a name="NewDataSphere"></a></p>
+<h2 id="func-newdatasphere">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere.go#L34">NewDataSphere</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewDataSphere</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewDataSphere creates a new DataSphereSkill.</p>
+<p><a name="NewDataSphereServerless"></a></p>
+<h2 id="func-newdatasphereserverless">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere_serverless.go#L33">NewDataSphereServerless</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewDataSphereServerless</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewDataSphereServerless creates a new DataSphereServerlessSkill.</p>
+<p><a name="NewDateTime"></a></p>
+<h2 id="func-newdatetime">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datetime.go#L18">NewDateTime</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewDateTime</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewDateTime creates a new DateTimeSkill.</p>
+<p><a name="NewGoogleMaps"></a></p>
+<h2 id="func-newgooglemaps">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/google_maps.go#L26">NewGoogleMaps</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewGoogleMaps</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewGoogleMaps creates a new GoogleMapsSkill.</p>
+<p><a name="NewInfoGatherer"></a></p>
+<h2 id="func-newinfogatherer">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/info_gatherer.go#L22">NewInfoGatherer</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewInfoGatherer</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewInfoGatherer creates a new InfoGathererSkill.</p>
+<p><a name="NewJoke"></a></p>
+<h2 id="func-newjoke">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/joke.go#L36">NewJoke</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewJoke</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewJoke creates a new JokeSkill.</p>
+<p><a name="NewMCPGateway"></a></p>
+<h2 id="func-newmcpgateway">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/mcp_gateway.go#L34">NewMCPGateway</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewMCPGateway</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewMCPGateway creates a new MCPGatewaySkill.</p>
+<p><a name="NewMath"></a></p>
+<h2 id="func-newmath">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/math.go#L21">NewMath</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewMath</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewMath creates a new MathSkill.</p>
+<p><a name="NewNativeVectorSearch"></a></p>
+<h2 id="func-newnativevectorsearch">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/native_vector_search.go#L38">NewNativeVectorSearch</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewNativeVectorSearch</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewNativeVectorSearch creates a new NativeVectorSearchSkill.</p>
+<p><a name="NewPlayBackgroundFile"></a></p>
+<h2 id="func-newplaybackgroundfile">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/play_background_file.go#L22">NewPlayBackgroundFile</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewPlayBackgroundFile</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewPlayBackgroundFile creates a new PlayBackgroundFileSkill.</p>
+<p><a name="NewSWMLTransfer"></a></p>
+<h2 id="func-newswmltransfer">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/swml_transfer.go#L25">NewSWMLTransfer</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewSWMLTransfer</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewSWMLTransfer creates a new SWMLTransferSkill.</p>
+<p><a name="NewSpider"></a></p>
+<h2 id="func-newspider">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/spider.go#L72">NewSpider</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewSpider</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewSpider creates a new SpiderSkill.</p>
+<p><a name="NewWeatherAPI"></a></p>
+<h2 id="func-newweatherapi">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/weather_api.go#L25">NewWeatherAPI</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewWeatherAPI</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewWeatherAPI creates a new WeatherAPISkill.</p>
+<p><a name="NewWebSearch"></a></p>
+<h2 id="func-newwebsearch">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/web_search.go#L36">NewWebSearch</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewWebSearch</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewWebSearch creates a new WebSearchSkill.</p>
+<p><a name="NewWikipediaSearch"></a></p>
+<h2 id="func-newwikipediasearch">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/wikipedia_search.go#L24">NewWikipediaSearch</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewWikipediaSearch</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">skills</span><span class="p">.</span><span class="nx">SkillBase</span>
+</code></pre></div>
+
+<p>NewWikipediaSearch creates a new WikipediaSearchSkill.</p>
+<p><a name="APINinjasTriviaSkill"></a></p>
+<h2 id="type-apininjastriviaskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/api_ninjas_trivia.go#L34-L39">APINinjasTriviaSkill</a></h2>
+<p>APINinjasTriviaSkill gets trivia questions from API Ninjas.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">APINinjasTriviaSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="APINinjasTriviaSkill.GetHints"></a></p>
+<h3 id="func-apininjastriviaskill-gethints">func (*APINinjasTriviaSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/api_ninjas_trivia.go#L225">GetHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">APINinjasTriviaSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="APINinjasTriviaSkill.GetInstanceKey"></a></p>
+<h3 id="func-apininjastriviaskill-getinstancekey">func (*APINinjasTriviaSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/api_ninjas_trivia.go#L64">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">APINinjasTriviaSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="APINinjasTriviaSkill.GetParameterSchema"></a></p>
+<h3 id="func-apininjastriviaskill-getparameterschema">func (*APINinjasTriviaSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/api_ninjas_trivia.go#L242">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">APINinjasTriviaSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="APINinjasTriviaSkill.GetPromptSections"></a></p>
+<h3 id="func-apininjastriviaskill-getpromptsections">func (*APINinjasTriviaSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/api_ninjas_trivia.go#L229">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">APINinjasTriviaSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="APINinjasTriviaSkill.RegisterTools"></a></p>
+<h3 id="func-apininjastriviaskill-registertools">func (*APINinjasTriviaSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/api_ninjas_trivia.go#L116">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">APINinjasTriviaSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="APINinjasTriviaSkill.RequiredEnvVars"></a></p>
+<h3 id="func-apininjastriviaskill-requiredenvvars">func (*APINinjasTriviaSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/api_ninjas_trivia.go#L53">RequiredEnvVars</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">APINinjasTriviaSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RequiredEnvVars</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="APINinjasTriviaSkill.Setup"></a></p>
+<h3 id="func-apininjastriviaskill-setup">func (*APINinjasTriviaSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/api_ninjas_trivia.go#L69">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">APINinjasTriviaSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="APINinjasTriviaSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-apininjastriviaskill-supportsmultipleinstances">func (*APINinjasTriviaSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/api_ninjas_trivia.go#L62">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">APINinjasTriviaSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="ClaudeSkillsSkill"></a></p>
+<h2 id="type-claudeskillsskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/claude_skills.go#L82-L100">ClaudeSkillsSkill</a></h2>
+<p>ClaudeSkillsSkill loads Claude-style SKILL.md files as SignalWire agent tools.</p>
+<p>Each directory under skills_path that contains a SKILL.md becomes a SWAIG tool. The SKILL.md frontmatter provides the tool name and description; the body becomes the tool's response content when invoked.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ClaudeSkillsSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="ClaudeSkillsSkill.GetHints"></a></p>
+<h3 id="func-claudeskillsskill-gethints">func (*ClaudeSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/claude_skills.go#L728">GetHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">ClaudeSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetHints returns speech recognition hints derived from loaded skill names.</p>
+<p><a name="ClaudeSkillsSkill.GetInstanceKey"></a></p>
+<h3 id="func-claudeskillsskill-getinstancekey">func (*ClaudeSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/claude_skills.go#L797">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">ClaudeSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetInstanceKey returns a unique key based on skills_path for multi-instance support.</p>
+<p><a name="ClaudeSkillsSkill.GetParameterSchema"></a></p>
+<h3 id="func-claudeskillsskill-getparameterschema">func (*ClaudeSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/claude_skills.go#L804">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">ClaudeSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetParameterSchema returns the full parameter schema for the SKILL.md loader.</p>
+<p><a name="ClaudeSkillsSkill.GetPromptSections"></a></p>
+<h3 id="func-claudeskillsskill-getpromptsections">func (*ClaudeSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/claude_skills.go#L744">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">ClaudeSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetPromptSections returns one prompt section per loaded skill (excluding skipped ones).</p>
+<p><a name="ClaudeSkillsSkill.RegisterTools"></a></p>
+<h3 id="func-claudeskillsskill-registertools">func (*ClaudeSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/claude_skills.go#L612">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">ClaudeSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p>RegisterTools returns one ToolRegistration per discovered SKILL.md that is not flagged to skip.</p>
+<p><a name="ClaudeSkillsSkill.RequiredEnvVars"></a></p>
+<h3 id="func-claudeskillsskill-requiredenvvars">func (*ClaudeSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/claude_skills.go#L118">RequiredEnvVars</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">ClaudeSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RequiredEnvVars</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>RequiredEnvVars returns nil — no env vars required (skills_path is a param).</p>
+<p><a name="ClaudeSkillsSkill.Setup"></a></p>
+<h3 id="func-claudeskillsskill-setup">func (*ClaudeSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/claude_skills.go#L121">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">ClaudeSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>Setup validates configuration and discovers SKILL.md files.</p>
+<p><a name="ClaudeSkillsSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-claudeskillsskill-supportsmultipleinstances">func (*ClaudeSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/claude_skills.go#L115">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">ClaudeSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>SupportsMultipleInstances returns true — different skills_path values create distinct instances.</p>
+<p><a name="CustomSkillsSkill"></a></p>
+<h2 id="type-customskillsskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/custom_skills.go#L9-L12">CustomSkillsSkill</a></h2>
+<p>CustomSkillsSkill is a meta-skill that registers user-defined tools.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">CustomSkillsSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="CustomSkillsSkill.GetInstanceKey"></a></p>
+<h3 id="func-customskillsskill-getinstancekey">func (*CustomSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/custom_skills.go#L28">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">CustomSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="CustomSkillsSkill.GetParameterSchema"></a></p>
+<h3 id="func-customskillsskill-getparameterschema">func (*CustomSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/custom_skills.go#L134">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">CustomSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="CustomSkillsSkill.GetPromptSections"></a></p>
+<h3 id="func-customskillsskill-getpromptsections">func (*CustomSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/custom_skills.go#L110">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">CustomSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="CustomSkillsSkill.RegisterTools"></a></p>
+<h3 id="func-customskillsskill-registertools">func (*CustomSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/custom_skills.go#L60">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">CustomSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="CustomSkillsSkill.Setup"></a></p>
+<h3 id="func-customskillsskill-setup">func (*CustomSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/custom_skills.go#L33">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">CustomSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="CustomSkillsSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-customskillsskill-supportsmultipleinstances">func (*CustomSkillsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/custom_skills.go#L26">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">CustomSkillsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="DataSphereServerlessSkill"></a></p>
+<h2 id="type-datasphereserverlessskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere_serverless.go#L14-L30">DataSphereServerlessSkill</a></h2>
+<p>DataSphereServerlessSkill provides DataSphere search using DataMap (serverless execution).</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">DataSphereServerlessSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="DataSphereServerlessSkill.GetGlobalData"></a></p>
+<h3 id="func-datasphereserverlessskill-getglobaldata">func (*DataSphereServerlessSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere_serverless.go#L176">GetGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereServerlessSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetGlobalData</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetGlobalData returns global data for agent context.</p>
+<p><a name="DataSphereServerlessSkill.GetInstanceKey"></a></p>
+<h3 id="func-datasphereserverlessskill-getinstancekey">func (*DataSphereServerlessSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere_serverless.go#L58">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereServerlessSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="DataSphereServerlessSkill.GetParameterSchema"></a></p>
+<h3 id="func-datasphereserverlessskill-getparameterschema">func (*DataSphereServerlessSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere_serverless.go#L200">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereServerlessSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="DataSphereServerlessSkill.GetPromptSections"></a></p>
+<h3 id="func-datasphereserverlessskill-getpromptsections">func (*DataSphereServerlessSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere_serverless.go#L184">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereServerlessSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="DataSphereServerlessSkill.RegisterTools"></a></p>
+<h3 id="func-datasphereserverlessskill-registertools">func (*DataSphereServerlessSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere_serverless.go#L100">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereServerlessSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p>RegisterTools returns DataMap-style tool registration for serverless execution. The actual tool is registered as a DataMap function that runs on SignalWire servers.</p>
+<p><a name="DataSphereServerlessSkill.RequiredEnvVars"></a></p>
+<h3 id="func-datasphereserverlessskill-requiredenvvars">func (*DataSphereServerlessSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere_serverless.go#L44">RequiredEnvVars</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereServerlessSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RequiredEnvVars</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="DataSphereServerlessSkill.Setup"></a></p>
+<h3 id="func-datasphereserverlessskill-setup">func (*DataSphereServerlessSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere_serverless.go#L63">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereServerlessSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="DataSphereServerlessSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-datasphereserverlessskill-supportsmultipleinstances">func (*DataSphereServerlessSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere_serverless.go#L56">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereServerlessSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="DataSphereSkill"></a></p>
+<h2 id="type-datasphereskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere.go#L16-L31">DataSphereSkill</a></h2>
+<p>DataSphereSkill searches knowledge using SignalWire DataSphere RAG stack.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">DataSphereSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="DataSphereSkill.GetGlobalData"></a></p>
+<h3 id="func-datasphereskill-getglobaldata">func (*DataSphereSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere.go#L221">GetGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetGlobalData</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="DataSphereSkill.GetInstanceKey"></a></p>
+<h3 id="func-datasphereskill-getinstancekey">func (*DataSphereSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere.go#L60">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="DataSphereSkill.GetParameterSchema"></a></p>
+<h3 id="func-datasphereskill-getparameterschema">func (*DataSphereSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere.go#L244">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="DataSphereSkill.GetPromptSections"></a></p>
+<h3 id="func-datasphereskill-getpromptsections">func (*DataSphereSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere.go#L229">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="DataSphereSkill.RegisterTools"></a></p>
+<h3 id="func-datasphereskill-registertools">func (*DataSphereSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere.go#L124">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="DataSphereSkill.RequiredEnvVars"></a></p>
+<h3 id="func-datasphereskill-requiredenvvars">func (*DataSphereSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere.go#L46">RequiredEnvVars</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RequiredEnvVars</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="DataSphereSkill.Setup"></a></p>
+<h3 id="func-datasphereskill-setup">func (*DataSphereSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere.go#L65">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="DataSphereSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-datasphereskill-supportsmultipleinstances">func (*DataSphereSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datasphere.go#L58">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DataSphereSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="DateTimeSkill"></a></p>
+<h2 id="type-datetimeskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datetime.go#L12-L15">DateTimeSkill</a></h2>
+<p>DateTimeSkill provides current date and time information.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">DateTimeSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="DateTimeSkill.GetHints"></a></p>
+<h3 id="func-datetimeskill-gethints">func (*DateTimeSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datetime.go#L128">GetHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DateTimeSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="DateTimeSkill.GetPromptSections"></a></p>
+<h3 id="func-datetimeskill-getpromptsections">func (*DateTimeSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datetime.go#L132">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DateTimeSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="DateTimeSkill.RegisterTools"></a></p>
+<h3 id="func-datetimeskill-registertools">func (*DateTimeSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datetime.go#L35">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DateTimeSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="DateTimeSkill.Setup"></a></p>
+<h3 id="func-datetimeskill-setup">func (*DateTimeSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/datetime.go#L30">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">DateTimeSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="GoogleMapsSkill"></a></p>
+<h2 id="type-googlemapsskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/google_maps.go#L18-L23">GoogleMapsSkill</a></h2>
+<p>GoogleMapsSkill validates addresses and computes routes using Google Maps.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">GoogleMapsSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="GoogleMapsSkill.GetHints"></a></p>
+<h3 id="func-googlemapsskill-gethints">func (*GoogleMapsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/google_maps.go#L293">GetHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">GoogleMapsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="GoogleMapsSkill.GetParameterSchema"></a></p>
+<h3 id="func-googlemapsskill-getparameterschema">func (*GoogleMapsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/google_maps.go#L312">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">GoogleMapsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="GoogleMapsSkill.GetPromptSections"></a></p>
+<h3 id="func-googlemapsskill-getpromptsections">func (*GoogleMapsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/google_maps.go#L297">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">GoogleMapsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="GoogleMapsSkill.RegisterTools"></a></p>
+<h3 id="func-googlemapsskill-registertools">func (*GoogleMapsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/google_maps.go#L53">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">GoogleMapsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="GoogleMapsSkill.RequiredEnvVars"></a></p>
+<h3 id="func-googlemapsskill-requiredenvvars">func (*GoogleMapsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/google_maps.go#L37">RequiredEnvVars</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">GoogleMapsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RequiredEnvVars</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="GoogleMapsSkill.Setup"></a></p>
+<h3 id="func-googlemapsskill-setup">func (*GoogleMapsSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/google_maps.go#L46">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">GoogleMapsSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="InfoGathererSkill"></a></p>
+<h2 id="type-infogathererskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/info_gatherer.go#L12-L19">InfoGathererSkill</a></h2>
+<p>InfoGathererSkill guides an AI agent through a series of questions, collecting and storing answers in global_data.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">InfoGathererSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="InfoGathererSkill.GetGlobalData"></a></p>
+<h3 id="func-infogathererskill-getglobaldata">func (*InfoGathererSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/info_gatherer.go#L249">GetGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">InfoGathererSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetGlobalData</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="InfoGathererSkill.GetInstanceKey"></a></p>
+<h3 id="func-infogathererskill-getinstancekey">func (*InfoGathererSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/info_gatherer.go#L35">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">InfoGathererSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="InfoGathererSkill.GetParameterSchema"></a></p>
+<h3 id="func-infogathererskill-getparameterschema">func (*InfoGathererSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/info_gatherer.go#L282">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">InfoGathererSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="InfoGathererSkill.GetPromptSections"></a></p>
+<h3 id="func-infogathererskill-getpromptsections">func (*InfoGathererSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/info_gatherer.go#L259">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">InfoGathererSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="InfoGathererSkill.RegisterTools"></a></p>
+<h3 id="func-infogathererskill-registertools">func (*InfoGathererSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/info_gatherer.go#L84">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">InfoGathererSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="InfoGathererSkill.Setup"></a></p>
+<h3 id="func-infogathererskill-setup">func (*InfoGathererSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/info_gatherer.go#L42">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">InfoGathererSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="InfoGathererSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-infogathererskill-supportsmultipleinstances">func (*InfoGathererSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/info_gatherer.go#L33">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">InfoGathererSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="JokeSkill"></a></p>
+<h2 id="type-jokeskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/joke.go#L29-L33">JokeSkill</a></h2>
+<p>JokeSkill tells random jokes from a built-in list.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">JokeSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="JokeSkill.GetGlobalData"></a></p>
+<h3 id="func-jokeskill-getglobaldata">func (*JokeSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/joke.go#L79">GetGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">JokeSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetGlobalData</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="JokeSkill.GetHints"></a></p>
+<h3 id="func-jokeskill-gethints">func (*JokeSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/joke.go#L85">GetHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">JokeSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="JokeSkill.GetPromptSections"></a></p>
+<h3 id="func-jokeskill-getpromptsections">func (*JokeSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/joke.go#L89">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">JokeSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="JokeSkill.RegisterTools"></a></p>
+<h3 id="func-jokeskill-registertools">func (*JokeSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/joke.go#L53">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">JokeSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="JokeSkill.Setup"></a></p>
+<h3 id="func-jokeskill-setup">func (*JokeSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/joke.go#L47">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">JokeSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="MCPGatewaySkill"></a></p>
+<h2 id="type-mcpgatewayskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/mcp_gateway.go#L17-L31">MCPGatewaySkill</a></h2>
+<p>MCPGatewaySkill connects to MCP gateway servers and registers their tools.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">MCPGatewaySkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="MCPGatewaySkill.GetGlobalData"></a></p>
+<h3 id="func-mcpgatewayskill-getglobaldata">func (*MCPGatewaySkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/mcp_gateway.go#L353">GetGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">MCPGatewaySkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetGlobalData</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetGlobalData returns MCP gateway state for DataMap variable expansion. Mirrors Python get_global_data: mcp_gateway_url, mcp_session_id, mcp_services.</p>
+<p><a name="MCPGatewaySkill.GetHints"></a></p>
+<h3 id="func-mcpgatewayskill-gethints">func (*MCPGatewaySkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/mcp_gateway.go#L367">GetHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">MCPGatewaySkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="MCPGatewaySkill.GetParameterSchema"></a></p>
+<h3 id="func-mcpgatewayskill-getparameterschema">func (*MCPGatewaySkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/mcp_gateway.go#L398">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">MCPGatewaySkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="MCPGatewaySkill.GetPromptSections"></a></p>
+<h3 id="func-mcpgatewayskill-getpromptsections">func (*MCPGatewaySkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/mcp_gateway.go#L377">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">MCPGatewaySkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="MCPGatewaySkill.RegisterTools"></a></p>
+<h3 id="func-mcpgatewayskill-registertools">func (*MCPGatewaySkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/mcp_gateway.go#L110">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">MCPGatewaySkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="MCPGatewaySkill.Setup"></a></p>
+<h3 id="func-mcpgatewayskill-setup">func (*MCPGatewaySkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/mcp_gateway.go#L45">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">MCPGatewaySkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="MathSkill"></a></p>
+<h2 id="type-mathskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/math.go#L16-L18">MathSkill</a></h2>
+<p>MathSkill provides basic mathematical calculation capabilities.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">MathSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="MathSkill.GetPromptSections"></a></p>
+<h3 id="func-mathskill-getpromptsections">func (*MathSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/math.go#L143">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">MathSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="MathSkill.RegisterTools"></a></p>
+<h3 id="func-mathskill-registertools">func (*MathSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/math.go#L34">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">MathSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="MathSkill.Setup"></a></p>
+<h3 id="func-mathskill-setup">func (*MathSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/math.go#L32">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">MathSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="NativeVectorSearchSkill"></a></p>
+<h2 id="type-nativevectorsearchskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/native_vector_search.go#L20-L35">NativeVectorSearchSkill</a></h2>
+<p>NativeVectorSearchSkill searches knowledge using a remote search server.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">NativeVectorSearchSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NativeVectorSearchSkill.GetGlobalData"></a></p>
+<h3 id="func-nativevectorsearchskill-getglobaldata">func (*NativeVectorSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/native_vector_search.go#L380">GetGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">NativeVectorSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetGlobalData</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="NativeVectorSearchSkill.GetHints"></a></p>
+<h3 id="func-nativevectorsearchskill-gethints">func (*NativeVectorSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/native_vector_search.go#L350">GetHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">NativeVectorSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="NativeVectorSearchSkill.GetInstanceKey"></a></p>
+<h3 id="func-nativevectorsearchskill-getinstancekey">func (*NativeVectorSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/native_vector_search.go#L52">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">NativeVectorSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="NativeVectorSearchSkill.GetParameterSchema"></a></p>
+<h3 id="func-nativevectorsearchskill-getparameterschema">func (*NativeVectorSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/native_vector_search.go#L386">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">NativeVectorSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="NativeVectorSearchSkill.GetPromptSections"></a></p>
+<h3 id="func-nativevectorsearchskill-getpromptsections">func (*NativeVectorSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/native_vector_search.go#L362">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">NativeVectorSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="NativeVectorSearchSkill.RegisterTools"></a></p>
+<h3 id="func-nativevectorsearchskill-registertools">func (*NativeVectorSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/native_vector_search.go#L200">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">NativeVectorSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="NativeVectorSearchSkill.Setup"></a></p>
+<h3 id="func-nativevectorsearchskill-setup">func (*NativeVectorSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/native_vector_search.go#L116">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">NativeVectorSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="NativeVectorSearchSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-nativevectorsearchskill-supportsmultipleinstances">func (*NativeVectorSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/native_vector_search.go#L50">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">NativeVectorSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="PlayBackgroundFileSkill"></a></p>
+<h2 id="type-playbackgroundfileskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/play_background_file.go#L15-L19">PlayBackgroundFileSkill</a></h2>
+<p>PlayBackgroundFileSkill plays audio files in the background.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">PlayBackgroundFileSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="PlayBackgroundFileSkill.GetInstanceKey"></a></p>
+<h3 id="func-playbackgroundfileskill-getinstancekey">func (*PlayBackgroundFileSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/play_background_file.go#L35">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">PlayBackgroundFileSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="PlayBackgroundFileSkill.GetParameterSchema"></a></p>
+<h3 id="func-playbackgroundfileskill-getparameterschema">func (*PlayBackgroundFileSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/play_background_file.go#L158">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">PlayBackgroundFileSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="PlayBackgroundFileSkill.RegisterTools"></a></p>
+<h3 id="func-playbackgroundfileskill-registertools">func (*PlayBackgroundFileSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/play_background_file.go#L84">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">PlayBackgroundFileSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="PlayBackgroundFileSkill.Setup"></a></p>
+<h3 id="func-playbackgroundfileskill-setup">func (*PlayBackgroundFileSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/play_background_file.go#L40">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">PlayBackgroundFileSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="PlayBackgroundFileSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-playbackgroundfileskill-supportsmultipleinstances">func (*PlayBackgroundFileSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/play_background_file.go#L33">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">PlayBackgroundFileSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="SWMLTransferSkill"></a></p>
+<h2 id="type-swmltransferskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/swml_transfer.go#L12-L22">SWMLTransferSkill</a></h2>
+<p>SWMLTransferSkill transfers calls between agents using DataMap pattern matching.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SWMLTransferSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="SWMLTransferSkill.GetHints"></a></p>
+<h3 id="func-swmltransferskill-gethints">func (*SWMLTransferSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/swml_transfer.go#L221">GetHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SWMLTransferSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="SWMLTransferSkill.GetInstanceKey"></a></p>
+<h3 id="func-swmltransferskill-getinstancekey">func (*SWMLTransferSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/swml_transfer.go#L38">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SWMLTransferSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="SWMLTransferSkill.GetParameterSchema"></a></p>
+<h3 id="func-swmltransferskill-getparameterschema">func (*SWMLTransferSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/swml_transfer.go#L305">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SWMLTransferSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="SWMLTransferSkill.GetPromptSections"></a></p>
+<h3 id="func-swmltransferskill-getpromptsections">func (*SWMLTransferSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/swml_transfer.go#L247">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SWMLTransferSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="SWMLTransferSkill.RegisterTools"></a></p>
+<h3 id="func-swmltransferskill-registertools">func (*SWMLTransferSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/swml_transfer.go#L75">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SWMLTransferSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="SWMLTransferSkill.Setup"></a></p>
+<h3 id="func-swmltransferskill-setup">func (*SWMLTransferSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/swml_transfer.go#L43">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SWMLTransferSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="SWMLTransferSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-swmltransferskill-supportsmultipleinstances">func (*SWMLTransferSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/swml_transfer.go#L36">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SWMLTransferSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="SpiderSkill"></a></p>
+<h2 id="type-spiderskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/spider.go#L47-L67">SpiderSkill</a></h2>
+<p>SpiderSkill fetches and extracts text content from URLs.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SpiderSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="SpiderSkill.Cleanup"></a></p>
+<h3 id="func-spiderskill-cleanup">func (*SpiderSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/spider.go#L720">Cleanup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SpiderSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Cleanup</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Cleanup releases resources when the skill is unloaded.</p>
+<p><a name="SpiderSkill.GetHints"></a></p>
+<h3 id="func-spiderskill-gethints">func (*SpiderSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/spider.go#L715">GetHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SpiderSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="SpiderSkill.GetInstanceKey"></a></p>
+<h3 id="func-spiderskill-getinstancekey">func (*SpiderSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/spider.go#L85">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SpiderSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="SpiderSkill.GetParameterSchema"></a></p>
+<h3 id="func-spiderskill-getparameterschema">func (*SpiderSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/spider.go#L149">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SpiderSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetParameterSchema returns the full parameter schema extending the base schema.</p>
+<p><a name="SpiderSkill.RegisterTools"></a></p>
+<h3 id="func-spiderskill-registertools">func (*SpiderSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/spider.go#L253">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SpiderSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="SpiderSkill.Setup"></a></p>
+<h3 id="func-spiderskill-setup">func (*SpiderSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/spider.go#L90">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SpiderSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="SpiderSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-spiderskill-supportsmultipleinstances">func (*SpiderSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/spider.go#L83">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">SpiderSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="WeatherAPISkill"></a></p>
+<h2 id="type-weatherapiskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/weather_api.go#L17-L22">WeatherAPISkill</a></h2>
+<p>WeatherAPISkill gets current weather from WeatherAPI.com.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">WeatherAPISkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="WeatherAPISkill.GetHints"></a></p>
+<h3 id="func-weatherapiskill-gethints">func (*WeatherAPISkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/weather_api.go#L217">GetHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WeatherAPISkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetHints</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="WeatherAPISkill.GetParameterSchema"></a></p>
+<h3 id="func-weatherapiskill-getparameterschema">func (*WeatherAPISkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/weather_api.go#L234">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WeatherAPISkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="WeatherAPISkill.GetPromptSections"></a></p>
+<h3 id="func-weatherapiskill-getpromptsections">func (*WeatherAPISkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/weather_api.go#L221">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WeatherAPISkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="WeatherAPISkill.RegisterTools"></a></p>
+<h3 id="func-weatherapiskill-registertools">func (*WeatherAPISkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/weather_api.go#L61">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WeatherAPISkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="WeatherAPISkill.RequiredEnvVars"></a></p>
+<h3 id="func-weatherapiskill-requiredenvvars">func (*WeatherAPISkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/weather_api.go#L36">RequiredEnvVars</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WeatherAPISkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RequiredEnvVars</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="WeatherAPISkill.Setup"></a></p>
+<h3 id="func-weatherapiskill-setup">func (*WeatherAPISkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/weather_api.go#L46">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WeatherAPISkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="WebSearchSkill"></a></p>
+<h2 id="type-websearchskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/web_search.go#L22-L33">WebSearchSkill</a></h2>
+<p>WebSearchSkill searches the web using Google Custom Search API.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">WebSearchSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="WebSearchSkill.GetGlobalData"></a></p>
+<h3 id="func-websearchskill-getglobaldata">func (*WebSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/web_search.go#L715">GetGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WebSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetGlobalData</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetGlobalData returns global context data signalling that quality-filtered web search is available. Mirrors Python's get_global_data return value.</p>
+<p><a name="WebSearchSkill.GetInstanceKey"></a></p>
+<h3 id="func-websearchskill-getinstancekey">func (*WebSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/web_search.go#L62">GetInstanceKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WebSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetInstanceKey</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetInstanceKey returns a unique key incorporating both searchEngineID and toolName, matching Python's f"{SKILL_NAME}<em>{search_engine_id}</em>{tool_name}" pattern.</p>
+<p><a name="WebSearchSkill.GetParameterSchema"></a></p>
+<h3 id="func-websearchskill-getparameterschema">func (*WebSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/web_search.go#L738">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WebSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="WebSearchSkill.GetPromptSections"></a></p>
+<h3 id="func-websearchskill-getpromptsections">func (*WebSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/web_search.go#L723">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WebSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="WebSearchSkill.RegisterTools"></a></p>
+<h3 id="func-websearchskill-registertools">func (*WebSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/web_search.go#L85">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WebSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="WebSearchSkill.RequiredEnvVars"></a></p>
+<h3 id="func-websearchskill-requiredenvvars">func (*WebSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/web_search.go#L47">RequiredEnvVars</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WebSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RequiredEnvVars</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p><a name="WebSearchSkill.Setup"></a></p>
+<h3 id="func-websearchskill-setup">func (*WebSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/web_search.go#L66">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WebSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="WebSearchSkill.SupportsMultipleInstances"></a></p>
+<h3 id="func-websearchskill-supportsmultipleinstances">func (*WebSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/web_search.go#L58">SupportsMultipleInstances</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WebSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">SupportsMultipleInstances</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p><a name="WikipediaSearchSkill"></a></p>
+<h2 id="type-wikipediasearchskill">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/wikipedia_search.go#L17-L21">WikipediaSearchSkill</a></h2>
+<p>WikipediaSearchSkill searches Wikipedia for information.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">WikipediaSearchSkill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skills</span><span class="p">.</span><span class="nx">BaseSkill</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="WikipediaSearchSkill.GetParameterSchema"></a></p>
+<h3 id="func-wikipediasearchskill-getparameterschema">func (*WikipediaSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/wikipedia_search.go#L46">GetParameterSchema</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WikipediaSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetParameterSchema</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="WikipediaSearchSkill.GetPromptSections"></a></p>
+<h3 id="func-wikipediasearchskill-getpromptsections">func (*WikipediaSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/wikipedia_search.go#L182">GetPromptSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WikipediaSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPromptSections</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="WikipediaSearchSkill.RegisterTools"></a></p>
+<h3 id="func-wikipediasearchskill-registertools">func (*WikipediaSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/wikipedia_search.go#L65">RegisterTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WikipediaSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="nx">skills</span><span class="p">.</span><span class="nx">ToolRegistration</span>
+</code></pre></div>
+
+<p><a name="WikipediaSearchSkill.Setup"></a></p>
+<h3 id="func-wikipediasearchskill-setup">func (*WikipediaSearchSkill) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/skills/builtin/wikipedia_search.go#L35">Setup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">WikipediaSearchSkill</span><span class="p">)</span><span class="w"> </span><span class="nx">Setup</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

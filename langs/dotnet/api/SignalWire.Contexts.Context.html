@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Context | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Context | SignalWire .NET SDK ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.Contexts.Context">
+
+
+
+  <h1 id="SignalWire_Contexts_Context" data-uid="SignalWire.Contexts.Context" class="text-break">
+Class Context  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SignalWire.html">SignalWire</a>.<a class="xref" href="SignalWire.Contexts.html">Contexts</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SignalWire.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Context</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Context</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SignalWire_Contexts_Context__ctor_" data-uid="SignalWire.Contexts.Context.#ctor*"></a>
+
+  <h3 id="SignalWire_Contexts_Context__ctor_System_String_" data-uid="SignalWire.Contexts.Context.#ctor(System.String)">
+  Context(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SignalWire_Contexts_Context_Name_" data-uid="SignalWire.Contexts.Context.Name*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_Name" data-uid="SignalWire.Contexts.Context.Name">
+  Name
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SignalWire_Contexts_Context_AddBullets_" data-uid="SignalWire.Contexts.Context.AddBullets*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_AddBullets_System_String_System_Collections_Generic_List_System_String__" data-uid="SignalWire.Contexts.Context.AddBullets(System.String,System.Collections.Generic.List{System.String})">
+  AddBullets(string, List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context AddBullets(string title, List&lt;string&gt; bullets)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>title</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>bullets</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_AddEnterFiller_" data-uid="SignalWire.Contexts.Context.AddEnterFiller*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_AddEnterFiller_System_String_System_String___" data-uid="SignalWire.Contexts.Context.AddEnterFiller(System.String,System.String[])">
+  AddEnterFiller(string, params string[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context AddEnterFiller(string lang, params string[] fillers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lang</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>fillers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_AddExitFiller_" data-uid="SignalWire.Contexts.Context.AddExitFiller*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_AddExitFiller_System_String_System_String___" data-uid="SignalWire.Contexts.Context.AddExitFiller(System.String,System.String[])">
+  AddExitFiller(string, params string[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context AddExitFiller(string lang, params string[] fillers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lang</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>fillers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_AddSection_" data-uid="SignalWire.Contexts.Context.AddSection*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_AddSection_System_String_System_String_" data-uid="SignalWire.Contexts.Context.AddSection(System.String,System.String)">
+  AddSection(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context AddSection(string title, string body)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>title</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>body</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_AddStep_" data-uid="SignalWire.Contexts.Context.AddStep*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_AddStep_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Contexts.Context.AddStep(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+  AddStep(string, Dictionary&lt;string, object&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Step AddStep(string name, Dictionary&lt;string, object&gt;? opts = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>opts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Step.html">Step</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_AddSystemBullets_" data-uid="SignalWire.Contexts.Context.AddSystemBullets*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_AddSystemBullets_System_String_System_Collections_Generic_List_System_String__" data-uid="SignalWire.Contexts.Context.AddSystemBullets(System.String,System.Collections.Generic.List{System.String})">
+  AddSystemBullets(string, List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context AddSystemBullets(string title, List&lt;string&gt; bullets)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>title</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>bullets</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_AddSystemSection_" data-uid="SignalWire.Contexts.Context.AddSystemSection*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_AddSystemSection_System_String_System_String_" data-uid="SignalWire.Contexts.Context.AddSystemSection(System.String,System.String)">
+  AddSystemSection(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context AddSystemSection(string title, string body)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>title</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>body</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_GetInitialStep_" data-uid="SignalWire.Contexts.Context.GetInitialStep*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_GetInitialStep" data-uid="SignalWire.Contexts.Context.GetInitialStep">
+  GetInitialStep()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? GetInitialStep()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_GetStep_" data-uid="SignalWire.Contexts.Context.GetStep*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_GetStep_System_String_" data-uid="SignalWire.Contexts.Context.GetStep(System.String)">
+  GetStep(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Step? GetStep(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Step.html">Step</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_GetStepOrder_" data-uid="SignalWire.Contexts.Context.GetStepOrder*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_GetStepOrder" data-uid="SignalWire.Contexts.Context.GetStepOrder">
+  GetStepOrder()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; GetStepOrder()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_GetSteps_" data-uid="SignalWire.Contexts.Context.GetSteps*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_GetSteps" data-uid="SignalWire.Contexts.Context.GetSteps">
+  GetSteps()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, Step&gt; GetSteps()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="SignalWire.Contexts.Step.html">Step</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_GetValidContexts_" data-uid="SignalWire.Contexts.Context.GetValidContexts*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_GetValidContexts" data-uid="SignalWire.Contexts.Context.GetValidContexts">
+  GetValidContexts()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt;? GetValidContexts()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_MoveStep_" data-uid="SignalWire.Contexts.Context.MoveStep*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_MoveStep_System_String_System_Int32_" data-uid="SignalWire.Contexts.Context.MoveStep(System.String,System.Int32)">
+  MoveStep(string, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context MoveStep(string name, int position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_RemoveStep_" data-uid="SignalWire.Contexts.Context.RemoveStep*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_RemoveStep_System_String_" data-uid="SignalWire.Contexts.Context.RemoveStep(System.String)">
+  RemoveStep(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context RemoveStep(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetConsolidate_" data-uid="SignalWire.Contexts.Context.SetConsolidate*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetConsolidate_System_Boolean_" data-uid="SignalWire.Contexts.Context.SetConsolidate(System.Boolean)">
+  SetConsolidate(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetConsolidate(bool consolidate)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>consolidate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetEnterFillers_" data-uid="SignalWire.Contexts.Context.SetEnterFillers*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetEnterFillers_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_String___" data-uid="SignalWire.Contexts.Context.SetEnterFillers(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}})">
+  SetEnterFillers(Dictionary&lt;string, List&lt;string&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetEnterFillers(Dictionary&lt;string, List&lt;string&gt;&gt; fillers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fillers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetExitFillers_" data-uid="SignalWire.Contexts.Context.SetExitFillers*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetExitFillers_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_String___" data-uid="SignalWire.Contexts.Context.SetExitFillers(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}})">
+  SetExitFillers(Dictionary&lt;string, List&lt;string&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetExitFillers(Dictionary&lt;string, List&lt;string&gt;&gt; fillers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fillers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetFullReset_" data-uid="SignalWire.Contexts.Context.SetFullReset*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetFullReset_System_Boolean_" data-uid="SignalWire.Contexts.Context.SetFullReset(System.Boolean)">
+  SetFullReset(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetFullReset(bool fullReset)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fullReset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetInitialStep_" data-uid="SignalWire.Contexts.Context.SetInitialStep*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetInitialStep_System_String_" data-uid="SignalWire.Contexts.Context.SetInitialStep(System.String)">
+  SetInitialStep(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set which step the context starts on when entered.</p>
+<p>By default, a context starts on its first step (index 0). Use
+this to skip a preamble step on re-entry via
+<code>change_context</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetInitialStep(string stepName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stepName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the step to start on (must exist in this context).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetIsolated_" data-uid="SignalWire.Contexts.Context.SetIsolated*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetIsolated_System_Boolean_" data-uid="SignalWire.Contexts.Context.SetIsolated(System.Boolean)">
+  SetIsolated(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Mark this context as isolated — entering it wipes conversation
+history.</p>
+<p>When <code class="paramref">isolated</code> = true and the context is
+entered via change_context, the runtime wipes the conversation
+array. The model starts fresh with only the new context's
+system_prompt + step instructions, with no memory of prior
+turns.</p>
+<p><b>EXCEPTION — reset overrides the wipe:</b> If the context
+also has a reset configuration (via <a class="xref" href="SignalWire.Contexts.Context.html#SignalWire_Contexts_Context_SetConsolidate_System_Boolean_">SetConsolidate(bool)</a>
+or <a class="xref" href="SignalWire.Contexts.Context.html#SignalWire_Contexts_Context_SetFullReset_System_Boolean_">SetFullReset(bool)</a>), the wipe is skipped in favor of
+the reset behavior. Use reset with consolidate=true to summarize
+prior history into a single message instead of dropping it
+entirely.</p>
+<p>Use cases: switching to a sensitive billing flow that
+should not see prior small-talk; handing off to a different agent
+persona; resetting after a long off-topic detour.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetIsolated(bool isolated)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isolated</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetPostPrompt_" data-uid="SignalWire.Contexts.Context.SetPostPrompt*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetPostPrompt_System_String_" data-uid="SignalWire.Contexts.Context.SetPostPrompt(System.String)">
+  SetPostPrompt(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetPostPrompt(string postPrompt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>postPrompt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetPrompt_" data-uid="SignalWire.Contexts.Context.SetPrompt*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetPrompt_System_String_" data-uid="SignalWire.Contexts.Context.SetPrompt(System.String)">
+  SetPrompt(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetPrompt(string prompt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>prompt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetSystemPrompt_" data-uid="SignalWire.Contexts.Context.SetSystemPrompt*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetSystemPrompt_System_String_" data-uid="SignalWire.Contexts.Context.SetSystemPrompt(System.String)">
+  SetSystemPrompt(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetSystemPrompt(string systemPrompt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>systemPrompt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetUserPrompt_" data-uid="SignalWire.Contexts.Context.SetUserPrompt*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetUserPrompt_System_String_" data-uid="SignalWire.Contexts.Context.SetUserPrompt(System.String)">
+  SetUserPrompt(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetUserPrompt(string userPrompt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userPrompt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetValidContexts_" data-uid="SignalWire.Contexts.Context.SetValidContexts*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetValidContexts_System_Collections_Generic_List_System_String__" data-uid="SignalWire.Contexts.Context.SetValidContexts(System.Collections.Generic.List{System.String})">
+  SetValidContexts(List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetValidContexts(List&lt;string&gt; contexts)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contexts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_SetValidSteps_" data-uid="SignalWire.Contexts.Context.SetValidSteps*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_SetValidSteps_System_Collections_Generic_List_System_String__" data-uid="SignalWire.Contexts.Context.SetValidSteps(System.Collections.Generic.List{System.String})">
+  SetValidSteps(List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context SetValidSteps(List&lt;string&gt; steps)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>steps</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_Context_ToDict_" data-uid="SignalWire.Contexts.Context.ToDict*"></a>
+
+  <h3 id="SignalWire_Contexts_Context_ToDict" data-uid="SignalWire.Contexts.Context.ToDict">
+  ToDict()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, object&gt; ToDict()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

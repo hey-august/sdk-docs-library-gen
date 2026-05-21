@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['raw_5fprompt_5ftext_5f_0',['raw_prompt_text_',['../classsignalwire_1_1agent_1_1AgentBase.html#a0c29d48d216f6f58a2351db19b8b8a05',1,'signalwire::agent::AgentBase']]],
+  ['reconnect_5fbackoff_5ffactor_1',['RECONNECT_BACKOFF_FACTOR',['../namespacesignalwire_1_1relay.html#ae8dc6a6dff125b6529868abf204f0308',1,'signalwire::relay']]],
+  ['reconnect_5fbase_5fdelay_5fms_2',['RECONNECT_BASE_DELAY_MS',['../namespacesignalwire_1_1relay.html#ab9933c731355fa8f8e846297724b5e3d',1,'signalwire::relay']]],
+  ['reconnect_5fmax_5fdelay_5fms_3',['RECONNECT_MAX_DELAY_MS',['../namespacesignalwire_1_1relay.html#a146dbd3230446109a2f89038967743ed',1,'signalwire::relay']]],
+  ['recordings_4',['recordings',['../structsignalwire_1_1rest_1_1RestClient_1_1VideoNamespace.html#aef1ff4d3bd711661dca96e34e05b355c',1,'signalwire::rest::RestClient::VideoNamespace::recordings'],['../structsignalwire_1_1rest_1_1RestClient_1_1CompatNamespace.html#a30475f3d641bb65d86064c8f4a779fff',1,'signalwire::rest::RestClient::CompatNamespace::recordings']]],
+  ['region_5',['region',['../structsignalwire_1_1relay_1_1Message.html#a5ce5e1f2f81ec3989c410a4b3775eed8',1,'signalwire::relay::Message']]],
+  ['registered_5fswaig_5ffunctions_5f_6',['registered_swaig_functions_',['../classsignalwire_1_1swml_1_1Service.html#af5bbd9b91960366be0ad252d9009fcf9',1,'signalwire::swml::Service']]],
+  ['relay_5fapplications_7',['relay_applications',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#aaaa2f19d848022c19aa7724dd2503259',1,'signalwire::rest::RestClient::FabricNamespace']]],
+  ['replace_5fval_8',['replace_val',['../structsignalwire_1_1agent_1_1Pronunciation.html#a18c4baa91a6f36a1897de4e8c788988c',1,'signalwire::agent::Pronunciation']]],
+  ['resources_9',['resources',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a3a0296d21fe985a4d5d435cffa526d5e',1,'signalwire::rest::RestClient::FabricNamespace']]],
+  ['room_5frecordings_10',['room_recordings',['../structsignalwire_1_1rest_1_1RestClient_1_1VideoNamespace.html#acf616d25bbd552cb68752e551112b35b',1,'signalwire::rest::RestClient::VideoNamespace']]],
+  ['room_5fsessions_11',['room_sessions',['../structsignalwire_1_1rest_1_1RestClient_1_1VideoNamespace.html#a6a0e2227c77c4bf98f08492fbc0c3cfb',1,'signalwire::rest::RestClient::VideoNamespace']]],
+  ['room_5ftokens_12',['room_tokens',['../structsignalwire_1_1rest_1_1RestClient_1_1VideoNamespace.html#a49868eb8c9f80278e052d02a85062c88',1,'signalwire::rest::RestClient::VideoNamespace']]],
+  ['rooms_13',['rooms',['../structsignalwire_1_1rest_1_1RestClient_1_1VideoNamespace.html#a934021b03a42296588833d11e2978cd5',1,'signalwire::rest::RestClient::VideoNamespace']]],
+  ['route_5f_14',['route_',['../classsignalwire_1_1swml_1_1Service.html#a11f22e52c4d7cb10fe35589871a21d14',1,'signalwire::swml::Service']]],
+  ['routing_15',['routing',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a9303b6eaeec7bac920ff5455d603e13b',1,'signalwire::rest::RestClient::FabricNamespace']]]
+];

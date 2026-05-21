@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["get_verb","get_verb_names","is_valid_verb","verb_count"],"struct":["VerbInfo"]};

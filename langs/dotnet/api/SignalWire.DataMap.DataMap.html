@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DataMap | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DataMap | SignalWire .NET SDK ">
+      
+      <meta name="description" content="Builds a SWAIG data-map function definition with parameters, expressions, webhooks, and output configuration. All builder methods return this for fluent chaining.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.DataMap.DataMap">
+
+
+
+  <h1 id="SignalWire_DataMap_DataMap" data-uid="SignalWire.DataMap.DataMap" class="text-break">
+Class DataMap  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SignalWire.html">SignalWire</a>.<a class="xref" href="SignalWire.DataMap.html">DataMap</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SignalWire.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Builds a SWAIG data-map function definition with parameters, expressions, webhooks,
+and output configuration. All builder methods return <code>this</code> for fluent chaining.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DataMap</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">DataMap</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SignalWire_DataMap_DataMap__ctor_" data-uid="SignalWire.DataMap.DataMap.#ctor*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap__ctor_System_String_" data-uid="SignalWire.DataMap.DataMap.#ctor(System.String)">
+  DataMap(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap(string functionName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>functionName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SignalWire_DataMap_DataMap_Body_" data-uid="SignalWire.DataMap.DataMap.Body*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_Body_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.DataMap.DataMap.Body(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  Body(Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap Body(Dictionary&lt;string, object&gt; data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_CreateExpressionTool_" data-uid="SignalWire.DataMap.DataMap.CreateExpressionTool*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_CreateExpressionTool_System_String_System_String_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___" data-uid="SignalWire.DataMap.DataMap.CreateExpressionTool(System.String,System.String,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+  CreateExpressionTool(string, string, List&lt;Dictionary&lt;string, object&gt;&gt;, List&lt;Dictionary&lt;string, object&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dictionary&lt;string, object&gt; CreateExpressionTool(string name, string purpose, List&lt;Dictionary&lt;string, object&gt;&gt; parameters, List&lt;Dictionary&lt;string, object&gt;&gt; expressions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>purpose</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+    <dt><code>expressions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_CreateSimpleApiTool_" data-uid="SignalWire.DataMap.DataMap.CreateSimpleApiTool*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_CreateSimpleApiTool_System_String_System_String_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___System_String_System_String_System_Object_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.DataMap.DataMap.CreateSimpleApiTool(System.String,System.String,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.String,System.String,System.Object,System.Collections.Generic.Dictionary{System.String,System.String})">
+  CreateSimpleApiTool(string, string, List&lt;Dictionary&lt;string, object&gt;&gt;, string, string, object, Dictionary&lt;string, string&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dictionary&lt;string, object&gt; CreateSimpleApiTool(string name, string purpose, List&lt;Dictionary&lt;string, object&gt;&gt; parameters, string method, string url, object output, Dictionary&lt;string, string&gt;? headers = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>purpose</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>url</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>output</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_Description_" data-uid="SignalWire.DataMap.DataMap.Description*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_Description_System_String_" data-uid="SignalWire.DataMap.DataMap.Description(System.String)">
+  Description(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Alias for <a class="xref" href="SignalWire.DataMap.DataMap.html#SignalWire_DataMap_DataMap_Purpose_System_String_">Purpose(string)</a>. Sets the LLM-facing tool
+description. This string is read by the model to decide WHEN
+to call this tool. See <a class="xref" href="SignalWire.DataMap.DataMap.html#SignalWire_DataMap_DataMap_Purpose_System_String_">Purpose(string)</a> for bad-vs-good
+examples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap Description(string desc)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>desc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_ErrorKeys_" data-uid="SignalWire.DataMap.DataMap.ErrorKeys*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_ErrorKeys_System_Collections_Generic_List_System_String__" data-uid="SignalWire.DataMap.DataMap.ErrorKeys(System.Collections.Generic.List{System.String})">
+  ErrorKeys(List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap ErrorKeys(List&lt;string&gt; keys)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>keys</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_Expression_" data-uid="SignalWire.DataMap.DataMap.Expression*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_Expression_System_String_System_String_System_Object_System_Object_" data-uid="SignalWire.DataMap.DataMap.Expression(System.String,System.String,System.Object,System.Object)">
+  Expression(string, string, object, object?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap Expression(string testValue, string pattern, object output, object? nomatchOutput = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>testValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>output</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>nomatchOutput</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_FallbackOutput_" data-uid="SignalWire.DataMap.DataMap.FallbackOutput*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_FallbackOutput_System_Object_" data-uid="SignalWire.DataMap.DataMap.FallbackOutput(System.Object)">
+  FallbackOutput(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap FallbackOutput(object result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_ForEach_" data-uid="SignalWire.DataMap.DataMap.ForEach*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_ForEach_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.DataMap.DataMap.ForEach(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  ForEach(Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap ForEach(Dictionary&lt;string, object&gt; config)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>config</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_GlobalErrorKeys_" data-uid="SignalWire.DataMap.DataMap.GlobalErrorKeys*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_GlobalErrorKeys_System_Collections_Generic_List_System_String__" data-uid="SignalWire.DataMap.DataMap.GlobalErrorKeys(System.Collections.Generic.List{System.String})">
+  GlobalErrorKeys(List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap GlobalErrorKeys(List&lt;string&gt; keys)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>keys</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_Output_" data-uid="SignalWire.DataMap.DataMap.Output*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_Output_System_Object_" data-uid="SignalWire.DataMap.DataMap.Output(System.Object)">
+  Output(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap Output(object result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_Parameter_" data-uid="SignalWire.DataMap.DataMap.Parameter*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_Parameter_System_String_System_String_System_String_System_Boolean_System_Collections_Generic_List_System_String__" data-uid="SignalWire.DataMap.DataMap.Parameter(System.String,System.String,System.String,System.Boolean,System.Collections.Generic.List{System.String})">
+  Parameter(string, string, string, bool, List&lt;string&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a parameter to this data-map tool — the <code class="paramref">description</code>
+is LLM-FACING.</p>
+<p>Each parameter description is rendered into the OpenAI
+tool schema under <code>parameters.properties.&lt;name&gt;.description</code>
+and sent to the model. The model uses it to decide HOW to fill
+in the argument from user speech. It is prompt engineering, not
+developer FYI.</p>
+<p><b>Bad vs good:</b></p>
+<pre><code class="lang-csharp">BAD : .Parameter("city", "string", "the city")
+GOOD: .Parameter("city", "string",
+          "The name of the city to get weather for, e.g. "
+          + "'San Francisco'. Ask the user if they did not "
+          + "provide one. Include the state or country if the "
+          + "city name is ambiguous.")</code></pre>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap Parameter(string name, string type, string description, bool required = false, List&lt;string&gt;? enumValues = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>description</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>required</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>enumValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_Params_" data-uid="SignalWire.DataMap.DataMap.Params*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_Params_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.DataMap.DataMap.Params(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  Params(Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap Params(Dictionary&lt;string, object&gt; data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_Purpose_" data-uid="SignalWire.DataMap.DataMap.Purpose*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_Purpose_System_String_" data-uid="SignalWire.DataMap.DataMap.Purpose(System.String)">
+  Purpose(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set the LLM-facing tool description (the &quot;purpose&quot;). PROMPT
+ENGINEERING, not developer documentation.</p>
+<p>The description string is rendered into the OpenAI tool
+schema <code>description</code> field on every LLM turn. The model
+reads it to decide WHEN to call this tool. A vague
+<a class="xref" href="SignalWire.DataMap.DataMap.html#SignalWire_DataMap_DataMap_Purpose_System_String_">Purpose(string)</a> is the #1 cause of "the model has the
+right tool but doesn't call it" failures with data-map tools.</p>
+<p><b>Bad vs good:</b></p>
+<pre><code class="lang-csharp">BAD : .Purpose("weather api")
+GOOD: .Purpose("Get the current weather conditions and "
+             + "forecast for a specific city. Use this "
+             + "whenever the user asks about weather, "
+             + "temperature, rain, or similar conditions in a "
+             + "named location.")</code></pre>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap Purpose(string desc)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>desc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_ToSwaigFunction_" data-uid="SignalWire.DataMap.DataMap.ToSwaigFunction*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_ToSwaigFunction" data-uid="SignalWire.DataMap.DataMap.ToSwaigFunction">
+  ToSwaigFunction()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, object&gt; ToSwaigFunction()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_Webhook_" data-uid="SignalWire.DataMap.DataMap.Webhook*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_Webhook_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_String_System_Boolean_System_Collections_Generic_List_System_String__" data-uid="SignalWire.DataMap.DataMap.Webhook(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Boolean,System.Collections.Generic.List{System.String})">
+  Webhook(string, string, Dictionary&lt;string, string&gt;?, string, bool, List&lt;string&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap Webhook(string method, string url, Dictionary&lt;string, string&gt;? headers = null, string formParam = &quot;&quot;, bool inputArgsAsParams = false, List&lt;string&gt;? requireArgs = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>url</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>formParam</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>inputArgsAsParams</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>requireArgs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_DataMap_DataMap_WebhookExpressions_" data-uid="SignalWire.DataMap.DataMap.WebhookExpressions*"></a>
+
+  <h3 id="SignalWire_DataMap_DataMap_WebhookExpressions_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___" data-uid="SignalWire.DataMap.DataMap.WebhookExpressions(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+  WebhookExpressions(List&lt;Dictionary&lt;string, object&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataMap WebhookExpressions(List&lt;Dictionary&lt;string, object&gt;&gt; expressions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>expressions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.DataMap.DataMap.html">DataMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["HttpClient","StubTransport","UreqTransport"],"trait":["HttpTransport"]};

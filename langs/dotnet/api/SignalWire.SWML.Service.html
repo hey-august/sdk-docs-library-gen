@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Service | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Service | SignalWire .NET SDK ">
+      
+      <meta name="description" content="A SWML service that manages a Document, provides schema-driven verb methods, handles HTTP requests with Basic authentication, and supports routing callbacks.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.SWML.Service">
+
+
+
+  <h1 id="SignalWire_SWML_Service" data-uid="SignalWire.SWML.Service" class="text-break">
+Class Service  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SignalWire.html">SignalWire</a>.<a class="xref" href="SignalWire.SWML.html">SWML</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SignalWire.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A SWML service that manages a Document, provides schema-driven verb methods,
+handles HTTP requests with Basic authentication, and supports routing callbacks.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Service</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Service</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="SignalWire.Agent.AgentBase.html">AgentBase</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SignalWire_SWML_Service__ctor_" data-uid="SignalWire.SWML.Service.#ctor*"></a>
+
+  <h3 id="SignalWire_SWML_Service__ctor_SignalWire_SWML_ServiceOptions_" data-uid="SignalWire.SWML.Service.#ctor(SignalWire.SWML.ServiceOptions)">
+  Service(ServiceOptions)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Service(ServiceOptions options)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="SignalWire.SWML.ServiceOptions.html">ServiceOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="SignalWire_SWML_Service__toolOrder" data-uid="SignalWire.SWML.Service._toolOrder">
+  _toolOrder
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;string&gt; _toolOrder</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SignalWire_SWML_Service__tools" data-uid="SignalWire.SWML.Service._tools">
+  _tools
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt; _tools</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SignalWire_SWML_Service_Document_" data-uid="SignalWire.SWML.Service.Document*"></a>
+
+  <h3 id="SignalWire_SWML_Service_Document" data-uid="SignalWire.SWML.Service.Document">
+  Document
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Document Document { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.SWML.Document.html">Document</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_Host_" data-uid="SignalWire.SWML.Service.Host*"></a>
+
+  <h3 id="SignalWire_SWML_Service_Host" data-uid="SignalWire.SWML.Service.Host">
+  Host
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Host { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_Name_" data-uid="SignalWire.SWML.Service.Name*"></a>
+
+  <h3 id="SignalWire_SWML_Service_Name" data-uid="SignalWire.SWML.Service.Name">
+  Name
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_Port_" data-uid="SignalWire.SWML.Service.Port*"></a>
+
+  <h3 id="SignalWire_SWML_Service_Port" data-uid="SignalWire.SWML.Service.Port">
+  Port
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Port { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_Route_" data-uid="SignalWire.SWML.Service.Route*"></a>
+
+  <h3 id="SignalWire_SWML_Service_Route" data-uid="SignalWire.SWML.Service.Route">
+  Route
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Route { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_Tools_" data-uid="SignalWire.SWML.Service.Tools*"></a>
+
+  <h3 id="SignalWire_SWML_Service_Tools" data-uid="SignalWire.SWML.Service.Tools">
+  Tools
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Public read-only view of the SWAIG tool registry — the same data
+served by /swaig get_signature, but reachable in-process for
+introspection (e.g. swaig-test --list-tools against an assembly
+loaded via reflection). The internal &quot;_handler&quot; callable is
+stripped because it isn't meaningful outside this process.</p>
+<p>This is an SDK accessor, not a new endpoint. Order matches
+registration order (mirrors ListToolNames).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;IReadOnlyDictionary&lt;string, object&gt;&gt; Tools { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SignalWire_SWML_Service_DefineTool_" data-uid="SignalWire.SWML.Service.DefineTool*"></a>
+
+  <h3 id="SignalWire_SWML_Service_DefineTool_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Func_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__SignalWire_SWAIG_FunctionResult__System_Boolean_" data-uid="SignalWire.SWML.Service.DefineTool(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object},SignalWire.SWAIG.FunctionResult},System.Boolean)">
+  DefineTool(string, string, Dictionary&lt;string, object&gt;, Func&lt;Dictionary&lt;string, object&gt;, Dictionary&lt;string, object?&gt;, FunctionResult&gt;, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Define a SWAIG function the AI can call. Tool descriptions and
+parameter descriptions are LLM-facing prompt engineering — see
+PORTING_GUIDE for guidance on writing them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Service DefineTool(string name, string description, Dictionary&lt;string, object&gt; parameters, Func&lt;Dictionary&lt;string, object&gt;, Dictionary&lt;string, object?&gt;, FunctionResult&gt; handler, bool secure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>description</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>handler</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;, <a class="xref" href="SignalWire.SWAIG.FunctionResult.html">FunctionResult</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>secure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.SWML.Service.html">Service</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_DefineTools_" data-uid="SignalWire.SWML.Service.DefineTools*"></a>
+
+  <h3 id="SignalWire_SWML_Service_DefineTools_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___" data-uid="SignalWire.SWML.Service.DefineTools(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+  DefineTools(List&lt;Dictionary&lt;string, object&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Register multiple tool definitions at once.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Service DefineTools(List&lt;Dictionary&lt;string, object&gt;&gt; toolDefs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>toolDefs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.SWML.Service.html">Service</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_ExtractSipUsername_" data-uid="SignalWire.SWML.Service.ExtractSipUsername*"></a>
+
+  <h3 id="SignalWire_SWML_Service_ExtractSipUsername_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.SWML.Service.ExtractSipUsername(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  ExtractSipUsername(Dictionary&lt;string, object?&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Extract SIP username from a request body.
+Validates format: only [a-zA-Z0-9._-], max 64 chars.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string? ExtractSipUsername(Dictionary&lt;string, object?&gt;? body)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>body</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_GetAllFunctions_" data-uid="SignalWire.SWML.Service.GetAllFunctions*"></a>
+
+  <h3 id="SignalWire_SWML_Service_GetAllFunctions" data-uid="SignalWire.SWML.Service.GetAllFunctions">
+  GetAllFunctions()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get a snapshot of all registered SWAIG functions
+(Python parity: <code>tool_registry.get_all_functions()</code> — returns
+a copy so subsequent registrations don't mutate the snapshot).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt; GetAllFunctions()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_GetBasicAuthCredentials_" data-uid="SignalWire.SWML.Service.GetBasicAuthCredentials*"></a>
+
+  <h3 id="SignalWire_SWML_Service_GetBasicAuthCredentials" data-uid="SignalWire.SWML.Service.GetBasicAuthCredentials">
+  GetBasicAuthCredentials()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get the Basic Auth credentials as a tuple.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (string User, string Password) GetBasicAuthCredentials()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.user">User</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.password">Password</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_GetBasicAuthCredentialsWithSource_" data-uid="SignalWire.SWML.Service.GetBasicAuthCredentialsWithSource*"></a>
+
+  <h3 id="SignalWire_SWML_Service_GetBasicAuthCredentialsWithSource" data-uid="SignalWire.SWML.Service.GetBasicAuthCredentialsWithSource">
+  GetBasicAuthCredentialsWithSource()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get the Basic Auth credentials plus the SOURCE of the
+credentials (Python parity:
+<code>get_basic_auth_credentials(include_source=True)</code>).
+Source is one of &quot;provided&quot;, &quot;environment&quot;, or &quot;generated&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (string User, string Password, string Source) GetBasicAuthCredentialsWithSource()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string,system.string-.user">User</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string,system.string-.password">Password</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string,system.string-.source">Source</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_GetFullUrl_" data-uid="SignalWire.SWML.Service.GetFullUrl*"></a>
+
+  <h3 id="SignalWire_SWML_Service_GetFullUrl_System_Boolean_" data-uid="SignalWire.SWML.Service.GetFullUrl(System.Boolean)">
+  GetFullUrl(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build the full URL for this service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetFullUrl(bool includeAuth = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>includeAuth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_GetFunction_" data-uid="SignalWire.SWML.Service.GetFunction*"></a>
+
+  <h3 id="SignalWire_SWML_Service_GetFunction_System_String_" data-uid="SignalWire.SWML.Service.GetFunction(System.String)">
+  GetFunction(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get a registered SWAIG function by name, or null
+(Python parity: <code>tool_registry.get_function(name)</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Dictionary&lt;string, object&gt;? GetFunction(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_GetProxyUrlBase_" data-uid="SignalWire.SWML.Service.GetProxyUrlBase*"></a>
+
+  <h3 id="SignalWire_SWML_Service_GetProxyUrlBase_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.SWML.Service.GetProxyUrlBase(System.Collections.Generic.Dictionary{System.String,System.String})">
+  GetProxyUrlBase(Dictionary&lt;string, string&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Detect or construct the proxy URL base from request headers.
+Priority: SWML_PROXY_URL_BASE env &gt; X-Forwarded-Proto+Host &gt; X-Original-URL &gt; fallback.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetProxyUrlBase(Dictionary&lt;string, string&gt;? headers = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_HandlePostPrompt_" data-uid="SignalWire.SWML.Service.HandlePostPrompt*"></a>
+
+  <h3 id="SignalWire_SWML_Service_HandlePostPrompt_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.SWML.Service.HandlePostPrompt(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String})">
+  HandlePostPrompt(Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Handle post-prompt callback. Override in AgentBase.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual (int, Dictionary&lt;string, string&gt;, string) HandlePostPrompt(Dictionary&lt;string, object?&gt;? requestData, Dictionary&lt;string, string&gt; headers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>requestData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.status">Status</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.headers">Headers</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.body">Body</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_HandleRequest_" data-uid="SignalWire.SWML.Service.HandleRequest*"></a>
+
+  <h3 id="SignalWire_SWML_Service_HandleRequest_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_String_" data-uid="SignalWire.SWML.Service.HandleRequest(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+  HandleRequest(string, string, Dictionary&lt;string, string&gt;, string?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Handle an HTTP request. Returns a tuple of (status, headers, body).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual (int Status, Dictionary&lt;string, string&gt; Headers, string Body) HandleRequest(string method, string path, Dictionary&lt;string, string&gt; headers, string? body)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>body</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.status">Status</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.headers">Headers</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.body">Body</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_HandleSwaigRequest_" data-uid="SignalWire.SWML.Service.HandleSwaigRequest*"></a>
+
+  <h3 id="SignalWire_SWML_Service_HandleSwaigRequest_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.SWML.Service.HandleSwaigRequest(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String})">
+  HandleSwaigRequest(string, Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Handle SWAIG function dispatch.</p>
+<p>GET: returns the rendered SWML document (parallel to root /).
+POST: parses {function, argument, call_id}, validates, runs the
+SwaigPreDispatch hook, calls OnFunctionCall on the chosen target.</p>
+<p>Lifted from AgentBase so non-agent SWMLServices (e.g. ai_sidecar
+host) can serve /swaig without subclassing AgentBase.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual (int, Dictionary&lt;string, string&gt;, string) HandleSwaigRequest(string method, Dictionary&lt;string, object?&gt;? requestData, Dictionary&lt;string, string&gt; headers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>requestData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.status">Status</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.headers">Headers</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.body">Body</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_HandleSwmlRequest_" data-uid="SignalWire.SWML.Service.HandleSwmlRequest*"></a>
+
+  <h3 id="SignalWire_SWML_Service_HandleSwmlRequest_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.SWML.Service.HandleSwmlRequest(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String})">
+  HandleSwmlRequest(string, Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Handle SWML document request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual (int, Dictionary&lt;string, string&gt;, string) HandleSwmlRequest(string method, Dictionary&lt;string, object?&gt;? requestData, Dictionary&lt;string, string&gt; headers)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>requestData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.status">Status</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.headers">Headers</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.collections.generic.dictionary-system.string,system.string-,system.string-.body">Body</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_HasFunction_" data-uid="SignalWire.SWML.Service.HasFunction*"></a>
+
+  <h3 id="SignalWire_SWML_Service_HasFunction_System_String_" data-uid="SignalWire.SWML.Service.HasFunction(System.String)">
+  HasFunction(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Check if a SWAIG function is registered
+(Python parity: <code>tool_registry.has_function(name)</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool HasFunction(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_ListToolNames_" data-uid="SignalWire.SWML.Service.ListToolNames*"></a>
+
+  <h3 id="SignalWire_SWML_Service_ListToolNames" data-uid="SignalWire.SWML.Service.ListToolNames">
+  ListToolNames()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>List registered tool names in registration order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; ListToolNames()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_OnFunctionCall_" data-uid="SignalWire.SWML.Service.OnFunctionCall*"></a>
+
+  <h3 id="SignalWire_SWML_Service_OnFunctionCall_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.SWML.Service.OnFunctionCall(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
+  OnFunctionCall(string, Dictionary&lt;string, object&gt;, Dictionary&lt;string, object?&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Dispatch a function call to the registered handler.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual FunctionResult? OnFunctionCall(string name, Dictionary&lt;string, object&gt; args, Dictionary&lt;string, object?&gt; rawData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>args</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>rawData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.SWAIG.FunctionResult.html">FunctionResult</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_OnRequest_" data-uid="SignalWire.SWML.Service.OnRequest*"></a>
+
+  <h3 id="SignalWire_SWML_Service_OnRequest_System_Collections_Generic_Dictionary_System_String_System_Object__System_String_" data-uid="SignalWire.SWML.Service.OnRequest(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+  OnRequest(Dictionary&lt;string, object?&gt;?, string?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Customization hook called when SWML is requested.
+Default delegates to <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_OnSwmlRequest_System_Collections_Generic_Dictionary_System_String_System_Object__System_String_">OnSwmlRequest(Dictionary&lt;string, object?&gt;?, string?)</a>; subclasses
+typically override <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_OnSwmlRequest_System_Collections_Generic_Dictionary_System_String_System_Object__System_String_">OnSwmlRequest(Dictionary&lt;string, object?&gt;?, string?)</a> instead of this
+method. Return null to use the default SWML rendering, or a
+dictionary of modifications to merge in.
+(Python parity: <code>WebMixin.on_request</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Dictionary&lt;string, object&gt;? OnRequest(Dictionary&lt;string, object?&gt;? requestData = null, string? callbackPath = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>requestData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>callbackPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_OnSwmlRequest_" data-uid="SignalWire.SWML.Service.OnSwmlRequest*"></a>
+
+  <h3 id="SignalWire_SWML_Service_OnSwmlRequest_System_Collections_Generic_Dictionary_System_String_System_Object__System_String_" data-uid="SignalWire.SWML.Service.OnSwmlRequest(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+  OnSwmlRequest(Dictionary&lt;string, object?&gt;?, string?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Customization hook for subclasses to modify SWML based
+on request data. Return null to use default rendering, or a
+dictionary of modifications. (Python parity:
+<code>WebMixin.on_swml_request</code>.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Dictionary&lt;string, object&gt;? OnSwmlRequest(Dictionary&lt;string, object?&gt;? requestData = null, string? callbackPath = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>requestData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>callbackPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_RegisterRoutingCallback_" data-uid="SignalWire.SWML.Service.RegisterRoutingCallback*"></a>
+
+  <h3 id="SignalWire_SWML_Service_RegisterRoutingCallback_System_String_System_Func_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__System_Object__" data-uid="SignalWire.SWML.Service.RegisterRoutingCallback(System.String,System.Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String},System.Object})">
+  RegisterRoutingCallback(string, Func&lt;Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Register a callback for a sub-path under the service route.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterRoutingCallback(string path, Func&lt;Dictionary&lt;string, object?&gt;?, Dictionary&lt;string, string&gt;, object&gt; callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_RegisterSwaigFunction_" data-uid="SignalWire.SWML.Service.RegisterSwaigFunction*"></a>
+
+  <h3 id="SignalWire_SWML_Service_RegisterSwaigFunction_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.SWML.Service.RegisterSwaigFunction(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  RegisterSwaigFunction(Dictionary&lt;string, object&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Register a raw SWAIG function definition (e.g. DataMap tools).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Service RegisterSwaigFunction(Dictionary&lt;string, object&gt; funcDef)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>funcDef</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.SWML.Service.html">Service</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_RemoveFunction_" data-uid="SignalWire.SWML.Service.RemoveFunction*"></a>
+
+  <h3 id="SignalWire_SWML_Service_RemoveFunction_System_String_" data-uid="SignalWire.SWML.Service.RemoveFunction(System.String)">
+  RemoveFunction(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove a registered SWAIG function. Returns true if
+removed, false if not found (Python parity:
+<code>tool_registry.remove_function(name)</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool RemoveFunction(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_RenderSwml_" data-uid="SignalWire.SWML.Service.RenderSwml*"></a>
+
+  <h3 id="SignalWire_SWML_Service_RenderSwml" data-uid="SignalWire.SWML.Service.RenderSwml">
+  RenderSwml()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Render the SWML document for a request. Override in subclasses to customise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Dictionary&lt;string, object&gt; RenderSwml()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_Run_" data-uid="SignalWire.SWML.Service.Run*"></a>
+
+  <h3 id="SignalWire_SWML_Service_Run" data-uid="SignalWire.SWML.Service.Run">
+  Run()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Start a blocking HTTP server bound to <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Host">Host</a>:<a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_Port">Port</a>.
+Each incoming request is dispatched through <a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_HandleRequest_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_String_">HandleRequest(string, string, Dictionary&lt;string, string&gt;, string?)</a>;
+the response status / headers / body are written back to the client.</p>
+<p>Mirrors Python's SWMLService.run() — examples and the porting-sdk
+audit harness call this directly.</p>
+<p>Uses System.Net.HttpListener (BCL) — no extra deps. Server stops on
+Ctrl-C or when the process is killed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Run()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_Sleep_" data-uid="SignalWire.SWML.Service.Sleep*"></a>
+
+  <h3 id="SignalWire_SWML_Service_Sleep_System_Int32_System_String_" data-uid="SignalWire.SWML.Service.Sleep(System.Int32,System.String)">
+  Sleep(int, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a sleep verb with a duration in milliseconds to the specified section.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Service Sleep(int milliseconds, string section = &quot;main&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>milliseconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>section</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.SWML.Service.html">Service</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_SwaigPreDispatch_" data-uid="SignalWire.SWML.Service.SwaigPreDispatch*"></a>
+
+  <h3 id="SignalWire_SWML_Service_SwaigPreDispatch_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__System_String_" data-uid="SignalWire.SWML.Service.SwaigPreDispatch(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+  SwaigPreDispatch(Dictionary&lt;string, object?&gt;, Dictionary&lt;string, string&gt;, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Extension point: invoked between argument parsing and function
+dispatch. Returns (target, shortCircuit). When shortCircuit is
+non-null, it's returned directly without calling OnFunctionCall.
+AgentBase may override to add session-token validation or ephemeral
+dynamic-config copies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual (Service Target, Dictionary&lt;string, object&gt;? ShortCircuit) SwaigPreDispatch(Dictionary&lt;string, object?&gt; requestData, Dictionary&lt;string, string&gt; headers, string functionName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>requestData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>headers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>functionName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="SignalWire.SWML.Service.html">Service</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-signalwire.swml.service,system.collections.generic.dictionary-system.string,system.object--.target">Target</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-signalwire.swml.service,system.collections.generic.dictionary-system.string,system.object--.shortcircuit">ShortCircuit</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_ValidateBasicAuth_" data-uid="SignalWire.SWML.Service.ValidateBasicAuth*"></a>
+
+  <h3 id="SignalWire_SWML_Service_ValidateBasicAuth_System_String_System_String_" data-uid="SignalWire.SWML.Service.ValidateBasicAuth(System.String,System.String)">
+  ValidateBasicAuth(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Validate provided basic-auth credentials against the
+configured ones (constant-time comparison)
+(Python parity: <code>validate_basic_auth(username, password)</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool ValidateBasicAuth(string username, string password)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>username</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>password</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_Verb_" data-uid="SignalWire.SWML.Service.Verb*"></a>
+
+  <h3 id="SignalWire_SWML_Service_Verb_System_String_System_Object_" data-uid="SignalWire.SWML.Service.Verb(System.String,System.Object)">
+  Verb(string, object?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a verb to the main section. Validates the verb name against the schema.
+Returns this service for fluent chaining.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Service Verb(string verbName, object? config)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>verbName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>config</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.SWML.Service.html">Service</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_SWML_Service_Verb_" data-uid="SignalWire.SWML.Service.Verb*"></a>
+
+  <h3 id="SignalWire_SWML_Service_Verb_System_String_System_String_System_Object_" data-uid="SignalWire.SWML.Service.Verb(System.String,System.String,System.Object)">
+  Verb(string, string, object?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a verb to the specified section. Validates the verb name against the schema.
+Returns this service for fluent chaining.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Service Verb(string verbName, string section, object? config)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>verbName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>section</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>config</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.SWML.Service.html">Service</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>datamap — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap" class="active">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="datamap">datamap</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/datamap&quot;</span>
+</code></pre></div>
+
+<p>Package datamap provides a fluent builder for SWAIG data_map configurations.</p>
+<p>DataMap tools execute on SignalWire's servers without requiring webhook endpoints. They support API calls, expression-based pattern matching, variable expansion, and array processing.</p>
+<p>Example usage:</p>
+<div class="codehilite"><pre><span></span><code>dm<span class="w"> </span>:=<span class="w"> </span>datamap.New(&quot;get_weather&quot;).
+<span class="w">    </span>Purpose(&quot;Get<span class="w"> </span>current<span class="w"> </span>weather<span class="w"> </span>information&quot;).
+<span class="w">    </span>Parameter(&quot;location&quot;,<span class="w"> </span>&quot;string&quot;,<span class="w"> </span>&quot;City<span class="w"> </span>name&quot;,<span class="w"> </span>true,<span class="w"> </span>nil).
+<span class="w">    </span>Webhook(&quot;GET&quot;,<span class="w"> </span>&quot;https://api.weather.com/v1/current?q=<span class="cp">${</span><span class="n">location</span><span class="cp">}</span>&quot;,<span class="w"> </span>nil,<span class="w"> </span>&quot;&quot;,<span class="w"> </span>false,<span class="w"> </span>nil).
+<span class="w">    </span>Output(swaig.NewFunctionResult(&quot;Weather:<span class="w"> </span><span class="cp">${</span><span class="n">response</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">condition</span><span class="o">.</span><span class="n">text</span><span class="cp">}</span>&quot;))
+</code></pre></div>
+
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#DataMap">type DataMap</a></li>
+<li><a href="#CreateExpressionTool">func CreateExpressionTool(name string, patterns map[string]ExpressionPattern, parameters map[string]map[string]any) *DataMap</a></li>
+<li><a href="#CreateSimpleApiTool">func CreateSimpleApiTool(name, url, responseTemplate string, parameters map[string]map[string]any, method string, headers map[string]string, body map[string]any, errorKeys []string) *DataMap</a></li>
+<li><a href="#New">func New(functionName string) *DataMap</a></li>
+<li><a href="#DataMap.Body">func (dm <em>DataMap) Body(data map[string]any) </em>DataMap</a></li>
+<li><a href="#DataMap.Description">func (dm <em>DataMap) Description(description string) </em>DataMap</a></li>
+<li><a href="#DataMap.ErrorKeys">func (dm <em>DataMap) ErrorKeys(keys []string) </em>DataMap</a></li>
+<li><a href="#DataMap.Expression">func (dm <em>DataMap) Expression(testValue, pattern string, output </em>swaig.FunctionResult, nomatchOutput <em>swaig.FunctionResult) </em>DataMap</a></li>
+<li><a href="#DataMap.ExpressionRegexp">func (dm <em>DataMap) ExpressionRegexp(testValue string, pattern </em>regexp.Regexp, output <em>swaig.FunctionResult, nomatchOutput </em>swaig.FunctionResult) *DataMap</a></li>
+<li><a href="#DataMap.FallbackOutput">func (dm <em>DataMap) FallbackOutput(result </em>swaig.FunctionResult) *DataMap</a></li>
+<li><a href="#DataMap.Foreach">func (dm <em>DataMap) Foreach(config map[string]any) </em>DataMap</a></li>
+<li><a href="#DataMap.FunctionName">func (dm *DataMap) FunctionName() string</a></li>
+<li><a href="#DataMap.GlobalErrorKeys">func (dm <em>DataMap) GlobalErrorKeys(keys []string) </em>DataMap</a></li>
+<li><a href="#DataMap.Output">func (dm <em>DataMap) Output(result </em>swaig.FunctionResult) *DataMap</a></li>
+<li><a href="#DataMap.Parameter">func (dm <em>DataMap) Parameter(name, paramType, desc string, required bool, enum []string) </em>DataMap</a></li>
+<li><a href="#DataMap.Params">func (dm <em>DataMap) Params(data map[string]any) </em>DataMap</a></li>
+<li><a href="#DataMap.Purpose">func (dm <em>DataMap) Purpose(description string) </em>DataMap</a></li>
+<li><a href="#DataMap.ToSwaigFunction">func (dm *DataMap) ToSwaigFunction() map[string]any</a></li>
+<li><a href="#DataMap.Webhook">func (dm <em>DataMap) Webhook(method, url string, headers map[string]string, formParam string, inputArgsAsParams bool, requireArgs []string) </em>DataMap</a></li>
+<li><a href="#DataMap.WebhookExpressions">func (dm <em>DataMap) WebhookExpressions(expressions []map[string]any) </em>DataMap</a></li>
+<li><a href="#ExpressionPattern">type ExpressionPattern</a></li>
+</ul>
+<p><a name="DataMap"></a></p>
+<h2 id="type-datamap">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L52-L71">DataMap</a></h2>
+<p>DataMap is a fluent builder for SWAIG data_map function definitions. Data map tools execute on SignalWire servers without needing a webhook endpoint.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">DataMap</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="CreateExpressionTool"></a></p>
+<h3 id="func-createexpressiontool">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L441">CreateExpressionTool</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">CreateExpressionTool</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">patterns</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="nx">ExpressionPattern</span><span class="p">,</span><span class="w"> </span><span class="nx">parameters</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>CreateExpressionTool creates a DataMap configured for expression-based pattern matching. name is the function name. patterns maps test values to an ExpressionPattern where Pattern is the regex string and Result is the *swaig.FunctionResult to return on match. parameters maps parameter names to their definitions (each with "type", "description", "required" keys).</p>
+<p><a name="CreateSimpleApiTool"></a></p>
+<h3 id="func-createsimpleapitool">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L391">CreateSimpleApiTool</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">CreateSimpleApiTool</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">responseTemplate</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">parameters</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">method</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">errorKeys</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>CreateSimpleApiTool creates a DataMap configured for a simple API call. name is the function name. url is the API endpoint URL. responseTemplate is the template for formatting the response. parameters maps parameter names to their definitions (each with "type", "description", "required" keys). method is the HTTP method (e.g., "GET", "POST"). headers are optional HTTP headers (can be nil). body is an optional request body for POST/PUT (can be nil). errorKeys are optional error indicator keys (can be nil).</p>
+<p><a name="New"></a></p>
+<h3 id="func-new">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L74">New</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">functionName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>New creates a new DataMap builder for a function with the given name.</p>
+<p><a name="DataMap.Body"></a></p>
+<h3 id="func-datamap-body">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L259">Body</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">Body</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>Body sets the request body for the current webhook (for POST/PUT requests).</p>
+<p><a name="DataMap.Description"></a></p>
+<h3 id="func-datamap-description">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L114">Description</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">Description</span><span class="p">(</span><span class="nx">description</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>Description sets the LLM-facing tool description.</p>
+<p>This string is read by the model to decide WHEN to call this tool. See Purpose for bad-vs-good examples. Alias for Purpose.</p>
+<p><a name="DataMap.ErrorKeys"></a></p>
+<h3 id="func-datamap-errorkeys">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L289">ErrorKeys</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">ErrorKeys</span><span class="p">(</span><span class="nx">keys</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>ErrorKeys sets error indicator keys for the current webhook.</p>
+<p><a name="DataMap.Expression"></a></p>
+<h3 id="func-datamap-expression">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L152">Expression</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">Expression</span><span class="p">(</span><span class="nx">testValue</span><span class="p">,</span><span class="w"> </span><span class="nx">pattern</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">*</span><span class="nx">swaig</span><span class="p">.</span><span class="nx">FunctionResult</span><span class="p">,</span><span class="w"> </span><span class="nx">nomatchOutput</span><span class="w"> </span><span class="o">*</span><span class="nx">swaig</span><span class="p">.</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>Expression adds a pattern-matching expression for expression-based responses. testValue is the template string to test (e.g., "${args.command}"). pattern is the regex pattern to match against. output is the FunctionResult returned when the pattern matches. nomatchOutput is an optional FunctionResult returned when the pattern does not match (can be nil).</p>
+<p><a name="DataMap.ExpressionRegexp"></a></p>
+<h3 id="func-datamap-expressionregexp">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L171">ExpressionRegexp</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">ExpressionRegexp</span><span class="p">(</span><span class="nx">testValue</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">pattern</span><span class="w"> </span><span class="o">*</span><span class="nx">regexp</span><span class="p">.</span><span class="nx">Regexp</span><span class="p">,</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">*</span><span class="nx">swaig</span><span class="p">.</span><span class="nx">FunctionResult</span><span class="p">,</span><span class="w"> </span><span class="nx">nomatchOutput</span><span class="w"> </span><span class="o">*</span><span class="nx">swaig</span><span class="p">.</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>ExpressionRegexp adds a pattern-matching expression using a compiled *regexp.Regexp. This mirrors Python's expression() which accepts either a plain string or a compiled re.Pattern object — when a compiled pattern is passed, Python extracts pattern.pattern (the raw string). Here, pattern.String() serves the same role.</p>
+<p>testValue is the template string to test (e.g., "${args.command}"). pattern is a compiled regexp whose string representation is used as the match pattern. output is the FunctionResult returned when the pattern matches. nomatchOutput is an optional FunctionResult returned when the pattern does not match (can be nil).</p>
+<p><a name="DataMap.FallbackOutput"></a></p>
+<h3 id="func-datamap-fallbackoutput">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L283">FallbackOutput</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">FallbackOutput</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="o">*</span><span class="nx">swaig</span><span class="p">.</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>FallbackOutput sets the fallback output result used when all webhooks fail.</p>
+<p><a name="DataMap.Foreach"></a></p>
+<h3 id="func-datamap-foreach">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L271">Foreach</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">Foreach</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>Foreach configures array processing for the current webhook response.</p>
+<p><a name="DataMap.FunctionName"></a></p>
+<h3 id="func-datamap-functionname">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L83">FunctionName</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">FunctionName</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>FunctionName returns the function name this DataMap was built for. Useful for logging, deduplication checks, and introspection by callers that hold a *DataMap reference but need to identify which tool it represents.</p>
+<p><a name="DataMap.GlobalErrorKeys"></a></p>
+<h3 id="func-datamap-globalerrorkeys">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L295">GlobalErrorKeys</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">GlobalErrorKeys</span><span class="p">(</span><span class="nx">keys</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>GlobalErrorKeys sets top-level error keys that apply to all webhooks.</p>
+<p><a name="DataMap.Output"></a></p>
+<h3 id="func-datamap-output">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L277">Output</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">Output</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="o">*</span><span class="nx">swaig</span><span class="p">.</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>Output sets the output result for the current webhook.</p>
+<p><a name="DataMap.Parameter"></a></p>
+<h3 id="func-datamap-parameter">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L136">Parameter</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">Parameter</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">paramType</span><span class="p">,</span><span class="w"> </span><span class="nx">desc</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">enum</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>Parameter adds a parameter definition — the `desc` is LLM-FACING.</p>
+<p>Each parameter description is rendered into the OpenAI tool schema under parameters.properties.<name>.description and sent to the model. The model uses it to decide HOW to fill in the argument from user speech. It is prompt engineering, not developer FYI.</p>
+<p>Bad vs good:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">BAD</span>:<span class="w">  </span><span class="nv">dm</span>.<span class="nv">Parameter</span><span class="ss">(</span><span class="s2">&quot;city&quot;</span>,<span class="w"> </span><span class="s2">&quot;string&quot;</span>,<span class="w"> </span><span class="s2">&quot;the city&quot;</span>,<span class="w"> </span><span class="nv">true</span>,<span class="w"> </span><span class="nv">nil</span><span class="ss">)</span>
+<span class="nv">GOOD</span>:<span class="w"> </span><span class="nv">dm</span>.<span class="nv">Parameter</span><span class="ss">(</span><span class="s2">&quot;city&quot;</span>,<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
+<span class="w">          </span><span class="s2">&quot;The name of the city to get weather for, e.g. &#39;San Francisco&#39;. &quot;</span><span class="o">+</span>
+<span class="w">          </span><span class="s2">&quot;Ask the user if they did not provide one. Include the state &quot;</span><span class="o">+</span>
+<span class="w">          </span><span class="s2">&quot;or country if the city name is ambiguous.&quot;</span>,
+<span class="w">          </span><span class="nv">true</span>,<span class="w"> </span><span class="nv">nil</span><span class="ss">)</span>
+</code></pre></div>
+
+<p>The enum parameter can be nil if no enumeration constraint is needed.</p>
+<p><a name="DataMap.Params"></a></p>
+<h3 id="func-datamap-params">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L265">Params</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">Params</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>Params sets the request params for the current webhook.</p>
+<p><a name="DataMap.Purpose"></a></p>
+<h3 id="func-datamap-purpose">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L105">Purpose</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">Purpose</span><span class="p">(</span><span class="nx">description</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>Purpose sets the LLM-facing tool description — this is an alias for Description.</p>
+<p>The description string is rendered into the OpenAI tool schema "description" field on every LLM turn. The model reads it to decide WHEN to call this tool. It is PROMPT ENGINEERING, not developer documentation.</p>
+<p>A vague Purpose is the #1 cause of "the model has the right tool but doesn't call it" failures with data-map tools.</p>
+<p>Bad vs good:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">BAD</span>:<span class="w">  </span><span class="nv">dm</span>.<span class="nv">Purpose</span><span class="ss">(</span><span class="s2">&quot;weather api&quot;</span><span class="ss">)</span>
+<span class="nv">GOOD</span>:<span class="w"> </span><span class="nv">dm</span>.<span class="nv">Purpose</span><span class="ss">(</span><span class="s2">&quot;Get the current weather conditions and forecast &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">          </span><span class="s2">&quot;for a specific city. Use this whenever the user asks about &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">          </span><span class="s2">&quot;weather, temperature, rain, or similar conditions in a &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">          </span><span class="s2">&quot;named location.&quot;</span><span class="ss">)</span>
+</code></pre></div>
+
+<p><a name="DataMap.ToSwaigFunction"></a></p>
+<h3 id="func-datamap-toswaigfunction">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L303">ToSwaigFunction</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">ToSwaigFunction</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>ToSwaigFunction converts the DataMap to a complete SWAIG function definition map. The returned map contains "function", "description", "parameters", and "data_map" keys, matching the canonical SWML/SWAIG schema consumed by the SignalWire AI platform.</p>
+<p><a name="DataMap.Webhook"></a></p>
+<h3 id="func-datamap-webhook">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L237">Webhook</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">Webhook</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">formParam</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">inputArgsAsParams</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">requireArgs</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>Webhook adds a webhook API call configuration. If a previous webhook was configured, it is finalized first. method is the HTTP method (GET, POST, etc.). url is the API endpoint URL (can include ${variable} substitutions). headers are optional HTTP headers (can be nil). formParam sends JSON body as a single form parameter with this name (empty string to skip). inputArgsAsParams merges function arguments into params. requireArgs lists arguments that must be present to execute (can be nil).</p>
+<p><a name="DataMap.WebhookExpressions"></a></p>
+<h3 id="func-datamap-webhookexpressions">func (*DataMap) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L253">WebhookExpressions</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">dm</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span><span class="p">)</span><span class="w"> </span><span class="nx">WebhookExpressions</span><span class="p">(</span><span class="nx">expressions</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">DataMap</span>
+</code></pre></div>
+
+<p>WebhookExpressions sets expressions to evaluate after the current webhook completes.</p>
+<p><a name="ExpressionPattern"></a></p>
+<h2 id="type-expressionpattern">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/datamap/datamap.go#L431-L434">ExpressionPattern</a></h2>
+<p>ExpressionPattern pairs a regex pattern string with a FunctionResult to execute when test_value matches the pattern. Go equivalent of Python's Tuple[str, FunctionResult] entry in create_expression_tool patterns.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ExpressionPattern</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Pattern</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Result</span><span class="w">  </span><span class="o">*</span><span class="nx">swaig</span><span class="p">.</span><span class="nx">FunctionResult</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

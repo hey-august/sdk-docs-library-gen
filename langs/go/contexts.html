@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>contexts — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts" class="active">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="contexts">contexts</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/contexts&quot;</span>
+</code></pre></div>
+
+<p>Package contexts provides the Contexts &amp; Steps workflow system for SignalWire AI agents.</p>
+<p>Instead of a single flat prompt, agents can define structured Contexts (conversation flows) containing ordered Steps (sequential stages). Each step carries its own prompt, completion criteria, function restrictions, and navigation rules. The builder serialises the whole tree into the map[string]any format expected by the SWML AI verb.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#constants">Constants</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#Context">type Context</a></li>
+<li><a href="#CreateSimpleContext">func CreateSimpleContext(name string) *Context</a></li>
+<li><a href="#Context.AddBullets">func (c <em>Context) AddBullets(title string, bullets []string) </em>Context</a></li>
+<li><a href="#Context.AddEnterFiller">func (c <em>Context) AddEnterFiller(langCode string, fillers []string) </em>Context</a></li>
+<li><a href="#Context.AddExitFiller">func (c <em>Context) AddExitFiller(langCode string, fillers []string) </em>Context</a></li>
+<li><a href="#Context.AddSection">func (c <em>Context) AddSection(title, body string) </em>Context</a></li>
+<li><a href="#Context.AddStep">func (c <em>Context) AddStep(name string) </em>Step</a></li>
+<li><a href="#Context.AddSystemBullets">func (c <em>Context) AddSystemBullets(title string, bullets []string) </em>Context</a></li>
+<li><a href="#Context.AddSystemSection">func (c <em>Context) AddSystemSection(title, body string) </em>Context</a></li>
+<li><a href="#Context.GetStep">func (c <em>Context) GetStep(name string) </em>Step</a></li>
+<li><a href="#Context.MoveStep">func (c <em>Context) MoveStep(name string, position int) </em>Context</a></li>
+<li><a href="#Context.Name">func (c *Context) Name() string</a></li>
+<li><a href="#Context.RemoveStep">func (c <em>Context) RemoveStep(name string) </em>Context</a></li>
+<li><a href="#Context.SetConsolidate">func (c <em>Context) SetConsolidate(consolidate bool) </em>Context</a></li>
+<li><a href="#Context.SetEnterFillers">func (c <em>Context) SetEnterFillers(fillers map[string][]string) </em>Context</a></li>
+<li><a href="#Context.SetExitFillers">func (c <em>Context) SetExitFillers(fillers map[string][]string) </em>Context</a></li>
+<li><a href="#Context.SetFullReset">func (c <em>Context) SetFullReset(fullReset bool) </em>Context</a></li>
+<li><a href="#Context.SetInitialStep">func (c <em>Context) SetInitialStep(stepName string) </em>Context</a></li>
+<li><a href="#Context.SetIsolated">func (c <em>Context) SetIsolated(isolated bool) </em>Context</a></li>
+<li><a href="#Context.SetPostPrompt">func (c <em>Context) SetPostPrompt(prompt string) </em>Context</a></li>
+<li><a href="#Context.SetPrompt">func (c <em>Context) SetPrompt(prompt string) </em>Context</a></li>
+<li><a href="#Context.SetSystemPrompt">func (c <em>Context) SetSystemPrompt(prompt string) </em>Context</a></li>
+<li><a href="#Context.SetUserPrompt">func (c <em>Context) SetUserPrompt(prompt string) </em>Context</a></li>
+<li><a href="#Context.SetValidContexts">func (c <em>Context) SetValidContexts(ctxs []string) </em>Context</a></li>
+<li><a href="#Context.SetValidSteps">func (c <em>Context) SetValidSteps(steps []string) </em>Context</a></li>
+<li><a href="#Context.ToMap">func (c *Context) ToMap() map[string]any</a></li>
+<li><a href="#ContextBuilder">type ContextBuilder</a></li>
+<li><a href="#NewContextBuilder">func NewContextBuilder() *ContextBuilder</a></li>
+<li><a href="#ContextBuilder.AddContext">func (cb <em>ContextBuilder) AddContext(name string) </em>Context</a></li>
+<li><a href="#ContextBuilder.AttachAgent">func (cb <em>ContextBuilder) AttachAgent(a ToolLister) </em>ContextBuilder</a></li>
+<li><a href="#ContextBuilder.GetContext">func (cb <em>ContextBuilder) GetContext(name string) </em>Context</a></li>
+<li><a href="#ContextBuilder.Reset">func (cb <em>ContextBuilder) Reset() </em>ContextBuilder</a></li>
+<li><a href="#ContextBuilder.ToMap">func (cb *ContextBuilder) ToMap() (map[string]any, error)</a></li>
+<li><a href="#ContextBuilder.Validate">func (cb *ContextBuilder) Validate() error</a></li>
+<li><a href="#GatherInfo">type GatherInfo</a></li>
+<li><a href="#GatherInfo.AddQuestion">func (g <em>GatherInfo) AddQuestion(key, question string, opts ...GatherQuestionOption) </em>GatherInfo</a></li>
+<li><a href="#GatherInfo.ToMap">func (g *GatherInfo) ToMap() map[string]any</a></li>
+<li><a href="#GatherInfo.Validate">func (g *GatherInfo) Validate() error</a></li>
+<li><a href="#GatherQuestion">type GatherQuestion</a></li>
+<li><a href="#GatherQuestion.ToMap">func (q *GatherQuestion) ToMap() map[string]any</a></li>
+<li><a href="#GatherQuestionOption">type GatherQuestionOption</a></li>
+<li><a href="#WithConfirm">func WithConfirm(c bool) GatherQuestionOption</a></li>
+<li><a href="#WithFunctions">func WithFunctions(f []string) GatherQuestionOption</a></li>
+<li><a href="#WithPrompt">func WithPrompt(p string) GatherQuestionOption</a></li>
+<li><a href="#WithType">func WithType(t string) GatherQuestionOption</a></li>
+<li><a href="#Step">type Step</a></li>
+<li><a href="#Step.AddBullets">func (s <em>Step) AddBullets(title string, bullets []string) </em>Step</a></li>
+<li><a href="#Step.AddGatherQuestion">func (s <em>Step) AddGatherQuestion(key, question string, opts ...GatherQuestionOption) </em>Step</a></li>
+<li><a href="#Step.AddSection">func (s <em>Step) AddSection(title, body string) </em>Step</a></li>
+<li><a href="#Step.ClearSections">func (s <em>Step) ClearSections() </em>Step</a></li>
+<li><a href="#Step.Name">func (s *Step) Name() string</a></li>
+<li><a href="#Step.SetEnd">func (s <em>Step) SetEnd(end bool) </em>Step</a></li>
+<li><a href="#Step.SetFunctions">func (s <em>Step) SetFunctions(functions any) </em>Step</a></li>
+<li><a href="#Step.SetGatherInfo">func (s <em>Step) SetGatherInfo(outputKey, completionAction, prompt string) </em>Step</a></li>
+<li><a href="#Step.SetResetConsolidate">func (s <em>Step) SetResetConsolidate(consolidate bool) </em>Step</a></li>
+<li><a href="#Step.SetResetFullReset">func (s <em>Step) SetResetFullReset(fullReset bool) </em>Step</a></li>
+<li><a href="#Step.SetResetSystemPrompt">func (s <em>Step) SetResetSystemPrompt(prompt string) </em>Step</a></li>
+<li><a href="#Step.SetResetUserPrompt">func (s <em>Step) SetResetUserPrompt(prompt string) </em>Step</a></li>
+<li><a href="#Step.SetSkipToNextStep">func (s <em>Step) SetSkipToNextStep(skip bool) </em>Step</a></li>
+<li><a href="#Step.SetSkipUserTurn">func (s <em>Step) SetSkipUserTurn(skip bool) </em>Step</a></li>
+<li><a href="#Step.SetStepCriteria">func (s <em>Step) SetStepCriteria(criteria string) </em>Step</a></li>
+<li><a href="#Step.SetText">func (s <em>Step) SetText(text string) </em>Step</a></li>
+<li><a href="#Step.SetValidContexts">func (s <em>Step) SetValidContexts(contexts []string) </em>Step</a></li>
+<li><a href="#Step.SetValidSteps">func (s <em>Step) SetValidSteps(steps []string) </em>Step</a></li>
+<li><a href="#Step.ToMap">func (s *Step) ToMap() map[string]any</a></li>
+<li><a href="#ToolLister">type ToolLister</a></li>
+</ul>
+<h2 id="constants">Constants</h2>
+<p><a name="MaxContexts"></a>Limits guard against unreasonable configurations.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">MaxContexts</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="mi">50</span>
+<span class="w">    </span><span class="nx">MaxStepsPerContext</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<h2 id="variables">Variables</h2>
+<p><a name="ReservedNativeToolNames"></a>ReservedNativeToolNames is the set of tool names the runtime auto-injects when contexts/steps are present. User-defined SWAIG tools must not collide with these names.</p>
+<ul>
+<li>next_step / change_context are injected when valid_steps or valid_contexts is set so the model can navigate the flow.</li>
+<li>gather_submit is injected while a step's gather_info is collecting answers.</li>
+</ul>
+<p>ContextBuilder.Validate() rejects any agent that registers a user tool sharing one of these names — the runtime would never call the user tool because the native one wins.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">ReservedNativeToolNames</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">struct</span><span class="p">{}{</span>
+<span class="w">    </span><span class="s">&quot;next_step&quot;</span><span class="p">:</span><span class="w">      </span><span class="p">{},</span>
+<span class="w">    </span><span class="s">&quot;change_context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="s">&quot;gather_submit&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{},</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="Context"></a></p>
+<h2 id="type-context">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L445-L463">Context</a></h2>
+<p>Context represents a single context containing ordered steps. All setter methods return *Context for chaining.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Context</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="CreateSimpleContext"></a></p>
+<h3 id="func-createsimplecontext">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L1074">CreateSimpleContext</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">CreateSimpleContext</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>CreateSimpleContext creates a standalone Context. If name is empty it defaults to "default".</p>
+<p><a name="Context.AddBullets"></a></p>
+<h3 id="func-context-addbullets">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L622">AddBullets</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">AddBullets</span><span class="p">(</span><span class="nx">title</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">bullets</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>AddBullets adds a POM section with bullet points to the context prompt.</p>
+<p><a name="Context.AddEnterFiller"></a></p>
+<h3 id="func-context-addenterfiller">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L652">AddEnterFiller</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">AddEnterFiller</span><span class="p">(</span><span class="nx">langCode</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">fillers</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>AddEnterFiller adds enter fillers for a specific language code.</p>
+<p><a name="Context.AddExitFiller"></a></p>
+<h3 id="func-context-addexitfiller">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L661">AddExitFiller</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">AddExitFiller</span><span class="p">(</span><span class="nx">langCode</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">fillers</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>AddExitFiller adds exit fillers for a specific language code.</p>
+<p><a name="Context.AddSection"></a></p>
+<h3 id="func-context-addsection">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L616">AddSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">AddSection</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>AddSection adds a POM section to the context prompt.</p>
+<p><a name="Context.AddStep"></a></p>
+<h3 id="func-context-addstep">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L478">AddStep</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">AddStep</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>AddStep creates a new step, appends it to the ordered list, stores it in the lookup map, and returns the Step for further configuration.</p>
+<p><a name="Context.AddSystemBullets"></a></p>
+<h3 id="func-context-addsystembullets">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L634">AddSystemBullets</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">AddSystemBullets</span><span class="p">(</span><span class="nx">title</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">bullets</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>AddSystemBullets adds a POM section with bullet points to the system prompt.</p>
+<p><a name="Context.AddSystemSection"></a></p>
+<h3 id="func-context-addsystemsection">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L628">AddSystemSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">AddSystemSection</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>AddSystemSection adds a POM section to the system prompt.</p>
+<p><a name="Context.GetStep"></a></p>
+<h3 id="func-context-getstep">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L486">GetStep</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">GetStep</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>GetStep returns the step with the given name, or nil if not found.</p>
+<p><a name="Context.MoveStep"></a></p>
+<h3 id="func-context-movestep">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L507">MoveStep</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">MoveStep</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>MoveStep moves an existing step to the given position (0-based index). Returns the receiver for method chaining.</p>
+<p><a name="Context.Name"></a></p>
+<h3 id="func-context-name">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L474">Name</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">Name</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>Name returns the context's name.</p>
+<p><a name="Context.RemoveStep"></a></p>
+<h3 id="func-context-removestep">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L491">RemoveStep</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">RemoveStep</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>RemoveStep removes a step by name. Returns the receiver for method chaining.</p>
+<p><a name="Context.SetConsolidate"></a></p>
+<h3 id="func-context-setconsolidate">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L573">SetConsolidate</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetConsolidate</span><span class="p">(</span><span class="nx">consolidate</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetConsolidate sets whether to consolidate conversation history on entry.</p>
+<p><a name="Context.SetEnterFillers"></a></p>
+<h3 id="func-context-setenterfillers">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L640">SetEnterFillers</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetEnterFillers</span><span class="p">(</span><span class="nx">fillers</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetEnterFillers sets all enter fillers at once.</p>
+<p><a name="Context.SetExitFillers"></a></p>
+<h3 id="func-context-setexitfillers">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L646">SetExitFillers</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetExitFillers</span><span class="p">(</span><span class="nx">fillers</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetExitFillers sets all exit fillers at once.</p>
+<p><a name="Context.SetFullReset"></a></p>
+<h3 id="func-context-setfullreset">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L579">SetFullReset</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetFullReset</span><span class="p">(</span><span class="nx">fullReset</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetFullReset sets whether to do a full reset when entering this context.</p>
+<p><a name="Context.SetInitialStep"></a></p>
+<h3 id="func-context-setinitialstep">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L537">SetInitialStep</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetInitialStep</span><span class="p">(</span><span class="nx">stepName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetInitialStep sets which step the context starts on when entered.</p>
+<p>By default, a context starts on its first step (index 0). Use this to skip a preamble step on re-entry via change_context.</p>
+<p><a name="Context.SetIsolated"></a></p>
+<h3 id="func-context-setisolated">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L610">SetIsolated</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetIsolated</span><span class="p">(</span><span class="nx">isolated</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetIsolated marks this context as isolated — entering it wipes conversation history.</p>
+<p>When isolated=true and the context is entered via change_context, the runtime wipes the conversation array. The model starts fresh with only the new context's system_prompt + step instructions, with no memory of prior turns.</p>
+<p>EXCEPTION — reset overrides the wipe: If the context also has a reset configuration (via SetConsolidate or SetFullReset), the wipe is skipped in favor of the reset behavior. Use reset with consolidate=true to summarize prior history into a single message instead of dropping it entirely.</p>
+<p>Use cases:</p>
+<ul>
+<li>Switching to a sensitive billing flow that should not see prior small-talk</li>
+<li>Handing off to a different agent persona</li>
+<li>Resetting after a long off-topic detour</li>
+</ul>
+<p><a name="Context.SetPostPrompt"></a></p>
+<h3 id="func-context-setpostprompt">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L555">SetPostPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPostPrompt</span><span class="p">(</span><span class="nx">prompt</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetPostPrompt sets the post-prompt override for this context.</p>
+<p><a name="Context.SetPrompt"></a></p>
+<h3 id="func-context-setprompt">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L567">SetPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPrompt</span><span class="p">(</span><span class="nx">prompt</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetPrompt sets the context's prompt text directly.</p>
+<p><a name="Context.SetSystemPrompt"></a></p>
+<h3 id="func-context-setsystemprompt">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L561">SetSystemPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetSystemPrompt</span><span class="p">(</span><span class="nx">prompt</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetSystemPrompt sets the system prompt for context switching.</p>
+<p><a name="Context.SetUserPrompt"></a></p>
+<h3 id="func-context-setuserprompt">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L585">SetUserPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetUserPrompt</span><span class="p">(</span><span class="nx">prompt</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetUserPrompt sets the user prompt to inject when entering this context.</p>
+<p><a name="Context.SetValidContexts"></a></p>
+<h3 id="func-context-setvalidcontexts">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L543">SetValidContexts</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetValidContexts</span><span class="p">(</span><span class="nx">ctxs</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetValidContexts sets which contexts can be navigated to from this context.</p>
+<p><a name="Context.SetValidSteps"></a></p>
+<h3 id="func-context-setvalidsteps">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L549">SetValidSteps</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">SetValidSteps</span><span class="p">(</span><span class="nx">steps</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>SetValidSteps sets which steps can be navigated to from any step in this context.</p>
+<p><a name="Context.ToMap"></a></p>
+<h3 id="func-context-tomap">func (*Context) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L693">ToMap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="nx">ToMap</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>ToMap serialises the context to the SWML map format.</p>
+<p><a name="ContextBuilder"></a></p>
+<h2 id="type-contextbuilder">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L800-L804">ContextBuilder</a></h2>
+<p>ContextBuilder is the top-level builder for multi-step, multi-context AI agent workflows.</p>
+<p>A ContextBuilder owns one or more Contexts; each Context owns an ordered list of Steps. Only one context and one step is active at a time. Per chat turn, the runtime injects the current step's instructions as a system message, then asks the LLM for a response.</p>
+<h3 id="native-tools-auto-injected-by-the-runtime">Native tools auto\-injected by the runtime</h3>
+<p>When a step (or its enclosing context) declares valid_steps or valid_contexts, the runtime auto-injects two native tools so the model can navigate the flow:</p>
+<ul>
+<li>next_step(step: enum) — present when valid_steps is set</li>
+<li>change_context(context: enum) — present when valid_contexts is set</li>
+</ul>
+<p>Their enum schemas are rewritten on every turn to match whatever valid_steps / valid_contexts apply to the current step. You do NOT need to define these tools yourself; they appear automatically.</p>
+<p>A third native tool — gather_submit — is injected during gather_info questioning (see Step.SetGatherInfo / Step.AddGatherQuestion).</p>
+<p>These three names — next_step, change_context, gather_submit — are reserved. ContextBuilder.Validate() rejects any agent that defines a SWAIG tool with one of these names. See ReservedNativeToolNames.</p>
+<h3 id="function-whitelisting-stepsetfunctions">Function whitelisting \(Step.SetFunctions\)</h3>
+<p>Each step may declare a functions whitelist. The whitelist is applied in-memory at the start of each LLM turn. CRITICALLY: if a step does NOT declare a functions field, it INHERITS the previous step's active set. See Step.SetFunctions for details and examples.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ContextBuilder</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewContextBuilder"></a></p>
+<h3 id="func-newcontextbuilder">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L815">NewContextBuilder</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewContextBuilder</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">ContextBuilder</span>
+</code></pre></div>
+
+<p>NewContextBuilder creates a new empty ContextBuilder.</p>
+<p><a name="ContextBuilder.AddContext"></a></p>
+<h3 id="func-contextbuilder-addcontext">func (*ContextBuilder) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L831">AddContext</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">cb</span><span class="w"> </span><span class="o">*</span><span class="nx">ContextBuilder</span><span class="p">)</span><span class="w"> </span><span class="nx">AddContext</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>AddContext creates a new context with the given name and returns it.</p>
+<p><a name="ContextBuilder.AttachAgent"></a></p>
+<h3 id="func-contextbuilder-attachagent">func (*ContextBuilder) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L809">AttachAgent</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">cb</span><span class="w"> </span><span class="o">*</span><span class="nx">ContextBuilder</span><span class="p">)</span><span class="w"> </span><span class="nx">AttachAgent</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="nx">ToolLister</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">ContextBuilder</span>
+</code></pre></div>
+
+<p>AttachAgent wires an agent into the builder so Validate() can check user-defined tool names against ReservedNativeToolNames. AgentBase calls this internally when you invoke DefineContexts().</p>
+<p><a name="ContextBuilder.GetContext"></a></p>
+<h3 id="func-contextbuilder-getcontext">func (*ContextBuilder) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L839">GetContext</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">cb</span><span class="w"> </span><span class="o">*</span><span class="nx">ContextBuilder</span><span class="p">)</span><span class="w"> </span><span class="nx">GetContext</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Context</span>
+</code></pre></div>
+
+<p>GetContext returns the context with the given name, or nil if not found.</p>
+<p><a name="ContextBuilder.Reset"></a></p>
+<h3 id="func-contextbuilder-reset">func (*ContextBuilder) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L824">Reset</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">cb</span><span class="w"> </span><span class="o">*</span><span class="nx">ContextBuilder</span><span class="p">)</span><span class="w"> </span><span class="nx">Reset</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">ContextBuilder</span>
+</code></pre></div>
+
+<p>Reset removes all contexts, returning the builder to its initial state. Use this in a dynamic config callback when you need to rebuild contexts from scratch for a specific request.</p>
+<p><a name="ContextBuilder.ToMap"></a></p>
+<h3 id="func-contextbuilder-tomap">func (*ContextBuilder) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L1057">ToMap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">cb</span><span class="w"> </span><span class="o">*</span><span class="nx">ContextBuilder</span><span class="p">)</span><span class="w"> </span><span class="nx">ToMap</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>ToMap serialises all contexts to the SWML map format. It calls Validate first and returns an error if validation fails.</p>
+<p><a name="ContextBuilder.Validate"></a></p>
+<h3 id="func-contextbuilder-validate">func (*ContextBuilder) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L854">Validate</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">cb</span><span class="w"> </span><span class="o">*</span><span class="nx">ContextBuilder</span><span class="p">)</span><span class="w"> </span><span class="nx">Validate</span><span class="p">()</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Validate checks the builder configuration for common errors:</p>
+<ul>
+<li>At least one context must be defined.</li>
+<li>A single context must be named "default".</li>
+<li>Every context must contain at least one step.</li>
+<li>Every step must have a name.</li>
+<li>valid_steps entries (except "next") must name existing steps in the same context.</li>
+<li>valid_contexts entries (context-level) must name existing contexts.</li>
+<li>valid_contexts entries (step-level) must name existing contexts.</li>
+<li>gather_info questions must be non-empty and have unique keys.</li>
+<li>gather_info completion_action (if set) targets an existing step.</li>
+<li>No user-defined SWAIG tool collides with a reserved native name.</li>
+</ul>
+<p><a name="GatherInfo"></a></p>
+<h2 id="type-gatherinfo">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L104-L109">GatherInfo</a></h2>
+<p>GatherInfo configures information gathering for a step.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">GatherInfo</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">OutputKey</span><span class="w">        </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">CompletionAction</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Prompt</span><span class="w">           </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Questions</span><span class="w">        </span><span class="p">[]</span><span class="nx">GatherQuestion</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="GatherInfo.AddQuestion"></a></p>
+<h3 id="func-gatherinfo-addquestion">func (*GatherInfo) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L112">AddQuestion</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">g</span><span class="w"> </span><span class="o">*</span><span class="nx">GatherInfo</span><span class="p">)</span><span class="w"> </span><span class="nx">AddQuestion</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">question</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">...</span><span class="nx">GatherQuestionOption</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">GatherInfo</span>
+</code></pre></div>
+
+<p>AddQuestion appends a question and returns the GatherInfo for chaining.</p>
+<p><a name="GatherInfo.ToMap"></a></p>
+<h3 id="func-gatherinfo-tomap">func (*GatherInfo) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L140">ToMap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">g</span><span class="w"> </span><span class="o">*</span><span class="nx">GatherInfo</span><span class="p">)</span><span class="w"> </span><span class="nx">ToMap</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>ToMap serialises to the SWML map format. Callers that construct GatherInfo directly should call Validate() first to ensure the result is valid SWML. Step.ToMap() enforces this automatically by only calling ToMap() when len(Questions) &gt; 0.</p>
+<p><a name="GatherInfo.Validate"></a></p>
+<h3 id="func-gatherinfo-validate">func (*GatherInfo) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L129">Validate</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">g</span><span class="w"> </span><span class="o">*</span><span class="nx">GatherInfo</span><span class="p">)</span><span class="w"> </span><span class="nx">Validate</span><span class="p">()</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Validate returns an error if the GatherInfo is not ready for serialisation. Specifically, it rejects a GatherInfo with no questions, which would produce invalid SWML. This matches the Python SDK's ValueError raised by to_dict() when _questions is empty.</p>
+<p><a name="GatherQuestion"></a></p>
+<h2 id="type-gatherquestion">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L69-L76">GatherQuestion</a></h2>
+<p>GatherQuestion represents a single question in a gather_info configuration.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">GatherQuestion</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Key</span><span class="w">       </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Question</span><span class="w">  </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Type</span><span class="w">      </span><span class="kt">string</span><span class="w"> </span><span class="c1">// default &quot;string&quot;</span>
+<span class="w">    </span><span class="nx">Confirm</span><span class="w">   </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Prompt</span><span class="w">    </span><span class="kt">string</span><span class="w">   </span><span class="c1">// optional</span>
+<span class="w">    </span><span class="nx">Functions</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="w"> </span><span class="c1">// optional</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="GatherQuestion.ToMap"></a></p>
+<h3 id="func-gatherquestion-tomap">func (*GatherQuestion) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L79">ToMap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">q</span><span class="w"> </span><span class="o">*</span><span class="nx">GatherQuestion</span><span class="p">)</span><span class="w"> </span><span class="nx">ToMap</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>ToMap serialises the question to the SWML map format.</p>
+<p><a name="GatherQuestionOption"></a></p>
+<h2 id="type-gatherquestionoption">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L46">GatherQuestionOption</a></h2>
+<p>GatherQuestionOption is a functional option applied to a GatherQuestion.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">GatherQuestionOption</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">GatherQuestion</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="WithConfirm"></a></p>
+<h3 id="func-withconfirm">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L54">WithConfirm</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithConfirm</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">GatherQuestionOption</span>
+</code></pre></div>
+
+<p>WithConfirm sets whether the model must confirm the answer with the user.</p>
+<p><a name="WithFunctions"></a></p>
+<h3 id="func-withfunctions">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L64">WithFunctions</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithFunctions</span><span class="p">(</span><span class="nx">f</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">GatherQuestionOption</span>
+</code></pre></div>
+
+<p>WithFunctions sets additional function names visible for this question.</p>
+<p><a name="WithPrompt"></a></p>
+<h3 id="func-withprompt">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L59">WithPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithPrompt</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">GatherQuestionOption</span>
+</code></pre></div>
+
+<p>WithPrompt sets extra instruction text appended for this question.</p>
+<p><a name="WithType"></a></p>
+<h3 id="func-withtype">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L49">WithType</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithType</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">GatherQuestionOption</span>
+</code></pre></div>
+
+<p>WithType sets the JSON-schema type for the answer (default "string").</p>
+<p><a name="Step"></a></p>
+<h2 id="type-step">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L166-L182">Step</a></h2>
+<p>Step represents a single step within a context. All setter methods return *Step so they can be chained.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Step</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="Step.AddBullets"></a></p>
+<h3 id="func-step-addbullets">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L200">AddBullets</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">AddBullets</span><span class="p">(</span><span class="nx">title</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">bullets</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>AddBullets adds a POM section with bullet points.</p>
+<p><a name="Step.AddGatherQuestion"></a></p>
+<h3 id="func-step-addgatherquestion">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L319">AddGatherQuestion</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">AddGatherQuestion</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">question</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">...</span><span class="nx">GatherQuestionOption</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>AddGatherQuestion adds a question to this step's gather_info. SetGatherInfo should be called first (this method silently initialises the struct if not, to keep callers from having to worry about ordering). Returns the Step for chaining.</p>
+<p>IMPORTANT — gather mode locks function access: While the model is asking gather questions, the runtime forcibly deactivates ALL of the step's other functions. The only callable tools during a gather question are:</p>
+<ul>
+<li>gather_submit (the native answer-submission tool)</li>
+<li>Whatever names you list with WithFunctions in this question's opts</li>
+</ul>
+<p>next_step and change_context are also filtered out — the model cannot navigate away until the gather completes. This is by design: it forces a tight ask → submit → next-question loop.</p>
+<p>If a question needs to call out to a tool (e.g. validate an email, geocode a ZIP), pass that tool name via WithFunctions on this question. Functions listed here are active ONLY for this question.</p>
+<p><a name="Step.AddSection"></a></p>
+<h3 id="func-step-addsection">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L194">AddSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">AddSection</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>AddSection adds a POM section to the step.</p>
+<p><a name="Step.ClearSections"></a></p>
+<h3 id="func-step-clearsections">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L329">ClearSections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">ClearSections</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>ClearSections removes all POM sections and direct text from this step.</p>
+<p><a name="Step.Name"></a></p>
+<h3 id="func-step-name">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L185">Name</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">Name</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>Name returns the step's name.</p>
+<p><a name="Step.SetEnd"></a></p>
+<h3 id="func-step-setend">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L266">SetEnd</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetEnd</span><span class="p">(</span><span class="nx">end</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetEnd marks this step as terminal for the step flow.</p>
+<p>IMPORTANT: end=true does NOT end the conversation or hang up the call. It exits step mode entirely after this step executes — clearing the steps list, current step index, valid_steps, and valid_contexts. The agent keeps running, but operates only under the base system prompt and the context-level prompt; no more step instructions are injected and no more next_step tool is offered.</p>
+<p>To actually end the call, call a hangup tool or define a hangup_hook.</p>
+<p><a name="Step.SetFunctions"></a></p>
+<h3 id="func-step-setfunctions">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L239">SetFunctions</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetFunctions</span><span class="p">(</span><span class="nx">functions</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetFunctions sets which non-internal functions are callable while this step is active.</p>
+<p>IMPORTANT — inheritance behavior: If you do NOT call this method, the step inherits whichever function set was active on the previous step (or the previous context's last step). The server-side runtime only resets the active set when a step explicitly declares its `functions` field. This is the most common source of bugs in multi-step agents: forgetting SetFunctions on a later step lets the previous step's tools leak through. Best practice is to call SetFunctions explicitly on every step that should differ from the previous one.</p>
+<p>Keep the per-step active set small: LLM tool selection accuracy degrades noticeably past \~7-8 simultaneously-active tools per call. Use per-step whitelisting to partition large tool collections.</p>
+<p>Accepts:</p>
+<ul>
+<li>[]string{"a", "b"} — whitelist of function names allowed in this step</li>
+<li>[]string{} — explicit disable-all</li>
+<li>"none" — synonym for the empty slice</li>
+</ul>
+<p>Internal functions (e.g. gather_submit, hangup_hook) are ALWAYS protected and cannot be deactivated by this whitelist. The native navigation tools next_step and change_context are injected automatically when SetValidSteps / SetValidContexts is used; they are not affected by this list and do not need to appear in it.</p>
+<p><a name="Step.SetGatherInfo"></a></p>
+<h3 id="func-step-setgatherinfo">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L290">SetGatherInfo</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetGatherInfo</span><span class="p">(</span><span class="nx">outputKey</span><span class="p">,</span><span class="w"> </span><span class="nx">completionAction</span><span class="p">,</span><span class="w"> </span><span class="nx">prompt</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetGatherInfo enables info gathering for this step and returns the Step for fluent chaining. This matches the Python SDK's set_gather_info, which returns self so that step-level setters (SetFunctions, SetValidSteps, etc.) can be chained after configuring gather info.</p>
+<p>To add questions to the gather info, use AddGatherQuestion on the same *Step receiver.</p>
+<p><a name="Step.SetResetConsolidate"></a></p>
+<h3 id="func-step-setresetconsolidate">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L348">SetResetConsolidate</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetResetConsolidate</span><span class="p">(</span><span class="nx">consolidate</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetResetConsolidate sets whether to consolidate conversation on context switch.</p>
+<p><a name="Step.SetResetFullReset"></a></p>
+<h3 id="func-step-setresetfullreset">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L354">SetResetFullReset</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetResetFullReset</span><span class="p">(</span><span class="nx">fullReset</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetResetFullReset sets whether to do a full reset on context switch.</p>
+<p><a name="Step.SetResetSystemPrompt"></a></p>
+<h3 id="func-step-setresetsystemprompt">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L336">SetResetSystemPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetResetSystemPrompt</span><span class="p">(</span><span class="nx">prompt</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetResetSystemPrompt sets the system prompt for context switching.</p>
+<p><a name="Step.SetResetUserPrompt"></a></p>
+<h3 id="func-step-setresetuserprompt">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L342">SetResetUserPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetResetUserPrompt</span><span class="p">(</span><span class="nx">prompt</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetResetUserPrompt sets the user prompt for context switching.</p>
+<p><a name="Step.SetSkipToNextStep"></a></p>
+<h3 id="func-step-setskiptonextstep">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L278">SetSkipToNextStep</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetSkipToNextStep</span><span class="p">(</span><span class="nx">skip</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetSkipToNextStep sets whether to automatically advance to the next step.</p>
+<p><a name="Step.SetSkipUserTurn"></a></p>
+<h3 id="func-step-setskipuserturn">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L272">SetSkipUserTurn</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetSkipUserTurn</span><span class="p">(</span><span class="nx">skip</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetSkipUserTurn sets whether to skip waiting for user input after this step.</p>
+<p><a name="Step.SetStepCriteria"></a></p>
+<h3 id="func-step-setstepcriteria">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L206">SetStepCriteria</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetStepCriteria</span><span class="p">(</span><span class="nx">criteria</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetStepCriteria sets the criteria for determining when this step is complete.</p>
+<p><a name="Step.SetText"></a></p>
+<h3 id="func-step-settext">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L188">SetText</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetText</span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetText sets the step's prompt text directly.</p>
+<p><a name="Step.SetValidContexts"></a></p>
+<h3 id="func-step-setvalidcontexts">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L251">SetValidContexts</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetValidContexts</span><span class="p">(</span><span class="nx">contexts</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetValidContexts sets which contexts can be navigated to from this step.</p>
+<p><a name="Step.SetValidSteps"></a></p>
+<h3 id="func-step-setvalidsteps">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L245">SetValidSteps</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">SetValidSteps</span><span class="p">(</span><span class="nx">steps</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span>
+</code></pre></div>
+
+<p>SetValidSteps sets which steps can be navigated to from this step.</p>
+<p><a name="Step.ToMap"></a></p>
+<h3 id="func-step-tomap">func (*Step) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L386">ToMap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">*</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">ToMap</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>ToMap serialises the step to the SWML map format.</p>
+<p><a name="ToolLister"></a></p>
+<h2 id="type-toollister">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/contexts/contexts.go#L761-L764">ToolLister</a></h2>
+<p>ToolLister is implemented by an agent so ContextBuilder.Validate() can check registered SWAIG tool names against ReservedNativeToolNames. AgentBase implements this by returning the insertion-ordered list of registered tool names.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ToolLister</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ListToolNames returns the names of every registered SWAIG tool.</span>
+<span class="w">    </span><span class="nx">ListToolNames</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

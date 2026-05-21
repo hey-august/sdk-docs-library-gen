@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["client","crud_resource","error","http_client","namespaces","pagination"]};

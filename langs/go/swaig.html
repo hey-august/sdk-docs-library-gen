@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>swaig — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig" class="active">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="swaig">swaig</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/swaig&quot;</span>
+</code></pre></div>
+
+<p>Package swaig provides SWAIG (SignalWire AI Gateway) function result handling for building AI agent tool responses with actions and call control.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#CreatePaymentAction">func CreatePaymentAction(actionType string, phrase string) map[string]string</a></li>
+<li><a href="#CreatePaymentParameter">func CreatePaymentParameter(name string, value string) map[string]string</a></li>
+<li><a href="#CreatePaymentPrompt">func CreatePaymentPrompt(forSituation string, actions []map[string]string, cardType string, errorType string) map[string]any</a></li>
+<li><a href="#FunctionResult">type FunctionResult</a></li>
+<li><a href="#NewFunctionResult">func NewFunctionResult(response string) *FunctionResult</a></li>
+<li><a href="#FunctionResult.Actions">func (fr *FunctionResult) Actions() []map[string]any</a></li>
+<li><a href="#FunctionResult.AddAction">func (fr <em>FunctionResult) AddAction(name string, data any) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.AddActions">func (fr <em>FunctionResult) AddActions(actions []map[string]any) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.AddDynamicHints">func (fr <em>FunctionResult) AddDynamicHints(hints []any) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.ClearDynamicHints">func (fr <em>FunctionResult) ClearDynamicHints() </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.Connect">func (fr <em>FunctionResult) Connect(destination string, final bool, from string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.EnableExtensiveData">func (fr <em>FunctionResult) EnableExtensiveData(enabled bool) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.EnableFunctionsOnTimeout">func (fr <em>FunctionResult) EnableFunctionsOnTimeout(enabled bool) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.ExecuteRpc">func (fr <em>FunctionResult) ExecuteRpc(method string, params map[string]any, callID string, nodeID string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.ExecuteSwml">func (fr <em>FunctionResult) ExecuteSwml(swmlContent any, transfer bool) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.Hangup">func (fr <em>FunctionResult) Hangup() </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.Hold">func (fr <em>FunctionResult) Hold(timeout int) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.JoinConference">func (fr <em>FunctionResult) JoinConference(name string, opts </em>JoinConferenceOptions) *FunctionResult</a></li>
+<li><a href="#FunctionResult.JoinRoom">func (fr <em>FunctionResult) JoinRoom(name string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.Pay">func (fr <em>FunctionResult) Pay(connectorURL string, opts </em>PayOptions) *FunctionResult</a></li>
+<li><a href="#FunctionResult.PlayBackgroundFile">func (fr <em>FunctionResult) PlayBackgroundFile(filename string, wait bool) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.PostProcess">func (fr *FunctionResult) PostProcess() bool</a></li>
+<li><a href="#FunctionResult.RecordCall">func (fr <em>FunctionResult) RecordCall(controlID string, stereo bool, format string, direction string, opts </em>RecordCallOptions) *FunctionResult</a></li>
+<li><a href="#FunctionResult.RemoveGlobalData">func (fr <em>FunctionResult) RemoveGlobalData(keys []string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.RemoveGlobalDataKey">func (fr <em>FunctionResult) RemoveGlobalDataKey(key string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.RemoveMetadata">func (fr <em>FunctionResult) RemoveMetadata(keys []string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.RemoveMetadataKey">func (fr <em>FunctionResult) RemoveMetadataKey(key string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.ReplaceInHistory">func (fr <em>FunctionResult) ReplaceInHistory(text any) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.Response">func (fr *FunctionResult) Response() string</a></li>
+<li><a href="#FunctionResult.RpcAiMessage">func (fr <em>FunctionResult) RpcAiMessage(callID, messageText, role string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.RpcAiUnhold">func (fr <em>FunctionResult) RpcAiUnhold(callID string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.RpcDial">func (fr <em>FunctionResult) RpcDial(toNumber, fromNumber, destSwml string, deviceType string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.Say">func (fr <em>FunctionResult) Say(text string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SendSms">func (fr <em>FunctionResult) SendSms(toNumber, fromNumber, body string, media []string, tags []string, region string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SetEndOfSpeechTimeout">func (fr <em>FunctionResult) SetEndOfSpeechTimeout(ms int) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SetMetadata">func (fr <em>FunctionResult) SetMetadata(data map[string]any) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SetPostProcess">func (fr <em>FunctionResult) SetPostProcess(postProcess bool) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SetResponse">func (fr <em>FunctionResult) SetResponse(response string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SetSpeechEventTimeout">func (fr <em>FunctionResult) SetSpeechEventTimeout(ms int) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SimulateUserInput">func (fr <em>FunctionResult) SimulateUserInput(text string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SipRefer">func (fr <em>FunctionResult) SipRefer(toURI string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.Stop">func (fr <em>FunctionResult) Stop() </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.StopBackgroundFile">func (fr <em>FunctionResult) StopBackgroundFile() </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.StopRecordCall">func (fr <em>FunctionResult) StopRecordCall(controlID string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.StopTap">func (fr <em>FunctionResult) StopTap(controlID string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.String">func (fr *FunctionResult) String() string</a></li>
+<li><a href="#FunctionResult.SwitchContext">func (fr <em>FunctionResult) SwitchContext(systemPrompt, userPrompt string, consolidate, fullReset, isolated bool) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SwmlChangeContext">func (fr <em>FunctionResult) SwmlChangeContext(contextName string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SwmlChangeStep">func (fr <em>FunctionResult) SwmlChangeStep(stepName string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SwmlTransfer">func (fr <em>FunctionResult) SwmlTransfer(dest string, aiResponse string, final bool) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.SwmlUserEvent">func (fr <em>FunctionResult) SwmlUserEvent(eventData map[string]any) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.Tap">func (fr <em>FunctionResult) Tap(uri string, controlID string, direction string, codec string, rtpPtime int, statusURL string) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.ToMap">func (fr *FunctionResult) ToMap() map[string]any</a></li>
+<li><a href="#FunctionResult.ToggleFunctions">func (fr <em>FunctionResult) ToggleFunctions(toggles []map[string]any) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.UpdateGlobalData">func (fr <em>FunctionResult) UpdateGlobalData(data map[string]any) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.UpdateSettings">func (fr <em>FunctionResult) UpdateSettings(settings map[string]any) </em>FunctionResult</a></li>
+<li><a href="#FunctionResult.WaitForUser">func (fr <em>FunctionResult) WaitForUser(enabled </em>bool, timeout <em>int, answerFirst bool) </em>FunctionResult</a></li>
+<li><a href="#JoinConferenceOptions">type JoinConferenceOptions</a></li>
+<li><a href="#PayOptions">type PayOptions</a></li>
+<li><a href="#RecordCallOptions">type RecordCallOptions</a></li>
+<li><a href="#ToolHandler">type ToolHandler</a></li>
+</ul>
+<p><a name="CreatePaymentAction"></a></p>
+<h2 id="func-createpaymentaction">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L957">CreatePaymentAction</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">CreatePaymentAction</span><span class="p">(</span><span class="nx">actionType</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">phrase</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>CreatePaymentAction creates a single payment action entry.</p>
+<p><a name="CreatePaymentParameter"></a></p>
+<h2 id="func-createpaymentparameter">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L965">CreatePaymentParameter</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">CreatePaymentParameter</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>CreatePaymentParameter creates a payment parameter entry.</p>
+<p><a name="CreatePaymentPrompt"></a></p>
+<h2 id="func-createpaymentprompt">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L942">CreatePaymentPrompt</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">CreatePaymentPrompt</span><span class="p">(</span><span class="nx">forSituation</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">actions</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">cardType</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">errorType</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>CreatePaymentPrompt creates a payment prompt configuration. cardType and errorType are optional; pass empty strings to omit them. This matches the Python SDK's create_payment_prompt() static method signature.</p>
+<p><a name="FunctionResult"></a></p>
+<h2 id="type-functionresult">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L17-L21">FunctionResult</a></h2>
+<p>FunctionResult represents the response from a SWAIG tool handler. It contains a text response, optional actions, and post-processing control. All mutating methods return *FunctionResult for method chaining.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">FunctionResult</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewFunctionResult"></a></p>
+<h3 id="func-newfunctionresult">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L24">NewFunctionResult</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewFunctionResult</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>NewFunctionResult creates a new FunctionResult with the given response text.</p>
+<p><a name="FunctionResult.Actions"></a></p>
+<h3 id="func-functionresult-actions">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L39">Actions</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">Actions</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>Actions returns the list of actions added to this result.</p>
+<p><a name="FunctionResult.AddAction"></a></p>
+<h3 id="func-functionresult-addaction">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L63">AddAction</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">AddAction</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>AddAction appends a single named action to the result.</p>
+<p><a name="FunctionResult.AddActions"></a></p>
+<h3 id="func-functionresult-addactions">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L69">AddActions</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">AddActions</span><span class="p">(</span><span class="nx">actions</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>AddActions appends multiple actions to the result.</p>
+<p><a name="FunctionResult.AddDynamicHints"></a></p>
+<h3 id="func-functionresult-adddynamichints">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L401">AddDynamicHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">AddDynamicHints</span><span class="p">(</span><span class="nx">hints</span><span class="w"> </span><span class="p">[]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>AddDynamicHints adds dynamic speech recognition hints during a call.</p>
+<p><a name="FunctionResult.ClearDynamicHints"></a></p>
+<h3 id="func-functionresult-cleardynamichints">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L406">ClearDynamicHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">ClearDynamicHints</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>ClearDynamicHints removes all dynamic speech recognition hints.</p>
+<p><a name="FunctionResult.Connect"></a></p>
+<h3 id="func-functionresult-connect">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L96">Connect</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">Connect</span><span class="p">(</span><span class="nx">destination</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">final</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>Connect adds a connect action to transfer/connect the call to another destination. If final is true, the call permanently transfers (exits the agent). If final is false, the call returns to the agent when the far end hangs up. The from parameter sets the caller ID; pass empty string to use the call's default.</p>
+<p><a name="FunctionResult.EnableExtensiveData"></a></p>
+<h3 id="func-functionresult-enableextensivedata">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L433">EnableExtensiveData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">EnableExtensiveData</span><span class="p">(</span><span class="nx">enabled</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>EnableExtensiveData sends full data to LLM for this turn only.</p>
+<p><a name="FunctionResult.EnableFunctionsOnTimeout"></a></p>
+<h3 id="func-functionresult-enablefunctionsontimeout">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L428">EnableFunctionsOnTimeout</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">EnableFunctionsOnTimeout</span><span class="p">(</span><span class="nx">enabled</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>EnableFunctionsOnTimeout enables or disables function calls on speaker timeout.</p>
+<p><a name="FunctionResult.ExecuteRpc"></a></p>
+<h3 id="func-functionresult-executerpc">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L865">ExecuteRpc</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">ExecuteRpc</span><span class="p">(</span><span class="nx">method</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">callID</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">nodeID</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>ExecuteRpc executes an RPC method on a call. Pass empty strings for callID and nodeID to omit them from the payload.</p>
+<p><a name="FunctionResult.ExecuteSwml"></a></p>
+<h3 id="func-functionresult-executeswml">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L446">ExecuteSwml</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">ExecuteSwml</span><span class="p">(</span><span class="nx">swmlContent</span><span class="w"> </span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">transfer</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>ExecuteSwml executes SWML content. If transfer is true, the call exits the agent after execution. swmlContent can be a map[string]any or a string (raw SWML JSON).</p>
+<p><a name="FunctionResult.Hangup"></a></p>
+<h3 id="func-functionresult-hangup">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L138">Hangup</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">Hangup</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>Hangup terminates the call.</p>
+<p><a name="FunctionResult.Hold"></a></p>
+<h3 id="func-functionresult-hold">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L144">Hold</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">Hold</span><span class="p">(</span><span class="nx">timeout</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>Hold puts the call on hold with the given timeout in seconds. Timeout is clamped to the range [0, 900].</p>
+<p><a name="FunctionResult.JoinConference"></a></p>
+<h3 id="func-functionresult-joinconference">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L510">JoinConference</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">JoinConference</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">*</span><span class="nx">JoinConferenceOptions</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>JoinConference joins an ad-hoc audio conference. Pass nil for opts to use default behavior (muted=false, beep="true", no holdAudio).</p>
+<p><a name="FunctionResult.JoinRoom"></a></p>
+<h3 id="func-functionresult-joinroom">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L580">JoinRoom</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">JoinRoom</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>JoinRoom joins a RELAY room for multi-party communication.</p>
+<p><a name="FunctionResult.Pay"></a></p>
+<h3 id="func-functionresult-pay">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L735">Pay</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">Pay</span><span class="p">(</span><span class="nx">connectorURL</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">*</span><span class="nx">PayOptions</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>Pay processes a payment using SWML pay action. connectorURL is the only required parameter. opts may be nil to use Python SDK defaults for all optional parameters.</p>
+<p><a name="FunctionResult.PlayBackgroundFile"></a></p>
+<h3 id="func-functionresult-playbackgroundfile">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L293">PlayBackgroundFile</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">PlayBackgroundFile</span><span class="p">(</span><span class="nx">filename</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">wait</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>PlayBackgroundFile plays an audio or video file in the background. If wait is true, attention-getting behavior is suppressed during playback.</p>
+<p><a name="FunctionResult.PostProcess"></a></p>
+<h3 id="func-functionresult-postprocess">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L44">PostProcess</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">PostProcess</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>PostProcess returns whether post-processing is enabled.</p>
+<p><a name="FunctionResult.RecordCall"></a></p>
+<h3 id="func-functionresult-recordcall">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L335">RecordCall</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">RecordCall</span><span class="p">(</span><span class="nx">controlID</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">stereo</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">format</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">direction</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">*</span><span class="nx">RecordCallOptions</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>RecordCall starts background call recording using SWML. controlID, stereo, format, and direction are the primary parameters. Use opts to specify additional optional parameters (pass nil to use defaults).</p>
+<p><a name="FunctionResult.RemoveGlobalData"></a></p>
+<h3 id="func-functionresult-removeglobaldata">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L183">RemoveGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">RemoveGlobalData</span><span class="p">(</span><span class="nx">keys</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>RemoveGlobalData removes global agent data variables by key slice.</p>
+<p><a name="FunctionResult.RemoveGlobalDataKey"></a></p>
+<h3 id="func-functionresult-removeglobaldatakey">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L190">RemoveGlobalDataKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">RemoveGlobalDataKey</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>RemoveGlobalDataKey removes a single global agent data variable by key. This matches the Python SDK's Union[str, List[str]] behavior for a bare string argument, which emits the key as a string (not a one-element array) in the action payload.</p>
+<p><a name="FunctionResult.RemoveMetadata"></a></p>
+<h3 id="func-functionresult-removemetadata">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L200">RemoveMetadata</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">RemoveMetadata</span><span class="p">(</span><span class="nx">keys</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>RemoveMetadata removes metadata keys from the current function's scope.</p>
+<p><a name="FunctionResult.RemoveMetadataKey"></a></p>
+<h3 id="func-functionresult-removemetadatakey">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L207">RemoveMetadataKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">RemoveMetadataKey</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>RemoveMetadataKey removes a single metadata key from the current function's scope. This matches the Python SDK's Union[str, List[str]] behavior for a bare string argument, which emits the key as a string (not a one-element array) in the action payload.</p>
+<p><a name="FunctionResult.ReplaceInHistory"></a></p>
+<h3 id="func-functionresult-replaceinhistory">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L272">ReplaceInHistory</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">ReplaceInHistory</span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>ReplaceInHistory replaces the tool call and result pair in conversation history. If text is a string, the tool call is replaced with an assistant message containing that text. If text is a bool and true, the pair is removed from history entirely.</p>
+<p><a name="FunctionResult.Response"></a></p>
+<h3 id="func-functionresult-response">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L34">Response</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">Response</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>Response returns the natural language response text.</p>
+<p><a name="FunctionResult.RpcAiMessage"></a></p>
+<h3 id="func-functionresult-rpcaimessage">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L915">RpcAiMessage</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">RpcAiMessage</span><span class="p">(</span><span class="nx">callID</span><span class="p">,</span><span class="w"> </span><span class="nx">messageText</span><span class="p">,</span><span class="w"> </span><span class="nx">role</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>RpcAiMessage injects a message into an AI agent on another call. role defaults to "system" when empty, matching the Python SDK default. This matches the Python SDK's rpc_ai_message() which calls execute_rpc(method="ai_message", ...).</p>
+<p><a name="FunctionResult.RpcAiUnhold"></a></p>
+<h3 id="func-functionresult-rpcaiunhold">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L927">RpcAiUnhold</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">RpcAiUnhold</span><span class="p">(</span><span class="nx">callID</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>RpcAiUnhold unholds another call. This matches the Python SDK's rpc_ai_unhold() which calls execute_rpc(method="ai_unhold", ...).</p>
+<p><a name="FunctionResult.RpcDial"></a></p>
+<h3 id="func-functionresult-rpcdial">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L894">RpcDial</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">RpcDial</span><span class="p">(</span><span class="nx">toNumber</span><span class="p">,</span><span class="w"> </span><span class="nx">fromNumber</span><span class="p">,</span><span class="w"> </span><span class="nx">destSwml</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">deviceType</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>RpcDial dials out to a number with a destination SWML URL using execute_rpc. deviceType defaults to "phone" when empty. This matches the Python SDK's rpc_dial() which calls execute_rpc(method="dial", ...).</p>
+<p><a name="FunctionResult.Say"></a></p>
+<h3 id="func-functionresult-say">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L287">Say</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">Say</span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>Say makes the agent speak specific text.</p>
+<p><a name="FunctionResult.SendSms"></a></p>
+<h3 id="func-functionresult-sendsms">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L658">SendSms</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SendSms</span><span class="p">(</span><span class="nx">toNumber</span><span class="p">,</span><span class="w"> </span><span class="nx">fromNumber</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">media</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">tags</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">region</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SendSms sends a text message to a PSTN phone number. Pass empty string for body if only sending media, nil for optional slices, and empty string for region to omit it.</p>
+<p><a name="FunctionResult.SetEndOfSpeechTimeout"></a></p>
+<h3 id="func-functionresult-setendofspeechtimeout">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L412">SetEndOfSpeechTimeout</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SetEndOfSpeechTimeout</span><span class="p">(</span><span class="nx">ms</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SetEndOfSpeechTimeout adjusts the end-of-speech timeout in milliseconds.</p>
+<p><a name="FunctionResult.SetMetadata"></a></p>
+<h3 id="func-functionresult-setmetadata">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L195">SetMetadata</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SetMetadata</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SetMetadata sets metadata scoped to the current function's meta_data_token.</p>
+<p><a name="FunctionResult.SetPostProcess"></a></p>
+<h3 id="func-functionresult-setpostprocess">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L57">SetPostProcess</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPostProcess</span><span class="p">(</span><span class="nx">postProcess</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SetPostProcess controls whether the AI takes another turn before executing actions.</p>
+<p><a name="FunctionResult.SetResponse"></a></p>
+<h3 id="func-functionresult-setresponse">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L51">SetResponse</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SetResponse</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SetResponse sets the natural language response text.</p>
+<p><a name="FunctionResult.SetSpeechEventTimeout"></a></p>
+<h3 id="func-functionresult-setspeecheventtimeout">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L417">SetSpeechEventTimeout</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SetSpeechEventTimeout</span><span class="p">(</span><span class="nx">ms</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SetSpeechEventTimeout adjusts the speech event timeout in milliseconds.</p>
+<p><a name="FunctionResult.SimulateUserInput"></a></p>
+<h3 id="func-functionresult-simulateuserinput">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L933">SimulateUserInput</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SimulateUserInput</span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SimulateUserInput queues simulated user input text. Emits action key "user_input" matching the Python SDK's add_action("user_input", text).</p>
+<p><a name="FunctionResult.SipRefer"></a></p>
+<h3 id="func-functionresult-siprefer">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L593">SipRefer</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SipRefer</span><span class="p">(</span><span class="nx">toURI</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SipRefer sends a SIP REFER for call transfer in SIP environments.</p>
+<p><a name="FunctionResult.Stop"></a></p>
+<h3 id="func-functionresult-stop">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L171">Stop</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">Stop</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>Stop stops the agent execution.</p>
+<p><a name="FunctionResult.StopBackgroundFile"></a></p>
+<h3 id="func-functionresult-stopbackgroundfile">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L301">StopBackgroundFile</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">StopBackgroundFile</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>StopBackgroundFile stops the currently playing background file.</p>
+<p><a name="FunctionResult.StopRecordCall"></a></p>
+<h3 id="func-functionresult-stoprecordcall">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L381">StopRecordCall</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">StopRecordCall</span><span class="p">(</span><span class="nx">controlID</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>StopRecordCall stops an active background call recording.</p>
+<p><a name="FunctionResult.StopTap"></a></p>
+<h3 id="func-functionresult-stoptap">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L638">StopTap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">StopTap</span><span class="p">(</span><span class="nx">controlID</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>StopTap stops an active tap stream.</p>
+<p><a name="FunctionResult.String"></a></p>
+<h3 id="func-functionresult-string">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L973">String</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">String</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>String returns a human-readable representation including the response and action count.</p>
+<p><a name="FunctionResult.SwitchContext"></a></p>
+<h3 id="func-functionresult-switchcontext">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L244">SwitchContext</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SwitchContext</span><span class="p">(</span><span class="nx">systemPrompt</span><span class="p">,</span><span class="w"> </span><span class="nx">userPrompt</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">consolidate</span><span class="p">,</span><span class="w"> </span><span class="nx">fullReset</span><span class="p">,</span><span class="w"> </span><span class="nx">isolated</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SwitchContext changes the agent context/prompt during conversation. Only non-empty/true fields are included in the action.</p>
+<p><a name="FunctionResult.SwmlChangeContext"></a></p>
+<h3 id="func-functionresult-swmlchangecontext">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L238">SwmlChangeContext</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SwmlChangeContext</span><span class="p">(</span><span class="nx">contextName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SwmlChangeContext transitions to a different conversation context. Emits action key "change_context" with the context name as a plain string value, matching the Python SDK's add_action("change_context", context_name).</p>
+<p><a name="FunctionResult.SwmlChangeStep"></a></p>
+<h3 id="func-functionresult-swmlchangestep">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L231">SwmlChangeStep</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SwmlChangeStep</span><span class="p">(</span><span class="nx">stepName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SwmlChangeStep transitions to a different conversation step. Emits action key "change_step" with the step name as a plain string value, matching the Python SDK's add_action("change_step", step_name).</p>
+<p><a name="FunctionResult.SwmlTransfer"></a></p>
+<h3 id="func-functionresult-swmltransfer">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L119">SwmlTransfer</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SwmlTransfer</span><span class="p">(</span><span class="nx">dest</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">aiResponse</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">final</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SwmlTransfer adds a SWML transfer action with an AI response for when control returns.</p>
+<p><a name="FunctionResult.SwmlUserEvent"></a></p>
+<h3 id="func-functionresult-swmluserevent">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L212">SwmlUserEvent</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">SwmlUserEvent</span><span class="p">(</span><span class="nx">eventData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>SwmlUserEvent sends a user event through SWML for real-time UI updates.</p>
+<p><a name="FunctionResult.Tap"></a></p>
+<h3 id="func-functionresult-tap">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L608">Tap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">Tap</span><span class="p">(</span><span class="nx">uri</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">controlID</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">direction</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">codec</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">rtpPtime</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">statusURL</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>Tap starts background call tapping, streaming media to the given URI. rtpPtime sets the packetization time in milliseconds for RTP streams (0 = use default of 20ms). Pass empty string for statusURL to omit it.</p>
+<p><a name="FunctionResult.ToMap"></a></p>
+<h3 id="func-functionresult-tomap">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L77">ToMap</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">ToMap</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>ToMap serializes the FunctionResult to a map suitable for JSON encoding. The "action" key is only included if there are actions. The "post_process" key is only included if true.</p>
+<p><a name="FunctionResult.ToggleFunctions"></a></p>
+<h3 id="func-functionresult-togglefunctions">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L423">ToggleFunctions</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">ToggleFunctions</span><span class="p">(</span><span class="nx">toggles</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>ToggleFunctions enables or disables specific SWAIG functions. Each toggle should have "function" and "active" keys.</p>
+<p><a name="FunctionResult.UpdateGlobalData"></a></p>
+<h3 id="func-functionresult-updateglobaldata">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L178">UpdateGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">UpdateGlobalData</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>UpdateGlobalData sets or updates global agent data variables.</p>
+<p><a name="FunctionResult.UpdateSettings"></a></p>
+<h3 id="func-functionresult-updatesettings">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L438">UpdateSettings</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">UpdateSettings</span><span class="p">(</span><span class="nx">settings</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>UpdateSettings updates agent runtime settings such as temperature, top_p, etc.</p>
+<p><a name="FunctionResult.WaitForUser"></a></p>
+<h3 id="func-functionresult-waitforuser">func (*FunctionResult) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L157">WaitForUser</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">fr</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span><span class="p">)</span><span class="w"> </span><span class="nx">WaitForUser</span><span class="p">(</span><span class="nx">enabled</span><span class="w"> </span><span class="o">*</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">timeout</span><span class="w"> </span><span class="o">*</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">answerFirst</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>WaitForUser controls how the agent waits for user input. Pass nil for enabled/timeout to omit those fields. If answerFirst is true, the value is set to "answer_first" regardless of other parameters.</p>
+<p><a name="JoinConferenceOptions"></a></p>
+<h2 id="type-joinconferenceoptions">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L471-L506">JoinConferenceOptions</a></h2>
+<p>JoinConferenceOptions holds optional parameters for JoinConference beyond the required name.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">JoinConferenceOptions</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Muted joins the conference muted when true.</span>
+<span class="w">    </span><span class="nx">Muted</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// Beep controls beep behavior: &quot;true&quot; (default), &quot;false&quot;, &quot;onEnter&quot;, &quot;onExit&quot;.</span>
+<span class="w">    </span><span class="nx">Beep</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// StartOnEnter controls whether the conference starts when this participant enters (default true in Python).</span>
+<span class="w">    </span><span class="nx">StartOnEnter</span><span class="w"> </span><span class="o">*</span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// EndOnExit controls whether the conference ends when this participant exits (default false).</span>
+<span class="w">    </span><span class="nx">EndOnExit</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// WaitURL is the SWML URL for hold music (replaces the old holdAudio parameter).</span>
+<span class="w">    </span><span class="nx">WaitURL</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// MaxParticipants sets the maximum number of participants (&lt;= 250). 0 uses server default.</span>
+<span class="w">    </span><span class="nx">MaxParticipants</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="c1">// Record sets the recording mode: &quot;do-not-record&quot; (default) or &quot;record-from-start&quot;.</span>
+<span class="w">    </span><span class="nx">Record</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Region sets the conference region.</span>
+<span class="w">    </span><span class="nx">Region</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Trim controls silence trimming: &quot;trim-silence&quot; (default) or &quot;do-not-trim&quot;.</span>
+<span class="w">    </span><span class="nx">Trim</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Coach sets the SWML Call ID or CXML CallSid for coaching.</span>
+<span class="w">    </span><span class="nx">Coach</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// StatusCallbackEvent specifies events to report (space-separated).</span>
+<span class="w">    </span><span class="nx">StatusCallbackEvent</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// StatusCallback is the URL for status callbacks.</span>
+<span class="w">    </span><span class="nx">StatusCallback</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// StatusCallbackMethod sets the HTTP method for status callbacks (&quot;GET&quot; or &quot;POST&quot;).</span>
+<span class="w">    </span><span class="nx">StatusCallbackMethod</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// RecordingStatusCallback is the URL for recording status callbacks.</span>
+<span class="w">    </span><span class="nx">RecordingStatusCallback</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// RecordingStatusCallbackMethod sets the HTTP method for recording callbacks (&quot;GET&quot; or &quot;POST&quot;).</span>
+<span class="w">    </span><span class="nx">RecordingStatusCallbackMethod</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// RecordingStatusCallbackEvent sets recording events to report.</span>
+<span class="w">    </span><span class="nx">RecordingStatusCallbackEvent</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Result sets switch-on-return-value behavior (object or array).</span>
+<span class="w">    </span><span class="nx">Result</span><span class="w"> </span><span class="kt">any</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="PayOptions"></a></p>
+<h2 id="type-payoptions">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L688-L730">PayOptions</a></h2>
+<p>PayOptions holds all optional parameters for the Pay method.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">PayOptions</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// InputMethod is the method to collect payment details (&quot;dtmf&quot; or &quot;voice&quot;). Defaults to &quot;dtmf&quot;.</span>
+<span class="w">    </span><span class="nx">InputMethod</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// StatusURL is the URL for payment status change notifications.</span>
+<span class="w">    </span><span class="nx">StatusURL</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// PaymentMethod is the payment method type. Defaults to &quot;credit-card&quot;.</span>
+<span class="w">    </span><span class="nx">PaymentMethod</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Timeout is the seconds to wait for the next digit. Defaults to 5.</span>
+<span class="w">    </span><span class="nx">Timeout</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="c1">// MaxAttempts is the number of retry attempts. Defaults to 1.</span>
+<span class="w">    </span><span class="nx">MaxAttempts</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="c1">// SecurityCode controls whether to prompt for security code. Defaults to true.</span>
+<span class="w">    </span><span class="c1">// Use SecurityCodeSet to override; zero value (false) is treated as &quot;not set&quot;.</span>
+<span class="w">    </span><span class="nx">SecurityCode</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// SecurityCodeSet must be true to explicitly set SecurityCode=false.</span>
+<span class="w">    </span><span class="nx">SecurityCodeSet</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// PostalCode controls whether to prompt for postal code, or supplies the actual code.</span>
+<span class="w">    </span><span class="c1">// String value is used as-is; bool true/false becomes &quot;true&quot;/&quot;false&quot;.</span>
+<span class="w">    </span><span class="nx">PostalCode</span><span class="w"> </span><span class="kt">any</span>
+<span class="w">    </span><span class="c1">// MinPostalCodeLength sets the minimum number of postal code digits. Defaults to 0.</span>
+<span class="w">    </span><span class="nx">MinPostalCodeLength</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="c1">// TokenType is the payment token type: &quot;one-time&quot; or &quot;reusable&quot;. Defaults to &quot;reusable&quot;.</span>
+<span class="w">    </span><span class="nx">TokenType</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// ChargeAmount is the amount to charge as a decimal string (e.g. &quot;9.99&quot;).</span>
+<span class="w">    </span><span class="nx">ChargeAmount</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Currency is the currency code. Defaults to &quot;usd&quot;.</span>
+<span class="w">    </span><span class="nx">Currency</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Language is the language for prompts. Defaults to &quot;en-US&quot;.</span>
+<span class="w">    </span><span class="nx">Language</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Voice is the TTS voice to use. Defaults to &quot;woman&quot;.</span>
+<span class="w">    </span><span class="nx">Voice</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Description is a custom payment description.</span>
+<span class="w">    </span><span class="nx">Description</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// ValidCardTypes is a space-separated list of card types. Defaults to &quot;visa mastercard amex&quot;.</span>
+<span class="w">    </span><span class="nx">ValidCardTypes</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Parameters is an array of name/value pairs for the payment connector.</span>
+<span class="w">    </span><span class="nx">Parameters</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Prompts is an array of custom prompt configurations.</span>
+<span class="w">    </span><span class="nx">Prompts</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+<span class="w">    </span><span class="c1">// AIResponse is the message set via &quot;set&quot; verb before pay; empty string uses Python default.</span>
+<span class="w">    </span><span class="c1">// Set to &quot;-&quot; to suppress the set verb entirely (no ai_response).</span>
+<span class="w">    </span><span class="nx">AIResponse</span><span class="w"> </span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="RecordCallOptions"></a></p>
+<h2 id="type-recordcalloptions">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/function_result.go#L306-L330">RecordCallOptions</a></h2>
+<p>RecordCallOptions holds optional parameters for RecordCall beyond the required fields.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">RecordCallOptions</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Terminators specifies digits that stop recording when pressed.</span>
+<span class="w">    </span><span class="nx">Terminators</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// Beep plays a beep before recording starts when true.</span>
+<span class="w">    </span><span class="nx">Beep</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// InputSensitivity sets the input sensitivity for recording (default 44.0 in Python).</span>
+<span class="w">    </span><span class="c1">// Zero value is omitted from the SWML payload.</span>
+<span class="w">    </span><span class="nx">InputSensitivity</span><span class="w"> </span><span class="kt">float64</span>
+<span class="w">    </span><span class="c1">// InitialTimeout is the time in seconds to wait for speech to start (voicemail-style).</span>
+<span class="w">    </span><span class="c1">// Negative value is omitted.</span>
+<span class="w">    </span><span class="nx">InitialTimeout</span><span class="w"> </span><span class="kt">float64</span>
+<span class="w">    </span><span class="c1">// InitialTimeoutSet must be true for InitialTimeout of 0.0 to be included.</span>
+<span class="w">    </span><span class="nx">InitialTimeoutSet</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// EndSilenceTimeout is seconds of silence before ending (voicemail-style).</span>
+<span class="w">    </span><span class="c1">// Negative value is omitted.</span>
+<span class="w">    </span><span class="nx">EndSilenceTimeout</span><span class="w"> </span><span class="kt">float64</span>
+<span class="w">    </span><span class="c1">// EndSilenceTimeoutSet must be true for EndSilenceTimeout of 0.0 to be included.</span>
+<span class="w">    </span><span class="nx">EndSilenceTimeoutSet</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// MaxLength is the maximum recording length in seconds. Negative value is omitted.</span>
+<span class="w">    </span><span class="nx">MaxLength</span><span class="w"> </span><span class="kt">float64</span>
+<span class="w">    </span><span class="c1">// MaxLengthSet must be true for MaxLength of 0.0 to be included.</span>
+<span class="w">    </span><span class="nx">MaxLengthSet</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="c1">// StatusURL is the URL to send recording status events to.</span>
+<span class="w">    </span><span class="nx">StatusURL</span><span class="w"> </span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="ToolHandler"></a></p>
+<h2 id="type-toolhandler">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/swaig/handler.go#L6">ToolHandler</a></h2>
+<p>ToolHandler is the function signature for SWAIG tool handlers. args contains the parsed function arguments, rawData contains the full request payload including global_data, call_id, etc.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ToolHandler</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">args</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">rawData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

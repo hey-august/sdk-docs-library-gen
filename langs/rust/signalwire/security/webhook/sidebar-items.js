@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ParamsOrBody","WebhookError"],"fn":["validate_request","validate_webhook_signature"]};

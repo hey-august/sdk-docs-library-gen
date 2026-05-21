@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace SignalWire.REST.Namespaces | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace SignalWire.REST.Namespaces | SignalWire .NET SDK ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.REST.Namespaces">
+
+  <h1 id="SignalWire_REST_Namespaces" data-uid="SignalWire.REST.Namespaces" class="text-break">Namespace SignalWire.REST.Namespaces</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.Addresses.html">Addresses</a></dt>
+      <dd><p>Addresses namespace (Relay top-level addresses, no update).</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.addresses.AddressesResource</code>.
+Inherits CrudResource for the standard list/create/get/delete surface.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CallFlowsHelper.html">CallFlowsHelper</a></dt>
+      <dd><p>CallFlows helper providing the singular-path variants
+(<code>/api/fabric/resources/call_flow/{id}/{addresses,versions}</code>).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.Calling.html">Calling</a></dt>
+      <dd><p>Calling API namespace.</p>
+<p>Provides 37 call-control command methods that each POST to
+/api/calling/calls with a JSON body containing the command name,
+an optional call ID, and parameters.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.Compat.html">Compat</a></dt>
+      <dd><p>Twilio-compatible (LaML) API namespace with AccountSid scoping.</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.compat.CompatNamespace</code>:
+the entry-point exposes 12 sub-resources (accounts, calls, messages,
+faxes, conferences, phone_numbers, applications, laml_bins, queues,
+recordings, transcriptions, tokens) under a shared per-account prefix.</p>
+<p>Inherits from <a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a> so the historical
+``client.Compat.List()`` / ``Create`` / ``Get`` / ``Update`` / ``Delete``
+surface continues to work; the per-account collection accessors are
+added on top.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatAccounts.html">CompatAccounts</a></dt>
+      <dd><p>Compat account/subproject management. Lives at the top-level
+/api/laml/2010-04-01/Accounts collection (no AccountSid prefix).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatApplications.html">CompatApplications</a></dt>
+      <dd><p>Compat applications (Twilio LaML voice/SMS apps).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatCalls.html">CompatCalls</a></dt>
+      <dd><p>Compat calls with recording + stream sub-resources.
+Inherits standard CRUD; adds Twilio-style compat extensions.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatConferences.html">CompatConferences</a></dt>
+      <dd><p>Compat conferences with participant, recording, and stream sub-resources.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatFaxes.html">CompatFaxes</a></dt>
+      <dd><p>Compat faxes with media sub-resources.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatLamlBins.html">CompatLamlBins</a></dt>
+      <dd><p>Compat cXML / LaML script bins.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatMessages.html">CompatMessages</a></dt>
+      <dd><p>Compat messages with media sub-resources.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatPhoneNumbers.html">CompatPhoneNumbers</a></dt>
+      <dd><p>Compat phone-number management with purchase, import, and search.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatQueues.html">CompatQueues</a></dt>
+      <dd><p>Compat queues with member management.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatRecordings.html">CompatRecordings</a></dt>
+      <dd><p>Compat recordings (read-only top-level resource).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatTokens.html">CompatTokens</a></dt>
+      <dd><p>Compat API tokens — UPDATE uses PATCH (BaseResource style).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CompatTranscriptions.html">CompatTranscriptions</a></dt>
+      <dd><p>Compat transcriptions (read-only top-level resource).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.ConferenceLogs.html">ConferenceLogs</a></dt>
+      <dd><p>Conference log queries (list-only).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.ConferenceRoomsHelper.html">ConferenceRoomsHelper</a></dt>
+      <dd><p>ConferenceRooms helper providing the singular-path variant
+(<code>/api/fabric/resources/conference_room/{id}/addresses</code>).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.CxmlApplicationsHelper.html">CxmlApplicationsHelper</a></dt>
+      <dd><p>cXML applications helper. The API has no CREATE endpoint for cXML
+applications (POST is rejected); calling Create here throws
+NotImplementedException to mirror Python's deliberate behaviour.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.DatasphereDocuments.html">DatasphereDocuments</a></dt>
+      <dd><p>Datasphere documents (CRUD + search + chunk methods).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.DatasphereNs.html">DatasphereNs</a></dt>
+      <dd><p>Datasphere namespace — documents with chunks/search.</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.datasphere.DatasphereNamespace</code>.
+Extends CrudResource — the legacy <code>client.Datasphere.List</code> etc went
+to /api/datasphere/documents directly; we preserve that surface and
+add <code>Documents</code> accessor for chunk/search per Python parity.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.Fabric.html">Fabric</a></dt>
+      <dd><p>Fabric API namespace.</p>
+<p>Groups all Fabric sub-resources (subscribers, SIP endpoints, call flows,
+SWML scripts, conference rooms, AI agents, etc.) under a single object.
+Each sub-resource is lazily initialised as a <a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a>
+pointing at the correct API path under /api/fabric/resources.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.FabricAddresses.html">FabricAddresses</a></dt>
+      <dd><p>Read-only top-level Fabric addresses resource (lives at
+/api/fabric/addresses, NOT under /api/fabric/resources).</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.fabric.FabricAddresses</code>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.FabricResources.html">FabricResources</a></dt>
+      <dd><p>Generic resource operations across all Fabric resource types.</p>
+<p>Lives at /api/fabric/resources (the base) and dispatches to per-type
+sub-paths. Mirrors Python's
+<code>signalwire.rest.namespaces.fabric.GenericResources</code>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.FabricTokens.html">FabricTokens</a></dt>
+      <dd><p>Fabric tokens — subscriber/guest/invite/embed token creation.</p>
+<p>All endpoints sit under /api/fabric (NOT /api/fabric/resources or
+/api/fabric/tokens). Mirrors Python's
+<code>signalwire.rest.namespaces.fabric.FabricTokens</code>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.FaxLogs.html">FaxLogs</a></dt>
+      <dd><p>Fax log queries.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.ImportedNumbers.html">ImportedNumbers</a></dt>
+      <dd><p>Imported phone numbers (create only).</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.imported_numbers.ImportedNumbersResource</code>.
+Extends CrudResource so the legacy <code>client.ImportedNumbers.BasePath</code>
+surface keeps working; <code>CreateAsync</code> is the only method Python
+exposes.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.Logs.html">Logs</a></dt>
+      <dd><p>Logs API namespace — message, voice, fax, and conference logs (read-only).</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.logs.LogsNamespace</code>.
+Each kind of log lives at a different sub-API path.</p>
+<p>Inherits from <a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a> so the legacy
+``client.Logs.BasePath`` accessor still resolves; the new
+Messages/Voice/Fax/Conferences accessors point at the actual per-API
+log endpoints.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.MessageLogs.html">MessageLogs</a></dt>
+      <dd><p>Message log queries.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.Mfa.html">Mfa</a></dt>
+      <dd><p>Multi-Factor Authentication namespace (sms / call / verify dispatch).</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.mfa.MfaResource</code>.
+Extends CrudResource so the legacy <code>client.Mfa.BasePath</code> /
+<code>client.Mfa.Create</code> surface keeps working.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.NumberGroups.html">NumberGroups</a></dt>
+      <dd><p>Number Groups (CRUD + membership operations; update via PUT).</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.number_groups.NumberGroupsResource</code>.
+Note delete_membership / get_membership target the top-level
+<code>/api/relay/rest/number_group_memberships/{id}</code> path, NOT the
+nested per-group sub-collection.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.Project.html">Project</a></dt>
+      <dd><p>Project namespace — exposes ProjectTokens (PATCH update).</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.project.ProjectNamespace</code>.
+Extends CrudResource for the legacy <code>client.Project.BasePath</code> test.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.ProjectTokens.html">ProjectTokens</a></dt>
+      <dd><p>Project API tokens — PATCH for update.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.Queues.html">Queues</a></dt>
+      <dd><p>Queues namespace (Relay queues with member operations).</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.queues.QueuesResource</code>.
+Note: per-port adapter mismatches with the legacy CrudResource at
+/api/fabric/resources/queues — this lives at /api/relay/rest/queues.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.Recordings.html">Recordings</a></dt>
+      <dd><p>Recordings namespace (Relay top-level recordings, list/get/delete).</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.recordings.RecordingsResource</code>.
+Inherits CrudResource for the standard list/get/delete surface.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.Registry.html">Registry</a></dt>
+      <dd><p>10DLC Campaign Registry namespace — brands, campaigns, orders, numbers.</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.registry.RegistryNamespace</code>
+(everything under /api/relay/rest/registry/beta).</p>
+<p>Inherits from <a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a> so the legacy
+``client.Registry.BasePath`` accessor still resolves; the new
+Brands/Campaigns/Orders/Numbers accessors target the per-resource
+endpoints under /api/relay/rest/registry/beta.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.RegistryBrands.html">RegistryBrands</a></dt>
+      <dd><p>10DLC brand management.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.RegistryCampaigns.html">RegistryCampaigns</a></dt>
+      <dd><p>10DLC campaign management — update via PUT.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.RegistryNumbers.html">RegistryNumbers</a></dt>
+      <dd><p>10DLC number assignment management.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.RegistryOrders.html">RegistryOrders</a></dt>
+      <dd><p>10DLC assignment order management (read-only).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.ShortCodes.html">ShortCodes</a></dt>
+      <dd><p>Short codes (list/get/update — no create/delete; update via PUT).</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.short_codes.ShortCodesResource</code>.
+Extends CrudResource — overrides UpdateAsync to use PUT (matching
+Python's _update_method = &quot;PUT&quot; on this resource).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.SipProfile.html">SipProfile</a></dt>
+      <dd><p>Project SIP profile (singleton resource — get/update only, update via PUT).</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.sip_profile.SipProfileResource</code>.
+Extends CrudResource for the legacy <code>client.SipProfile.BasePath</code> test
+— the Python-parity singleton path is /api/relay/rest/sip_profile;
+the legacy .NET path was /api/relay/rest/sip_profiles. The legacy
+accessor target is preserved while <code>GetAsync()/UpdateAsync(kwargs)</code>
+hit the singleton path.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.SubscribersHelper.html">SubscribersHelper</a></dt>
+      <dd><p>Subscribers helper exposing per-subscriber SIP-endpoint operations.</p>
+<p>Mirrors Python's <code>SubscribersResource</code> SIP endpoint methods.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.Video.html">Video</a></dt>
+      <dd><p>Video API namespace.</p>
+<p>Mirrors Python <code>signalwire.rest.namespaces.video.VideoNamespace</code> —
+rooms, room sessions, room recordings, conferences, conference tokens,
+streams.</p>
+<p>The legacy ``client.Video.List() / Create / Get / Delete`` surface
+(which targeted ``/api/video/rooms``) is preserved by inheriting from
+<a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.VideoConferenceTokens.html">VideoConferenceTokens</a></dt>
+      <dd><p>Video conference tokens: get + reset.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.VideoConferences.html">VideoConferences</a></dt>
+      <dd><p>Video conferences (CRUD with PUT update + tokens/streams subresources).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.VideoRoomRecordings.html">VideoRoomRecordings</a></dt>
+      <dd><p>Video room recordings: list, get, delete, list_events.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.VideoRoomSessions.html">VideoRoomSessions</a></dt>
+      <dd><p>Video room sessions: list, get, list_events/_members/_recordings.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.VideoRoomTokens.html">VideoRoomTokens</a></dt>
+      <dd><p>Video room tokens (create-only).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.VideoRooms.html">VideoRooms</a></dt>
+      <dd><p>Video rooms (CRUD + streams sub-resource).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.VideoStreams.html">VideoStreams</a></dt>
+      <dd><p>Video streams: get, update (PUT), delete.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.REST.Namespaces.VoiceLogs.html">VoiceLogs</a></dt>
+      <dd><p>Voice log queries with events sub-collection.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

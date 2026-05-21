@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>rest — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest" class="active">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="rest">rest</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/rest&quot;</span>
+</code></pre></div>
+
+<p>Package rest provides a REST client for the SignalWire platform APIs.</p>
+<p>It includes an HTTP transport layer, generic CRUD resource abstractions, paginated iteration, and namespaced sub-clients for each API domain.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#CrudResource">type CrudResource</a></li>
+<li><a href="#NewCrudResource">func NewCrudResource(client <em>HttpClient, path string) </em>CrudResource</a></li>
+<li><a href="#NewCrudResourcePUT">func NewCrudResourcePUT(client <em>HttpClient, path string) </em>CrudResource</a></li>
+<li><a href="#CrudResource.Create">func (r *CrudResource) Create(data map[string]any) (map[string]any, error)</a></li>
+<li><a href="#CrudResource.Delete">func (r *CrudResource) Delete(id string) (map[string]any, error)</a></li>
+<li><a href="#CrudResource.Get">func (r *CrudResource) Get(id string) (map[string]any, error)</a></li>
+<li><a href="#CrudResource.List">func (r *CrudResource) List(params map[string]string) (map[string]any, error)</a></li>
+<li><a href="#CrudResource.Update">func (r *CrudResource) Update(id string, data map[string]any) (map[string]any, error)</a></li>
+<li><a href="#HttpClient">type HttpClient</a></li>
+<li><a href="#NewHttpClient">func NewHttpClient(projectID, token, space string) *HttpClient</a></li>
+<li><a href="#HttpClient.BaseURL">func (c *HttpClient) BaseURL() string</a></li>
+<li><a href="#HttpClient.Delete">func (c *HttpClient) Delete(path string) (map[string]any, error)</a></li>
+<li><a href="#HttpClient.Get">func (c *HttpClient) Get(path string, params map[string]string) (map[string]any, error)</a></li>
+<li><a href="#HttpClient.Patch">func (c *HttpClient) Patch(path string, body map[string]any) (map[string]any, error)</a></li>
+<li><a href="#HttpClient.Post">func (c *HttpClient) Post(path string, body map[string]any, params map[string]string) (map[string]any, error)</a></li>
+<li><a href="#HttpClient.Put">func (c *HttpClient) Put(path string, body map[string]any) (map[string]any, error)</a></li>
+<li><a href="#HttpClient.SetBaseURL">func (c *HttpClient) SetBaseURL(url string)</a></li>
+<li><a href="#PaginatedIterator">type PaginatedIterator</a></li>
+<li><a href="#NewPaginatedIterator">func NewPaginatedIterator(client <em>HttpClient, path string, params map[string]string, dataKey string) </em>PaginatedIterator</a></li>
+<li><a href="#PaginatedIterator.ForEach">func (p *PaginatedIterator) ForEach(fn func(map[string]any) error) error</a></li>
+<li><a href="#PaginatedIterator.Next">func (p *PaginatedIterator) Next() ([]map[string]any, bool, error)</a></li>
+<li><a href="#RestClient">type RestClient</a></li>
+<li><a href="#NewRestClient">func NewRestClient(project, token, space string) (*RestClient, error)</a></li>
+<li><a href="#RestClient.HttpClient">func (c <em>RestClient) HttpClient() </em>HttpClient</a></li>
+<li><a href="#RestClient.SetBaseURL">func (c *RestClient) SetBaseURL(url string)</a></li>
+<li><a href="#SignalWireRestError">type SignalWireRestError</a></li>
+<li><a href="#NewSignalWireRestError">func NewSignalWireRestError(statusCode int, body, url, method string) *SignalWireRestError</a></li>
+<li><a href="#SignalWireRestError.Error">func (e *SignalWireRestError) Error() string</a></li>
+</ul>
+<p><a name="CrudResource"></a></p>
+<h2 id="type-crudresource">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L205-L209">CrudResource</a></h2>
+<p>CrudResource provides standard List, Create, Get, Update, Delete operations against a REST collection endpoint. Update defaults to PATCH; set UpdateMethod to "PUT" to override.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">CrudResource</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Client</span><span class="w">       </span><span class="o">*</span><span class="nx">HttpClient</span>
+<span class="w">    </span><span class="nx">Path</span><span class="w">         </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">UpdateMethod</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="c1">// &quot;PATCH&quot; (default) or &quot;PUT&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewCrudResource"></a></p>
+<h3 id="func-newcrudresource">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L213">NewCrudResource</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewCrudResource</span><span class="p">(</span><span class="nx">client</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">CrudResource</span>
+</code></pre></div>
+
+<p>NewCrudResource creates a CrudResource for the given path. The default update method is PATCH.</p>
+<p><a name="NewCrudResourcePUT"></a></p>
+<h3 id="func-newcrudresourceput">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L222">NewCrudResourcePUT</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewCrudResourcePUT</span><span class="p">(</span><span class="nx">client</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">CrudResource</span>
+</code></pre></div>
+
+<p>NewCrudResourcePUT creates a CrudResource that uses PUT for updates.</p>
+<p><a name="CrudResource.Create"></a></p>
+<h3 id="func-crudresource-create">func (*CrudResource) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L242">Create</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">CrudResource</span><span class="p">)</span><span class="w"> </span><span class="nx">Create</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Create sends a POST request to create a new resource.</p>
+<p><a name="CrudResource.Delete"></a></p>
+<h3 id="func-crudresource-delete">func (*CrudResource) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L263">Delete</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">CrudResource</span><span class="p">)</span><span class="w"> </span><span class="nx">Delete</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Delete removes a resource by ID. It returns the parsed response body (or an empty map for 204 No Content) and any error.</p>
+<p><a name="CrudResource.Get"></a></p>
+<h3 id="func-crudresource-get">func (*CrudResource) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L247">Get</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">CrudResource</span><span class="p">)</span><span class="w"> </span><span class="nx">Get</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Get retrieves a single resource by ID.</p>
+<p><a name="CrudResource.List"></a></p>
+<h3 id="func-crudresource-list">func (*CrudResource) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L237">List</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">CrudResource</span><span class="p">)</span><span class="w"> </span><span class="nx">List</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>List retrieves all items from the collection. Optional query parameters can be provided. The raw JSON response map is returned.</p>
+<p><a name="CrudResource.Update"></a></p>
+<h3 id="func-crudresource-update">func (*CrudResource) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L253">Update</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">CrudResource</span><span class="p">)</span><span class="w"> </span><span class="nx">Update</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Update modifies an existing resource by ID using the configured update method (PATCH or PUT).</p>
+<p><a name="HttpClient"></a></p>
+<h2 id="type-httpclient">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L60-L66">HttpClient</a></h2>
+<p>HttpClient is a thin wrapper around net/http that provides Basic Auth, JSON encoding/decoding, and standard headers for SignalWire API calls.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">HttpClient</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewHttpClient"></a></p>
+<h3 id="func-newhttpclient">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L73">NewHttpClient</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewHttpClient</span><span class="p">(</span><span class="nx">projectID</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="p">,</span><span class="w"> </span><span class="nx">space</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span>
+</code></pre></div>
+
+<p>NewHttpClient creates a new HttpClient configured for the given SignalWire space. The baseURL is normally constructed as "https://<space>", but the SIGNALWIRE_REST_BASE_URL environment variable overrides it when set — pointing the client at a loopback fixture for the porting-sdk audit_rest_transport.py harness, or at any non-default endpoint.</p>
+<p><a name="HttpClient.BaseURL"></a></p>
+<h3 id="func-httpclient-baseurl">func (*HttpClient) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L90">BaseURL</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span><span class="p">)</span><span class="w"> </span><span class="nx">BaseURL</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>BaseURL returns the base URL used by this client.</p>
+<p><a name="HttpClient.Delete"></a></p>
+<h3 id="func-httpclient-delete">func (*HttpClient) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L126">Delete</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span><span class="p">)</span><span class="w"> </span><span class="nx">Delete</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Delete performs an HTTP DELETE request. It returns the parsed response body (or an empty map for 204 No Content) and any error.</p>
+<p><a name="HttpClient.Get"></a></p>
+<h3 id="func-httpclient-get">func (*HttpClient) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L104">Get</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span><span class="p">)</span><span class="w"> </span><span class="nx">Get</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Get performs an HTTP GET request. params are added as query-string parameters.</p>
+<p><a name="HttpClient.Patch"></a></p>
+<h3 id="func-httpclient-patch">func (*HttpClient) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L120">Patch</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span><span class="p">)</span><span class="w"> </span><span class="nx">Patch</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Patch performs an HTTP PATCH request with a JSON body.</p>
+<p><a name="HttpClient.Post"></a></p>
+<h3 id="func-httpclient-post">func (*HttpClient) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L110">Post</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span><span class="p">)</span><span class="w"> </span><span class="nx">Post</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Post performs an HTTP POST request with a JSON body. Optional params are appended to the URL as query-string parameters.</p>
+<p><a name="HttpClient.Put"></a></p>
+<h3 id="func-httpclient-put">func (*HttpClient) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L115">Put</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span><span class="p">)</span><span class="w"> </span><span class="nx">Put</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Put performs an HTTP PUT request with a JSON body.</p>
+<p><a name="HttpClient.SetBaseURL"></a></p>
+<h3 id="func-httpclient-setbaseurl">func (*HttpClient) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L98">SetBaseURL</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span><span class="p">)</span><span class="w"> </span><span class="nx">SetBaseURL</span><span class="p">(</span><span class="nx">url</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>SetBaseURL overrides the base URL used by this client. Useful for pointing the client at a non-default endpoint (audit fixtures, mock servers, etc.) without re-running the constructor with a synthetic space name.</p>
+<p><a name="PaginatedIterator"></a></p>
+<h2 id="type-paginatediterator">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L272-L278">PaginatedIterator</a></h2>
+<p>PaginatedIterator walks through paginated API responses one page at a time. Each call to Next returns the items from the current page, a boolean indicating whether more pages exist, and any error encountered.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">PaginatedIterator</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewPaginatedIterator"></a></p>
+<h3 id="func-newpaginatediterator">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L282">NewPaginatedIterator</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewPaginatedIterator</span><span class="p">(</span><span class="nx">client</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">dataKey</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">PaginatedIterator</span>
+</code></pre></div>
+
+<p>NewPaginatedIterator creates a new iterator for the given endpoint. dataKey is the JSON key that holds the array of items (typically "data").</p>
+<p><a name="PaginatedIterator.ForEach"></a></p>
+<h3 id="func-paginatediterator-foreach">func (*PaginatedIterator) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L353">ForEach</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">PaginatedIterator</span><span class="p">)</span><span class="w"> </span><span class="nx">ForEach</span><span class="p">(</span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>ForEach calls fn for every item across all pages. It fetches pages lazily via Next and invokes fn once per item in the order they are returned. Iteration stops early if fn returns a non-nil error (that error is returned to the caller) or when Next signals there are no more pages.</p>
+<p><a name="PaginatedIterator.Next"></a></p>
+<h3 id="func-paginatediterator-next">func (*PaginatedIterator) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L300">Next</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">PaginatedIterator</span><span class="p">)</span><span class="w"> </span><span class="nx">Next</span><span class="p">()</span><span class="w"> </span><span class="p">([]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Next fetches the next page of results. It returns the items from the page, a boolean hasMore that is true when additional pages remain, and any error. When there are no more pages, it returns nil, false, nil.</p>
+<p><a name="RestClient"></a></p>
+<h2 id="type-restclient">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/rest_client.go#L28-L72">RestClient</a></h2>
+<p>RestClient is the top-level REST client for the SignalWire platform. It provides namespaced access to all SignalWire API domains.</p>
+<p>Usage:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="err">:</span><span class="o">=</span><span class="w"> </span><span class="n">rest</span><span class="p">.</span><span class="n">NewRestClient</span><span class="p">(</span><span class="ss">&quot;project-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;api-token&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;your-space.signalwire.com&quot;</span><span class="p">)</span>
+<span class="o">//</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">environment</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="n">SIGNALWIRE_PROJECT_ID</span><span class="p">,</span><span class="w"> </span><span class="n">SIGNALWIRE_API_TOKEN</span><span class="p">,</span><span class="w"> </span><span class="n">SIGNALWIRE_SPACE</span>
+<span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="err">:</span><span class="o">=</span><span class="w"> </span><span class="n">rest</span><span class="p">.</span><span class="n">NewRestClient</span><span class="p">(</span><span class="ss">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">agents</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="err">:</span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">Fabric</span><span class="p">.</span><span class="n">AIAgents</span><span class="p">.</span><span class="n">List</span><span class="p">(</span><span class="n">nil</span><span class="p">)</span>
+<span class="n">client</span><span class="p">.</span><span class="n">Calling</span><span class="p">.</span><span class="n">Play</span><span class="p">(</span><span class="ss">&quot;call-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">map</span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="ow">any</span><span class="err">{</span><span class="ss">&quot;play&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">...</span><span class="o">]</span><span class="err">}</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">RestClient</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Fabric API</span>
+<span class="w">    </span><span class="nx">Fabric</span><span class="w"> </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">FabricNamespace</span>
+
+<span class="w">    </span><span class="c1">// Calling API (REST-based call control)</span>
+<span class="w">    </span><span class="nx">Calling</span><span class="w"> </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">CallingNamespace</span>
+
+<span class="w">    </span><span class="c1">// Relay REST resources</span>
+<span class="w">    </span><span class="nx">PhoneNumbers</span><span class="w">    </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">PhoneNumbersNamespace</span>
+<span class="w">    </span><span class="nx">Addresses</span><span class="w">       </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">AddressesNamespace</span>
+<span class="w">    </span><span class="nx">Queues</span><span class="w">          </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">QueuesNamespace</span>
+<span class="w">    </span><span class="nx">Recordings</span><span class="w">      </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">RecordingsNamespace</span>
+<span class="w">    </span><span class="nx">NumberGroups</span><span class="w">    </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">NumberGroupsNamespace</span>
+<span class="w">    </span><span class="nx">VerifiedCallers</span><span class="w"> </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">VerifiedCallersNamespace</span>
+<span class="w">    </span><span class="nx">SipProfile</span><span class="w">      </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">SipProfileNamespace</span>
+<span class="w">    </span><span class="nx">Lookup</span><span class="w">          </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">LookupNamespace</span>
+<span class="w">    </span><span class="nx">ShortCodes</span><span class="w">      </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">ShortCodesNamespace</span>
+<span class="w">    </span><span class="nx">ImportedNumbers</span><span class="w"> </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">ImportedNumbersNamespace</span>
+<span class="w">    </span><span class="nx">MFA</span><span class="w">             </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">MFANamespace</span>
+
+<span class="w">    </span><span class="c1">// 10DLC Campaign Registry</span>
+<span class="w">    </span><span class="nx">Registry</span><span class="w"> </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">RegistryNamespace</span>
+
+<span class="w">    </span><span class="c1">// Datasphere API</span>
+<span class="w">    </span><span class="nx">Datasphere</span><span class="w"> </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">DatasphereNamespace</span>
+
+<span class="w">    </span><span class="c1">// Video API</span>
+<span class="w">    </span><span class="nx">Video</span><span class="w"> </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">VideoNamespace</span>
+
+<span class="w">    </span><span class="c1">// Compatibility (Twilio-compatible) LAML API</span>
+<span class="w">    </span><span class="nx">Compat</span><span class="w"> </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">CompatNamespace</span>
+
+<span class="w">    </span><span class="c1">// Logs</span>
+<span class="w">    </span><span class="nx">Logs</span><span class="w"> </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">LogsNamespace</span>
+
+<span class="w">    </span><span class="c1">// Project management</span>
+<span class="w">    </span><span class="nx">Project</span><span class="w"> </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">ProjectNamespace</span>
+
+<span class="w">    </span><span class="c1">// PubSub &amp; Chat</span>
+<span class="w">    </span><span class="nx">PubSub</span><span class="w"> </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">PubSubNamespace</span>
+<span class="w">    </span><span class="nx">Chat</span><span class="w">   </span><span class="o">*</span><span class="nx">namespaces</span><span class="p">.</span><span class="nx">ChatNamespace</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewRestClient"></a></p>
+<h3 id="func-newrestclient">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/rest_client.go#L99">NewRestClient</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewRestClient</span><span class="p">(</span><span class="nx">project</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="p">,</span><span class="w"> </span><span class="nx">space</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">RestClient</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>NewRestClient creates a new RestClient. If project, token, or space are empty strings the corresponding environment variables are used:</p>
+<div class="codehilite"><pre><span></span><code>SIGNALWIRE_PROJECT_ID
+SIGNALWIRE_API_TOKEN
+SIGNALWIRE_SPACE
+</code></pre></div>
+
+<p>An error is returned when any of the three values is still empty after the environment lookup.</p>
+<p><a name="RestClient.HttpClient"></a></p>
+<h3 id="func-restclient-httpclient">func (*RestClient) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/rest_client.go#L86">HttpClient</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">RestClient</span><span class="p">)</span><span class="w"> </span><span class="nx">HttpClient</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">HttpClient</span>
+</code></pre></div>
+
+<p>HttpClient exposes the underlying HTTP transport. It is the public form of Python's “signalwire_client._http“ and is the entry point used by helpers like PaginatedIterator that need raw GET access without going through a namespace resource.</p>
+<p><a name="RestClient.SetBaseURL"></a></p>
+<h3 id="func-restclient-setbaseurl">func (*RestClient) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/rest_client.go#L78">SetBaseURL</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">RestClient</span><span class="p">)</span><span class="w"> </span><span class="nx">SetBaseURL</span><span class="p">(</span><span class="nx">url</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>SetBaseURL overrides the base URL used by the underlying HttpClient. Useful for pointing the client at a non-default endpoint such as the audit_rest_transport.py harness fixture, a recorded-cassette mock server, or a regional endpoint without re-running the constructor.</p>
+<p><a name="SignalWireRestError"></a></p>
+<h2 id="type-signalwireresterror">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L35-L40">SignalWireRestError</a></h2>
+<p>SignalWireRestError is returned when the SignalWire REST API responds with a non-2xx status code.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SignalWireRestError</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">StatusCode</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="nx">Body</span><span class="w">       </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">URL</span><span class="w">        </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Method</span><span class="w">     </span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewSignalWireRestError"></a></p>
+<h3 id="func-newsignalwireresterror">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L49">NewSignalWireRestError</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewSignalWireRestError</span><span class="p">(</span><span class="nx">statusCode</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">method</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">SignalWireRestError</span>
+</code></pre></div>
+
+<p>NewSignalWireRestError constructs a SignalWireRestError, substituting "GET" as the method when method is empty — matches Python's default.</p>
+<p><a name="SignalWireRestError.Error"></a></p>
+<h3 id="func-signalwireresterror-error">func (*SignalWireRestError) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/rest/client.go#L43">Error</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="o">*</span><span class="nx">SignalWireRestError</span><span class="p">)</span><span class="w"> </span><span class="nx">Error</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>Error implements the error interface.</p>
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

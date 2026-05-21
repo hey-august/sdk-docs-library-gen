@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Fabric | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Fabric | SignalWire .NET SDK ">
+      
+      <meta name="description" content="Fabric API namespace. Groups all Fabric sub-resources (subscribers, SIP endpoints, call flows, SWML scripts, conference rooms, AI agents, etc.) under a single object. Each sub-resource is lazily initialised as a  pointing at the correct API path under /api/fabric/resources.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.REST.Namespaces.Fabric">
+
+
+
+  <h1 id="SignalWire_REST_Namespaces_Fabric" data-uid="SignalWire.REST.Namespaces.Fabric" class="text-break">
+Class Fabric  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SignalWire.html">SignalWire</a>.<a class="xref" href="SignalWire.REST.html">REST</a>.<a class="xref" href="SignalWire.REST.Namespaces.html">Namespaces</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SignalWire.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Fabric API namespace.</p>
+<p>Groups all Fabric sub-resources (subscribers, SIP endpoints, call flows,
+SWML scripts, conference rooms, AI agents, etc.) under a single object.
+Each sub-resource is lazily initialised as a <a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a>
+pointing at the correct API path under /api/fabric/resources.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Fabric</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Fabric</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric__ctor_" data-uid="SignalWire.REST.Namespaces.Fabric.#ctor*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric__ctor_SignalWire_REST_HttpClient_" data-uid="SignalWire.REST.Namespaces.Fabric.#ctor(SignalWire.REST.HttpClient)">
+  Fabric(HttpClient)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Fabric(HttpClient client)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>client</code> <a class="xref" href="SignalWire.REST.HttpClient.html">HttpClient</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_Addresses_" data-uid="SignalWire.REST.Namespaces.Fabric.Addresses*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_Addresses" data-uid="SignalWire.REST.Namespaces.Fabric.Addresses">
+  Addresses
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource Addresses { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_AddressesTopLevel_" data-uid="SignalWire.REST.Namespaces.Fabric.AddressesTopLevel*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_AddressesTopLevel" data-uid="SignalWire.REST.Namespaces.Fabric.AddressesTopLevel">
+  AddressesTopLevel
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Top-level Fabric addresses (read-only — list/get) that lives
+at /api/fabric/addresses (NOT under /api/fabric/resources).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FabricAddresses AddressesTopLevel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.FabricAddresses.html">FabricAddresses</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_AiAgents_" data-uid="SignalWire.REST.Namespaces.Fabric.AiAgents*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_AiAgents" data-uid="SignalWire.REST.Namespaces.Fabric.AiAgents">
+  AiAgents
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource AiAgents { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_CallFlows_" data-uid="SignalWire.REST.Namespaces.Fabric.CallFlows*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_CallFlows" data-uid="SignalWire.REST.Namespaces.Fabric.CallFlows">
+  CallFlows
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource CallFlows { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_CallFlowsOps_" data-uid="SignalWire.REST.Namespaces.Fabric.CallFlowsOps*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_CallFlowsOps" data-uid="SignalWire.REST.Namespaces.Fabric.CallFlowsOps">
+  CallFlowsOps
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>CallFlows singular-path operations (list_addresses,
+list_versions, deploy_version).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CallFlowsHelper CallFlowsOps { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.CallFlowsHelper.html">CallFlowsHelper</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_CallQueues_" data-uid="SignalWire.REST.Namespaces.Fabric.CallQueues*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_CallQueues" data-uid="SignalWire.REST.Namespaces.Fabric.CallQueues">
+  CallQueues
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource CallQueues { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_Client_" data-uid="SignalWire.REST.Namespaces.Fabric.Client*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_Client" data-uid="SignalWire.REST.Namespaces.Fabric.Client">
+  Client
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HttpClient Client { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.HttpClient.html">HttpClient</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_ConferenceRooms_" data-uid="SignalWire.REST.Namespaces.Fabric.ConferenceRooms*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_ConferenceRooms" data-uid="SignalWire.REST.Namespaces.Fabric.ConferenceRooms">
+  ConferenceRooms
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource ConferenceRooms { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_ConferenceRoomsOps_" data-uid="SignalWire.REST.Namespaces.Fabric.ConferenceRoomsOps*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_ConferenceRoomsOps" data-uid="SignalWire.REST.Namespaces.Fabric.ConferenceRoomsOps">
+  ConferenceRoomsOps
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>ConferenceRooms singular-path operations (list_addresses).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConferenceRoomsHelper ConferenceRoomsOps { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.ConferenceRoomsHelper.html">ConferenceRoomsHelper</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_Conversations_" data-uid="SignalWire.REST.Namespaces.Fabric.Conversations*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_Conversations" data-uid="SignalWire.REST.Namespaces.Fabric.Conversations">
+  Conversations
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource Conversations { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_CxmlApplications_" data-uid="SignalWire.REST.Namespaces.Fabric.CxmlApplications*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_CxmlApplications" data-uid="SignalWire.REST.Namespaces.Fabric.CxmlApplications">
+  CxmlApplications
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource CxmlApplications { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_CxmlApplicationsOps_" data-uid="SignalWire.REST.Namespaces.Fabric.CxmlApplicationsOps*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_CxmlApplicationsOps" data-uid="SignalWire.REST.Namespaces.Fabric.CxmlApplicationsOps">
+  CxmlApplicationsOps
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>cXML applications helper that exposes the deliberate
+NotImplementedException on Create (matching Python's
+<code>CxmlApplicationsResource.create</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CxmlApplicationsHelper CxmlApplicationsOps { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.CxmlApplicationsHelper.html">CxmlApplicationsHelper</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_CxmlScripts_" data-uid="SignalWire.REST.Namespaces.Fabric.CxmlScripts*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_CxmlScripts" data-uid="SignalWire.REST.Namespaces.Fabric.CxmlScripts">
+  CxmlScripts
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource CxmlScripts { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_CxmlWebhooks_" data-uid="SignalWire.REST.Namespaces.Fabric.CxmlWebhooks*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_CxmlWebhooks" data-uid="SignalWire.REST.Namespaces.Fabric.CxmlWebhooks">
+  CxmlWebhooks
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource CxmlWebhooks { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_DialPlans_" data-uid="SignalWire.REST.Namespaces.Fabric.DialPlans*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_DialPlans" data-uid="SignalWire.REST.Namespaces.Fabric.DialPlans">
+  DialPlans
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource DialPlans { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_FreeclimbApps_" data-uid="SignalWire.REST.Namespaces.Fabric.FreeclimbApps*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_FreeclimbApps" data-uid="SignalWire.REST.Namespaces.Fabric.FreeclimbApps">
+  FreeclimbApps
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource FreeclimbApps { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_FreeswitchConnectors_" data-uid="SignalWire.REST.Namespaces.Fabric.FreeswitchConnectors*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_FreeswitchConnectors" data-uid="SignalWire.REST.Namespaces.Fabric.FreeswitchConnectors">
+  FreeswitchConnectors
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource FreeswitchConnectors { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_PhoneNumbers_" data-uid="SignalWire.REST.Namespaces.Fabric.PhoneNumbers*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_PhoneNumbers" data-uid="SignalWire.REST.Namespaces.Fabric.PhoneNumbers">
+  PhoneNumbers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource PhoneNumbers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_RelayApplications_" data-uid="SignalWire.REST.Namespaces.Fabric.RelayApplications*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_RelayApplications" data-uid="SignalWire.REST.Namespaces.Fabric.RelayApplications">
+  RelayApplications
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource RelayApplications { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_Resources_" data-uid="SignalWire.REST.Namespaces.Fabric.Resources*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_Resources" data-uid="SignalWire.REST.Namespaces.Fabric.Resources">
+  Resources
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource Resources { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_ResourcesGeneric_" data-uid="SignalWire.REST.Namespaces.Fabric.ResourcesGeneric*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_ResourcesGeneric" data-uid="SignalWire.REST.Namespaces.Fabric.ResourcesGeneric">
+  ResourcesGeneric
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generic resources operations (list/get/delete/list_addresses/
+assign_domain_application) at /api/fabric/resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FabricResources ResourcesGeneric { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.FabricResources.html">FabricResources</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_SipEndpoints_" data-uid="SignalWire.REST.Namespaces.Fabric.SipEndpoints*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_SipEndpoints" data-uid="SignalWire.REST.Namespaces.Fabric.SipEndpoints">
+  SipEndpoints
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource SipEndpoints { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_SipGateways_" data-uid="SignalWire.REST.Namespaces.Fabric.SipGateways*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_SipGateways" data-uid="SignalWire.REST.Namespaces.Fabric.SipGateways">
+  SipGateways
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource SipGateways { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_SipProfiles_" data-uid="SignalWire.REST.Namespaces.Fabric.SipProfiles*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_SipProfiles" data-uid="SignalWire.REST.Namespaces.Fabric.SipProfiles">
+  SipProfiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource SipProfiles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_Subscribers_" data-uid="SignalWire.REST.Namespaces.Fabric.Subscribers*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_Subscribers" data-uid="SignalWire.REST.Namespaces.Fabric.Subscribers">
+  Subscribers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource Subscribers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_SubscribersOps_" data-uid="SignalWire.REST.Namespaces.Fabric.SubscribersOps*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_SubscribersOps" data-uid="SignalWire.REST.Namespaces.Fabric.SubscribersOps">
+  SubscribersOps
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Subscriber-scoped SIP-endpoint operations
+(get/update/delete) under /api/fabric/resources/subscribers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SubscribersHelper SubscribersOps { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.SubscribersHelper.html">SubscribersHelper</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_SwmlScripts_" data-uid="SignalWire.REST.Namespaces.Fabric.SwmlScripts*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_SwmlScripts" data-uid="SignalWire.REST.Namespaces.Fabric.SwmlScripts">
+  SwmlScripts
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource SwmlScripts { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_SwmlWebhooks_" data-uid="SignalWire.REST.Namespaces.Fabric.SwmlWebhooks*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_SwmlWebhooks" data-uid="SignalWire.REST.Namespaces.Fabric.SwmlWebhooks">
+  SwmlWebhooks
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource SwmlWebhooks { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_Tokens_" data-uid="SignalWire.REST.Namespaces.Fabric.Tokens*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_Tokens" data-uid="SignalWire.REST.Namespaces.Fabric.Tokens">
+  Tokens
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fabric tokens resource — note this lives at the top-level
+<code>/api/fabric/tokens</code> path, NOT under <code>/api/fabric/resources</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource Tokens { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_Namespaces_Fabric_TokensApi_" data-uid="SignalWire.REST.Namespaces.Fabric.TokensApi*"></a>
+
+  <h3 id="SignalWire_REST_Namespaces_Fabric_TokensApi" data-uid="SignalWire.REST.Namespaces.Fabric.TokensApi">
+  TokensApi
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Subscriber/guest/invite/embed token endpoints under
+/api/fabric. Distinct from the per-account <code>Tokens</code> accessor which
+hits /api/fabric/tokens.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FabricTokens TokensApi { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.FabricTokens.html">FabricTokens</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

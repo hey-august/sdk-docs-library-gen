@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["value_to_map"],"struct":["SkillParams"],"trait":["SkillBase"]};

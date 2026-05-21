@@ -1,0 +1,27 @@
+var namespaceSignalWire_1_1Skills_1_1Builtin =
+[
+    [ "ApiNinjasTrivia", "classSignalWire_1_1Skills_1_1Builtin_1_1ApiNinjasTrivia.html", "classSignalWire_1_1Skills_1_1Builtin_1_1ApiNinjasTrivia" ],
+    [ "CustomSkills", "classSignalWire_1_1Skills_1_1Builtin_1_1CustomSkills.html", "classSignalWire_1_1Skills_1_1Builtin_1_1CustomSkills" ],
+    [ "Datasphere", "classSignalWire_1_1Skills_1_1Builtin_1_1Datasphere.html", "classSignalWire_1_1Skills_1_1Builtin_1_1Datasphere" ],
+    [ "DatasphereServerless", "classSignalWire_1_1Skills_1_1Builtin_1_1DatasphereServerless.html", "classSignalWire_1_1Skills_1_1Builtin_1_1DatasphereServerless" ],
+    [ "Datetime", "classSignalWire_1_1Skills_1_1Builtin_1_1Datetime.html", "classSignalWire_1_1Skills_1_1Builtin_1_1Datetime" ],
+    [ "GoogleMaps", "classSignalWire_1_1Skills_1_1Builtin_1_1GoogleMaps.html", "classSignalWire_1_1Skills_1_1Builtin_1_1GoogleMaps" ],
+    [ "InfoGatherer", "classSignalWire_1_1Skills_1_1Builtin_1_1InfoGatherer.html", "classSignalWire_1_1Skills_1_1Builtin_1_1InfoGatherer" ],
+    [ "Joke", "classSignalWire_1_1Skills_1_1Builtin_1_1Joke.html", "classSignalWire_1_1Skills_1_1Builtin_1_1Joke" ],
+    [ "Math", "classSignalWire_1_1Skills_1_1Builtin_1_1Math.html", "classSignalWire_1_1Skills_1_1Builtin_1_1Math" ],
+    [ "McpGateway", "classSignalWire_1_1Skills_1_1Builtin_1_1McpGateway.html", "classSignalWire_1_1Skills_1_1Builtin_1_1McpGateway" ],
+    [ "NativeVectorSearch", "classSignalWire_1_1Skills_1_1Builtin_1_1NativeVectorSearch.html", "classSignalWire_1_1Skills_1_1Builtin_1_1NativeVectorSearch" ],
+    [ "PlayBackgroundFile", "classSignalWire_1_1Skills_1_1Builtin_1_1PlayBackgroundFile.html", "classSignalWire_1_1Skills_1_1Builtin_1_1PlayBackgroundFile" ],
+    [ "Spider", "classSignalWire_1_1Skills_1_1Builtin_1_1Spider.html", "classSignalWire_1_1Skills_1_1Builtin_1_1Spider" ],
+    [ "SwmlTransfer", "classSignalWire_1_1Skills_1_1Builtin_1_1SwmlTransfer.html", "classSignalWire_1_1Skills_1_1Builtin_1_1SwmlTransfer" ],
+    [ "WeatherApi", "classSignalWire_1_1Skills_1_1Builtin_1_1WeatherApi.html", "classSignalWire_1_1Skills_1_1Builtin_1_1WeatherApi" ],
+    [ "WebSearch", "classSignalWire_1_1Skills_1_1Builtin_1_1WebSearch.html", "classSignalWire_1_1Skills_1_1Builtin_1_1WebSearch" ],
+    [ "WikipediaSearch", "classSignalWire_1_1Skills_1_1Builtin_1_1WikipediaSearch.html", "classSignalWire_1_1Skills_1_1Builtin_1_1WikipediaSearch" ],
+    [ "getDescription", "namespaceSignalWire_1_1Skills_1_1Builtin.html#a4d15fd77b6ef57404c22f7fe009b0480", null ],
+    [ "getHints", "namespaceSignalWire_1_1Skills_1_1Builtin.html#a6c4a368243ef6d43c7761c4fa5c37e6d", null ],
+    [ "getName", "namespaceSignalWire_1_1Skills_1_1Builtin.html#ab8aa6f8bd392d687c4df0d7896fe983c", null ],
+    [ "getPromptSections", "namespaceSignalWire_1_1Skills_1_1Builtin.html#a4038d051261ac919991b5f6fed4c4f59", null ],
+    [ "registerTools", "namespaceSignalWire_1_1Skills_1_1Builtin.html#a090bee044e4b56100b734d9925d8f979", null ],
+    [ "setup", "namespaceSignalWire_1_1Skills_1_1Builtin.html#a85ce0a7b374d84b110b9b717d1ac3676", null ],
+    [ "supportsMultipleInstances", "namespaceSignalWire_1_1Skills_1_1Builtin.html#ae1106936bfc76a7cb2ddf1d0d97b3fd2", null ]
+];

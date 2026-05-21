@@ -1,0 +1,10 @@
+# Downloaded toolchains + intermediate build artifacts.
+# Heavy (JDK, .NET SDK, JRuby, gcc symlinks, doxygen-awesome, mkdocs project, etc.).
+/_build/
+
+# Local dev server logs / artifacts
+*.log
+
+# OS noise
+.DS_Store
+Thumbs.db

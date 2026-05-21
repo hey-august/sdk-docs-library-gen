@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>security — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security" class="active">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="security">security</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/security&quot;</span>
+</code></pre></div>
+
+<p>Package security provides session management and token-based authentication for SWAIG function calls, preventing unauthorized tool execution.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#RawBodyFromContext">func RawBodyFromContext(ctx context.Context) ([]byte, bool)</a></li>
+<li><a href="#ValidateRequest">func ValidateRequest(signingKey, signature, urlStr string, paramsOrRawBody any) bool</a></li>
+<li><a href="#ValidateRequestE">func ValidateRequestE(signingKey, signature, urlStr string, paramsOrRawBody any) (bool, error)</a></li>
+<li><a href="#ValidateWebhookSignature">func ValidateWebhookSignature(signingKey, signature, url, rawBody string) bool</a></li>
+<li><a href="#ValidateWebhookSignatureE">func ValidateWebhookSignatureE(signingKey, signature, urlStr, rawBody string) (bool, error)</a></li>
+<li><a href="#WebhookMiddleware">func WebhookMiddleware(signingKey string, opts *WebhookOpts) func(http.Handler) http.Handler</a></li>
+<li><a href="#Option">type Option</a></li>
+<li><a href="#WithDebugMode">func WithDebugMode(enabled bool) Option</a></li>
+<li><a href="#WithSecret">func WithSecret(key []byte) Option</a></li>
+<li><a href="#SessionManager">type SessionManager</a></li>
+<li><a href="#NewSessionManager">func NewSessionManager(tokenExpirySecs int, opts ...Option) *SessionManager</a></li>
+<li><a href="#SessionManager.CreateSession">func (sm *SessionManager) CreateSession(callID string) string</a></li>
+<li><a href="#SessionManager.CreateToken">func (sm *SessionManager) CreateToken(functionName string, callID string) string</a></li>
+<li><a href="#SessionManager.DebugToken">func (sm *SessionManager) DebugToken(token string) map[string]any</a></li>
+<li><a href="#SessionManager.ValidateToken">func (sm *SessionManager) ValidateToken(functionName string, token string, callID string) bool</a></li>
+<li><a href="#WebhookOpts">type WebhookOpts</a></li>
+</ul>
+<h2 id="variables">Variables</h2>
+<p><a name="ErrMissingSigningKey"></a>ErrMissingSigningKey is returned by ValidateWebhookSignatureE / ValidateRequestE when an empty signing key is supplied. Per the spec, a missing signing key is a programming error rather than a validation failure, so the bool-returning entry points panic; the *E variants return this sentinel for callers that prefer error returns.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">ErrMissingSigningKey</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;signalwire/security: signing key is required&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="RawBodyContextKey"></a>RawBodyContextKey is the context key under which WebhookMiddleware stashes the raw request body. Downstream handlers should retrieve via RawBodyFromContext rather than reaching for this key directly.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">RawBodyContextKey</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">rawBodyKey</span><span class="p">{}</span>
+</code></pre></div>
+
+<p><a name="RawBodyFromContext"></a></p>
+<h2 id="func-rawbodyfromcontext">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/webhook_middleware.go#L42">RawBodyFromContext</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">RawBodyFromContext</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span>
+</code></pre></div>
+
+<p>RawBodyFromContext returns the raw request body bytes that the webhook middleware captured before signature validation. Returns nil and false when called from a handler that wasn't wrapped by WebhookMiddleware (or when the request had no body).</p>
+<p><a name="ValidateRequest"></a></p>
+<h2 id="func-validaterequest">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/webhook.go#L243">ValidateRequest</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">ValidateRequest</span><span class="p">(</span><span class="nx">signingKey</span><span class="p">,</span><span class="w"> </span><span class="nx">signature</span><span class="p">,</span><span class="w"> </span><span class="nx">urlStr</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">paramsOrRawBody</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>ValidateRequest is the legacy @signalwire/compatibility-api drop-in entry point. The fourth argument is dynamically dispatched:</p>
+<ul>
+<li>string: delegate to ValidateWebhookSignature (Scheme A then Scheme B with parsed form);</li>
+<li>map[string][]string / url.Values / map[string]string: pre-parsed form params, run Scheme B directly with URL port normalization;</li>
+<li>nil: pre-parsed empty params, run Scheme B with empty concat string;</li>
+<li>anything else: panic with a clear message (programmer error).</li>
+</ul>
+<p><a name="ValidateRequestE"></a></p>
+<h2 id="func-validaterequeste">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/webhook.go#L299">ValidateRequestE</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">ValidateRequestE</span><span class="p">(</span><span class="nx">signingKey</span><span class="p">,</span><span class="w"> </span><span class="nx">signature</span><span class="p">,</span><span class="w"> </span><span class="nx">urlStr</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">paramsOrRawBody</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>ValidateRequestE is the error-returning variant of ValidateRequest. Returns ErrMissingSigningKey when signingKey is empty, or a typed error when paramsOrRawBody is neither a string, nil, nor a recognized map shape.</p>
+<p><a name="ValidateWebhookSignature"></a></p>
+<h2 id="func-validatewebhooksignature">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/webhook.go#L226">ValidateWebhookSignature</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">ValidateWebhookSignature</span><span class="p">(</span><span class="nx">signingKey</span><span class="p">,</span><span class="w"> </span><span class="nx">signature</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">rawBody</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>ValidateWebhookSignature validates a SignalWire webhook signature against both schemes. Returns true if the signature matches Scheme A (hex JSON) or Scheme B (base64 form, with port-normalization variants and optional bodySHA256 fallback); false otherwise.</p>
+<p>signingKey: customer's Signing Key. Empty string panics — that's a programming error, not a validation failure (use ValidateWebhookSignatureE for the error-returning variant).</p>
+<p>signature: X-SignalWire-Signature (or X-Twilio-Signature) header value. Empty returns false without panicking.</p>
+<p>url: full URL SignalWire POSTed to (scheme, host, optional port, path, query). Must match what the platform saw — see the URL reconstruction section of porting-sdk/webhooks.md.</p>
+<p>rawBody: raw request body bytes as a UTF-8 string, BEFORE any JSON / form parsing.</p>
+<p>All comparisons use crypto/subtle.ConstantTimeCompare. The function does not log which scheme was tried, what the expected signature was, or any other branch information.</p>
+<p><a name="ValidateWebhookSignatureE"></a></p>
+<h2 id="func-validatewebhooksignaturee">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/webhook.go#L258">ValidateWebhookSignatureE</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">ValidateWebhookSignatureE</span><span class="p">(</span><span class="nx">signingKey</span><span class="p">,</span><span class="w"> </span><span class="nx">signature</span><span class="p">,</span><span class="w"> </span><span class="nx">urlStr</span><span class="p">,</span><span class="w"> </span><span class="nx">rawBody</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>ValidateWebhookSignatureE is the error-returning variant of ValidateWebhookSignature. Returns ErrMissingSigningKey when signingKey is empty; otherwise (matched, nil).</p>
+<p><a name="WebhookMiddleware"></a></p>
+<h2 id="func-webhookmiddleware">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/webhook_middleware.go#L82">WebhookMiddleware</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WebhookMiddleware</span><span class="p">(</span><span class="nx">signingKey</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">*</span><span class="nx">WebhookOpts</span><span class="p">)</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span><span class="p">)</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span>
+</code></pre></div>
+
+<p>WebhookMiddleware returns an http.Handler middleware that validates the X-SignalWire-Signature (or X-Twilio-Signature) header against signingKey before invoking the wrapped handler.</p>
+<p>Pass nil for opts to use defaults (no proxy trust, no size cap, env-var override consulted).</p>
+<p>The middleware never logs the signing key, the expected signature, or which validation branch matched — per porting-sdk/webhooks.md §"Required SDK Behaviors / Error modes".</p>
+<p><a name="Option"></a></p>
+<h2 id="type-option">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/session_manager.go#L31">Option</a></h2>
+<p>Option is a functional option for NewSessionManager.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Option</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">SessionManager</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="WithDebugMode"></a></p>
+<h3 id="func-withdebugmode">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/session_manager.go#L46">WithDebugMode</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithDebugMode</span><span class="p">(</span><span class="nx">enabled</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">Option</span>
+</code></pre></div>
+
+<p>WithDebugMode enables the DebugToken method. Off by default to prevent accidental token introspection in production.</p>
+<p><a name="WithSecret"></a></p>
+<h3 id="func-withsecret">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/session_manager.go#L36">WithSecret</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithSecret</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="p">[]</span><span class="kt">byte</span><span class="p">)</span><span class="w"> </span><span class="nx">Option</span>
+</code></pre></div>
+
+<p>WithSecret injects a fixed secret key into the SessionManager. Use this when you need multiple processes or instances to validate each other's tokens. Pass nil to keep the default behaviour (auto-generate a random 32-byte secret).</p>
+<p><a name="SessionManager"></a></p>
+<h2 id="type-sessionmanager">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/session_manager.go#L23-L28">SessionManager</a></h2>
+<p>SessionManager creates and validates HMAC-SHA256 tokens for SWAIG function calls. The secret can be supplied at construction time (for cross-process validation) or auto-generated (default, single-process use).</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SessionManager</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewSessionManager"></a></p>
+<h3 id="func-newsessionmanager">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/session_manager.go#L55">NewSessionManager</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewSessionManager</span><span class="p">(</span><span class="nx">tokenExpirySecs</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">...</span><span class="nx">Option</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">SessionManager</span>
+</code></pre></div>
+
+<p>NewSessionManager creates a new SessionManager. If tokenExpirySecs is &lt;= 0, a default of 900 seconds (15 minutes) is used, matching the Python SDK default. Provide functional options (e.g. WithSecret) to customise behaviour.</p>
+<p><a name="SessionManager.CreateSession"></a></p>
+<h3 id="func-sessionmanager-createsession">func (*SessionManager) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/session_manager.go#L84">CreateSession</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">sm</span><span class="w"> </span><span class="o">*</span><span class="nx">SessionManager</span><span class="p">)</span><span class="w"> </span><span class="nx">CreateSession</span><span class="p">(</span><span class="nx">callID</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>CreateSession returns callID unchanged if it is non-empty; otherwise it generates a cryptographically random URL-safe string (matches Python secrets.token_urlsafe(16) — 16 bytes of entropy, base64url-encoded without padding).</p>
+<p><a name="SessionManager.CreateToken"></a></p>
+<h3 id="func-sessionmanager-createtoken">func (*SessionManager) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/session_manager.go#L99">CreateToken</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">sm</span><span class="w"> </span><span class="o">*</span><span class="nx">SessionManager</span><span class="p">)</span><span class="w"> </span><span class="nx">CreateToken</span><span class="p">(</span><span class="nx">functionName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">callID</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>CreateToken generates an HMAC-SHA256 signed token for the given function name and call ID. The token embeds an expiry timestamp and is returned as a base64url-encoded string.</p>
+<p><a name="SessionManager.DebugToken"></a></p>
+<h3 id="func-sessionmanager-debugtoken">func (*SessionManager) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/session_manager.go#L194">DebugToken</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">sm</span><span class="w"> </span><span class="o">*</span><span class="nx">SessionManager</span><span class="p">)</span><span class="w"> </span><span class="nx">DebugToken</span><span class="p">(</span><span class="nx">token</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>DebugToken decodes a token and returns a map of its components and status without performing signature validation. This is intended for development and debugging only. It requires debug mode to be enabled via WithDebugMode; if not, it returns map["error": "debug mode not enabled"].</p>
+<p><a name="SessionManager.ValidateToken"></a></p>
+<h3 id="func-sessionmanager-validatetoken">func (*SessionManager) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/session_manager.go#L115">ValidateToken</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">sm</span><span class="w"> </span><span class="o">*</span><span class="nx">SessionManager</span><span class="p">)</span><span class="w"> </span><span class="nx">ValidateToken</span><span class="p">(</span><span class="nx">functionName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">callID</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>ValidateToken verifies that a token is authentic, unexpired, and matches the expected function name and call ID. All comparisons are performed in constant time where possible to prevent timing attacks. Returns true only if every check passes.</p>
+<p><a name="WebhookOpts"></a></p>
+<h2 id="type-webhookopts">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/security/webhook_middleware.go#L52-L70">WebhookOpts</a></h2>
+<p>WebhookOpts configures WebhookMiddleware.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">WebhookOpts</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// TrustProxy makes the middleware honor X-Forwarded-Proto and</span>
+<span class="w">    </span><span class="c1">// X-Forwarded-Host when reconstructing the URL passed to the validator.</span>
+<span class="w">    </span><span class="c1">// Leave false (default) when the SDK terminates TLS itself; flip true</span>
+<span class="w">    </span><span class="c1">// when running behind a reverse proxy / ngrok / load balancer.</span>
+<span class="w">    </span><span class="nx">TrustProxy</span><span class="w"> </span><span class="kt">bool</span>
+
+<span class="w">    </span><span class="c1">// MaxBodyBytes caps the body size the middleware will buffer before</span>
+<span class="w">    </span><span class="c1">// signature validation. Zero (default) imposes no cap beyond Go&#39;s</span>
+<span class="w">    </span><span class="c1">// own MaxBytesReader behavior. A small positive value protects against</span>
+<span class="w">    </span><span class="c1">// memory exhaustion from oversized POSTs targeted at the gate.</span>
+<span class="w">    </span><span class="nx">MaxBodyBytes</span><span class="w"> </span><span class="kt">int64</span>
+
+<span class="w">    </span><span class="c1">// ProxyURLBase, when non-empty, overrides URL reconstruction entirely:</span>
+<span class="w">    </span><span class="c1">// the validator sees ProxyURLBase + r.URL.RequestURI(). This matches</span>
+<span class="w">    </span><span class="c1">// the SWML_PROXY_URL_BASE env-var override documented in the spec.</span>
+<span class="w">    </span><span class="c1">// When empty, the env var is consulted at construction time.</span>
+<span class="w">    </span><span class="nx">ProxyURLBase</span><span class="w"> </span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

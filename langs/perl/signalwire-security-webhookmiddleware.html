@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>SignalWire::Security::WebhookMiddleware — SignalWire Perl SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav>
+  <div class="brand"><div class="brand-title">SignalWire</div><div class="brand-sub">Perl SDK · Pod::Simple::XHTML</div></div>
+  <div class="group">Overview</div>
+  <ul><li><a href="index.html">Home</a></li></ul>
+  <div class="group">Top</div>
+  <ul>
+    <li><a href="signalwire.html">SignalWire</a></li>
+    <li><a href="signalwire-contexts.html">SignalWire::Contexts</a></li>
+    <li><a href="signalwire-datamap.html">SignalWire::DataMap</a></li>
+    <li><a href="signalwire-logging.html">SignalWire::Logging</a></li>
+    <li><a href="signalwire-utils.html">SignalWire::Utils</a></li>
+  </ul>
+  <div class="group">Agent</div>
+  <ul>
+    <li><a href="signalwire-agent-agentbase.html">SignalWire::Agent::AgentBase</a></li>
+  </ul>
+  <div class="group">Contexts</div>
+  <ul>
+    <li><a href="signalwire-contexts-contextbuilder.html">SignalWire::Contexts::ContextBuilder</a></li>
+  </ul>
+  <div class="group">Core</div>
+  <ul>
+    <li><a href="signalwire-core-loggingconfig.html">SignalWire::Core::LoggingConfig</a></li>
+  </ul>
+  <div class="group">POM</div>
+  <ul>
+    <li><a href="signalwire-pom-promptobjectmodel.html">SignalWire::POM::PromptObjectModel</a></li>
+    <li><a href="signalwire-pom-section.html">SignalWire::POM::Section</a></li>
+  </ul>
+  <div class="group">Prefabs</div>
+  <ul>
+    <li><a href="signalwire-prefabs-concierge.html">SignalWire::Prefabs::Concierge</a></li>
+    <li><a href="signalwire-prefabs-faqbot.html">SignalWire::Prefabs::FAQBot</a></li>
+    <li><a href="signalwire-prefabs-infogatherer.html">SignalWire::Prefabs::InfoGatherer</a></li>
+    <li><a href="signalwire-prefabs-receptionist.html">SignalWire::Prefabs::Receptionist</a></li>
+    <li><a href="signalwire-prefabs-survey.html">SignalWire::Prefabs::Survey</a></li>
+  </ul>
+  <div class="group">REST</div>
+  <ul>
+    <li><a href="signalwire-rest-httpclient.html">SignalWire::REST::HttpClient</a></li>
+    <li><a href="signalwire-rest-namespaces-base.html">SignalWire::REST::Namespaces::Base</a></li>
+    <li><a href="signalwire-rest-namespaces-calling.html">SignalWire::REST::Namespaces::Calling</a></li>
+    <li><a href="signalwire-rest-namespaces-chat.html">SignalWire::REST::Namespaces::Chat</a></li>
+    <li><a href="signalwire-rest-namespaces-compat.html">SignalWire::REST::Namespaces::Compat</a></li>
+    <li><a href="signalwire-rest-namespaces-datasphere.html">SignalWire::REST::Namespaces::Datasphere</a></li>
+    <li><a href="signalwire-rest-namespaces-fabric.html">SignalWire::REST::Namespaces::Fabric</a></li>
+    <li><a href="signalwire-rest-namespaces-logs.html">SignalWire::REST::Namespaces::Logs</a></li>
+    <li><a href="signalwire-rest-namespaces-phonenumbers.html">SignalWire::REST::Namespaces::PhoneNumbers</a></li>
+    <li><a href="signalwire-rest-namespaces-project.html">SignalWire::REST::Namespaces::Project</a></li>
+    <li><a href="signalwire-rest-namespaces-pubsub.html">SignalWire::REST::Namespaces::PubSub</a></li>
+    <li><a href="signalwire-rest-namespaces-registry.html">SignalWire::REST::Namespaces::Registry</a></li>
+    <li><a href="signalwire-rest-namespaces-resources.html">SignalWire::REST::Namespaces::Resources</a></li>
+    <li><a href="signalwire-rest-namespaces-video.html">SignalWire::REST::Namespaces::Video</a></li>
+    <li><a href="signalwire-rest-pagination.html">SignalWire::REST::Pagination</a></li>
+    <li><a href="signalwire-rest-phonecallhandler.html">SignalWire::REST::PhoneCallHandler</a></li>
+    <li><a href="signalwire-rest-restclient.html">SignalWire::REST::RestClient</a></li>
+  </ul>
+  <div class="group">Relay</div>
+  <ul>
+    <li><a href="signalwire-relay-action.html">SignalWire::Relay::Action</a></li>
+    <li><a href="signalwire-relay-call.html">SignalWire::Relay::Call</a></li>
+    <li><a href="signalwire-relay-client.html">SignalWire::Relay::Client</a></li>
+    <li><a href="signalwire-relay-constants.html">SignalWire::Relay::Constants</a></li>
+    <li><a href="signalwire-relay-event.html">SignalWire::Relay::Event</a></li>
+    <li><a href="signalwire-relay-message.html">SignalWire::Relay::Message</a></li>
+  </ul>
+  <div class="group">SWAIG</div>
+  <ul>
+    <li><a href="signalwire-swaig-functionresult.html">SignalWire::SWAIG::FunctionResult</a></li>
+  </ul>
+  <div class="group">SWML</div>
+  <ul>
+    <li><a href="signalwire-swml-document.html">SignalWire::SWML::Document</a></li>
+    <li><a href="signalwire-swml-schema.html">SignalWire::SWML::Schema</a></li>
+    <li><a href="signalwire-swml-service.html">SignalWire::SWML::Service</a></li>
+  </ul>
+  <div class="group">Security</div>
+  <ul>
+    <li><a href="signalwire-security-sessionmanager.html">SignalWire::Security::SessionManager</a></li>
+    <li><a href="signalwire-security-webhookmiddleware.html" class="active">SignalWire::Security::WebhookMiddleware</a></li>
+    <li><a href="signalwire-security-webhookvalidator.html">SignalWire::Security::WebhookValidator</a></li>
+  </ul>
+  <div class="group">Server</div>
+  <ul>
+    <li><a href="signalwire-server-agentserver.html">SignalWire::Server::AgentServer</a></li>
+  </ul>
+  <div class="group">Skills</div>
+  <ul>
+    <li><a href="signalwire-skills-builtin-apininjastrivia.html">SignalWire::Skills::Builtin::ApiNinjasTrivia</a></li>
+    <li><a href="signalwire-skills-builtin-claudeskills.html">SignalWire::Skills::Builtin::ClaudeSkills</a></li>
+    <li><a href="signalwire-skills-builtin-customskills.html">SignalWire::Skills::Builtin::CustomSkills</a></li>
+    <li><a href="signalwire-skills-builtin-datasphere.html">SignalWire::Skills::Builtin::Datasphere</a></li>
+    <li><a href="signalwire-skills-builtin-datasphereserverless.html">SignalWire::Skills::Builtin::DatasphereServerless</a></li>
+    <li><a href="signalwire-skills-builtin-datetime.html">SignalWire::Skills::Builtin::Datetime</a></li>
+    <li><a href="signalwire-skills-builtin-googlemaps.html">SignalWire::Skills::Builtin::GoogleMaps</a></li>
+    <li><a href="signalwire-skills-builtin-infogatherer.html">SignalWire::Skills::Builtin::InfoGatherer</a></li>
+    <li><a href="signalwire-skills-builtin-joke.html">SignalWire::Skills::Builtin::Joke</a></li>
+    <li><a href="signalwire-skills-builtin-math.html">SignalWire::Skills::Builtin::Math</a></li>
+    <li><a href="signalwire-skills-builtin-mcpgateway.html">SignalWire::Skills::Builtin::McpGateway</a></li>
+    <li><a href="signalwire-skills-builtin-nativevectorsearch.html">SignalWire::Skills::Builtin::NativeVectorSearch</a></li>
+    <li><a href="signalwire-skills-builtin-playbackgroundfile.html">SignalWire::Skills::Builtin::PlayBackgroundFile</a></li>
+    <li><a href="signalwire-skills-builtin-spider.html">SignalWire::Skills::Builtin::Spider</a></li>
+    <li><a href="signalwire-skills-builtin-swmltransfer.html">SignalWire::Skills::Builtin::SwmlTransfer</a></li>
+    <li><a href="signalwire-skills-builtin-weatherapi.html">SignalWire::Skills::Builtin::WeatherApi</a></li>
+    <li><a href="signalwire-skills-builtin-websearch.html">SignalWire::Skills::Builtin::WebSearch</a></li>
+    <li><a href="signalwire-skills-builtin-wikipediasearch.html">SignalWire::Skills::Builtin::WikipediaSearch</a></li>
+    <li><a href="signalwire-skills-skillbase.html">SignalWire::Skills::SkillBase</a></li>
+    <li><a href="signalwire-skills-skillmanager.html">SignalWire::Skills::SkillManager</a></li>
+    <li><a href="signalwire-skills-skillregistry.html">SignalWire::Skills::SkillRegistry</a></li>
+  </ul>
+  <div class="group">Utils</div>
+  <ul>
+    <li><a href="signalwire-utils-urlvalidator.html">SignalWire::Utils::UrlValidator</a></li>
+  </ul>
+</nav>
+<main>
+<h1>SignalWire::Security::WebhookMiddleware</h1>
+<h2 id="NAME">NAME</h2>
+
+<p>SignalWire::Security::WebhookMiddleware - Plack middleware enforcing SignalWire webhook signatures</p>
+
+<h2 id="SYNOPSIS">SYNOPSIS</h2>
+
+<pre><code>    use SignalWire::Security::WebhookMiddleware;
+
+    my $wrapped = SignalWire::Security::WebhookMiddleware-&gt;wrap(
+        app         =&gt; $psgi_app,
+        signing_key =&gt; $ENV{SIGNALWIRE_SIGNING_KEY},
+        paths       =&gt; [ &#39;/&#39;, &#39;/swaig&#39;, &#39;/post_prompt&#39; ],
+        trust_proxy =&gt; 1,
+    );</code></pre>
+
+<h2 id="DESCRIPTION">DESCRIPTION</h2>
+
+<p>Wraps a PSGI app so that incoming POST requests must carry a valid <code>X-SignalWire-Signature</code> header (or the legacy <code>X-Twilio-Signature</code>) matching the configured signing key. Invalid or missing signatures produce a 403 without ever invoking the wrapped app.</p>
+
+<p>The raw body is captured before validation and stashed on the env as <code>signalwire.raw_body</code>; <code>psgi.input</code> is rewound (or replaced with a buffer) so downstream handlers can re-read.</p>
+
+<h2 id="OPTIONS">OPTIONS</h2>
+
+<dl>
+
+<dt>app</dt>
+<dd>
+
+<p>PSGI coderef. Required.</p>
+
+</dd>
+<dt>signing_key</dt>
+<dd>
+
+<p>The customer&#39;s Signing Key from the SignalWire Dashboard. If empty, the middleware is a passthrough (AgentBase logs a startup warning in that case).</p>
+
+</dd>
+<dt>paths</dt>
+<dd>
+
+<p>Optional arrayref of paths to gate. When set, only those paths require a signature; other paths pass through unchecked.</p>
+
+</dd>
+<dt>methods</dt>
+<dd>
+
+<p>Arrayref of HTTP methods to gate. Defaults to <code>[&#39;POST&#39;]</code>.</p>
+
+</dd>
+<dt>trust_proxy</dt>
+<dd>
+
+<p>Honor <code>X-Forwarded-Proto</code> / <code>X-Forwarded-Host</code> when reconstructing the public URL. Default true.</p>
+
+</dd>
+<dt>public_url_base</dt>
+<dd>
+
+<p>Hard-override the URL base (e.g. for tests). Takes precedence over everything else.</p>
+
+</dd>
+</dl>
+
+
+</main>
+</body>
+</html>

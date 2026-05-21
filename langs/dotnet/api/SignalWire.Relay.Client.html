@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Client | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Client | SignalWire .NET SDK ">
+      
+      <meta name="description" content="RELAY Client -- manages the WebSocket connection to SignalWire, sends JSON-RPC 2.0 requests, and dispatches inbound events to the correct Call or Message objects. Uses async/await with  for the native C# async pattern instead of polling loops.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.Relay.Client">
+
+
+
+  <h1 id="SignalWire_Relay_Client" data-uid="SignalWire.Relay.Client" class="text-break">
+Class Client  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SignalWire.html">SignalWire</a>.<a class="xref" href="SignalWire.Relay.html">Relay</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SignalWire.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>RELAY Client -- manages the WebSocket connection to SignalWire, sends
+JSON-RPC 2.0 requests, and dispatches inbound events to the correct
+Call or Message objects.</p>
+<p>Uses async/await with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskcompletionsource">TaskCompletionSource</a> for the
+native C# async pattern instead of polling loops.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Client</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Client</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SignalWire_Relay_Client__ctor_" data-uid="SignalWire.Relay.Client.#ctor*"></a>
+
+  <h3 id="SignalWire_Relay_Client__ctor_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.Relay.Client.#ctor(System.Collections.Generic.Dictionary{System.String,System.String})">
+  Client(Dictionary&lt;string, string&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Client(Dictionary&lt;string, string&gt;? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SignalWire_Relay_Client_Agent_" data-uid="SignalWire.Relay.Client.Agent*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Agent" data-uid="SignalWire.Relay.Client.Agent">
+  Agent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Agent { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_AuthorizationState_" data-uid="SignalWire.Relay.Client.AuthorizationState*"></a>
+
+  <h3 id="SignalWire_Relay_Client_AuthorizationState" data-uid="SignalWire.Relay.Client.AuthorizationState">
+  AuthorizationState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? AuthorizationState { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Calls_" data-uid="SignalWire.Relay.Client.Calls*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Calls" data-uid="SignalWire.Relay.Client.Calls">
+  Calls
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>callId =&gt; Call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConcurrentDictionary&lt;string, Call&gt; Calls { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="SignalWire.Relay.Call.html">Call</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Connected_" data-uid="SignalWire.Relay.Client.Connected*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Connected" data-uid="SignalWire.Relay.Client.Connected">
+  Connected
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Connected { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Contexts_" data-uid="SignalWire.Relay.Client.Contexts*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Contexts" data-uid="SignalWire.Relay.Client.Contexts">
+  Contexts
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Contexts { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Host_" data-uid="SignalWire.Relay.Client.Host*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Host" data-uid="SignalWire.Relay.Client.Host">
+  Host
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Host { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_InboundQueue_" data-uid="SignalWire.Relay.Client.InboundQueue*"></a>
+
+  <h3 id="SignalWire_Relay_Client_InboundQueue" data-uid="SignalWire.Relay.Client.InboundQueue">
+  InboundQueue
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Messages received from the transport layer. Test code can enqueue here.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConcurrentQueue&lt;string&gt; InboundQueue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentqueue-1">ConcurrentQueue</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Messages_" data-uid="SignalWire.Relay.Client.Messages*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Messages" data-uid="SignalWire.Relay.Client.Messages">
+  Messages
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>messageId =&gt; Message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConcurrentDictionary&lt;string, Message&gt; Messages { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="SignalWire.Relay.Message.html">Message</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_OnCallHandler_" data-uid="SignalWire.Relay.Client.OnCallHandler*"></a>
+
+  <h3 id="SignalWire_Relay_Client_OnCallHandler" data-uid="SignalWire.Relay.Client.OnCallHandler">
+  OnCallHandler
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;Call, Event, Task&gt;? OnCallHandler { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="SignalWire.Relay.Call.html">Call</a>, <a class="xref" href="SignalWire.Relay.Event.html">Event</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_OnEventHandler_" data-uid="SignalWire.Relay.Client.OnEventHandler*"></a>
+
+  <h3 id="SignalWire_Relay_Client_OnEventHandler" data-uid="SignalWire.Relay.Client.OnEventHandler">
+  OnEventHandler
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;Event, Dictionary&lt;string, object?&gt;, Task&gt;? OnEventHandler { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="SignalWire.Relay.Event.html">Event</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_OnMessageHandler_" data-uid="SignalWire.Relay.Client.OnMessageHandler*"></a>
+
+  <h3 id="SignalWire_Relay_Client_OnMessageHandler" data-uid="SignalWire.Relay.Client.OnMessageHandler">
+  OnMessageHandler
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inbound message handler. Mirrors Python's <code>@client.on_message</code>:
+fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">Message</a> for every
+<code>messaging.receive</code> event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;Message, Event, Task&gt;? OnMessageHandler { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="SignalWire.Relay.Message.html">Message</a>, <a class="xref" href="SignalWire.Relay.Event.html">Event</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Pending_" data-uid="SignalWire.Relay.Client.Pending*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Pending" data-uid="SignalWire.Relay.Client.Pending">
+  Pending
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>JSON-RPC id =&gt; pending request TCS.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConcurrentDictionary&lt;string, TaskCompletionSource&lt;Dictionary&lt;string, object?&gt;&gt;&gt; Pending { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskcompletionsource-1">TaskCompletionSource</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_PendingDials_" data-uid="SignalWire.Relay.Client.PendingDials*"></a>
+
+  <h3 id="SignalWire_Relay_Client_PendingDials" data-uid="SignalWire.Relay.Client.PendingDials">
+  PendingDials
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>tag =&gt; pending dial TCS.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConcurrentDictionary&lt;string, TaskCompletionSource&lt;Call&gt;&gt; PendingDials { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskcompletionsource-1">TaskCompletionSource</a>&lt;<a class="xref" href="SignalWire.Relay.Call.html">Call</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Project_" data-uid="SignalWire.Relay.Client.Project*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Project" data-uid="SignalWire.Relay.Client.Project">
+  Project
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Project { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Protocol_" data-uid="SignalWire.Relay.Client.Protocol*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Protocol" data-uid="SignalWire.Relay.Client.Protocol">
+  Protocol
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Protocol { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Scheme_" data-uid="SignalWire.Relay.Client.Scheme*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Scheme" data-uid="SignalWire.Relay.Client.Scheme">
+  Scheme
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Scheme { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_SessionId_" data-uid="SignalWire.Relay.Client.SessionId*"></a>
+
+  <h3 id="SignalWire_Relay_Client_SessionId" data-uid="SignalWire.Relay.Client.SessionId">
+  SessionId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? SessionId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Token_" data-uid="SignalWire.Relay.Client.Token*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Token" data-uid="SignalWire.Relay.Client.Token">
+  Token
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Token { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SignalWire_Relay_Client_AuthenticateAsync_" data-uid="SignalWire.Relay.Client.AuthenticateAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Client_AuthenticateAsync" data-uid="SignalWire.Relay.Client.AuthenticateAsync">
+  AuthenticateAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Send the signalwire.connect RPC to authenticate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task AuthenticateAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_BuildWebSocketUri_" data-uid="SignalWire.Relay.Client.BuildWebSocketUri*"></a>
+
+  <h3 id="SignalWire_Relay_Client_BuildWebSocketUri" data-uid="SignalWire.Relay.Client.BuildWebSocketUri">
+  BuildWebSocketUri()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build the full WebSocket URL: <a class="xref" href="SignalWire.Relay.Client.html#SignalWire_Relay_Client_Scheme">Scheme</a>://<a class="xref" href="SignalWire.Relay.Client.html#SignalWire_Relay_Client_Host">Host</a>/api/relay/ws.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri BuildWebSocketUri()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_ConnectAsync_" data-uid="SignalWire.Relay.Client.ConnectAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Client_ConnectAsync" data-uid="SignalWire.Relay.Client.ConnectAsync">
+  ConnectAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Establish the WebSocket connection and authenticate. Opens a real
+WSS connection to the configured host, runs the JSON-RPC
+<code>signalwire.connect</code> handshake, and starts the reader loop
+that pumps inbound frames into <a class="xref" href="SignalWire.Relay.Client.html#SignalWire_Relay_Client_HandleMessage_System_String_">HandleMessage(string)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task ConnectAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_DialAsync_" data-uid="SignalWire.Relay.Client.DialAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Client_DialAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Client.DialAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  DialAsync(Dictionary&lt;string, object?&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Originate an outbound call, awaiting until the dial resolves.
+Honours <code>params_[&quot;tag&quot;]</code> when provided; otherwise a UUID is
+generated. Honours <code>params_[&quot;dial_timeout&quot;]</code> (seconds) for the
+resolve-or-throw deadline.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Call&gt; DialAsync(Dictionary&lt;string, object?&gt; params_)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>params_</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="SignalWire.Relay.Call.html">Call</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Disconnect_" data-uid="SignalWire.Relay.Client.Disconnect*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Disconnect" data-uid="SignalWire.Relay.Client.Disconnect">
+  Disconnect()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gracefully close the connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Disconnect()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_ExecuteAsync_" data-uid="SignalWire.Relay.Client.ExecuteAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Client_ExecuteAsync_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Client.ExecuteAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+  ExecuteAsync(string, Dictionary&lt;string, object?&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Send a JSON-RPC request and await the matching response.
+Returns the &quot;result&quot; portion of the response.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Dictionary&lt;string, object?&gt;&gt; ExecuteAsync(string method, Dictionary&lt;string, object?&gt;? params_ = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>params_</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_GetCall_" data-uid="SignalWire.Relay.Client.GetCall*"></a>
+
+  <h3 id="SignalWire_Relay_Client_GetCall_System_String_" data-uid="SignalWire.Relay.Client.GetCall(System.String)">
+  GetCall(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Call? GetCall(string callId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>callId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.Call.html">Call</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_HandleEvent_" data-uid="SignalWire.Relay.Client.HandleEvent*"></a>
+
+  <h3 id="SignalWire_Relay_Client_HandleEvent_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Client.HandleEvent(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  HandleEvent(Dictionary&lt;string, object?&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Route a signalwire.event payload to the appropriate handler.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void HandleEvent(Dictionary&lt;string, object?&gt; outerParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>outerParams</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_HandleMessage_" data-uid="SignalWire.Relay.Client.HandleMessage*"></a>
+
+  <h3 id="SignalWire_Relay_Client_HandleMessage_System_String_" data-uid="SignalWire.Relay.Client.HandleMessage(System.String)">
+  HandleMessage(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Parse a raw JSON string from the server and route it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void HandleMessage(string raw)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>raw</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_OnCall_" data-uid="SignalWire.Relay.Client.OnCall*"></a>
+
+  <h3 id="SignalWire_Relay_Client_OnCall_System_Func_SignalWire_Relay_Call_SignalWire_Relay_Event_System_Threading_Tasks_Task__" data-uid="SignalWire.Relay.Client.OnCall(System.Func{SignalWire.Relay.Call,SignalWire.Relay.Event,System.Threading.Tasks.Task})">
+  OnCall(Func&lt;Call, Event, Task&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Register a handler for inbound calls.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Client OnCall(Func&lt;Call, Event, Task&gt; callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="SignalWire.Relay.Call.html">Call</a>, <a class="xref" href="SignalWire.Relay.Event.html">Event</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.Client.html">Client</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_OnMessage_" data-uid="SignalWire.Relay.Client.OnMessage*"></a>
+
+  <h3 id="SignalWire_Relay_Client_OnMessage_System_Func_SignalWire_Relay_Message_SignalWire_Relay_Event_System_Threading_Tasks_Task__" data-uid="SignalWire.Relay.Client.OnMessage(System.Func{SignalWire.Relay.Message,SignalWire.Relay.Event,System.Threading.Tasks.Task})">
+  OnMessage(Func&lt;Message, Event, Task&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Register a handler for inbound messages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Client OnMessage(Func&lt;Message, Event, Task&gt; callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="SignalWire.Relay.Message.html">Message</a>, <a class="xref" href="SignalWire.Relay.Event.html">Event</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.Client.html">Client</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_ReadLoopAsync_" data-uid="SignalWire.Relay.Client.ReadLoopAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Client_ReadLoopAsync_System_Threading_CancellationToken_" data-uid="SignalWire.Relay.Client.ReadLoopAsync(System.Threading.CancellationToken)">
+  ReadLoopAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reader loop that pulls UTF-8 text frames off the socket and routes
+each completed message into <a class="xref" href="SignalWire.Relay.Client.html#SignalWire_Relay_Client_HandleMessage_System_String_">HandleMessage(string)</a>. Handles
+fragmented frames by accumulating them until <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.websockets.valuewebsocketreceiveresult.endofmessage">EndOfMessage</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task ReadLoopAsync(CancellationToken cancellation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_ReadOnce_" data-uid="SignalWire.Relay.Client.ReadOnce*"></a>
+
+  <h3 id="SignalWire_Relay_Client_ReadOnce" data-uid="SignalWire.Relay.Client.ReadOnce">
+  ReadOnce()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Read one queued message synchronously (test helper for harness use).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReadOnce()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_ReceiveAsync_" data-uid="SignalWire.Relay.Client.ReceiveAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Client_ReceiveAsync_System_Collections_Generic_IEnumerable_System_String__" data-uid="SignalWire.Relay.Client.ReceiveAsync(System.Collections.Generic.IEnumerable{System.String})">
+  ReceiveAsync(IEnumerable&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Subscribe to one or more inbound contexts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task ReceiveAsync(IEnumerable&lt;string&gt; contexts)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contexts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_ReconnectAsync_" data-uid="SignalWire.Relay.Client.ReconnectAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Client_ReconnectAsync" data-uid="SignalWire.Relay.Client.ReconnectAsync">
+  ReconnectAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reconnect with exponential back-off (1s to 30s cap).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task ReconnectAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_RunAsync_" data-uid="SignalWire.Relay.Client.RunAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Client_RunAsync" data-uid="SignalWire.Relay.Client.RunAsync">
+  RunAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Main event loop -- drains the inbound queue and processes messages
+until disconnect. Used by the test path that pushes JSON strings
+into <a class="xref" href="SignalWire.Relay.Client.html#SignalWire_Relay_Client_InboundQueue">InboundQueue</a>; production reads come from the
+WebSocket reader started in <a class="xref" href="SignalWire.Relay.Client.html#SignalWire_Relay_Client_ConnectAsync">ConnectAsync()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task RunAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_Send_" data-uid="SignalWire.Relay.Client.Send*"></a>
+
+  <h3 id="SignalWire_Relay_Client_Send_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Client.Send(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  Send(Dictionary&lt;string, object?&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Encode and send a JSON message. Real production path writes to the
+WebSocket; tests override this to capture payloads in memory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Send(Dictionary&lt;string, object?&gt; msg)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>msg</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_SendAck_" data-uid="SignalWire.Relay.Client.SendAck*"></a>
+
+  <h3 id="SignalWire_Relay_Client_SendAck_System_String_" data-uid="SignalWire.Relay.Client.SendAck(System.String)">
+  SendAck(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Send an acknowledgement (empty result) for a server-initiated request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendAck(string id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_SendMessageAsync_" data-uid="SignalWire.Relay.Client.SendMessageAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Client_SendMessageAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Client.SendMessageAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
+  SendMessageAsync(Dictionary&lt;string, object?&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Send an outbound message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Message&gt; SendMessageAsync(Dictionary&lt;string, object?&gt; params_)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>params_</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="SignalWire.Relay.Message.html">Message</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Client_UnreceiveAsync_" data-uid="SignalWire.Relay.Client.UnreceiveAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Client_UnreceiveAsync_System_Collections_Generic_IEnumerable_System_String__" data-uid="SignalWire.Relay.Client.UnreceiveAsync(System.Collections.Generic.IEnumerable{System.String})">
+  UnreceiveAsync(IEnumerable&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unsubscribe from one or more contexts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task UnreceiveAsync(IEnumerable&lt;string&gt; contexts)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contexts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

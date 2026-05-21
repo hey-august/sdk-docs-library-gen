@@ -1,0 +1,26 @@
+var structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace =
+[
+    [ "FabricNamespace", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a0428ca12ed651234a1a73ead63ca18e2", null ],
+    [ "addresses", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#aea48e5b4b67da8e40ff47b32c4fdfca0", null ],
+    [ "agents", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#aa7f17089c8d47dc4993d9194d233da2e", null ],
+    [ "ai_agents", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a0bacb356da367e44fb2ad32809744328", null ],
+    [ "call_flows", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a05c9c0d4e7fe16b877797243fb1c337f", null ],
+    [ "conference_rooms", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a334a7038d9be78636ab03345734081d7", null ],
+    [ "conferences", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#ab9e3ffacffed827c9127c617cfa66296", null ],
+    [ "cxml_applications", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a9198b5916f2cec0363f606f816fe4fad", null ],
+    [ "cxml_scripts", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a1ad480755f5c40ae43ad293f898e0cec", null ],
+    [ "cxml_webhooks", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a2d4b508ec8f430263c9c442ede39b5fd", null ],
+    [ "domains", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#aabac28d9142f2aa603225a6d3d4e8149", null ],
+    [ "freeswitch_connectors", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a69acf9977c6de3fd1183b5b70a53d6cf", null ],
+    [ "relay_applications", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#aaaa2f19d848022c19aa7724dd2503259", null ],
+    [ "resources", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a3a0296d21fe985a4d5d435cffa526d5e", null ],
+    [ "routing", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a9303b6eaeec7bac920ff5455d603e13b", null ],
+    [ "sip_endpoints", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#afa1f7b6d783dbebe7e1e3d5d38ad96c3", null ],
+    [ "sip_gateways", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a31611f71b4c2a2bf9d8f960ed87c191a", null ],
+    [ "subscribers", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#acd396fce8b330b79e0bbbbb858787d45", null ],
+    [ "swml_scripts", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a8c03e709dcce194ff2444d5ec6191b9f", null ],
+    [ "swml_webhooks", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#acd73be1315d32ba198a7e26869720393", null ],
+    [ "tokens", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#af27996a31528eb66236f6c7008eb2b0d", null ],
+    [ "topics", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a7929c6c55eabce5c3b002f8f5bb62b8f", null ],
+    [ "webhooks", "structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html#a0e7bbeee9867a1bc9e85baff1b67164a", null ]
+];

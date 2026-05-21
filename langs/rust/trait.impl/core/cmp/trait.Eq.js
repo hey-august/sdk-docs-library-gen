@@ -1,0 +1,9 @@
+(function() {
+    const implementors = Object.fromEntries([["signalwire",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.95.0/core/cmp/trait.Eq.html\" title=\"trait core::cmp::Eq\">Eq</a> for <a class=\"enum\" href=\"signalwire/logging/enum.Level.html\" title=\"enum signalwire::logging::Level\">Level</a>",0],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.95.0/core/cmp/trait.Eq.html\" title=\"trait core::cmp::Eq\">Eq</a> for <a class=\"enum\" href=\"signalwire/security/webhook/enum.WebhookError.html\" title=\"enum signalwire::security::webhook::WebhookError\">WebhookError</a>",0],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.95.0/core/cmp/trait.Eq.html\" title=\"trait core::cmp::Eq\">Eq</a> for <a class=\"enum\" href=\"signalwire/serverless/adapter/enum.RuntimeEnvironment.html\" title=\"enum signalwire::serverless::adapter::RuntimeEnvironment\">RuntimeEnvironment</a>",0],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.95.0/core/cmp/trait.Eq.html\" title=\"trait core::cmp::Eq\">Eq</a> for <a class=\"struct\" href=\"signalwire/pom/pom/struct.PromptObjectModel.html\" title=\"struct signalwire::pom::pom::PromptObjectModel\">PromptObjectModel</a>",0],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.95.0/core/cmp/trait.Eq.html\" title=\"trait core::cmp::Eq\">Eq</a> for <a class=\"struct\" href=\"signalwire/pom/section/struct.Section.html\" title=\"struct signalwire::pom::section::Section\">Section</a>",0]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":59,"fragment_lengths":[1432]}

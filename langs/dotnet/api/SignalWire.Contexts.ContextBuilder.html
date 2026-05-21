@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ContextBuilder | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ContextBuilder | SignalWire .NET SDK ">
+      
+      <meta name="description" content="Builder for multi-step, multi-context AI agent workflows. A ContextBuilder owns one or more s; each context owns an ordered list of s. Only one context and one step is active at a time. Per chat turn, the runtime injects the current step&#39;s instructions as a system message, then asks the LLM for a response. Native tools auto-injected by the runtime: When a step (or its enclosing context) declares valid_steps or valid_contexts, the runtime auto-injects two native tools so the model can navigate the flow: next_step and change_context. A third native tool, gather_submit, is injected during gather_info questioning. These three names are reserved:  rejects any agent that defines a SWAIG tool with one of them. See . Function whitelisting (): Each step may declare a functions whitelist. The whitelist is applied in-memory at the start of each LLM turn. CRITICALLY: if a step does NOT declare a functions field, it INHERITS the previous step&#39;s active set. See  for details and examples.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.Contexts.ContextBuilder">
+
+
+
+  <h1 id="SignalWire_Contexts_ContextBuilder" data-uid="SignalWire.Contexts.ContextBuilder" class="text-break">
+Class ContextBuilder  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SignalWire.html">SignalWire</a>.<a class="xref" href="SignalWire.Contexts.html">Contexts</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SignalWire.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Builder for multi-step, multi-context AI agent workflows.</p>
+<p>A ContextBuilder owns one or more <a class="xref" href="SignalWire.Contexts.Context.html">Context</a>s; each
+context owns an ordered list of <a class="xref" href="SignalWire.Contexts.Step.html">Step</a>s. Only one context
+and one step is active at a time. Per chat turn, the runtime injects
+the current step's instructions as a system message, then asks the LLM
+for a response.</p>
+<p><b>Native tools auto-injected by the runtime:</b> When a step
+(or its enclosing context) declares valid_steps or valid_contexts, the
+runtime auto-injects two native tools so the model can navigate the
+flow: <code>next_step</code> and <code>change_context</code>. A third native tool,
+<code>gather_submit</code>, is injected during gather_info questioning.
+These three names are reserved: <a class="xref" href="SignalWire.Contexts.ContextBuilder.html#SignalWire_Contexts_ContextBuilder_Validate">Validate()</a> rejects any
+agent that defines a SWAIG tool with one of them. See
+<a class="xref" href="SignalWire.Contexts.ReservedToolNames.html#SignalWire_Contexts_ReservedToolNames_Reserved">Reserved</a>.</p>
+<p><b>Function whitelisting (<a class="xref" href="SignalWire.Contexts.Step.html#SignalWire_Contexts_Step_SetFunctions_System_Object_">SetFunctions(object)</a>):</b>
+Each step may declare a functions whitelist. The whitelist is applied
+in-memory at the start of each LLM turn. CRITICALLY: if a step does
+NOT declare a functions field, it INHERITS the previous step's active
+set. See <a class="xref" href="SignalWire.Contexts.Step.html#SignalWire_Contexts_Step_SetFunctions_System_Object_">SetFunctions(object)</a> for details and examples.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ContextBuilder</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ContextBuilder</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SignalWire_Contexts_ContextBuilder_AddContext_" data-uid="SignalWire.Contexts.ContextBuilder.AddContext*"></a>
+
+  <h3 id="SignalWire_Contexts_ContextBuilder_AddContext_System_String_" data-uid="SignalWire.Contexts.ContextBuilder.AddContext(System.String)">
+  AddContext(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context AddContext(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_ContextBuilder_AttachToolNameSupplier_" data-uid="SignalWire.Contexts.ContextBuilder.AttachToolNameSupplier*"></a>
+
+  <h3 id="SignalWire_Contexts_ContextBuilder_AttachToolNameSupplier_System_Func_System_Collections_Generic_IEnumerable_System_String___" data-uid="SignalWire.Contexts.ContextBuilder.AttachToolNameSupplier(System.Func{System.Collections.Generic.IEnumerable{System.String}})">
+  AttachToolNameSupplier(Func&lt;IEnumerable&lt;string&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Attach a supplier that returns registered SWAIG tool names so
+<a class="xref" href="SignalWire.Contexts.ContextBuilder.html#SignalWire_Contexts_ContextBuilder_Validate">Validate()</a> can check them against
+<a class="xref" href="SignalWire.Contexts.ReservedToolNames.html#SignalWire_Contexts_ReservedToolNames_Reserved">Reserved</a>. Called internally by
+<code>AgentBase.DefineContexts()</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContextBuilder AttachToolNameSupplier(Func&lt;IEnumerable&lt;string&gt;&gt; supplier)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>supplier</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.ContextBuilder.html">ContextBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_ContextBuilder_CreateSimpleContext_" data-uid="SignalWire.Contexts.ContextBuilder.CreateSimpleContext*"></a>
+
+  <h3 id="SignalWire_Contexts_ContextBuilder_CreateSimpleContext_System_String_" data-uid="SignalWire.Contexts.ContextBuilder.CreateSimpleContext(System.String)">
+  CreateSimpleContext(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ContextBuilder CreateSimpleContext(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.ContextBuilder.html">ContextBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_ContextBuilder_GetContext_" data-uid="SignalWire.Contexts.ContextBuilder.GetContext*"></a>
+
+  <h3 id="SignalWire_Contexts_ContextBuilder_GetContext_System_String_" data-uid="SignalWire.Contexts.ContextBuilder.GetContext(System.String)">
+  GetContext(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Context? GetContext(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_ContextBuilder_HasContexts_" data-uid="SignalWire.Contexts.ContextBuilder.HasContexts*"></a>
+
+  <h3 id="SignalWire_Contexts_ContextBuilder_HasContexts" data-uid="SignalWire.Contexts.ContextBuilder.HasContexts">
+  HasContexts()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasContexts()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_ContextBuilder_Reset_" data-uid="SignalWire.Contexts.ContextBuilder.Reset*"></a>
+
+  <h3 id="SignalWire_Contexts_ContextBuilder_Reset" data-uid="SignalWire.Contexts.ContextBuilder.Reset">
+  Reset()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove all contexts, returning the builder to its initial state.
+Use this in a dynamic config callback when you need to rebuild
+contexts from scratch for a specific request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContextBuilder Reset()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Contexts.ContextBuilder.html">ContextBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_ContextBuilder_ToDict_" data-uid="SignalWire.Contexts.ContextBuilder.ToDict*"></a>
+
+  <h3 id="SignalWire_Contexts_ContextBuilder_ToDict" data-uid="SignalWire.Contexts.ContextBuilder.ToDict">
+  ToDict()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, object&gt; ToDict()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Contexts_ContextBuilder_Validate_" data-uid="SignalWire.Contexts.ContextBuilder.Validate*"></a>
+
+  <h3 id="SignalWire_Contexts_ContextBuilder_Validate" data-uid="SignalWire.Contexts.ContextBuilder.Validate">
+  Validate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Validate()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

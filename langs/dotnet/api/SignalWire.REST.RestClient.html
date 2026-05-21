@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class RestClient | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class RestClient | SignalWire .NET SDK ">
+      
+      <meta name="description" content="Top-level SignalWire REST client. Provides lazy access to every API namespace (fabric, calling, phone_numbers, datasphere, video, compat, etc.). Credentials can be supplied explicitly or pulled from environment variables.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.REST.RestClient">
+
+
+
+  <h1 id="SignalWire_REST_RestClient" data-uid="SignalWire.REST.RestClient" class="text-break">
+Class RestClient  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SignalWire.html">SignalWire</a>.<a class="xref" href="SignalWire.REST.html">REST</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SignalWire.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Top-level SignalWire REST client.</p>
+<p>Provides lazy access to every API namespace (fabric, calling,
+phone_numbers, datasphere, video, compat, etc.). Credentials can be
+supplied explicitly or pulled from environment variables.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RestClient</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">RestClient</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SignalWire_REST_RestClient__ctor_" data-uid="SignalWire.REST.RestClient.#ctor*"></a>
+
+  <h3 id="SignalWire_REST_RestClient__ctor_System_String_System_String_System_String_" data-uid="SignalWire.REST.RestClient.#ctor(System.String,System.String,System.String)">
+  RestClient(string, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RestClient(string projectId = &quot;&quot;, string token = &quot;&quot;, string space = &quot;&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>projectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Project ID (falls back to SIGNALWIRE_PROJECT_ID env var).</p>
+</dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>API token (falls back to SIGNALWIRE_API_TOKEN env var).</p>
+</dd>
+    <dt><code>space</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Space host (falls back to SIGNALWIRE_SPACE env var).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SignalWire_REST_RestClient_Addresses_" data-uid="SignalWire.REST.RestClient.Addresses*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Addresses" data-uid="SignalWire.REST.RestClient.Addresses">
+  Addresses
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Addresses.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Addresses Addresses { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.Addresses.html">Addresses</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_BaseUrl_" data-uid="SignalWire.REST.RestClient.BaseUrl*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_BaseUrl" data-uid="SignalWire.REST.RestClient.BaseUrl">
+  BaseUrl
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BaseUrl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Calling_" data-uid="SignalWire.REST.RestClient.Calling*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Calling" data-uid="SignalWire.REST.RestClient.Calling">
+  Calling
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calling API (37 call-control commands).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Calling Calling { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.Calling.html">Calling</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Chat_" data-uid="SignalWire.REST.RestClient.Chat*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Chat" data-uid="SignalWire.REST.RestClient.Chat">
+  Chat
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chat tokens.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource Chat { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Compat_" data-uid="SignalWire.REST.RestClient.Compat*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Compat" data-uid="SignalWire.REST.RestClient.Compat">
+  Compat
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Compatibility (Twilio-compatible LaML) API.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Compat Compat { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.Compat.html">Compat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Datasphere_" data-uid="SignalWire.REST.RestClient.Datasphere*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Datasphere" data-uid="SignalWire.REST.RestClient.Datasphere">
+  Datasphere
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Datasphere documents.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DatasphereNs Datasphere { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.DatasphereNs.html">DatasphereNs</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Fabric_" data-uid="SignalWire.REST.RestClient.Fabric*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Fabric" data-uid="SignalWire.REST.RestClient.Fabric">
+  Fabric
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fabric API (sub-resources: subscribers, sip_endpoints, call_flows, ...).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Fabric Fabric { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.Fabric.html">Fabric</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Http_" data-uid="SignalWire.REST.RestClient.Http*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Http" data-uid="SignalWire.REST.RestClient.Http">
+  Http
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HttpClient Http { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.HttpClient.html">HttpClient</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_ImportedNumbers_" data-uid="SignalWire.REST.RestClient.ImportedNumbers*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_ImportedNumbers" data-uid="SignalWire.REST.RestClient.ImportedNumbers">
+  ImportedNumbers
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Imported phone numbers (create only).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ImportedNumbers ImportedNumbers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.ImportedNumbers.html">ImportedNumbers</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Logs_" data-uid="SignalWire.REST.RestClient.Logs*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Logs" data-uid="SignalWire.REST.RestClient.Logs">
+  Logs
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Logs (messages, voice, fax, conferences).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Logs Logs { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.Logs.html">Logs</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Lookup_" data-uid="SignalWire.REST.RestClient.Lookup*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Lookup" data-uid="SignalWire.REST.RestClient.Lookup">
+  Lookup
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Phone number lookup.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource Lookup { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Mfa_" data-uid="SignalWire.REST.RestClient.Mfa*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Mfa" data-uid="SignalWire.REST.RestClient.Mfa">
+  Mfa
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Multi-factor authentication (sms/call/verify dispatch).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Mfa Mfa { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.Mfa.html">Mfa</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_NumberGroups_" data-uid="SignalWire.REST.RestClient.NumberGroups*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_NumberGroups" data-uid="SignalWire.REST.RestClient.NumberGroups">
+  NumberGroups
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Number groups (with membership operations).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NumberGroups NumberGroups { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.NumberGroups.html">NumberGroups</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_PhoneNumbers_" data-uid="SignalWire.REST.RestClient.PhoneNumbers*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_PhoneNumbers" data-uid="SignalWire.REST.RestClient.PhoneNumbers">
+  PhoneNumbers
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Phone numbers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource PhoneNumbers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Project_" data-uid="SignalWire.REST.RestClient.Project*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Project" data-uid="SignalWire.REST.RestClient.Project">
+  Project
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Project management.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Project Project { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.Project.html">Project</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_ProjectId_" data-uid="SignalWire.REST.RestClient.ProjectId*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_ProjectId" data-uid="SignalWire.REST.RestClient.ProjectId">
+  ProjectId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProjectId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Pubsub_" data-uid="SignalWire.REST.RestClient.Pubsub*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Pubsub" data-uid="SignalWire.REST.RestClient.Pubsub">
+  Pubsub
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>PubSub tokens.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource Pubsub { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Queues_" data-uid="SignalWire.REST.RestClient.Queues*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Queues" data-uid="SignalWire.REST.RestClient.Queues">
+  Queues
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Queues (Relay queues at /api/relay/rest/queues with member ops).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Queues Queues { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.Queues.html">Queues</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Recordings_" data-uid="SignalWire.REST.RestClient.Recordings*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Recordings" data-uid="SignalWire.REST.RestClient.Recordings">
+  Recordings
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Recordings (Relay recordings at /api/relay/rest/recordings).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Recordings Recordings { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.Recordings.html">Recordings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Registry_" data-uid="SignalWire.REST.RestClient.Registry*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Registry" data-uid="SignalWire.REST.RestClient.Registry">
+  Registry
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Registry (10DLC brands, campaigns, orders, numbers).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Registry Registry { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.Registry.html">Registry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_ShortCodes_" data-uid="SignalWire.REST.RestClient.ShortCodes*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_ShortCodes" data-uid="SignalWire.REST.RestClient.ShortCodes">
+  ShortCodes
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Short codes (PUT for update).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ShortCodes ShortCodes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.ShortCodes.html">ShortCodes</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_SipProfile_" data-uid="SignalWire.REST.RestClient.SipProfile*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_SipProfile" data-uid="SignalWire.REST.RestClient.SipProfile">
+  SipProfile
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>SIP profile (singleton at /api/relay/rest/sip_profile;
+legacy plural-path /api/relay/rest/sip_profiles preserved for
+existing tests via BasePath).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SipProfile SipProfile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.SipProfile.html">SipProfile</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Space_" data-uid="SignalWire.REST.RestClient.Space*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Space" data-uid="SignalWire.REST.RestClient.Space">
+  Space
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Space { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Token_" data-uid="SignalWire.REST.RestClient.Token*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Token" data-uid="SignalWire.REST.RestClient.Token">
+  Token
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Token { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_VerifiedCallers_" data-uid="SignalWire.REST.RestClient.VerifiedCallers*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_VerifiedCallers" data-uid="SignalWire.REST.RestClient.VerifiedCallers">
+  VerifiedCallers
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verified callers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CrudResource VerifiedCallers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.CrudResource.html">CrudResource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Video_" data-uid="SignalWire.REST.RestClient.Video*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Video" data-uid="SignalWire.REST.RestClient.Video">
+  Video
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Video rooms (Python-parity entry-point with sub-namespaces).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Video Video { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.REST.Namespaces.Video.html">Video</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

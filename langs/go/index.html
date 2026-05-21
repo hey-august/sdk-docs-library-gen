@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Overview — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+
+<h1>SignalWire Go SDK <span class="pill">godoc</span></h1>
+<p>Native Go SDK for SignalWire. Build voice, messaging, and AI-agent applications
+in Go using SWML, the Relay realtime protocol, and the SignalWire REST APIs.</p>
+
+<blockquote>
+This pane was generated from Go source comments using <code>gomarkdoc</code>,
+then styled to match the look of <a href="https://pkg.go.dev">pkg.go.dev</a>.
+</blockquote>
+
+<h2>Install</h2>
+<pre><code>go get github.com/signalwire/signalwire-go@latest</code></pre>
+
+<h2>Quickstart</h2>
+<pre><code>package main
+
+import (
+    "github.com/signalwire/signalwire-go/pkg/agent"
+)
+
+func main() {
+    a := agent.NewAgentBase(
+        agent.WithName("hello"),
+        agent.WithRoute("/hello"),
+    )
+    a.PromptAddSection("Personality", "You are friendly.")
+    a.PromptAddSection("Goal", "Greet the caller and find out what they need.")
+    a.Run()
+}</code></pre>
+
+<h2>Packages</h2>
+<p>Select a package from the sidebar to view its API documentation.</p>
+
+</main>
+</body>
+</html>

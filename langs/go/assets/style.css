@@ -1,0 +1,39 @@
+
+:root {
+  --go-blue: #00ADD8;
+  --go-blue-dark: #007D9C;
+  --bg: #ffffff;
+  --fg: #202224;
+  --fg-dim: #555a64;
+  --border: #dadce0;
+  --code-bg: #f6f8fa;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+  font: 16px/1.55 "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+body { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+nav.side { background: #fafbfc; border-right: 1px solid var(--border); padding: 20px 0; }
+nav.side header { padding: 0 20px 12px; border-bottom: 1px solid var(--border); }
+nav.side header .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; }
+nav.side header .brand .gopher { width: 28px; height: 28px; border-radius: 6px; background: var(--go-blue); display: inline-block; }
+nav.side ul { list-style: none; padding: 8px 0; margin: 0; }
+nav.side li a { display: block; padding: 6px 20px; text-decoration: none; color: var(--fg); font-size: 14px; border-left: 3px solid transparent; }
+nav.side li a:hover { background: #f0f3f5; color: var(--go-blue-dark); }
+nav.side li a.active { border-left-color: var(--go-blue); color: var(--go-blue-dark); background: #eaf7fb; font-weight: 500; }
+main { padding: 28px 40px; min-width: 0; }
+main h1, main h2, main h3 { font-weight: 600; }
+main h1 { font-size: 28px; margin: 0 0 8px; color: var(--go-blue-dark); }
+main h2 { font-size: 22px; margin: 32px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+main h3 { font-size: 18px; margin: 24px 0 8px; }
+main h4 { font-size: 15px; margin: 18px 0 6px; }
+main p { color: var(--fg); }
+main code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+main pre { background: var(--code-bg); padding: 12px 16px; border-radius: 6px; overflow-x: auto; line-height: 1.45; }
+main pre code { background: transparent; padding: 0; }
+main a { color: var(--go-blue-dark); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main ul, main ol { padding-left: 22px; }
+main blockquote { border-left: 4px solid var(--go-blue); margin: 12px 0; padding: 4px 14px; background: #f6f8fa; }
+.pill { display: inline-block; background: var(--go-blue); color: #fff; font-size: 11px; font-weight: 700;
+  padding: 2px 8px; border-radius: 999px; letter-spacing: 0.04em; text-transform: uppercase; vertical-align: middle; margin-left: 8px; }
+.subnav { font-size: 12px; color: var(--fg-dim); padding: 8px 20px; text-transform: uppercase; letter-spacing: 0.08em; }

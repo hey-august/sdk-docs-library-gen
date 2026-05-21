@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace SignalWire.Contexts | SignalWire .NET SDK </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace SignalWire.Contexts | SignalWire .NET SDK ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SignalWire .NET SDK">
+            SignalWire .NET SDK
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SignalWire.Contexts">
+
+  <h1 id="SignalWire_Contexts" data-uid="SignalWire.Contexts" class="text-break">Namespace SignalWire.Contexts</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Contexts.Context.html">Context</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Contexts.ContextBuilder.html">ContextBuilder</a></dt>
+      <dd><p>Builder for multi-step, multi-context AI agent workflows.</p>
+<p>A ContextBuilder owns one or more <a class="xref" href="SignalWire.Contexts.Context.html">Context</a>s; each
+context owns an ordered list of <a class="xref" href="SignalWire.Contexts.Step.html">Step</a>s. Only one context
+and one step is active at a time. Per chat turn, the runtime injects
+the current step's instructions as a system message, then asks the LLM
+for a response.</p>
+<p><b>Native tools auto-injected by the runtime:</b> When a step
+(or its enclosing context) declares valid_steps or valid_contexts, the
+runtime auto-injects two native tools so the model can navigate the
+flow: <code>next_step</code> and <code>change_context</code>. A third native tool,
+<code>gather_submit</code>, is injected during gather_info questioning.
+These three names are reserved: <a class="xref" href="SignalWire.Contexts.ContextBuilder.html#SignalWire_Contexts_ContextBuilder_Validate">Validate()</a> rejects any
+agent that defines a SWAIG tool with one of them. See
+<a class="xref" href="SignalWire.Contexts.ReservedToolNames.html#SignalWire_Contexts_ReservedToolNames_Reserved">Reserved</a>.</p>
+<p><b>Function whitelisting (<a class="xref" href="SignalWire.Contexts.Step.html#SignalWire_Contexts_Step_SetFunctions_System_Object_">SetFunctions(object)</a>):</b>
+Each step may declare a functions whitelist. The whitelist is applied
+in-memory at the start of each LLM turn. CRITICALLY: if a step does
+NOT declare a functions field, it INHERITS the previous step's active
+set. See <a class="xref" href="SignalWire.Contexts.Step.html#SignalWire_Contexts_Step_SetFunctions_System_Object_">SetFunctions(object)</a> for details and examples.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Contexts.GatherInfo.html">GatherInfo</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Contexts.GatherQuestion.html">GatherQuestion</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Contexts.ReservedToolNames.html">ReservedToolNames</a></dt>
+      <dd><p>Reserved tool names auto-injected by the runtime when contexts/steps are
+present. User-defined SWAIG tools must not collide with these names.</p>
+<ul><li><code>next_step</code> / <code>change_context</code> are injected when
+valid_steps or valid_contexts is set so the model can navigate the flow.</li><li><code>gather_submit</code> is injected while a step's gather_info is
+collecting answers.</li></ul>
+<p><a class="xref" href="SignalWire.Contexts.ContextBuilder.html#SignalWire_Contexts_ContextBuilder_Validate">Validate()</a> rejects any agent that registers a
+user tool sharing one of these names — the runtime would never call the
+user tool because the native one wins.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Contexts.Step.html">Step</a></dt>
+      <dd></dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

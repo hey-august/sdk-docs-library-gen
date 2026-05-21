@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["Compat","CompatAccounts","CompatApplications","CompatCalls","CompatConferences","CompatFaxes","CompatLamlBins","CompatMessages","CompatPhoneNumbers","CompatQueues","CompatRecordings","CompatTokens","CompatTranscriptions"]};

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>logging — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging" class="active">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="logging">logging</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/logging&quot;</span>
+</code></pre></div>
+
+<p>Package logging provides structured logging for the SignalWire AI Agents SDK.</p>
+<p>It supports log levels (debug, info, warn, error), named loggers per component, and can be suppressed globally for CLI tools or testing.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#IsSuppressed">func IsSuppressed() bool</a></li>
+<li><a href="#ResetLoggingConfiguration">func ResetLoggingConfiguration()</a></li>
+<li><a href="#SetGlobalLevel">func SetGlobalLevel(level Level)</a></li>
+<li><a href="#Suppress">func Suppress()</a></li>
+<li><a href="#Unsuppress">func Unsuppress()</a></li>
+<li><a href="#Level">type Level</a></li>
+<li><a href="#GetGlobalLevel">func GetGlobalLevel() Level</a></li>
+<li><a href="#ParseLevel">func ParseLevel(s string) Level</a></li>
+<li><a href="#Logger">type Logger</a></li>
+<li><a href="#New">func New(name string) *Logger</a></li>
+<li><a href="#Logger.Debug">func (l *Logger) Debug(format string, args ...any)</a></li>
+<li><a href="#Logger.Error">func (l *Logger) Error(format string, args ...any)</a></li>
+<li><a href="#Logger.Info">func (l *Logger) Info(format string, args ...any)</a></li>
+<li><a href="#Logger.Warn">func (l *Logger) Warn(format string, args ...any)</a></li>
+</ul>
+<p><a name="IsSuppressed"></a></p>
+<h2 id="func-issuppressed">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L117">IsSuppressed</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">IsSuppressed</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>IsSuppressed returns whether logging is currently suppressed.</p>
+<p><a name="ResetLoggingConfiguration"></a></p>
+<h2 id="func-resetloggingconfiguration">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L82">ResetLoggingConfiguration</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">ResetLoggingConfiguration</span><span class="p">()</span>
+</code></pre></div>
+
+<p>ResetLoggingConfiguration re-reads SIGNALWIRE_LOG_LEVEL and SIGNALWIRE_LOG_MODE from the environment and resets globalLevel and suppressed to the env-derived defaults. It is the Go equivalent of Python's reset_logging_configuration() and is intended for test teardown and env-var-driven reconfiguration at runtime.</p>
+<p><a name="SetGlobalLevel"></a></p>
+<h2 id="func-setgloballevel">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L89">SetGlobalLevel</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">SetGlobalLevel</span><span class="p">(</span><span class="nx">level</span><span class="w"> </span><span class="nx">Level</span><span class="p">)</span>
+</code></pre></div>
+
+<p>SetGlobalLevel sets the minimum log level for all loggers.</p>
+<p><a name="Suppress"></a></p>
+<h2 id="func-suppress">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L103">Suppress</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">Suppress</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Suppress disables all log output.</p>
+<p><a name="Unsuppress"></a></p>
+<h2 id="func-unsuppress">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L110">Unsuppress</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">Unsuppress</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Unsuppress re-enables log output.</p>
+<p><a name="Level"></a></p>
+<h2 id="type-level">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L16">Level</a></h2>
+<p>Level represents a log severity level.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Level</span><span class="w"> </span><span class="kt">int</span>
+</code></pre></div>
+
+<p><a name="LevelDebug"></a></p>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">LevelDebug</span><span class="w"> </span><span class="nx">Level</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">iota</span>
+<span class="w">    </span><span class="nx">LevelInfo</span>
+<span class="w">    </span><span class="nx">LevelWarn</span>
+<span class="w">    </span><span class="nx">LevelError</span>
+<span class="w">    </span><span class="nx">LevelOff</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p><a name="GetGlobalLevel"></a></p>
+<h3 id="func-getgloballevel">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L96">GetGlobalLevel</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">GetGlobalLevel</span><span class="p">()</span><span class="w"> </span><span class="nx">Level</span>
+</code></pre></div>
+
+<p>GetGlobalLevel returns the current global log level.</p>
+<p><a name="ParseLevel"></a></p>
+<h3 id="func-parselevel">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L36">ParseLevel</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">ParseLevel</span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Level</span>
+</code></pre></div>
+
+<p>ParseLevel converts a string level name to a Level. Returns LevelInfo if the string is not recognized.</p>
+<p><a name="Logger"></a></p>
+<h2 id="type-logger">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L124-L127">Logger</a></h2>
+<p>Logger is a named logger that respects global log level settings.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Logger</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="New"></a></p>
+<h3 id="func-new">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L130">New</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Logger</span>
+</code></pre></div>
+
+<p>New creates a new Logger with the given component name.</p>
+<p><a name="Logger.Debug"></a></p>
+<h3 id="func-logger-debug">func (*Logger) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L153">Debug</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">l</span><span class="w"> </span><span class="o">*</span><span class="nx">Logger</span><span class="p">)</span><span class="w"> </span><span class="nx">Debug</span><span class="p">(</span><span class="nx">format</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="w"> </span><span class="o">...</span><span class="kt">any</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Debug logs a message at debug level.</p>
+<p><a name="Logger.Error"></a></p>
+<h3 id="func-logger-error">func (*Logger) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L168">Error</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">l</span><span class="w"> </span><span class="o">*</span><span class="nx">Logger</span><span class="p">)</span><span class="w"> </span><span class="nx">Error</span><span class="p">(</span><span class="nx">format</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="w"> </span><span class="o">...</span><span class="kt">any</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Error logs a message at error level.</p>
+<p><a name="Logger.Info"></a></p>
+<h3 id="func-logger-info">func (*Logger) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L158">Info</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">l</span><span class="w"> </span><span class="o">*</span><span class="nx">Logger</span><span class="p">)</span><span class="w"> </span><span class="nx">Info</span><span class="p">(</span><span class="nx">format</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="w"> </span><span class="o">...</span><span class="kt">any</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Info logs a message at info level.</p>
+<p><a name="Logger.Warn"></a></p>
+<h3 id="func-logger-warn">func (*Logger) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/logging/logger.go#L163">Warn</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">l</span><span class="w"> </span><span class="o">*</span><span class="nx">Logger</span><span class="p">)</span><span class="w"> </span><span class="nx">Warn</span><span class="p">(</span><span class="nx">format</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="w"> </span><span class="o">...</span><span class="kt">any</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Warn logs a message at warn level.</p>
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

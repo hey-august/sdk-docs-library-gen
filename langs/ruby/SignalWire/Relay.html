@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: SignalWire::Relay
+  
+    &mdash; SignalWire Ruby SDK
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "SignalWire::Relay";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span>
+     &raquo; 
+    <span class="title">Relay</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: SignalWire::Relay
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/signalwire/relay/call.rb<span class="defines">,<br>
+  lib/signalwire/relay/action.rb,<br> lib/signalwire/relay/client.rb,<br> lib/signalwire/relay/message.rb,<br> lib/signalwire/relay/constants.rb,<br> lib/signalwire/relay/relay_event.rb</span>
+
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Relay/AIAction.html" title="SignalWire::Relay::AIAction (class)">AIAction</a></span>, <span class='object_link'><a href="Relay/Action.html" title="SignalWire::Relay::Action (class)">Action</a></span>, <span class='object_link'><a href="Relay/ActionTimeoutError.html" title="SignalWire::Relay::ActionTimeoutError (class)">ActionTimeoutError</a></span>, <span class='object_link'><a href="Relay/Call.html" title="SignalWire::Relay::Call (class)">Call</a></span>, <span class='object_link'><a href="Relay/CallReceiveEvent.html" title="SignalWire::Relay::CallReceiveEvent (class)">CallReceiveEvent</a></span>, <span class='object_link'><a href="Relay/CallStateEvent.html" title="SignalWire::Relay::CallStateEvent (class)">CallStateEvent</a></span>, <span class='object_link'><a href="Relay/CallingErrorEvent.html" title="SignalWire::Relay::CallingErrorEvent (class)">CallingErrorEvent</a></span>, <span class='object_link'><a href="Relay/Client.html" title="SignalWire::Relay::Client (class)">Client</a></span>, <span class='object_link'><a href="Relay/CollectAction.html" title="SignalWire::Relay::CollectAction (class)">CollectAction</a></span>, <span class='object_link'><a href="Relay/CollectEvent.html" title="SignalWire::Relay::CollectEvent (class)">CollectEvent</a></span>, <span class='object_link'><a href="Relay/ConferenceEvent.html" title="SignalWire::Relay::ConferenceEvent (class)">ConferenceEvent</a></span>, <span class='object_link'><a href="Relay/ConnectEvent.html" title="SignalWire::Relay::ConnectEvent (class)">ConnectEvent</a></span>, <span class='object_link'><a href="Relay/DenoiseEvent.html" title="SignalWire::Relay::DenoiseEvent (class)">DenoiseEvent</a></span>, <span class='object_link'><a href="Relay/DetectAction.html" title="SignalWire::Relay::DetectAction (class)">DetectAction</a></span>, <span class='object_link'><a href="Relay/DetectEvent.html" title="SignalWire::Relay::DetectEvent (class)">DetectEvent</a></span>, <span class='object_link'><a href="Relay/DialEvent.html" title="SignalWire::Relay::DialEvent (class)">DialEvent</a></span>, <span class='object_link'><a href="Relay/EchoEvent.html" title="SignalWire::Relay::EchoEvent (class)">EchoEvent</a></span>, <span class='object_link'><a href="Relay/FaxAction.html" title="SignalWire::Relay::FaxAction (class)">FaxAction</a></span>, <span class='object_link'><a href="Relay/FaxEvent.html" title="SignalWire::Relay::FaxEvent (class)">FaxEvent</a></span>, <span class='object_link'><a href="Relay/HoldEvent.html" title="SignalWire::Relay::HoldEvent (class)">HoldEvent</a></span>, <span class='object_link'><a href="Relay/Message.html" title="SignalWire::Relay::Message (class)">Message</a></span>, <span class='object_link'><a href="Relay/MessageReceiveEvent.html" title="SignalWire::Relay::MessageReceiveEvent (class)">MessageReceiveEvent</a></span>, <span class='object_link'><a href="Relay/MessageStateEvent.html" title="SignalWire::Relay::MessageStateEvent (class)">MessageStateEvent</a></span>, <span class='object_link'><a href="Relay/PayAction.html" title="SignalWire::Relay::PayAction (class)">PayAction</a></span>, <span class='object_link'><a href="Relay/PayEvent.html" title="SignalWire::Relay::PayEvent (class)">PayEvent</a></span>, <span class='object_link'><a href="Relay/PlayAction.html" title="SignalWire::Relay::PlayAction (class)">PlayAction</a></span>, <span class='object_link'><a href="Relay/PlayEvent.html" title="SignalWire::Relay::PlayEvent (class)">PlayEvent</a></span>, <span class='object_link'><a href="Relay/QueueEvent.html" title="SignalWire::Relay::QueueEvent (class)">QueueEvent</a></span>, <span class='object_link'><a href="Relay/RecordAction.html" title="SignalWire::Relay::RecordAction (class)">RecordAction</a></span>, <span class='object_link'><a href="Relay/RecordEvent.html" title="SignalWire::Relay::RecordEvent (class)">RecordEvent</a></span>, <span class='object_link'><a href="Relay/ReferEvent.html" title="SignalWire::Relay::ReferEvent (class)">ReferEvent</a></span>, <span class='object_link'><a href="Relay/RelayError.html" title="SignalWire::Relay::RelayError (class)">RelayError</a></span>, <span class='object_link'><a href="Relay/RelayEvent.html" title="SignalWire::Relay::RelayEvent (class)">RelayEvent</a></span>, <span class='object_link'><a href="Relay/SendDigitsEvent.html" title="SignalWire::Relay::SendDigitsEvent (class)">SendDigitsEvent</a></span>, <span class='object_link'><a href="Relay/StandaloneCollectAction.html" title="SignalWire::Relay::StandaloneCollectAction (class)">StandaloneCollectAction</a></span>, <span class='object_link'><a href="Relay/StreamAction.html" title="SignalWire::Relay::StreamAction (class)">StreamAction</a></span>, <span class='object_link'><a href="Relay/StreamEvent.html" title="SignalWire::Relay::StreamEvent (class)">StreamEvent</a></span>, <span class='object_link'><a href="Relay/TapAction.html" title="SignalWire::Relay::TapAction (class)">TapAction</a></span>, <span class='object_link'><a href="Relay/TapEvent.html" title="SignalWire::Relay::TapEvent (class)">TapEvent</a></span>, <span class='object_link'><a href="Relay/TranscribeAction.html" title="SignalWire::Relay::TranscribeAction (class)">TranscribeAction</a></span>, <span class='object_link'><a href="Relay/TranscribeEvent.html" title="SignalWire::Relay::TranscribeEvent (class)">TranscribeEvent</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="PROTOCOL_VERSION-constant" class="">PROTOCOL_VERSION =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Protocol version sent during signalwire.connect</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>major</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>2</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>minor</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>0</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>revision</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='int'>0</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="AGENT_STRING-constant" class="">AGENT_STRING =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire-agents-ruby/1.0</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="METHOD_SIGNALWIRE_CONNECT-constant" class="">METHOD_SIGNALWIRE_CONNECT =
+          <div class="docstring">
+  <div class="discussion">
+    <p>JSON-RPC methods</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire.connect</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="METHOD_SIGNALWIRE_EVENT-constant" class="">METHOD_SIGNALWIRE_EVENT =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire.event</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="METHOD_SIGNALWIRE_PING-constant" class="">METHOD_SIGNALWIRE_PING =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire.ping</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="METHOD_SIGNALWIRE_DISCONNECT-constant" class="">METHOD_SIGNALWIRE_DISCONNECT =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire.disconnect</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="METHOD_SIGNALWIRE_RECEIVE-constant" class="">METHOD_SIGNALWIRE_RECEIVE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire.receive</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="METHOD_SIGNALWIRE_UNRECEIVE-constant" class="">METHOD_SIGNALWIRE_UNRECEIVE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire.unreceive</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_AUTHORIZATION_STATE-constant" class="">EVENT_AUTHORIZATION_STATE =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Authorization state event</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire.authorization.state</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="CALL_STATE_CREATED-constant" class="">CALL_STATE_CREATED =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Call states</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>created</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="CALL_STATE_RINGING-constant" class="">CALL_STATE_RINGING =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ringing</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="CALL_STATE_ANSWERED-constant" class="">CALL_STATE_ANSWERED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>answered</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="CALL_STATE_ENDING-constant" class="">CALL_STATE_ENDING =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ending</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="CALL_STATE_ENDED-constant" class="">CALL_STATE_ENDED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ended</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="CALL_STATES-constant" class="">CALL_STATES =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span>
+  <span class='const'><span class='object_link'><a href="#CALL_STATE_CREATED-constant" title="SignalWire::Relay::CALL_STATE_CREATED (constant)">CALL_STATE_CREATED</a></span></span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="#CALL_STATE_RINGING-constant" title="SignalWire::Relay::CALL_STATE_RINGING (constant)">CALL_STATE_RINGING</a></span></span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="#CALL_STATE_ANSWERED-constant" title="SignalWire::Relay::CALL_STATE_ANSWERED (constant)">CALL_STATE_ANSWERED</a></span></span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="#CALL_STATE_ENDING-constant" title="SignalWire::Relay::CALL_STATE_ENDING (constant)">CALL_STATE_ENDING</a></span></span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="#CALL_STATE_ENDED-constant" title="SignalWire::Relay::CALL_STATE_ENDED (constant)">CALL_STATE_ENDED</a></span></span>
+<span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="END_REASON_HANGUP-constant" class="">END_REASON_HANGUP =
+          <div class="docstring">
+  <div class="discussion">
+    <p>End reasons</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hangup</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="END_REASON_CANCEL-constant" class="">END_REASON_CANCEL =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>cancel</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="END_REASON_BUSY-constant" class="">END_REASON_BUSY =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>busy</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="END_REASON_NO_ANSWER-constant" class="">END_REASON_NO_ANSWER =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>noAnswer</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="END_REASON_DECLINE-constant" class="">END_REASON_DECLINE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>decline</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="END_REASON_ERROR-constant" class="">END_REASON_ERROR =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>error</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="END_REASON_ABANDONED-constant" class="">END_REASON_ABANDONED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>abandoned</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="END_REASON_MAX_DURATION-constant" class="">END_REASON_MAX_DURATION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>max_duration</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="END_REASON_NOT_FOUND-constant" class="">END_REASON_NOT_FOUND =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>not_found</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="CONNECT_STATE_CONNECTING-constant" class="">CONNECT_STATE_CONNECTING =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Connect states</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>connecting</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="CONNECT_STATE_CONNECTED-constant" class="">CONNECT_STATE_CONNECTED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>connected</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="CONNECT_STATE_DISCONNECTED-constant" class="">CONNECT_STATE_DISCONNECTED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>disconnected</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="CONNECT_STATE_FAILED-constant" class="">CONNECT_STATE_FAILED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>failed</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_STATE-constant" class="">EVENT_CALL_STATE =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Event types — calling</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.state</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_RECEIVE-constant" class="">EVENT_CALL_RECEIVE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.receive</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_CONNECT-constant" class="">EVENT_CALL_CONNECT =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.connect</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_PLAY-constant" class="">EVENT_CALL_PLAY =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.play</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_COLLECT-constant" class="">EVENT_CALL_COLLECT =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.collect</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_RECORD-constant" class="">EVENT_CALL_RECORD =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.record</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_DETECT-constant" class="">EVENT_CALL_DETECT =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.detect</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_FAX-constant" class="">EVENT_CALL_FAX =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.fax</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_TAP-constant" class="">EVENT_CALL_TAP =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.tap</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_SEND_DIGITS-constant" class="">EVENT_CALL_SEND_DIGITS =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.send_digits</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_DIAL-constant" class="">EVENT_CALL_DIAL =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.dial</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_REFER-constant" class="">EVENT_CALL_REFER =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.refer</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_DENOISE-constant" class="">EVENT_CALL_DENOISE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.denoise</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_PAY-constant" class="">EVENT_CALL_PAY =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.pay</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_QUEUE-constant" class="">EVENT_CALL_QUEUE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.queue</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_STREAM-constant" class="">EVENT_CALL_STREAM =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.stream</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_ECHO-constant" class="">EVENT_CALL_ECHO =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.echo</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALL_TRANSCRIBE-constant" class="">EVENT_CALL_TRANSCRIBE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.transcribe</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CONFERENCE-constant" class="">EVENT_CONFERENCE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.conference</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CALLING_ERROR-constant" class="">EVENT_CALLING_ERROR =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.error</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_MESSAGING_RECEIVE-constant" class="">EVENT_MESSAGING_RECEIVE =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Messaging event types</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>messaging.receive</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_MESSAGING_STATE-constant" class="">EVENT_MESSAGING_STATE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>messaging.state</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="MESSAGE_STATE_QUEUED-constant" class="">MESSAGE_STATE_QUEUED =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Message states</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>queued</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="MESSAGE_STATE_INITIATED-constant" class="">MESSAGE_STATE_INITIATED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>initiated</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="MESSAGE_STATE_SENT-constant" class="">MESSAGE_STATE_SENT =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sent</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="MESSAGE_STATE_DELIVERED-constant" class="">MESSAGE_STATE_DELIVERED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>delivered</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="MESSAGE_STATE_UNDELIVERED-constant" class="">MESSAGE_STATE_UNDELIVERED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>undelivered</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="MESSAGE_STATE_FAILED-constant" class="">MESSAGE_STATE_FAILED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>failed</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="MESSAGE_STATE_RECEIVED-constant" class="">MESSAGE_STATE_RECEIVED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>received</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="MESSAGE_TERMINAL_STATES-constant" class="">MESSAGE_TERMINAL_STATES =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span>
+  <span class='const'><span class='object_link'><a href="#MESSAGE_STATE_DELIVERED-constant" title="SignalWire::Relay::MESSAGE_STATE_DELIVERED (constant)">MESSAGE_STATE_DELIVERED</a></span></span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="#MESSAGE_STATE_UNDELIVERED-constant" title="SignalWire::Relay::MESSAGE_STATE_UNDELIVERED (constant)">MESSAGE_STATE_UNDELIVERED</a></span></span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="#MESSAGE_STATE_FAILED-constant" title="SignalWire::Relay::MESSAGE_STATE_FAILED (constant)">MESSAGE_STATE_FAILED</a></span></span>
+<span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="PLAY_STATE_PLAYING-constant" class="">PLAY_STATE_PLAYING =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Play states</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>playing</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="PLAY_STATE_PAUSED-constant" class="">PLAY_STATE_PAUSED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>paused</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="PLAY_STATE_FINISHED-constant" class="">PLAY_STATE_FINISHED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>finished</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="PLAY_STATE_ERROR-constant" class="">PLAY_STATE_ERROR =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>error</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="RECORD_STATE_RECORDING-constant" class="">RECORD_STATE_RECORDING =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Record states</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>recording</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="RECORD_STATE_PAUSED-constant" class="">RECORD_STATE_PAUSED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>paused</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="RECORD_STATE_FINISHED-constant" class="">RECORD_STATE_FINISHED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>finished</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="RECORD_STATE_NO_INPUT-constant" class="">RECORD_STATE_NO_INPUT =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>no_input</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="DETECT_TYPE_MACHINE-constant" class="">DETECT_TYPE_MACHINE =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Detect types</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>machine</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="DETECT_TYPE_FAX-constant" class="">DETECT_TYPE_FAX =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>fax</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="DETECT_TYPE_DIGIT-constant" class="">DETECT_TYPE_DIGIT =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>digit</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="ROOM_STATE_JOINING-constant" class="">ROOM_STATE_JOINING =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Join room states</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>joining</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="ROOM_STATE_JOIN-constant" class="">ROOM_STATE_JOIN =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>join</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="ROOM_STATE_LEAVING-constant" class="">ROOM_STATE_LEAVING =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>leaving</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="ROOM_STATE_LEAVE-constant" class="">ROOM_STATE_LEAVE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>leave</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="RECONNECT_MIN_DELAY-constant" class="">RECONNECT_MIN_DELAY =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Reconnect settings</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='float'>1.0</span></pre></dd>
+      
+        <dt id="RECONNECT_MAX_DELAY-constant" class="">RECONNECT_MAX_DELAY =
+          
+        </dt>
+        <dd><pre class="code"><span class='float'>30.0</span></pre></dd>
+      
+        <dt id="RECONNECT_BACKOFF_FACTOR-constant" class="">RECONNECT_BACKOFF_FACTOR =
+          
+        </dt>
+        <dd><pre class="code"><span class='float'>2.0</span></pre></dd>
+      
+        <dt id="DEFAULT_RELAY_HOST-constant" class="">DEFAULT_RELAY_HOST =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Default host</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>relay.signalwire.com</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="EVENT_CLASS_MAP-constant" class="">EVENT_CLASS_MAP =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Map event_type string to typed event class</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.state</span><span class='tstring_end'>&#39;</span></span>       <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/CallStateEvent.html" title="SignalWire::Relay::CallStateEvent (class)">CallStateEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.receive</span><span class='tstring_end'>&#39;</span></span>     <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/CallReceiveEvent.html" title="SignalWire::Relay::CallReceiveEvent (class)">CallReceiveEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.play</span><span class='tstring_end'>&#39;</span></span>        <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/PlayEvent.html" title="SignalWire::Relay::PlayEvent (class)">PlayEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.record</span><span class='tstring_end'>&#39;</span></span>      <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/RecordEvent.html" title="SignalWire::Relay::RecordEvent (class)">RecordEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.collect</span><span class='tstring_end'>&#39;</span></span>     <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/CollectEvent.html" title="SignalWire::Relay::CollectEvent (class)">CollectEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.connect</span><span class='tstring_end'>&#39;</span></span>     <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/ConnectEvent.html" title="SignalWire::Relay::ConnectEvent (class)">ConnectEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.detect</span><span class='tstring_end'>&#39;</span></span>      <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/DetectEvent.html" title="SignalWire::Relay::DetectEvent (class)">DetectEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.fax</span><span class='tstring_end'>&#39;</span></span>         <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/FaxEvent.html" title="SignalWire::Relay::FaxEvent (class)">FaxEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.tap</span><span class='tstring_end'>&#39;</span></span>         <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/TapEvent.html" title="SignalWire::Relay::TapEvent (class)">TapEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.stream</span><span class='tstring_end'>&#39;</span></span>      <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/StreamEvent.html" title="SignalWire::Relay::StreamEvent (class)">StreamEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.send_digits</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/SendDigitsEvent.html" title="SignalWire::Relay::SendDigitsEvent (class)">SendDigitsEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.dial</span><span class='tstring_end'>&#39;</span></span>        <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/DialEvent.html" title="SignalWire::Relay::DialEvent (class)">DialEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.refer</span><span class='tstring_end'>&#39;</span></span>       <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/ReferEvent.html" title="SignalWire::Relay::ReferEvent (class)">ReferEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.denoise</span><span class='tstring_end'>&#39;</span></span>     <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/DenoiseEvent.html" title="SignalWire::Relay::DenoiseEvent (class)">DenoiseEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.pay</span><span class='tstring_end'>&#39;</span></span>         <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/PayEvent.html" title="SignalWire::Relay::PayEvent (class)">PayEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.queue</span><span class='tstring_end'>&#39;</span></span>       <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/QueueEvent.html" title="SignalWire::Relay::QueueEvent (class)">QueueEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.echo</span><span class='tstring_end'>&#39;</span></span>        <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/EchoEvent.html" title="SignalWire::Relay::EchoEvent (class)">EchoEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.transcribe</span><span class='tstring_end'>&#39;</span></span>  <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/TranscribeEvent.html" title="SignalWire::Relay::TranscribeEvent (class)">TranscribeEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.call.hold</span><span class='tstring_end'>&#39;</span></span>        <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/HoldEvent.html" title="SignalWire::Relay::HoldEvent (class)">HoldEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.conference</span><span class='tstring_end'>&#39;</span></span>       <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/ConferenceEvent.html" title="SignalWire::Relay::ConferenceEvent (class)">ConferenceEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>calling.error</span><span class='tstring_end'>&#39;</span></span>            <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/CallingErrorEvent.html" title="SignalWire::Relay::CallingErrorEvent (class)">CallingErrorEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>messaging.receive</span><span class='tstring_end'>&#39;</span></span>        <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/MessageReceiveEvent.html" title="SignalWire::Relay::MessageReceiveEvent (class)">MessageReceiveEvent</a></span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>messaging.state</span><span class='tstring_end'>&#39;</span></span>          <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="Relay/MessageStateEvent.html" title="SignalWire::Relay::MessageStateEvent (class)">MessageStateEvent</a></span></span>
+<span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse_event-class_method" title="parse_event (class method)">.<strong>parse_event</strong>(payload)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Parse a raw signalwire.event params hash into a typed event object.</p></div></span>
+  
+</li>
+
+      
+    </ul>
+    
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="parse_event-class_method">
+  
+    .<strong>parse_event</strong>(payload)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Parse a raw signalwire.event params hash into a typed event object.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+664
+665
+666
+667
+668</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 664</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_parse_event'>parse_event</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_event_type'>event_type</span> <span class='op'>=</span> <span class='id identifier rubyid_payload'>payload</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>event_type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_klass'>klass</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="#EVENT_CLASS_MAP-constant" title="SignalWire::Relay::EVENT_CLASS_MAP (constant)">EVENT_CLASS_MAP</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_event_type'>event_type</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='const'><span class='object_link'><a href="Relay/RelayEvent.html" title="SignalWire::Relay::RelayEvent (class)">RelayEvent</a></span></span>
+  <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_from_payload'>from_payload</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu May 21 15:20:54 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.43 (ruby-3.1.4).
+</div>
+
+    </div>
+  </body>
+</html>

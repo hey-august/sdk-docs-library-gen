@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; SignalWire Ruby SDK
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'><!-- Header -->
+<div align="center">
+    <a href="https://signalwire.com" target="_blank">
+        <img src="https://github.com/user-attachments/assets/0c8ed3b9-8c50-4dc6-9cc4-cc6cd137fd50" width="500" />
+    </a>
+<h1 id="SignalWire_SDK_for_Ruby">SignalWire SDK for Ruby</h1>
+<p><em>Build AI voice agents, control live calls over WebSocket, and manage every SignalWire resource over REST -- all from one gem.</em></p>
+<p align="center">
+  <a href="https://developer.signalwire.com/sdks/agents-sdk" target="_blank">Documentation</a> &middot;
+  <a href="https://github.com/signalwire/signalwire-docs/issues/new/choose" target="_blank">Report an Issue</a> &middot;
+  <a href="https://rubygems.org/gems/signalwire" target="_blank">RubyGems</a>
+</p>
+<p><a href="https://discord.com/invite/F2WNYTNjuF" target="_blank"><img src="https://img.shields.io/badge/Discord%20Community-5865F2" alt="Discord" /></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/MIT-License-blue" alt="MIT License" /></a>
+<a href="https://github.com/signalwire/signalwire-ruby" target="_blank"><img src="https://img.shields.io/github/stars/signalwire/signalwire-ruby" alt="GitHub Stars" /></a></p>
+</div>
+<hr />
+<h2 id="What_s_in_this_SDK">What's in this SDK</h2>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>What it does</th>
+<th>Quick link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI Agents</strong></td>
+<td>Build voice agents that handle calls autonomously -- the platform runs the AI pipeline, your code defines the persona, tools, and call flow</td>
+<td><a href="#ai-agents">Agent Guide</a></td>
+</tr>
+<tr>
+<td><strong>RELAY Client</strong></td>
+<td>Control live calls and SMS/MMS in real time over WebSocket -- answer, play, record, collect DTMF, conference, transfer, and more</td>
+<td><a href="relay/README.md">RELAY docs</a></td>
+</tr>
+<tr>
+<td><strong>REST Client</strong></td>
+<td>Manage SignalWire resources over HTTP -- phone numbers, SIP endpoints, Fabric AI agents, video rooms, messaging, and 18+ API namespaces</td>
+<td><a href="rest/README.md">REST docs</a></td>
+</tr>
+</tbody>
+</table>
+<pre class="code bash"><code class="bash">gem install signalwire
+</code></pre>
+<hr />
+<h2 id="AI_Agents">AI Agents</h2>
+<p>Each agent is a self-contained microservice that generates <a href="docs/swml_service_guide.md">SWML</a> (SignalWire Markup Language) and handles <a href="docs/swaig_reference.md">SWAIG</a> (SignalWire AI Gateway) tool calls. The SignalWire platform runs the entire AI pipeline (STT, LLM, TTS) -- your agent just defines the behavior.</p>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='id identifier rubyid_agent'>agent</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/AgentBase.html" title="SignalWire::AgentBase (class)">AgentBase</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SignalWire/AgentBase.html#initialize-instance_method" title="SignalWire::AgentBase#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-agent</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>route:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_agent'>agent</span><span class='period'>.</span><span class='id identifier rubyid_add_language'>add_language</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>English</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>code</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>en-US</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>voice</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>elevenlabs.rachel</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_agent'>agent</span><span class='period'>.</span><span class='id identifier rubyid_prompt_add_section'>prompt_add_section</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Role</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>You are a helpful assistant.</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_agent'>agent</span><span class='period'>.</span><span class='id identifier rubyid_define_tool'>define_tool</span><span class='lparen'>(</span>
+  <span class='label'>name:</span>        <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>get_time</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>description:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Get the current time</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>parameters:</span>  <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid__args'>_args</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span><span class='op'>|</span>
+  <span class='const'><span class='object_link'><a href="SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SignalWire/Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The time is </span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%H:%M:%S</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_agent'>agent</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span>
+</code></pre>
+<p>Test locally without running a server:</p>
+<pre class="code bash"><code class="bash">swaig-test my_agent.rb --list-tools
+swaig-test my_agent.rb --dump-swml
+swaig-test my_agent.rb --exec get_time
+</code></pre>
+<h3 id="Agent_Features">Agent Features</h3>
+<ul>
+<li><strong>Prompt Object Model (POM)</strong> -- structured prompt composition via <code>prompt_add_section</code></li>
+<li><strong>SWAIG tools</strong> -- define functions with <code>define_tool</code> and a block that the AI calls mid-conversation, with native access to the call's media stack</li>
+<li><strong>Skills system</strong> -- add capabilities with one-liners: <code>agent.add_skill('datetime')</code></li>
+<li><strong>Contexts and steps</strong> -- structured multi-step workflows with navigation control</li>
+<li><strong>DataMap tools</strong> -- tools that execute on SignalWire's servers, calling REST APIs without your own webhook</li>
+<li><strong>Dynamic configuration</strong> -- per-request agent customization for multi-tenant deployments</li>
+<li><strong>Call flow control</strong> -- pre-answer, post-answer, and post-AI verb insertion</li>
+<li><strong>Prefab agents</strong> -- ready-to-use archetypes (InfoGatherer, Survey, FAQ, Receptionist, Concierge)</li>
+<li><strong>Multi-agent hosting</strong> -- serve multiple agents on a single server with <code>AgentServer</code></li>
+<li><strong>SIP routing</strong> -- route SIP calls to agents based on usernames</li>
+<li><strong>Session state</strong> -- persistent conversation state with global data and post-prompt summaries</li>
+<li><strong>Security</strong> -- auto-generated basic auth, function-specific HMAC tokens, SSL support</li>
+<li><strong>Rack compatible</strong> -- run standalone or mount in Rails, Sinatra, or any Rack app</li>
+<li><strong>Serverless</strong> -- auto-detects Lambda, CGI, Google Cloud Functions, Azure Functions</li>
+</ul>
+<h3 id="Agent_Examples">Agent Examples</h3>
+<p>The <a href="examples/"><code>examples/</code></a> directory contains 39 working examples:</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>What it demonstrates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="examples/simple_agent.rb">simple_agent.rb</a></td>
+<td>POM prompts, SWAIG tools, hints, language config, LLM tuning</td>
+</tr>
+<tr>
+<td><a href="examples/contexts_demo.rb">contexts_demo.rb</a></td>
+<td>Multi-step workflow with context switching and step navigation</td>
+</tr>
+<tr>
+<td><a href="examples/datamap_demo.rb">datamap_demo.rb</a></td>
+<td>Server-side API tools without webhooks</td>
+</tr>
+<tr>
+<td><a href="examples/skills_demo.rb">skills_demo.rb</a></td>
+<td>Loading built-in skills (datetime, math, joke)</td>
+</tr>
+<tr>
+<td><a href="examples/call_flow.rb">call_flow.rb</a></td>
+<td>Call flow verbs, debug events, recording workflows</td>
+</tr>
+<tr>
+<td><a href="examples/session_state.rb">session_state.rb</a></td>
+<td>Global data, post-prompt analysis, on_summary callback</td>
+</tr>
+<tr>
+<td><a href="examples/multi_agent_server.rb">multi_agent_server.rb</a></td>
+<td>Multiple agents on one server with AgentServer</td>
+</tr>
+<tr>
+<td><a href="examples/lambda_agent.rb">lambda_agent.rb</a></td>
+<td>Serverless deployment with exportable Rack app</td>
+</tr>
+<tr>
+<td><a href="examples/comprehensive_dynamic.rb">comprehensive_dynamic.rb</a></td>
+<td>Per-request dynamic configuration, multi-tenant routing</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="examples/README.md">examples/README.md</a> for the full list organized by category.</p>
+<hr />
+<h2 id="RELAY_Client">RELAY Client</h2>
+<p>Real-time call control and messaging over WebSocket. The RELAY client connects to SignalWire via the Blade protocol and gives you threaded, imperative control over live phone calls and SMS/MMS.</p>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/Relay.html" title="SignalWire::Relay (module)">Relay</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/Relay/Client.html" title="SignalWire::Relay::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SignalWire/Relay/Client.html#initialize-instance_method" title="SignalWire::Relay::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+  <span class='label'>project:</span>  <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>your-project-id</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>token:</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>your-api-token</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>space:</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example.signalwire.com</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>contexts:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>default</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='rparen'>)</span>
+
+<span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_on_call'>on_call</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_call'>call</span><span class='op'>|</span>
+  <span class='id identifier rubyid_call'>call</span><span class='period'>.</span><span class='id identifier rubyid_answer'>answer</span>
+  <span class='id identifier rubyid_action'>action</span> <span class='op'>=</span> <span class='id identifier rubyid_call'>call</span><span class='period'>.</span><span class='id identifier rubyid_play'>play</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>tts</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>params</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>text</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Welcome!</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span> <span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_action'>action</span><span class='period'>.</span><span class='id identifier rubyid_wait'>wait</span>
+  <span class='id identifier rubyid_call'>call</span><span class='period'>.</span><span class='id identifier rubyid_hangup'>hangup</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span>
+</code></pre>
+<ul>
+<li>57+ calling methods (play, record, collect, detect, tap, stream, AI, conferencing, and more)</li>
+<li>SMS/MMS messaging with delivery tracking</li>
+<li>Action objects with <code>wait</code>, <code>stop</code>, <code>pause</code>, <code>resume</code></li>
+<li>Thread-safe with auto-reconnect and exponential backoff</li>
+</ul>
+<p>See the <strong><a href="relay/README.md">RELAY documentation</a></strong> for the full guide, API reference, and examples.</p>
+<hr />
+<h2 id="REST_Client">REST Client</h2>
+<p>Synchronous REST client for managing SignalWire resources and controlling calls over HTTP. No WebSocket required.</p>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/REST.html" title="SignalWire::REST (module)">REST</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/REST/RestClient.html" title="SignalWire::REST::RestClient (class)">RestClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SignalWire/REST/RestClient.html#initialize-instance_method" title="SignalWire::REST::RestClient#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+  <span class='label'>project:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>your-project-id</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>token:</span>   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>your-api-token</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>host:</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example.signalwire.com</span><span class='tstring_end'>&#39;</span></span>
+<span class='rparen'>)</span>
+
+<span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_fabric'>fabric</span><span class='period'>.</span><span class='id identifier rubyid_ai_agents'>ai_agents</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Support Bot</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>prompt:</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>text</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>You are helpful.</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_calling'>calling</span><span class='period'>.</span><span class='id identifier rubyid_play'>play</span><span class='lparen'>(</span><span class='id identifier rubyid_call_id'>call_id</span><span class='comma'>,</span> <span class='label'>play:</span> <span class='lbracket'>[</span><span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>tts</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>text</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello!</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_phone_numbers'>phone_numbers</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='label'>area_code:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>512</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_datasphere'>datasphere</span><span class='period'>.</span><span class='id identifier rubyid_documents'>documents</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='label'>query_string:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>billing policy</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</code></pre>
+<ul>
+<li>21 namespaced API surfaces: Fabric (13 resource types), Calling (37 commands), Video, Datasphere, Compat (Twilio-compatible), Phone Numbers, SIP, Queues, Recordings, and more</li>
+<li>Hash returns -- raw JSON, no wrapper objects to learn</li>
+<li>Single <code>RestClient</code> with namespaced sub-objects for every API</li>
+</ul>
+<p>See the <strong><a href="rest/README.md">REST documentation</a></strong> for the full guide, API reference, and examples.</p>
+<hr />
+<h2 id="Installation">Installation</h2>
+<pre class="code bash"><code class="bash"># From RubyGems
+gem install signalwire
+
+# Or in your Gemfile
+gem &#39;signalwire&#39;
+</code></pre>
+<p>Requires Ruby &gt;= 3.0.</p>
+<h2 id="Documentation">Documentation</h2>
+<p>Full reference documentation is available at <strong><a href="https://developer.signalwire.com/sdks/agents-sdk">developer.signalwire.com/sdks/agents-sdk</a></strong>.</p>
+<p>Guides are also available in the <a href="docs/"><code>docs/</code></a> directory:</p>
+<h3 id="Getting_Started">Getting Started</h3>
+<ul>
+<li><a href="docs/agent_guide.md">Agent Guide</a> -- creating agents, prompt configuration, dynamic setup</li>
+<li><a href="docs/architecture.md">Architecture</a> -- SDK architecture and core concepts</li>
+<li><a href="docs/sdk_features.md">SDK Features</a> -- feature overview, SDK vs raw SWML comparison</li>
+</ul>
+<h3 id="Core_Features">Core Features</h3>
+<ul>
+<li><a href="docs/swaig_reference.md">SWAIG Reference</a> -- function results, actions, post_data lifecycle</li>
+<li><a href="docs/contexts_guide.md">Contexts and Steps</a> -- structured workflows, navigation, gather mode</li>
+<li><a href="docs/datamap_guide.md">DataMap Guide</a> -- serverless API tools without webhooks</li>
+<li><a href="docs/llm_parameters.md">LLM Parameters</a> -- temperature, top_p, barge confidence tuning</li>
+<li><a href="docs/swml_service_guide.md">SWML Service Guide</a> -- low-level construction of SWML documents</li>
+</ul>
+<h3 id="Skills_and_Extensions">Skills and Extensions</h3>
+<ul>
+<li><a href="docs/skills_system.md">Skills System</a> -- built-in skills and the modular framework</li>
+<li><a href="docs/third_party_skills.md">Third-Party Skills</a> -- creating and publishing custom skills</li>
+<li><a href="docs/mcp_gateway_reference.md">MCP Gateway</a> -- Model Context Protocol integration</li>
+</ul>
+<h3 id="Deployment">Deployment</h3>
+<ul>
+<li><a href="docs/cli_guide.md">CLI Guide</a> -- <code>swaig-test</code> command reference</li>
+<li><a href="docs/cloud_functions_guide.md">Cloud Functions</a> -- Lambda, Cloud Functions, Azure deployment</li>
+<li><a href="docs/configuration.md">Configuration</a> -- environment variables, SSL, proxy setup</li>
+<li><a href="docs/security.md">Security</a> -- authentication and security model</li>
+</ul>
+<h3 id="Reference">Reference</h3>
+<ul>
+<li><a href="docs/api_reference.md">API Reference</a> -- complete class and method reference</li>
+<li><a href="docs/skills_parameter_schema.md">Skills Parameter Schema</a> -- skill parameter definitions</li>
+</ul>
+<h2 id="Environment_Variables">Environment Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Used by</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGNALWIRE_PROJECT_ID</code></td>
+<td>RELAY, REST</td>
+<td>Project identifier</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_API_TOKEN</code></td>
+<td>RELAY, REST</td>
+<td>API token</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_SPACE</code></td>
+<td>RELAY, REST</td>
+<td>Space hostname (e.g. <code>example.signalwire.com</code>)</td>
+</tr>
+<tr>
+<td><code>SWML_BASIC_AUTH_USER</code></td>
+<td>Agents</td>
+<td>Basic auth username (default: auto-generated)</td>
+</tr>
+<tr>
+<td><code>SWML_BASIC_AUTH_PASSWORD</code></td>
+<td>Agents</td>
+<td>Basic auth password (default: auto-generated)</td>
+</tr>
+<tr>
+<td><code>SWML_PROXY_URL_BASE</code></td>
+<td>Agents</td>
+<td>Base URL when behind a reverse proxy</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_ENABLED</code></td>
+<td>Agents</td>
+<td>Enable HTTPS (<code>true</code>, <code>1</code>, <code>yes</code>)</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_CERT_PATH</code></td>
+<td>Agents</td>
+<td>Path to SSL certificate</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_KEY_PATH</code></td>
+<td>Agents</td>
+<td>Path to SSL private key</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_LOG_LEVEL</code></td>
+<td>All</td>
+<td>Logging level (<code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code>)</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_LOG_MODE</code></td>
+<td>All</td>
+<td>Set to <code>off</code> to suppress all logging</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Testing">Testing</h2>
+<pre class="code bash"><code class="bash"># Install dev dependencies
+bundle install
+
+# Run the test suite
+rake test
+
+# Run by category
+ruby -Ilib -Itest test/unit/**/*_test.rb
+ruby -Ilib -Itest test/integration/**/*_test.rb
+
+# Coverage
+COVERAGE=1 rake test
+</code></pre>
+<h2 id="License">License</h2>
+<p>MIT -- see <a href="LICENSE">LICENSE</a> for details.</p></div></div>
+
+      <div id="footer">
+  Generated on Thu May 21 15:20:53 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.43 (ruby-3.1.4).
+</div>
+
+    </div>
+  </body>
+</html>

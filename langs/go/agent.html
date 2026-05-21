@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>agent — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent" class="active">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="agent">agent</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/agent&quot;</span>
+</code></pre></div>
+
+<p>Package agent provides the core AgentBase type that wires together SWML rendering, tool dispatch, prompt management, AI configuration, and HTTP serving into a single self-contained AI agent.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#AgentBase">type AgentBase</a></li>
+<li><a href="#NewAgentBase">func NewAgentBase(opts ...AgentOption) *AgentBase</a></li>
+<li><a href="#AgentBase.AddAnswerVerb">func (a <em>AgentBase) AddAnswerVerb(config map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddFunctionInclude">func (a <em>AgentBase) AddFunctionInclude(url string, functions []string, metaData map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddHint">func (a <em>AgentBase) AddHint(hint string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddHints">func (a <em>AgentBase) AddHints(hints []string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddInternalFiller">func (a <em>AgentBase) AddInternalFiller(funcName, langCode string, fillers []string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddLanguage">func (a <em>AgentBase) AddLanguage(config map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddLanguageTyped">func (a <em>AgentBase) AddLanguageTyped(name, code, voice string, speechFillers, functionFillers []string, engine, model string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddMcpServer">func (a <em>AgentBase) AddMcpServer(cfg MCPServerConfig) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddPatternHint">func (a <em>AgentBase) AddPatternHint(hint string, pattern string, replace string, ignoreCase ...bool) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddPostAiVerb">func (a <em>AgentBase) AddPostAiVerb(verbName string, config map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddPostAnswerVerb">func (a <em>AgentBase) AddPostAnswerVerb(verbName string, config map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddPreAnswerVerb">func (a <em>AgentBase) AddPreAnswerVerb(verbName string, config map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddPronunciation">func (a <em>AgentBase) AddPronunciation(replace, withText string, ignoreCase ...bool) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddSkill">func (a <em>AgentBase) AddSkill(skillName string, params map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AddSwaigQueryParams">func (a <em>AgentBase) AddSwaigQueryParams(params map[string]string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.AsRouter">func (a *AgentBase) AsRouter() http.Handler</a></li>
+<li><a href="#AgentBase.AutoMapSipUsernames">func (a <em>AgentBase) AutoMapSipUsernames() </em>AgentBase</a></li>
+<li><a href="#AgentBase.ClearPostAiVerbs">func (a <em>AgentBase) ClearPostAiVerbs() </em>AgentBase</a></li>
+<li><a href="#AgentBase.ClearPostAnswerVerbs">func (a <em>AgentBase) ClearPostAnswerVerbs() </em>AgentBase</a></li>
+<li><a href="#AgentBase.ClearPreAnswerVerbs">func (a <em>AgentBase) ClearPreAnswerVerbs() </em>AgentBase</a></li>
+<li><a href="#AgentBase.ClearSwaigQueryParams">func (a <em>AgentBase) ClearSwaigQueryParams() </em>AgentBase</a></li>
+<li><a href="#AgentBase.Contexts">func (a <em>AgentBase) Contexts() </em>contexts.ContextBuilder</a></li>
+<li><a href="#AgentBase.CreateToolToken">func (a *AgentBase) CreateToolToken(toolName, callID string) (token string)</a></li>
+<li><a href="#AgentBase.DefineContexts">func (a <em>AgentBase) DefineContexts() </em>contexts.ContextBuilder</a></li>
+<li><a href="#AgentBase.DefineTool">func (a <em>AgentBase) DefineTool(def ToolDefinition) </em>AgentBase</a></li>
+<li><a href="#AgentBase.DefineTools">func (a <em>AgentBase) DefineTools() []</em>ToolDefinition</a></li>
+<li><a href="#AgentBase.EnableDebugEvents">func (a <em>AgentBase) EnableDebugEvents(level int) </em>AgentBase</a></li>
+<li><a href="#AgentBase.EnableDebugRoutes">func (a <em>AgentBase) EnableDebugRoutes() </em>AgentBase</a></li>
+<li><a href="#AgentBase.EnableMcpServer">func (a <em>AgentBase) EnableMcpServer() </em>AgentBase</a></li>
+<li><a href="#AgentBase.EnableSipRouting">func (a <em>AgentBase) EnableSipRouting(autoMap bool, path string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.GetAllFunctions">func (a <em>AgentBase) GetAllFunctions() map[string]</em>ToolDefinition</a></li>
+<li><a href="#AgentBase.GetBasicAuthCredentials">func (a *AgentBase) GetBasicAuthCredentials() (string, string)</a></li>
+<li><a href="#AgentBase.GetBasicAuthCredentialsWithSource">func (a *AgentBase) GetBasicAuthCredentialsWithSource() (user, pass, source string)</a></li>
+<li><a href="#AgentBase.GetContexts">func (a *AgentBase) GetContexts() map[string]any</a></li>
+<li><a href="#AgentBase.GetFullURL">func (a *AgentBase) GetFullURL(includeAuth bool) string</a></li>
+<li><a href="#AgentBase.GetFunction">func (a <em>AgentBase) GetFunction(name string) </em>ToolDefinition</a></li>
+<li><a href="#AgentBase.GetName">func (a *AgentBase) GetName() string</a></li>
+<li><a href="#AgentBase.GetPostPrompt">func (a *AgentBase) GetPostPrompt() string</a></li>
+<li><a href="#AgentBase.GetPrompt">func (a *AgentBase) GetPrompt() any</a></li>
+<li><a href="#AgentBase.GetRawPrompt">func (a *AgentBase) GetRawPrompt() string</a></li>
+<li><a href="#AgentBase.GetRoute">func (a *AgentBase) GetRoute() string</a></li>
+<li><a href="#AgentBase.HasFunction">func (a *AgentBase) HasFunction(name string) bool</a></li>
+<li><a href="#AgentBase.HasSkill">func (a *AgentBase) HasSkill(skillName string) bool</a></li>
+<li><a href="#AgentBase.ListSkills">func (a *AgentBase) ListSkills() []string</a></li>
+<li><a href="#AgentBase.ListToolNames">func (a *AgentBase) ListToolNames() []string</a></li>
+<li><a href="#AgentBase.ManualSetProxyUrl">func (a <em>AgentBase) ManualSetProxyUrl(url string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.OnDebugEvent">func (a <em>AgentBase) OnDebugEvent(cb DebugEventHandler) </em>AgentBase</a></li>
+<li><a href="#AgentBase.OnFunctionCall">func (a *AgentBase) OnFunctionCall(name string, args map[string]any, rawData map[string]any) (any, error)</a></li>
+<li><a href="#AgentBase.OnRequest">func (a *AgentBase) OnRequest(requestData map[string]any, callbackPath string) map[string]any</a></li>
+<li><a href="#AgentBase.OnSummary">func (a <em>AgentBase) OnSummary(cb SummaryCallback) </em>AgentBase</a></li>
+<li><a href="#AgentBase.OnSwmlRequest">func (a <em>AgentBase) OnSwmlRequest(requestData map[string]any, callbackPath string, r </em>http.Request) map[string]any</a></li>
+<li><a href="#AgentBase.Pom">func (a <em>AgentBase) Pom() </em>pom.PromptObjectModel</a></li>
+<li><a href="#AgentBase.PromptAddSection">func (a <em>AgentBase) PromptAddSection(title string, body string, bullets []string, opts ...PromptSectionOption) </em>AgentBase</a></li>
+<li><a href="#AgentBase.PromptAddSubsection">func (a <em>AgentBase) PromptAddSubsection(parentTitle string, title string, body string, bullets []string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.PromptAddToSection">func (a <em>AgentBase) PromptAddToSection(title string, body string, opts ...PromptAddToSectionOption) </em>AgentBase</a></li>
+<li><a href="#AgentBase.PromptHasSection">func (a *AgentBase) PromptHasSection(title string) bool</a></li>
+<li><a href="#AgentBase.RegisterRoutingCallback">func (a <em>AgentBase) RegisterRoutingCallback(callbackFn func(r </em>http.Request, body map[string]any) map[string]any, path string)</a></li>
+<li><a href="#AgentBase.RegisterSipRoutingCallback">func (a <em>AgentBase) RegisterSipRoutingCallback(callbackFn func(r </em>http.Request, body map[string]any) string, path string)</a></li>
+<li><a href="#AgentBase.RegisterSipUsername">func (a <em>AgentBase) RegisterSipUsername(username string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.RegisterSwaigFunction">func (a <em>AgentBase) RegisterSwaigFunction(funcDef map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.RemoveFunction">func (a *AgentBase) RemoveFunction(name string) bool</a></li>
+<li><a href="#AgentBase.RemoveSkill">func (a <em>AgentBase) RemoveSkill(skillName string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.RenderSWML">func (a <em>AgentBase) RenderSWML(requestData map[string]any, request </em>http.Request) map[string]any</a></li>
+<li><a href="#AgentBase.ResetContexts">func (a <em>AgentBase) ResetContexts() </em>AgentBase</a></li>
+<li><a href="#AgentBase.Run">func (a *AgentBase) Run() error</a></li>
+<li><a href="#AgentBase.Serve">func (a *AgentBase) Serve() error</a></li>
+<li><a href="#AgentBase.SetDynamicConfigCallback">func (a <em>AgentBase) SetDynamicConfigCallback(cb DynamicConfigCallback) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetFunctionIncludes">func (a <em>AgentBase) SetFunctionIncludes(includes []map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetGlobalData">func (a <em>AgentBase) SetGlobalData(data map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetInternalFillers">func (a <em>AgentBase) SetInternalFillers(fillers map[string]map[string][]string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetLanguages">func (a <em>AgentBase) SetLanguages(languages []map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetNativeFunctions">func (a <em>AgentBase) SetNativeFunctions(names []string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetOnSwmlRequestHook">func (a <em>AgentBase) SetOnSwmlRequestHook(hook OnSwmlRequestHook) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetParam">func (a <em>AgentBase) SetParam(key string, value any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetParams">func (a <em>AgentBase) SetParams(params map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetPostPrompt">func (a <em>AgentBase) SetPostPrompt(text string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetPostPromptLlmParams">func (a <em>AgentBase) SetPostPromptLlmParams(params map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetPostPromptUrl">func (a <em>AgentBase) SetPostPromptUrl(url string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetPromptLlmParams">func (a <em>AgentBase) SetPromptLlmParams(params map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetPromptPom">func (a <em>AgentBase) SetPromptPom(pom []map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetPromptText">func (a <em>AgentBase) SetPromptText(text string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetPromptTransformer">func (a <em>AgentBase) SetPromptTransformer(fn func(map[string]any) map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetPronunciations">func (a <em>AgentBase) SetPronunciations(p []map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetWebHookUrl">func (a <em>AgentBase) SetWebHookUrl(url string) </em>AgentBase</a></li>
+<li><a href="#AgentBase.SetupGracefulShutdown">func (a *AgentBase) SetupGracefulShutdown()</a></li>
+<li><a href="#AgentBase.UpdateGlobalData">func (a <em>AgentBase) UpdateGlobalData(data map[string]any) </em>AgentBase</a></li>
+<li><a href="#AgentBase.ValidateBasicAuth">func (a *AgentBase) ValidateBasicAuth(username, password string) bool</a></li>
+<li><a href="#AgentBase.ValidateToolToken">func (a *AgentBase) ValidateToolToken(functionName, token, callID string) (ok bool)</a></li>
+<li><a href="#AgentOption">type AgentOption</a></li>
+<li><a href="#WithAIVerbName">func WithAIVerbName(name string) AgentOption</a></li>
+<li><a href="#WithAgentID">func WithAgentID(id string) AgentOption</a></li>
+<li><a href="#WithAutoAnswer">func WithAutoAnswer(autoAnswer bool) AgentOption</a></li>
+<li><a href="#WithBasicAuth">func WithBasicAuth(user, password string) AgentOption</a></li>
+<li><a href="#WithCheckForInputOverride">func WithCheckForInputOverride(enable bool) AgentOption</a></li>
+<li><a href="#WithConfigFile">func WithConfigFile(path string) AgentOption</a></li>
+<li><a href="#WithDefaultWebhookURL">func WithDefaultWebhookURL(url string) AgentOption</a></li>
+<li><a href="#WithEnablePostPromptOverride">func WithEnablePostPromptOverride(enable bool) AgentOption</a></li>
+<li><a href="#WithHost">func WithHost(host string) AgentOption</a></li>
+<li><a href="#WithName">func WithName(name string) AgentOption</a></li>
+<li><a href="#WithNativeFunctions">func WithNativeFunctions(names []string) AgentOption</a></li>
+<li><a href="#WithPort">func WithPort(port int) AgentOption</a></li>
+<li><a href="#WithRecordCall">func WithRecordCall(record bool) AgentOption</a></li>
+<li><a href="#WithRecordFormat">func WithRecordFormat(format string) AgentOption</a></li>
+<li><a href="#WithRecordStereo">func WithRecordStereo(stereo bool) AgentOption</a></li>
+<li><a href="#WithRoute">func WithRoute(route string) AgentOption</a></li>
+<li><a href="#WithSchemaPath">func WithSchemaPath(path string) AgentOption</a></li>
+<li><a href="#WithSchemaValidation">func WithSchemaValidation(validate bool) AgentOption</a></li>
+<li><a href="#WithSigningKey">func WithSigningKey(key string) AgentOption</a></li>
+<li><a href="#WithSigningKeyTrustProxy">func WithSigningKeyTrustProxy(trust bool) AgentOption</a></li>
+<li><a href="#WithSuppressLogs">func WithSuppressLogs(suppress bool) AgentOption</a></li>
+<li><a href="#WithTokenExpiry">func WithTokenExpiry(secs int) AgentOption</a></li>
+<li><a href="#WithUsePom">func WithUsePom(usePom bool) AgentOption</a></li>
+<li><a href="#DebugEventHandler">type DebugEventHandler</a></li>
+<li><a href="#DynamicConfigCallback">type DynamicConfigCallback</a></li>
+<li><a href="#MCPServerConfig">type MCPServerConfig</a></li>
+<li><a href="#OnSwmlRequestHook">type OnSwmlRequestHook</a></li>
+<li><a href="#PromptAddToSectionOption">type PromptAddToSectionOption</a></li>
+<li><a href="#WithBullet">func WithBullet(b string) PromptAddToSectionOption</a></li>
+<li><a href="#WithBullets">func WithBullets(bs []string) PromptAddToSectionOption</a></li>
+<li><a href="#PromptSectionOption">type PromptSectionOption</a></li>
+<li><a href="#WithNumbered">func WithNumbered(v bool) PromptSectionOption</a></li>
+<li><a href="#WithNumberedBullets">func WithNumberedBullets(v bool) PromptSectionOption</a></li>
+<li><a href="#WithSubsections">func WithSubsections(subs []map[string]any) PromptSectionOption</a></li>
+<li><a href="#SummaryCallback">type SummaryCallback</a></li>
+<li><a href="#ToolDefinition">type ToolDefinition</a></li>
+<li><a href="#ToolDefinition.ValidateArgs">func (td *ToolDefinition) ValidateArgs(args map[string]any) (bool, []string)</a></li>
+<li><a href="#ToolHandler">type ToolHandler</a></li>
+</ul>
+<h2 id="variables">Variables</h2>
+<p><a name="SupportedInternalFillerNames"></a>SupportedInternalFillerNames is the complete set of internal SWAIG function names that accept fillers, matching the SWAIGInternalFiller schema definition. Any name outside this set is silently ignored by the runtime — SetInternalFillers / AddInternalFiller warn if you pass an unknown name.</p>
+<p>Notable absences: change_step, gather_submit, and arbitrary user-defined SWAIG function names are NOT supported.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">SupportedInternalFillerNames</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">struct</span><span class="p">{}{</span>
+<span class="w">    </span><span class="s">&quot;hangup&quot;</span><span class="p">:</span><span class="w">                  </span><span class="p">{},</span>
+<span class="w">    </span><span class="s">&quot;check_time&quot;</span><span class="p">:</span><span class="w">              </span><span class="p">{},</span>
+<span class="w">    </span><span class="s">&quot;wait_for_user&quot;</span><span class="p">:</span><span class="w">           </span><span class="p">{},</span>
+<span class="w">    </span><span class="s">&quot;wait_seconds&quot;</span><span class="p">:</span><span class="w">            </span><span class="p">{},</span>
+<span class="w">    </span><span class="s">&quot;adjust_response_latency&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="s">&quot;next_step&quot;</span><span class="p">:</span><span class="w">               </span><span class="p">{},</span>
+<span class="w">    </span><span class="s">&quot;change_context&quot;</span><span class="p">:</span><span class="w">          </span><span class="p">{},</span>
+<span class="w">    </span><span class="s">&quot;get_visual_input&quot;</span><span class="p">:</span><span class="w">        </span><span class="p">{},</span>
+<span class="w">    </span><span class="s">&quot;get_ideal_strategy&quot;</span><span class="p">:</span><span class="w">      </span><span class="p">{},</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="AgentBase"></a></p>
+<h2 id="type-agentbase">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L322-L441">AgentBase</a></h2>
+<p>AgentBase is the central agent struct. It embeds *swml.Service so that Service's fields and methods (Name, Route, Host, Port, basic auth, the HTTP server, the tool registry, etc.) are promoted onto AgentBase. The agent-specific state below is layered on top.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">AgentBase</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="nx">swml</span><span class="p">.</span><span class="nx">Service</span>
+<span class="w">    </span><span class="nx">Logger</span><span class="w"> </span><span class="o">*</span><span class="nx">logging</span><span class="p">.</span><span class="nx">Logger</span>
+
+<span class="w">    </span><span class="c1">// Agent identity — matches Python: self.agent_id = agent_id or str(uuid.uuid4())</span>
+<span class="w">    </span><span class="c1">// Exported so callers can read the assigned ID without a getter.</span>
+<span class="w">    </span><span class="nx">AgentID</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewAgentBase"></a></p>
+<h3 id="func-newagentbase">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L445">NewAgentBase</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewAgentBase</span><span class="p">(</span><span class="nx">opts</span><span class="w"> </span><span class="o">...</span><span class="nx">AgentOption</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>NewAgentBase creates a new AgentBase with default values and applies the provided functional options.</p>
+<p><a name="AgentBase.AddAnswerVerb"></a></p>
+<h3 id="func-agentbase-addanswerverb">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1469">AddAnswerVerb</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddAnswerVerb</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddAnswerVerb configures the answer verb. Merged with defaults at render time.</p>
+<p><a name="AgentBase.AddFunctionInclude"></a></p>
+<h3 id="func-agentbase-addfunctioninclude">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1404">AddFunctionInclude</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddFunctionInclude</span><span class="p">(</span><span class="nx">url</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">functions</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">metaData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddFunctionInclude adds a remote SWAIG function include.</p>
+<p><a name="AgentBase.AddHint"></a></p>
+<h3 id="func-agentbase-addhint">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1082">AddHint</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddHint</span><span class="p">(</span><span class="nx">hint</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddHint adds a single speech-recognition hint.</p>
+<p><a name="AgentBase.AddHints"></a></p>
+<h3 id="func-agentbase-addhints">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1090">AddHints</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddHints</span><span class="p">(</span><span class="nx">hints</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddHints adds multiple speech-recognition hints.</p>
+<p><a name="AgentBase.AddInternalFiller"></a></p>
+<h3 id="func-agentbase-addinternalfiller">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1376">AddInternalFiller</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddInternalFiller</span><span class="p">(</span><span class="nx">funcName</span><span class="p">,</span><span class="w"> </span><span class="nx">langCode</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">fillers</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddInternalFiller adds fillers for a specific function and language.</p>
+<p>See SetInternalFillers for the complete list of supported funcName values (SupportedInternalFillerNames) and what fillers do. Names outside the supported set log a warning and are stored but will not play at runtime.</p>
+<p><a name="AgentBase.AddLanguage"></a></p>
+<h3 id="func-agentbase-addlanguage">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1129">AddLanguage</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddLanguage</span><span class="p">(</span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddLanguage adds a language configuration as a raw map.</p>
+<p><a name="AgentBase.AddLanguageTyped"></a></p>
+<h3 id="func-agentbase-addlanguagetyped">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1152">AddLanguageTyped</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddLanguageTyped</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">code</span><span class="p">,</span><span class="w"> </span><span class="nx">voice</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">speechFillers</span><span class="p">,</span><span class="w"> </span><span class="nx">functionFillers</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">engine</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddLanguageTyped adds a language configuration using typed named parameters, matching the Python SDK's add_language method signature exactly.</p>
+<p>Python equivalent: ai_config_mixin.AIConfigMixin.add_language Python signature: add_language(name, code, voice, speech_fillers=None,</p>
+<div class="codehilite"><pre><span></span><code><span class="n">function_fillers</span><span class="p">=</span><span class="n">None</span><span class="p">,</span><span class="w"> </span><span class="n">engine</span><span class="p">=</span><span class="n">None</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">=</span><span class="n">None</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Parameters:</p>
+<ul>
+<li>name: display name (e.g. "English")</li>
+<li>code: BCP-47 language code (e.g. "en-US")</li>
+<li>voice: TTS voice name; may use "engine.voice:model" combined format</li>
+<li>speechFillers: filler phrases for natural speech pauses</li>
+<li>functionFillers: filler phrases played during SWAIG function calls</li>
+<li>engine: explicit TTS engine name (e.g. "elevenlabs")</li>
+<li>model: explicit TTS model name (e.g. "eleven_turbo_v2_5")</li>
+</ul>
+<p><a name="AgentBase.AddMcpServer"></a></p>
+<h3 id="func-agentbase-addmcpserver">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1799">AddMcpServer</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddMcpServer</span><span class="p">(</span><span class="nx">cfg</span><span class="w"> </span><span class="nx">MCPServerConfig</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddMcpServer adds an external MCP server for tool discovery and invocation. Tools are discovered via the MCP protocol at session start and registered as SWAIG functions. Returns self for method chaining.</p>
+<p><a name="AgentBase.AddPatternHint"></a></p>
+<h3 id="func-agentbase-addpatternhint">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1113">AddPatternHint</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddPatternHint</span><span class="p">(</span><span class="nx">hint</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">pattern</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">replace</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">ignoreCase</span><span class="w"> </span><span class="o">...</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddPatternHint adds a pattern-based speech-recognition hint with regex replacement semantics.</p>
+<p>Python equivalent: ai_config_mixin.AIConfigMixin.add_pattern_hint Python signature: add_pattern_hint(hint, pattern, replace, ignore_case=False)</p>
+<p>The Python implementation appends to self._hints (not a separate patternHints list) as a dict with keys "hint", "pattern", "replace", "ignore_case". The Go implementation stores in patternHints and merges into the rendered "hints" array at render time.</p>
+<p>Parameters:</p>
+<ul>
+<li>hint: the hint text the model receives</li>
+<li>pattern: regex pattern for the spoken word/phrase</li>
+<li>replace: replacement string for the matched pattern</li>
+<li>ignoreCase: when true, matching is case-insensitive</li>
+</ul>
+<p><a name="AgentBase.AddPostAiVerb"></a></p>
+<h3 id="func-agentbase-addpostaiverb">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1487">AddPostAiVerb</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddPostAiVerb</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddPostAiVerb adds a SWML verb to execute after the AI verb.</p>
+<p><a name="AgentBase.AddPostAnswerVerb"></a></p>
+<h3 id="func-agentbase-addpostanswerverb">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1479">AddPostAnswerVerb</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddPostAnswerVerb</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddPostAnswerVerb adds a SWML verb to execute after the answer.</p>
+<p><a name="AgentBase.AddPreAnswerVerb"></a></p>
+<h3 id="func-agentbase-addpreanswerverb">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1461">AddPreAnswerVerb</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddPreAnswerVerb</span><span class="p">(</span><span class="nx">verbName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddPreAnswerVerb adds a SWML verb to execute before the answer.</p>
+<p><a name="AgentBase.AddPronunciation"></a></p>
+<h3 id="func-agentbase-addpronunciation">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1221">AddPronunciation</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddPronunciation</span><span class="p">(</span><span class="nx">replace</span><span class="p">,</span><span class="w"> </span><span class="nx">withText</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">ignoreCase</span><span class="w"> </span><span class="o">...</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddPronunciation adds a pronunciation override rule.</p>
+<p>Python equivalent: ai_config_mixin.AIConfigMixin.add_pronunciation Python signature: add_pronunciation(replace, with_text, ignore_case=False)</p>
+<p>Parameters:</p>
+<ul>
+<li>replace: the word or expression to match</li>
+<li>withText: the phonetic spelling to substitute</li>
+<li>ignoreCase: when true, matching ignores case (Python: ignore_case)</li>
+</ul>
+<p><a name="AgentBase.AddSkill"></a></p>
+<h3 id="func-agentbase-addskill">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2170">AddSkill</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddSkill</span><span class="p">(</span><span class="nx">skillName</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddSkill loads a skill by name with optional params and registers its tools.</p>
+<p><a name="AgentBase.AddSwaigQueryParams"></a></p>
+<h3 id="func-agentbase-addswaigqueryparams">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1603">AddSwaigQueryParams</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AddSwaigQueryParams</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AddSwaigQueryParams adds query parameters that will be appended to SWAIG webhook URLs.</p>
+<p><a name="AgentBase.AsRouter"></a></p>
+<h3 id="func-agentbase-asrouter">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2596">AsRouter</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AsRouter</span><span class="p">()</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">Handler</span>
+</code></pre></div>
+
+<p>AsRouter returns an http.Handler for embedding in a custom server.</p>
+<p><a name="AgentBase.AutoMapSipUsernames"></a></p>
+<h3 id="func-agentbase-automapsipusernames">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2127">AutoMapSipUsernames</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">AutoMapSipUsernames</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>AutoMapSipUsernames automatically registers common SIP usernames derived from this agent's name and route.</p>
+<p>Python equivalent: AgentBase.auto_map_sip_usernames (agent_base.py line 674)</p>
+<p>Derives usernames by:</p>
+<ol>
+<li>Stripping non-alphanumeric/underscore chars from the agent name (lowercased)</li>
+<li>Stripping non-alphanumeric/underscore chars from the route (lowercased)</li>
+<li>If the cleaned name is longer than 3 chars, also registers a vowel-stripped variant</li>
+</ol>
+<p><a name="AgentBase.ClearPostAiVerbs"></a></p>
+<h3 id="func-agentbase-clearpostaiverbs">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1511">ClearPostAiVerbs</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">ClearPostAiVerbs</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>ClearPostAiVerbs removes all post-AI verbs.</p>
+<p><a name="AgentBase.ClearPostAnswerVerbs"></a></p>
+<h3 id="func-agentbase-clearpostanswerverbs">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1503">ClearPostAnswerVerbs</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">ClearPostAnswerVerbs</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>ClearPostAnswerVerbs removes all post-answer verbs.</p>
+<p><a name="AgentBase.ClearPreAnswerVerbs"></a></p>
+<h3 id="func-agentbase-clearpreanswerverbs">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1495">ClearPreAnswerVerbs</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">ClearPreAnswerVerbs</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>ClearPreAnswerVerbs removes all pre-answer verbs.</p>
+<p><a name="AgentBase.ClearSwaigQueryParams"></a></p>
+<h3 id="func-agentbase-clearswaigqueryparams">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1613">ClearSwaigQueryParams</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">ClearSwaigQueryParams</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>ClearSwaigQueryParams removes all SWAIG query parameters.</p>
+<p><a name="AgentBase.Contexts"></a></p>
+<h3 id="func-agentbase-contexts">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1547">Contexts</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">Contexts</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">contexts</span><span class="p">.</span><span class="nx">ContextBuilder</span>
+</code></pre></div>
+
+<p>Contexts is an alias for DefineContexts.</p>
+<p><a name="AgentBase.CreateToolToken"></a></p>
+<h3 id="func-agentbase-createtooltoken">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1775">CreateToolToken</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">CreateToolToken</span><span class="p">(</span><span class="nx">toolName</span><span class="p">,</span><span class="w"> </span><span class="nx">callID</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">token</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>CreateToolToken mints a per-call SWAIG-function token via the agent's SessionManager. Returns an empty string when minting fails (Python parity: state_mixin.StateMixin._create_tool_token, which catches all exceptions and returns "" on error).</p>
+<p><a name="AgentBase.DefineContexts"></a></p>
+<h3 id="func-agentbase-definecontexts">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1526">DefineContexts</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">DefineContexts</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">contexts</span><span class="p">.</span><span class="nx">ContextBuilder</span>
+</code></pre></div>
+
+<p>DefineContexts returns the context builder, creating it if needed. The builder is attached to this agent so Validate() can check user-defined tool names against reserved native tool names (next_step, change_context, gather_submit).</p>
+<p><a name="AgentBase.DefineTool"></a></p>
+<h3 id="func-agentbase-definetool">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L960">DefineTool</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">DefineTool</span><span class="p">(</span><span class="nx">def</span><span class="w"> </span><span class="nx">ToolDefinition</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>DefineTool registers a tool (SWAIG function) with the agent.</p>
+<h4 id="how-this-becomes-a-tool-the-model-sees">How this becomes a tool the model sees</h4>
+<p>A SWAIG function is exactly the same concept as a "tool" in native OpenAI / Anthropic tool calling. On every LLM turn, the SDK renders each registered SWAIG function into the OpenAI tool schema:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="s">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;function&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;function&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s">&quot;name&quot;</span><span class="p">:</span><span class="w">        </span><span class="s">&quot;your_name_here&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your description text&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;parameters&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="cm">/* your JSON schema */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>That schema is sent to the model as part of the same API call that produces the next assistant message. The model reads:</p>
+<ul>
+<li>the function Description to decide WHEN to call this tool</li>
+<li>each parameter "description" (inside Parameters) to decide HOW to fill in that argument from the user's utterance</li>
+</ul>
+<p>This means descriptions are prompt engineering, not developer comments. A vague Description is the #1 cause of "the model has the right tool but doesn't call it" failures.</p>
+<h4 id="bad-vs-good-descriptions">Bad vs good descriptions</h4>
+<p>BAD:</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">Description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Lookup function&quot;</span>
+<span class="nx">Parameters</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="s">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;string&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;the id&quot;</span><span class="p">}}</span>
+</code></pre></div>
+
+<p>GOOD:</p>
+<div class="codehilite"><pre><span></span><code><span class="nl">Description</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;Look up a customer&#39;s account details by account number. &quot;</span><span class="o">+</span>
+<span class="w">    </span><span class="ss">&quot;Use this BEFORE quoting any account-specific info (balance, &quot;</span><span class="o">+</span>
+<span class="w">    </span><span class="ss">&quot;plan, status). Do not use for general product questions.&quot;</span><span class="p">,</span>
+<span class="k">Parameters</span><span class="err">:</span><span class="w"> </span><span class="k">map</span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="ow">any</span><span class="err">{</span>
+<span class="w">    </span><span class="ss">&quot;account_number&quot;</span><span class="err">:</span><span class="w"> </span><span class="k">map</span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="ow">any</span><span class="err">{</span>
+<span class="w">        </span><span class="ss">&quot;type&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="ss">&quot;description&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;The customer&#39;s 8-digit account number, no &quot;</span><span class="o">+</span>
+<span class="w">            </span><span class="ss">&quot;dashes or spaces. Ask the user if they don&#39;t provide it.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">}</span><span class="p">,</span>
+<span class="err">}</span><span class="p">,</span>
+</code></pre></div>
+
+<h4 id="tool-count-matters">Tool count matters</h4>
+<p>LLM tool selection accuracy degrades past \~7-8 simultaneously-active tools per call. Use Step.SetFunctions() to partition tools across steps so only the relevant subset is active at any moment.</p>
+<p><a name="AgentBase.DefineTools"></a></p>
+<h3 id="func-agentbase-definetools">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1046">DefineTools</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">DefineTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="o">*</span><span class="nx">ToolDefinition</span>
+</code></pre></div>
+
+<p>DefineTools returns all registered tool definitions in insertion order.</p>
+<p><a name="AgentBase.EnableDebugEvents"></a></p>
+<h3 id="func-agentbase-enabledebugevents">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1396">EnableDebugEvents</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">EnableDebugEvents</span><span class="p">(</span><span class="nx">level</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>EnableDebugEvents sets the debug events level (0 = off).</p>
+<p><a name="AgentBase.EnableDebugRoutes"></a></p>
+<h3 id="func-agentbase-enabledebugroutes">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1621">EnableDebugRoutes</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">EnableDebugRoutes</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>EnableDebugRoutes is a placeholder for adding debug HTTP routes.</p>
+<p><a name="AgentBase.EnableMcpServer"></a></p>
+<h3 id="func-agentbase-enablemcpserver">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1820">EnableMcpServer</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">EnableMcpServer</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>EnableMcpServer exposes this agent's tools as an MCP server endpoint at /mcp. The endpoint speaks JSON-RPC 2.0 (MCP protocol) and supports initialize, tools/list, tools/call, and ping. Returns self for method chaining.</p>
+<p><a name="AgentBase.EnableSipRouting"></a></p>
+<h3 id="func-agentbase-enablesiprouting">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2016">EnableSipRouting</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">EnableSipRouting</span><span class="p">(</span><span class="nx">autoMap</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>EnableSipRouting enables SIP-based routing for this agent.</p>
+<p>Python equivalent: AgentBase.enable_sip_routing(auto_map=True, path="/sip")</p>
+<p>This registers a routing callback at the given path that checks incoming SIP usernames against the agent's registered username set. When autoMap is true, AutoMapSipUsernames is called to derive common usernames from the agent name and route.</p>
+<p>The Python implementation (agent_base.py line 612) creates a sip_routing_callback that extracts the SIP username from the body, checks it against _sip_usernames, and returns None in both the matched and unmatched case — letting the normal routing continue. It then calls register_routing_callback to register the callback, and optionally calls auto_map_sip_usernames.</p>
+<p><a name="AgentBase.GetAllFunctions"></a></p>
+<h3 id="func-agentbase-getallfunctions">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1016">GetAllFunctions</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">GetAllFunctions</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="o">*</span><span class="nx">ToolDefinition</span>
+</code></pre></div>
+
+<p>GetAllFunctions returns a snapshot of all registered SWAIG functions keyed by name. The returned map is a copy — subsequent registrations do not mutate it. (Python parity: “ToolRegistry.get_all_functions“.)</p>
+<p><a name="AgentBase.GetBasicAuthCredentials"></a></p>
+<h3 id="func-agentbase-getbasicauthcredentials">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1728">GetBasicAuthCredentials</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">GetBasicAuthCredentials</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>GetBasicAuthCredentials returns the (username, password) configured for this agent's HTTP basic auth.</p>
+<p>Python equivalent: auth_mixin.AuthMixin.get_basic_auth_credentials (auth_mixin.py line 42) Python behavior: returns (username, password) tuple from self._basic_auth</p>
+<p><a name="AgentBase.GetBasicAuthCredentialsWithSource"></a></p>
+<h3 id="func-agentbase-getbasicauthcredentialswithsource">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1737">GetBasicAuthCredentialsWithSource</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">GetBasicAuthCredentialsWithSource</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">pass</span><span class="p">,</span><span class="w"> </span><span class="nx">source</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>GetBasicAuthCredentialsWithSource returns the basic-auth credentials plus a string indicating their SOURCE — one of "provided", "environment", or "generated". Mirrors Python's “auth_mixin.AuthMixin.get_basic_auth_credentials(include_source=True)“ (auth_mixin.py line 42-73).</p>
+<p><a name="AgentBase.GetContexts"></a></p>
+<h3 id="func-agentbase-getcontexts">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L889">GetContexts</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">GetContexts</span><span class="p">()</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetContexts returns the contexts as a serialised map (the same shape SWML expects), or nil when no contexts have been defined yet. This mirrors Python's “PromptManager.get_contexts“ which returns the contexts dict or “None“.</p>
+<p>Python equivalent: prompt_manager.PromptManager.get_contexts</p>
+<p><a name="AgentBase.GetFullURL"></a></p>
+<h3 id="func-agentbase-getfullurl">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L570">GetFullURL</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">GetFullURL</span><span class="p">(</span><span class="nx">includeAuth</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetFullURL returns the full URL for this agent's endpoint, optionally embedding basic-auth credentials.</p>
+<p>Python equivalent: AgentBase.get_full_url(include_auth=False) (agent_base.py:325)</p>
+<p>The Python implementation handles serverless URL construction (CGI / Lambda / Cloud Functions / Azure) inline. In the Go SDK, serverless URL construction lives in pkg/lambda; this method delegates server-mode URL building to the embedded swml.Service and matches Python's server-mode behavior.</p>
+<p><a name="AgentBase.GetFunction"></a></p>
+<h3 id="func-agentbase-getfunction">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1004">GetFunction</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">GetFunction</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">ToolDefinition</span>
+</code></pre></div>
+
+<p>GetFunction returns the registered tool definition for the given name, or nil when no such function is registered. (Python parity: “ToolRegistry.get_function“.)</p>
+<p><a name="AgentBase.GetName"></a></p>
+<h3 id="func-agentbase-getname">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L555">GetName</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">GetName</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetName returns the agent's name.</p>
+<p><a name="AgentBase.GetPostPrompt"></a></p>
+<h3 id="func-agentbase-getpostprompt">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L866">GetPostPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPostPrompt</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetPostPrompt returns the current post-prompt text. Returns an empty string if no post-prompt has been set.</p>
+<p>Python equivalent: prompt_mixin.PromptMixin.get_post_prompt (prompt_mixin.py line 374)</p>
+<p><a name="AgentBase.GetPrompt"></a></p>
+<h3 id="func-agentbase-getprompt">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L772">GetPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">GetPrompt</span><span class="p">()</span><span class="w"> </span><span class="kt">any</span>
+</code></pre></div>
+
+<p>GetPrompt returns the current prompt. If POM mode is active, it returns []map[string]any; otherwise it returns the raw string.</p>
+<p><a name="AgentBase.GetRawPrompt"></a></p>
+<h3 id="func-agentbase-getrawprompt">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L877">GetRawPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">GetRawPrompt</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetRawPrompt returns the raw prompt text whatever “SetPromptText“ stored, regardless of POM mode. Returns an empty string when no raw prompt has been set.</p>
+<p>Python equivalent: prompt_manager.PromptManager.get_raw_prompt</p>
+<p><a name="AgentBase.GetRoute"></a></p>
+<h3 id="func-agentbase-getroute">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L548">GetRoute</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">GetRoute</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</code></pre></div>
+
+<p>GetRoute returns the agent's configured route path.</p>
+<p><a name="AgentBase.HasFunction"></a></p>
+<h3 id="func-agentbase-hasfunction">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L994">HasFunction</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">HasFunction</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>HasFunction reports whether a SWAIG function with the given name is registered. (Python parity: “ToolRegistry.has_function“.)</p>
+<p><a name="AgentBase.HasSkill"></a></p>
+<h3 id="func-agentbase-hasskill">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2243">HasSkill</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">HasSkill</span><span class="p">(</span><span class="nx">skillName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>HasSkill returns whether a skill is loaded.</p>
+<p><a name="AgentBase.ListSkills"></a></p>
+<h3 id="func-agentbase-listskills">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2238">ListSkills</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">ListSkills</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>ListSkills returns the names of loaded skills.</p>
+<p><a name="AgentBase.ListToolNames"></a></p>
+<h3 id="func-agentbase-listtoolnames">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1538">ListToolNames</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">ListToolNames</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+
+<p>ListToolNames returns the names of every registered SWAIG tool in insertion order. Implements contexts.ToolLister.</p>
+<p><a name="AgentBase.ManualSetProxyUrl"></a></p>
+<h3 id="func-agentbase-manualsetproxyurl">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1578">ManualSetProxyUrl</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">ManualSetProxyUrl</span><span class="p">(</span><span class="nx">url</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>ManualSetProxyUrl overrides the proxy URL base used for webhook URL generation.</p>
+<p><a name="AgentBase.OnDebugEvent"></a></p>
+<h3 id="func-agentbase-ondebugevent">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2260">OnDebugEvent</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">OnDebugEvent</span><span class="p">(</span><span class="nx">cb</span><span class="w"> </span><span class="nx">DebugEventHandler</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>OnDebugEvent registers a callback for debug events.</p>
+<p><a name="AgentBase.OnFunctionCall"></a></p>
+<h3 id="func-agentbase-onfunctioncall">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1059">OnFunctionCall</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">OnFunctionCall</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">rawData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+</code></pre></div>
+
+<p>OnFunctionCall dispatches a SWAIG function call to the registered handler.</p>
+<p><a name="AgentBase.OnRequest"></a></p>
+<h3 id="func-agentbase-onrequest">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1635">OnRequest</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">OnRequest</span><span class="p">(</span><span class="nx">requestData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">callbackPath</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>OnRequest is called on every SWML request before rendering. Subclasses can override this method to inspect or transform the request data. It delegates to OnSwmlRequest.</p>
+<p>Python equivalent: web_mixin.WebMixin.on_request (web_mixin.py line 1266) Python signature: on_request(request_data, callback_path) -&gt; Optional[dict]</p>
+<p>Returns nil to proceed with default rendering, or a non-nil map containing SWML document overrides.</p>
+<p><a name="AgentBase.OnSummary"></a></p>
+<h3 id="func-agentbase-onsummary">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2252">OnSummary</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">OnSummary</span><span class="p">(</span><span class="nx">cb</span><span class="w"> </span><span class="nx">SummaryCallback</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>OnSummary registers a callback for post-prompt summaries.</p>
+<p><a name="AgentBase.OnSwmlRequest"></a></p>
+<h3 id="func-agentbase-onswmlrequest">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1653">OnSwmlRequest</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">OnSwmlRequest</span><span class="p">(</span><span class="nx">requestData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">callbackPath</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>OnSwmlRequest is the primary customization point for the user to modify the SWML document based on request data. If a hook has been registered via SetOnSwmlRequestHook the hook is invoked; otherwise this returns nil (no modification).</p>
+<p>Python equivalent: web_mixin.WebMixin.on_swml_request (web_mixin.py line 1287) Python signature: on_swml_request(request_data, callback_path, request) -&gt; Optional[dict]</p>
+<p>Go has no method overriding via embedded structs alone — the hook field is the idiomatic Go equivalent of Python's overridable on_swml_request. The third *http.Request argument is preserved on the Go-native signature (the cross-language audit projects only the first two args). Returning a non-nil map applies modifications to the rendered SWML; returning nil uses the default rendering unchanged.</p>
+<p><a name="AgentBase.Pom"></a></p>
+<h3 id="func-agentbase-pom">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L791">Pom</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">Pom</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">pom</span><span class="p">.</span><span class="nx">PromptObjectModel</span>
+</code></pre></div>
+
+<p>Pom returns a typed PromptObjectModel built from the agent's current POM sections. Returns nil when use_pom is false (Python parity: “self.pom“ is “None“ when “use_pom=False“). The returned value is a deep copy / fresh build — mutations don't affect the agent's internal state.</p>
+<p>Python equivalent: “agent.pom“ instance attribute (agent_base.py line 209), which is a “PromptObjectModel“ instance.</p>
+<p><a name="AgentBase.PromptAddSection"></a></p>
+<h3 id="func-agentbase-promptaddsection">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L611">PromptAddSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">PromptAddSection</span><span class="p">(</span><span class="nx">title</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">bullets</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">...</span><span class="nx">PromptSectionOption</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>PromptAddSection appends a new section to the POM prompt.</p>
+<p>Python equivalent: prompt_mixin.PromptMixin.prompt_add_section Added params to match Python signature: numbered, numberedBullets, subsections. - numbered: if true the section itself is rendered with a numeric marker - numberedBullets: if true the bullet list is rendered with numbers - subsections: optional list of child section maps (each with "title", "body", "bullets")</p>
+<p><a name="AgentBase.PromptAddSubsection"></a></p>
+<h3 id="func-agentbase-promptaddsubsection">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L735">PromptAddSubsection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">PromptAddSubsection</span><span class="p">(</span><span class="nx">parentTitle</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">bullets</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>PromptAddSubsection adds a subsection under an existing parent section.</p>
+<p><a name="AgentBase.PromptAddToSection"></a></p>
+<h3 id="func-agentbase-promptaddtosection">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L677">PromptAddToSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">PromptAddToSection</span><span class="p">(</span><span class="nx">title</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">...</span><span class="nx">PromptAddToSectionOption</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>PromptAddToSection finds an existing POM section by title and appends text and/or bullets. If the section does not exist, it is a no-op.</p>
+<p>Python equivalent: prompt_mixin.PromptMixin.prompt_add_to_section Added params to match Python signature: bullet (single bullet string) and bullets ([]string list). When body is non-empty it is appended to the section body. When bullet is non-empty it is added to the bullets list. When bullets is non-nil its elements are appended to the bullets list.</p>
+<p><a name="AgentBase.PromptHasSection"></a></p>
+<h3 id="func-agentbase-prompthassection">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L759">PromptHasSection</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">PromptHasSection</span><span class="p">(</span><span class="nx">title</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>PromptHasSection returns true if a POM section with the given title exists.</p>
+<p><a name="AgentBase.RegisterRoutingCallback"></a></p>
+<h3 id="func-agentbase-registerroutingcallback">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2064">RegisterRoutingCallback</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterRoutingCallback</span><span class="p">(</span><span class="nx">callbackFn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>RegisterRoutingCallback registers a callback function that is invoked for incoming requests at the given path to determine routing.</p>
+<p>Python equivalent: web_mixin.WebMixin.register_routing_callback Python signature: register_routing_callback(callback_fn, path="/sip")</p>
+<p>The callback receives the HTTP request and the parsed body. It should return a non-nil map to override the response, or nil to let normal processing continue. This method delegates to swml.Service.RegisterRoutingCallback.</p>
+<p>For Python-aligned redirect semantics (callback returns a route string and the framework issues an HTTP 307 redirect), use RegisterSipRoutingCallback.</p>
+<p><a name="AgentBase.RegisterSipRoutingCallback"></a></p>
+<h3 id="func-agentbase-registersiproutingcallback">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2085-L2088">RegisterSipRoutingCallback</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterSipRoutingCallback</span><span class="p">(</span><span class="nx">callbackFn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>RegisterSipRoutingCallback registers a callback whose string return value triggers an HTTP 307 Temporary Redirect to that route. An empty return value (or a GET / non-POST request) lets normal SWML processing continue.</p>
+<p>Python equivalent: web_mixin.WebMixin.register_routing_callback Python signature: register_routing_callback(callback_fn, path="/sip")</p>
+<p>The Python callback returns Optional[str]; on a non-None return the framework responds with HTTP 307 + Location: route (web_mixin.py:628-635). This method preserves that behavior, in contrast to RegisterRoutingCallback which returns a response document override (a richer Go-only mechanism).</p>
+<p>Use this form when porting Python code that relies on redirect-based SIP or route-dispatch patterns.</p>
+<p><a name="AgentBase.RegisterSipUsername"></a></p>
+<h3 id="func-agentbase-registersipusername">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2158">RegisterSipUsername</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterSipUsername</span><span class="p">(</span><span class="nx">username</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>RegisterSipUsername registers a SIP username that this agent handles.</p>
+<p><a name="AgentBase.RegisterSwaigFunction"></a></p>
+<h3 id="func-agentbase-registerswaigfunction">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L972">RegisterSwaigFunction</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">RegisterSwaigFunction</span><span class="p">(</span><span class="nx">funcDef</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>RegisterSwaigFunction registers a raw SWAIG function definition (e.g. for DataMap tools that don't have a Go handler).</p>
+<p><a name="AgentBase.RemoveFunction"></a></p>
+<h3 id="func-agentbase-removefunction">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1029">RemoveFunction</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">RemoveFunction</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>RemoveFunction removes a registered SWAIG function. Returns true when the function was found and removed; false when it wasn't registered. (Python parity: “ToolRegistry.remove_function“.)</p>
+<p><a name="AgentBase.RemoveSkill"></a></p>
+<h3 id="func-agentbase-removeskill">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2232">RemoveSkill</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">RemoveSkill</span><span class="p">(</span><span class="nx">skillName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>RemoveSkill unloads a skill by name.</p>
+<p><a name="AgentBase.RenderSWML"></a></p>
+<h3 id="func-agentbase-renderswml">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2411">RenderSWML</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">RenderSWML</span><span class="p">(</span><span class="nx">requestData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p>RenderSWML builds the complete SWML document for a request.</p>
+<p><a name="AgentBase.ResetContexts"></a></p>
+<h3 id="func-agentbase-resetcontexts">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1555">ResetContexts</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">ResetContexts</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>ResetContexts removes all contexts, returning the agent to a no-contexts state. This is a convenience wrapper around DefineContexts().Reset(). Use it in a dynamic config callback when you need to rebuild contexts from scratch for a specific request.</p>
+<p><a name="AgentBase.Run"></a></p>
+<h3 id="func-agentbase-run">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2586">Run</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">Run</span><span class="p">()</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Run starts the HTTP server for the agent. This is a blocking call.</p>
+<p><a name="AgentBase.Serve"></a></p>
+<h3 id="func-agentbase-serve">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L2591">Serve</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">Serve</span><span class="p">()</span><span class="w"> </span><span class="kt">error</span>
+</code></pre></div>
+
+<p>Serve is an alias for Run.</p>
+<p><a name="AgentBase.SetDynamicConfigCallback"></a></p>
+<h3 id="func-agentbase-setdynamicconfigcallback">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1570">SetDynamicConfigCallback</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetDynamicConfigCallback</span><span class="p">(</span><span class="nx">cb</span><span class="w"> </span><span class="nx">DynamicConfigCallback</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetDynamicConfigCallback sets a callback invoked on each request to allow per-request agent customisation.</p>
+<p><a name="AgentBase.SetFunctionIncludes"></a></p>
+<h3 id="func-agentbase-setfunctionincludes">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1419">SetFunctionIncludes</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetFunctionIncludes</span><span class="p">(</span><span class="nx">includes</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetFunctionIncludes replaces all function includes.</p>
+<p><a name="AgentBase.SetGlobalData"></a></p>
+<h3 id="func-agentbase-setglobaldata">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1260">SetGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetGlobalData</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetGlobalData replaces all global data.</p>
+<p><a name="AgentBase.SetInternalFillers"></a></p>
+<h3 id="func-agentbase-setinternalfillers">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1343">SetInternalFillers</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetInternalFillers</span><span class="p">(</span><span class="nx">fillers</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetInternalFillers replaces all internal fillers.</p>
+<p>Internal fillers are short phrases the AI agent speaks (via TTS) while an internal/native function is running, so the caller doesn't hear dead air during transitions or background work.</p>
+<p>Supported function names (match the SWAIGInternalFiller schema):</p>
+<div class="codehilite"><pre><span></span><code>hangup                  — when the agent is hanging up
+check_time              — when checking the time
+wait_for_user           — when waiting for user input
+wait_seconds            — during deliberate pauses
+adjust_response_latency — when adjusting response timing
+next_step               — transitioning between steps in prompt.contexts
+change_context          — switching between contexts in prompt.contexts
+get_visual_input        — processing visual input (enable_vision)
+get_ideal_strategy      — thinking (enable_thinking)
+</code></pre></div>
+
+<p>Notably NOT supported: change_step, gather_submit, or arbitrary user-defined SWAIG function names. The runtime only honors fillers for the names listed above; everything else is silently ignored at the SWML level. This method warns at registration time if you pass an unknown name so you catch the typo early.</p>
+<p><a name="AgentBase.SetLanguages"></a></p>
+<h3 id="func-agentbase-setlanguages">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1205">SetLanguages</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetLanguages</span><span class="p">(</span><span class="nx">languages</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetLanguages replaces all language configurations.</p>
+<p><a name="AgentBase.SetNativeFunctions"></a></p>
+<h3 id="func-agentbase-setnativefunctions">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1278">SetNativeFunctions</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetNativeFunctions</span><span class="p">(</span><span class="nx">names</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetNativeFunctions sets the list of native function names.</p>
+<p><a name="AgentBase.SetOnSwmlRequestHook"></a></p>
+<h3 id="func-agentbase-setonswmlrequesthook">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1672">SetOnSwmlRequestHook</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetOnSwmlRequestHook</span><span class="p">(</span><span class="nx">hook</span><span class="w"> </span><span class="nx">OnSwmlRequestHook</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetOnSwmlRequestHook registers a function that customizes the SWML response on a per-request basis. The hook receives the parsed body, the callback path (for routing-callback dispatch), and the raw *http.Request for header / query inspection. Returning a non-nil map applies modifications to the rendered SWML; returning nil falls through to the default rendering.</p>
+<p>Python parity: this is the Go-idiomatic way of "overriding" on_swml_request — Go has no method inheritance.</p>
+<p><a name="AgentBase.SetParam"></a></p>
+<h3 id="func-agentbase-setparam">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1244">SetParam</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetParam</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetParam sets a single AI parameter (e.g. temperature, top_p).</p>
+<p><a name="AgentBase.SetParams"></a></p>
+<h3 id="func-agentbase-setparams">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1252">SetParams</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetParams</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetParams replaces all AI parameters.</p>
+<p><a name="AgentBase.SetPostPrompt"></a></p>
+<h3 id="func-agentbase-setpostprompt">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L588">SetPostPrompt</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPostPrompt</span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetPostPrompt sets the post-prompt text used for conversation summary.</p>
+<p><a name="AgentBase.SetPostPromptLlmParams"></a></p>
+<h3 id="func-agentbase-setpostpromptllmparams">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1435">SetPostPromptLlmParams</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPostPromptLlmParams</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetPostPromptLlmParams sets LLM parameters for the post-prompt.</p>
+<p><a name="AgentBase.SetPostPromptUrl"></a></p>
+<h3 id="func-agentbase-setpostprompturl">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1594">SetPostPromptUrl</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPostPromptUrl</span><span class="p">(</span><span class="nx">url</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetPostPromptUrl sets the URL for post-prompt summary delivery.</p>
+<p><a name="AgentBase.SetPromptLlmParams"></a></p>
+<h3 id="func-agentbase-setpromptllmparams">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1427">SetPromptLlmParams</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPromptLlmParams</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetPromptLlmParams sets LLM parameters for the main prompt.</p>
+<p><a name="AgentBase.SetPromptPom"></a></p>
+<h3 id="func-agentbase-setpromptpom">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L596">SetPromptPom</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPromptPom</span><span class="p">(</span><span class="nx">pom</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetPromptPom sets the POM sections directly and enables POM mode.</p>
+<p><a name="AgentBase.SetPromptText"></a></p>
+<h3 id="func-agentbase-setprompttext">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L579">SetPromptText</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPromptText</span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetPromptText sets the agent prompt to raw text, disabling POM mode.</p>
+<p><a name="AgentBase.SetPromptTransformer"></a></p>
+<h3 id="func-agentbase-setprompttransformer">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1449">SetPromptTransformer</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPromptTransformer</span><span class="p">(</span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetPromptTransformer installs a hook that is called with the assembled prompt map before it is placed into the AI verb config. The function may return a new map or mutate and return the same map. Set to nil to remove a previously installed transformer.</p>
+<p>This is used by specialised agents (e.g. BedrockAgent) that need to add or filter prompt-level keys without reimplementing all of RenderSWML.</p>
+<p><a name="AgentBase.SetPronunciations"></a></p>
+<h3 id="func-agentbase-setpronunciations">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1236">SetPronunciations</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPronunciations</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetPronunciations replaces all pronunciation overrides.</p>
+<p><a name="AgentBase.SetWebHookUrl"></a></p>
+<h3 id="func-agentbase-setwebhookurl">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1586">SetWebHookUrl</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetWebHookUrl</span><span class="p">(</span><span class="nx">url</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>SetWebHookUrl explicitly sets the webhook URL used in SWAIG function defs.</p>
+<p><a name="AgentBase.SetupGracefulShutdown"></a></p>
+<h3 id="func-agentbase-setupgracefulshutdown">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1690">SetupGracefulShutdown</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">SetupGracefulShutdown</span><span class="p">()</span>
+</code></pre></div>
+
+<p>SetupGracefulShutdown registers OS signal handlers for SIGTERM and SIGINT that initiate a graceful HTTP server shutdown. This is useful for Kubernetes deployments where the pod receives SIGTERM before termination.</p>
+<p>Python equivalent: web_mixin.WebMixin.setup_graceful_shutdown (web_mixin.py line 1405) Python behavior: registers signal.SIGTERM and signal.SIGINT handlers that call sys.exit(0) after optional cleanup.</p>
+<p>The Go implementation uses signal.NotifyContext so that the active HTTP server (if started via Run/Serve) can shut down cleanly. Call this before Run().</p>
+<p><a name="AgentBase.UpdateGlobalData"></a></p>
+<h3 id="func-agentbase-updateglobaldata">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1268">UpdateGlobalData</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">UpdateGlobalData</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span>
+</code></pre></div>
+
+<p>UpdateGlobalData merges data into existing global data.</p>
+<p><a name="AgentBase.ValidateBasicAuth"></a></p>
+<h3 id="func-agentbase-validatebasicauth">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1716">ValidateBasicAuth</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">ValidateBasicAuth</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+
+<p>ValidateBasicAuth validates the provided username and password against the agent's configured basic auth credentials using a constant-time comparison.</p>
+<p>Python equivalent: auth_mixin.AuthMixin.validate_basic_auth (auth_mixin.py line 24) Python behavior: hmac.compare_digest(username, exp_user) and compare_digest(password, exp_pass)</p>
+<p><a name="AgentBase.ValidateToolToken"></a></p>
+<h3 id="func-agentbase-validatetooltoken">func (*AgentBase) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1759">ValidateToolToken</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span><span class="w"> </span><span class="nx">ValidateToolToken</span><span class="p">(</span><span class="nx">functionName</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="p">,</span><span class="w"> </span><span class="nx">callID</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">ok</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span>
+</code></pre></div>
+
+<p>ValidateToolToken verifies that a SWAIG tool security token is authentic, unexpired, and matches the given function name and call ID. Returns false when the function is not registered, the SessionManager rejects the token, or the validation panics for any reason.</p>
+<p>Python parity: state_mixin.StateMixin.validate_tool_token. Python rejects unknown function names up-front and swallows exceptions, returning false.</p>
+<p><a name="AgentOption"></a></p>
+<h2 id="type-agentoption">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L133">AgentOption</a></h2>
+<p>AgentOption configures an AgentBase during construction.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">AgentOption</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="WithAIVerbName"></a></p>
+<h3 id="func-withaiverbname">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L190">WithAIVerbName</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithAIVerbName</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithAIVerbName overrides the SWML verb name used for the AI section. The default is "ai". Set to "amazon_bedrock" for BedrockAgent.</p>
+<p><a name="WithAgentID"></a></p>
+<h3 id="func-withagentid">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L217">WithAgentID</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithAgentID</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithAgentID sets a fixed agent ID. If not provided, a UUID is generated automatically in NewAgentBase.</p>
+<p>Python equivalent: agent_id parameter in AgentBase.<strong>init</strong> Python behavior: self.agent_id = agent_id or str(uuid.uuid4())</p>
+<p><a name="WithAutoAnswer"></a></p>
+<h3 id="func-withautoanswer">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L164">WithAutoAnswer</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithAutoAnswer</span><span class="p">(</span><span class="nx">autoAnswer</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithAutoAnswer controls whether the answer verb is emitted automatically.</p>
+<p><a name="WithBasicAuth"></a></p>
+<h3 id="func-withbasicauth">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L156">WithBasicAuth</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithBasicAuth</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithBasicAuth sets explicit basic-auth credentials.</p>
+<p><a name="WithCheckForInputOverride"></a></p>
+<h3 id="func-withcheckforinputoverride">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L262">WithCheckForInputOverride</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithCheckForInputOverride</span><span class="p">(</span><span class="nx">enable</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithCheckForInputOverride enables the /check_for_input endpoint, which allows external systems to inject input into an active AI session.</p>
+<p>Python equivalent: check_for_input_override parameter in AgentBase.<strong>init</strong></p>
+<p><a name="WithConfigFile"></a></p>
+<h3 id="func-withconfigfile">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L271">WithConfigFile</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithConfigFile</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithConfigFile sets the path to an optional YAML/JSON service configuration file. When provided, the file is loaded at startup and its values are merged with (but do not override) explicit constructor parameters.</p>
+<p>Python equivalent: config_file parameter in AgentBase.<strong>init</strong></p>
+<p><a name="WithDefaultWebhookURL"></a></p>
+<h3 id="func-withdefaultwebhookurl">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L208">WithDefaultWebhookURL</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithDefaultWebhookURL</span><span class="p">(</span><span class="nx">url</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithDefaultWebhookURL sets the default webhook URL for all SWAIG functions. When set, this URL is used as the fallback for all tools that do not specify their own WebhookURL.</p>
+<p>Python equivalent: default_webhook_url parameter in AgentBase.<strong>init</strong></p>
+<p><a name="WithEnablePostPromptOverride"></a></p>
+<h3 id="func-withenablepostpromptoverride">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L254">WithEnablePostPromptOverride</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithEnablePostPromptOverride</span><span class="p">(</span><span class="nx">enable</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithEnablePostPromptOverride allows subclasses to override the post-prompt URL with a custom handler. When enabled, the agent registers a /post_prompt_override endpoint and routes summary callbacks through it.</p>
+<p>Python equivalent: enable_post_prompt_override parameter in AgentBase.<strong>init</strong></p>
+<p><a name="WithHost"></a></p>
+<h3 id="func-withhost">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L146">WithHost</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithHost</span><span class="p">(</span><span class="nx">host</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithHost sets the HTTP listen address.</p>
+<p><a name="WithName"></a></p>
+<h3 id="func-withname">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L136">WithName</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithName</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithName sets the agent (and service) name.</p>
+<p><a name="WithNativeFunctions"></a></p>
+<h3 id="func-withnativefunctions">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L225">WithNativeFunctions</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithNativeFunctions</span><span class="p">(</span><span class="nx">names</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithNativeFunctions sets the initial list of native (built-in) SWAIG function names to include in the SWAIG object on every rendered document.</p>
+<p>Python equivalent: native_functions parameter in AgentBase.<strong>init</strong></p>
+<p><a name="WithPort"></a></p>
+<h3 id="func-withport">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L151">WithPort</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithPort</span><span class="p">(</span><span class="nx">port</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithPort sets the HTTP listen port.</p>
+<p><a name="WithRecordCall"></a></p>
+<h3 id="func-withrecordcall">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L169">WithRecordCall</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithRecordCall</span><span class="p">(</span><span class="nx">record</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithRecordCall enables or disables automatic call recording.</p>
+<p><a name="WithRecordFormat"></a></p>
+<h3 id="func-withrecordformat">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L174">WithRecordFormat</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithRecordFormat</span><span class="p">(</span><span class="nx">format</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithRecordFormat sets the recording format (e.g. "mp4", "wav").</p>
+<p><a name="WithRecordStereo"></a></p>
+<h3 id="func-withrecordstereo">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L179">WithRecordStereo</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithRecordStereo</span><span class="p">(</span><span class="nx">stereo</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithRecordStereo enables or disables stereo recording.</p>
+<p><a name="WithRoute"></a></p>
+<h3 id="func-withroute">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L141">WithRoute</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithRoute</span><span class="p">(</span><span class="nx">route</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithRoute sets the HTTP route path the agent listens on.</p>
+<p><a name="WithSchemaPath"></a></p>
+<h3 id="func-withschemapath">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L237">WithSchemaPath</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithSchemaPath</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithSchemaPath sets the path to an optional SWML schema file used for validation. If empty, no schema validation is performed.</p>
+<p>Python equivalent: schema_path parameter in AgentBase.<strong>init</strong></p>
+<p><a name="WithSchemaValidation"></a></p>
+<h3 id="func-withschemavalidation">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L281">WithSchemaValidation</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithSchemaValidation</span><span class="p">(</span><span class="nx">validate</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithSchemaValidation controls whether the rendered SWML document is validated against the SWML schema before serving. Defaults to true. Can also be disabled via the SWML_SKIP_SCHEMA_VALIDATION=1 environment variable.</p>
+<p>Python equivalent: schema_validation parameter in AgentBase.<strong>init</strong></p>
+<p><a name="WithSigningKey"></a></p>
+<h3 id="func-withsigningkey">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L297">WithSigningKey</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithSigningKey</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithSigningKey sets the SignalWire Signing Key used to validate inbound webhook signatures. When non-empty, signed routes (POST /, /swaig, /post_prompt, and any registered routing callbacks) are wrapped with security.WebhookMiddleware — unsigned or mis-signed requests are rejected with HTTP 403 before reaching the handler.</p>
+<p>When this option is unset, AgentBase falls back to the SIGNALWIRE_SIGNING_KEY environment variable. When neither is set, the agent accepts unsigned requests and emits a one-time WARN log on startup, per porting-sdk/webhooks.md §"AgentBase integration".</p>
+<p>Python equivalent: AgentBase(signing_key="...") parameter.</p>
+<p><a name="WithSigningKeyTrustProxy"></a></p>
+<h3 id="func-withsigningkeytrustproxy">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L310">WithSigningKeyTrustProxy</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithSigningKeyTrustProxy</span><span class="p">(</span><span class="nx">trust</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithSigningKeyTrustProxy enables X-Forwarded-Proto / X-Forwarded-Host honoring during URL reconstruction. Set true when AgentBase runs behind a reverse proxy / ngrok / load balancer that terminates TLS upstream; without it the validator sees the internal scheme/host and the signature will mismatch.</p>
+<p>No Python parity flag — Python's web_mixin reads X-Forwarded-* headers unconditionally; in Go we make it explicit because forging these headers is a real attack on naive deployments.</p>
+<p><a name="WithSuppressLogs"></a></p>
+<h3 id="func-withsuppresslogs">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L245">WithSuppressLogs</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithSuppressLogs</span><span class="p">(</span><span class="nx">suppress</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithSuppressLogs disables verbose structured logging from the agent. When true, info-level agent lifecycle logs are suppressed.</p>
+<p>Python equivalent: suppress_logs parameter in AgentBase.<strong>init</strong></p>
+<p><a name="WithTokenExpiry"></a></p>
+<h3 id="func-withtokenexpiry">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L184">WithTokenExpiry</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithTokenExpiry</span><span class="p">(</span><span class="nx">secs</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithTokenExpiry sets the token expiry time in seconds for secure tools.</p>
+<p><a name="WithUsePom"></a></p>
+<h3 id="func-withusepom">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L199">WithUsePom</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithUsePom</span><span class="p">(</span><span class="nx">usePom</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">AgentOption</span>
+</code></pre></div>
+
+<p>WithUsePom controls whether Prompt Object Model (POM) mode is active. When true (default), structured prompt sections are used; when false, raw text from SetPromptText is used.</p>
+<p>Python equivalent: use_pom parameter in AgentBase.<strong>init</strong></p>
+<p><a name="DebugEventHandler"></a></p>
+<h2 id="type-debugeventhandler">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L46">DebugEventHandler</a></h2>
+<p>DebugEventHandler is called for debug events if enabled.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">DebugEventHandler</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">event</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="DynamicConfigCallback"></a></p>
+<h2 id="type-dynamicconfigcallback">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L40">DynamicConfigCallback</a></h2>
+<p>DynamicConfigCallback is invoked on each request to mutate an ephemeral agent copy before rendering. Headers and body params give the callback full context about the inbound request.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">DynamicConfigCallback</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">queryParams</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">bodyParams</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">agent</span><span class="w"> </span><span class="o">*</span><span class="nx">AgentBase</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="MCPServerConfig"></a></p>
+<h2 id="type-mcpserverconfig">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L1789-L1794">MCPServerConfig</a></h2>
+<p>MCPServerConfig holds configuration for an external MCP server connection.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">MCPServerConfig</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">URL</span><span class="w">          </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Headers</span><span class="w">      </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Resources</span><span class="w">    </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">ResourceVars</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="OnSwmlRequestHook"></a></p>
+<h2 id="type-onswmlrequesthook">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L55">OnSwmlRequestHook</a></h2>
+<p>OnSwmlRequestHook is the function-field hook that user code can set to override the default SWML-request customization behavior. Returning a non-nil map applies modifications to the rendered SWML; returning nil uses the default rendering unchanged.</p>
+<p>Python parity: web_mixin.WebMixin.on_swml_request — Go has no method inheritance, so we expose the override as a settable function field.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">OnSwmlRequestHook</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">requestData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">callbackPath</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+</code></pre></div>
+
+<p><a name="PromptAddToSectionOption"></a></p>
+<h2 id="type-promptaddtosectionoption">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L720">PromptAddToSectionOption</a></h2>
+<p>PromptAddToSectionOption is a functional option for PromptAddToSection.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">PromptAddToSectionOption</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">promptAddToSectionCfg</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="WithBullet"></a></p>
+<h3 id="func-withbullet">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L724">WithBullet</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithBullet</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">PromptAddToSectionOption</span>
+</code></pre></div>
+
+<p>WithBullet adds a single bullet point to an existing section. Python equivalent: bullet= param in prompt_add_to_section</p>
+<p><a name="WithBullets"></a></p>
+<h3 id="func-withbullets">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L730">WithBullets</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithBullets</span><span class="p">(</span><span class="nx">bs</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">PromptAddToSectionOption</span>
+</code></pre></div>
+
+<p>WithBullets adds multiple bullet points to an existing section. Python equivalent: bullets= param in prompt_add_to_section</p>
+<p><a name="PromptSectionOption"></a></p>
+<h2 id="type-promptsectionoption">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L649">PromptSectionOption</a></h2>
+<p>PromptSectionOption is a functional option for PromptAddSection.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">PromptSectionOption</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">promptSectionCfg</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="WithNumbered"></a></p>
+<h3 id="func-withnumbered">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L653">WithNumbered</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithNumbered</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">PromptSectionOption</span>
+</code></pre></div>
+
+<p>WithNumbered marks the section as numbered. Python equivalent: numbered=True in prompt_add_section</p>
+<p><a name="WithNumberedBullets"></a></p>
+<h3 id="func-withnumberedbullets">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L659">WithNumberedBullets</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithNumberedBullets</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">PromptSectionOption</span>
+</code></pre></div>
+
+<p>WithNumberedBullets marks the bullets list as numbered. Python equivalent: numbered_bullets=True in prompt_add_section</p>
+<p><a name="WithSubsections"></a></p>
+<h3 id="func-withsubsections">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L665">WithSubsections</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithSubsections</span><span class="p">(</span><span class="nx">subs</span><span class="w"> </span><span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="nx">PromptSectionOption</span>
+</code></pre></div>
+
+<p>WithSubsections attaches child sections to the parent section. Python equivalent: subsections=[...] in prompt_add_section</p>
+<p><a name="SummaryCallback"></a></p>
+<h2 id="type-summarycallback">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L43">SummaryCallback</a></h2>
+<p>SummaryCallback is called when a post-prompt summary arrives.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SummaryCallback</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">summary</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">rawData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="ToolDefinition"></a></p>
+<h2 id="type-tooldefinition">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L67-L81">ToolDefinition</a></h2>
+<p>ToolDefinition describes a single SWAIG tool including its JSON Schema parameters and a Go handler function.</p>
+<p>Python equivalent: signalwire.core.mixins.tool_mixin.ToolMixin.define_tool Added fields to match Python: WebhookURL (webhook_url param), Required (required param for required argument names), IsTypedHandler (is_typed_handler).</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ToolDefinition</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">           </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Description</span><span class="w">    </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Parameters</span><span class="w">     </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="w"> </span><span class="c1">// JSON Schema for arguments (properties map)</span>
+<span class="w">    </span><span class="nx">Required</span><span class="w">       </span><span class="p">[]</span><span class="kt">string</span><span class="w">       </span><span class="c1">// Required parameter names included in the JSON Schema envelope</span>
+<span class="w">    </span><span class="nx">Handler</span><span class="w">        </span><span class="nx">ToolHandler</span>
+<span class="w">    </span><span class="nx">Secure</span><span class="w">         </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Fillers</span><span class="w">        </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">WaitFile</span><span class="w">       </span><span class="kt">string</span><span class="w"> </span><span class="c1">// URL to audio file to play while the function executes</span>
+<span class="w">    </span><span class="nx">WaitFileLoops</span><span class="w">  </span><span class="kt">int</span><span class="w">    </span><span class="c1">// Number of times to loop WaitFile (0 = no loop)</span>
+<span class="w">    </span><span class="nx">WebhookURL</span><span class="w">     </span><span class="kt">string</span><span class="w"> </span><span class="c1">// Per-tool webhook URL; overrides the agent-level webhook when non-empty</span>
+<span class="w">    </span><span class="nx">MetaData</span><span class="w">       </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+<span class="w">    </span><span class="nx">SwaigFields</span><span class="w">    </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="w"> </span><span class="c1">// extra per-function SWAIG fields</span>
+<span class="w">    </span><span class="nx">IsTypedHandler</span><span class="w"> </span><span class="kt">bool</span><span class="w">           </span><span class="c1">// whether handler uses typed structs (Python: is_typed_handler)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="ToolDefinition.ValidateArgs"></a></p>
+<h3 id="func-tooldefinition-validateargs">func (*ToolDefinition) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L98">ValidateArgs</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">td</span><span class="w"> </span><span class="o">*</span><span class="nx">ToolDefinition</span><span class="p">)</span><span class="w"> </span><span class="nx">ValidateArgs</span><span class="p">(</span><span class="nx">args</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>ValidateArgs validates the provided args map against the tool's parameter schema.</p>
+<p>It constructs a JSON Schema envelope from Parameters and Required (matching the shape emitted by buildSwaigFunctions) and validates args against that schema using encoding/json round-trip comparison. When Parameters is nil or empty the function returns (true, nil) immediately, mirroring the Python SDK's behaviour of skipping validation when no schema is declared.</p>
+<p>Go's standard library does not include a JSON Schema validator, so this implementation performs a best-effort structural check:</p>
+<ul>
+<li>Every key listed in Required must be present in args.</li>
+<li>No third-party dependency is introduced; the check is intentionally lightweight.</li>
+</ul>
+<p>A full JSON Schema validator (e.g. github.com/xeipuuv/gojsonschema) can be swapped in by replacing the body of this method.</p>
+<p><a name="ToolHandler"></a></p>
+<h2 id="type-toolhandler">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/agent/agent.go#L35">ToolHandler</a></h2>
+<p>ToolHandler is the signature for SWAIG function handlers.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ToolHandler</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">args</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">rawData</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">swaig</span><span class="p">.</span><span class="nx">FunctionResult</span>
+</code></pre></div>
+
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

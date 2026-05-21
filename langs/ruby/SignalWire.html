@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: SignalWire
+  
+    &mdash; SignalWire Ruby SDK
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "SignalWire";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (S)</a> &raquo;
+    
+    
+    <span class="title">SignalWire</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: SignalWire
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/signalwire/runtime.rb<span class="defines">,<br>
+  lib/signalwire.rb,<br> lib/signalwire/logging.rb,<br> lib/signalwire/version.rb,<br> lib/signalwire/relay/call.rb,<br> lib/signalwire/pom/section.rb,<br> lib/signalwire/swml/schema.rb,<br> lib/signalwire/relay/action.rb,<br> lib/signalwire/relay/client.rb,<br> lib/signalwire/swml/service.rb,<br> lib/signalwire/relay/message.rb,<br> lib/signalwire/swml/document.rb,<br> lib/signalwire/prefabs/survey.rb,<br> lib/signalwire/prefabs/faq_bot.rb,<br> lib/signalwire/relay/constants.rb,<br> lib/signalwire/rest/pagination.rb,<br> lib/signalwire/agent/agent_base.rb,<br> lib/signalwire/datamap/data_map.rb,<br> lib/signalwire/rest/http_client.rb,<br> lib/signalwire/rest/rest_client.rb,<br> lib/signalwire/utils/serverless.rb,<br> lib/signalwire/prefabs/concierge.rb,<br> lib/signalwire/relay/relay_event.rb,<br> lib/signalwire/skills/skill_base.rb,<br> lib/signalwire/utils/schema_utils.rb,<br> lib/signalwire/core/logging_config.rb,<br> lib/signalwire/rest/namespaces/mfa.rb,<br> lib/signalwire/server/agent_server.rb,<br> lib/signalwire/skills/builtin/joke.rb,<br> lib/signalwire/skills/builtin/math.rb,<br> lib/signalwire/utils/url_validator.rb,<br> lib/signalwire/prefabs/receptionist.rb,<br> lib/signalwire/rest/namespaces/chat.rb,<br> lib/signalwire/rest/namespaces/logs.rb,<br> lib/signalwire/skills/skill_manager.rb,<br> lib/signalwire/prefabs/info_gatherer.rb,<br> lib/signalwire/rest/namespaces/video.rb,<br> lib/signalwire/skills/builtin/spider.rb,<br> lib/signalwire/skills/skill_registry.rb,<br> lib/signalwire/swaig/function_result.rb,<br> lib/signalwire/rest/namespaces/compat.rb,<br> lib/signalwire/rest/namespaces/fabric.rb,<br> lib/signalwire/rest/namespaces/lookup.rb,<br> lib/signalwire/rest/namespaces/pubsub.rb,<br> lib/signalwire/rest/namespaces/queues.rb,<br> lib/signalwire/pom/prompt_object_model.rb,<br> lib/signalwire/rest/namespaces/calling.rb,<br> lib/signalwire/rest/namespaces/project.rb,<br> lib/signalwire/rest/phone_call_handler.rb,<br> lib/signalwire/skills/builtin/datetime.rb,<br> lib/signalwire/contexts/context_builder.rb,<br> lib/signalwire/rest/namespaces/registry.rb,<br> lib/signalwire/security/session_manager.rb,<br> lib/signalwire/rest/namespaces/addresses.rb,<br> lib/signalwire/serverless/lambda_handler.rb,<br> lib/signalwire/skills/builtin/datasphere.rb,<br> lib/signalwire/skills/builtin/web_search.rb,<br> lib/signalwire/rest/namespaces/datasphere.rb,<br> lib/signalwire/rest/namespaces/recordings.rb,<br> lib/signalwire/security/webhook_validator.rb,<br> lib/signalwire/skills/builtin/google_maps.rb,<br> lib/signalwire/skills/builtin/mcp_gateway.rb,<br> lib/signalwire/skills/builtin/weather_api.rb,<br> lib/signalwire/rest/namespaces/short_codes.rb,<br> lib/signalwire/rest/namespaces/sip_profile.rb,<br> lib/signalwire/security/webhook_middleware.rb,<br> lib/signalwire/skills/builtin/claude_skills.rb,<br> lib/signalwire/skills/builtin/custom_skills.rb,<br> lib/signalwire/skills/builtin/info_gatherer.rb,<br> lib/signalwire/skills/builtin/swml_transfer.rb,<br> lib/signalwire/rest/namespaces/number_groups.rb,<br> lib/signalwire/rest/namespaces/phone_numbers.rb,<br> lib/signalwire/skills/builtin/wikipedia_search.rb,<br> lib/signalwire/rest/namespaces/imported_numbers.rb,<br> lib/signalwire/rest/namespaces/verified_callers.rb,<br> lib/signalwire/skills/builtin/api_ninjas_trivia.rb,<br> lib/signalwire/skills/builtin/native_vector_search.rb,<br> lib/signalwire/skills/builtin/play_background_file.rb,<br> lib/signalwire/skills/builtin/datasphere_serverless.rb</span>
+
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Copyright (c) 2025 SignalWire</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="SignalWire/Contexts.html" title="SignalWire::Contexts (module)">Contexts</a></span>, <span class='object_link'><a href="SignalWire/Core.html" title="SignalWire::Core (module)">Core</a></span>, <span class='object_link'><a href="SignalWire/Logging.html" title="SignalWire::Logging (module)">Logging</a></span>, <span class='object_link'><a href="SignalWire/POM.html" title="SignalWire::POM (module)">POM</a></span>, <span class='object_link'><a href="SignalWire/Prefabs.html" title="SignalWire::Prefabs (module)">Prefabs</a></span>, <span class='object_link'><a href="SignalWire/REST.html" title="SignalWire::REST (module)">REST</a></span>, <span class='object_link'><a href="SignalWire/Relay.html" title="SignalWire::Relay (module)">Relay</a></span>, <span class='object_link'><a href="SignalWire/Runtime.html" title="SignalWire::Runtime (module)">Runtime</a></span>, <span class='object_link'><a href="SignalWire/SWML.html" title="SignalWire::SWML (module)">SWML</a></span>, <span class='object_link'><a href="SignalWire/Security.html" title="SignalWire::Security (module)">Security</a></span>, <span class='object_link'><a href="SignalWire/Serverless.html" title="SignalWire::Serverless (module)">Serverless</a></span>, <span class='object_link'><a href="SignalWire/Skills.html" title="SignalWire::Skills (module)">Skills</a></span>, <span class='object_link'><a href="SignalWire/Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span>, <span class='object_link'><a href="SignalWire/Utils.html" title="SignalWire::Utils (module)">Utils</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="SignalWire/AgentBase.html" title="SignalWire::AgentBase (class)">AgentBase</a></span>, <span class='object_link'><a href="SignalWire/AgentServer.html" title="SignalWire::AgentServer (class)">AgentServer</a></span>, <span class='object_link'><a href="SignalWire/DataMap.html" title="SignalWire::DataMap (class)">DataMap</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1.1.0</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_skill_directory-class_method" title="add_skill_directory (class method)">.<strong>add_skill_directory</strong>(path)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Add a directory to search for skills.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#list_skills_with_params-class_method" title="list_skills_with_params (class method)">.<strong>list_skills_with_params</strong>  &#x21d2; Hash{String =&gt; Hash} </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Get complete schema for all available skills, including parameter metadata.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_skill-class_method" title="register_skill (class method)">.<strong>register_skill</strong>(skill_class)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Register a custom skill class with the global skill registry.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#RestClient-class_method" title="RestClient (class method)">.<strong>RestClient</strong>(*args, **kwargs)  &#x21d2; SignalWire::REST::RestClient </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Construct a <span class='object_link'><a href="SignalWire/REST/RestClient.html" title="SignalWire::REST::RestClient (class)">REST::RestClient</a></span> instance.</p></div></span>
+  
+</li>
+
+      
+    </ul>
+    
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_skill_directory-class_method">
+  
+    .<strong>add_skill_directory</strong>(path)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Add a directory to search for skills.</p>
+<p>Mirrors Python's <code>signalwire.add_skill_directory(path)</code> — delegates
+to the singleton <span class='object_link'><a href="SignalWire/Skills/SkillRegistry.html" title="SignalWire::Skills::SkillRegistry (class)">SignalWire::Skills::SkillRegistry</a></span> instance so
+third-party skill collections can be registered by path. Subsequent
+calls accumulate (de-duplicated) into a shared external paths list.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>absolute or relative path to a skill directory.</p></div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>when the path doesn't exist or isn't a directory.</p></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85
+86</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_skill_directory'>add_skill_directory</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require_relative'>require_relative</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire/skills/skill_registry</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid__signalwire_singleton_registry'>_signalwire_singleton_registry</span><span class='period'>.</span><span class='id identifier rubyid_add_skill_directory'>add_skill_directory</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="list_skills_with_params-class_method">
+  
+    .<strong>list_skills_with_params</strong>  &#x21d2; <tt>Hash{String =&gt; Hash}</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Get complete schema for all available skills, including parameter metadata.</p>
+<p>Mirrors Python's <code>signalwire.list_skills_with_params()</code>. Keys are
+skill names; values describe metadata + parameter schema. Useful for
+GUI configuration tools, API documentation, or programmatic skill
+discovery.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash{String =&gt; Hash}</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_list_skills_with_params'>list_skills_with_params</span>
+  <span class='id identifier rubyid_require_relative'>require_relative</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire/skills/skill_registry</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>if</span> <span class='const'><span class='object_link'><a href="SignalWire/Skills.html" title="SignalWire::Skills (module)">Skills</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/Skills/SkillRegistry.html" title="SignalWire::Skills::SkillRegistry (class)">SkillRegistry</a></span></span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:get_all_skills_schema</span><span class='rparen'>)</span>
+    <span class='const'><span class='object_link'><a href="SignalWire/Skills.html" title="SignalWire::Skills (module)">Skills</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/Skills/SkillRegistry.html" title="SignalWire::Skills::SkillRegistry (class)">SkillRegistry</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_all_skills_schema'><span class='object_link'><a href="SignalWire/Skills/SkillRegistry.html#get_all_skills_schema-class_method" title="SignalWire::Skills::SkillRegistry.get_all_skills_schema (method)">get_all_skills_schema</a></span></span>
+  <span class='kw'>else</span>
+    <span class='comment'># Fallback: list_skills returns names; pair them with empty params.
+</span>    <span class='const'><span class='object_link'><a href="SignalWire/Skills.html" title="SignalWire::Skills (module)">Skills</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/Skills/SkillRegistry.html" title="SignalWire::Skills::SkillRegistry (class)">SkillRegistry</a></span></span><span class='period'>.</span><span class='id identifier rubyid_list_skills'><span class='object_link'><a href="SignalWire/Skills/SkillRegistry.html#list_skills-class_method" title="SignalWire::Skills::SkillRegistry.list_skills (method)">list_skills</a></span></span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_h'>h</span><span class='op'>|</span>
+      <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>name</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>parameters</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_skill-class_method">
+  
+    .<strong>register_skill</strong>(skill_class)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Register a custom skill class with the global skill registry.</p>
+<p>Mirrors Python's <code>signalwire.register_skill(skill_class)</code> — the
+Ruby singleton registry stores factories by name. The class is
+expected to expose a <code>::skill_name</code> (or <code>SKILL_NAME</code> constant)
+so we can derive the registration key.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>skill_class</span>
+      
+      
+        <span class='type'>(<tt>Class</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A subclass of <span class='object_link'><a href="SignalWire/Skills/SkillBase.html" title="SignalWire::Skills::SkillBase (class)">SignalWire::Skills::SkillBase</a></span></p></div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_skill'>register_skill</span><span class='lparen'>(</span><span class='id identifier rubyid_skill_class'>skill_class</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require_relative'>require_relative</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire/skills/skill_registry</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_skill_class'>skill_class</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:skill_name</span><span class='rparen'>)</span>
+           <span class='id identifier rubyid_skill_class'>skill_class</span><span class='period'>.</span><span class='id identifier rubyid_skill_name'>skill_name</span>
+         <span class='kw'>elsif</span> <span class='id identifier rubyid_skill_class'>skill_class</span><span class='period'>.</span><span class='id identifier rubyid_const_defined?'>const_defined?</span><span class='lparen'>(</span><span class='symbol'>:SKILL_NAME</span><span class='rparen'>)</span>
+           <span class='id identifier rubyid_skill_class'>skill_class</span><span class='period'>.</span><span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='symbol'>:SKILL_NAME</span><span class='rparen'>)</span>
+         <span class='kw'>else</span>
+           <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span>
+                 <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>skill class </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_skill_class'>skill_class</span><span class='embexpr_end'>}</span><span class='tstring_content'> must define ::skill_name or SKILL_NAME</span><span class='tstring_end'>&quot;</span></span>
+         <span class='kw'>end</span>
+  <span class='const'><span class='object_link'><a href="SignalWire/Skills.html" title="SignalWire::Skills (module)">Skills</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/Skills/SkillRegistry.html" title="SignalWire::Skills::SkillRegistry (class)">SkillRegistry</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_skill'><span class='object_link'><a href="SignalWire/Skills/SkillRegistry.html#register_skill-class_method" title="SignalWire::Skills::SkillRegistry.register_skill (method)">register_skill</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='tlambda'>-&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span> <span class='tlambeg'>{</span> <span class='id identifier rubyid_skill_class'>skill_class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RestClient-class_method">
+  
+    .<strong>RestClient</strong>(*args, **kwargs)  &#x21d2; <tt><span class='object_link'><a href="SignalWire/REST/RestClient.html" title="SignalWire::REST::RestClient (class)">SignalWire::REST::RestClient</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Construct a <span class='object_link'><a href="SignalWire/REST/RestClient.html" title="SignalWire::REST::RestClient (class)">SignalWire::REST::RestClient</a></span> instance.</p>
+<p>Mirrors Python's top-level <code>signalwire.RestClient(*args, **kwargs)</code>
+factory — a thin wrapper that lazy-imports
+<code>signalwire.rest.RestClient</code> and instantiates it. Supports both
+positional credentials (matching Go-style <code>RestClient(project, token, host)</code>) and keyword credentials (Ruby-idiomatic).</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Positional credentials (compat shim).</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>kwargs</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Keyword credentials forwarded to the constructor.</p></div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="SignalWire/REST/RestClient.html" title="SignalWire::REST::RestClient (class)">SignalWire::REST::RestClient</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire.rb', line 40</span>
+
+<span class='kw'>def</span> <span class='const'>RestClient</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kwargs'>kwargs</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require_relative'>require_relative</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>signalwire/rest/rest_client</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;=</span> <span class='int'>3</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_kwargs'>kwargs</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='const'><span class='object_link'><a href="SignalWire/REST.html" title="SignalWire::REST (module)">REST</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/REST/RestClient.html" title="SignalWire::REST::RestClient (class)">RestClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SignalWire/REST/RestClient.html#initialize-instance_method" title="SignalWire::REST::RestClient#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>project:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>token:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>host:</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>elsif</span> <span class='op'>!</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_kwargs'>kwargs</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>positional form requires (project, token, host)</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>else</span>
+    <span class='const'><span class='object_link'><a href="SignalWire/REST.html" title="SignalWire::REST (module)">REST</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="SignalWire/REST/RestClient.html" title="SignalWire::REST::RestClient (class)">RestClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SignalWire/REST/RestClient.html#initialize-instance_method" title="SignalWire::REST::RestClient#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='op'>**</span><span class='id identifier rubyid_kwargs'>kwargs</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu May 21 15:20:54 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.43 (ruby-3.1.4).
+</div>
+
+    </div>
+  </body>
+</html>

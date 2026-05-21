@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['descriptions_0',['Bad vs good descriptions',['../classsignalwire_1_1agent_1_1AgentBase.html#autotoc_md1',1,'']]]
+];

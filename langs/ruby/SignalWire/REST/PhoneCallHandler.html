@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: SignalWire::REST::PhoneCallHandler
+  
+    &mdash; SignalWire Ruby SDK
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "SignalWire::REST::PhoneCallHandler";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../REST.html" title="SignalWire::REST (module)">REST</a></span></span>
+     &raquo; 
+    <span class="title">PhoneCallHandler</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: SignalWire::REST::PhoneCallHandler
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/signalwire/rest/phone_call_handler.rb
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>PhoneCallHandler -- enum-like constants of the <code>call_handler</code> values
+accepted by <code>phone_numbers.update</code>.</p>
+<p>Named <code>PhoneCallHandler</code> (not <code>CallHandler</code>) to avoid colliding with
+the RELAY client's inbound-call-handler callback (+Relay::Client#on_call+).</p>
+<p>Setting a phone number's <code>call_handler</code> together with the handler-specific
+companion field routes inbound calls and auto-materializes the matching
+Fabric resource on the server. See the high-level helpers on
+<code>SignalWire::REST::Namespaces::PhoneNumbersResource</code>.</p>
+<h3 id="Mapping">Mapping</h3>
+<pre class="code ruby"><code class="ruby">Constant          | Companion field (required)     | Auto-creates resource
+------------------+--------------------------------+----------------------
+RELAY_SCRIPT      | call_relay_script_url          | swml_webhook
+LAML_WEBHOOKS     | call_request_url               | cxml_webhook
+LAML_APPLICATION  | call_laml_application_id       | cxml_application
+AI_AGENT          | call_ai_agent_id               | ai_agent
+CALL_FLOW         | call_flow_id                   | call_flow
+RELAY_APPLICATION | call_relay_application         | relay_application
+RELAY_TOPIC       | call_relay_topic               | (routes via RELAY)
+RELAY_CONTEXT     | call_relay_context             | (legacy, prefer topic)
+RELAY_CONNECTOR   | (connector config)             | (internal)
+VIDEO_ROOM        | call_video_room_id             | (routes to Video API)
+DIALOGFLOW        | call_dialogflow_agent_id       | (none)
+</code></pre>
+<p>Note: <code>LAML_WEBHOOKS</code> (wire value <code>laml_webhooks</code>) produces a <em>cXML</em>
+handler despite the plural name, not a generic webhook. For SWML, use
+<code>RELAY_SCRIPT</code>.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="RELAY_SCRIPT-constant" class="">RELAY_SCRIPT =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>relay_script</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="LAML_WEBHOOKS-constant" class="">LAML_WEBHOOKS =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>laml_webhooks</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="LAML_APPLICATION-constant" class="">LAML_APPLICATION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>laml_application</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="AI_AGENT-constant" class="">AI_AGENT =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ai_agent</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="CALL_FLOW-constant" class="">CALL_FLOW =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>call_flow</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="RELAY_APPLICATION-constant" class="">RELAY_APPLICATION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>relay_application</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="RELAY_TOPIC-constant" class="">RELAY_TOPIC =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>relay_topic</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="RELAY_CONTEXT-constant" class="">RELAY_CONTEXT =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>relay_context</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="RELAY_CONNECTOR-constant" class="">RELAY_CONNECTOR =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>relay_connector</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="VIDEO_ROOM-constant" class="">VIDEO_ROOM =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>video_room</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="DIALOGFLOW-constant" class="">DIALOGFLOW =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dialogflow</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="ALL-constant" class="">ALL =
+          <div class="docstring">
+  <div class="discussion">
+    <p>All supported wire values, in the same order as the constants.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span>
+  <span class='const'><span class='object_link'><a href="#RELAY_SCRIPT-constant" title="SignalWire::REST::PhoneCallHandler::RELAY_SCRIPT (constant)">RELAY_SCRIPT</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#LAML_WEBHOOKS-constant" title="SignalWire::REST::PhoneCallHandler::LAML_WEBHOOKS (constant)">LAML_WEBHOOKS</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#LAML_APPLICATION-constant" title="SignalWire::REST::PhoneCallHandler::LAML_APPLICATION (constant)">LAML_APPLICATION</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#AI_AGENT-constant" title="SignalWire::REST::PhoneCallHandler::AI_AGENT (constant)">AI_AGENT</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#CALL_FLOW-constant" title="SignalWire::REST::PhoneCallHandler::CALL_FLOW (constant)">CALL_FLOW</a></span></span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="#RELAY_APPLICATION-constant" title="SignalWire::REST::PhoneCallHandler::RELAY_APPLICATION (constant)">RELAY_APPLICATION</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#RELAY_TOPIC-constant" title="SignalWire::REST::PhoneCallHandler::RELAY_TOPIC (constant)">RELAY_TOPIC</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#RELAY_CONTEXT-constant" title="SignalWire::REST::PhoneCallHandler::RELAY_CONTEXT (constant)">RELAY_CONTEXT</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#RELAY_CONNECTOR-constant" title="SignalWire::REST::PhoneCallHandler::RELAY_CONNECTOR (constant)">RELAY_CONNECTOR</a></span></span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="#VIDEO_ROOM-constant" title="SignalWire::REST::PhoneCallHandler::VIDEO_ROOM (constant)">VIDEO_ROOM</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#DIALOGFLOW-constant" title="SignalWire::REST::PhoneCallHandler::DIALOGFLOW (constant)">DIALOGFLOW</a></span></span>
+<span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+
+
+</div>
+
+      <div id="footer">
+  Generated on Thu May 21 15:20:54 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.43 (ruby-3.1.4).
+</div>
+
+    </div>
+  </body>
+</html>

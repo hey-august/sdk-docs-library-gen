@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>prefabs — SignalWire Go SDK</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<nav class="side">
+  <header>
+    <div class="brand"><span class="gopher"></span> SignalWire Go SDK</div>
+    <div style="color:var(--fg-dim);font-size:12px;margin-top:4px">github.com/signalwire/signalwire-go</div>
+  </header>
+  <div class="subnav">Packages</div>
+  <ul>
+    <li><a href="agent.html" data-pkg="agent">agent</a></li>
+    <li><a href="contexts.html" data-pkg="contexts">contexts</a></li>
+    <li><a href="datamap.html" data-pkg="datamap">datamap</a></li>
+    <li><a href="lambda.html" data-pkg="lambda">lambda</a></li>
+    <li><a href="livewire.html" data-pkg="livewire">livewire</a></li>
+    <li><a href="logging.html" data-pkg="logging">logging</a></li>
+    <li><a href="pom.html" data-pkg="pom">pom</a></li>
+    <li><a href="prefabs.html" data-pkg="prefabs" class="active">prefabs</a></li>
+    <li><a href="relay.html" data-pkg="relay">relay</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
+    <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="security.html" data-pkg="security">security</a></li>
+    <li><a href="server.html" data-pkg="server">server</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
+    <li><a href="swml.html" data-pkg="swml">swml</a></li>
+    <li><a href="util.html" data-pkg="util">util</a></li>
+  </ul>
+</nav>
+<main>
+<h1 id="prefabs">prefabs</h1>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/signalwire/signalwire-go/pkg/prefabs&quot;</span>
+</code></pre></div>
+
+<p>Package prefabs provides pre-built agent patterns that extend AgentBase with common conversational workflows such as information gathering, surveys, reception/routing, FAQ answering, and virtual concierge services.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#Amenity">type Amenity</a></li>
+<li><a href="#BedrockAgent">type BedrockAgent</a></li>
+<li><a href="#NewBedrockAgent">func NewBedrockAgent(opts BedrockOptions) *BedrockAgent</a></li>
+<li><a href="#BedrockAgent.SetInferenceParams">func (ba *BedrockAgent) SetInferenceParams(temperature, topP float64, maxTokens int)</a></li>
+<li><a href="#BedrockAgent.SetLLMModel">func (ba *BedrockAgent) SetLLMModel(model string)</a></li>
+<li><a href="#BedrockAgent.SetLLMTemperature">func (ba *BedrockAgent) SetLLMTemperature(temperature float64)</a></li>
+<li><a href="#BedrockAgent.SetPostPromptLLMParams">func (ba *BedrockAgent) SetPostPromptLLMParams(params map[string]any)</a></li>
+<li><a href="#BedrockAgent.SetPromptLLMParams">func (ba *BedrockAgent) SetPromptLLMParams(params map[string]any)</a></li>
+<li><a href="#BedrockAgent.SetVoice">func (ba *BedrockAgent) SetVoice(voiceID string)</a></li>
+<li><a href="#BedrockOptions">type BedrockOptions</a></li>
+<li><a href="#ConciergeAgent">type ConciergeAgent</a></li>
+<li><a href="#NewConciergeAgent">func NewConciergeAgent(opts ConciergeOptions) *ConciergeAgent</a></li>
+<li><a href="#ConciergeOptions">type ConciergeOptions</a></li>
+<li><a href="#Department">type Department</a></li>
+<li><a href="#FAQ">type FAQ</a></li>
+<li><a href="#FAQBotAgent">type FAQBotAgent</a></li>
+<li><a href="#NewFAQBotAgent">func NewFAQBotAgent(opts FAQBotOptions) *FAQBotAgent</a></li>
+<li><a href="#FAQBotOptions">type FAQBotOptions</a></li>
+<li><a href="#InfoGathererAgent">type InfoGathererAgent</a></li>
+<li><a href="#NewInfoGathererAgent">func NewInfoGathererAgent(opts InfoGathererOptions) *InfoGathererAgent</a></li>
+<li><a href="#InfoGathererAgent.SetQuestionCallback">func (ig *InfoGathererAgent) SetQuestionCallback(cb func(queryParams map[string]string, bodyParams map[string]any, headers map[string]string) []Question)</a></li>
+<li><a href="#InfoGathererOptions">type InfoGathererOptions</a></li>
+<li><a href="#Question">type Question</a></li>
+<li><a href="#ReceptionistAgent">type ReceptionistAgent</a></li>
+<li><a href="#NewReceptionistAgent">func NewReceptionistAgent(opts ReceptionistOptions) *ReceptionistAgent</a></li>
+<li><a href="#ReceptionistOptions">type ReceptionistOptions</a></li>
+<li><a href="#SurveyAgent">type SurveyAgent</a></li>
+<li><a href="#NewSurveyAgent">func NewSurveyAgent(opts SurveyOptions) *SurveyAgent</a></li>
+<li><a href="#SurveyOptions">type SurveyOptions</a></li>
+<li><a href="#SurveyQuestion">type SurveyQuestion</a></li>
+<li><a href="#NewSurveyQuestion">func NewSurveyQuestion(text string, opts ...SurveyQuestionOption) SurveyQuestion</a></li>
+<li><a href="#SurveyQuestionOption">type SurveyQuestionOption</a></li>
+<li><a href="#WithOptional">func WithOptional() SurveyQuestionOption</a></li>
+<li><a href="#WithQuestionChoices">func WithQuestionChoices(choices ...string) SurveyQuestionOption</a></li>
+<li><a href="#WithQuestionID">func WithQuestionID(id string) SurveyQuestionOption</a></li>
+<li><a href="#WithQuestionScale">func WithQuestionScale(n int) SurveyQuestionOption</a></li>
+<li><a href="#WithQuestionType">func WithQuestionType(t string) SurveyQuestionOption</a></li>
+</ul>
+<p><a name="Amenity"></a></p>
+<h2 id="type-amenity">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/concierge.go#L16-L20">Amenity</a></h2>
+<p>Amenity describes a venue amenity with its hours, location, and extra details.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Amenity</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Hours</span><span class="w">    </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Location</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Details</span><span class="w">  </span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="BedrockAgent"></a></p>
+<h2 id="type-bedrockagent">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/bedrock.go#L58-L66">BedrockAgent</a></h2>
+<p>BedrockAgent wraps AgentBase and configures it to emit the "amazon_bedrock" SWML verb instead of the standard "ai" verb.</p>
+<p>The voice_id, temperature, and top_p values are injected into the rendered prompt config (matching Python's _add_voice_to_prompt). Keys that are text-model-specific (barge_confidence, presence_penalty, frequency_penalty) are removed from the prompt config because they do not apply to Bedrock's voice-to-voice model.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">BedrockAgent</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="nx">agent</span><span class="p">.</span><span class="nx">AgentBase</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewBedrockAgent"></a></p>
+<h3 id="func-newbedrockagent">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/bedrock.go#L75">NewBedrockAgent</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewBedrockAgent</span><span class="p">(</span><span class="nx">opts</span><span class="w"> </span><span class="nx">BedrockOptions</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">BedrockAgent</span>
+</code></pre></div>
+
+<p>NewBedrockAgent creates a BedrockAgent with Bedrock-specific SWML rendering.</p>
+<p>Python equivalent: BedrockAgent.<strong>init</strong></p>
+<p><a name="BedrockAgent.SetInferenceParams"></a></p>
+<h3 id="func-bedrockagent-setinferenceparams">func (*BedrockAgent) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/bedrock.go#L183">SetInferenceParams</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ba</span><span class="w"> </span><span class="o">*</span><span class="nx">BedrockAgent</span><span class="p">)</span><span class="w"> </span><span class="nx">SetInferenceParams</span><span class="p">(</span><span class="nx">temperature</span><span class="p">,</span><span class="w"> </span><span class="nx">topP</span><span class="w"> </span><span class="kt">float64</span><span class="p">,</span><span class="w"> </span><span class="nx">maxTokens</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span>
+</code></pre></div>
+
+<p>SetInferenceParams updates one or more Bedrock inference parameters. Pass zero-value pointers to leave a parameter unchanged.</p>
+<p>Python equivalent: BedrockAgent.set_inference_params</p>
+<p><a name="BedrockAgent.SetLLMModel"></a></p>
+<h3 id="func-bedrockagent-setllmmodel">func (*BedrockAgent) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/bedrock.go#L201">SetLLMModel</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ba</span><span class="w"> </span><span class="o">*</span><span class="nx">BedrockAgent</span><span class="p">)</span><span class="w"> </span><span class="nx">SetLLMModel</span><span class="p">(</span><span class="nx">model</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>SetLLMModel logs a warning and does nothing. Bedrock uses a fixed voice-to-voice model, so overriding the model name is not meaningful.</p>
+<p>Python equivalent: BedrockAgent.set_llm_model</p>
+<p><a name="BedrockAgent.SetLLMTemperature"></a></p>
+<h3 id="func-bedrockagent-setllmtemperature">func (*BedrockAgent) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/bedrock.go#L209">SetLLMTemperature</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ba</span><span class="w"> </span><span class="o">*</span><span class="nx">BedrockAgent</span><span class="p">)</span><span class="w"> </span><span class="nx">SetLLMTemperature</span><span class="p">(</span><span class="nx">temperature</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span>
+</code></pre></div>
+
+<p>SetLLMTemperature is a convenience wrapper that delegates to SetInferenceParams.</p>
+<p>Python equivalent: BedrockAgent.set_llm_temperature</p>
+<p><a name="BedrockAgent.SetPostPromptLLMParams"></a></p>
+<h3 id="func-bedrockagent-setpostpromptllmparams">func (*BedrockAgent) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/bedrock.go#L220">SetPostPromptLLMParams</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ba</span><span class="w"> </span><span class="o">*</span><span class="nx">BedrockAgent</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPostPromptLLMParams</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span>
+</code></pre></div>
+
+<p>SetPostPromptLLMParams logs a warning and ignores the parameters. Bedrock's post-prompt summarisation uses OpenAI configured at the platform level (in the C code), so SDK-level overrides have no effect. The keys of params are listed in the warning so the caller can see what was ignored.</p>
+<p>Python equivalent: BedrockAgent.set_post_prompt_llm_params</p>
+<p><a name="BedrockAgent.SetPromptLLMParams"></a></p>
+<h3 id="func-bedrockagent-setpromptllmparams">func (*BedrockAgent) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/bedrock.go#L237">SetPromptLLMParams</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ba</span><span class="w"> </span><span class="o">*</span><span class="nx">BedrockAgent</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPromptLLMParams</span><span class="p">(</span><span class="nx">params</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">)</span>
+</code></pre></div>
+
+<p>SetPromptLLMParams logs a warning directing the caller to SetInferenceParams instead. The keys of params are listed in the warning so the caller can see what was ignored.</p>
+<p>Python equivalent: BedrockAgent.set_prompt_llm_params</p>
+<p><a name="BedrockAgent.SetVoice"></a></p>
+<h3 id="func-bedrockagent-setvoice">func (*BedrockAgent) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/bedrock.go#L174">SetVoice</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ba</span><span class="w"> </span><span class="o">*</span><span class="nx">BedrockAgent</span><span class="p">)</span><span class="w"> </span><span class="nx">SetVoice</span><span class="p">(</span><span class="nx">voiceID</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>SetVoice sets the Bedrock voice ID.</p>
+<p>Python equivalent: BedrockAgent.set_voice</p>
+<p><a name="BedrockOptions"></a></p>
+<h2 id="type-bedrockoptions">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/bedrock.go#L21-L48">BedrockOptions</a></h2>
+<p>BedrockOptions configures a new BedrockAgent.</p>
+<p>BedrockAgent is the Go equivalent of the Python BedrockAgent class. It extends the standard agent infrastructure but renders the SWML document with the "amazon_bedrock" verb instead of the default "ai" verb. All standard AgentBase capabilities (prompt, SWAIG tools, skills, post-prompt, dynamic config, etc.) work unchanged.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">BedrockOptions</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Name is the agent name.  Defaults to &quot;bedrock_agent&quot;.</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w"> </span><span class="kt">string</span>
+
+<span class="w">    </span><span class="c1">// Route is the HTTP route for the agent.  Defaults to &quot;/bedrock&quot;.</span>
+<span class="w">    </span><span class="nx">Route</span><span class="w"> </span><span class="kt">string</span>
+
+<span class="w">    </span><span class="c1">// SystemPrompt is an optional initial system prompt.  It can be</span>
+<span class="w">    </span><span class="c1">// overridden later via SetPromptText.</span>
+<span class="w">    </span><span class="nx">SystemPrompt</span><span class="w"> </span><span class="kt">string</span>
+
+<span class="w">    </span><span class="c1">// VoiceID is the Bedrock voice identifier.  Defaults to &quot;matthew&quot;.</span>
+<span class="w">    </span><span class="nx">VoiceID</span><span class="w"> </span><span class="kt">string</span>
+
+<span class="w">    </span><span class="c1">// Temperature is the generation temperature (0–1).  Defaults to 0.7.</span>
+<span class="w">    </span><span class="nx">Temperature</span><span class="w"> </span><span class="kt">float64</span>
+
+<span class="w">    </span><span class="c1">// TopP is the nucleus-sampling parameter (0–1).  Defaults to 0.9.</span>
+<span class="w">    </span><span class="nx">TopP</span><span class="w"> </span><span class="kt">float64</span>
+
+<span class="w">    </span><span class="c1">// MaxTokens is the maximum number of tokens to generate.</span>
+<span class="w">    </span><span class="c1">// Defaults to 1024.</span>
+<span class="w">    </span><span class="nx">MaxTokens</span><span class="w"> </span><span class="kt">int</span>
+
+<span class="w">    </span><span class="c1">// AgentOptions are functional options forwarded to NewAgentBase.</span>
+<span class="w">    </span><span class="c1">// Use them to set host, port, auth credentials, etc.</span>
+<span class="w">    </span><span class="nx">AgentOptions</span><span class="w"> </span><span class="p">[]</span><span class="nx">agent</span><span class="p">.</span><span class="nx">AgentOption</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="ConciergeAgent"></a></p>
+<h2 id="type-conciergeagent">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/concierge.go#L36-L42">ConciergeAgent</a></h2>
+<p>ConciergeAgent acts as a virtual concierge for a venue, answering questions about amenities, services, hours, and directions.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ConciergeAgent</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="nx">agent</span><span class="p">.</span><span class="nx">AgentBase</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewConciergeAgent"></a></p>
+<h3 id="func-newconciergeagent">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/concierge.go#L49">NewConciergeAgent</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewConciergeAgent</span><span class="p">(</span><span class="nx">opts</span><span class="w"> </span><span class="nx">ConciergeOptions</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">ConciergeAgent</span>
+</code></pre></div>
+
+<p>NewConciergeAgent creates an agent that provides concierge services for a venue.</p>
+<p><a name="ConciergeOptions"></a></p>
+<h2 id="type-conciergeoptions">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/concierge.go#L23-L32">ConciergeOptions</a></h2>
+<p>ConciergeOptions configures a new ConciergeAgent.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ConciergeOptions</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">                </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Route</span><span class="w">               </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">VenueName</span><span class="w">           </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Services</span><span class="w">            </span><span class="p">[]</span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Amenities</span><span class="w">           </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="nx">Amenity</span>
+<span class="w">    </span><span class="nx">Hours</span><span class="w">               </span><span class="kt">string</span><span class="w">   </span><span class="c1">// general hours of operation</span>
+<span class="w">    </span><span class="nx">SpecialInstructions</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="w"> </span><span class="c1">// optional additional instructions appended to the default list</span>
+<span class="w">    </span><span class="nx">WelcomeMessage</span><span class="w">      </span><span class="kt">string</span><span class="w">   </span><span class="c1">// optional static greeting spoken at the start of the call</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="Department"></a></p>
+<h2 id="type-department">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/receptionist.go#L15-L20">Department</a></h2>
+<p>Department describes a destination the receptionist can transfer to.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Department</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">         </span><span class="kt">string</span><span class="w"> </span><span class="c1">// e.g. &quot;sales&quot;</span>
+<span class="w">    </span><span class="nx">Description</span><span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="c1">// what the department handles</span>
+<span class="w">    </span><span class="nx">Number</span><span class="w">       </span><span class="kt">string</span><span class="w"> </span><span class="c1">// phone number or SWML transfer destination</span>
+<span class="w">    </span><span class="nx">TransferSWML</span><span class="w"> </span><span class="kt">bool</span><span class="w">   </span><span class="c1">// true if Number is a SWML destination (uses SwmlTransfer)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="FAQ"></a></p>
+<h2 id="type-faq">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/faq_bot.go#L16-L20">FAQ</a></h2>
+<p>FAQ represents a single frequently asked question and its answer.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">FAQ</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Question</span><span class="w">   </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Answer</span><span class="w">     </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Categories</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="FAQBotAgent"></a></p>
+<h2 id="type-faqbotagent">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/faq_bot.go#L38-L42">FAQBotAgent</a></h2>
+<p>FAQBotAgent answers frequently asked questions by matching user queries against a provided FAQ database.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">FAQBotAgent</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="nx">agent</span><span class="p">.</span><span class="nx">AgentBase</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewFAQBotAgent"></a></p>
+<h3 id="func-newfaqbotagent">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/faq_bot.go#L49">NewFAQBotAgent</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewFAQBotAgent</span><span class="p">(</span><span class="nx">opts</span><span class="w"> </span><span class="nx">FAQBotOptions</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">FAQBotAgent</span>
+</code></pre></div>
+
+<p>NewFAQBotAgent creates an agent that answers frequently asked questions.</p>
+<p><a name="FAQBotOptions"></a></p>
+<h2 id="type-faqbotoptions">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/faq_bot.go#L23-L34">FAQBotOptions</a></h2>
+<p>FAQBotOptions configures a new FAQBotAgent.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">FAQBotOptions</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">  </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Route</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">FAQs</span><span class="w">  </span><span class="p">[]</span><span class="nx">FAQ</span>
+<span class="w">    </span><span class="c1">// SuggestRelated controls whether the agent suggests related questions.</span>
+<span class="w">    </span><span class="c1">// Defaults to true when nil, matching the Python SDK default.</span>
+<span class="w">    </span><span class="nx">SuggestRelated</span><span class="w"> </span><span class="o">*</span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Persona</span><span class="w">        </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// AgentOptions holds additional functional options forwarded to NewAgentBase,</span>
+<span class="w">    </span><span class="c1">// matching the **kwargs pass-through in the Python SDK.</span>
+<span class="w">    </span><span class="nx">AgentOptions</span><span class="w"> </span><span class="p">[]</span><span class="nx">agent</span><span class="p">.</span><span class="nx">AgentOption</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="InfoGathererAgent"></a></p>
+<h2 id="type-infogathereragent">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/info_gatherer.go#L36-L39">InfoGathererAgent</a></h2>
+<p>InfoGathererAgent collects answers to a series of questions sequentially. Supports both static (questions provided at construction) and dynamic (questions determined per-request via SetQuestionCallback) modes.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">InfoGathererAgent</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="nx">agent</span><span class="p">.</span><span class="nx">AgentBase</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewInfoGathererAgent"></a></p>
+<h3 id="func-newinfogathereragent">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/info_gatherer.go#L49">NewInfoGathererAgent</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewInfoGathererAgent</span><span class="p">(</span><span class="nx">opts</span><span class="w"> </span><span class="nx">InfoGathererOptions</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">InfoGathererAgent</span>
+</code></pre></div>
+
+<p>NewInfoGathererAgent creates an agent that asks a series of questions and stores the answers in global data. Pass nil Questions to enable dynamic mode; call SetQuestionCallback on the returned agent to supply per-request questions.</p>
+<p><a name="InfoGathererAgent.SetQuestionCallback"></a></p>
+<h3 id="func-infogathereragent-setquestioncallback">func (*InfoGathererAgent) <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/info_gatherer.go#L135-L137">SetQuestionCallback</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ig</span><span class="w"> </span><span class="o">*</span><span class="nx">InfoGathererAgent</span><span class="p">)</span><span class="w"> </span><span class="nx">SetQuestionCallback</span><span class="p">(</span><span class="nx">cb</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">queryParams</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">bodyParams</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">[]</span><span class="nx">Question</span><span class="p">)</span>
+</code></pre></div>
+
+<p>SetQuestionCallback registers a per-request callback that returns the list of questions to ask. Calling this method enables dynamic mode: on each SWML request the callback is invoked with the request's query parameters, body parameters, and headers; the returned []Question becomes the session's question list. This mirrors Python's InfoGathererAgent.set_question_callback.</p>
+<p>If Questions was set to nil in InfoGathererOptions (dynamic mode), a fallback question set is used when no callback is registered.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">ig</span><span class="p">.</span><span class="n">SetQuestionCallback</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="k">map</span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="ow">any</span><span class="p">,</span><span class="w"> </span><span class="n">headers</span><span class="w"> </span><span class="k">map</span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="n">string</span><span class="p">)</span><span class="w"> </span><span class="err">[]</span><span class="n">Question</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">body</span><span class="o">[</span><span class="n">&quot;department&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;support&quot;</span><span class="w"> </span><span class="err">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="err">[]</span><span class="n">Question</span><span class="err">{{</span><span class="nl">KeyName</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;issue&quot;</span><span class="p">,</span><span class="w"> </span><span class="nl">QuestionText</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;What is the issue?&quot;</span><span class="err">}}</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="err">[]</span><span class="n">Question</span><span class="err">{{</span><span class="nl">KeyName</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="nl">QuestionText</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;What is your name?&quot;</span><span class="err">}}</span>
+<span class="err">}</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="InfoGathererOptions"></a></p>
+<h2 id="type-infogathereroptions">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/info_gatherer.go#L27-L31">InfoGathererOptions</a></h2>
+<p>InfoGathererOptions configures a new InfoGathererAgent. Set Questions to nil to enable dynamic callback mode via SetQuestionCallback.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">InfoGathererOptions</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">      </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Route</span><span class="w">     </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Questions</span><span class="w"> </span><span class="o">*</span><span class="p">[]</span><span class="nx">Question</span><span class="w"> </span><span class="c1">// nil enables dynamic callback mode; non-nil is static mode</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="Question"></a></p>
+<h2 id="type-question">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/info_gatherer.go#L19-L23">Question</a></h2>
+<p>Question describes a single question in an InfoGatherer sequence.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Question</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">KeyName</span><span class="w">      </span><span class="kt">string</span><span class="w"> </span><span class="c1">// identifier used to store the answer</span>
+<span class="w">    </span><span class="nx">QuestionText</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="c1">// the question to ask the user</span>
+<span class="w">    </span><span class="nx">Confirm</span><span class="w">      </span><span class="kt">bool</span><span class="w">   </span><span class="c1">// if true the agent will confirm before accepting</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="ReceptionistAgent"></a></p>
+<h2 id="type-receptionistagent">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/receptionist.go#L32-L35">ReceptionistAgent</a></h2>
+<p>ReceptionistAgent greets callers and routes them to the appropriate department.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ReceptionistAgent</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="nx">agent</span><span class="p">.</span><span class="nx">AgentBase</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewReceptionistAgent"></a></p>
+<h3 id="func-newreceptionistagent">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/receptionist.go#L43">NewReceptionistAgent</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewReceptionistAgent</span><span class="p">(</span><span class="nx">opts</span><span class="w"> </span><span class="nx">ReceptionistOptions</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">ReceptionistAgent</span>
+</code></pre></div>
+
+<p>NewReceptionistAgent creates an agent that greets callers and transfers them to the appropriate department.</p>
+<p><a name="ReceptionistOptions"></a></p>
+<h2 id="type-receptionistoptions">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/receptionist.go#L23-L29">ReceptionistOptions</a></h2>
+<p>ReceptionistOptions configures a new ReceptionistAgent.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">ReceptionistOptions</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">        </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Route</span><span class="w">       </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Departments</span><span class="w"> </span><span class="p">[]</span><span class="nx">Department</span>
+<span class="w">    </span><span class="nx">Greeting</span><span class="w">    </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Voice</span><span class="w">       </span><span class="kt">string</span><span class="w"> </span><span class="c1">// Voice ID for TTS (default: &quot;rime.spore&quot;)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="SurveyAgent"></a></p>
+<h2 id="type-surveyagent">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/survey.go#L89-L97">SurveyAgent</a></h2>
+<p>SurveyAgent conducts structured surveys with typed questions.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SurveyAgent</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="nx">agent</span><span class="p">.</span><span class="nx">AgentBase</span>
+<span class="w">    </span><span class="c1">// contains filtered or unexported fields</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewSurveyAgent"></a></p>
+<h3 id="func-newsurveyagent">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/survey.go#L104">NewSurveyAgent</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewSurveyAgent</span><span class="p">(</span><span class="nx">opts</span><span class="w"> </span><span class="nx">SurveyOptions</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">SurveyAgent</span>
+</code></pre></div>
+
+<p>NewSurveyAgent creates an agent that conducts a structured survey.</p>
+<p><a name="SurveyOptions"></a></p>
+<h2 id="type-surveyoptions">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/survey.go#L77-L86">SurveyOptions</a></h2>
+<p>SurveyOptions configures a new SurveyAgent.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SurveyOptions</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">       </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Route</span><span class="w">      </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">SurveyName</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">BrandName</span><span class="w">  </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Questions</span><span class="w">  </span><span class="p">[]</span><span class="nx">SurveyQuestion</span>
+<span class="w">    </span><span class="nx">MaxRetries</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="nx">Intro</span><span class="w">      </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Conclusion</span><span class="w"> </span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="SurveyQuestion"></a></p>
+<h2 id="type-surveyquestion">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/survey.go#L23-L30">SurveyQuestion</a></h2>
+<p>SurveyQuestion describes a single question in a survey.</p>
+<p>Prefer NewSurveyQuestion for construction — it defaults Required:true to match Python SurveyAgent behavior (signalwire/prefabs/survey.py _validate_questions sets required=True when unspecified). Struct literals are still supported, but the Go zero value for Required is false, which diverges from Python.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SurveyQuestion</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">ID</span><span class="w">       </span><span class="kt">string</span><span class="w">   </span><span class="c1">// unique question identifier</span>
+<span class="w">    </span><span class="nx">Text</span><span class="w">     </span><span class="kt">string</span><span class="w">   </span><span class="c1">// the question to ask</span>
+<span class="w">    </span><span class="nx">Type</span><span class="w">     </span><span class="kt">string</span><span class="w">   </span><span class="c1">// &quot;rating&quot;, &quot;multiple_choice&quot;, &quot;yes_no&quot;, &quot;open_ended&quot;</span>
+<span class="w">    </span><span class="nx">Scale</span><span class="w">    </span><span class="kt">int</span><span class="w">      </span><span class="c1">// 1..Scale for rating questions (default 5)</span>
+<span class="w">    </span><span class="nx">Choices</span><span class="w">  </span><span class="p">[]</span><span class="kt">string</span><span class="w"> </span><span class="c1">// options for multiple_choice questions</span>
+<span class="w">    </span><span class="nx">Required</span><span class="w"> </span><span class="kt">bool</span><span class="w">     </span><span class="c1">// whether a non-empty answer is required — Python default true</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a name="NewSurveyQuestion"></a></p>
+<h3 id="func-newsurveyquestion">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/survey.go#L65">NewSurveyQuestion</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">NewSurveyQuestion</span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">...</span><span class="nx">SurveyQuestionOption</span><span class="p">)</span><span class="w"> </span><span class="nx">SurveyQuestion</span>
+</code></pre></div>
+
+<p>NewSurveyQuestion constructs a SurveyQuestion with Required:true, matching Python SurveyAgent._validate_questions which defaults required=True when unspecified. Callers opt out with WithOptional().</p>
+<p><a name="SurveyQuestionOption"></a></p>
+<h2 id="type-surveyquestionoption">type <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/survey.go#L33">SurveyQuestionOption</a></h2>
+<p>SurveyQuestionOption configures a question during construction.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">SurveyQuestionOption</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">SurveyQuestion</span><span class="p">)</span>
+</code></pre></div>
+
+<p><a name="WithOptional"></a></p>
+<h3 id="func-withoptional">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/survey.go#L58">WithOptional</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithOptional</span><span class="p">()</span><span class="w"> </span><span class="nx">SurveyQuestionOption</span>
+</code></pre></div>
+
+<p>WithOptional marks a question as not required. Matches Python's required=False escape hatch on SurveyAgent questions.</p>
+<p><a name="WithQuestionChoices"></a></p>
+<h3 id="func-withquestionchoices">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/survey.go#L52">WithQuestionChoices</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithQuestionChoices</span><span class="p">(</span><span class="nx">choices</span><span class="w"> </span><span class="o">...</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">SurveyQuestionOption</span>
+</code></pre></div>
+
+<p>WithQuestionChoices sets the choice list for multiple_choice questions.</p>
+<p><a name="WithQuestionID"></a></p>
+<h3 id="func-withquestionid">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/survey.go#L36">WithQuestionID</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithQuestionID</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">SurveyQuestionOption</span>
+</code></pre></div>
+
+<p>WithQuestionID sets the question ID.</p>
+<p><a name="WithQuestionScale"></a></p>
+<h3 id="func-withquestionscale">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/survey.go#L47">WithQuestionScale</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithQuestionScale</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="nx">SurveyQuestionOption</span>
+</code></pre></div>
+
+<p>WithQuestionScale sets the scale for rating questions (answers run 1..n).</p>
+<p><a name="WithQuestionType"></a></p>
+<h3 id="func-withquestiontype">func <a href="https://github.com/signalwire/signalwire-go/blob/main/pkg/prefabs/survey.go#L42">WithQuestionType</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">WithQuestionType</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">SurveyQuestionOption</span>
+</code></pre></div>
+
+<p>WithQuestionType sets the question type ("rating", "multiple_choice", "yes_no", "open_ended").</p>
+<p>Generated by <a href="https://github.com/princjef/gomarkdoc">gomarkdoc</a></p>
+</main>
+</body>
+</html>

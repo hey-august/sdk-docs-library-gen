@@ -1,0 +1,100 @@
+:root {
+  --sidebar-w: 260px;
+  --bg: #0f1115;
+  --bg-elev: #161922;
+  --fg: #e6e8ee;
+  --fg-dim: #9aa1ad;
+  --border: #262a35;
+  --accent: #3aa3ff;
+  --focus: #5cc8ff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  grid-template-rows: 100vh;
+}
+
+#sidebar {
+  background: var(--bg-elev);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.brand {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.brand-title {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.brand-sub {
+  font-size: 11px;
+  color: var(--fg-dim);
+  margin-top: 2px;
+}
+
+#tabs {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--fg-dim);
+  text-align: left;
+  padding: 10px 14px 10px 18px;
+  font: inherit;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 8px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  border-left: 3px solid transparent;
+}
+.tab:hover { color: var(--fg); background: rgba(255,255,255,0.03); }
+.tab:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+
+.tab .swatch {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--lang-color, var(--accent));
+}
+.tab .label { font-weight: 500; white-space: nowrap; }
+.tab .gen { font-size: 11px; color: var(--fg-dim); white-space: nowrap; }
+
+.tab[aria-selected="true"] {
+  color: var(--fg);
+  background: rgba(255,255,255,0.04);
+  border-left-color: var(--lang-color, var(--accent));
+}
+
+#content {
+  min-width: 0;
+  min-height: 0;
+  background: #fff;
+}
+
+#doc-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}

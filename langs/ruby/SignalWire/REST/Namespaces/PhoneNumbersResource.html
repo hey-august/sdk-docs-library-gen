@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: SignalWire::REST::Namespaces::PhoneNumbersResource
+  
+    &mdash; SignalWire Ruby SDK
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "SignalWire::REST::Namespaces::PhoneNumbersResource";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../REST.html" title="SignalWire::REST (module)">REST</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Namespaces.html" title="SignalWire::REST::Namespaces (module)">Namespaces</a></span></span>
+     &raquo; 
+    <span class="title">PhoneNumbersResource</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: SignalWire::REST::Namespaces::PhoneNumbersResource
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="../CrudResource.html" title="SignalWire::REST::CrudResource (class)">CrudResource</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="../BaseResource.html" title="SignalWire::REST::BaseResource (class)">BaseResource</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="../CrudResource.html" title="SignalWire::REST::CrudResource (class)">CrudResource</a></span></li>
+          
+            <li class="next">SignalWire::REST::Namespaces::PhoneNumbersResource</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/signalwire/rest/namespaces/phone_numbers.rb
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Phone number management.</p>
+<p>Supports the standard CRUD surface plus typed helpers for binding an
+inbound call to a handler (SWML webhook, cXML webhook, AI agent, call
+flow, RELAY application/topic). The binding model is: set
+<code>call_handler</code> and the handler-specific companion field on the phone
+number; the server auto-materializes the matching Fabric resource.
+See <code>SignalWire::REST::PhoneCallHandler</code> for the enum, and the
+porting-sdk's <code>phone-binding.md</code> for the full model.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(http)  &#x21d2; PhoneNumbersResource </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A new instance of PhoneNumbersResource.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#search-instance_method" title="#search (instance method)">#<strong>search</strong>(**params)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_ai_agent-instance_method" title="#set_ai_agent (instance method)">#<strong>set_ai_agent</strong>(sid, agent_id:, **extra)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Route inbound calls to an AI Agent Fabric resource by ID.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_call_flow-instance_method" title="#set_call_flow (instance method)">#<strong>set_call_flow</strong>(sid, flow_id:, version: nil, **extra)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Route inbound calls to a Call Flow by ID.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_cxml_application-instance_method" title="#set_cxml_application (instance method)">#<strong>set_cxml_application</strong>(sid, application_id:, **extra)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Route inbound calls to an existing cXML application by ID.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_cxml_webhook-instance_method" title="#set_cxml_webhook (instance method)">#<strong>set_cxml_webhook</strong>(sid, url:, fallback_url: nil, status_callback_url: nil, **extra)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Route inbound calls to a cXML (Twilio-compat / LAML) webhook.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_relay_application-instance_method" title="#set_relay_application (instance method)">#<strong>set_relay_application</strong>(sid, name:, **extra)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Route inbound calls to a named RELAY application.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_relay_topic-instance_method" title="#set_relay_topic (instance method)">#<strong>set_relay_topic</strong>(sid, topic:, status_callback_url: nil, **extra)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Route inbound calls to a RELAY topic (client subscription).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_swml_webhook-instance_method" title="#set_swml_webhook (instance method)">#<strong>set_swml_webhook</strong>(sid, url:, **extra)  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Route inbound calls to an SWML webhook URL.</p></div></span>
+  
+</li>
+
+      
+    </ul>
+    
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../CrudResource.html" title="SignalWire::REST::CrudResource (class)">CrudResource</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../CrudResource.html#create-instance_method" title="SignalWire::REST::CrudResource#create (method)">#create</a></span>, <span class='object_link'><a href="../CrudResource.html#delete-instance_method" title="SignalWire::REST::CrudResource#delete (method)">#delete</a></span>, <span class='object_link'><a href="../CrudResource.html#get-instance_method" title="SignalWire::REST::CrudResource#get (method)">#get</a></span>, <span class='object_link'><a href="../CrudResource.html#list-instance_method" title="SignalWire::REST::CrudResource#list (method)">#list</a></span>, <span class='object_link'><a href="../CrudResource.html#update-instance_method" title="SignalWire::REST::CrudResource#update (method)">#update</a></span>, <span class='object_link'><a href="../CrudResource.html#update_method-class_method" title="SignalWire::REST::CrudResource.update_method (method)">update_method</a></span>, <span class='object_link'><a href="../CrudResource.html#update_method=-class_method" title="SignalWire::REST::CrudResource.update_method= (method)">update_method=</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(http)  &#x21d2; <tt><span class='object_link'><a href="" title="SignalWire::REST::Namespaces::PhoneNumbersResource (class)">PhoneNumbersResource</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns a new instance of PhoneNumbersResource.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/namespaces/phone_numbers.rb', line 20</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_http'>http</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_http'>http</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/api/relay/rest/phone_numbers</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="search-instance_method">
+  
+    #<strong>search</strong>(**params)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/namespaces/phone_numbers.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='op'>**</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='ivar'>@http</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid__path'>_path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>search</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>?</span> <span class='kw'>nil</span> <span class='op'>:</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_ai_agent-instance_method">
+  
+    #<strong>set_ai_agent</strong>(sid, agent_id:, **extra)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Route inbound calls to an AI Agent Fabric resource by ID.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+80
+81
+82
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/namespaces/phone_numbers.rb', line 80</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_ai_agent'>set_ai_agent</span><span class='lparen'>(</span><span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span> <span class='label'>agent_id:</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span>
+    <span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span>
+    <span class='label'>call_handler:</span> <span class='const'><span class='object_link'><a href="../PhoneCallHandler.html" title="SignalWire::REST::PhoneCallHandler (module)">PhoneCallHandler</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../PhoneCallHandler.html#AI_AGENT-constant" title="SignalWire::REST::PhoneCallHandler::AI_AGENT (constant)">AI_AGENT</a></span></span><span class='comma'>,</span>
+    <span class='label'>call_ai_agent_id:</span> <span class='id identifier rubyid_agent_id'>agent_id</span><span class='comma'>,</span>
+    <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span>
+  <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_call_flow-instance_method">
+  
+    #<strong>set_call_flow</strong>(sid, flow_id:, version: nil, **extra)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Route inbound calls to a Call Flow by ID.</p>
+<p><code>version</code> accepts <code>&quot;working_copy&quot;</code> or <code>&quot;current_deployed&quot;</code> (server
+default when omitted).</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95
+96
+97
+98
+99
+100</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/namespaces/phone_numbers.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_call_flow'>set_call_flow</span><span class='lparen'>(</span><span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span> <span class='label'>flow_id:</span><span class='comma'>,</span> <span class='label'>version:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='label'>call_handler:</span> <span class='const'><span class='object_link'><a href="../PhoneCallHandler.html" title="SignalWire::REST::PhoneCallHandler (module)">PhoneCallHandler</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../PhoneCallHandler.html#CALL_FLOW-constant" title="SignalWire::REST::PhoneCallHandler::CALL_FLOW (constant)">CALL_FLOW</a></span></span><span class='comma'>,</span>
+    <span class='label'>call_flow_id:</span> <span class='id identifier rubyid_flow_id'>flow_id</span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='symbol'>:call_flow_version</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_version'>version</span> <span class='kw'>unless</span> <span class='id identifier rubyid_version'>version</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_cxml_application-instance_method">
+  
+    #<strong>set_cxml_application</strong>(sid, application_id:, **extra)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Route inbound calls to an existing cXML application by ID.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/namespaces/phone_numbers.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_cxml_application'>set_cxml_application</span><span class='lparen'>(</span><span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span> <span class='label'>application_id:</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span>
+    <span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span>
+    <span class='label'>call_handler:</span> <span class='const'><span class='object_link'><a href="../PhoneCallHandler.html" title="SignalWire::REST::PhoneCallHandler (module)">PhoneCallHandler</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../PhoneCallHandler.html#LAML_APPLICATION-constant" title="SignalWire::REST::PhoneCallHandler::LAML_APPLICATION (constant)">LAML_APPLICATION</a></span></span><span class='comma'>,</span>
+    <span class='label'>call_laml_application_id:</span> <span class='id identifier rubyid_application_id'>application_id</span><span class='comma'>,</span>
+    <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span>
+  <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_cxml_webhook-instance_method">
+  
+    #<strong>set_cxml_webhook</strong>(sid, url:, fallback_url: nil, status_callback_url: nil, **extra)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Route inbound calls to a cXML (Twilio-compat / LAML) webhook.</p>
+<p>Despite the wire value <code>laml_webhooks</code> being plural, this creates a
+single <code>cxml_webhook</code> Fabric resource. <code>fallback_url</code> is used when
+the primary URL fails; <code>status_callback_url</code> receives call status
+updates.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/namespaces/phone_numbers.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_cxml_webhook'>set_cxml_webhook</span><span class='lparen'>(</span><span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span> <span class='label'>url:</span><span class='comma'>,</span> <span class='label'>fallback_url:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>status_callback_url:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='label'>call_handler:</span> <span class='const'><span class='object_link'><a href="../PhoneCallHandler.html" title="SignalWire::REST::PhoneCallHandler (module)">PhoneCallHandler</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../PhoneCallHandler.html#LAML_WEBHOOKS-constant" title="SignalWire::REST::PhoneCallHandler::LAML_WEBHOOKS (constant)">LAML_WEBHOOKS</a></span></span><span class='comma'>,</span>
+    <span class='label'>call_request_url:</span> <span class='id identifier rubyid_url'>url</span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='symbol'>:call_fallback_url</span><span class='rbracket'>]</span>        <span class='op'>=</span> <span class='id identifier rubyid_fallback_url'>fallback_url</span>        <span class='kw'>unless</span> <span class='id identifier rubyid_fallback_url'>fallback_url</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='symbol'>:call_status_callback_url</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_status_callback_url'>status_callback_url</span> <span class='kw'>unless</span> <span class='id identifier rubyid_status_callback_url'>status_callback_url</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_relay_application-instance_method">
+  
+    #<strong>set_relay_application</strong>(sid, name:, **extra)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Route inbound calls to a named RELAY application.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105
+106
+107
+108
+109
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/namespaces/phone_numbers.rb', line 103</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_relay_application'>set_relay_application</span><span class='lparen'>(</span><span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span> <span class='label'>name:</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span>
+    <span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span>
+    <span class='label'>call_handler:</span> <span class='const'><span class='object_link'><a href="../PhoneCallHandler.html" title="SignalWire::REST::PhoneCallHandler (module)">PhoneCallHandler</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../PhoneCallHandler.html#RELAY_APPLICATION-constant" title="SignalWire::REST::PhoneCallHandler::RELAY_APPLICATION (constant)">RELAY_APPLICATION</a></span></span><span class='comma'>,</span>
+    <span class='label'>call_relay_application:</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span>
+    <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span>
+  <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_relay_topic-instance_method">
+  
+    #<strong>set_relay_topic</strong>(sid, topic:, status_callback_url: nil, **extra)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Route inbound calls to a RELAY topic (client subscription).</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+113
+114
+115
+116
+117
+118
+119
+120</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/namespaces/phone_numbers.rb', line 113</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_relay_topic'>set_relay_topic</span><span class='lparen'>(</span><span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span> <span class='label'>topic:</span><span class='comma'>,</span> <span class='label'>status_callback_url:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='label'>call_handler:</span> <span class='const'><span class='object_link'><a href="../PhoneCallHandler.html" title="SignalWire::REST::PhoneCallHandler (module)">PhoneCallHandler</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../PhoneCallHandler.html#RELAY_TOPIC-constant" title="SignalWire::REST::PhoneCallHandler::RELAY_TOPIC (constant)">RELAY_TOPIC</a></span></span><span class='comma'>,</span>
+    <span class='label'>call_relay_topic:</span> <span class='id identifier rubyid_topic'>topic</span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='symbol'>:call_relay_topic_status_callback_url</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_status_callback_url'>status_callback_url</span> <span class='kw'>unless</span> <span class='id identifier rubyid_status_callback_url'>status_callback_url</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_swml_webhook-instance_method">
+  
+    #<strong>set_swml_webhook</strong>(sid, url:, **extra)  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Route inbound calls to an SWML webhook URL.</p>
+<p>Your backend returns an SWML document per call. The server
+auto-creates a <code>swml_webhook</code> Fabric resource keyed off this URL.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>sid</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the phone number SID (e.g. <code>pn-...</code>)</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>url</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the SWML webhook URL</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>extra</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>additional fields passed to <code>update</code></p></div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the updated phone number representation</p></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/namespaces/phone_numbers.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_swml_webhook'>set_swml_webhook</span><span class='lparen'>(</span><span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span> <span class='label'>url:</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span>
+    <span class='id identifier rubyid_sid'>sid</span><span class='comma'>,</span>
+    <span class='label'>call_handler:</span> <span class='const'><span class='object_link'><a href="../PhoneCallHandler.html" title="SignalWire::REST::PhoneCallHandler (module)">PhoneCallHandler</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../PhoneCallHandler.html#RELAY_SCRIPT-constant" title="SignalWire::REST::PhoneCallHandler::RELAY_SCRIPT (constant)">RELAY_SCRIPT</a></span></span><span class='comma'>,</span>
+    <span class='label'>call_relay_script_url:</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span>
+    <span class='op'>**</span><span class='id identifier rubyid_extra'>extra</span>
+  <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu May 21 15:20:57 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.43 (ruby-3.1.4).
+</div>
+
+    </div>
+  </body>
+</html>
