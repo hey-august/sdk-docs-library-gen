@@ -1,6 +1,6 @@
-# SDK Docs POC
+# Proof of concept: generated SDK docs explorer
 
-Side-by-side preview of language-native API docs for the 10 SignalWire SDKs.
+Side-by-side preview of language-native API docs for the 10 SignalWire Server SDKs.
 Each pane is the unmodified HTML output of that language's canonical generator.
 
 ## View
