@@ -34,12 +34,18 @@ body {
 }
 
 .brand {
+  display: block;
   padding: 14px 16px;
   border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
+.brand:hover { background: rgba(255,255,255,0.03); }
 .brand-title {
   font-weight: 600;
   letter-spacing: 0.2px;
+  color: var(--fg);
 }
 .brand-sub {
   font-size: 11px;
@@ -85,6 +91,22 @@ body {
   background: rgba(255,255,255,0.04);
   border-left-color: var(--lang-color, var(--accent));
 }
+
+.tab-home {
+  grid-template-columns: 1fr;
+  padding: 10px 14px 10px 18px;
+  margin-bottom: 4px;
+  border-bottom: 1px dashed var(--border);
+}
+.tab-home .label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-dim);
+  font-weight: 600;
+}
+.tab-home[aria-selected="true"] .label { color: var(--fg); }
+.tab-home[aria-selected="true"] { border-left-color: var(--accent); }
 
 #content {
   min-width: 0;
