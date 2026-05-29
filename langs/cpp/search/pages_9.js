@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['native_20tools_20auto_20injected_20by_20the_20runtime_0',['Native tools auto-injected by the runtime',['../classsignalwire_1_1contexts_1_1ContextBuilder.html#autotoc_md3',1,'']]]
+  ['license_0',['License',['../index.html#autotoc_md24',1,'']]],
+  ['link_20to_20your_20project_1',['Link to Your Project',['../index.html#autotoc_md15',1,'']]]
 ];

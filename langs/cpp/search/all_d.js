@@ -10,7 +10,7 @@ var searchData=
   ['make_5fswml_5fwebhook_5fbody_7',['make_swml_webhook_body',['../structsignalwire_1_1rest_1_1RestClient_1_1PhoneNumbersNamespace.html#a89930fb008898e82416f96e944c1ad31',1,'signalwire::rest::RestClient::PhoneNumbersNamespace']]],
   ['manual_5fset_5fproxy_5furl_8',['manual_set_proxy_url',['../classsignalwire_1_1agent_1_1AgentBase.html#a4d4e46453bc25568810278324e6ccea3',1,'signalwire::agent::AgentBase']]],
   ['map_5fsip_5fusername_9',['map_sip_username',['../classsignalwire_1_1server_1_1AgentServer.html#a78e8737a34cc0f7ae356ef95de8b9b5c',1,'signalwire::server::AgentServer']]],
-  ['matters_10',['Tool count matters',['../classsignalwire_1_1agent_1_1AgentBase.html#autotoc_md2',1,'']]],
+  ['matters_10',['Tool count matters',['../classsignalwire_1_1agent_1_1AgentBase.html#autotoc_md27',1,'']]],
   ['max_5factive_5fcalls_11',['max_active_calls',['../structsignalwire_1_1relay_1_1RelayConfig.html#ae0ace1b39e6692ae3724bd440a688faf',1,'signalwire::relay::RelayConfig']]],
   ['max_5fconnections_12',['max_connections',['../structsignalwire_1_1relay_1_1RelayConfig.html#acda84ca71cef62f192aa803c258baa87',1,'signalwire::relay::RelayConfig']]],
   ['max_5fcontexts_13',['MAX_CONTEXTS',['../namespacesignalwire_1_1contexts.html#aa40ea53482ab35f87a776d562bd4ac61',1,'signalwire::contexts']]],
@@ -30,6 +30,6 @@ var searchData=
   ['method_5fprefix_27',['method_prefix',['../classsignalwire_1_1relay_1_1Action.html#a8ff2df72bb44c7090ec2f339f2023c6f',1,'signalwire::relay::Action']]],
   ['mfa_28',['mfa',['../classsignalwire_1_1rest_1_1RestClient.html#abf1a20801a7ab6071fba263147b05d15',1,'signalwire::rest::RestClient']]],
   ['mfanamespace_29',['MFANamespace',['../structsignalwire_1_1rest_1_1RestClient_1_1MFANamespace.html',1,'signalwire::rest::RestClient::MFANamespace'],['../structsignalwire_1_1rest_1_1RestClient_1_1MFANamespace.html#a2c5cb47d6b43faa3174b0fccccf65f01',1,'signalwire::rest::RestClient::MFANamespace::MFANamespace()']]],
-  ['model_20sees_30',['How this becomes a tool the model sees',['../classsignalwire_1_1agent_1_1AgentBase.html#autotoc_md0',1,'']]],
+  ['model_20sees_30',['How this becomes a tool the model sees',['../classsignalwire_1_1agent_1_1AgentBase.html#autotoc_md25',1,'']]],
   ['move_5fstep_31',['move_step',['../classsignalwire_1_1contexts_1_1Context.html#a81f87efbad70727532b978d5c2dcd64e',1,'signalwire::contexts::Context']]]
 ];

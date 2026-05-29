@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['function_20whitelisting_20step_3a_3aset_5ffunctions_0',['Function whitelisting (Step::set_functions)',['../classsignalwire_1_1contexts_1_1ContextBuilder.html#autotoc_md4',1,'']]]
+  ['environment_20variables_0',['Environment Variables',['../index.html#autotoc_md22',1,'']]],
+  ['examples_1',['Agent Examples',['../index.html#autotoc_md6',1,'']]],
+  ['extensions_2',['Skills and Extensions',['../index.html#autotoc_md19',1,'']]]
 ];

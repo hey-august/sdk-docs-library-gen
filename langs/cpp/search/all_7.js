@@ -46,8 +46,9 @@ var searchData=
   ['get_5fverb_5fparameters_43',['get_verb_parameters',['../classsignalwire_1_1utils_1_1SchemaUtils.html#a6e33043cbd99d2a21dd557dd1cf39793',1,'signalwire::utils::SchemaUtils']]],
   ['get_5fverb_5fproperties_44',['get_verb_properties',['../classsignalwire_1_1utils_1_1SchemaUtils.html#ac495d6730239a024867e4e79bdf1e749',1,'signalwire::utils::SchemaUtils']]],
   ['get_5fverb_5frequired_5fproperties_45',['get_verb_required_properties',['../classsignalwire_1_1utils_1_1SchemaUtils.html#a38284cbd3704015ea3d064296f0c4ccc',1,'signalwire::utils::SchemaUtils']]],
-  ['global_5fdata_5f_46',['global_data_',['../classsignalwire_1_1agent_1_1AgentBase.html#a610fab118acc5ea8012529594e356705',1,'signalwire::agent::AgentBase']]],
-  ['global_5ferror_5fkeys_47',['global_error_keys',['../classsignalwire_1_1datamap_1_1DataMap.html#a689915c182cb442c3a83cd3b7784e9e9',1,'signalwire::datamap::DataMap']]],
-  ['good_20descriptions_48',['Bad vs good descriptions',['../classsignalwire_1_1agent_1_1AgentBase.html#autotoc_md1',1,'']]],
-  ['goto_5fsection_49',['goto_section',['../classsignalwire_1_1swml_1_1Service.html#a9d76283627493963ceeb5e4466efcc43',1,'signalwire::swml::Service']]]
+  ['getting_20started_46',['Getting Started',['../index.html#autotoc_md17',1,'']]],
+  ['global_5fdata_5f_47',['global_data_',['../classsignalwire_1_1agent_1_1AgentBase.html#a610fab118acc5ea8012529594e356705',1,'signalwire::agent::AgentBase']]],
+  ['global_5ferror_5fkeys_48',['global_error_keys',['../classsignalwire_1_1datamap_1_1DataMap.html#a689915c182cb442c3a83cd3b7784e9e9',1,'signalwire::datamap::DataMap']]],
+  ['good_20descriptions_49',['Bad vs good descriptions',['../classsignalwire_1_1agent_1_1AgentBase.html#autotoc_md26',1,'']]],
+  ['goto_5fsection_50',['goto_section',['../classsignalwire_1_1swml_1_1Service.html#a9d76283627493963ceeb5e4466efcc43',1,'signalwire::swml::Service']]]
 ];

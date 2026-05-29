@@ -25,6 +25,30 @@
 var NAVTREE =
 [
   [ "SignalWire C++ SDK", "index.html", [
+    [ "SignalWire SDK for C++", "index.html#autotoc_md0", [
+      [ "What's in this SDK", "index.html#autotoc_md2", null ],
+      [ "AI Agents", "index.html#autotoc_md4", [
+        [ "Agent Features", "index.html#autotoc_md5", null ],
+        [ "Agent Examples", "index.html#autotoc_md6", null ]
+      ] ],
+      [ "RELAY Client", "index.html#autotoc_md8", null ],
+      [ "REST Client", "index.html#autotoc_md10", null ],
+      [ "Installation", "index.html#autotoc_md12", [
+        [ "Prerequisites", "index.html#autotoc_md13", null ],
+        [ "Build from Source", "index.html#autotoc_md14", null ],
+        [ "Link to Your Project", "index.html#autotoc_md15", null ]
+      ] ],
+      [ "Documentation", "index.html#autotoc_md16", [
+        [ "Getting Started", "index.html#autotoc_md17", null ],
+        [ "Core Features", "index.html#autotoc_md18", null ],
+        [ "Skills and Extensions", "index.html#autotoc_md19", null ],
+        [ "Deployment", "index.html#autotoc_md20", null ],
+        [ "Reference", "index.html#autotoc_md21", null ]
+      ] ],
+      [ "Environment Variables", "index.html#autotoc_md22", null ],
+      [ "Testing", "index.html#autotoc_md23", null ],
+      [ "License", "index.html#autotoc_md24", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -68,11 +92,11 @@ var NAVTREEINDEX =
 "classsignalwire_1_1rest_1_1SignalWireRestError.html#a186693e485c96552260d8f8db7627569",
 "classsignalwire_1_1swml_1_1Service.html#a02d944d50a05717e6b6fcc634da9103f",
 "functions.html",
-"serverless_8hpp_source.html",
-"structsignalwire_1_1rest_1_1RestClient_1_1CallingNamespace.html#a6ebba2fa6dfb35448d78ce4e211b5254",
-"structsignalwire_1_1rest_1_1RestClient_1_1CompatRecordings.html#ad61b0fa856e0167954e70ec641719051",
-"structsignalwire_1_1rest_1_1RestClient_1_1LogsNamespace.html#a055699947c91a0131dcf2fe9de710536",
-"structsignalwire_1_1rest_1_1RestClient_1_1VideoConferences.html"
+"namespacesignalwire_1_1utils_1_1url__validator.html#a6e15e3c3429d06d99dcdabca52677e30",
+"structsignalwire_1_1rest_1_1RestClient_1_1CallingNamespace.html#a37347a271cdb536e2944ff392531a4c6",
+"structsignalwire_1_1rest_1_1RestClient_1_1CompatPhoneNumbers.html#ace41543fdd3e335fcfec0a798a8f88de",
+"structsignalwire_1_1rest_1_1RestClient_1_1LogsFax.html#aa3c0be936d882bd0e062899ef4f89785",
+"structsignalwire_1_1rest_1_1RestClient_1_1SipProfileNamespace.html#acb5fb68dd6bb524c88deaeb172aa13da"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

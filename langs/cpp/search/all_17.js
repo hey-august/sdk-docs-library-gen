@@ -15,8 +15,9 @@ var searchData=
   ['webhookvalidatoroptions_12',['WebhookValidatorOptions',['../structsignalwire_1_1security_1_1WebhookValidatorOptions.html',1,'signalwire::security']]],
   ['websocket_2ehpp_13',['websocket.hpp',['../websocket_8hpp.html',1,'']]],
   ['websocketclient_14',['WebSocketClient',['../classsignalwire_1_1relay_1_1WebSocketClient.html',1,'signalwire::relay::WebSocketClient'],['../classsignalwire_1_1relay_1_1WebSocketClient.html#a914d5678a255072f360c2f3cecf1ae2c',1,'signalwire::relay::WebSocketClient::WebSocketClient()'],['../classsignalwire_1_1relay_1_1WebSocketClient.html#ae257251639ebad69cb50ef8dd5b010ed',1,'signalwire::relay::WebSocketClient::WebSocketClient(const WebSocketClient &amp;)=delete']]],
-  ['whitelisting_20step_3a_3aset_5ffunctions_15',['Function whitelisting (Step::set_functions)',['../classsignalwire_1_1contexts_1_1ContextBuilder.html#autotoc_md4',1,'']]],
-  ['with_5fbase_5furl_16',['with_base_url',['../classsignalwire_1_1rest_1_1RestClient.html#a4f150c8f502cd202a19237f8801e6c33',1,'signalwire::rest::RestClient']]],
-  ['with_5fval_17',['with_val',['../structsignalwire_1_1agent_1_1Pronunciation.html#acb929510d4477af322d9755ee41c66a9',1,'signalwire::agent::Pronunciation']]],
-  ['wrapwithsignaturevalidation_18',['WrapWithSignatureValidation',['../namespacesignalwire_1_1security.html#ae8f7032913bce56280eb2391f32f0006',1,'signalwire::security']]]
+  ['what_20s_20in_20this_20sdk_15',['What&apos;s in this SDK',['../index.html#autotoc_md2',1,'']]],
+  ['whitelisting_20step_3a_3aset_5ffunctions_16',['Function whitelisting (Step::set_functions)',['../classsignalwire_1_1contexts_1_1ContextBuilder.html#autotoc_md29',1,'']]],
+  ['with_5fbase_5furl_17',['with_base_url',['../classsignalwire_1_1rest_1_1RestClient.html#a4f150c8f502cd202a19237f8801e6c33',1,'signalwire::rest::RestClient']]],
+  ['with_5fval_18',['with_val',['../structsignalwire_1_1agent_1_1Pronunciation.html#acb929510d4477af322d9755ee41c66a9',1,'signalwire::agent::Pronunciation']]],
+  ['wrapwithsignaturevalidation_19',['WrapWithSignatureValidation',['../namespacesignalwire_1_1security.html#ae8f7032913bce56280eb2391f32f0006',1,'signalwire::security']]]
 ];

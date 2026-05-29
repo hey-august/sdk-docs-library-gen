@@ -1287,7 +1287,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Register a SWAIG tool (function) that the AI can invoke during a call. </p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 How this becomes a tool the model sees</h2>
 <p>A SWAIG function is <em>exactly the same concept</em> as a "tool" in native OpenAI / Anthropic tool calling. On every LLM turn, the SDK renders each registered SWAIG function into the OpenAI tool schema:</p>
 <p>{ "type": "function", "function": { "name": "your_name_here", "description": "your description text", "parameters": { ... your JSON schema ... } } }</p>
@@ -1297,11 +1297,11 @@ How this becomes a tool the model sees</h2>
 </ul>
 <p>This means <em>descriptions are prompt engineering</em>, not developer comments. A vague description is the #1 cause of "the model has
 the right tool but doesn't call it" failures.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
 Bad vs good descriptions</h2>
 <p>BAD : description: "Lookup function" GOOD: description: "Look up a customer's account details by " "account number. Use this BEFORE quoting " "any account-specific info (balance, plan, " "status). Do not use for general product " "questions."</p>
 <p>BAD : parameters: {"id": {"type": "string", "description": "the id"}} GOOD: parameters: {"account_number": {"type": "string", "description": "The customer's 8-digit account " "number, no dashes or spaces. Ask the user if they " "don't provide it."}}</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
 Tool count matters</h2>
 <p>LLM tool selection accuracy degrades past ~7-8 simultaneously-active tools per call. Use <a class="el" href="classsignalwire_1_1contexts_1_1Step.html#a00dcfc8ad52917642514ccbc7e4a9774" title="Set which non-internal functions are callable while this step is active.">contexts::Step::set_functions</a> to partition tools across steps so only the relevant subset is active at any moment. </p>
 

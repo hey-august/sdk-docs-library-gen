@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['runtime_0',['Native tools auto-injected by the runtime',['../classsignalwire_1_1contexts_1_1ContextBuilder.html#autotoc_md3',1,'']]]
+  ['matters_0',['Tool count matters',['../classsignalwire_1_1agent_1_1AgentBase.html#autotoc_md27',1,'']]],
+  ['model_20sees_1',['How this becomes a tool the model sees',['../classsignalwire_1_1agent_1_1AgentBase.html#autotoc_md25',1,'']]]
 ];
