@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SignalWire Server SDKs — Overview</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #11151c;
+    --fg-dim: #5a6473;
+    --border: #e5e7eb;
+    --accent: #3aa3ff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 56px 36px 80px; }
+
+  header.hero { margin-bottom: 36px; }
+  .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--fg-dim); font-weight: 600; }
+  h1 { font-size: 38px; line-height: 1.15; margin: 8px 0 12px; font-weight: 700; }
+  .lede { font-size: 18px; color: var(--fg-dim); max-width: 680px; line-height: 1.5; margin: 0; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin: 36px 0 48px;
+  }
+  .card {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    transition: transform 80ms ease, box-shadow 120ms ease, border-color 120ms ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--lang-color, var(--accent));
+  }
+  .card:hover {
+    transform: translateY(-1px);
+    border-color: var(--lang-color, var(--accent));
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  }
+  .card .lang { font-weight: 600; font-size: 16px; margin-bottom: 2px; }
+  .card .gen  { font-size: 12px; color: var(--fg-dim); }
+
+  section.about { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); }
+  section.about h2 { font-size: 18px; margin: 0 0 10px; }
+  section.about p  { color: var(--fg); max-width: 720px; }
+  section.about p + p { margin-top: 10px; }
+  section.about code { background: #f3f4f6; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+
+  .meta {
+    display: flex; gap: 24px; flex-wrap: wrap;
+    margin-top: 22px; padding: 14px 16px;
+    border: 1px solid var(--border); border-radius: 8px; background: #fafbfc;
+    font-size: 13px; color: var(--fg-dim);
+  }
+  .meta strong { color: var(--fg); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Proof of concept</div>
+    <h1>SignalWire Server SDKs — language-native docs explorer</h1>
+    <p class="lede">
+      Ten SDKs. Ten canonical doc generators. One side-by-side preview.
+      Each pane below is the unmodified HTML output of that language's
+      standard documentation tool.
+    </p>
+  </header>
+
+  <div class="grid" id="grid"></div>
+
+  <section class="about">
+    <h2>What you're looking at</h2>
+    <p>
+      Every language community has converged on a canonical generator for
+      API docs &mdash; <code>rustdoc</code> for Rust, <code>YARD</code>
+      for Ruby, <code>godoc</code> for Go, <code>MkDocs</code> for Python,
+      and so on. The output of each one looks and behaves the way that
+      community expects.
+    </p>
+    <p>
+      This POC stitches all ten together behind a single shell. Pick a
+      language from the sidebar (or a card above) and the iframe loads
+      that SDK's native docs &mdash; CSS, search, navigation, all
+      preserved.
+    </p>
+
+    <div class="meta">
+      <div><strong>Generators per language</strong>
+        Doxygen, DocFX, gomarkdoc, Javadoc, Pod::Simple::XHTML,
+        Doxygen-PHP, MkDocs Material, YARD, rustdoc, TypeDoc</div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const LANGS = [
+    { id: "cpp",        label: "C++",        gen: "Doxygen + awesome-css",    color: "#00599C" },
+    { id: "dotnet",     label: "C# / .NET",  gen: "DocFX",                    color: "#512BD4" },
+    { id: "go",         label: "Go",         gen: "gomarkdoc",                color: "#00ADD8" },
+    { id: "java",       label: "Java",       gen: "Javadoc",                  color: "#ED8B00" },
+    { id: "perl",       label: "Perl",       gen: "Pod::Simple::XHTML",       color: "#39457E" },
+    { id: "php",        label: "PHP",        gen: "Doxygen (PHP mode)",       color: "#777BB4" },
+    { id: "python",     label: "Python",     gen: "MkDocs + mkdocstrings",    color: "#3776AB" },
+    { id: "ruby",       label: "Ruby",       gen: "YARD",                     color: "#CC342D" },
+    { id: "rust",       label: "Rust",       gen: "rustdoc",                  color: "#DEA584" },
+    { id: "typescript", label: "TypeScript", gen: "TypeDoc",                  color: "#3178C6" },
+  ];
+
+  const grid = document.getElementById("grid");
+  for (const l of LANGS) {
+    const a = document.createElement("a");
+    a.className = "card";
+    a.href = "#";
+    a.style.setProperty("--lang-color", l.color);
+    a.innerHTML = `<div class="lang">${l.label}</div><div class="gen">${l.gen}</div>`;
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      // Switch the top window's hash so the shell's hashchange listener picks it up.
+      if (top !== window) {
+        top.location.hash = l.id;
+      } else {
+        location.hash = l.id;
+      }
+    });
+    grid.appendChild(a);
+  }
+</script>
+</body>
+</html>
