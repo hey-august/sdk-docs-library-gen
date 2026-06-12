@@ -17,7 +17,6 @@
   }
   :root {
     --bg: #fafbfc;
-    --card-bg: #ffffff;
     --code-bg: #f3f4f6;
     --fg: #11151c;
     --fg-dim: #5a6473;
@@ -28,7 +27,6 @@
      navbar theme control (and the user's signalwire.com/docs preference). */
   html[data-sw-theme="dark"] {
     --bg: #0e0e18;
-    --card-bg: #181a28;
     --code-bg: rgba(255, 255, 255, 0.08);
     --fg: #f0f0f4;
     --fg-dim: #a0a0aa;
@@ -39,82 +37,59 @@
   html, body { margin: 0; background: var(--bg); color: var(--fg);
     font: 16px/1.55 "Lexend", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
   h1, h2 { font-family: "Instrument Sans", "Lexend", system-ui, sans-serif; }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 56px 36px 80px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 36px 80px; }
 
-  header.hero { margin-bottom: 36px; }
-  .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--fg-dim); font-weight: 600; }
-  h1 { font-size: 38px; line-height: 1.15; margin: 8px 0 12px; font-weight: 700; }
-  .lede { font-size: 18px; color: var(--fg-dim); max-width: 680px; line-height: 1.5; margin: 0; }
+  h1 { font-size: 38px; line-height: 1.15; margin: 0 0 12px; font-weight: 700; }
+  .lede { font-size: 18px; color: var(--fg-dim); line-height: 1.5; margin: 0; }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 14px;
-    margin: 36px 0 48px;
-  }
-  .card {
-    display: block;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px;
-    text-decoration: none;
-    color: inherit;
-    background: var(--card-bg);
-    transition: transform 80ms ease, box-shadow 120ms ease, border-color 120ms ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .card::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: var(--lang-color, var(--accent));
-  }
-  .card:hover {
-    transform: translateY(-1px);
-    border-color: var(--lang-color, var(--accent));
-    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-  }
-  .card .lang { font-weight: 600; font-size: 16px; margin-bottom: 2px; }
-  .card .gen  { font-size: 12px; color: var(--fg-dim); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
   section.about { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); }
   section.about h2 { font-size: 18px; margin: 0 0 10px; }
-  section.about p  { color: var(--fg); max-width: 720px; }
-  section.about p + p { margin-top: 10px; }
-  section.about code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  section.about p  { color: var(--fg); margin: 0 0 10px; }
+
+  table { border-collapse: collapse; margin: 24px 0 0; font-size: 15px; }
+  th, td { text-align: left; padding: 7px 40px 7px 0; border-bottom: 1px solid var(--border); }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+       color: var(--fg-dim); font-weight: 600; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header class="hero">
-    <div class="eyebrow">Demo</div>
     <h1>Server SDK reference docs</h1>
     <p class="lede">
       API reference for the ten SignalWire server SDKs, each built with the
-      standard doc tool for its language. Pick a language below, or use the
-      dropdown in the navbar.
+      standard doc tool for its language. Pick a language from the table
+      below, or from the dropdown in the navbar.
     </p>
   </header>
 
-  <div class="grid" id="grid"></div>
+  <table>
+    <thead><tr><th>Language</th><th>Generator</th></tr></thead>
+    <tbody id="gen-table"></tbody>
+  </table>
 
   <section class="about">
     <h2>About this demo</h2>
     <p>
-      None of these doc sites are custom. Rust developers get
-      <code>rustdoc</code>, Ruby developers get <code>YARD</code>, Java
-      developers get Javadoc, all generated straight from the SDK source
-      with nothing edited afterward. The idea is that reference docs should read the way
-      docs in that language normally do, rather than forcing every SDK
-      into one house style.
+      None of these doc sites are custom. Each one is generated straight from
+      the SDK source by the canonical reference tool for its language, with
+      nothing edited afterward. The idea is that reference docs should read
+      the way docs in that language normally do, rather than forcing every
+      SDK into one house style.
     </p>
     <p>
-      The navbar is a clone of the one on signalwire.com/docs, and the
-      theme control in the top right switches each doc site between light
-      and dark.
+      The navbar is a clone of the one on signalwire.com/docs, and the theme
+      control in the top right switches each doc site between light and dark.
+    </p>
+    <p>
+      The language switcher in the navbar is just for the demo, to make it
+      easy to flip between the ten outputs and compare them. A developer
+      working in one language wouldn't need it; in production each SDK's
+      docs would simply be linked from that SDK's page.
     </p>
   </section>
 
@@ -122,35 +97,39 @@
 
 <script>
   const LANGS = [
-    { id: "cpp",        label: "C++",        gen: "Doxygen + awesome-css",    color: "#00599C" },
-    { id: "dotnet",     label: "C# / .NET",  gen: "DocFX",                    color: "#512BD4" },
-    { id: "go",         label: "Go",         gen: "gomarkdoc",                color: "#00ADD8" },
-    { id: "java",       label: "Java",       gen: "Javadoc",                  color: "#ED8B00" },
-    { id: "perl",       label: "Perl",       gen: "Pod::Simple::XHTML",       color: "#39457E" },
-    { id: "php",        label: "PHP",        gen: "Doxygen (PHP mode)",       color: "#777BB4" },
-    { id: "python",     label: "Python",     gen: "MkDocs + mkdocstrings",    color: "#3776AB" },
-    { id: "ruby",       label: "Ruby",       gen: "YARD",                     color: "#CC342D" },
-    { id: "rust",       label: "Rust",       gen: "rustdoc",                  color: "#DEA584" },
-    { id: "typescript", label: "TypeScript", gen: "TypeDoc",                  color: "#3178C6" },
+    { id: "cpp",        label: "C++",        gen: "Doxygen + awesome-css" },
+    { id: "dotnet",     label: "C# / .NET",  gen: "DocFX" },
+    { id: "go",         label: "Go",         gen: "gomarkdoc" },
+    { id: "java",       label: "Java",       gen: "Javadoc" },
+    { id: "perl",       label: "Perl",       gen: "Pod::Simple::XHTML" },
+    { id: "php",        label: "PHP",        gen: "Doxygen (PHP mode)" },
+    { id: "python",     label: "Python",     gen: "MkDocs + mkdocstrings" },
+    { id: "ruby",       label: "Ruby",       gen: "YARD" },
+    { id: "rust",       label: "Rust",       gen: "rustdoc" },
+    { id: "typescript", label: "TypeScript", gen: "TypeDoc" },
   ];
 
-  const grid = document.getElementById("grid");
-  for (const l of LANGS) {
+  function langLink(l) {
     const a = document.createElement("a");
-    a.className = "card";
-    a.href = "#";
-    a.style.setProperty("--lang-color", l.color);
-    a.innerHTML = `<div class="lang">${l.label}</div><div class="gen">${l.gen}</div>`;
+    a.href = `#${l.id}`;
+    a.textContent = l.label;
     a.addEventListener("click", (e) => {
       e.preventDefault();
       // Switch the top window's hash so the shell's hashchange listener picks it up.
-      if (top !== window) {
-        top.location.hash = l.id;
-      } else {
-        location.hash = l.id;
-      }
+      (top !== window ? top : window).location.hash = l.id;
     });
-    grid.appendChild(a);
+    return a;
+  }
+
+  const tbody = document.getElementById("gen-table");
+  for (const l of LANGS) {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.appendChild(langLink(l));
+    const tdGen = document.createElement("td");
+    tdGen.textContent = l.gen;
+    tr.append(td, tdGen);
+    tbody.appendChild(tr);
   }
 </script>
 </body>
