@@ -244,7 +244,7 @@ function renderLangMenu() {
 function updateLangUI(target) {
   document.getElementById("lang-trigger-label").textContent = target.label;
   document.getElementById("lang-trigger-meta").textContent =
-    target.id === HOME.id ? "10 languages, canonical generators" : target.generator;
+    target.id === HOME.id ? "10 languages" : target.generator;
   for (const btn of document.querySelectorAll("#lang-panel [data-lang]")) {
     const selected = btn.dataset.lang === target.id;
     btn.setAttribute("aria-checked", String(selected));

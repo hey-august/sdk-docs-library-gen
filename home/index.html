@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>SignalWire Server SDKs — Overview</title>
+<title>SignalWire Server SDK reference docs</title>
 <style>
   @font-face {
     font-family: "Lexend";
@@ -84,14 +84,6 @@
   section.about p  { color: var(--fg); max-width: 720px; }
   section.about p + p { margin-top: 10px; }
   section.about code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
-
-  .meta {
-    display: flex; gap: 24px; flex-wrap: wrap;
-    margin-top: 22px; padding: 14px 16px;
-    border: 1px solid var(--border); border-radius: 8px; background: var(--card-bg);
-    font-size: 13px; color: var(--fg-dim);
-  }
-  .meta strong { color: var(--fg); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
 </style>
 </head>
 <body>
@@ -99,38 +91,31 @@
 
   <header class="hero">
     <div class="eyebrow">Demo</div>
-    <h1>SignalWire Server SDKs — language-native docs explorer</h1>
+    <h1>Server SDK reference docs</h1>
     <p class="lede">
-      Ten SDKs. Ten canonical doc generators. One side-by-side preview.
-      Each pane below is the unmodified HTML output of that language's
-      standard documentation tool.
+      API reference for the ten SignalWire server SDKs, each built with the
+      standard doc tool for its language. Pick a language below, or use the
+      dropdown in the navbar.
     </p>
   </header>
 
   <div class="grid" id="grid"></div>
 
   <section class="about">
-    <h2>What you're looking at</h2>
+    <h2>About this demo</h2>
     <p>
-      Every language community has converged on a canonical generator for
-      API docs &mdash; <code>rustdoc</code> for Rust, <code>YARD</code>
-      for Ruby, <code>godoc</code> for Go, <code>MkDocs</code> for Python,
-      and so on. The output of each one looks and behaves the way that
-      community expects.
+      None of these doc sites are custom. Rust developers get
+      <code>rustdoc</code>, Ruby developers get <code>YARD</code>, Java
+      developers get Javadoc, all generated straight from the SDK source
+      with nothing edited afterward. The idea is that reference docs should read the way
+      docs in that language normally do, rather than forcing every SDK
+      into one house style.
     </p>
     <p>
-      This demo stitches all ten together behind a clone of the
-      signalwire.com/docs navbar. Pick a language from the dropdown in the
-      navbar (or a card above) and the frame loads that SDK's native docs
-      &mdash; CSS, search, navigation, all preserved. The theme control in
-      the top-right drives light/dark mode across every generator's output.
+      The navbar is a clone of the one on signalwire.com/docs, and the
+      theme control in the top right switches each doc site between light
+      and dark.
     </p>
-
-    <div class="meta">
-      <div><strong>Generators per language</strong>
-        Doxygen, DocFX, gomarkdoc, Javadoc, Pod::Simple::XHTML,
-        Doxygen-PHP, MkDocs Material, YARD, rustdoc, TypeDoc</div>
-    </div>
   </section>
 
 </div>
