@@ -214,6 +214,23 @@ document.addEventListener("keydown", (e) => {
 
 window.addEventListener("resize", closeAllDropdowns);
 
+// Clicks inside the doc iframe never bubble up to this document, so wire a
+// dismiss listener into each frame document (and YARD-style nested frames).
+function wireFrameDismiss(doc) {
+  if (!doc || doc.swDismissWired) return;
+  doc.swDismissWired = true;
+  doc.addEventListener("pointerdown", closeAllDropdowns);
+  for (const nested of doc.querySelectorAll("iframe")) {
+    nested.addEventListener("load", () => {
+      try { wireFrameDismiss(nested.contentDocument); } catch {}
+    });
+    try { wireFrameDismiss(nested.contentDocument); } catch {}
+  }
+}
+
+// Catch-all: focus moving into the iframe (or another window) blurs us.
+window.addEventListener("blur", closeAllDropdowns);
+
 /* =============================================================================
    LANGUAGE SWITCHER
    ============================================================================= */
@@ -306,8 +323,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Re-theme the iframe on every navigation inside it.
-  document.getElementById("doc-frame").addEventListener("load", () => themeFrame());
+  // Re-theme and re-wire the iframe on every navigation inside it.
+  const frame = document.getElementById("doc-frame");
+  frame.addEventListener("load", () => {
+    themeFrame();
+    try { wireFrameDismiss(frame.contentDocument); } catch {}
+  });
 
   // Live sync: another tab (or, on a shared origin, the Fern docs site)
   // changed the theme preference.
