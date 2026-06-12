@@ -5,16 +5,40 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>SignalWire Server SDKs — Overview</title>
 <style>
+  @font-face {
+    font-family: "Lexend";
+    src: url("../assets/fonts/lexend-400.woff2") format("woff2");
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Instrument Sans";
+    src: url("../assets/fonts/instrument-sans.woff2") format("woff2");
+    font-weight: 500 700; font-style: normal; font-display: swap;
+  }
   :root {
-    --bg: #ffffff;
+    --bg: #fafbfc;
+    --card-bg: #ffffff;
+    --code-bg: #f3f4f6;
     --fg: #11151c;
     --fg-dim: #5a6473;
     --border: #e5e7eb;
-    --accent: #3aa3ff;
+    --accent: #044ef4;
+  }
+  /* Dark tokens — the shell sets data-sw-theme on <html> in sync with the
+     navbar theme control (and the user's signalwire.com/docs preference). */
+  html[data-sw-theme="dark"] {
+    --bg: #0e0e18;
+    --card-bg: #181a28;
+    --code-bg: rgba(255, 255, 255, 0.08);
+    --fg: #f0f0f4;
+    --fg-dim: #a0a0aa;
+    --border: rgba(255, 255, 255, 0.12);
+    --accent: #40e0d0;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; background: var(--bg); color: var(--fg);
-    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    font: 16px/1.55 "Lexend", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  h1, h2 { font-family: "Instrument Sans", "Lexend", system-ui, sans-serif; }
   .wrap { max-width: 1040px; margin: 0 auto; padding: 56px 36px 80px; }
 
   header.hero { margin-bottom: 36px; }
@@ -35,7 +59,7 @@
     padding: 16px 18px;
     text-decoration: none;
     color: inherit;
-    background: #fff;
+    background: var(--card-bg);
     transition: transform 80ms ease, box-shadow 120ms ease, border-color 120ms ease;
     position: relative;
     overflow: hidden;
@@ -59,12 +83,12 @@
   section.about h2 { font-size: 18px; margin: 0 0 10px; }
   section.about p  { color: var(--fg); max-width: 720px; }
   section.about p + p { margin-top: 10px; }
-  section.about code { background: #f3f4f6; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  section.about code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
 
   .meta {
     display: flex; gap: 24px; flex-wrap: wrap;
     margin-top: 22px; padding: 14px 16px;
-    border: 1px solid var(--border); border-radius: 8px; background: #fafbfc;
+    border: 1px solid var(--border); border-radius: 8px; background: var(--card-bg);
     font-size: 13px; color: var(--fg-dim);
   }
   .meta strong { color: var(--fg); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
@@ -74,7 +98,7 @@
 <div class="wrap">
 
   <header class="hero">
-    <div class="eyebrow">Proof of concept</div>
+    <div class="eyebrow">Demo</div>
     <h1>SignalWire Server SDKs — language-native docs explorer</h1>
     <p class="lede">
       Ten SDKs. Ten canonical doc generators. One side-by-side preview.
@@ -95,10 +119,11 @@
       community expects.
     </p>
     <p>
-      This POC stitches all ten together behind a single shell. Pick a
-      language from the sidebar (or a card above) and the iframe loads
-      that SDK's native docs &mdash; CSS, search, navigation, all
-      preserved.
+      This demo stitches all ten together behind a clone of the
+      signalwire.com/docs navbar. Pick a language from the dropdown in the
+      navbar (or a card above) and the frame loads that SDK's native docs
+      &mdash; CSS, search, navigation, all preserved. The theme control in
+      the top-right drives light/dark mode across every generator's output.
     </p>
 
     <div class="meta">

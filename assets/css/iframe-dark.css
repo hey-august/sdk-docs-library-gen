@@ -1,0 +1,274 @@
+/* =============================================================================
+   INJECTED DARK THEME — for generators with no dark mode of their own
+   (Javadoc, YARD, and the static go/perl wrappers).
+
+   The shell injects this stylesheet into the iframe document and sets
+   data-sw-theme + data-sw-lang on its <html>; the generated output on disk
+   is never modified. Palette follows the SignalWire dark brand tokens:
+   page #0e0e18, surface #181a28, raised #222436, link turquoise #40e0d0.
+   ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   Javadoc (JDK 17+) — themes entirely via CSS custom properties.
+   --------------------------------------------------------------------------- */
+html[data-sw-theme="dark"][data-sw-lang="java"] {
+  --body-text-color: #d8d9de;
+  --block-text-color: #c5c7cf;
+  --body-background-color: #0e0e18;
+  --section-background-color: #181a28;
+  --detail-background-color: #14141f;
+  --navbar-background-color: #1c2540;
+  --navbar-text-color: #f0f0f4;
+  --subnav-background-color: #181a28;
+  --selected-background-color: #2f4bb5;
+  --selected-text-color: #ffffff;
+  --selected-link-color: #cfe0ff;
+  --even-row-color: #14141f;
+  --odd-row-color: #1a1c2a;
+  --title-color: #e8eaf6;
+  --link-color: #40e0d0;
+  --link-color-active: #f72a72;
+  --snippet-background-color: #181a28;
+  --snippet-text-color: #d8d9de;
+  --snippet-highlight-color: #6b4a12;
+  --border-color: #2a2d3e;
+  --table-border-color: #3a3d4e;
+  --search-input-background-color: #181a28;
+  --search-input-text-color: #e8e8ec;
+  --search-input-placeholder-color: #73737e;
+  --search-tag-highlight-color: #6b5a00;
+  --copy-icon-brightness: 200%;
+  --copy-button-background-color-active: rgba(255, 255, 255, 0.15);
+  --invalid-tag-background-color: #3a1520;
+  --invalid-tag-text-color: #f0d0d8;
+}
+
+/* ---------------------------------------------------------------------------
+   YARD (Ruby) — fixed light palette, so override the major surfaces.
+   Applies both to the main document and the class/method list documents
+   nested in the #nav iframe (the shell injects into those too).
+   YARD scopes much of its CSS under ids (#filecontents, #toc, #full_list),
+   which out-specifies an injected theme layer — hence the !important.
+   --------------------------------------------------------------------------- */
+html[data-sw-theme="dark"][data-sw-lang="ruby"],
+html[data-sw-theme="dark"][data-sw-lang="ruby"] body {
+  background: #0e0e18 !important;
+  color: #d8d9de;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] h1,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] h2,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] h3,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] h4 {
+  color: #f0f0f4;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] a,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] h2 small a {
+  color: #40e0d0;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] *:not(pre) > code {
+  background: rgba(255, 255, 255, 0.08);
+  color: #7fe8dc;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] pre,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] pre.code,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .source_code {
+  background: #181a28 !important;
+  color: #dcdee6 !important;
+  border-color: #2a2d3e !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #main,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #filecontents {
+  background: transparent !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .summary_signature,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .signature,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .method_details .method_detail {
+  background: #181a28 !important;
+  border-color: #2a2d3e !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .summary_signature a,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .signature a {
+  color: #7fe8dc;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .note,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .docstring .note,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .tags .examples .inline {
+  background: #222436 !important;
+  border-color: #3a3d4e !important;
+  color: #d8d9de;
+}
+
+/* Floating table of contents — light box with its own shadow */
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #toc,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #toc.hidden,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #toc.hidden:hover {
+  background: #181a28 !important;
+  border-color: #2a2d3e !important;
+  box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Docstring / file-content tables — striped rows and white headers */
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .docstring table tr:nth-child(odd),
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #filecontents table tr:nth-child(odd) {
+  background: #1a1c2a !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .docstring table tr:nth-child(even),
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #filecontents table tr:nth-child(even) {
+  background: #14141f !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .docstring table th,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #filecontents table th {
+  background: #1c2540 !important;
+  color: #f0f0f4;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] table,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] table th,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] table td {
+  border-color: #2a2d3e !important;
+}
+
+/* Class "Inherits / Includes / Defined in" info box — striped dl rows */
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .box_info dl:nth-child(odd) > * {
+  background: #1a1c2a !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .box_info dl:nth-child(even) > * {
+  background: #14141f !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .box_info dl > *,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .box_info dl:last-child > * {
+  border-color: #2a2d3e !important;
+}
+
+/* "show all" / "toggle defines" chips inside the info box */
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .inheritanceTree,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .toggleDefines {
+  background: #222436 !important;
+  border-left-color: #2a2d3e !important;
+  color: #40e0d0;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #search,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #menu {
+  background: transparent;
+}
+
+/* --- Class/method/file list documents (inside the #nav iframe) --- */
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #nav {
+  border-right-color: #2a2d3e !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .fixed_header {
+  background: #0e0e18 !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] .fixed_header input,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #search input {
+  background: #181a28 !important;
+  color: #e8e8ec !important;
+  border-color: #2a2d3e !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #full_list li.odd {
+  background: #14141f !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #full_list li.even {
+  background: #0e0e18 !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #full_list .item:hover {
+  background: #222436 !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #full_list a {
+  color: #cfd3e0;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #full_list .clicked {
+  background: #1c2540 !important;
+  color: #e8e8ec !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #full_list .clicked a {
+  color: #b9d2ff !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #full_list_nav,
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #full_list_nav a {
+  color: #9aa1ad;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="ruby"] #full_list_nav a:hover {
+  color: #40e0d0 !important;
+}
+
+/* ---------------------------------------------------------------------------
+   Go (static gomarkdoc wrapper) — CSS variables plus a few hardcoded surfaces.
+   --------------------------------------------------------------------------- */
+html[data-sw-theme="dark"][data-sw-lang="go"] {
+  --bg: #0e0e18;
+  --fg: #e2e4ea;
+  --fg-dim: #9aa1ad;
+  --border: #262a35;
+  --code-bg: rgba(255, 255, 255, 0.06);
+  --go-blue-dark: #4cc3e8;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="go"] nav.side {
+  background: #14141f;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="go"] nav.side li a:hover {
+  background: #1a1d2c;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="go"] nav.side li a.active {
+  background: rgba(0, 173, 216, 0.12);
+}
+
+html[data-sw-theme="dark"][data-sw-lang="go"] main blockquote {
+  background: #181a28;
+}
+
+/* ---------------------------------------------------------------------------
+   Perl (static Pod::Simple wrapper) — CSS variables plus nav surfaces.
+   --------------------------------------------------------------------------- */
+html[data-sw-theme="dark"][data-sw-lang="perl"] {
+  --bg: #0e0e18;
+  --fg: #e2e4ea;
+  --fg-dim: #9aa1ad;
+  --border: #262a35;
+  --code-bg: rgba(255, 255, 255, 0.06);
+  --link: #8fb3ff;
+  --accent: #aab6e8;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="perl"] nav {
+  background: #14141f;
+}
+
+/* The intro callout carries an inline light background */
+html[data-sw-theme="dark"][data-sw-lang="perl"] main blockquote {
+  background: #181a28 !important;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="perl"] nav a:hover {
+  background: #1a1d2c;
+}
+
+html[data-sw-theme="dark"][data-sw-lang="perl"] nav a.active {
+  background: rgba(170, 182, 232, 0.1);
+}
