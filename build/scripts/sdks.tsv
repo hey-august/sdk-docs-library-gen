@@ -1,0 +1,13 @@
+# SignalWire Server SDK doc sources.
+# Columns: lang-id <tab> github-repo <tab> doc-generator
+# Sources are cloned over HTTPS into _build/sdks/<repo> (gitignored).
+cpp	signalwire-cpp	doxygen
+dotnet	signalwire-dotnet	docfx
+go	signalwire-go	gomarkdoc
+java	signalwire-java	javadoc
+perl	signalwire-perl	pod
+php	signalwire-php	doxygen
+python	signalwire-python	mkdocs
+ruby	signalwire-ruby	yard
+rust	signalwire-rust	rustdoc
+typescript	signalwire-typescript	typedoc

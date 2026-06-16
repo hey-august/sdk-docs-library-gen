@@ -1,0 +1,25 @@
+site_name: SignalWire Python SDK
+# docs_dir is generated per-run (one API page per importable subpackage);
+# site_dir is the committed pane. Both are resolved relative to this file.
+docs_dir: ../../_build/out/python-docs
+site_dir: ../../langs/python
+use_directory_urls: false
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [../../_build/sdks/signalwire-python/signalwire]
+          options:
+            show_source: false
+            show_submodules: true
+            docstring_style: google
+            members_order: source

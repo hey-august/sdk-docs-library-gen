@@ -1,0 +1,22 @@
+# C++ pane — Doxygen + doxygen-awesome-css. Only non-default settings are set;
+# paths come from the environment (exported by build/cpp/gen.sh).
+PROJECT_NAME           = "SignalWire C++ SDK"
+OUTPUT_DIRECTORY       = $(SW_OUT)
+HTML_OUTPUT            = .
+INPUT                  = $(SW_SRC)/README.md $(SW_SRC)/include $(SW_SRC)/src
+USE_MDFILE_AS_MAINPAGE = $(SW_SRC)/README.md
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.hpp *.hh *.cpp *.cc
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+GENERATE_LATEX         = NO
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = NO
+
+# doxygen-awesome theme
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+FULL_SIDEBAR           = NO
+HTML_COLORSTYLE        = LIGHT
+HTML_EXTRA_STYLESHEET  = $(SW_THEME)/doxygen-awesome.css \
+                         $(SW_THEME)/doxygen-awesome-sidebar-only.css

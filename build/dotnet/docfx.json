@@ -1,0 +1,24 @@
+{
+  "metadata": [
+    {
+      "src": [
+        { "files": ["src/SignalWire/SignalWire.csproj"], "src": "." }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      { "files": ["api/**.{yml,md}"] },
+      { "files": ["index.md", "toc.yml"] }
+    ],
+    "dest": "_docfx_site",
+    "template": ["default", "modern"],
+    "globalMetadata": {
+      "_appName": "SignalWire .NET SDK",
+      "_appTitle": "SignalWire .NET SDK",
+      "_enableSearch": true,
+      "_disableContribution": true
+    }
+  }
+}
