@@ -84,7 +84,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
@@ -145,13 +145,34 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Represents a RELAY call with 30+ methods organized by category.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Constants.html" title="class in com.signalwire.sdk.relay">Constants</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="CallState.html" title="enum class in com.signalwire.sdk.relay">CallState</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
+<div class="block">The lifecycle state of a RELAY <a href="Call.html" title="class in com.signalwire.sdk.relay"><code>Call</code></a>, as a typed, compile-time-checked
+ closed set.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Constants.html" title="class in com.signalwire.sdk.relay">Constants</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Constants for the SignalWire RELAY protocol.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Message.html" title="class in com.signalwire.sdk.relay">Message</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Device.html" title="class in com.signalwire.sdk.relay">Device</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">A typed view of the RELAY <code>{type, params}</code> device object that recurs as
+ a raw <code>Map&lt;String, Object&gt;</code> across <a href="Call.html#connect(java.util.List,java.util.Map)"><code>Call.connect(java.util.List&lt;java.util.List&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt;&gt;, java.util.Map&lt;java.lang.String, java.lang.Object&gt;)</code></a>, <a href="Call.html#refer(java.util.Map,java.util.Map)"><code>Call.refer(java.util.Map&lt;java.lang.String, java.lang.Object&gt;, java.util.Map&lt;java.lang.String, java.lang.Object&gt;)</code></a>,
+ <a href="RelayClient.html#dial(java.util.List,java.util.Map,long)"><code>RelayClient.dial(java.util.List&lt;java.util.List&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt;&gt;, java.util.Map&lt;java.lang.String, java.lang.Object&gt;, long)</code></a> and <a href="Call.html#tap(java.util.Map,java.util.Map,java.util.Map)"><code>Call.tap(java.util.Map&lt;java.lang.String, java.lang.Object&gt;, java.util.Map&lt;java.lang.String, java.lang.Object&gt;, java.util.Map&lt;java.lang.String, java.lang.Object&gt;)</code></a>.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="DialState.html" title="enum class in com.signalwire.sdk.relay">DialState</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="block">The outcome state of an outbound <code>calling.dial</code>, as a typed,
+ compile-time-checked closed set.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Message.html" title="class in com.signalwire.sdk.relay">Message</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Represents an SMS/MMS message with state tracking.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="block">The delivery state of a RELAY <a href="Message.html" title="class in com.signalwire.sdk.relay"><code>Message</code></a>, as a typed,
+ compile-time-checked closed set.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="RelayClient.html" title="class in com.signalwire.sdk.relay">RelayClient</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">

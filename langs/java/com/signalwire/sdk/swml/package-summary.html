@@ -84,36 +84,62 @@ loadScripts(document, 'script');</script>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Document.html" title="class in com.signalwire.sdk.swml">Document</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
+<div class="block">Media codec for the SWML <code>tap</code> verb, as a typed, compile-time-checked
+ closed set.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Document.html" title="class in com.signalwire.sdk.swml">Document</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">SWML Document model.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Schema.html" title="class in com.signalwire.sdk.swml">Schema</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
+<div class="block">Audio direction for the SWML <code>record_call</code> verb, as a typed,
+ compile-time-checked closed set.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="block">Audio container format for call recording, as a typed, compile-time-checked
+ closed set.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Schema.html" title="class in com.signalwire.sdk.swml">Schema</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Singleton that loads schema.json from resources and extracts the 38 SWML verb definitions.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="SchemaUtils.html" title="class in com.signalwire.sdk.swml">SchemaUtils</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SchemaUtils.html" title="class in com.signalwire.sdk.swml">SchemaUtils</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">SchemaUtils — Java port of <code>signalwire.utils.schema_utils.SchemaUtils</code>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SchemaUtils.VerbInfo.html" title="class in com.signalwire.sdk.swml">SchemaUtils.VerbInfo</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="SchemaUtils.VerbInfo.html" title="class in com.signalwire.sdk.swml">SchemaUtils.VerbInfo</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A verb extracted from the schema.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="SchemaValidationError.html" title="class in com.signalwire.sdk.swml">SchemaValidationError</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab5">
+<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="SchemaValidationError.html" title="class in com.signalwire.sdk.swml">SchemaValidationError</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab5">
 <div class="block">SchemaValidationError — Java port of
  <code>signalwire.utils.schema_utils.SchemaValidationError</code>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Service.html" title="class in com.signalwire.sdk.swml">Service</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Service.html" title="class in com.signalwire.sdk.swml">Service</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Base SWML service with an embedded HTTP server, basic auth, security headers,
  and explicit methods for all 38 schema-driven verbs.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="block">Audio direction for the SWML <code>tap</code> verb, as a typed,
+ compile-time-checked closed set.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="WireEnum.html" title="interface in com.signalwire.sdk.swml">WireEnum</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="block">Marker for the typed, compile-time-checked closed-set enums whose constants
+ carry a canonical <em>wire string</em> (<a href="RecordFormat.html" title="enum class in com.signalwire.sdk.swml"><code>RecordFormat</code></a>, <a href="RecordDirection.html" title="enum class in com.signalwire.sdk.swml"><code>RecordDirection</code></a>,
+ <a href="TapDirection.html" title="enum class in com.signalwire.sdk.swml"><code>TapDirection</code></a>, <a href="Codec.html" title="enum class in com.signalwire.sdk.swml"><code>Codec</code></a>).</div>
 </div>
 </div>
 </div>

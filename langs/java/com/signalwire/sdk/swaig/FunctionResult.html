@@ -39,7 +39,7 @@ loadScripts(document, 'script');</script>
 <p>Summary:</p>
 <ul>
 <li>Nested</li>
-<li>Field</li>
+<li><a href="#field-summary">Field</a></li>
 <li><a href="#constructor-summary">Constr</a></li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -47,7 +47,7 @@ loadScripts(document, 'script');</script>
 <li>
 <p>Detail:</p>
 <ul>
-<li>Field</li>
+<li><a href="#field-detail">Field</a></li>
 <li><a href="#constructor-detail">Constr</a></li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -59,13 +59,13 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -106,6 +106,23 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field-summary">
+<h2>Field Summary</h2>
+<div class="caption"><span>Fields</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Field</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#DEFAULT_PAY_AI_RESPONSE" class="member-name-link">DEFAULT_PAY_AI_RESPONSE</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Default <code>ai_response</code> for <a href="#pay(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int,boolean,java.lang.Object,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)"><code>pay(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int, boolean, java.lang.Object, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.List&lt;java.util.Map&lt;java.lang.String, java.lang.String&gt;&gt;, java.util.List&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt;, java.lang.String)</code></a>.</div>
+</div>
+</div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -229,12 +246,26 @@ loadScripts(document, 'script');</script>
 <div class="block">Join a conference (simple form, name only).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#joinConference(java.lang.String,boolean,java.lang.String,java.lang.String)" class="member-name-link">joinConference</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#joinConference(java.lang.String,boolean,java.lang.String,boolean,boolean,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object)" class="member-name-link">joinConference</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  boolean&nbsp;muted,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;beep,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;holdAudio)</code></div>
+ boolean&nbsp;startOnEnter,
+ boolean&nbsp;endOnExit,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;waitUrl,
+ int&nbsp;maxParticipants,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;record,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;region,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;trim,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;coach,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusCallbackEvent,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusCallback,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusCallbackMethod,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;recordingStatusCallback,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;recordingStatusCallbackMethod,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;recordingStatusCallbackEvent,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;result)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Join a conference via SWML.</div>
+<div class="block">Join an ad-hoc audio conference with RELAY and CXML calls using SWML.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#joinRoom(java.lang.String)" class="member-name-link">joinRoom</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
@@ -248,27 +279,116 @@ loadScripts(document, 'script');</script>
  int&nbsp;timeout,
  int&nbsp;maxAttempts)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Process payment via SWML pay action.</div>
+<div class="block">Process payment (convenience form).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playBackgroundFile(java.lang.String)" class="member-name-link">playBackgroundFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pay(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int,boolean,java.lang.Object,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)" class="member-name-link">pay</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;connectorUrl,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;inputMethod,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusUrl,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;paymentMethod,
+ int&nbsp;timeout,
+ int&nbsp;maxAttempts,
+ boolean&nbsp;securityCode,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;postalCode,
+ int&nbsp;minPostalCodeLength,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tokenType,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;chargeAmount,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;currency,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;language,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;voice,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;description,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;validCardTypes,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;&nbsp;parameters,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&gt;&nbsp;prompts,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;aiResponse)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Process payment via SWML pay action — full parity with the Python
+ reference <code>signalwire.core.function_result.FunctionResult.pay</code>.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playBackgroundFile(java.lang.String,boolean)" class="member-name-link">playBackgroundFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playBackgroundFile(java.lang.String)" class="member-name-link">playBackgroundFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playBackgroundFile(java.lang.String,boolean)" class="member-name-link">playBackgroundFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
  boolean&nbsp;wait)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Play audio file in background.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recordCall()" class="member-name-link">recordCall</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)" class="member-name-link">recordCall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recordCall()" class="member-name-link">recordCall</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recordCall(java.lang.String,boolean,com.signalwire.sdk.swml.RecordFormat,com.signalwire.sdk.swml.RecordDirection)" class="member-name-link">recordCall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ boolean&nbsp;stereo,
+ <a href="../swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a>&nbsp;format,
+ <a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a>&nbsp;direction)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Fully-typed overload of <a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)"><code>recordCall(String, boolean, String, String)</code></a>:
+ both the container format (<a href="../swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml"><code>RecordFormat</code></a>) and the audio direction
+ (<a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml"><code>RecordDirection</code></a>) are typed closed sets.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recordCall(java.lang.String,boolean,com.signalwire.sdk.swml.RecordFormat,com.signalwire.sdk.swml.RecordDirection,java.lang.String,boolean,double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String)" class="member-name-link">recordCall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ boolean&nbsp;stereo,
+ <a href="../swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a>&nbsp;format,
+ <a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a>&nbsp;direction,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;terminators,
+ boolean&nbsp;beep,
+ double&nbsp;inputSensitivity,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;initialTimeout,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;endSilenceTimeout,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;maxLength,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusUrl)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Fully-typed, full-arity overload of
+ <a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,boolean,double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String)"><code>recordCall(String, boolean, String, String, String, boolean, double, Double, Double, Double, String)</code></a>:
+ the closed-set <code>format</code> (<a href="../swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml"><code>RecordFormat</code></a>) and <code>direction</code>
+ (<a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml"><code>RecordDirection</code></a>) are typed so a misspelled container format or
+ direction fails at compile time instead of being rejected by the server's
+ <code>ValueError</code>, while every Python <code>record_call</code> optional
+ (terminators / beep / input_sensitivity / initial_timeout /
+ end_silence_timeout / max_length / status_url) is still exposed
+ positionally.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recordCall(java.lang.String,boolean,com.signalwire.sdk.swml.RecordFormat,java.lang.String)" class="member-name-link">recordCall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ boolean&nbsp;stereo,
+ <a href="../swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a>&nbsp;format,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Typed overload of <a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)"><code>recordCall(String, boolean, String, String)</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recordCall(java.lang.String,boolean,java.lang.String,com.signalwire.sdk.swml.RecordDirection)" class="member-name-link">recordCall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ boolean&nbsp;stereo,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
+ <a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a>&nbsp;direction)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Typed-direction overload of <a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)"><code>recordCall(String, boolean, String, String)</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)" class="member-name-link">recordCall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
  boolean&nbsp;stereo,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Start background call recording (convenience form).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,boolean,double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String)" class="member-name-link">recordCall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ boolean&nbsp;stereo,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;terminators,
+ boolean&nbsp;beep,
+ double&nbsp;inputSensitivity,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;initialTimeout,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;endSilenceTimeout,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;maxLength,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusUrl)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Start background call recording via SWML.</div>
+<div class="block">Start background call recording via SWML — full parity with the Python
+ reference <code>signalwire.core.function_result.FunctionResult.record_call</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeGlobalData(java.lang.Object)" class="member-name-link">removeGlobalData</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;keys)</code></div>
@@ -288,19 +408,36 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rpcAiMessage(java.lang.String,java.lang.String)" class="member-name-link">rpcAiMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;callId,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;messageText)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Inject a message into an AI agent on another call.</div>
+<div class="block">Inject a message (convenience form).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rpcAiUnhold(java.lang.String)" class="member-name-link">rpcAiUnhold</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;callId)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rpcAiMessage(java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">rpcAiMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;callId,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;messageText,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Unhold another call.</div>
+<div class="block">Inject a message into an AI agent on another call — full parity with the
+ Python reference <code>FunctionResult.rpc_ai_message</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rpcDial(java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">rpcDial</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;toNumber,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rpcAiUnhold(java.lang.String)" class="member-name-link">rpcAiUnhold</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;callId)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Unhold another call.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rpcDial(java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">rpcDial</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;toNumber,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fromNumber,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;destSwml)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Dial out (convenience form).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rpcDial(java.lang.String,java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">rpcDial</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;toNumber,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fromNumber,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;destSwml,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;deviceType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Dial out to a number with a destination SWML URL.</div>
+<div class="block">Dial out to a number with a destination SWML URL — full parity with the
+ Python reference <code>FunctionResult.rpc_dial</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#say(java.lang.String)" class="member-name-link">say</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
@@ -312,97 +449,161 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;media,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;tags)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Send SMS via SWML.</div>
+<div class="block">Send SMS (convenience form).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setEndOfSpeechTimeout(int)" class="member-name-link">setEndOfSpeechTimeout</a><wbr>(int&nbsp;milliseconds)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendSms(java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)" class="member-name-link">sendSms</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;toNumber,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fromNumber,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;body,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;media,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;tags,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;region)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Send SMS via SWML — full parity with the Python reference
+ <code>signalwire.core.function_result.FunctionResult.send_sms</code>.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMetadata(java.util.Map)" class="member-name-link">setMetadata</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;data)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setEndOfSpeechTimeout(int)" class="member-name-link">setEndOfSpeechTimeout</a><wbr>(int&nbsp;milliseconds)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPostProcess(boolean)" class="member-name-link">setPostProcess</a><wbr>(boolean&nbsp;postProcess)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMetadata(java.util.Map)" class="member-name-link">setMetadata</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;data)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setResponse(java.lang.String)" class="member-name-link">setResponse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;response)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPostProcess(boolean)" class="member-name-link">setPostProcess</a><wbr>(boolean&nbsp;postProcess)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpeechEventTimeout(int)" class="member-name-link">setSpeechEventTimeout</a><wbr>(int&nbsp;milliseconds)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setResponse(java.lang.String)" class="member-name-link">setResponse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;response)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#simulateUserInput(java.lang.String)" class="member-name-link">simulateUserInput</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpeechEventTimeout(int)" class="member-name-link">setSpeechEventTimeout</a><wbr>(int&nbsp;milliseconds)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#simulateUserInput(java.lang.String)" class="member-name-link">simulateUserInput</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Queue simulated user input.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sipRefer(java.lang.String)" class="member-name-link">sipRefer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;toUri)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sipRefer(java.lang.String)" class="member-name-link">sipRefer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;toUri)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Send SIP REFER.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Stop the agent execution.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopBackgroundFile()" class="member-name-link">stopBackgroundFile</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopBackgroundFile()" class="member-name-link">stopBackgroundFile</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopRecordCall()" class="member-name-link">stopRecordCall</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopRecordCall()" class="member-name-link">stopRecordCall</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopRecordCall(java.lang.String)" class="member-name-link">stopRecordCall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopRecordCall(java.lang.String)" class="member-name-link">stopRecordCall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Stop an active background call recording.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopTap()" class="member-name-link">stopTap</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopTap(java.lang.String)" class="member-name-link">stopTap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopTap()" class="member-name-link">stopTap</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopTap(java.lang.String)" class="member-name-link">stopTap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Stop a tap stream.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#switchContext(java.lang.String)" class="member-name-link">switchContext</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;systemPrompt)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#switchContext(java.lang.String,java.lang.String,boolean,boolean)" class="member-name-link">switchContext</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;systemPrompt,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#switchContext(java.lang.String)" class="member-name-link">switchContext</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;systemPrompt)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#switchContext(java.lang.String,java.lang.String,boolean,boolean)" class="member-name-link">switchContext</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;systemPrompt,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;userPrompt,
  boolean&nbsp;consolidate,
  boolean&nbsp;fullReset)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Switch context with optional reset parameters.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swmlChangeContext(java.lang.String)" class="member-name-link">swmlChangeContext</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contextName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swmlChangeContext(java.lang.String)" class="member-name-link">swmlChangeContext</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contextName)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Change the conversation context.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swmlChangeStep(java.lang.String)" class="member-name-link">swmlChangeStep</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stepName)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swmlChangeStep(java.lang.String)" class="member-name-link">swmlChangeStep</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stepName)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Change the conversation step.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swmlTransfer(java.lang.String,java.lang.String,boolean)" class="member-name-link">swmlTransfer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;dest,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swmlTransfer(java.lang.String,java.lang.String,boolean)" class="member-name-link">swmlTransfer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;dest,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;aiResponse,
  boolean&nbsp;isFinal)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">SWML transfer with AI response setup.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swmlUserEvent(java.util.Map)" class="member-name-link">swmlUserEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;eventData)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swmlUserEvent(java.util.Map)" class="member-name-link">swmlUserEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;eventData)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Send a user event through SWML.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tap(java.lang.String,java.lang.String,com.signalwire.sdk.swml.TapDirection,com.signalwire.sdk.swml.Codec)" class="member-name-link">tap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ <a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a>&nbsp;direction,
+ <a href="../swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a>&nbsp;codec)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Fully-typed overload of <a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>tap(String, String, String, String)</code></a>: both
+ the audio direction (<a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml"><code>TapDirection</code></a>) and the media codec
+ (<a href="../swml/Codec.html" title="enum class in com.signalwire.sdk.swml"><code>Codec</code></a>) are typed closed sets.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">tap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tap(java.lang.String,java.lang.String,com.signalwire.sdk.swml.TapDirection,com.signalwire.sdk.swml.Codec,int,java.lang.String)" class="member-name-link">tap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ <a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a>&nbsp;direction,
+ <a href="../swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a>&nbsp;codec,
+ int&nbsp;rtpPtime,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusUrl)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Fully-typed, full-arity overload of
+ <a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String)"><code>tap(String, String, String, String, int, String)</code></a>: the closed-set
+ <code>direction</code> (<a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml"><code>TapDirection</code></a>) and <code>codec</code> (<a href="../swml/Codec.html" title="enum class in com.signalwire.sdk.swml"><code>Codec</code></a>)
+ are typed so a misspelled direction or codec fails at compile time instead
+ of being rejected by the server's <code>ValueError</code>, while the remaining
+ Python <code>tap</code> params (<code>rtp_ptime</code> / <code>status_url</code>) are
+ still exposed positionally.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tap(java.lang.String,java.lang.String,com.signalwire.sdk.swml.TapDirection,java.lang.String)" class="member-name-link">tap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ <a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a>&nbsp;direction,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;codec)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Typed-direction overload of <a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>tap(String, String, String, String)</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tap(java.lang.String,java.lang.String,java.lang.String,com.signalwire.sdk.swml.Codec)" class="member-name-link">tap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction,
+ <a href="../swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a>&nbsp;codec)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Typed-codec overload of <a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>tap(String, String, String, String)</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">tap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;codec)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Start a call tap (convenience form).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String)" class="member-name-link">tap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;codec,
+ int&nbsp;rtpPtime,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusUrl)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Start call tap.</div>
+<div class="block">Start a background call tap via SWML — full parity with the Python
+ reference <code>signalwire.core.function_result.FunctionResult.tap</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toggleFunctions(java.util.List)" class="member-name-link">toggleFunctions</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&gt;&nbsp;toggles)</code></div>
@@ -449,6 +650,32 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="details">
 <ul class="details-list">
+<!-- ============ FIELD DETAIL =========== -->
+<li>
+<section class="field-details" id="field-detail">
+<h2>Field Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="DEFAULT_PAY_AI_RESPONSE">
+<h3>DEFAULT_PAY_AI_RESPONSE</h3>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">DEFAULT_PAY_AI_RESPONSE</span></div>
+<div class="block">Default <code>ai_response</code> for <a href="#pay(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int,boolean,java.lang.Object,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)"><code>pay(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int, boolean, java.lang.Object, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.List&lt;java.util.Map&lt;java.lang.String, java.lang.String&gt;&gt;, java.util.List&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt;, java.lang.String)</code></a>. Set as a <code>set</code>
+ verb ahead of the <code>pay</code> verb so the AI relays the payment
+ outcome via the <code>${pay_result}</code> variable. Caller-overridable
+ through the full-arity <code>pay(...)</code> overload.</div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#com.signalwire.sdk.swaig.FunctionResult.DEFAULT_PAY_AI_RESPONSE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+</ul>
+</section>
+</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -670,13 +897,136 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="recordCall(java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,boolean,double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String)">
+<h3>recordCall</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">recordCall</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ boolean&nbsp;stereo,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;terminators,
+ boolean&nbsp;beep,
+ double&nbsp;inputSensitivity,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;initialTimeout,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;endSilenceTimeout,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;maxLength,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusUrl)</span></div>
+<div class="block">Start background call recording via SWML — full parity with the Python
+ reference <code>signalwire.core.function_result.FunctionResult.record_call</code>.
+ <p>
+ Validates <code>format</code> ∈ {wav, mp3, mp4} and <code>direction</code> ∈
+ {speak, listen, both} with byte-exact Python <code>ValueError</code> messages.
+ The reference ALWAYS emits <code>stereo</code>, <code>format</code>, <code>direction</code>,
+ <code>beep</code> and <code>input_sensitivity</code>; <code>control_id</code>,
+ <code>terminators</code>, <code>initial_timeout</code>, <code>end_silence_timeout</code>,
+ <code>max_length</code> and <code>status_url</code> are emitted only when supplied.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>controlId</code> - recording identifier (pairs with stopRecordCall; <code>null</code> to omit)</dd>
+<dd><code>stereo</code> - record in stereo (default <code>false</code>)</dd>
+<dd><code>format</code> - "wav", "mp3" or "mp4" (default "wav")</dd>
+<dd><code>direction</code> - "speak", "listen" or "both" (default "both")</dd>
+<dd><code>terminators</code> - digits that stop recording (<code>null</code> to omit)</dd>
+<dd><code>beep</code> - play a beep before recording (default <code>false</code>; ALWAYS emitted)</dd>
+<dd><code>inputSensitivity</code> - input sensitivity (default 44.0; ALWAYS emitted)</dd>
+<dd><code>initialTimeout</code> - seconds to wait for speech start (<code>null</code> to omit)</dd>
+<dd><code>endSilenceTimeout</code> - seconds of trailing silence before ending (<code>null</code> to omit)</dd>
+<dd><code>maxLength</code> - maximum recording length in seconds (<code>null</code> to omit)</dd>
+<dd><code>statusUrl</code> - URL for recording status events (<code>null</code> to omit)</dd>
+<dt>Returns:</dt>
+<dd>this, for chaining</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if format or direction is invalid</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="recordCall(java.lang.String,boolean,com.signalwire.sdk.swml.RecordFormat,com.signalwire.sdk.swml.RecordDirection,java.lang.String,boolean,double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String)">
+<h3>recordCall</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">recordCall</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ boolean&nbsp;stereo,
+ <a href="../swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a>&nbsp;format,
+ <a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a>&nbsp;direction,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;terminators,
+ boolean&nbsp;beep,
+ double&nbsp;inputSensitivity,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;initialTimeout,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;endSilenceTimeout,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;maxLength,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusUrl)</span></div>
+<div class="block">Fully-typed, full-arity overload of
+ <a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,boolean,double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String)"><code>recordCall(String, boolean, String, String, String, boolean, double, Double, Double, Double, String)</code></a>:
+ the closed-set <code>format</code> (<a href="../swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml"><code>RecordFormat</code></a>) and <code>direction</code>
+ (<a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml"><code>RecordDirection</code></a>) are typed so a misspelled container format or
+ direction fails at compile time instead of being rejected by the server's
+ <code>ValueError</code>, while every Python <code>record_call</code> optional
+ (terminators / beep / input_sensitivity / initial_timeout /
+ end_silence_timeout / max_length / status_url) is still exposed
+ positionally. Delegates to the string path via
+ <a href="../swml/RecordFormat.html#getValue()"><code>RecordFormat.getValue()</code></a> / <a href="../swml/RecordDirection.html#getValue()"><code>RecordDirection.getValue()</code></a>, so
+ the emitted SWML <code>record_call</code> payload is byte-identical to the
+ bare-string call. This is the canonical reference-parity surface; the
+ all-<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> full-arity overload above is the forward-compatible
+ escape hatch (and the convenience/typed lower-arity overloads below just
+ delegate here).</div>
+</section>
+</li>
+<li>
 <section class="detail" id="recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)">
 <h3>recordCall</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">recordCall</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
  boolean&nbsp;stereo,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction)</span></div>
-<div class="block">Start background call recording via SWML.</div>
+<div class="block">Start background call recording (convenience form). Delegates to the
+ full-arity
+ <a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,boolean,double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String)"><code>recordCall(String, boolean, String, String, String, boolean, double, Double, Double, Double, String)</code></a>
+ with <code>beep</code>=false, <code>input_sensitivity</code>=44.0 and the trailing
+ options at their reference defaults — so the emitted SWML always carries
+ the always-on <code>beep</code>/<code>input_sensitivity</code> keys.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="recordCall(java.lang.String,boolean,com.signalwire.sdk.swml.RecordFormat,java.lang.String)">
+<h3>recordCall</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">recordCall</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ boolean&nbsp;stereo,
+ <a href="../swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a>&nbsp;format,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction)</span></div>
+<div class="block">Typed overload of <a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)"><code>recordCall(String, boolean, String, String)</code></a>.
+ Accepts a <a href="../swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml"><code>RecordFormat</code></a> so a misspelled container format fails at
+ compile time instead of being rejected by the server. Delegates to the
+ string path via <a href="../swml/RecordFormat.html#getValue()"><code>RecordFormat.getValue()</code></a>, so the SWML
+ <code>record_call</code> payload is identical.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="recordCall(java.lang.String,boolean,java.lang.String,com.signalwire.sdk.swml.RecordDirection)">
+<h3>recordCall</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">recordCall</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ boolean&nbsp;stereo,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;format,
+ <a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a>&nbsp;direction)</span></div>
+<div class="block">Typed-direction overload of <a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)"><code>recordCall(String, boolean, String, String)</code></a>.
+ Accepts a <a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml"><code>RecordDirection</code></a> (<code>speak</code>/<code>listen</code>/<code>both</code>)
+ so a misspelled direction fails at compile time instead of being rejected
+ by the server's <code>ValueError</code>. Delegates to the string path via
+ <a href="../swml/RecordDirection.html#getValue()"><code>RecordDirection.getValue()</code></a>, so the SWML <code>record_call</code> payload
+ is byte-identical. Note this set differs from <a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml"><code>TapDirection</code></a>
+ (<code>listen</code> here vs <code>hear</code> for <code>tap</code>).</div>
+</section>
+</li>
+<li>
+<section class="detail" id="recordCall(java.lang.String,boolean,com.signalwire.sdk.swml.RecordFormat,com.signalwire.sdk.swml.RecordDirection)">
+<h3>recordCall</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">recordCall</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ boolean&nbsp;stereo,
+ <a href="../swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a>&nbsp;format,
+ <a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a>&nbsp;direction)</span></div>
+<div class="block">Fully-typed overload of <a href="#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)"><code>recordCall(String, boolean, String, String)</code></a>:
+ both the container format (<a href="../swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml"><code>RecordFormat</code></a>) and the audio direction
+ (<a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml"><code>RecordDirection</code></a>) are typed closed sets. Delegates to the string
+ path via <a href="../swml/RecordFormat.html#getValue()"><code>RecordFormat.getValue()</code></a> / <a href="../swml/RecordDirection.html#getValue()"><code>RecordDirection.getValue()</code></a>,
+ so the emitted SWML is identical to the bare-string call.</div>
 </section>
 </li>
 <li>
@@ -763,20 +1113,68 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="joinConference(java.lang.String,boolean,java.lang.String,java.lang.String)">
+<section class="detail" id="joinConference(java.lang.String,boolean,java.lang.String,boolean,boolean,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object)">
 <h3>joinConference</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">joinConference</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  boolean&nbsp;muted,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;beep,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;holdAudio)</span></div>
-<div class="block">Join a conference via SWML.</div>
+ boolean&nbsp;startOnEnter,
+ boolean&nbsp;endOnExit,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;waitUrl,
+ int&nbsp;maxParticipants,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;record,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;region,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;trim,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;coach,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusCallbackEvent,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusCallback,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusCallbackMethod,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;recordingStatusCallback,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;recordingStatusCallbackMethod,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;recordingStatusCallbackEvent,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;result)</span></div>
+<div class="block">Join an ad-hoc audio conference with RELAY and CXML calls using SWML.
+ <p>
+ Functional parity with the Python reference
+ <code>signalwire.core.function_result.FunctionResult.join_conference</code>.
+ Every optional parameter the reference exposes is a positional argument
+ here, with the same default and the same validation. Hold music is
+ <code>waitUrl</code> (snake_case wire key <code>wait_url</code>) — there is no
+ separate "hold audio" parameter; the reference uses <code>wait_url</code>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - conference name (required, must be non-blank)</dd>
+<dd><code>muted</code> - join muted (default <code>false</code>)</dd>
+<dd><code>beep</code> - "true", "false", "onEnter", "onExit" (default "true")</dd>
+<dd><code>startOnEnter</code> - conference starts when this participant enters (default <code>true</code>)</dd>
+<dd><code>endOnExit</code> - conference ends when this participant exits (default <code>false</code>)</dd>
+<dd><code>waitUrl</code> - SWML URL for hold music (<code>null</code> for default)</dd>
+<dd><code>maxParticipants</code> - maximum participants, 1..250 (default 250)</dd>
+<dd><code>record</code> - "do-not-record" or "record-from-start" (default "do-not-record")</dd>
+<dd><code>region</code> - conference region (<code>null</code> for default)</dd>
+<dd><code>trim</code> - "trim-silence" or "do-not-trim" (default "trim-silence")</dd>
+<dd><code>coach</code> - SWML Call ID / CXML CallSid for coaching (<code>null</code> for none)</dd>
+<dd><code>statusCallbackEvent</code> - space-separated status events (<code>null</code> for none)</dd>
+<dd><code>statusCallback</code> - URL for status callbacks (<code>null</code> for none)</dd>
+<dd><code>statusCallbackMethod</code> - "GET" or "POST" (default "POST")</dd>
+<dd><code>recordingStatusCallback</code> - URL for recording status callbacks (<code>null</code> for none)</dd>
+<dd><code>recordingStatusCallbackMethod</code> - "GET" or "POST" (default "POST")</dd>
+<dd><code>recordingStatusCallbackEvent</code> - recording events (default "completed")</dd>
+<dd><code>result</code> - switch-on-return value/cond (<code>null</code> for none)</dd>
+<dt>Returns:</dt>
+<dd>this, for chaining</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if any validated value is invalid</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="joinConference(java.lang.String)">
 <h3>joinConference</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">joinConference</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
-<div class="block">Join a conference (simple form, name only).</div>
+<div class="block">Join a conference (simple form, name only). Delegates to the full-arity
+ overload with every option at its reference default, so an all-defaults
+ call emits the bare conference name string.</div>
 </section>
 </li>
 <li>
@@ -794,13 +1192,116 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String)">
+<h3>tap</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">tap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;codec,
+ int&nbsp;rtpPtime,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusUrl)</span></div>
+<div class="block">Start a background call tap via SWML — full parity with the Python
+ reference <code>signalwire.core.function_result.FunctionResult.tap</code>.
+ <p>
+ Validates <code>direction</code> ∈ {speak, hear, both}, <code>codec</code> ∈
+ {PCMU, PCMA}, and <code>rtp_ptime &gt; 0</code> with byte-exact Python
+ <code>ValueError</code> messages (rendered through
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>). Only <code>uri</code> is always emitted;
+ each other key is emitted only when it differs from its reference
+ default (<code>direction != "both"</code>, <code>codec != "PCMU"</code>,
+ <code>rtp_ptime != 20</code>), plus <code>control_id</code> and <code>status_url</code>
+ when supplied.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>uri</code> - tap media-stream destination (required; rtp://, ws://, wss://)</dd>
+<dd><code>controlId</code> - tap identifier (<code>null</code> for an auto-generated one)</dd>
+<dd><code>direction</code> - "speak", "hear" or "both" (default "both")</dd>
+<dd><code>codec</code> - "PCMU" or "PCMA" (default "PCMU")</dd>
+<dd><code>rtpPtime</code> - RTP packetization time in ms, &gt; 0 (default 20)</dd>
+<dd><code>statusUrl</code> - URL for status-change requests (<code>null</code> to omit)</dd>
+<dt>Returns:</dt>
+<dd>this, for chaining</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if direction, codec or rtp_ptime is invalid</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="tap(java.lang.String,java.lang.String,com.signalwire.sdk.swml.TapDirection,com.signalwire.sdk.swml.Codec,int,java.lang.String)">
+<h3>tap</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">tap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ <a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a>&nbsp;direction,
+ <a href="../swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a>&nbsp;codec,
+ int&nbsp;rtpPtime,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusUrl)</span></div>
+<div class="block">Fully-typed, full-arity overload of
+ <a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String)"><code>tap(String, String, String, String, int, String)</code></a>: the closed-set
+ <code>direction</code> (<a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml"><code>TapDirection</code></a>) and <code>codec</code> (<a href="../swml/Codec.html" title="enum class in com.signalwire.sdk.swml"><code>Codec</code></a>)
+ are typed so a misspelled direction or codec fails at compile time instead
+ of being rejected by the server's <code>ValueError</code>, while the remaining
+ Python <code>tap</code> params (<code>rtp_ptime</code> / <code>status_url</code>) are
+ still exposed positionally. Delegates to the string path via
+ <a href="../swml/TapDirection.html#getValue()"><code>TapDirection.getValue()</code></a> / <a href="../swml/Codec.html#getValue()"><code>Codec.getValue()</code></a>, so the emitted
+ SWML <code>tap</code> payload is byte-identical to the bare-string call. This is
+ the canonical reference-parity surface; the all-<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> full-arity
+ overload above is the forward-compatible escape hatch (and the
+ convenience/typed lower-arity overloads below just delegate here).</div>
+</section>
+</li>
+<li>
 <section class="detail" id="tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
 <h3>tap</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">tap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;codec)</span></div>
-<div class="block">Start call tap.</div>
+<div class="block">Start a call tap (convenience form). Delegates to the full-arity
+ <a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String)"><code>tap(String, String, String, String, int, String)</code></a> with
+ <code>rtp_ptime</code> at its reference default (20) and no <code>status_url</code>.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="tap(java.lang.String,java.lang.String,com.signalwire.sdk.swml.TapDirection,java.lang.String)">
+<h3>tap</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">tap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ <a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a>&nbsp;direction,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;codec)</span></div>
+<div class="block">Typed-direction overload of <a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>tap(String, String, String, String)</code></a>.
+ Accepts a <a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml"><code>TapDirection</code></a> (<code>speak</code>/<code>hear</code>/<code>both</code>)
+ so a misspelled direction fails at compile time instead of being rejected
+ by the server's <code>ValueError</code>. Delegates via
+ <a href="../swml/TapDirection.html#getValue()"><code>TapDirection.getValue()</code></a>, so the SWML <code>tap</code> payload is
+ byte-identical. Note this set differs from <a href="../swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml"><code>RecordDirection</code></a>
+ (<code>hear</code> here vs <code>listen</code> for <code>record_call</code>).</div>
+</section>
+</li>
+<li>
+<section class="detail" id="tap(java.lang.String,java.lang.String,java.lang.String,com.signalwire.sdk.swml.Codec)">
+<h3>tap</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">tap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;direction,
+ <a href="../swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a>&nbsp;codec)</span></div>
+<div class="block">Typed-codec overload of <a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>tap(String, String, String, String)</code></a>.
+ Accepts a <a href="../swml/Codec.html" title="enum class in com.signalwire.sdk.swml"><code>Codec</code></a> (<code>PCMU</code>/<code>PCMA</code>) so a misspelled codec
+ fails at compile time. Delegates via <a href="../swml/Codec.html#getValue()"><code>Codec.getValue()</code></a>, so the SWML
+ <code>tap</code> payload is byte-identical. This is the SWAIG tap codec set
+ only — RELAY <code>stream</code>/<code>connect</code> use a larger superset.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="tap(java.lang.String,java.lang.String,com.signalwire.sdk.swml.TapDirection,com.signalwire.sdk.swml.Codec)">
+<h3>tap</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">tap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;uri,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;controlId,
+ <a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a>&nbsp;direction,
+ <a href="../swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a>&nbsp;codec)</span></div>
+<div class="block">Fully-typed overload of <a href="#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>tap(String, String, String, String)</code></a>: both
+ the audio direction (<a href="../swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml"><code>TapDirection</code></a>) and the media codec
+ (<a href="../swml/Codec.html" title="enum class in com.signalwire.sdk.swml"><code>Codec</code></a>) are typed closed sets. Delegates via the per-enum
+ <code>getValue()</code>, so the emitted SWML is identical to the bare-string call.</div>
 </section>
 </li>
 <li>
@@ -817,6 +1318,35 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="sendSms(java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)">
+<h3>sendSms</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">sendSms</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;toNumber,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fromNumber,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;body,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;media,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;tags,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;region)</span></div>
+<div class="block">Send SMS via SWML — full parity with the Python reference
+ <code>signalwire.core.function_result.FunctionResult.send_sms</code>.
+ Either <code>body</code> or <code>media</code> must be supplied. <code>to_number</code>
+ and <code>from_number</code> are always emitted; <code>body</code>, <code>media</code>,
+ <code>tags</code> and <code>region</code> are emitted only when supplied.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>toNumber</code> - E.164 destination (required)</dd>
+<dd><code>fromNumber</code> - E.164 origin (required)</dd>
+<dd><code>body</code> - message body (<code>null</code> if media supplied)</dd>
+<dd><code>media</code> - media URLs (<code>null</code> if body supplied)</dd>
+<dd><code>tags</code> - tags for UI search (<code>null</code> to omit)</dd>
+<dd><code>region</code> - region to originate the message from (<code>null</code> to omit)</dd>
+<dt>Returns:</dt>
+<dd>this, for chaining</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if neither body nor media is provided</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="sendSms(java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List)">
 <h3>sendSms</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">sendSms</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;toNumber,
@@ -824,7 +1354,71 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;body,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;media,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;tags)</span></div>
-<div class="block">Send SMS via SWML.</div>
+<div class="block">Send SMS (convenience form). Delegates to the full-arity
+ <a href="#sendSms(java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)"><code>sendSms(String, String, String, List, List, String)</code></a> with no
+ <code>region</code>.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="pay(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int,boolean,java.lang.Object,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)">
+<h3>pay</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">pay</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;connectorUrl,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;inputMethod,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusUrl,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;paymentMethod,
+ int&nbsp;timeout,
+ int&nbsp;maxAttempts,
+ boolean&nbsp;securityCode,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;postalCode,
+ int&nbsp;minPostalCodeLength,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tokenType,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;chargeAmount,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;currency,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;language,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;voice,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;description,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;validCardTypes,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;&nbsp;parameters,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&gt;&nbsp;prompts,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;aiResponse)</span></div>
+<div class="block">Process payment via SWML pay action — full parity with the Python
+ reference <code>signalwire.core.function_result.FunctionResult.pay</code>.
+ <p>
+ Every optional parameter the reference exposes is a positional argument
+ here, in the same order, with the same default and the same emitted
+ wire key. The reference ALWAYS emits <code>payment_connector_url</code>,
+ <code>input</code>, <code>payment_method</code>, <code>timeout</code>, <code>max_attempts</code>,
+ <code>security_code</code>, <code>min_postal_code_length</code>, <code>token_type</code>,
+ <code>currency</code>, <code>language</code>, <code>voice</code>, <code>valid_card_types</code>
+ and <code>postal_code</code>; <code>status_url</code>, <code>charge_amount</code>,
+ <code>description</code>, <code>parameters</code> and <code>prompts</code> are emitted
+ only when supplied. Numeric values are stringified to match Python's
+ <code>str(...)</code>. A <code>set</code> verb carrying <code>ai_response</code> is
+ emitted before the <code>pay</code> verb.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>connectorUrl</code> - payment connector URL (required)</dd>
+<dd><code>inputMethod</code> - "dtmf" (the SWML schema is <code>const:"dtmf"</code>; default "dtmf")</dd>
+<dd><code>statusUrl</code> - URL for status-change notifications (<code>null</code> to omit)</dd>
+<dd><code>paymentMethod</code> - payment method (default "credit-card")</dd>
+<dd><code>timeout</code> - seconds to wait for next digit (default 5)</dd>
+<dd><code>maxAttempts</code> - retry attempts (default 1)</dd>
+<dd><code>securityCode</code> - prompt for the security code (default <code>true</code>)</dd>
+<dd><code>postalCode</code> - prompt for postal code (<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link"><code>Boolean</code></a>) or the literal postcode (<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>); default <code>Boolean.TRUE</code></dd>
+<dd><code>minPostalCodeLength</code> - minimum postal-code digits (default 0)</dd>
+<dd><code>tokenType</code> - "one-time" or "reusable" (default "reusable")</dd>
+<dd><code>chargeAmount</code> - amount to charge, decimal string (<code>null</code> to omit)</dd>
+<dd><code>currency</code> - currency code (default "usd")</dd>
+<dd><code>language</code> - prompt language (default "en-US")</dd>
+<dd><code>voice</code> - TTS voice (default "woman")</dd>
+<dd><code>description</code> - custom payment description (<code>null</code> to omit)</dd>
+<dd><code>validCardTypes</code> - space-separated card types (default "visa mastercard amex")</dd>
+<dd><code>parameters</code> - name/value pairs for the connector (<code>null</code> to omit)</dd>
+<dd><code>prompts</code> - custom prompt configurations (<code>null</code> to omit)</dd>
+<dd><code>aiResponse</code> - <code>ai_response</code> text for the leading <code>set</code> verb (default <a href="#DEFAULT_PAY_AI_RESPONSE"><code>DEFAULT_PAY_AI_RESPONSE</code></a>)</dd>
+<dt>Returns:</dt>
+<dd>this, for chaining</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -835,7 +1429,10 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;statusUrl,
  int&nbsp;timeout,
  int&nbsp;maxAttempts)</span></div>
-<div class="block">Process payment via SWML pay action.</div>
+<div class="block">Process payment (convenience form). Delegates to the full-arity
+ <a href="#pay(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int,boolean,java.lang.Object,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)"><code>pay(String, String, String, String, int, int, boolean, Object, int, String, String, String, String, String, String, String, List, List, String)</code></a>
+ with every other option at its reference default, so the emitted SWML
+ is identical to the reference with those defaults.</div>
 </section>
 </li>
 <li>
@@ -856,12 +1453,56 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="rpcDial(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+<h3>rpcDial</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">rpcDial</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;toNumber,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fromNumber,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;destSwml,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;deviceType)</span></div>
+<div class="block">Dial out to a number with a destination SWML URL — full parity with the
+ Python reference <code>FunctionResult.rpc_dial</code>. <code>deviceType</code>
+ flows through to <code>params.devices.type</code> (Python defaults "phone")
+ instead of being hard-coded.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>toNumber</code> - E.164 number to dial (required)</dd>
+<dd><code>fromNumber</code> - E.164 caller ID (required)</dd>
+<dd><code>destSwml</code> - URL to the SWML handling the outbound leg (required)</dd>
+<dd><code>deviceType</code> - device type for the dial (default "phone")</dd>
+<dt>Returns:</dt>
+<dd>this, for chaining</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="rpcDial(java.lang.String,java.lang.String,java.lang.String)">
 <h3>rpcDial</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">rpcDial</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;toNumber,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fromNumber,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;destSwml)</span></div>
-<div class="block">Dial out to a number with a destination SWML URL.</div>
+<div class="block">Dial out (convenience form). Delegates to the full-arity
+ <a href="#rpcDial(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>rpcDial(String, String, String, String)</code></a> with
+ <code>device_type</code> at its reference default ("phone").</div>
+</section>
+</li>
+<li>
+<section class="detail" id="rpcAiMessage(java.lang.String,java.lang.String,java.lang.String)">
+<h3>rpcAiMessage</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">rpcAiMessage</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;callId,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;messageText,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role)</span></div>
+<div class="block">Inject a message into an AI agent on another call — full parity with the
+ Python reference <code>FunctionResult.rpc_ai_message</code>. <code>role</code>
+ flows through to <code>params.role</code> (Python defaults "system") instead
+ of being hard-coded.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>callId</code> - target call ID (required)</dd>
+<dd><code>messageText</code> - message text to inject (required)</dd>
+<dd><code>role</code> - message role (default "system")</dd>
+<dt>Returns:</dt>
+<dd>this, for chaining</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -869,7 +1510,9 @@ loadScripts(document, 'script');</script>
 <h3>rpcAiMessage</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></span>&nbsp;<span class="element-name">rpcAiMessage</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;callId,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;messageText)</span></div>
-<div class="block">Inject a message into an AI agent on another call.</div>
+<div class="block">Inject a message (convenience form). Delegates to the full-arity
+ <a href="#rpcAiMessage(java.lang.String,java.lang.String,java.lang.String)"><code>rpcAiMessage(String, String, String)</code></a> with <code>role</code> at its
+ reference default ("system").</div>
 </section>
 </li>
 <li>

@@ -179,6 +179,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#addLanguage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">addLanguage(String, String, String, String, String, String)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/agent/AgentBase.html#addLanguage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.Map)" class="member-name-link">addLanguage(String, String, String, String, String, String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
+<dd>
+<div class="block">Add a language configuration with an optional per-language ``params``
+ dict (engine-specific tuning, voice settings, etc.).</div>
+</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#addMcpServer(java.lang.String)" class="member-name-link">addMcpServer(String)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>
 <div class="block">Add an external MCP server (URL only).</div>
@@ -253,6 +258,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/swml/Service.html#addSecurityHeaders(com.sun.net.httpserver.HttpExchange)" class="member-name-link">addSecurityHeaders(HttpExchange)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
 <dd>
 <div class="block">Add security headers to every authenticated response.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/agent/AgentBase.html#addSkill(com.signalwire.sdk.skills.SkillName,java.util.Map)" class="member-name-link">addSkill(SkillName, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
+<dd>
+<div class="block">Typed overload of <a href="com/signalwire/sdk/agent/AgentBase.html#addSkill(java.lang.String,java.util.Map)"><code>AgentBase.addSkill(String, Map)</code></a>.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#addSkill(java.lang.String,java.util.Map)" class="member-name-link">addSkill(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
@@ -370,12 +379,33 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/swml/Service.html#answer(java.util.Map)" class="member-name-link">answer(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/CallState.html#ANSWERED" class="member-name-link">ANSWERED</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay">CallState</a></dt>
+<dd>
+<div class="block">The call has been answered and media is flowing.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/DialState.html#ANSWERED" class="member-name-link">ANSWERED</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/DialState.html" title="enum class in com.signalwire.sdk.relay">DialState</a></dt>
+<dd>
+<div class="block">Terminal: a leg answered and the dial resolved to a <a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay"><code>Call</code></a>.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#API_NINJAS_TRIVIA" class="member-name-link">API_NINJAS_TRIVIA</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/ApiNinjaTriviaSkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">ApiNinjaTriviaSkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/ApiNinjaTriviaSkill.html#%3Cinit%3E()" class="member-name-link">ApiNinjaTriviaSkill()</a> - Constructor for class com.signalwire.sdk.skills.builtin.<a href="com/signalwire/sdk/skills/builtin/ApiNinjaTriviaSkill.html" title="class in com.signalwire.sdk.skills.builtin">ApiNinjaTriviaSkill</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CompatNamespace.html#applications()" class="member-name-link">applications()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CompatNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CompatNamespace</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#array(java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">array(String, String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Add an <code>array</code> property whose items are a scalar JSON-Schema
+ kind (<code>"string"</code>, <code>"number"</code>, <code>"integer"</code>,
+ <code>"boolean"</code>).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#arrayOfObjects(java.lang.String,java.util.Map,java.lang.String)" class="member-name-link">arrayOfObjects(String, Map&lt;String, Object&gt;, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Add an <code>array</code> property whose items are a nested object schema
+ built with another <a href="com/signalwire/sdk/swaig/ParameterSchema.html" title="class in com.signalwire.sdk.swaig"><code>ParameterSchema</code></a>.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.GenericResources.html#assignDomainApplication(java.lang.String,java.util.Map)" class="member-name-link">assignDomainApplication(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.GenericResources.html" title="class in com.signalwire.sdk.rest.namespaces">FabricNamespace.GenericResources</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CampaignNamespace.html#assignments()" class="member-name-link">assignments()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CampaignNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CampaignNamespace</a></dt>
@@ -427,6 +457,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Set request body for the last added webhook (POST/PUT requests).</div>
 </dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#bool(java.lang.String,java.lang.String)" class="member-name-link">bool(String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Add a <code>boolean</code> property.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordDirection.html#BOTH" class="member-name-link">BOTH</a> - Enum constant in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/TapDirection.html#BOTH" class="member-name-link">BOTH</a> - Enum constant in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CampaignNamespace.html#brands()" class="member-name-link">brands()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CampaignNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CampaignNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/RegistryNamespace.html#brands()" class="member-name-link">brands()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/RegistryNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">RegistryNamespace</a></dt>
@@ -437,6 +475,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/RestClient.Builder.html#build()" class="member-name-link">build()</a> - Method in class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/RestClient.Builder.html" title="class in com.signalwire.sdk.rest">RestClient.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#build()" class="member-name-link">build()</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Build the JSON-Schema <code>parameters</code> Map.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/cli/simulation/ServerlessSimulator.html#buildEnvProvider()" class="member-name-link">buildEnvProvider()</a> - Method in class com.signalwire.sdk.cli.simulation.<a href="com/signalwire/sdk/cli/simulation/ServerlessSimulator.html" title="class in com.signalwire.sdk.cli.simulation">ServerlessSimulator</a></dt>
 <dd>
 <div class="block">Build the layered <a href="com/signalwire/sdk/runtime/EnvProvider.html" title="interface in com.signalwire.sdk.runtime"><code>EnvProvider</code></a>.</div>
@@ -447,6 +489,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/RestClient.html#builder()" class="member-name-link">builder()</a> - Static method in class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/RestClient.html" title="class in com.signalwire.sdk.rest">RestClient</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.html#builder()" class="member-name-link">builder()</a> - Static method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.html" title="class in com.signalwire.sdk.swaig">ParameterSchema</a></dt>
+<dd>
+<div class="block">Start a new schema builder.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.Builder.html#%3Cinit%3E()" class="member-name-link">Builder()</a> - Constructor for class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.Builder.html" title="class in com.signalwire.sdk.agent">AgentBase.Builder</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayClient.Builder.html#%3Cinit%3E()" class="member-name-link">Builder()</a> - Constructor for class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayClient.Builder.html" title="class in com.signalwire.sdk.relay">RelayClient.Builder</a></dt>
@@ -520,6 +566,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallSendDigitsEvent.html#%3Cinit%3E(java.lang.String,double,java.util.Map)" class="member-name-link">CallSendDigitsEvent(String, double, Map&lt;String, Object&gt;)</a> - Constructor for class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallSendDigitsEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallSendDigitsEvent</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/CallState.html" class="type-name-link" title="enum class in com.signalwire.sdk.relay">CallState</a> - Enum Class in <a href="com/signalwire/sdk/relay/package-summary.html">com.signalwire.sdk.relay</a></dt>
+<dd>
+<div class="block">The lifecycle state of a RELAY <a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay"><code>Call</code></a>, as a typed, compile-time-checked
+ closed set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallStateEvent.html#%3Cinit%3E(java.lang.String,double,java.util.Map)" class="member-name-link">CallStateEvent(String, double, Map&lt;String, Object&gt;)</a> - Constructor for class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallStateEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallStateEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallStreamEvent.html#%3Cinit%3E(java.lang.String,double,java.util.Map)" class="member-name-link">CallStreamEvent(String, double, Map&lt;String, Object&gt;)</a> - Constructor for class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallStreamEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallStreamEvent</a></dt>
@@ -555,6 +606,8 @@ loadScripts(document, 'script');</script>
 <div class="block">REST namespace for chat resources.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/ChatNamespace.html#%3Cinit%3E(com.signalwire.sdk.rest.HttpClient)" class="member-name-link">ChatNamespace(HttpClient)</a> - Constructor for class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/ChatNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">ChatNamespace</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#CLAUDE_SKILLS" class="member-name-link">CLAUDE_SKILLS</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/ClaudeSkillsSkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">ClaudeSkillsSkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
 <dd>
@@ -594,6 +647,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Create a deep copy of this agent for per-request customization.</div>
 </dd>
+<dt><a href="com/signalwire/sdk/relay/RelayClient.html#close()" class="member-name-link">close()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayClient.html" title="class in com.signalwire.sdk.relay">RelayClient</a></dt>
+<dd>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link"><code>AutoCloseable</code></a> entry point so the client can be used in a
+ try-with-resources block:</div>
+</dd>
+<dt><a href="com/signalwire/sdk/server/AgentServer.html#close()" class="member-name-link">close()</a> - Method in class com.signalwire.sdk.server.<a href="com/signalwire/sdk/server/AgentServer.html" title="class in com.signalwire.sdk.server">AgentServer</a></dt>
+<dd>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link"><code>AutoCloseable</code></a> entry point so the multi-agent server can be
+ run inside a try-with-resources block:</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/Service.html#close()" class="member-name-link">close()</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
+<dd>
+<div class="block"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link"><code>AutoCloseable</code></a> entry point so a service — and every subclass,
+ including <code>AgentBase</code> — can be served inside a try-with-resources
+ block:</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/ComplianceNamespace.html#cnamRegistrations()" class="member-name-link">cnamRegistrations()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/ComplianceNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">ComplianceNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Constants.html#CODE_CONFLICT" class="member-name-link">CODE_CONFLICT</a> - Static variable in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Constants.html" title="class in com.signalwire.sdk.relay">Constants</a></dt>
@@ -604,6 +673,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Constants.html#CODE_SUCCESS" class="member-name-link">CODE_SUCCESS</a> - Static variable in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Constants.html" title="class in com.signalwire.sdk.relay">Constants</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/Codec.html" class="type-name-link" title="enum class in com.signalwire.sdk.swml">Codec</a> - Enum Class in <a href="com/signalwire/sdk/swml/package-summary.html">com.signalwire.sdk.swml</a></dt>
+<dd>
+<div class="block">Media codec for the SWML <code>tap</code> verb, as a typed, compile-time-checked
+ closed set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html#collect(java.lang.String,java.util.Map)" class="member-name-link">collect(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CallingNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#collect(java.util.Map,java.util.Map)" class="member-name-link">collect(Map&lt;String, Object&gt;, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
@@ -862,6 +936,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/RegistryNamespace.RegistryBrands.html#createCampaign(java.lang.String,java.util.Map)" class="member-name-link">createCampaign(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/RegistryNamespace.RegistryBrands.html" title="class in com.signalwire.sdk.rest.namespaces">RegistryNamespace.RegistryBrands</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/CallState.html#CREATED" class="member-name-link">CREATED</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay">CallState</a></dt>
+<dd>
+<div class="block">The call object has been created but no leg is ringing yet.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.FabricTokens.html#createEmbedToken(java.util.Map)" class="member-name-link">createEmbedToken(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.FabricTokens.html" title="class in com.signalwire.sdk.rest.namespaces">FabricNamespace.FabricTokens</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.FabricTokens.html#createGuestToken(java.util.Map)" class="member-name-link">createGuestToken(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.FabricTokens.html" title="class in com.signalwire.sdk.rest.namespaces">FabricNamespace.FabricTokens</a></dt>
@@ -906,6 +984,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Create a CRUD resource.</div>
 </dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#CUSTOM_SKILLS" class="member-name-link">CUSTOM_SKILLS</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/CustomSkillsSkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">CustomSkillsSkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
 <dd>
 <div class="block">Register user-defined custom tools from configuration.</div>
@@ -931,6 +1011,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/RestClient.html#datasphere()" class="member-name-link">datasphere()</a> - Method in class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/RestClient.html" title="class in com.signalwire.sdk.rest">RestClient</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#DATASPHERE" class="member-name-link">DATASPHERE</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#DATASPHERE_SERVERLESS" class="member-name-link">DATASPHERE_SERVERLESS</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/DatasphereNamespace.DatasphereDocuments.html#%3Cinit%3E(com.signalwire.sdk.rest.HttpClient,java.lang.String)" class="member-name-link">DatasphereDocuments(HttpClient, String)</a> - Constructor for class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/DatasphereNamespace.DatasphereDocuments.html" title="class in com.signalwire.sdk.rest.namespaces">DatasphereNamespace.DatasphereDocuments</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/DatasphereNamespace.html" class="type-name-link" title="class in com.signalwire.sdk.rest.namespaces">DatasphereNamespace</a> - Class in <a href="com/signalwire/sdk/rest/namespaces/package-summary.html">com.signalwire.sdk.rest.namespaces</a></dt>
@@ -951,6 +1035,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/DatasphereSkill.html#%3Cinit%3E()" class="member-name-link">DatasphereSkill()</a> - Constructor for class com.signalwire.sdk.skills.builtin.<a href="com/signalwire/sdk/skills/builtin/DatasphereSkill.html" title="class in com.signalwire.sdk.skills.builtin">DatasphereSkill</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#DATETIME" class="member-name-link">DATETIME</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/DatetimeSkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">DatetimeSkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/DatetimeSkill.html#%3Cinit%3E()" class="member-name-link">DatetimeSkill()</a> - Constructor for class com.signalwire.sdk.skills.builtin.<a href="com/signalwire/sdk/skills/builtin/DatetimeSkill.html" title="class in com.signalwire.sdk.skills.builtin">DatetimeSkill</a></dt>
@@ -961,6 +1047,15 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/logging/Logger.Level.html#DEBUG" class="member-name-link">DEBUG</a> - Enum constant in enum class com.signalwire.sdk.logging.<a href="com/signalwire/sdk/logging/Logger.Level.html" title="enum class in com.signalwire.sdk.logging">Logger.Level</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#DEFAULT_PAY_AI_RESPONSE" class="member-name-link">DEFAULT_PAY_AI_RESPONSE</a> - Static variable in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Default <code>ai_response</code> for <a href="com/signalwire/sdk/swaig/FunctionResult.html#pay(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int,boolean,java.lang.Object,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)"><code>FunctionResult.pay(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int, boolean, java.lang.Object, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.List&lt;java.util.Map&lt;java.lang.String, java.lang.String&gt;&gt;, java.util.List&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt;, java.lang.String)</code></a>.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#defaultValue(java.lang.Object)" class="member-name-link">defaultValue(Object)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Set a JSON-Schema <code>default</code> on the most-recently-added
+ property.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#defineContexts()" class="member-name-link">defineContexts()</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>
 <div class="block">Define or return the ContextBuilder for this agent.</div>
@@ -1037,6 +1132,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.FabricSubscribers.html#deleteSipEndpoint(java.lang.String,java.lang.String)" class="member-name-link">deleteSipEndpoint(String, String)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.FabricSubscribers.html" title="class in com.signalwire.sdk.rest.namespaces">FabricNamespace.FabricSubscribers</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#DELIVERED" class="member-name-link">DELIVERED</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">Terminal: the message was delivered.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#denoise()" class="member-name-link">denoise()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
 <dd>
 <div class="block">Enable denoise on the call.</div>
@@ -1078,6 +1177,30 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/relay/Action.DetectAction.html#%3Cinit%3E(java.lang.String,com.signalwire.sdk.relay.Call)" class="member-name-link">DetectAction(String, Call)</a> - Constructor for class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Action.DetectAction.html" title="class in com.signalwire.sdk.relay">Action.DetectAction</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#detectAnsweringMachine()" class="member-name-link">detectAnsweringMachine()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Detect answering machine with default options.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#detectAnsweringMachine(java.util.Map)" class="member-name-link">detectAnsweringMachine(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Detect human vs answering machine (AMD).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#detectDigit()" class="member-name-link">detectDigit()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Detect DTMF digits with default options.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#detectDigit(java.util.Map)" class="member-name-link">detectDigit(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Detect DTMF digits.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#detectFax()" class="member-name-link">detectFax()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Detect a fax tone with default options.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#detectFax(java.util.Map)" class="member-name-link">detectFax(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Detect a fax tone (CED/CNG).</div>
+</dd>
 <dt><a href="com/signalwire/sdk/swml/Service.html#detectMachine(java.util.Map)" class="member-name-link">detectMachine(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#detectServerlessBaseUrl()" class="member-name-link">detectServerlessBaseUrl()</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
@@ -1095,6 +1218,17 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/relay/Call.html#detectWith(java.util.Map,java.lang.String)" class="member-name-link">detectWith(Map&lt;String, Object&gt;, String)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
 <dd>
 <div class="block">Detect with an explicit control_id (test helper).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Device.html" class="type-name-link" title="class in com.signalwire.sdk.relay">Device</a> - Class in <a href="com/signalwire/sdk/relay/package-summary.html">com.signalwire.sdk.relay</a></dt>
+<dd>
+<div class="block">A typed view of the RELAY <code>{type, params}</code> device object that recurs as
+ a raw <code>Map&lt;String, Object&gt;</code> across <a href="com/signalwire/sdk/relay/Call.html#connect(java.util.List,java.util.Map)"><code>Call.connect(java.util.List&lt;java.util.List&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt;&gt;, java.util.Map&lt;java.lang.String, java.lang.Object&gt;)</code></a>, <a href="com/signalwire/sdk/relay/Call.html#refer(java.util.Map,java.util.Map)"><code>Call.refer(java.util.Map&lt;java.lang.String, java.lang.Object&gt;, java.util.Map&lt;java.lang.String, java.lang.Object&gt;)</code></a>,
+ <a href="com/signalwire/sdk/relay/RelayClient.html#dial(java.util.List,java.util.Map,long)"><code>RelayClient.dial(java.util.List&lt;java.util.List&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt;&gt;, java.util.Map&lt;java.lang.String, java.lang.Object&gt;, long)</code></a> and <a href="com/signalwire/sdk/relay/Call.html#tap(java.util.Map,java.util.Map,java.util.Map)"><code>Call.tap(java.util.Map&lt;java.lang.String, java.lang.Object&gt;, java.util.Map&lt;java.lang.String, java.lang.Object&gt;, java.util.Map&lt;java.lang.String, java.lang.Object&gt;)</code></a>.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Device.html#%3Cinit%3E(java.lang.String,java.util.Map)" class="member-name-link">Device(String, Map&lt;String, Object&gt;)</a> - Constructor for class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Device.html" title="class in com.signalwire.sdk.relay">Device</a></dt>
+<dd>
+<div class="block">Construct a device from its <code>type</code> discriminant and <code>params</code>
+ sub-object.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/relay/Constants.html#DEVICE_TYPE_PHONE" class="member-name-link">DEVICE_TYPE_PHONE</a> - Static variable in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Constants.html" title="class in com.signalwire.sdk.relay">Constants</a></dt>
 <dd>&nbsp;</dd>
@@ -1118,8 +1252,17 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Constants.html#DIAL_STATE_FAILED" class="member-name-link">DIAL_STATE_FAILED</a> - Static variable in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Constants.html" title="class in com.signalwire.sdk.relay">Constants</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/DialState.html#DIALING" class="member-name-link">DIALING</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/DialState.html" title="enum class in com.signalwire.sdk.relay">DialState</a></dt>
+<dd>
+<div class="block">The dial is in progress; legs are ringing.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/PhoneCallHandler.html#DIALOGFLOW" class="member-name-link">DIALOGFLOW</a> - Enum constant in enum class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/PhoneCallHandler.html" title="enum class in com.signalwire.sdk.rest">PhoneCallHandler</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/DialState.html" class="type-name-link" title="enum class in com.signalwire.sdk.relay">DialState</a> - Enum Class in <a href="com/signalwire/sdk/relay/package-summary.html">com.signalwire.sdk.relay</a></dt>
+<dd>
+<div class="block">The outcome state of an outbound <code>calling.dial</code>, as a typed,
+ compile-time-checked closed set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/Constants.html#DIRECTION_BOTH" class="member-name-link">DIRECTION_BOTH</a> - Static variable in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Constants.html" title="class in com.signalwire.sdk.relay">Constants</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Constants.html#DIRECTION_LISTEN" class="member-name-link">DIRECTION_LISTEN</a> - Static variable in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Constants.html" title="class in com.signalwire.sdk.relay">Constants</a></dt>
@@ -1173,6 +1316,11 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#enableSipRouting()" class="member-name-link">enableSipRouting()</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/server/AgentServer.html#enableTls(java.lang.String,java.lang.String)" class="member-name-link">enableTls(String, String)</a> - Method in class com.signalwire.sdk.server.<a href="com/signalwire/sdk/server/AgentServer.html" title="class in com.signalwire.sdk.server">AgentServer</a></dt>
+<dd>
+<div class="block">Serve over HTTPS using an explicit PEM certificate chain and PKCS#8
+ private key.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html#end(java.lang.String,java.util.Map)" class="member-name-link">end(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CallingNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Constants.html#END_REASON_BUSY" class="member-name-link">END_REASON_BUSY</a> - Static variable in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Constants.html" title="class in com.signalwire.sdk.relay">Constants</a></dt>
@@ -1187,10 +1335,36 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Constants.html#END_REASON_NO_ANSWER" class="member-name-link">END_REASON_NO_ANSWER</a> - Static variable in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Constants.html" title="class in com.signalwire.sdk.relay">Constants</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/CallState.html#ENDED" class="member-name-link">ENDED</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay">CallState</a></dt>
+<dd>
+<div class="block">Terminal: the call has ended.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/CallState.html#ENDING" class="member-name-link">ENDING</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay">CallState</a></dt>
+<dd>
+<div class="block">The call is in the process of tearing down.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/SipNamespace.html#endpoints()" class="member-name-link">endpoints()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/SipNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">SipNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/swml/Service.html#enterQueue(java.util.Map)" class="member-name-link">enterQueue(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#enumOf(java.lang.String,com.signalwire.sdk.swml.WireEnum%5B%5D,java.lang.String)" class="member-name-link">enumOf(String, WireEnum[], String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Add a closed-set <code>string</code> property whose allowed values come
+ from a Tier-1 <a href="com/signalwire/sdk/swml/WireEnum.html" title="interface in com.signalwire.sdk.swml"><code>WireEnum</code></a> array — typically <code>
+ RecordFormat.values()</code> / <code>Codec.values()</code> etc.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#enumOf(java.lang.String,java.lang.String,java.lang.String...)" class="member-name-link">enumOf(String, String, String...)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Convenience varargs form of <a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#enumOf(java.lang.String,java.util.Collection,java.lang.String)"><code>ParameterSchema.Builder.enumOf(String, Collection, String)</code></a>
+ where the description comes first so the trailing varargs read as the
+ value set.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#enumOf(java.lang.String,java.util.Collection,java.lang.String)" class="member-name-link">enumOf(String, Collection&lt;String&gt;, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Add a closed-set <code>string</code> property with an explicit list of
+ allowed string values (for closed sets that are not modelled as a
+ Tier-1 enum — e.g.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.Builder.html#envProvider(com.signalwire.sdk.runtime.EnvProvider)" class="member-name-link">envProvider(EnvProvider)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.Builder.html" title="class in com.signalwire.sdk.agent">AgentBase.Builder</a></dt>
 <dd>
 <div class="block">Supply an alternative <a href="com/signalwire/sdk/runtime/EnvProvider.html" title="interface in com.signalwire.sdk.runtime"><code>EnvProvider</code></a> for the build-time env
@@ -1201,6 +1375,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Simple read-only view of process environment variables.</div>
 </dd>
+<dt><a href="com/signalwire/sdk/relay/Device.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Device.html" title="class in com.signalwire.sdk.relay">Device</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/logging/Logger.html#error(java.lang.String)" class="member-name-link">error(String)</a> - Method in class com.signalwire.sdk.logging.<a href="com/signalwire/sdk/logging/Logger.html" title="class in com.signalwire.sdk.logging">Logger</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/logging/Logger.html#error(java.lang.String,java.lang.Object...)" class="member-name-link">error(String, Object...)</a> - Method in class com.signalwire.sdk.logging.<a href="com/signalwire/sdk/logging/Logger.html" title="class in com.signalwire.sdk.logging">Logger</a></dt>
@@ -1333,6 +1509,14 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.FabricTokens.html#%3Cinit%3E(com.signalwire.sdk.rest.HttpClient)" class="member-name-link">FabricTokens(HttpClient)</a> - Constructor for class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.FabricTokens.html" title="class in com.signalwire.sdk.rest.namespaces">FabricNamespace.FabricTokens</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/DialState.html#FAILED" class="member-name-link">FAILED</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/DialState.html" title="enum class in com.signalwire.sdk.relay">DialState</a></dt>
+<dd>
+<div class="block">Terminal: every leg failed and the dial did not connect.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#FAILED" class="member-name-link">FAILED</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">Terminal: the send failed.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/datamap/DataMap.html#fallbackOutput(com.signalwire.sdk.swaig.FunctionResult)" class="member-name-link">fallbackOutput(FunctionResult)</a> - Method in class com.signalwire.sdk.datamap.<a href="com/signalwire/sdk/datamap/DataMap.html" title="class in com.signalwire.sdk.datamap">DataMap</a></dt>
 <dd>
 <div class="block">Set a fallback output result at the top level (used when all webhooks fail).</div>
@@ -1371,6 +1555,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Process an array from the webhook response using foreach mechanism.</div>
 </dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#format(java.lang.String)" class="member-name-link">format(String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Set a JSON-Schema <code>format</code> on the most-recently-added property.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.html#freeswitchConnectors()" class="member-name-link">freeswitchConnectors()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">FabricNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/pom/PromptObjectModel.html#fromJson(java.lang.String)" class="member-name-link">fromJson(String)</a> - Static method in class com.signalwire.sdk.pom.<a href="com/signalwire/sdk/pom/PromptObjectModel.html" title="class in com.signalwire.sdk.pom">PromptObjectModel</a></dt>
@@ -1388,6 +1576,38 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/relay/Message.html#fromReceiveEvent(com.signalwire.sdk.relay.RelayEvent.MessagingReceiveEvent)" class="member-name-link">fromReceiveEvent(RelayEvent.MessagingReceiveEvent)</a> - Static method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Message.html" title="class in com.signalwire.sdk.relay">Message</a></dt>
 <dd>
 <div class="block">Create a Message from an inbound receive event.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/CallState.html#fromWire(java.lang.String)" class="member-name-link">fromWire(String)</a> - Static method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay">CallState</a></dt>
+<dd>
+<div class="block">Parse a wire string into a <a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay"><code>CallState</code></a>, or return <code>null</code> if
+ it is not one of the five recognised states.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/DialState.html#fromWire(java.lang.String)" class="member-name-link">fromWire(String)</a> - Static method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/DialState.html" title="enum class in com.signalwire.sdk.relay">DialState</a></dt>
+<dd>
+<div class="block">Parse a wire string into a <a href="com/signalwire/sdk/relay/DialState.html" title="enum class in com.signalwire.sdk.relay"><code>DialState</code></a>, or return <code>null</code> if
+ it is not one of the three recognised dial states.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#fromWire(java.lang.String)" class="member-name-link">fromWire(String)</a> - Static method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">Parse a wire string into a <a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay"><code>MessageState</code></a>, or return <code>null</code>
+ if it is not one of the seven recognised states.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/Codec.html#fromWire(java.lang.String)" class="member-name-link">fromWire(String)</a> - Static method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a></dt>
+<dd>
+<div class="block">Parse a wire string into a <a href="com/signalwire/sdk/swml/Codec.html" title="enum class in com.signalwire.sdk.swml"><code>Codec</code></a>, or return <code>null</code> if it is
+ not a recognised codec.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordDirection.html#fromWire(java.lang.String)" class="member-name-link">fromWire(String)</a> - Static method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a></dt>
+<dd>
+<div class="block">Parse a wire string into a <a href="com/signalwire/sdk/swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml"><code>RecordDirection</code></a>, or return
+ <code>null</code> if it is not a recognised direction (the same strings the
+ Python reference would reject with <code>ValueError</code>).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/TapDirection.html#fromWire(java.lang.String)" class="member-name-link">fromWire(String)</a> - Static method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a></dt>
+<dd>
+<div class="block">Parse a wire string into a <a href="com/signalwire/sdk/swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml"><code>TapDirection</code></a>, or return <code>null</code>
+ if it is not a recognised direction (the same strings the Python
+ reference would reject with <code>ValueError</code>).</div>
 </dd>
 <dt><a href="com/signalwire/sdk/pom/PromptObjectModel.html#fromYaml(java.lang.String)" class="member-name-link">fromYaml(String)</a> - Static method in class com.signalwire.sdk.pom.<a href="com/signalwire/sdk/pom/PromptObjectModel.html" title="class in com.signalwire.sdk.pom">PromptObjectModel</a></dt>
 <dd>
@@ -1640,7 +1860,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/pom/Section.html#getBody()" class="member-name-link">getBody()</a> - Method in class com.signalwire.sdk.pom.<a href="com/signalwire/sdk/pom/Section.html" title="class in com.signalwire.sdk.pom">Section</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Message.html#getBody()" class="member-name-link">getBody()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Message.html" title="class in com.signalwire.sdk.relay">Message</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Message body; empty for media-only messages or before set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html#getBody()" class="member-name-link">getBody()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingReceiveEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html#getBody()" class="member-name-link">getBody()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingStateEvent</a></dt>
@@ -1697,6 +1919,12 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallDialEvent.html#getCallInfo()" class="member-name-link">getCallInfo()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallDialEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallDialEvent</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#getCallState()" class="member-name-link">getCallState()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">The current call state as a typed <a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay"><code>CallState</code></a>, <em>alongside</em>
+ the raw string <a href="com/signalwire/sdk/relay/Call.html#getState()"><code>Call.getState()</code></a> (which stays canonical for parity and
+ forward-compat).</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallReceiveEvent.html#getCallState()" class="member-name-link">getCallState()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallReceiveEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallReceiveEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallStateEvent.html#getCallState()" class="member-name-link">getCallState()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallStateEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallStateEvent</a></dt>
@@ -1710,7 +1938,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallConnectEvent.html#getConnectState()" class="member-name-link">getConnectState()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallConnectEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallConnectEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Message.html#getContext()" class="member-name-link">getContext()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Message.html" title="class in com.signalwire.sdk.relay">Message</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Messaging context (the RELAY protocol/context the message rode on).</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallReceiveEvent.html#getContext()" class="member-name-link">getContext()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallReceiveEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallReceiveEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html#getContext()" class="member-name-link">getContext()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingReceiveEvent</a></dt>
@@ -1804,10 +2034,20 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallDialEvent.html#getDialState()" class="member-name-link">getDialState()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallDialEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallDialEvent</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/RelayEvent.CallDialEvent.html#getDialStateEnum()" class="member-name-link">getDialStateEnum()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallDialEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallDialEvent</a></dt>
+<dd>
+<div class="block">The dial outcome as a typed <a href="com/signalwire/sdk/relay/DialState.html" title="enum class in com.signalwire.sdk.relay"><code>DialState</code></a>, <em>alongside</em> the
+ raw string <a href="com/signalwire/sdk/relay/RelayEvent.CallDialEvent.html#getDialState()"><code>RelayEvent.CallDialEvent.getDialState()</code></a> (which stays canonical for parity
+ and forward-compat).</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#getDirection()" class="member-name-link">getDirection()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Call direction (inbound/outbound) once known; empty until set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/Message.html#getDirection()" class="member-name-link">getDirection()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Message.html" title="class in com.signalwire.sdk.relay">Message</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Direction (inbound/outbound) once known; empty until set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallStateEvent.html#getDirection()" class="member-name-link">getDirection()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallStateEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallStateEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html#getDirection()" class="member-name-link">getDirection()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingReceiveEvent</a></dt>
@@ -1821,7 +2061,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#getDynamicConfigCallback()" class="member-name-link">getDynamicConfigCallback()</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#getEndReason()" class="member-name-link">getEndReason()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">End reason once the call has ended; empty while the call is live.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallStateEvent.html#getEndReason()" class="member-name-link">getEndReason()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallStateEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallStateEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/swml/SchemaValidationError.html#getErrors()" class="member-name-link">getErrors()</a> - Method in exception class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/SchemaValidationError.html" title="class in com.signalwire.sdk.swml">SchemaValidationError</a></dt>
@@ -1851,7 +2093,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/swaig/ToolDefinition.html#getExtraFields()" class="member-name-link">getExtraFields()</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ToolDefinition.html" title="class in com.signalwire.sdk.swaig">ToolDefinition</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Message.html#getFromNumber()" class="member-name-link">getFromNumber()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Message.html" title="class in com.signalwire.sdk.relay">Message</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Sender E.164 number; empty until set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html#getFromNumber()" class="member-name-link">getFromNumber()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingReceiveEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html#getFromNumber()" class="member-name-link">getFromNumber()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingStateEvent</a></dt>
@@ -1918,6 +2162,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/contexts/GatherQuestion.html#getKey()" class="member-name-link">getKey()</a> - Method in class com.signalwire.sdk.contexts.<a href="com/signalwire/sdk/contexts/GatherQuestion.html" title="class in com.signalwire.sdk.contexts">GatherQuestion</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/agent/AgentBase.html#getLanguageParams(java.lang.String)" class="member-name-link">getLanguageParams(String)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
+<dd>
+<div class="block">Read the per-language ``params`` dict for a previously-added language.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/logging/Logger.html#getLogger(java.lang.Class)" class="member-name-link">getLogger(Class&lt;?&gt;)</a> - Static method in class com.signalwire.sdk.logging.<a href="com/signalwire/sdk/logging/Logger.html" title="class in com.signalwire.sdk.logging">Logger</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/logging/Logger.html#getLogger(java.lang.String)" class="member-name-link">getLogger(String)</a> - Static method in class com.signalwire.sdk.logging.<a href="com/signalwire/sdk/logging/Logger.html" title="class in com.signalwire.sdk.logging">Logger</a></dt>
@@ -1950,6 +2198,12 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html#getMessageId()" class="member-name-link">getMessageId()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingStateEvent</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/Message.html#getMessageState()" class="member-name-link">getMessageState()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Message.html" title="class in com.signalwire.sdk.relay">Message</a></dt>
+<dd>
+<div class="block">The current message state as a typed <a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay"><code>MessageState</code></a>,
+ <em>alongside</em> the raw string <a href="com/signalwire/sdk/relay/Message.html#getState()"><code>Message.getState()</code></a> (which stays
+ canonical for parity and forward-compat).</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html#getMessageState()" class="member-name-link">getMessageState()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingReceiveEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html#getMessageState()" class="member-name-link">getMessageState()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingStateEvent</a></dt>
@@ -2009,7 +2263,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/rest/namespaces/QueueNamespace.html#getNextMember(java.lang.String)" class="member-name-link">getNextMember(String)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/QueueNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">QueueNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#getNodeId()" class="member-name-link">getNodeId()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Node id once the call is bound to a RELAY node; empty until then.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallDialEvent.html#getNodeId()" class="member-name-link">getNodeId()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallDialEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallDialEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallReceiveEvent.html#getNodeId()" class="member-name-link">getNodeId()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallReceiveEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallReceiveEvent</a></dt>
@@ -2027,9 +2283,17 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/swaig/ToolDefinition.html#getParameters()" class="member-name-link">getParameters()</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ToolDefinition.html" title="class in com.signalwire.sdk.swaig">ToolDefinition</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/builtin/WebSearchSkill.html#getParameterSchema()" class="member-name-link">getParameterSchema()</a> - Method in class com.signalwire.sdk.skills.builtin.<a href="com/signalwire/sdk/skills/builtin/WebSearchSkill.html" title="class in com.signalwire.sdk.skills.builtin">WebSearchSkill</a></dt>
+<dd>
+<div class="block">Advertise every configurable param so GUI tooling can discover it.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/skills/SkillBase.html#getParameterSchema()" class="member-name-link">getParameterSchema()</a> - Method in interface com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillBase.html" title="interface in com.signalwire.sdk.skills">SkillBase</a></dt>
 <dd>
 <div class="block">Get parameter schema for GUI tools.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Device.html#getParams()" class="member-name-link">getParams()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Device.html" title="class in com.signalwire.sdk.relay">Device</a></dt>
+<dd>
+<div class="block">The type-dependent params sub-object (an unmodifiable view).</div>
 </dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.html#getParams()" class="member-name-link">getParams()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent</a></dt>
 <dd>&nbsp;</dd>
@@ -2097,7 +2361,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/security/WebhookFilter.CachedBodyHttpServletRequest.html#getReader()" class="member-name-link">getReader()</a> - Method in class com.signalwire.sdk.security.<a href="com/signalwire/sdk/security/WebhookFilter.CachedBodyHttpServletRequest.html" title="class in com.signalwire.sdk.security">WebhookFilter.CachedBodyHttpServletRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Message.html#getReason()" class="member-name-link">getReason()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Message.html" title="class in com.signalwire.sdk.relay">Message</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Failure reason; present only on a failed/undelivered terminal state.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html#getReason()" class="member-name-link">getReason()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingStateEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CompatNamespace.CompatConferences.html#getRecording(java.lang.String,java.lang.String)" class="member-name-link">getRecording(String, String)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CompatNamespace.CompatConferences.html" title="class in com.signalwire.sdk.rest.namespaces">CompatNamespace.CompatConferences</a></dt>
@@ -2137,7 +2403,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/relay/Action.html#getResult()" class="member-name-link">getResult()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Action.html" title="class in com.signalwire.sdk.relay">Action</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Message.html#getResult()" class="member-name-link">getResult()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Message.html" title="class in com.signalwire.sdk.relay">Message</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Terminal completion event; empty until the message reaches a terminal state.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallCollectEvent.html#getResult()" class="member-name-link">getResult()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallCollectEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallCollectEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallCollectEvent.html#getResultType()" class="member-name-link">getResultType()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallCollectEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallCollectEvent</a></dt>
@@ -2235,7 +2503,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Get SWAIG functions (for DataMap-based skills that bypass handlers).</div>
 </dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#getTag()" class="member-name-link">getTag()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Dial-correlation tag for outbound calls; empty for inbound.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallDialEvent.html#getTag()" class="member-name-link">getTag()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallDialEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallDialEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallStateEvent.html#getTag()" class="member-name-link">getTag()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallStateEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallStateEvent</a></dt>
@@ -2251,17 +2521,73 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/pom/Section.html#getTitle()" class="member-name-link">getTitle()</a> - Method in class com.signalwire.sdk.pom.<a href="com/signalwire/sdk/pom/Section.html" title="class in com.signalwire.sdk.pom">Section</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Message.html#getToNumber()" class="member-name-link">getToNumber()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Message.html" title="class in com.signalwire.sdk.relay">Message</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Recipient E.164 number; empty until set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html#getToNumber()" class="member-name-link">getToNumber()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingReceiveEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingReceiveEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html#getToNumber()" class="member-name-link">getToNumber()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.MessagingStateEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.MessagingStateEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#getTools()" class="member-name-link">getTools()</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/Device.html#getType()" class="member-name-link">getType()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Device.html" title="class in com.signalwire.sdk.relay">Device</a></dt>
+<dd>
+<div class="block">The device type discriminant (<code>"phone"</code>/<code>"sip"</code>/…).</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/RelayEvent.CallRecordEvent.html#getUrl()" class="member-name-link">getUrl()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayEvent.CallRecordEvent.html" title="class in com.signalwire.sdk.relay">RelayEvent.CallRecordEvent</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/logging/Logger.Level.html#getValue()" class="member-name-link">getValue()</a> - Method in enum class com.signalwire.sdk.logging.<a href="com/signalwire/sdk/logging/Logger.Level.html" title="enum class in com.signalwire.sdk.logging">Logger.Level</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/CallState.html#getValue()" class="member-name-link">getValue()</a> - Method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay">CallState</a></dt>
+<dd>
+<div class="block">The canonical wire string for this state (<code>"created"</code> /
+ <code>"ringing"</code> / <code>"answered"</code> / <code>"ending"</code> /
+ <code>"ended"</code>) — exactly the value the server sends on
+ <code>calling.call.state</code>.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/DialState.html#getValue()" class="member-name-link">getValue()</a> - Method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/DialState.html" title="enum class in com.signalwire.sdk.relay">DialState</a></dt>
+<dd>
+<div class="block">The canonical wire string for this dial outcome (<code>"dialing"</code> /
+ <code>"answered"</code> / <code>"failed"</code>) — exactly the <code>dial_state</code>
+ value the server sends on <code>calling.call.dial</code>.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#getValue()" class="member-name-link">getValue()</a> - Method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">The canonical wire string for this state (<code>"queued"</code> /
+ <code>"initiated"</code> / <code>"sent"</code> / <code>"delivered"</code> /
+ <code>"undelivered"</code> / <code>"failed"</code> / <code>"received"</code>) — exactly
+ the <code>message_state</code> value the server sends.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#getValue()" class="member-name-link">getValue()</a> - Method in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>
+<div class="block">The canonical wire string for this skill — the name it registers under
+ in <a href="com/signalwire/sdk/skills/SkillRegistry.html" title="class in com.signalwire.sdk.skills"><code>SkillRegistry</code></a>.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/Codec.html#getValue()" class="member-name-link">getValue()</a> - Method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a></dt>
+<dd>
+<div class="block">The canonical (upper-case) wire string for this codec (<code>"PCMU"</code> /
+ <code>"PCMA"</code>).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordDirection.html#getValue()" class="member-name-link">getValue()</a> - Method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a></dt>
+<dd>
+<div class="block">The canonical wire string for this direction (<code>"speak"</code> /
+ <code>"listen"</code> / <code>"both"</code>).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordFormat.html#getValue()" class="member-name-link">getValue()</a> - Method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a></dt>
+<dd>
+<div class="block">The canonical wire string for this format (<code>"mp3"</code> / <code>"wav"</code> /
+ <code>"mp4"</code>).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/TapDirection.html#getValue()" class="member-name-link">getValue()</a> - Method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a></dt>
+<dd>
+<div class="block">The canonical wire string for this direction (<code>"speak"</code> /
+ <code>"hear"</code> / <code>"both"</code>).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/WireEnum.html#getValue()" class="member-name-link">getValue()</a> - Method in interface com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/WireEnum.html" title="interface in com.signalwire.sdk.swml">WireEnum</a></dt>
+<dd>
+<div class="block">The canonical wire string for this constant — the exact value the
+ SignalWire platform expects (e.g.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/swml/Schema.html#getVerb(java.lang.String)" class="member-name-link">getVerb(String)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Schema.html" title="class in com.signalwire.sdk.swml">Schema</a></dt>
 <dd>
 <div class="block">Get the full definition for a verb.</div>
@@ -2304,6 +2630,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Google Cloud Functions (1st or 2nd gen / Cloud Run).</div>
 </dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#GOOGLE_MAPS" class="member-name-link">GOOGLE_MAPS</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/GoogleMapsSkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">GoogleMapsSkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/GoogleMapsSkill.html#%3Cinit%3E()" class="member-name-link">GoogleMapsSkill()</a> - Constructor for class com.signalwire.sdk.skills.builtin.<a href="com/signalwire/sdk/skills/builtin/GoogleMapsSkill.html" title="class in com.signalwire.sdk.skills.builtin">GoogleMapsSkill</a></dt>
@@ -2353,11 +2681,17 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Check if this tool has a handler (as opposed to DataMap tools which don't).</div>
 </dd>
+<dt><a href="com/signalwire/sdk/relay/Device.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Device.html" title="class in com.signalwire.sdk.relay">Device</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/PaginatedIterator.html#hasNext()" class="member-name-link">hasNext()</a> - Method in class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/PaginatedIterator.html" title="class in com.signalwire.sdk.rest">PaginatedIterator</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/swml/Document.html#hasSection(java.lang.String)" class="member-name-link">hasSection(String)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Document.html" title="class in com.signalwire.sdk.swml">Document</a></dt>
 <dd>
 <div class="block">Check whether a section exists.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/agent/AgentBase.html#hasSkill(com.signalwire.sdk.skills.SkillName)" class="member-name-link">hasSkill(SkillName)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
+<dd>
+<div class="block">Typed overload of <a href="com/signalwire/sdk/agent/AgentBase.html#hasSkill(java.lang.String)"><code>AgentBase.hasSkill(String)</code></a> (see <a href="com/signalwire/sdk/agent/AgentBase.html#addSkill(com.signalwire.sdk.skills.SkillName,java.util.Map)"><code>AgentBase.addSkill(SkillName, Map)</code></a>).</div>
 </dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#hasSkill(java.lang.String)" class="member-name-link">hasSkill(String)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
@@ -2366,6 +2700,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Check if a skill is active.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#hasTool(java.lang.String)" class="member-name-link">hasTool(String)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/TapDirection.html#HEAR" class="member-name-link">HEAR</a> - Enum constant in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#hold()" class="member-name-link">hold()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
 <dd>
@@ -2412,6 +2748,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/logging/Logger.Level.html#INFO" class="member-name-link">INFO</a> - Enum constant in enum class com.signalwire.sdk.logging.<a href="com/signalwire/sdk/logging/Logger.Level.html" title="enum class in com.signalwire.sdk.logging">Logger.Level</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#INFO_GATHERER" class="member-name-link">INFO_GATHERER</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/prefabs/InfoGathererAgent.html" class="type-name-link" title="class in com.signalwire.sdk.prefabs">InfoGathererAgent</a> - Class in <a href="com/signalwire/sdk/prefabs/package-summary.html">com.signalwire.sdk.prefabs</a></dt>
 <dd>
 <div class="block">Pre-built agent for sequential question collection with key/value answers.</div>
@@ -2426,6 +2764,14 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/security/WebhookFilter.html#init(javax.servlet.FilterConfig)" class="member-name-link">init(FilterConfig)</a> - Method in class com.signalwire.sdk.security.<a href="com/signalwire/sdk/security/WebhookFilter.html" title="class in com.signalwire.sdk.security">WebhookFilter</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#INITIATED" class="member-name-link">INITIATED</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">Sending has been initiated.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#integer(java.lang.String,java.lang.String)" class="member-name-link">integer(String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Add an <code>integer</code> property.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/BillingNamespace.html#invoices()" class="member-name-link">invoices()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/BillingNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">BillingNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/runtime/lambda/LambdaResponse.html#isBase64Encoded()" class="member-name-link">isBase64Encoded()</a> - Method in class com.signalwire.sdk.runtime.lambda.<a href="com/signalwire/sdk/runtime/lambda/LambdaResponse.html" title="class in com.signalwire.sdk.runtime.lambda">LambdaResponse</a></dt>
@@ -2487,6 +2833,18 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#isSipRoutingEnabled()" class="member-name-link">isSipRoutingEnabled()</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/CallState.html#isTerminal()" class="member-name-link">isTerminal()</a> - Method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay">CallState</a></dt>
+<dd>
+<div class="block">Whether this is a <em>terminal</em> state — i.e.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/DialState.html#isTerminal()" class="member-name-link">isTerminal()</a> - Method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/DialState.html" title="enum class in com.signalwire.sdk.relay">DialState</a></dt>
+<dd>
+<div class="block">Whether this is a <em>terminal</em> dial outcome — i.e.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#isTerminal()" class="member-name-link">isTerminal()</a> - Method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">Whether this is a <em>terminal</em> delivery state — i.e.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/Action.AiAction.html#isTerminal(java.lang.String)" class="member-name-link">isTerminal(String)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Action.AiAction.html" title="class in com.signalwire.sdk.relay">Action.AiAction</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Action.html#isTerminal(java.lang.String)" class="member-name-link">isTerminal(String)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Action.html" title="class in com.signalwire.sdk.relay">Action</a></dt>
@@ -2511,6 +2869,12 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Check if a message state is terminal.</div>
 </dd>
+<dt><a href="com/signalwire/sdk/server/AgentServer.html#isTlsEnabled()" class="member-name-link">isTlsEnabled()</a> - Method in class com.signalwire.sdk.server.<a href="com/signalwire/sdk/server/AgentServer.html" title="class in com.signalwire.sdk.server">AgentServer</a></dt>
+<dd>
+<div class="block">Reports whether the server will serve HTTPS, resolving the explicit
+ cert/key option and then the <code>SWML_SSL_*</code> environment variables
+ the same way <a href="com/signalwire/sdk/server/AgentServer.html#run()"><code>AgentServer.run()</code></a> does.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#isTrustProxyForSignature()" class="member-name-link">isTrustProxyForSignature()</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/RestError.html#isUnauthorized()" class="member-name-link">isUnauthorized()</a> - Method in exception class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/RestError.html" title="class in com.signalwire.sdk.rest">RestError</a></dt>
@@ -2530,9 +2894,9 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Join a conference (simple form, name only).</div>
 </dd>
-<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#joinConference(java.lang.String,boolean,java.lang.String,java.lang.String)" class="member-name-link">joinConference(String, boolean, String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#joinConference(java.lang.String,boolean,java.lang.String,boolean,boolean,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object)" class="member-name-link">joinConference(String, boolean, String, boolean, boolean, String, int, String, String, String, String, String, String, String, String, String, String, Object)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
 <dd>
-<div class="block">Join a conference via SWML.</div>
+<div class="block">Join an ad-hoc audio conference with RELAY and CXML calls using SWML.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#joinConference(java.lang.String,java.util.Map)" class="member-name-link">joinConference(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
 <dd>
@@ -2549,6 +2913,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Join a room.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/swml/Service.html#joinRoom(java.util.Map)" class="member-name-link">joinRoom(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#JOKE" class="member-name-link">JOKE</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/JokeSkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">JokeSkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
 <dd>&nbsp;</dd>
@@ -2757,6 +3123,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/VideoNamespace.VideoConferences.html#listConferenceTokens(java.lang.String,java.util.Map)" class="member-name-link">listConferenceTokens(String, Map&lt;String, String&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/VideoNamespace.VideoConferences.html" title="class in com.signalwire.sdk.rest.namespaces">VideoNamespace.VideoConferences</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordDirection.html#LISTEN" class="member-name-link">LISTEN</a> - Enum constant in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/LogsNamespace.VoiceLogs.html#listEvents(java.lang.String)" class="member-name-link">listEvents(String)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/LogsNamespace.VoiceLogs.html" title="class in com.signalwire.sdk.rest.namespaces">LogsNamespace.VoiceLogs</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/VideoNamespace.VideoRoomRecordings.html#listEvents(java.lang.String)" class="member-name-link">listEvents(String)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/VideoNamespace.VideoRoomRecordings.html" title="class in com.signalwire.sdk.rest.namespaces">VideoNamespace.VideoRoomRecordings</a></dt>
@@ -2910,11 +3278,15 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#manualSetProxyUrl(java.lang.String)" class="member-name-link">manualSetProxyUrl(String)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#MATH" class="member-name-link">MATH</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/MathSkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">MathSkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/MathSkill.html#%3Cinit%3E()" class="member-name-link">MathSkill()</a> - Constructor for class com.signalwire.sdk.skills.builtin.<a href="com/signalwire/sdk/skills/builtin/MathSkill.html" title="class in com.signalwire.sdk.skills.builtin">MathSkill</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.Builder.html#maxDuration(int)" class="member-name-link">maxDuration(int)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.Builder.html" title="class in com.signalwire.sdk.agent">AgentBase.Builder</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#MCP_GATEWAY" class="member-name-link">MCP_GATEWAY</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/McpGatewaySkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">McpGatewaySkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
 <dd>
@@ -2962,6 +3334,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/MessagingNamespace.html#messages()" class="member-name-link">messages()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/MessagingNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">MessagingNamespace</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html" class="type-name-link" title="enum class in com.signalwire.sdk.relay">MessageState</a> - Enum Class in <a href="com/signalwire/sdk/relay/package-summary.html">com.signalwire.sdk.relay</a></dt>
+<dd>
+<div class="block">The delivery state of a RELAY <a href="com/signalwire/sdk/relay/Message.html" title="class in com.signalwire.sdk.relay"><code>Message</code></a>, as a typed,
+ compile-time-checked closed set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/RestClient.html#messaging()" class="member-name-link">messaging()</a> - Method in class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/RestClient.html" title="class in com.signalwire.sdk.rest">RestClient</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/MessagingNamespace.html" class="type-name-link" title="class in com.signalwire.sdk.rest.namespaces">MessagingNamespace</a> - Class in <a href="com/signalwire/sdk/rest/namespaces/package-summary.html">com.signalwire.sdk.rest.namespaces</a></dt>
@@ -3118,6 +3495,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/contexts/Context.html#moveStep(java.lang.String,int)" class="member-name-link">moveStep(String, int)</a> - Method in class com.signalwire.sdk.contexts.<a href="com/signalwire/sdk/contexts/Context.html" title="class in com.signalwire.sdk.contexts">Context</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordFormat.html#MP3" class="member-name-link">MP3</a> - Enum constant in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordFormat.html#MP4" class="member-name-link">MP4</a> - Enum constant in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/prefabs/SurveyAgent.html#multipleChoiceQuestion(java.lang.String,java.util.List)" class="member-name-link">multipleChoiceQuestion(String, List&lt;String&gt;)</a> - Static method in class com.signalwire.sdk.prefabs.<a href="com/signalwire/sdk/prefabs/SurveyAgent.html" title="class in com.signalwire.sdk.prefabs">SurveyAgent</a></dt>
 <dd>&nbsp;</dd>
 </dl>
@@ -3129,6 +3510,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.Builder.html#name(java.lang.String)" class="member-name-link">name(String)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.Builder.html" title="class in com.signalwire.sdk.agent">AgentBase.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#NATIVE_VECTOR_SEARCH" class="member-name-link">NATIVE_VECTOR_SEARCH</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/contexts/ContextBuilder.html#native-tools-auto-injected-by-the-runtime-heading" class="search-tag-link">Native tools auto-injected by the runtime</a> - Search tag in class com.signalwire.sdk.contexts.ContextBuilder</dt>
 <dd>Section</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/NativeVectorSearchSkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">NativeVectorSearchSkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
@@ -3139,6 +3522,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/PaginatedIterator.html#next()" class="member-name-link">next()</a> - Method in class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/PaginatedIterator.html" title="class in com.signalwire.sdk.rest">PaginatedIterator</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#number(java.lang.String,java.lang.String)" class="member-name-link">number(String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Add a <code>number</code> (floating-point) property.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/RestClient.html#numberGroups()" class="member-name-link">numberGroups()</a> - Method in class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/RestClient.html" title="class in com.signalwire.sdk.rest">RestClient</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/NumberGroupsNamespace.html" class="type-name-link" title="class in com.signalwire.sdk.rest.namespaces">NumberGroupsNamespace</a> - Class in <a href="com/signalwire/sdk/rest/namespaces/package-summary.html">com.signalwire.sdk.rest.namespaces</a></dt>
@@ -3160,6 +3547,16 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:O">O</h2>
 <dl class="index">
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#object(java.lang.String,java.util.Map,java.lang.String)" class="member-name-link">object(String, Map&lt;String, Object&gt;, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Add a nested <code>object</code> property whose schema is built with
+ another <a href="com/signalwire/sdk/swaig/ParameterSchema.html" title="class in com.signalwire.sdk.swaig"><code>ParameterSchema</code></a>.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Device.html#of(java.lang.String,java.util.Map)" class="member-name-link">of(String, Map&lt;String, Object&gt;)</a> - Static method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Device.html" title="class in com.signalwire.sdk.relay">Device</a></dt>
+<dd>
+<div class="block">Factory mirroring the constructor, for fluent call sites
+ (<code>Device.of("phone", …)</code>).</div>
+</dd>
 <dt><a href="com/signalwire/sdk/logging/Logger.Level.html#OFF" class="member-name-link">OFF</a> - Enum constant in enum class com.signalwire.sdk.logging.<a href="com/signalwire/sdk/logging/Logger.Level.html" title="enum class in com.signalwire.sdk.logging">Logger.Level</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#on(java.util.function.Consumer)" class="member-name-link">on(Consumer&lt;RelayEvent&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
@@ -3234,6 +3631,16 @@ loadScripts(document, 'script');</script>
 <div class="block">Add a parameter to this data-map tool — the <code>description</code> is
  LLM-FACING.</div>
 </dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.html" class="type-name-link" title="class in com.signalwire.sdk.swaig">ParameterSchema</a> - Class in <a href="com/signalwire/sdk/swaig/package-summary.html">com.signalwire.sdk.swaig</a></dt>
+<dd>
+<div class="block">Typed, fluent builder for the JSON-Schema <code>parameters</code> blob that a
+ <a href="com/signalwire/sdk/swaig/ToolDefinition.html" title="class in com.signalwire.sdk.swaig"><code>ToolDefinition</code></a> (and <a href="com/signalwire/sdk/agent/AgentBase.html#defineTool(java.lang.String,java.lang.String,java.util.Map,com.signalwire.sdk.swaig.ToolHandler)"><code>AgentBase.defineTool(java.lang.String, java.lang.String, java.util.Map&lt;java.lang.String, java.lang.Object&gt;, com.signalwire.sdk.swaig.ToolHandler)</code></a>) takes.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" class="type-name-link" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a> - Class in <a href="com/signalwire/sdk/swaig/package-summary.html">com.signalwire.sdk.swaig</a></dt>
+<dd>
+<div class="block">Fluent builder accumulating properties and required names, then emitting
+ the JSON-Schema <code>parameters</code> Map via <a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#build()"><code>ParameterSchema.Builder.build()</code></a>.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/datamap/DataMap.html#params(java.util.Map)" class="member-name-link">params(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.datamap.<a href="com/signalwire/sdk/datamap/DataMap.html" title="class in com.signalwire.sdk.datamap">DataMap</a></dt>
 <dd>
 <div class="block">Set request params for the last added webhook.</div>
@@ -3264,7 +3671,12 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#pay(java.lang.String,java.lang.String,java.lang.String,int,int)" class="member-name-link">pay(String, String, String, int, int)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
 <dd>
-<div class="block">Process payment via SWML pay action.</div>
+<div class="block">Process payment (convenience form).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#pay(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int,boolean,java.lang.Object,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)" class="member-name-link">pay(String, String, String, String, int, int, boolean, Object, int, String, String, String, String, String, String, String, List&lt;Map&lt;String, String&gt;&gt;, List&lt;Map&lt;String, Object&gt;&gt;, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Process payment via SWML pay action — full parity with the Python
+ reference <code>signalwire.core.function_result.FunctionResult.pay</code>.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#pay(java.lang.String,java.util.Map)" class="member-name-link">pay(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
 <dd>
@@ -3274,6 +3686,14 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Action.PayAction.html#%3Cinit%3E(java.lang.String,com.signalwire.sdk.relay.Call)" class="member-name-link">PayAction(String, Call)</a> - Constructor for class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Action.PayAction.html" title="class in com.signalwire.sdk.relay">Action.PayAction</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/Codec.html#PCMA" class="member-name-link">PCMA</a> - Enum constant in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/Codec.html#PCMU" class="member-name-link">PCMU</a> - Enum constant in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/Device.html#phone(java.lang.String,java.lang.String)" class="member-name-link">phone(String, String)</a> - Static method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Device.html" title="class in com.signalwire.sdk.relay">Device</a></dt>
+<dd>
+<div class="block">Convenience factory for the most common case — a <code>phone</code> device.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/PhoneCallHandler.html" class="type-name-link" title="enum class in com.signalwire.sdk.rest">PhoneCallHandler</a> - Enum Class in <a href="com/signalwire/sdk/rest/package-summary.html">com.signalwire.sdk.rest</a></dt>
 <dd>
 <div class="block">Values accepted for <code>call_handler</code> on
@@ -3309,6 +3729,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/swml/Service.html#play(java.util.Map)" class="member-name-link">play(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#PLAY_BACKGROUND_FILE" class="member-name-link">PLAY_BACKGROUND_FILE</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Action.PlayAction.html#%3Cinit%3E(java.lang.String,com.signalwire.sdk.relay.Call)" class="member-name-link">PlayAction(String, Call)</a> - Constructor for class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Action.PlayAction.html" title="class in com.signalwire.sdk.relay">Action.PlayAction</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#playAndCollect(java.util.List,java.util.Map,java.lang.String)" class="member-name-link">playAndCollect(List&lt;Map&lt;String, Object&gt;&gt;, Map&lt;String, Object&gt;, String)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
@@ -3321,6 +3743,14 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/relay/Action.PlayAndCollectAction.html#%3Cinit%3E(java.lang.String,com.signalwire.sdk.relay.Call)" class="member-name-link">PlayAndCollectAction(String, Call)</a> - Constructor for class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Action.PlayAndCollectAction.html" title="class in com.signalwire.sdk.relay">Action.PlayAndCollectAction</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#playAudio(java.lang.String)" class="member-name-link">playAudio(String)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Play an audio file from a URL with default options.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#playAudio(java.lang.String,java.util.Map)" class="member-name-link">playAudio(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Play an audio file from a URL.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#playBackgroundFile(java.lang.String)" class="member-name-link">playBackgroundFile(String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#playBackgroundFile(java.lang.String,boolean)" class="member-name-link">playBackgroundFile(String, boolean)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
@@ -3335,8 +3765,28 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html#playResume(java.lang.String,java.util.Map)" class="member-name-link">playResume(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CallingNamespace</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#playRingtone(java.lang.String)" class="member-name-link">playRingtone(String)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Play a named ringtone with default options.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#playRingtone(java.lang.String,java.util.Map)" class="member-name-link">playRingtone(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Play a named ringtone by country code.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#playSilence(double)" class="member-name-link">playSilence(double)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Play silence for <code>duration</code> seconds.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html#playStop(java.lang.String,java.util.Map)" class="member-name-link">playStop(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CallingNamespace</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#playTts(java.lang.String)" class="member-name-link">playTts(String)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Play text-to-speech with default options.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#playTts(java.lang.String,java.util.Map)" class="member-name-link">playTts(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Play text-to-speech.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html#playVolume(java.lang.String,java.util.Map)" class="member-name-link">playVolume(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CallingNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/swml/Service.html#port" class="member-name-link">port</a> - Variable in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
@@ -3382,6 +3832,14 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#promptAddToSection(java.lang.String,java.util.List)" class="member-name-link">promptAddToSection(String, List&lt;String&gt;)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#promptAudio(java.lang.String,java.util.Map)" class="member-name-link">promptAudio(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Play an audio file then collect input, with default options.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#promptAudio(java.lang.String,java.util.Map,java.util.Map)" class="member-name-link">promptAudio(String, Map&lt;String, Object&gt;, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Play an audio file then collect input.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#promptHasSection(java.lang.String)" class="member-name-link">promptHasSection(String)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/pom/PromptObjectModel.html" class="type-name-link" title="class in com.signalwire.sdk.pom">PromptObjectModel</a> - Class in <a href="com/signalwire/sdk/pom/package-summary.html">com.signalwire.sdk.pom</a></dt>
@@ -3400,6 +3858,14 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/pom/PromptObjectModel.html#%3Cinit%3E(java.util.List)" class="member-name-link">PromptObjectModel(List&lt;Map&lt;String, Object&gt;&gt;)</a> - Constructor for class com.signalwire.sdk.pom.<a href="com/signalwire/sdk/pom/PromptObjectModel.html" title="class in com.signalwire.sdk.pom">PromptObjectModel</a></dt>
 <dd>
 <div class="block">Construct from a list of section dicts.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#promptTts(java.lang.String,java.util.Map)" class="member-name-link">promptTts(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Play TTS then collect input, with default options.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/Call.html#promptTts(java.lang.String,java.util.Map,java.util.Map)" class="member-name-link">promptTts(String, Map&lt;String, Object&gt;, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>
+<div class="block">Play TTS then collect input.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/relay/Constants.html#PROTOCOL_MAJOR" class="member-name-link">PROTOCOL_MAJOR</a> - Static variable in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Constants.html" title="class in com.signalwire.sdk.relay">Constants</a></dt>
 <dd>&nbsp;</dd>
@@ -3441,6 +3907,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/prefabs/InfoGathererAgent.html#question(java.lang.String,java.lang.String,boolean,java.lang.String)" class="member-name-link">question(String, String, boolean, String)</a> - Static method in class com.signalwire.sdk.prefabs.<a href="com/signalwire/sdk/prefabs/InfoGathererAgent.html" title="class in com.signalwire.sdk.prefabs">InfoGathererAgent</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#QUEUED" class="member-name-link">QUEUED</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">The message is queued for sending.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#queueEnter(java.lang.String,java.util.Map)" class="member-name-link">queueEnter(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
 <dd>
 <div class="block">Enter a queue.</div>
@@ -3480,6 +3950,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/relay/RelayClient.html#receive(java.util.List)" class="member-name-link">receive(List&lt;String&gt;)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayClient.html" title="class in com.signalwire.sdk.relay">RelayClient</a></dt>
 <dd>
 <div class="block">Subscribe to additional contexts dynamically.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#RECEIVED" class="member-name-link">RECEIVED</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">An inbound message was received (inbound-only; not a terminal delivery state).</div>
 </dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#receiveFax(java.lang.String)" class="member-name-link">receiveFax(String)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
 <dd>
@@ -3527,14 +4001,59 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.Builder.html#recordCall(boolean)" class="member-name-link">recordCall(boolean)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.Builder.html" title="class in com.signalwire.sdk.agent">AgentBase.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#recordCall(java.lang.String,boolean,com.signalwire.sdk.swml.RecordFormat,com.signalwire.sdk.swml.RecordDirection)" class="member-name-link">recordCall(String, boolean, RecordFormat, RecordDirection)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Fully-typed overload of <a href="com/signalwire/sdk/swaig/FunctionResult.html#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)"><code>FunctionResult.recordCall(String, boolean, String, String)</code></a>:
+ both the container format (<a href="com/signalwire/sdk/swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml"><code>RecordFormat</code></a>) and the audio direction
+ (<a href="com/signalwire/sdk/swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml"><code>RecordDirection</code></a>) are typed closed sets.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#recordCall(java.lang.String,boolean,com.signalwire.sdk.swml.RecordFormat,com.signalwire.sdk.swml.RecordDirection,java.lang.String,boolean,double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String)" class="member-name-link">recordCall(String, boolean, RecordFormat, RecordDirection, String, boolean, double, Double, Double, Double, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Fully-typed, full-arity overload of
+ <a href="com/signalwire/sdk/swaig/FunctionResult.html#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,boolean,double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String)"><code>FunctionResult.recordCall(String, boolean, String, String, String, boolean, double, Double, Double, Double, String)</code></a>:
+ the closed-set <code>format</code> (<a href="com/signalwire/sdk/swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml"><code>RecordFormat</code></a>) and <code>direction</code>
+ (<a href="com/signalwire/sdk/swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml"><code>RecordDirection</code></a>) are typed so a misspelled container format or
+ direction fails at compile time instead of being rejected by the server's
+ <code>ValueError</code>, while every Python <code>record_call</code> optional
+ (terminators / beep / input_sensitivity / initial_timeout /
+ end_silence_timeout / max_length / status_url) is still exposed
+ positionally.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#recordCall(java.lang.String,boolean,com.signalwire.sdk.swml.RecordFormat,java.lang.String)" class="member-name-link">recordCall(String, boolean, RecordFormat, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Typed overload of <a href="com/signalwire/sdk/swaig/FunctionResult.html#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)"><code>FunctionResult.recordCall(String, boolean, String, String)</code></a>.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#recordCall(java.lang.String,boolean,java.lang.String,com.signalwire.sdk.swml.RecordDirection)" class="member-name-link">recordCall(String, boolean, String, RecordDirection)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Typed-direction overload of <a href="com/signalwire/sdk/swaig/FunctionResult.html#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)"><code>FunctionResult.recordCall(String, boolean, String, String)</code></a>.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String)" class="member-name-link">recordCall(String, boolean, String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
 <dd>
-<div class="block">Start background call recording via SWML.</div>
+<div class="block">Start background call recording (convenience form).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#recordCall(java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,boolean,double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String)" class="member-name-link">recordCall(String, boolean, String, String, String, boolean, double, Double, Double, Double, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Start background call recording via SWML — full parity with the Python
+ reference <code>signalwire.core.function_result.FunctionResult.record_call</code>.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/swml/Service.html#recordCall(java.util.Map)" class="member-name-link">recordCall(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordDirection.html" class="type-name-link" title="enum class in com.signalwire.sdk.swml">RecordDirection</a> - Enum Class in <a href="com/signalwire/sdk/swml/package-summary.html">com.signalwire.sdk.swml</a></dt>
+<dd>
+<div class="block">Audio direction for the SWML <code>record_call</code> verb, as a typed,
+ compile-time-checked closed set.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/agent/AgentBase.Builder.html#recordFormat(com.signalwire.sdk.swml.RecordFormat)" class="member-name-link">recordFormat(RecordFormat)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.Builder.html" title="class in com.signalwire.sdk.agent">AgentBase.Builder</a></dt>
+<dd>
+<div class="block">Typed overload of <a href="com/signalwire/sdk/agent/AgentBase.Builder.html#recordFormat(java.lang.String)"><code>AgentBase.Builder.recordFormat(String)</code></a>.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.Builder.html#recordFormat(java.lang.String)" class="member-name-link">recordFormat(String)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.Builder.html" title="class in com.signalwire.sdk.agent">AgentBase.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordFormat.html" class="type-name-link" title="enum class in com.signalwire.sdk.swml">RecordFormat</a> - Enum Class in <a href="com/signalwire/sdk/swml/package-summary.html">com.signalwire.sdk.swml</a></dt>
+<dd>
+<div class="block">Audio container format for call recording, as a typed, compile-time-checked
+ closed set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/RecordingNamespace.html" class="type-name-link" title="class in com.signalwire.sdk.rest.namespaces">RecordingNamespace</a> - Class in <a href="com/signalwire/sdk/rest/namespaces/package-summary.html">com.signalwire.sdk.rest.namespaces</a></dt>
 <dd>
 <div class="block">Recordings namespace — list / get / delete (no create/update).</div>
@@ -3810,6 +4329,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CompatNamespace.CompatConferences.html#removeParticipant(java.lang.String,java.lang.String)" class="member-name-link">removeParticipant(String, String)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CompatNamespace.CompatConferences.html" title="class in com.signalwire.sdk.rest.namespaces">CompatNamespace.CompatConferences</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/agent/AgentBase.html#removeSkill(com.signalwire.sdk.skills.SkillName)" class="member-name-link">removeSkill(SkillName)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
+<dd>
+<div class="block">Typed overload of <a href="com/signalwire/sdk/agent/AgentBase.html#removeSkill(java.lang.String)"><code>AgentBase.removeSkill(String)</code></a> (see <a href="com/signalwire/sdk/agent/AgentBase.html#addSkill(com.signalwire.sdk.skills.SkillName,java.util.Map)"><code>AgentBase.addSkill(SkillName, Map)</code></a>).</div>
+</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#removeSkill(java.lang.String)" class="member-name-link">removeSkill(String)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/SkillManager.html#removeSkill(java.lang.String)" class="member-name-link">removeSkill(String)</a> - Method in class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillManager.html" title="class in com.signalwire.sdk.skills">SkillManager</a></dt>
@@ -3878,6 +4401,10 @@ loadScripts(document, 'script');</script>
 <div class="block">HttpExchange attribute key under which the raw POST body is stashed by
  <a href="com/signalwire/sdk/swml/Service.html#serve()"><code>Service.serve()</code></a> when reading it up-front for signature validation.</div>
 </dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#required(java.lang.String...)" class="member-name-link">required(String...)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Mark one or more properties as required.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/contexts/ContextBuilder.html#RESERVED_NATIVE_TOOL_NAMES" class="member-name-link">RESERVED_NATIVE_TOOL_NAMES</a> - Static variable in class com.signalwire.sdk.contexts.<a href="com/signalwire/sdk/contexts/ContextBuilder.html" title="class in com.signalwire.sdk.contexts">ContextBuilder</a></dt>
 <dd>
 <div class="block">Reserved tool names auto-injected by the runtime when contexts/steps
@@ -3938,6 +4465,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/swml/Service.html#returnVerb(java.util.Map)" class="member-name-link">returnVerb(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/CallState.html#RINGING" class="member-name-link">RINGING</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay">CallState</a></dt>
+<dd>
+<div class="block">The call is ringing (alerting).</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/VideoNamespace.html#roomRecordings()" class="member-name-link">roomRecordings()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/VideoNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">VideoNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/VideoNamespace.html#rooms()" class="member-name-link">rooms()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/VideoNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">VideoNamespace</a></dt>
@@ -3952,7 +4483,12 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#rpcAiMessage(java.lang.String,java.lang.String)" class="member-name-link">rpcAiMessage(String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
 <dd>
-<div class="block">Inject a message into an AI agent on another call.</div>
+<div class="block">Inject a message (convenience form).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#rpcAiMessage(java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">rpcAiMessage(String, String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Inject a message into an AI agent on another call — full parity with the
+ Python reference <code>FunctionResult.rpc_ai_message</code>.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#rpcAiUnhold(java.lang.String)" class="member-name-link">rpcAiUnhold(String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
 <dd>
@@ -3960,7 +4496,12 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#rpcDial(java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">rpcDial(String, String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
 <dd>
-<div class="block">Dial out to a number with a destination SWML URL.</div>
+<div class="block">Dial out (convenience form).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#rpcDial(java.lang.String,java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">rpcDial(String, String, String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Dial out to a number with a destination SWML URL — full parity with the
+ Python reference <code>FunctionResult.rpc_dial</code>.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#run()" class="member-name-link">run()</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>
@@ -4111,13 +4652,22 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#sendSms(java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List)" class="member-name-link">sendSms(String, String, String, List&lt;String&gt;, List&lt;String&gt;)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
 <dd>
-<div class="block">Send SMS via SWML.</div>
+<div class="block">Send SMS (convenience form).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#sendSms(java.lang.String,java.lang.String,java.lang.String,java.util.List,java.util.List,java.lang.String)" class="member-name-link">sendSms(String, String, String, List&lt;String&gt;, List&lt;String&gt;, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Send SMS via SWML — full parity with the Python reference
+ <code>signalwire.core.function_result.FunctionResult.send_sms</code>.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/swml/Service.html#sendSms(java.util.Map)" class="member-name-link">sendSms(Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/swml/Service.html#sendUnauthorized(com.sun.net.httpserver.HttpExchange)" class="member-name-link">sendUnauthorized(HttpExchange)</a> - Method in class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Service.html" title="class in com.signalwire.sdk.swml">Service</a></dt>
 <dd>
 <div class="block">Send a 401 Unauthorized response.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#SENT" class="member-name-link">SENT</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">The message has left for the carrier.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/prefabs/ConciergeAgent.html#serve()" class="member-name-link">serve()</a> - Method in class com.signalwire.sdk.prefabs.<a href="com/signalwire/sdk/prefabs/ConciergeAgent.html" title="class in com.signalwire.sdk.prefabs">ConciergeAgent</a></dt>
 <dd>&nbsp;</dd>
@@ -4270,6 +4820,11 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/contexts/Context.html#setIsolated(boolean)" class="member-name-link">setIsolated(boolean)</a> - Method in class com.signalwire.sdk.contexts.<a href="com/signalwire/sdk/contexts/Context.html" title="class in com.signalwire.sdk.contexts">Context</a></dt>
 <dd>
 <div class="block">Mark this context as isolated — entering it wipes conversation history.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/agent/AgentBase.html#setLanguageParams(java.lang.String,java.util.Map)" class="member-name-link">setLanguageParams(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
+<dd>
+<div class="block">Set (or replace) the per-language ``params`` dict on an already-added
+ language.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#setLanguages(java.util.List)" class="member-name-link">setLanguages(List&lt;Map&lt;String, Object&gt;&gt;)</a> - Method in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
 <dd>&nbsp;</dd>
@@ -4458,6 +5013,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/rest/RestClient.html#sip()" class="member-name-link">sip()</a> - Method in class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/RestClient.html" title="class in com.signalwire.sdk.rest">RestClient</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/Device.html#sip(java.lang.String,java.lang.String)" class="member-name-link">sip(String, String)</a> - Static method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Device.html" title="class in com.signalwire.sdk.relay">Device</a></dt>
+<dd>
+<div class="block">Convenience factory for a <code>sip</code> device.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CompatNamespace.html#sipCredentialLists()" class="member-name-link">sipCredentialLists()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CompatNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CompatNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CompatNamespace.html#sipDomains()" class="member-name-link">sipDomains()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CompatNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CompatNamespace</a></dt>
@@ -4499,6 +5058,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/skills/SkillManager.html#%3Cinit%3E(com.signalwire.sdk.agent.AgentBase)" class="member-name-link">SkillManager(AgentBase)</a> - Constructor for class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillManager.html" title="class in com.signalwire.sdk.skills">SkillManager</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html" class="type-name-link" title="enum class in com.signalwire.sdk.skills">SkillName</a> - Enum Class in <a href="com/signalwire/sdk/skills/package-summary.html">com.signalwire.sdk.skills</a></dt>
+<dd>
+<div class="block">Built-in skill names as a typed, compile-time-checked closed set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/skills/SkillRegistry.html" class="type-name-link" title="class in com.signalwire.sdk.skills">SkillRegistry</a> - Class in <a href="com/signalwire/sdk/skills/package-summary.html">com.signalwire.sdk.skills</a></dt>
 <dd>
 <div class="block">Static registry of all available skills.</div>
@@ -4517,6 +5080,12 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/relay/RelayClient.Builder.html#space(java.lang.String)" class="member-name-link">space(String)</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/RelayClient.Builder.html" title="class in com.signalwire.sdk.relay">RelayClient.Builder</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/RestClient.Builder.html#space(java.lang.String)" class="member-name-link">space(String)</a> - Method in class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/RestClient.Builder.html" title="class in com.signalwire.sdk.rest">RestClient.Builder</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordDirection.html#SPEAK" class="member-name-link">SPEAK</a> - Enum constant in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/TapDirection.html#SPEAK" class="member-name-link">SPEAK</a> - Enum constant in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#SPIDER" class="member-name-link">SPIDER</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/SpiderSkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">SpiderSkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
 <dd>&nbsp;</dd>
@@ -4630,6 +5199,15 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html#streamStop(java.lang.String,java.util.Map)" class="member-name-link">streamStop(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CallingNamespace</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#string(java.lang.String,java.lang.String)" class="member-name-link">string(String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Add a <code>string</code> property.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html#string(java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">string(String, String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/ParameterSchema.Builder.html" title="class in com.signalwire.sdk.swaig">ParameterSchema.Builder</a></dt>
+<dd>
+<div class="block">Add a <code>string</code> property with a JSON-Schema <code>format</code> hint
+ (e.g.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.html#subscribers()" class="member-name-link">subscribers()</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/FabricNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">FabricNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/agent/AgentBase.html#SUPPORTED_INTERNAL_FILLER_NAMES" class="member-name-link">SUPPORTED_INTERNAL_FILLER_NAMES</a> - Static variable in class com.signalwire.sdk.agent.<a href="com/signalwire/sdk/agent/AgentBase.html" title="class in com.signalwire.sdk.agent">AgentBase</a></dt>
@@ -4696,6 +5274,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/rest/RestClient.html#swml()" class="member-name-link">swml()</a> - Method in class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/RestClient.html" title="class in com.signalwire.sdk.rest">RestClient</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#SWML_TRANSFER" class="member-name-link">SWML_TRANSFER</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#swmlChangeContext(java.lang.String)" class="member-name-link">swmlChangeContext(String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
 <dd>
 <div class="block">Change the conversation context.</div>
@@ -4737,9 +5317,38 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:T">T</h2>
 <dl class="index">
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#tap(java.lang.String,java.lang.String,com.signalwire.sdk.swml.TapDirection,com.signalwire.sdk.swml.Codec)" class="member-name-link">tap(String, String, TapDirection, Codec)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Fully-typed overload of <a href="com/signalwire/sdk/swaig/FunctionResult.html#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>FunctionResult.tap(String, String, String, String)</code></a>: both
+ the audio direction (<a href="com/signalwire/sdk/swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml"><code>TapDirection</code></a>) and the media codec
+ (<a href="com/signalwire/sdk/swml/Codec.html" title="enum class in com.signalwire.sdk.swml"><code>Codec</code></a>) are typed closed sets.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#tap(java.lang.String,java.lang.String,com.signalwire.sdk.swml.TapDirection,com.signalwire.sdk.swml.Codec,int,java.lang.String)" class="member-name-link">tap(String, String, TapDirection, Codec, int, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Fully-typed, full-arity overload of
+ <a href="com/signalwire/sdk/swaig/FunctionResult.html#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String)"><code>FunctionResult.tap(String, String, String, String, int, String)</code></a>: the closed-set
+ <code>direction</code> (<a href="com/signalwire/sdk/swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml"><code>TapDirection</code></a>) and <code>codec</code> (<a href="com/signalwire/sdk/swml/Codec.html" title="enum class in com.signalwire.sdk.swml"><code>Codec</code></a>)
+ are typed so a misspelled direction or codec fails at compile time instead
+ of being rejected by the server's <code>ValueError</code>, while the remaining
+ Python <code>tap</code> params (<code>rtp_ptime</code> / <code>status_url</code>) are
+ still exposed positionally.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#tap(java.lang.String,java.lang.String,com.signalwire.sdk.swml.TapDirection,java.lang.String)" class="member-name-link">tap(String, String, TapDirection, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Typed-direction overload of <a href="com/signalwire/sdk/swaig/FunctionResult.html#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>FunctionResult.tap(String, String, String, String)</code></a>.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#tap(java.lang.String,java.lang.String,java.lang.String,com.signalwire.sdk.swml.Codec)" class="member-name-link">tap(String, String, String, Codec)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Typed-codec overload of <a href="com/signalwire/sdk/swaig/FunctionResult.html#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>FunctionResult.tap(String, String, String, String)</code></a>.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">tap(String, String, String, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
 <dd>
-<div class="block">Start call tap.</div>
+<div class="block">Start a call tap (convenience form).</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#tap(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String)" class="member-name-link">tap(String, String, String, String, int, String)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
+<dd>
+<div class="block">Start a background call tap via SWML — full parity with the Python
+ reference <code>signalwire.core.function_result.FunctionResult.tap</code>.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html#tap(java.lang.String,java.util.Map)" class="member-name-link">tap(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CallingNamespace</a></dt>
 <dd>&nbsp;</dd>
@@ -4755,6 +5364,11 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/signalwire/sdk/relay/Action.TapAction.html#%3Cinit%3E(java.lang.String,com.signalwire.sdk.relay.Call)" class="member-name-link">TapAction(String, Call)</a> - Constructor for class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Action.TapAction.html" title="class in com.signalwire.sdk.relay">Action.TapAction</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/TapDirection.html" class="type-name-link" title="enum class in com.signalwire.sdk.swml">TapDirection</a> - Enum Class in <a href="com/signalwire/sdk/swml/package-summary.html">com.signalwire.sdk.swml</a></dt>
+<dd>
+<div class="block">Audio direction for the SWML <code>tap</code> verb, as a typed,
+ compile-time-checked closed set.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html#tapStop(java.lang.String,java.util.Map)" class="member-name-link">tapStop(String, Map&lt;String, Object&gt;)</a> - Method in class com.signalwire.sdk.rest.namespaces.<a href="com/signalwire/sdk/rest/namespaces/CallingNamespace.html" title="class in com.signalwire.sdk.rest.namespaces">CallingNamespace</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/swaig/FunctionResult.html#toggleFunctions(java.util.List)" class="member-name-link">toggleFunctions(List&lt;Map&lt;String, Object&gt;&gt;)</a> - Method in class com.signalwire.sdk.swaig.<a href="com/signalwire/sdk/swaig/FunctionResult.html" title="class in com.signalwire.sdk.swaig">FunctionResult</a></dt>
@@ -4800,6 +5414,12 @@ loadScripts(document, 'script');</script>
 <div class="block">Convert this section to an ordered <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link"><code>Map</code></a> for JSON / YAML
  serialisation.</div>
 </dd>
+<dt><a href="com/signalwire/sdk/relay/Device.html#toMap()" class="member-name-link">toMap()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Device.html" title="class in com.signalwire.sdk.relay">Device</a></dt>
+<dd>
+<div class="block">Serialise to the wire shape: a two-key map <code>{"type": …, "params": …}</code>
+ with <code>type</code> inserted first, identical to the hand-written map every
+ existing call site builds.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/runtime/lambda/LambdaResponse.html#toMap()" class="member-name-link">toMap()</a> - Method in class com.signalwire.sdk.runtime.lambda.<a href="com/signalwire/sdk/runtime/lambda/LambdaResponse.html" title="class in com.signalwire.sdk.runtime.lambda">LambdaResponse</a></dt>
 <dd>
 <div class="block">Serialise this response into the AWS Lambda Function URL /
@@ -4831,6 +5451,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/signalwire/sdk/relay/Action.html#toString()" class="member-name-link">toString()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Action.html" title="class in com.signalwire.sdk.relay">Action</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#toString()" class="member-name-link">toString()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/relay/Device.html#toString()" class="member-name-link">toString()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Device.html" title="class in com.signalwire.sdk.relay">Device</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/relay/Message.html#toString()" class="member-name-link">toString()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Message.html" title="class in com.signalwire.sdk.relay">Message</a></dt>
 <dd>&nbsp;</dd>
@@ -4900,6 +5522,10 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:U">U</h2>
 <dl class="index">
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#UNDELIVERED" class="member-name-link">UNDELIVERED</a> - Enum constant in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">Terminal: the carrier reported non-delivery.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/relay/Call.html#unhold()" class="member-name-link">unhold()</a> - Method in class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/Call.html" title="class in com.signalwire.sdk.relay">Call</a></dt>
 <dd>
 <div class="block">Take the call off hold.</div>
@@ -5083,11 +5709,43 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
+<dt><a href="com/signalwire/sdk/relay/CallState.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay">CallState</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/DialState.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/DialState.html" title="enum class in com.signalwire.sdk.relay">DialState</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/PhoneCallHandler.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/PhoneCallHandler.html" title="enum class in com.signalwire.sdk.rest">PhoneCallHandler</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/runtime/ExecutionMode.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.signalwire.sdk.runtime.<a href="com/signalwire/sdk/runtime/ExecutionMode.html" title="enum class in com.signalwire.sdk.runtime">ExecutionMode</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/Codec.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordDirection.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordFormat.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/TapDirection.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
@@ -5101,12 +5759,52 @@ the order they are declared.</div>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
 </dd>
+<dt><a href="com/signalwire/sdk/relay/CallState.html#values()" class="member-name-link">values()</a> - Static method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/CallState.html" title="enum class in com.signalwire.sdk.relay">CallState</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/DialState.html#values()" class="member-name-link">values()</a> - Static method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/DialState.html" title="enum class in com.signalwire.sdk.relay">DialState</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/relay/MessageState.html#values()" class="member-name-link">values()</a> - Static method in enum class com.signalwire.sdk.relay.<a href="com/signalwire/sdk/relay/MessageState.html" title="enum class in com.signalwire.sdk.relay">MessageState</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/PhoneCallHandler.html#values()" class="member-name-link">values()</a> - Static method in enum class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/PhoneCallHandler.html" title="enum class in com.signalwire.sdk.rest">PhoneCallHandler</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
 </dd>
 <dt><a href="com/signalwire/sdk/runtime/ExecutionMode.html#values()" class="member-name-link">values()</a> - Static method in enum class com.signalwire.sdk.runtime.<a href="com/signalwire/sdk/runtime/ExecutionMode.html" title="enum class in com.signalwire.sdk.runtime">ExecutionMode</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#values()" class="member-name-link">values()</a> - Static method in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/Codec.html#values()" class="member-name-link">values()</a> - Static method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/Codec.html" title="enum class in com.signalwire.sdk.swml">Codec</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordDirection.html#values()" class="member-name-link">values()</a> - Static method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml">RecordDirection</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordFormat.html#values()" class="member-name-link">values()</a> - Static method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="com/signalwire/sdk/swml/TapDirection.html#values()" class="member-name-link">values()</a> - Static method in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml">TapDirection</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
@@ -5205,9 +5903,15 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/logging/Logger.Level.html#WARN" class="member-name-link">WARN</a> - Enum constant in enum class com.signalwire.sdk.logging.<a href="com/signalwire/sdk/logging/Logger.Level.html" title="enum class in com.signalwire.sdk.logging">Logger.Level</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/RecordFormat.html#WAV" class="member-name-link">WAV</a> - Enum constant in enum class com.signalwire.sdk.swml.<a href="com/signalwire/sdk/swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml">RecordFormat</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#WEATHER_API" class="member-name-link">WEATHER_API</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/WeatherApiSkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">WeatherApiSkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/WeatherApiSkill.html#%3Cinit%3E()" class="member-name-link">WeatherApiSkill()</a> - Constructor for class com.signalwire.sdk.skills.builtin.<a href="com/signalwire/sdk/skills/builtin/WeatherApiSkill.html" title="class in com.signalwire.sdk.skills.builtin">WeatherApiSkill</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#WEB_SEARCH" class="member-name-link">WEB_SEARCH</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/datamap/DataMap.html#webhook(java.lang.String,java.lang.String)" class="member-name-link">webhook(String, String)</a> - Method in class com.signalwire.sdk.datamap.<a href="com/signalwire/sdk/datamap/DataMap.html" title="class in com.signalwire.sdk.datamap">DataMap</a></dt>
 <dd>&nbsp;</dd>
@@ -5242,10 +5946,18 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/WebSearchSkill.html#%3Cinit%3E()" class="member-name-link">WebSearchSkill()</a> - Constructor for class com.signalwire.sdk.skills.builtin.<a href="com/signalwire/sdk/skills/builtin/WebSearchSkill.html" title="class in com.signalwire.sdk.skills.builtin">WebSearchSkill</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/skills/SkillName.html#WIKIPEDIA_SEARCH" class="member-name-link">WIKIPEDIA_SEARCH</a> - Enum constant in enum class com.signalwire.sdk.skills.<a href="com/signalwire/sdk/skills/SkillName.html" title="enum class in com.signalwire.sdk.skills">SkillName</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/WikipediaSearchSkill.html" class="type-name-link" title="class in com.signalwire.sdk.skills.builtin">WikipediaSearchSkill</a> - Class in <a href="com/signalwire/sdk/skills/builtin/package-summary.html">com.signalwire.sdk.skills.builtin</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/signalwire/sdk/skills/builtin/WikipediaSearchSkill.html#%3Cinit%3E()" class="member-name-link">WikipediaSearchSkill()</a> - Constructor for class com.signalwire.sdk.skills.builtin.<a href="com/signalwire/sdk/skills/builtin/WikipediaSearchSkill.html" title="class in com.signalwire.sdk.skills.builtin">WikipediaSearchSkill</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/signalwire/sdk/swml/WireEnum.html" class="type-name-link" title="interface in com.signalwire.sdk.swml">WireEnum</a> - Interface in <a href="com/signalwire/sdk/swml/package-summary.html">com.signalwire.sdk.swml</a></dt>
+<dd>
+<div class="block">Marker for the typed, compile-time-checked closed-set enums whose constants
+ carry a canonical <em>wire string</em> (<a href="com/signalwire/sdk/swml/RecordFormat.html" title="enum class in com.signalwire.sdk.swml"><code>RecordFormat</code></a>, <a href="com/signalwire/sdk/swml/RecordDirection.html" title="enum class in com.signalwire.sdk.swml"><code>RecordDirection</code></a>,
+ <a href="com/signalwire/sdk/swml/TapDirection.html" title="enum class in com.signalwire.sdk.swml"><code>TapDirection</code></a>, <a href="com/signalwire/sdk/swml/Codec.html" title="enum class in com.signalwire.sdk.swml"><code>Codec</code></a>).</div>
+</dd>
 <dt><a href="com/signalwire/sdk/rest/PhoneCallHandler.html#wireValue()" class="member-name-link">wireValue()</a> - Method in enum class com.signalwire.sdk.rest.<a href="com/signalwire/sdk/rest/PhoneCallHandler.html" title="enum class in com.signalwire.sdk.rest">PhoneCallHandler</a></dt>
 <dd>
 <div class="block">The wire value sent on the <code>call_handler</code> field.</div>
