@@ -316,6 +316,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#on_summary-instance_method" title="#on_summary (instance method)">#<strong>on_summary</strong>(_summary, _raw_data = nil)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Lifecycle hook: on_summary — Python parity (signalwire.prefabs.receptionist.ReceptionistAgent#on_summary).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#prompt_sections-instance_method" title="#prompt_sections (instance method)">#<strong>prompt_sections</strong>  &#x21d2; Object </a>
     
 
@@ -697,6 +719,83 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="on_summary-instance_method">
+  
+    #<strong>on_summary</strong>(_summary, _raw_data = nil)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Lifecycle hook: on_summary — Python parity
+(signalwire.prefabs.receptionist.ReceptionistAgent#on_summary).</p>
+<p>No-op extension point: the base receptionist does not process the
+transfer summary. Subclasses override this to handle the summary
+(mirrors Python's <code>def on_summary(...): pass</code>).</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>_summary</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>conversation summary</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>_raw_data</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>full raw POST data</p></div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/receptionist.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_on_summary'>on_summary</span><span class='lparen'>(</span><span class='id identifier rubyid__summary'>_summary</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="prompt_sections-instance_method">
   
     #<strong>prompt_sections</strong>  &#x21d2; <tt>Object</tt> 
@@ -775,9 +874,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:56 2026 by
+  Generated on Mon Jun 15 17:33:19 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

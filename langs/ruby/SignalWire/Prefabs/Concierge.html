@@ -274,6 +274,50 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#check_availability-instance_method" title="#check_availability (instance method)">#<strong>check_availability</strong>(args, _raw_data)  &#x21d2; Swaig::FunctionResult </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Tool: check_availability — Python parity (signalwire.prefabs.concierge.ConciergeAgent#check_availability).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_directions-instance_method" title="#get_directions (instance method)">#<strong>get_directions</strong>(args, _raw_data)  &#x21d2; Swaig::FunctionResult </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Tool: get_directions — Python parity (signalwire.prefabs.concierge.ConciergeAgent#get_directions).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#global_data-instance_method" title="#global_data (instance method)">#<strong>global_data</strong>  &#x21d2; Object </a>
     
 
@@ -364,6 +408,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#on_summary-instance_method" title="#on_summary (instance method)">#<strong>on_summary</strong>(summary, _raw_data = nil)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Lifecycle hook: on_summary — Python parity (signalwire.prefabs.concierge.ConciergeAgent#on_summary).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#prompt_sections-instance_method" title="#prompt_sections (instance method)">#<strong>prompt_sections</strong>  &#x21d2; Object </a>
     
 
@@ -436,8 +502,6 @@
       <pre class="lines">
 
 
-23
-24
 25
 26
 27
@@ -447,10 +511,12 @@
 31
 32
 33
-34</pre>
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>venue_name:</span><span class='comma'>,</span> <span class='label'>services:</span><span class='comma'>,</span> <span class='label'>amenities:</span><span class='comma'>,</span> <span class='label'>hours_of_operation:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                <span class='label'>special_instructions:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>welcome_message:</span> <span class='kw'>nil</span><span class='comma'>,</span>
@@ -500,12 +566,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_amenities'>amenities</span>
   <span class='ivar'>@amenities</span>
@@ -541,12 +607,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -582,12 +648,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_route'>route</span>
   <span class='ivar'>@route</span>
@@ -623,12 +689,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_services'>services</span>
   <span class='ivar'>@services</span>
@@ -664,12 +730,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_venue_name'>venue_name</span>
   <span class='ivar'>@venue_name</span>
@@ -687,7 +753,210 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="global_data-instance_method">
+  <h3 class="signature first" id="check_availability-instance_method">
+  
+    #<strong>check_availability</strong>(args, _raw_data)  &#x21d2; <tt><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">Swaig::FunctionResult</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Tool: check_availability — Python parity
+(signalwire.prefabs.concierge.ConciergeAgent#check_availability).</p>
+<p>Simulated booking lookup: confirms availability when the requested
+service is one of the venue's offered services, otherwise lists the
+available services.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>expects &quot;service&quot;, &quot;date&quot;, &quot;time&quot;</p></div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">Swaig::FunctionResult</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 102</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_availability'>check_availability</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_service'>service</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>service</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
+  <span class='id identifier rubyid_date'>date</span>    <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>date</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_time'>time</span>    <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>time</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='kw'>if</span> <span class='ivar'>@services</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span> <span class='op'>==</span> <span class='id identifier rubyid_service'>service</span> <span class='rbrace'>}</span>
+    <span class='const'><span class='object_link'><a href="../Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Yes, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_service'>service</span><span class='embexpr_end'>}</span><span class='tstring_content'> is available on </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_date'>date</span><span class='embexpr_end'>}</span><span class='tstring_content'> at </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_time'>time</span><span class='embexpr_end'>}</span><span class='tstring_content'>. </span><span class='tstring_end'>&quot;</span></span> \
+      <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Would you like to make a reservation?</span><span class='tstring_end'>&#39;</span></span>
+    <span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='const'><span class='object_link'><a href="../Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>I&#39;m sorry, we don&#39;t offer </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_service'>service</span><span class='embexpr_end'>}</span><span class='tstring_content'> at </span><span class='embexpr_beg'>#{</span><span class='ivar'>@venue_name</span><span class='embexpr_end'>}</span><span class='tstring_content'>. </span><span class='tstring_end'>&quot;</span></span> \
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Our available services are: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@services</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_directions-instance_method">
+  
+    #<strong>get_directions</strong>(args, _raw_data)  &#x21d2; <tt><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">Swaig::FunctionResult</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Tool: get_directions — Python parity
+(signalwire.prefabs.concierge.ConciergeAgent#get_directions).</p>
+<p>Returns directions to an amenity when that amenity declares a
+&quot;location&quot; detail, otherwise points the caller at the front desk.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>expects &quot;location&quot;</p></div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">Swaig::FunctionResult</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 128</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_directions'>get_directions</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_location'>location</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>location</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
+  <span class='id identifier rubyid_amenity'>amenity</span>  <span class='op'>=</span> <span class='ivar'>@amenities</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid__v'>_v</span><span class='op'>|</span> <span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span> <span class='op'>==</span> <span class='id identifier rubyid_location'>location</span> <span class='rbrace'>}</span><span class='op'>&amp;.</span><span class='id identifier rubyid_last'>last</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_amenity'>amenity</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_amenity'>amenity</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>location</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_where'>where</span> <span class='op'>=</span> <span class='id identifier rubyid_amenity'>amenity</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>location</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+    <span class='const'><span class='object_link'><a href="../Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_location'>location</span><span class='embexpr_end'>}</span><span class='tstring_content'> is located at </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_where'>where</span><span class='embexpr_end'>}</span><span class='tstring_content'>. </span><span class='tstring_end'>&quot;</span></span> \
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>From the main entrance, follow the signs to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_where'>where</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='const'><span class='object_link'><a href="../Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>I don&#39;t have specific directions to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_location'>location</span><span class='embexpr_end'>}</span><span class='tstring_content'>. </span><span class='tstring_end'>&quot;</span></span> \
+      <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>You can ask our staff at the front desk for assistance.</span><span class='tstring_end'>&#39;</span></span>
+    <span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="global_data-instance_method">
   
     #<strong>global_data</strong>  &#x21d2; <tt>Object</tt> 
   
@@ -701,16 +970,16 @@
       <pre class="lines">
 
 
-62
-63
 64
 65
 66
 67
-68</pre>
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 62</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_global_data'>global_data</span>
   <span class='lbrace'>{</span>
@@ -739,8 +1008,6 @@
       <pre class="lines">
 
 
-70
-71
 72
 73
 74
@@ -748,10 +1015,12 @@
 76
 77
 78
-79</pre>
+79
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handle_amenity_info'>handle_amenity_info</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_amenity'>amenity</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>amenity</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
@@ -783,18 +1052,18 @@
       <pre class="lines">
 
 
-81
-82
 83
 84
 85
 86
 87
 88
-89</pre>
+89
+90
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 81</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handle_service_info'>handle_service_info</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_service'>service</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>service</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
@@ -804,6 +1073,99 @@
   <span class='kw'>else</span>
     <span class='const'><span class='object_link'><a href="../Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Available services: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@services</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="on_summary-instance_method">
+  
+    #<strong>on_summary</strong>(summary, _raw_data = nil)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Lifecycle hook: on_summary — Python parity
+(signalwire.prefabs.concierge.ConciergeAgent#on_summary).</p>
+<p>Processes the post-prompt interaction summary. Structured (Hash)
+summaries are logged as pretty JSON; anything else is logged as-is.
+Subclasses may override to persist or forward the interaction.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>summary</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>conversation summary</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>_raw_data</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>full raw POST data</p></div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 156</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_on_summary'>on_summary</span><span class='lparen'>(</span><span class='id identifier rubyid_summary'>summary</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_summary'>summary</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_summary'>summary</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Concierge interaction summary: </span><span class='embexpr_beg'>#{</span><span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_pretty_generate'>pretty_generate</span><span class='lparen'>(</span><span class='id identifier rubyid_summary'>summary</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Concierge interaction summary: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_summary'>summary</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>rescue</span> <span class='const'>StandardError</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error processing summary: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -825,8 +1187,6 @@
       <pre class="lines">
 
 
-40
-41
 42
 43
 44
@@ -845,10 +1205,12 @@
 57
 58
 59
-60</pre>
+60
+61
+62</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prompt_sections'>prompt_sections</span>
   <span class='id identifier rubyid_amenity_bullets'>amenity_bullets</span> <span class='op'>=</span> <span class='ivar'>@amenities</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_k'>k</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_a'>a</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_b'>b</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_v'>v</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
@@ -891,15 +1253,15 @@
       <pre class="lines">
 
 
-36
-37
-38</pre>
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/concierge.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tools'>tools</span>
-  <span class='qwords_beg'>%w[</span><span class='tstring_content'>get_amenity_info</span><span class='words_sep'> </span><span class='tstring_content'>get_service_info</span><span class='tstring_end'>]</span></span>
+  <span class='qwords_beg'>%w[</span><span class='tstring_content'>get_amenity_info</span><span class='words_sep'> </span><span class='tstring_content'>get_service_info</span><span class='words_sep'> </span><span class='tstring_content'>check_availability</span><span class='words_sep'> </span><span class='tstring_content'>get_directions</span><span class='tstring_end'>]</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -911,9 +1273,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:56 2026 by
+  Generated on Mon Jun 15 17:33:18 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

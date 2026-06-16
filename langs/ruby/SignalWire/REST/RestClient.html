@@ -772,7 +772,7 @@ client.compat.calls.list</code></pre>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(project: nil, token: nil, host: nil, base_url: nil)  &#x21d2; RestClient </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(project: nil, token: nil, host: nil, base_url: nil, ca_file: nil)  &#x21d2; RestClient </a>
     
 
     
@@ -803,7 +803,7 @@ client.compat.calls.list</code></pre>
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(project: nil, token: nil, host: nil, base_url: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="SignalWire::REST::RestClient (class)">RestClient</a></span></tt> 
+    #<strong>initialize</strong>(project: nil, token: nil, host: nil, base_url: nil, ca_file: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="SignalWire::REST::RestClient (class)">RestClient</a></span></tt> 
   
 
   
@@ -812,7 +812,10 @@ client.compat.calls.list</code></pre>
 </h3><div class="docstring">
   <div class="discussion">
     <p><code>base_url</code> overrides the derived <code>https://{space}</code> default. The
-audit harness uses this to point at the local fixture server.</p>
+audit harness uses this to point at the local fixture server.
+<code>ca_file</code> (optional) names a PEM CA bundle to trust for HTTPS in
+addition to the system store — for private-CA deployments; forwarded
+to the underlying HttpClient.</p>
 
   </div>
 </div>
@@ -825,9 +828,6 @@ audit harness uses this to point at the local fixture server.</p>
       <pre class="lines">
 
 
-58
-59
-60
 61
 62
 63
@@ -878,12 +878,15 @@ audit harness uses this to point at the local fixture server.</p>
 108
 109
 110
-111</pre>
+111
+112
+113
+114</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/rest_client.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/rest_client.rb', line 61</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>project:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>token:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>host:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>base_url:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>project:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>token:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>host:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>base_url:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>ca_file:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_project_id'>project_id</span> <span class='op'>=</span> <span class='id identifier rubyid_project'>project</span> <span class='op'>||</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SIGNALWIRE_PROJECT_ID</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
   <span class='id identifier rubyid_api_token'>api_token</span>  <span class='op'>=</span> <span class='id identifier rubyid_token'>token</span> <span class='op'>||</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SIGNALWIRE_API_TOKEN</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
   <span class='id identifier rubyid_space'>space</span>      <span class='op'>=</span> <span class='id identifier rubyid_host'>host</span> <span class='op'>||</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SIGNALWIRE_SPACE</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -896,7 +899,7 @@ audit harness uses this to point at the local fixture server.</p>
   <span class='kw'>end</span>
 
   <span class='ivar'>@project_id</span> <span class='op'>=</span> <span class='id identifier rubyid_project_id'>project_id</span>
-  <span class='ivar'>@http</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="HttpClient.html" title="SignalWire::REST::HttpClient (class)">HttpClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="HttpClient.html#initialize-instance_method" title="SignalWire::REST::HttpClient#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_project_id'>project_id</span><span class='comma'>,</span> <span class='id identifier rubyid_api_token'>api_token</span><span class='comma'>,</span> <span class='id identifier rubyid_space'>space</span><span class='comma'>,</span> <span class='label'>base_url:</span> <span class='id identifier rubyid_base_url'>base_url</span><span class='rparen'>)</span>
+  <span class='ivar'>@http</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="HttpClient.html" title="SignalWire::REST::HttpClient (class)">HttpClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="HttpClient.html#initialize-instance_method" title="SignalWire::REST::HttpClient#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_project_id'>project_id</span><span class='comma'>,</span> <span class='id identifier rubyid_api_token'>api_token</span><span class='comma'>,</span> <span class='id identifier rubyid_space'>space</span><span class='comma'>,</span> <span class='label'>base_url:</span> <span class='id identifier rubyid_base_url'>base_url</span><span class='comma'>,</span> <span class='label'>ca_file:</span> <span class='id identifier rubyid_ca_file'>ca_file</span><span class='rparen'>)</span>
 
   <span class='comment'># Fabric API
 </span>  <span class='ivar'>@fabric</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Namespaces.html" title="SignalWire::REST::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Namespaces/FabricNamespace.html" title="SignalWire::REST::Namespaces::FabricNamespace (class)">FabricNamespace</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Namespaces/FabricNamespace.html#initialize-instance_method" title="SignalWire::REST::Namespaces::FabricNamespace#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@http</span><span class='rparen'>)</span>
@@ -1896,9 +1899,9 @@ audit harness uses this to point at the local fixture server.</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:55 2026 by
+  Generated on Mon Jun 15 17:33:18 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

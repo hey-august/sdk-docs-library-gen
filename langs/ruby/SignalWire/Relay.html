@@ -81,7 +81,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/signalwire/relay/call.rb<span class="defines">,<br>
-  lib/signalwire/relay/action.rb,<br> lib/signalwire/relay/client.rb,<br> lib/signalwire/relay/message.rb,<br> lib/signalwire/relay/constants.rb,<br> lib/signalwire/relay/relay_event.rb</span>
+  lib/signalwire/relay/action.rb,<br> lib/signalwire/relay/client.rb,<br> lib/signalwire/relay/device.rb,<br> lib/signalwire/relay/message.rb,<br> lib/signalwire/relay/constants.rb,<br> lib/signalwire/relay/relay_event.rb,<br> lib/signalwire/relay/collect_config.rb</span>
 
 </dd>
   </dl>
@@ -92,9 +92,11 @@
 <p class="children">
   
     
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Relay/CallState.html" title="SignalWire::Relay::CallState (module)">CallState</a></span>, <span class='object_link'><a href="Relay/DialState.html" title="SignalWire::Relay::DialState (module)">DialState</a></span>, <span class='object_link'><a href="Relay/MessageState.html" title="SignalWire::Relay::MessageState (module)">MessageState</a></span>
+    
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Relay/AIAction.html" title="SignalWire::Relay::AIAction (class)">AIAction</a></span>, <span class='object_link'><a href="Relay/Action.html" title="SignalWire::Relay::Action (class)">Action</a></span>, <span class='object_link'><a href="Relay/ActionTimeoutError.html" title="SignalWire::Relay::ActionTimeoutError (class)">ActionTimeoutError</a></span>, <span class='object_link'><a href="Relay/Call.html" title="SignalWire::Relay::Call (class)">Call</a></span>, <span class='object_link'><a href="Relay/CallReceiveEvent.html" title="SignalWire::Relay::CallReceiveEvent (class)">CallReceiveEvent</a></span>, <span class='object_link'><a href="Relay/CallStateEvent.html" title="SignalWire::Relay::CallStateEvent (class)">CallStateEvent</a></span>, <span class='object_link'><a href="Relay/CallingErrorEvent.html" title="SignalWire::Relay::CallingErrorEvent (class)">CallingErrorEvent</a></span>, <span class='object_link'><a href="Relay/Client.html" title="SignalWire::Relay::Client (class)">Client</a></span>, <span class='object_link'><a href="Relay/CollectAction.html" title="SignalWire::Relay::CollectAction (class)">CollectAction</a></span>, <span class='object_link'><a href="Relay/CollectEvent.html" title="SignalWire::Relay::CollectEvent (class)">CollectEvent</a></span>, <span class='object_link'><a href="Relay/ConferenceEvent.html" title="SignalWire::Relay::ConferenceEvent (class)">ConferenceEvent</a></span>, <span class='object_link'><a href="Relay/ConnectEvent.html" title="SignalWire::Relay::ConnectEvent (class)">ConnectEvent</a></span>, <span class='object_link'><a href="Relay/DenoiseEvent.html" title="SignalWire::Relay::DenoiseEvent (class)">DenoiseEvent</a></span>, <span class='object_link'><a href="Relay/DetectAction.html" title="SignalWire::Relay::DetectAction (class)">DetectAction</a></span>, <span class='object_link'><a href="Relay/DetectEvent.html" title="SignalWire::Relay::DetectEvent (class)">DetectEvent</a></span>, <span class='object_link'><a href="Relay/DialEvent.html" title="SignalWire::Relay::DialEvent (class)">DialEvent</a></span>, <span class='object_link'><a href="Relay/EchoEvent.html" title="SignalWire::Relay::EchoEvent (class)">EchoEvent</a></span>, <span class='object_link'><a href="Relay/FaxAction.html" title="SignalWire::Relay::FaxAction (class)">FaxAction</a></span>, <span class='object_link'><a href="Relay/FaxEvent.html" title="SignalWire::Relay::FaxEvent (class)">FaxEvent</a></span>, <span class='object_link'><a href="Relay/HoldEvent.html" title="SignalWire::Relay::HoldEvent (class)">HoldEvent</a></span>, <span class='object_link'><a href="Relay/Message.html" title="SignalWire::Relay::Message (class)">Message</a></span>, <span class='object_link'><a href="Relay/MessageReceiveEvent.html" title="SignalWire::Relay::MessageReceiveEvent (class)">MessageReceiveEvent</a></span>, <span class='object_link'><a href="Relay/MessageStateEvent.html" title="SignalWire::Relay::MessageStateEvent (class)">MessageStateEvent</a></span>, <span class='object_link'><a href="Relay/PayAction.html" title="SignalWire::Relay::PayAction (class)">PayAction</a></span>, <span class='object_link'><a href="Relay/PayEvent.html" title="SignalWire::Relay::PayEvent (class)">PayEvent</a></span>, <span class='object_link'><a href="Relay/PlayAction.html" title="SignalWire::Relay::PlayAction (class)">PlayAction</a></span>, <span class='object_link'><a href="Relay/PlayEvent.html" title="SignalWire::Relay::PlayEvent (class)">PlayEvent</a></span>, <span class='object_link'><a href="Relay/QueueEvent.html" title="SignalWire::Relay::QueueEvent (class)">QueueEvent</a></span>, <span class='object_link'><a href="Relay/RecordAction.html" title="SignalWire::Relay::RecordAction (class)">RecordAction</a></span>, <span class='object_link'><a href="Relay/RecordEvent.html" title="SignalWire::Relay::RecordEvent (class)">RecordEvent</a></span>, <span class='object_link'><a href="Relay/ReferEvent.html" title="SignalWire::Relay::ReferEvent (class)">ReferEvent</a></span>, <span class='object_link'><a href="Relay/RelayError.html" title="SignalWire::Relay::RelayError (class)">RelayError</a></span>, <span class='object_link'><a href="Relay/RelayEvent.html" title="SignalWire::Relay::RelayEvent (class)">RelayEvent</a></span>, <span class='object_link'><a href="Relay/SendDigitsEvent.html" title="SignalWire::Relay::SendDigitsEvent (class)">SendDigitsEvent</a></span>, <span class='object_link'><a href="Relay/StandaloneCollectAction.html" title="SignalWire::Relay::StandaloneCollectAction (class)">StandaloneCollectAction</a></span>, <span class='object_link'><a href="Relay/StreamAction.html" title="SignalWire::Relay::StreamAction (class)">StreamAction</a></span>, <span class='object_link'><a href="Relay/StreamEvent.html" title="SignalWire::Relay::StreamEvent (class)">StreamEvent</a></span>, <span class='object_link'><a href="Relay/TapAction.html" title="SignalWire::Relay::TapAction (class)">TapAction</a></span>, <span class='object_link'><a href="Relay/TapEvent.html" title="SignalWire::Relay::TapEvent (class)">TapEvent</a></span>, <span class='object_link'><a href="Relay/TranscribeAction.html" title="SignalWire::Relay::TranscribeAction (class)">TranscribeAction</a></span>, <span class='object_link'><a href="Relay/TranscribeEvent.html" title="SignalWire::Relay::TranscribeEvent (class)">TranscribeEvent</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Relay/AIAction.html" title="SignalWire::Relay::AIAction (class)">AIAction</a></span>, <span class='object_link'><a href="Relay/Action.html" title="SignalWire::Relay::Action (class)">Action</a></span>, <span class='object_link'><a href="Relay/ActionTimeoutError.html" title="SignalWire::Relay::ActionTimeoutError (class)">ActionTimeoutError</a></span>, <span class='object_link'><a href="Relay/Call.html" title="SignalWire::Relay::Call (class)">Call</a></span>, <span class='object_link'><a href="Relay/CallReceiveEvent.html" title="SignalWire::Relay::CallReceiveEvent (class)">CallReceiveEvent</a></span>, <span class='object_link'><a href="Relay/CallStateEvent.html" title="SignalWire::Relay::CallStateEvent (class)">CallStateEvent</a></span>, <span class='object_link'><a href="Relay/CallingErrorEvent.html" title="SignalWire::Relay::CallingErrorEvent (class)">CallingErrorEvent</a></span>, <span class='object_link'><a href="Relay/Client.html" title="SignalWire::Relay::Client (class)">Client</a></span>, <span class='object_link'><a href="Relay/CollectAction.html" title="SignalWire::Relay::CollectAction (class)">CollectAction</a></span>, <span class='object_link'><a href="Relay/CollectConfig.html" title="SignalWire::Relay::CollectConfig (class)">CollectConfig</a></span>, <span class='object_link'><a href="Relay/CollectEvent.html" title="SignalWire::Relay::CollectEvent (class)">CollectEvent</a></span>, <span class='object_link'><a href="Relay/ConferenceEvent.html" title="SignalWire::Relay::ConferenceEvent (class)">ConferenceEvent</a></span>, <span class='object_link'><a href="Relay/ConnectEvent.html" title="SignalWire::Relay::ConnectEvent (class)">ConnectEvent</a></span>, <span class='object_link'><a href="Relay/DenoiseEvent.html" title="SignalWire::Relay::DenoiseEvent (class)">DenoiseEvent</a></span>, <span class='object_link'><a href="Relay/DetectAction.html" title="SignalWire::Relay::DetectAction (class)">DetectAction</a></span>, <span class='object_link'><a href="Relay/DetectEvent.html" title="SignalWire::Relay::DetectEvent (class)">DetectEvent</a></span>, <span class='object_link'><a href="Relay/Device.html" title="SignalWire::Relay::Device (class)">Device</a></span>, <span class='object_link'><a href="Relay/DialEvent.html" title="SignalWire::Relay::DialEvent (class)">DialEvent</a></span>, <span class='object_link'><a href="Relay/EchoEvent.html" title="SignalWire::Relay::EchoEvent (class)">EchoEvent</a></span>, <span class='object_link'><a href="Relay/FaxAction.html" title="SignalWire::Relay::FaxAction (class)">FaxAction</a></span>, <span class='object_link'><a href="Relay/FaxEvent.html" title="SignalWire::Relay::FaxEvent (class)">FaxEvent</a></span>, <span class='object_link'><a href="Relay/HoldEvent.html" title="SignalWire::Relay::HoldEvent (class)">HoldEvent</a></span>, <span class='object_link'><a href="Relay/Message.html" title="SignalWire::Relay::Message (class)">Message</a></span>, <span class='object_link'><a href="Relay/MessageReceiveEvent.html" title="SignalWire::Relay::MessageReceiveEvent (class)">MessageReceiveEvent</a></span>, <span class='object_link'><a href="Relay/MessageStateEvent.html" title="SignalWire::Relay::MessageStateEvent (class)">MessageStateEvent</a></span>, <span class='object_link'><a href="Relay/PayAction.html" title="SignalWire::Relay::PayAction (class)">PayAction</a></span>, <span class='object_link'><a href="Relay/PayEvent.html" title="SignalWire::Relay::PayEvent (class)">PayEvent</a></span>, <span class='object_link'><a href="Relay/PlayAction.html" title="SignalWire::Relay::PlayAction (class)">PlayAction</a></span>, <span class='object_link'><a href="Relay/PlayEvent.html" title="SignalWire::Relay::PlayEvent (class)">PlayEvent</a></span>, <span class='object_link'><a href="Relay/QueueEvent.html" title="SignalWire::Relay::QueueEvent (class)">QueueEvent</a></span>, <span class='object_link'><a href="Relay/RecordAction.html" title="SignalWire::Relay::RecordAction (class)">RecordAction</a></span>, <span class='object_link'><a href="Relay/RecordEvent.html" title="SignalWire::Relay::RecordEvent (class)">RecordEvent</a></span>, <span class='object_link'><a href="Relay/ReferEvent.html" title="SignalWire::Relay::ReferEvent (class)">ReferEvent</a></span>, <span class='object_link'><a href="Relay/RelayError.html" title="SignalWire::Relay::RelayError (class)">RelayError</a></span>, <span class='object_link'><a href="Relay/RelayEvent.html" title="SignalWire::Relay::RelayEvent (class)">RelayEvent</a></span>, <span class='object_link'><a href="Relay/SendDigitsEvent.html" title="SignalWire::Relay::SendDigitsEvent (class)">SendDigitsEvent</a></span>, <span class='object_link'><a href="Relay/StandaloneCollectAction.html" title="SignalWire::Relay::StandaloneCollectAction (class)">StandaloneCollectAction</a></span>, <span class='object_link'><a href="Relay/StreamAction.html" title="SignalWire::Relay::StreamAction (class)">StreamAction</a></span>, <span class='object_link'><a href="Relay/StreamEvent.html" title="SignalWire::Relay::StreamEvent (class)">StreamEvent</a></span>, <span class='object_link'><a href="Relay/TapAction.html" title="SignalWire::Relay::TapAction (class)">TapAction</a></span>, <span class='object_link'><a href="Relay/TapEvent.html" title="SignalWire::Relay::TapEvent (class)">TapEvent</a></span>, <span class='object_link'><a href="Relay/TranscribeAction.html" title="SignalWire::Relay::TranscribeAction (class)">TranscribeAction</a></span>, <span class='object_link'><a href="Relay/TranscribeEvent.html" title="SignalWire::Relay::TranscribeEvent (class)">TranscribeEvent</a></span>
     
   
 </p>
@@ -303,6 +305,30 @@
         <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>disconnected</span><span class='tstring_end'>&#39;</span></span></pre></dd>
       
         <dt id="CONNECT_STATE_FAILED-constant" class="">CONNECT_STATE_FAILED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>failed</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="DIAL_STATE_DIALING-constant" class="">DIAL_STATE_DIALING =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Dial states (the <code>dial_state</code> field on calling.call.dial events)</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dialing</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="DIAL_STATE_ANSWERED-constant" class="">DIAL_STATE_ANSWERED =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>answered</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="DIAL_STATE_FAILED-constant" class="">DIAL_STATE_FAILED =
           
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>failed</span><span class='tstring_end'>&#39;</span></span></pre></dd>
@@ -748,14 +774,14 @@
       <pre class="lines">
 
 
-664
-665
-666
-667
-668</pre>
+945
+946
+947
+948
+949</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 664</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 945</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_parse_event'>parse_event</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_event_type'>event_type</span> <span class='op'>=</span> <span class='id identifier rubyid_payload'>payload</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>event_type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -772,9 +798,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:54 2026 by
+  Generated on Mon Jun 15 17:33:17 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

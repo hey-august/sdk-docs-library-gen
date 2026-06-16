@@ -302,6 +302,28 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#terminal%3F-instance_method" title="#terminal? (instance method)">#<strong>terminal?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Typed predicate over <span class='object_link'><a href="#call_state-instance_method" title="SignalWire::Relay::CallStateEvent#call_state (method)">#call_state</a></span>, alongside the bare string.</p></div></span>
+  
+</li>
+
+      
     </ul>
     
   
@@ -313,7 +335,12 @@
   
   
   
-  <div id="constructor_details" class="method_details_list">
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="RelayEvent.html" title="SignalWire::Relay::RelayEvent (class)">RelayEvent</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="RelayEvent.html#==-instance_method" title="SignalWire::Relay::RelayEvent#== (method)">#==</a></span>, <span class='object_link'><a href="RelayEvent.html#deconstruct-instance_method" title="SignalWire::Relay::RelayEvent#deconstruct (method)">#deconstruct</a></span>, <span class='object_link'><a href="RelayEvent.html#deconstruct_keys-instance_method" title="SignalWire::Relay::RelayEvent#deconstruct_keys (method)">#deconstruct_keys</a></span>, <span class='object_link'><a href="RelayEvent.html#hash-instance_method" title="SignalWire::Relay::RelayEvent#hash (method)">#hash</a></span>, <span class='object_link'><a href="RelayEvent.html#to_h-instance_method" title="SignalWire::Relay::RelayEvent#to_h (method)">#to_h</a></span>, <span class='object_link'><a href="RelayEvent.html#to_json-instance_method" title="SignalWire::Relay::RelayEvent#to_json (method)">#to_json</a></span></p>
+<div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
@@ -340,16 +367,16 @@
       <pre class="lines">
 
 
-46
-47
-48
-49
-50
-51
-52</pre>
+137
+138
+139
+140
+141
+142
+143</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 137</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>call_state:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>end_reason:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>direction:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>device:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='op'>**</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
@@ -394,12 +421,12 @@
       <pre class="lines">
 
 
-31
-32
-33</pre>
+122
+123
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_call_state'>call_state</span>
   <span class='ivar'>@call_state</span>
@@ -435,12 +462,12 @@
       <pre class="lines">
 
 
-31
-32
-33</pre>
+122
+123
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_device'>device</span>
   <span class='ivar'>@device</span>
@@ -476,12 +503,12 @@
       <pre class="lines">
 
 
-31
-32
-33</pre>
+122
+123
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_direction'>direction</span>
   <span class='ivar'>@direction</span>
@@ -517,12 +544,12 @@
       <pre class="lines">
 
 
-31
-32
-33</pre>
+122
+123
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_end_reason'>end_reason</span>
   <span class='ivar'>@end_reason</span>
@@ -554,21 +581,21 @@
       <pre class="lines">
 
 
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44</pre>
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_payload'>from_payload</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_base'>base</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="RelayEvent.html" title="SignalWire::Relay::RelayEvent (class)">RelayEvent</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_payload'><span class='object_link'><a href="RelayEvent.html#from_payload-class_method" title="SignalWire::Relay::RelayEvent.from_payload (method)">from_payload</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='rparen'>)</span>
@@ -589,12 +616,72 @@
     
   </div>
 
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="terminal?-instance_method">
+  
+    #<strong>terminal?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Typed predicate over <span class='object_link'><a href="#call_state-instance_method" title="SignalWire::Relay::CallStateEvent#call_state (method)">#call_state</a></span>, alongside the bare string.
+Agrees with <span class='object_link'><a href="CallState.html#terminal%3F-class_method" title="SignalWire::Relay::CallState.terminal? (method)">SignalWire::Relay::CallState.terminal?</a></span> — true exactly when the call has
+ended (<span class='object_link'><a href="CallState.html#ENDED-constant" title="SignalWire::Relay::CallState::ENDED (constant)">SignalWire::Relay::CallState::ENDED</a></span>).</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+150
+151
+152</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 150</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_terminal?'>terminal?</span>
+  <span class='const'><span class='object_link'><a href="CallState.html" title="SignalWire::Relay::CallState (module)">CallState</a></span></span><span class='period'>.</span><span class='id identifier rubyid_terminal?'><span class='object_link'><a href="CallState.html#terminal%3F-class_method" title="SignalWire::Relay::CallState.terminal? (method)">terminal?</a></span></span><span class='lparen'>(</span><span class='ivar'>@call_state</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:56 2026 by
+  Generated on Mon Jun 15 17:33:18 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

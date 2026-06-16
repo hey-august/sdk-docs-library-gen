@@ -338,6 +338,50 @@ use #to_a to collect every item across all pages.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#__iter__-instance_method" title="#__iter__ (instance method)">#<strong>__iter__</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Equivalent of Python's <code>__iter__</code>: returns the iterator itself.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#__next__-instance_method" title="#__next__ (instance method)">#<strong>__next__</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Equivalent of Python's <code>__next__</code>: returns the next item across pages, raising <code>StopIteration</code> when the iterator is exhausted (mirroring Python's raise-StopIteration contract rather than the <code>:__stop__</code> sentinel used internally by <code>#each</code>).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong>  &#x21d2; Object </a>
     
 
@@ -764,7 +808,107 @@ use #to_a to collect every item across all pages.</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="each-instance_method">
+  <h3 class="signature first" id="__iter__-instance_method">
+  
+    #<strong>__iter__</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Equivalent of Python's <code>__iter__</code>: returns the iterator itself.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/pagination.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid___iter__'>__iter__</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="__next__-instance_method">
+  
+    #<strong>__next__</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Equivalent of Python's <code>__next__</code>: returns the next item across pages,
+raising <code>StopIteration</code> when the iterator is exhausted (mirroring
+Python's raise-StopIteration contract rather than the <code>:__stop__</code>
+sentinel used internally by <code>#each</code>).</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>StopIteration</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63
+64
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/pagination.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid___next__'>__next__</span>
+  <span class='id identifier rubyid_item'>item</span> <span class='op'>=</span> <span class='id identifier rubyid_next_item'>next_item</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>StopIteration</span> <span class='kw'>if</span> <span class='id identifier rubyid_item'>item</span> <span class='op'>==</span> <span class='symbol'>:__stop__</span>
+
+  <span class='id identifier rubyid_item'>item</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each-instance_method">
   
     #<strong>each</strong>  &#x21d2; <tt>Object</tt> 
   
@@ -833,19 +977,19 @@ Enumerable), but the public surface is <code>#each</code>.</p>
       <pre class="lines">
 
 
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57</pre>
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/pagination.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/rest/pagination.rb', line 70</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_next_item'>next_item</span>
   <span class='kw'>while</span> <span class='ivar'>@index</span> <span class='op'>&gt;=</span> <span class='ivar'>@items</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
@@ -867,9 +1011,9 @@ Enumerable), but the public surface is <code>#each</code>.</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:55 2026 by
+  Generated on Mon Jun 15 17:33:18 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

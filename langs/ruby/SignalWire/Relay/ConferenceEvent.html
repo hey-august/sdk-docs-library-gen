@@ -286,7 +286,12 @@
   
   
   
-  <div id="constructor_details" class="method_details_list">
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="RelayEvent.html" title="SignalWire::Relay::RelayEvent (class)">RelayEvent</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="RelayEvent.html#==-instance_method" title="SignalWire::Relay::RelayEvent#== (method)">#==</a></span>, <span class='object_link'><a href="RelayEvent.html#deconstruct-instance_method" title="SignalWire::Relay::RelayEvent#deconstruct (method)">#deconstruct</a></span>, <span class='object_link'><a href="RelayEvent.html#deconstruct_keys-instance_method" title="SignalWire::Relay::RelayEvent#deconstruct_keys (method)">#deconstruct_keys</a></span>, <span class='object_link'><a href="RelayEvent.html#hash-instance_method" title="SignalWire::Relay::RelayEvent#hash (method)">#hash</a></span>, <span class='object_link'><a href="RelayEvent.html#to_h-instance_method" title="SignalWire::Relay::RelayEvent#to_h (method)">#to_h</a></span>, <span class='object_link'><a href="RelayEvent.html#to_json-instance_method" title="SignalWire::Relay::RelayEvent#to_json (method)">#to_json</a></span></p>
+<div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
@@ -313,15 +318,15 @@
       <pre class="lines">
 
 
-522
-523
-524
-525
-526
-527</pre>
+764
+765
+766
+767
+768
+769</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 522</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 764</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>conference_id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>status:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='op'>**</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
@@ -365,12 +370,12 @@
       <pre class="lines">
 
 
-508
-509
-510</pre>
+750
+751
+752</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 508</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 750</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_conference_id'>conference_id</span>
   <span class='ivar'>@conference_id</span>
@@ -406,12 +411,12 @@
       <pre class="lines">
 
 
-508
-509
-510</pre>
+750
+751
+752</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 508</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 750</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -447,12 +452,12 @@
       <pre class="lines">
 
 
-508
-509
-510</pre>
+750
+751
+752</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 508</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 750</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_status'>status</span>
   <span class='ivar'>@status</span>
@@ -484,20 +489,20 @@
       <pre class="lines">
 
 
-510
-511
-512
-513
-514
-515
-516
-517
-518
-519
-520</pre>
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 510</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/relay_event.rb', line 752</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_payload'>from_payload</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_base'>base</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="RelayEvent.html" title="SignalWire::Relay::RelayEvent (class)">RelayEvent</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_payload'><span class='object_link'><a href="RelayEvent.html#from_payload-class_method" title="SignalWire::Relay::RelayEvent.from_payload (method)">from_payload</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='rparen'>)</span>
@@ -520,9 +525,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:56 2026 by
+  Generated on Mon Jun 15 17:33:19 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

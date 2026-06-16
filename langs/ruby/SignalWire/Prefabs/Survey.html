@@ -360,6 +360,50 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#log_response-instance_method" title="#log_response (instance method)">#<strong>log_response</strong>(args, _raw_data)  &#x21d2; Swaig::FunctionResult </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Tool: log_response — Python parity (signalwire.prefabs.survey.SurveyAgent#log_response).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_summary-instance_method" title="#on_summary (instance method)">#<strong>on_summary</strong>(summary, _raw_data = nil)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Lifecycle hook: on_summary — Python parity (signalwire.prefabs.survey.SurveyAgent#on_summary).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#prompt_sections-instance_method" title="#prompt_sections (instance method)">#<strong>prompt_sections</strong>  &#x21d2; Object </a>
     
 
@@ -397,6 +441,28 @@
 
   
     <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#validate_response-instance_method" title="#validate_response (instance method)">#<strong>validate_response</strong>(args, _raw_data)  &#x21d2; Swaig::FunctionResult </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Tool: validate_response — Python parity (signalwire.prefabs.survey.SurveyAgent#validate_response).</p></div></span>
   
 </li>
 
@@ -445,8 +511,6 @@
       <pre class="lines">
 
 
-24
-25
 26
 27
 28
@@ -455,10 +519,12 @@
 31
 32
 33
-34</pre>
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>survey_name:</span><span class='comma'>,</span> <span class='label'>questions:</span><span class='comma'>,</span> <span class='label'>introduction:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>conclusion:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>survey</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>route:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/survey</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid__opts'>_opts</span><span class='rparen'>)</span>
@@ -507,12 +573,12 @@
       <pre class="lines">
 
 
-22
-23
-24</pre>
+24
+25
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -548,12 +614,12 @@
       <pre class="lines">
 
 
-22
-23
-24</pre>
+24
+25
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_questions'>questions</span>
   <span class='ivar'>@questions</span>
@@ -589,12 +655,12 @@
       <pre class="lines">
 
 
-22
-23
-24</pre>
+24
+25
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_route'>route</span>
   <span class='ivar'>@route</span>
@@ -630,12 +696,12 @@
       <pre class="lines">
 
 
-22
-23
-24</pre>
+24
+25
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_survey_name'>survey_name</span>
   <span class='ivar'>@survey_name</span>
@@ -667,8 +733,6 @@
       <pre class="lines">
 
 
-50
-51
 52
 53
 54
@@ -676,10 +740,12 @@
 56
 57
 58
-59</pre>
+59
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 50</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 52</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_global_data'>global_data</span>
   <span class='lbrace'>{</span>
@@ -711,13 +777,13 @@
       <pre class="lines">
 
 
-61
-62
 63
-64</pre>
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handle_start'>handle_start</span><span class='lparen'>(</span><span class='id identifier rubyid__args'>_args</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_q'>q</span> <span class='op'>=</span> <span class='ivar'>@questions</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
@@ -743,12 +809,12 @@
       <pre class="lines">
 
 
-66
-67
-68</pre>
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handle_submit'>handle_submit</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Response recorded: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>answer</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -773,15 +839,189 @@
       <pre class="lines">
 
 
-70
-71
-72</pre>
+72
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handle_summary'>handle_summary</span><span class='lparen'>(</span><span class='id identifier rubyid__args'>_args</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@conclusion</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="log_response-instance_method">
+  
+    #<strong>log_response</strong>(args, _raw_data)  &#x21d2; <tt><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">Swaig::FunctionResult</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Tool: log_response — Python parity
+(signalwire.prefabs.survey.SurveyAgent#log_response).</p>
+<p>Acknowledges that a validated response has been recorded, naming the
+question by its text. A real implementation would persist the answer.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>expects &quot;question_id&quot;, &quot;response&quot;</p></div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">Swaig::FunctionResult</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128
+129
+130
+131
+132</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 126</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_log_response'>log_response</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_question_id'>question_id</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>question_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_question'>question</span> <span class='op'>=</span> <span class='ivar'>@questions</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_q'>q</span><span class='op'>|</span> <span class='id identifier rubyid_q'>q</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_question_id'>question_id</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_question_text'>question_text</span> <span class='op'>=</span> <span class='id identifier rubyid_question'>question</span> <span class='op'>?</span> <span class='id identifier rubyid_question'>question</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>text</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='const'><span class='object_link'><a href="../Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Response to &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_question_text'>question_text</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; has been recorded.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="on_summary-instance_method">
+  
+    #<strong>on_summary</strong>(summary, _raw_data = nil)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Lifecycle hook: on_summary — Python parity
+(signalwire.prefabs.survey.SurveyAgent#on_summary).</p>
+<p>Logs the completed survey results; structured (Hash) summaries are
+emitted as pretty JSON. Subclasses override to store responses or
+trigger follow-up actions.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>summary</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>survey responses summary</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>_raw_data</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>full raw POST data</p></div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 144</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_on_summary'>on_summary</span><span class='lparen'>(</span><span class='id identifier rubyid_summary'>summary</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_summary'>summary</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_summary'>summary</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Survey completed: </span><span class='embexpr_beg'>#{</span><span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_pretty_generate'>pretty_generate</span><span class='lparen'>(</span><span class='id identifier rubyid_summary'>summary</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Survey summary (unstructured): </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_summary'>summary</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>rescue</span> <span class='const'>StandardError</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error processing survey summary: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -803,18 +1043,18 @@
       <pre class="lines">
 
 
-40
-41
 42
 43
 44
 45
 46
 47
-48</pre>
+48
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prompt_sections'>prompt_sections</span>
   <span class='lbracket'>[</span>
@@ -845,15 +1085,147 @@
       <pre class="lines">
 
 
-36
-37
-38</pre>
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tools'>tools</span>
-  <span class='qwords_beg'>%w[</span><span class='tstring_content'>start_survey</span><span class='words_sep'> </span><span class='tstring_content'>submit_survey_answer</span><span class='words_sep'> </span><span class='tstring_content'>get_survey_summary</span><span class='tstring_end'>]</span></span>
+  <span class='qwords_beg'>%w[</span><span class='tstring_content'>start_survey</span><span class='words_sep'> </span><span class='tstring_content'>submit_survey_answer</span><span class='words_sep'> </span><span class='tstring_content'>get_survey_summary</span><span class='words_sep'> </span><span class='tstring_content'>validate_response</span><span class='words_sep'> </span><span class='tstring_content'>log_response</span><span class='tstring_end'>]</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="validate_response-instance_method">
+  
+    #<strong>validate_response</strong>(args, _raw_data)  &#x21d2; <tt><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">Swaig::FunctionResult</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Tool: validate_response — Python parity
+(signalwire.prefabs.survey.SurveyAgent#validate_response).</p>
+<p>Validates a user's answer against the constraints of the identified
+question (rating range, multiple-choice options, yes/no, required
+open-ended) and returns a human-readable validity message.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>expects &quot;question_id&quot;, &quot;response&quot;</p></div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">Swaig::FunctionResult</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/survey.rb', line 85</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_validate_response'>validate_response</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_question_id'>question_id</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>question_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_response'>response</span>    <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>response</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='id identifier rubyid_question'>question</span> <span class='op'>=</span> <span class='ivar'>@questions</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_q'>q</span><span class='op'>|</span> <span class='id identifier rubyid_q'>q</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_question_id'>question_id</span> <span class='rbrace'>}</span>
+  <span class='kw'>return</span> <span class='const'><span class='object_link'><a href="../Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error: Question with ID &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_question_id'>question_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; not found.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_question'>question</span>
+
+  <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Response to &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_question_id'>question_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; is valid.</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='kw'>case</span> <span class='id identifier rubyid_question'>question</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rating</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_scale'>scale</span> <span class='op'>=</span> <span class='id identifier rubyid_question'>question</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>scale</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='int'>5</span>
+    <span class='id identifier rubyid_rating'>rating</span> <span class='op'>=</span> <span class='const'>Integer</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span><span class='comma'>,</span> <span class='label'>exception:</span> <span class='kw'>false</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_rating'>rating</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_rating'>rating</span> <span class='op'>&lt;</span> <span class='int'>1</span> <span class='op'>||</span> <span class='id identifier rubyid_rating'>rating</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_scale'>scale</span>
+      <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid rating. Please provide a number between 1 and </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_scale'>scale</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>multiple_choice</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_question'>question</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>options</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_opt'>opt</span><span class='op'>|</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span> <span class='op'>==</span> <span class='id identifier rubyid_opt'>opt</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span> <span class='rbrace'>}</span>
+      <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid choice. Please select one of: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>yes_no</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>yes</span><span class='words_sep'> </span><span class='tstring_content'>no</span><span class='words_sep'> </span><span class='tstring_content'>y</span><span class='words_sep'> </span><span class='tstring_content'>n</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Please answer with &#39;yes&#39; or &#39;no&#39;.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>open_ended</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_required'>required</span> <span class='op'>=</span> <span class='id identifier rubyid_question'>question</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>required</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_question'>question</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>required</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='kw'>true</span>
+    <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A response is required for this question.</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_required'>required</span>
+  <span class='kw'>end</span>
+
+  <span class='const'><span class='object_link'><a href="../Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -865,9 +1237,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:55 2026 by
+  Generated on Mon Jun 15 17:33:18 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

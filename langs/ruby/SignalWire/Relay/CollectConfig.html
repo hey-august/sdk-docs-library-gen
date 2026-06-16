@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: SignalWire::Relay::CollectConfig
+  
+    &mdash; SignalWire Ruby SDK
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "SignalWire::Relay::CollectConfig";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Relay.html" title="SignalWire::Relay (module)">Relay</a></span></span>
+     &raquo; 
+    <span class="title">CollectConfig</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: SignalWire::Relay::CollectConfig
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">SignalWire::Relay::CollectConfig</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/signalwire/relay/collect_config.rb
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>A typed RELAY <code>collect</code> configuration: the known-shape options object the
+input-collection wrappers (<span class='object_link'><a href="Call.html#collect-instance_method" title="SignalWire::Relay::Call#collect (method)">SignalWire::Relay::Call#collect</a></span>, <span class='object_link'><a href="Call.html#play_and_collect-instance_method" title="SignalWire::Relay::Call#play_and_collect (method)">SignalWire::Relay::Call#play_and_collect</a></span>,
+<span class='object_link'><a href="Call.html#prompt_tts-instance_method" title="SignalWire::Relay::Call#prompt_tts (method)">SignalWire::Relay::Call#prompt_tts</a></span>, <span class='object_link'><a href="Call.html#prompt_audio-instance_method" title="SignalWire::Relay::Call#prompt_audio (method)">SignalWire::Relay::Call#prompt_audio</a></span>) currently take as a raw Hash and
+pass through verbatim onto the <code>calling.collect</code> /
+<code>calling.play_and_collect</code> wire frame.</p>
+<p>The shape is fully grounded in
+<code>porting-sdk/relay-protocol/calling.collect.params.json</code>: a <code>digits</code>
+sub-object (+max+, <code>min</code>, <code>digit_timeout</code>, <code>terminators</code>), a <code>speech</code>
+sub-object (+end_silence_timeout+, <code>hints</code>, <code>language</code>, <code>model</code>,
+<code>speech_timeout</code>), and top-level toggles (+initial_timeout+,
+<code>partial_results</code>, <code>continuous</code>, <code>send_start_of_input</code>,
+<code>start_input_timers</code>). <code>CollectConfig</code> types that shape so callers stop
+hand-building nested Hashes.</p>
+<p><strong>No closed-set enum is folded in here:</strong> the collect shape carries <em>no</em>
+schema-enumerated value sets — <code>terminators</code> is a free DTMF string,
++language+/+model+ are open vocabularies (ASR language tags / model
+names). Inventing an enum would contradict the wire contract. (This is
+why ruby's named Tier-3 collect item types only the <em>shape</em>; the Tier-1
+enum integration lives in the record/tap/SWAIG items, where the sets
+genuinely <em>are</em> closed.)</p>
+<p>This is <strong>additive</strong>: every wrapper still accepts a raw Hash. A
+<code>CollectConfig</code> yields the <em>identical</em> wire Hash via <span class='object_link'><a href="#to_h-instance_method" title="SignalWire::Relay::CollectConfig#to_h (method)">#to_h</a></span> (string
+keys, only the provided fields present — unset optionals are omitted, so
+the frame is byte identical to the hand-built literal the wrapper tests
+assert).</p>
+<p>Idiomatic Ruby value object, consistent with the Wave-A relay-event
+idioms: Ruby 3.0 pattern matching (+#deconstruct_keys+), value
++#==+/+#eql?+/+#hash+, and +#to_h+/+#to_json+ projections.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+        <h5 class="example_title"><div class='inline'><p>Collect 4 DTMF digits terminated by '#'</p></div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_cfg'>cfg</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Relay.html" title="SignalWire::Relay (module)">Relay</a></span></span><span class='op'>::</span><span class='const'>CollectConfig</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="SignalWire::Relay::CollectConfig#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+  <span class='label'>digits:</span> <span class='lbrace'>{</span> <span class='label'>max:</span> <span class='int'>4</span><span class='comma'>,</span> <span class='label'>terminators:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>initial_timeout:</span> <span class='float'>5.0</span>
+<span class='rparen'>)</span>
+<span class='id identifier rubyid_call'>call</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lparen'>(</span><span class='id identifier rubyid_cfg'>cfg</span><span class='period'>.</span><span class='id identifier rubyid_to_h'>to_h</span><span class='rparen'>)</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'><p>Speech collection</p></div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_cfg'>cfg</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Relay.html" title="SignalWire::Relay (module)">Relay</a></span></span><span class='op'>::</span><span class='const'>CollectConfig</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="SignalWire::Relay::CollectConfig#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+  <span class='label'>speech:</span> <span class='lbrace'>{</span> <span class='label'>end_silence_timeout:</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='label'>language:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>en-US</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+<span class='rparen'>)</span>
+<span class='id identifier rubyid_call'>call</span><span class='period'>.</span><span class='id identifier rubyid_prompt_tts'>prompt_tts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Say something</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_cfg'>cfg</span><span class='period'>.</span><span class='id identifier rubyid_to_h'>to_h</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#continuous-instance_method" title="#continuous (instance method)">#<strong>continuous</strong>  &#x21d2; Numeric<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#digits-instance_method" title="#digits (instance method)">#<strong>digits</strong>  &#x21d2; Hash<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>The <code>digits</code> sub-config, or nil.</p></div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initial_timeout-instance_method" title="#initial_timeout (instance method)">#<strong>initial_timeout</strong>  &#x21d2; Numeric<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#partial_results-instance_method" title="#partial_results (instance method)">#<strong>partial_results</strong>  &#x21d2; Numeric<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#send_start_of_input-instance_method" title="#send_start_of_input (instance method)">#<strong>send_start_of_input</strong>  &#x21d2; Numeric<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#speech-instance_method" title="#speech (instance method)">#<strong>speech</strong>  &#x21d2; Hash<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>The <code>speech</code> sub-config, or nil.</p></div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#start_input_timers-instance_method" title="#start_input_timers (instance method)">#<strong>start_input_timers</strong>  &#x21d2; Numeric<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(other)  &#x21d2; Object </a>
+    
+
+    
+      (also: #eql?)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Value equality: same projected wire shape.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deconstruct_keys-instance_method" title="#deconstruct_keys (instance method)">#<strong>deconstruct_keys</strong>(keys)  &#x21d2; Hash{Symbol =&gt; Object} </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Ruby 3.0 hash pattern-matching hook.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hash-instance_method" title="#hash (instance method)">#<strong>hash</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Hash key parity with <span class='object_link'><a href="#==-instance_method" title="SignalWire::Relay::CollectConfig#== (method)">#==</a></span>.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(digits: nil, speech: nil, initial_timeout: nil, partial_results: nil, continuous: nil, send_start_of_input: nil, start_input_timers: nil)  &#x21d2; CollectConfig </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A new instance of CollectConfig.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_h-instance_method" title="#to_h (instance method)">#<strong>to_h</strong>  &#x21d2; Hash{String =&gt; Object} </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>The wire Hash, string-keyed, with <strong>only the provided fields present</strong> (unset optionals omitted).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_json-instance_method" title="#to_json (instance method)">#<strong>to_json</strong>(*args)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>JSON serialization of <span class='object_link'><a href="#to_h-instance_method" title="SignalWire::Relay::CollectConfig#to_h (method)">#to_h</a></span>.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; Object </a>
+    
+
+    
+      (also: #inspect)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+    
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(digits: nil, speech: nil, initial_timeout: nil, partial_results: nil, continuous: nil, send_start_of_input: nil, start_input_timers: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="SignalWire::Relay::CollectConfig (class)">CollectConfig</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns a new instance of CollectConfig.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>digits</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>DTMF options: <code>max</code> (required when present),
+<code>min</code>, <code>digit_timeout</code>, <code>terminators</code>. Keys may be symbols.</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>speech</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>ASR options: <code>end_silence_timeout</code>, <code>hints</code>,
+<code>language</code>, <code>model</code>, <code>speech_timeout</code>. Keys may be symbols.</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>initial_timeout</span>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>seconds to wait for first input.</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>partial_results</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>emit interim results.</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>continuous</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>keep collecting after a result.</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>send_start_of_input</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>emit a start-of-input event.</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>start_input_timers</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>start input timers immediately.</p></div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>digits:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>speech:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>initial_timeout:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+               <span class='label'>partial_results:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>continuous:</span> <span class='kw'>nil</span><span class='comma'>,</span>
+               <span class='label'>send_start_of_input:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>start_input_timers:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@digits</span>              <span class='op'>=</span> <span class='id identifier rubyid_digits'>digits</span>
+  <span class='ivar'>@speech</span>              <span class='op'>=</span> <span class='id identifier rubyid_speech'>speech</span>
+  <span class='ivar'>@initial_timeout</span>     <span class='op'>=</span> <span class='id identifier rubyid_initial_timeout'>initial_timeout</span>
+  <span class='ivar'>@partial_results</span>     <span class='op'>=</span> <span class='id identifier rubyid_partial_results'>partial_results</span>
+  <span class='ivar'>@continuous</span>          <span class='op'>=</span> <span class='id identifier rubyid_continuous'>continuous</span>
+  <span class='ivar'>@send_start_of_input</span> <span class='op'>=</span> <span class='id identifier rubyid_send_start_of_input'>send_start_of_input</span>
+  <span class='ivar'>@start_input_timers</span>  <span class='op'>=</span> <span class='id identifier rubyid_start_input_timers'>start_input_timers</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="continuous-instance_method">
+  
+    #<strong>continuous</strong>  &#x21d2; <tt>Numeric</tt><sup>?</sup>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_continuous'>continuous</span>
+  <span class='ivar'>@continuous</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="digits-instance_method">
+  
+    #<strong>digits</strong>  &#x21d2; <tt>Hash</tt><sup>?</sup>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the <code>digits</code> sub-config, or nil.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the <code>digits</code> sub-config, or nil.</p></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_digits'>digits</span>
+  <span class='ivar'>@digits</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="initial_timeout-instance_method">
+  
+    #<strong>initial_timeout</strong>  &#x21d2; <tt>Numeric</tt><sup>?</sup>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initial_timeout'>initial_timeout</span>
+  <span class='ivar'>@initial_timeout</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="partial_results-instance_method">
+  
+    #<strong>partial_results</strong>  &#x21d2; <tt>Numeric</tt><sup>?</sup>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_partial_results'>partial_results</span>
+  <span class='ivar'>@partial_results</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="send_start_of_input-instance_method">
+  
+    #<strong>send_start_of_input</strong>  &#x21d2; <tt>Numeric</tt><sup>?</sup>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_send_start_of_input'>send_start_of_input</span>
+  <span class='ivar'>@send_start_of_input</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="speech-instance_method">
+  
+    #<strong>speech</strong>  &#x21d2; <tt>Hash</tt><sup>?</sup>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the <code>speech</code> sub-config, or nil.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the <code>speech</code> sub-config, or nil.</p></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56
+57
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 56</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_speech'>speech</span>
+  <span class='ivar'>@speech</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="start_input_timers-instance_method">
+  
+    #<strong>start_input_timers</strong>  &#x21d2; <tt>Numeric</tt><sup>?</sup>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Numeric</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_start_input_timers'>start_input_timers</span>
+  <span class='ivar'>@start_input_timers</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="==-instance_method">
+  
+    #<strong>==</strong>(other)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='eql?-instance_method'>eql?</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Value equality: same projected wire shape.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+127
+128
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 127</span>
+
+<span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="SignalWire::Relay::CollectConfig (class)">CollectConfig</a></span></span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_to_h'>to_h</span> <span class='op'>==</span> <span class='id identifier rubyid_to_h'>to_h</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deconstruct_keys-instance_method">
+  
+    #<strong>deconstruct_keys</strong>(keys)  &#x21d2; <tt>Hash{Symbol =&gt; Object}</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Ruby 3.0 hash pattern-matching hook. Returns symbol-keyed config with
+only the <em>set</em> fields (mirroring <span class='object_link'><a href="#to_h-instance_method" title="SignalWire::Relay::CollectConfig#to_h (method)">#to_h</a></span>'s omit-when-nil contract); a
+subset of <code>keys</code> returns only those that are both requested and set.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>keys</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Symbol&gt;</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash{Symbol =&gt; Object}</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 112</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_deconstruct_keys'>deconstruct_keys</span><span class='lparen'>(</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_h'>h</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='symbol'>:digits</span><span class='rbracket'>]</span>              <span class='op'>=</span> <span class='ivar'>@digits</span> <span class='kw'>unless</span> <span class='ivar'>@digits</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='symbol'>:speech</span><span class='rbracket'>]</span>              <span class='op'>=</span> <span class='ivar'>@speech</span> <span class='kw'>unless</span> <span class='ivar'>@speech</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='symbol'>:initial_timeout</span><span class='rbracket'>]</span>     <span class='op'>=</span> <span class='ivar'>@initial_timeout</span> <span class='kw'>unless</span> <span class='ivar'>@initial_timeout</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='symbol'>:partial_results</span><span class='rbracket'>]</span>     <span class='op'>=</span> <span class='ivar'>@partial_results</span> <span class='kw'>unless</span> <span class='ivar'>@partial_results</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='symbol'>:continuous</span><span class='rbracket'>]</span>          <span class='op'>=</span> <span class='ivar'>@continuous</span> <span class='kw'>unless</span> <span class='ivar'>@continuous</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='symbol'>:send_start_of_input</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@send_start_of_input</span> <span class='kw'>unless</span> <span class='ivar'>@send_start_of_input</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='symbol'>:start_input_timers</span><span class='rbracket'>]</span>  <span class='op'>=</span> <span class='ivar'>@start_input_timers</span> <span class='kw'>unless</span> <span class='ivar'>@start_input_timers</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_h'>h</span> <span class='kw'>if</span> <span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
+  <span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_acc'>acc</span><span class='op'>|</span> <span class='id identifier rubyid_acc'>acc</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_h'>h</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hash-instance_method">
+  
+    #<strong>hash</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Hash key parity with <span class='object_link'><a href="#==-instance_method" title="SignalWire::Relay::CollectConfig#== (method)">#==</a></span>.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 133</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hash'>hash</span>
+  <span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='comma'>,</span> <span class='id identifier rubyid_to_h'>to_h</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_hash'>hash</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_h-instance_method">
+  
+    #<strong>to_h</strong>  &#x21d2; <tt>Hash{String =&gt; Object}</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>The wire Hash, string-keyed, with <strong>only the provided fields present</strong>
+(unset optionals omitted). +digits+/+speech+ sub-Hashes are
+key-stringified one level deep. Byte identical to the collect literal a
+caller would hand-write and the wrapper tests assert on the journal.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash{String =&gt; Object}</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 89</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_h'>to_h</span>
+  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_out'>out</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>digits</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>              <span class='op'>=</span> <span class='id identifier rubyid_stringify'>stringify</span><span class='lparen'>(</span><span class='ivar'>@digits</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@digits</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_out'>out</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>speech</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>              <span class='op'>=</span> <span class='id identifier rubyid_stringify'>stringify</span><span class='lparen'>(</span><span class='ivar'>@speech</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@speech</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_out'>out</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>initial_timeout</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>     <span class='op'>=</span> <span class='ivar'>@initial_timeout</span> <span class='kw'>unless</span> <span class='ivar'>@initial_timeout</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_out'>out</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>partial_results</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>     <span class='op'>=</span> <span class='ivar'>@partial_results</span> <span class='kw'>unless</span> <span class='ivar'>@partial_results</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_out'>out</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>continuous</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>          <span class='op'>=</span> <span class='ivar'>@continuous</span> <span class='kw'>unless</span> <span class='ivar'>@continuous</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_out'>out</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>send_start_of_input</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@send_start_of_input</span> <span class='kw'>unless</span> <span class='ivar'>@send_start_of_input</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_out'>out</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>start_input_timers</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>  <span class='op'>=</span> <span class='ivar'>@start_input_timers</span> <span class='kw'>unless</span> <span class='ivar'>@start_input_timers</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_out'>out</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_json-instance_method">
+  
+    #<strong>to_json</strong>(*args)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns JSON serialization of <span class='object_link'><a href="#to_h-instance_method" title="SignalWire::Relay::CollectConfig#to_h (method)">#to_h</a></span>.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>JSON serialization of <span class='object_link'><a href="#to_h-instance_method" title="SignalWire::Relay::CollectConfig#to_h (method)">#to_h</a></span>.</p></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 102</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_json'>to_json</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_to_h'>to_h</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    #<strong>to_s</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='inspect-instance_method'>inspect</span></span>
+    </span>
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/collect_config.rb', line 137</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CollectConfig(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_to_h'>to_h</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Jun 15 17:33:19 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.44 (ruby-4.0.5).
+</div>
+
+    </div>
+  </body>
+</html>

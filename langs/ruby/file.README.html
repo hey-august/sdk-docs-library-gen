@@ -62,18 +62,20 @@
       <div id="content"><div id='filecontents'><!-- Header -->
 <div align="center">
     <a href="https://signalwire.com" target="_blank">
-        <img src="https://github.com/user-attachments/assets/0c8ed3b9-8c50-4dc6-9cc4-cc6cd137fd50" width="500" />
+        <img src="/assets/img/signalwire-wordmark.png" width="500" />
     </a>
 <h1 id="SignalWire_SDK_for_Ruby">SignalWire SDK for Ruby</h1>
 <p><em>Build AI voice agents, control live calls over WebSocket, and manage every SignalWire resource over REST -- all from one gem.</em></p>
 <p align="center">
   <a href="https://developer.signalwire.com/sdks/agents-sdk" target="_blank">Documentation</a> &middot;
   <a href="https://github.com/signalwire/signalwire-docs/issues/new/choose" target="_blank">Report an Issue</a> &middot;
-  <a href="https://rubygems.org/gems/signalwire" target="_blank">RubyGems</a>
+  <a href="https://rubygems.org/gems/signalwire-sdk" target="_blank">RubyGems</a>
 </p>
 <p><a href="https://discord.com/invite/F2WNYTNjuF" target="_blank"><img src="https://img.shields.io/badge/Discord%20Community-5865F2" alt="Discord" /></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/MIT-License-blue" alt="MIT License" /></a>
 <a href="https://github.com/signalwire/signalwire-ruby" target="_blank"><img src="https://img.shields.io/github/stars/signalwire/signalwire-ruby" alt="GitHub Stars" /></a></p>
+<p><a href="https://codespaces.new/signalwire/signalwire-ruby" target="_blank"><img src="https://github.com/codespaces/badge.svg" alt="Open in GitHub Codespaces" /></a>
+<a href="https://replit.com/new/github/signalwire/signalwire-ruby" target="_blank"><img src="https://replit.com/badge/github/signalwire/signalwire-ruby" alt="Run on Replit" /></a></p>
 </div>
 <hr />
 <h2 id="What_s_in_this_SDK">What's in this SDK</h2>
@@ -103,8 +105,11 @@
 </tr>
 </tbody>
 </table>
-<pre class="code bash"><code class="bash">gem install signalwire
+<pre class="code bash"><code class="bash">gem install signalwire-sdk
 </code></pre>
+<blockquote>
+<p>Published as <code>signalwire-sdk</code> on RubyGems. The require path is still <code>signalwire</code>, so <code>require 'signalwire'</code> works unchanged.</p>
+</blockquote>
 <hr />
 <h2 id="AI_Agents">AI Agents</h2>
 <p>Each agent is a self-contained microservice that generates <a href="docs/swml_service_guide.md">SWML</a> (SignalWire Markup Language) and handles <a href="docs/swaig_reference.md">SWAIG</a> (SignalWire AI Gateway) tool calls. The SignalWire platform runs the entire AI pipeline (STT, LLM, TTS) -- your agent just defines the behavior.</p>
@@ -249,11 +254,12 @@ swaig-test my_agent.rb --exec get_time
 <hr />
 <h2 id="Installation">Installation</h2>
 <pre class="code bash"><code class="bash"># From RubyGems
-gem install signalwire
+gem install signalwire-sdk
 
 # Or in your Gemfile
-gem &#39;signalwire&#39;
+gem &#39;signalwire-sdk&#39;, require: &#39;signalwire&#39;
 </code></pre>
+<p>Published as <code>signalwire-sdk</code> on RubyGems (the bare <code>signalwire</code> name belongs to the unrelated legacy SignalWire Ruby client). The <code>require:</code> hint keeps <code>require 'signalwire'</code> working unchanged.</p>
 <p>Requires Ruby &gt;= 3.0.</p>
 <h2 id="Documentation">Documentation</h2>
 <p>Full reference documentation is available at <strong><a href="https://developer.signalwire.com/sdks/agents-sdk">developer.signalwire.com/sdks/agents-sdk</a></strong>.</p>
@@ -375,9 +381,9 @@ COVERAGE=1 rake test
 <p>MIT -- see <a href="LICENSE">LICENSE</a> for details.</p></div></div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:53 2026 by
+  Generated on Mon Jun 15 17:33:17 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

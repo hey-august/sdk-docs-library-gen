@@ -448,6 +448,28 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#end_of_speech_timeout=-instance_method" title="#end_of_speech_timeout= (instance method)">#<strong>end_of_speech_timeout=</strong>(v)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>--- Idiomatic Ruby accessors (additive aliases over set_* originals) ---.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#execute_rpc-instance_method" title="#execute_rpc (instance method)">#<strong>execute_rpc</strong>(method, params: nil, call_id: nil, node_id: nil)  &#x21d2; self </a>
     
 
@@ -604,6 +626,28 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#metadata=-instance_method" title="#metadata= (instance method)">#<strong>metadata=</strong>(v)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#pay-instance_method" title="#pay (instance method)">#<strong>pay</strong>(payment_connector_url:, input_method: &quot;dtmf&quot;, status_url: nil, payment_method: &quot;credit-card&quot;, timeout: 5, max_attempts: 1, security_code: true, postal_code: true, min_postal_code_length: 0, token_type: &quot;reusable&quot;, charge_amount: nil, currency: &quot;usd&quot;, language: &quot;en-US&quot;, voice: &quot;woman&quot;, description: nil, valid_card_types: &quot;visa mastercard amex&quot;, parameters: nil, prompts: nil, ai_response: &#39;The payment status is ${pay_result}, do not mention anything else about collecting payment if successful.&#39;)  &#x21d2; self </a>
     
 
@@ -648,7 +692,7 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#record_call-instance_method" title="#record_call (instance method)">#<strong>record_call</strong>(control_id: nil, stereo: false, format: &quot;wav&quot;, direction: &quot;both&quot;, terminators: nil, beep: false, input_sensitivity: 44.0, initial_timeout: nil, end_silence_timeout: nil, max_length: nil, status_url: nil)  &#x21d2; self </a>
+      <a href="#record_call-instance_method" title="#record_call (instance method)">#<strong>record_call</strong>(control_id: nil, stereo: false, format: RecordFormat::WAV, direction: RecordDirection::BOTH, terminators: nil, beep: false, input_sensitivity: 44.0, initial_timeout: nil, end_silence_timeout: nil, max_length: nil, status_url: nil)  &#x21d2; self </a>
     
 
     
@@ -1000,6 +1044,28 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#speech_event_timeout=-instance_method" title="#speech_event_timeout= (instance method)">#<strong>speech_event_timeout=</strong>(v)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#stop-instance_method" title="#stop (instance method)">#<strong>stop</strong>  &#x21d2; self </a>
     
 
@@ -1198,7 +1264,7 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#tap-instance_method" title="#tap (instance method)">#<strong>tap</strong>(uri, control_id: nil, direction: &quot;both&quot;, codec: &quot;PCMU&quot;, rtp_ptime: 20, status_url: nil)  &#x21d2; self </a>
+      <a href="#tap-instance_method" title="#tap (instance method)">#<strong>tap</strong>(uri, control_id: nil, direction: TapDirection::BOTH, codec: Codec::PCMU, rtp_ptime: 20, status_url: nil)  &#x21d2; self </a>
     
 
     
@@ -1416,14 +1482,14 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-29
-30
-31
-32
-33</pre>
+97
+98
+99
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 97</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>post_process:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='ivar'>@response</span> <span class='op'>=</span> <span class='id identifier rubyid_response'>response</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
@@ -1466,12 +1532,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-25
-26
-27</pre>
+93
+94
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_action'>action</span>
   <span class='ivar'>@action</span>
@@ -1507,12 +1573,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-25
-26
-27</pre>
+93
+94
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post_process'>post_process</span>
   <span class='ivar'>@post_process</span>
@@ -1548,12 +1614,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-25
-26
-27</pre>
+93
+94
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_response'>response</span>
   <span class='ivar'>@response</span>
@@ -1636,12 +1702,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-733
-734
-735</pre>
+819
+820
+821</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 733</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 819</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_payment_action'>create_payment_action</span><span class='lparen'>(</span><span class='id identifier rubyid_action_type'>action_type</span><span class='comma'>,</span> <span class='id identifier rubyid_phrase'>phrase</span><span class='rparen'>)</span>
   <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_action_type'>action_type</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>phrase</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_phrase'>phrase</span> <span class='rbrace'>}</span>
@@ -1714,12 +1780,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-742
-743
-744</pre>
+828
+829
+830</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 742</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 828</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_payment_parameter'>create_payment_parameter</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>value</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_value'>value</span> <span class='rbrace'>}</span>
@@ -1824,18 +1890,18 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-718
-719
-720
-721
-722
-723
-724
-725
-726</pre>
+804
+805
+806
+807
+808
+809
+810
+811
+812</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 718</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 804</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_payment_prompt'>create_payment_prompt</span><span class='lparen'>(</span><span class='id identifier rubyid_for_situation'>for_situation</span><span class='comma'>,</span> <span class='id identifier rubyid_actions'>actions</span><span class='comma'>,</span> <span class='label'>card_type:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>error_type:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_prompt'>prompt</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -1926,13 +1992,13 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-57
-58
-59
-60</pre>
+125
+126
+127
+128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 125</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='ivar'>@action</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_data'>data</span> <span class='rbrace'>}</span>
@@ -1995,13 +2061,13 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-65
-66
-67
-68</pre>
+133
+134
+135
+136</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 133</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_actions'>add_actions</span><span class='lparen'>(</span><span class='id identifier rubyid_actions'>actions</span><span class='rparen'>)</span>
   <span class='ivar'>@action</span><span class='period'>.</span><span class='id identifier rubyid_concat'>concat</span><span class='lparen'>(</span><span class='id identifier rubyid_actions'>actions</span><span class='rparen'>)</span>
@@ -2064,12 +2130,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-342
-343
-344</pre>
+410
+411
+412</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 342</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 410</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_dynamic_hints'>add_dynamic_hints</span><span class='lparen'>(</span><span class='id identifier rubyid_hints'>hints</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>add_dynamic_hints</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_hints'>hints</span><span class='rparen'>)</span>
@@ -2116,13 +2182,13 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-348
-349
-350
-351</pre>
+416
+417
+418
+419</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 348</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 416</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_dynamic_hints'>clear_dynamic_hints</span>
   <span class='ivar'>@action</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>clear_dynamic_hints</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='rbrace'>}</span>
@@ -2220,26 +2286,26 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96</pre>
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 148</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connect'>connect</span><span class='lparen'>(</span><span class='id identifier rubyid_destination'>destination</span><span class='comma'>,</span> <span class='label'>final:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>from_addr:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_connect_params'>connect_params</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>to</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_destination'>destination</span> <span class='rbrace'>}</span>
@@ -2317,12 +2383,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-384
-385
-386</pre>
+452
+453
+454</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 384</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 452</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_enable_extensive_data'>enable_extensive_data</span><span class='lparen'>(</span><span class='id identifier rubyid_enabled'>enabled</span> <span class='op'>=</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>extensive_data</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_enabled'>enabled</span><span class='rparen'>)</span>
@@ -2386,15 +2452,54 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-377
-378
-379</pre>
+445
+446
+447</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 377</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 445</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_enable_functions_on_timeout'>enable_functions_on_timeout</span><span class='lparen'>(</span><span class='id identifier rubyid_enabled'>enabled</span> <span class='op'>=</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>functions_on_speaker_timeout</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_enabled'>enabled</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="end_of_speech_timeout=-instance_method">
+  
+    #<strong>end_of_speech_timeout=</strong>(v)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>--- Idiomatic Ruby accessors (additive aliases over set_* originals) ---</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+863
+864
+865</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 863</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_end_of_speech_timeout='>end_of_speech_timeout=</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_set_end_of_speech_timeout'>set_end_of_speech_timeout</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2495,21 +2600,21 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-640
-641
-642
-643
-644
-645
-646
-647
-648
-649
-650
-651</pre>
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 640</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 726</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_execute_rpc'>execute_rpc</span><span class='lparen'>(</span><span class='id identifier rubyid_method'>method</span><span class='comma'>,</span> <span class='label'>params:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>call_id:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>node_id:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_rpc_params'>rpc_params</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>method</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_method'>method</span> <span class='rbrace'>}</span>
@@ -2599,30 +2704,30 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-404
-405
-406
-407
-408
-409
-410
-411
-412
-413
-414
-415
-416
-417
-418
-419
-420
-421
-422
-423
-424</pre>
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 404</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 472</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_execute_swml'>execute_swml</span><span class='lparen'>(</span><span class='id identifier rubyid_swml_content'>swml_content</span><span class='comma'>,</span> <span class='label'>transfer:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_swml_data'>swml_data</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_swml_content'>swml_content</span>
@@ -2687,12 +2792,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-124
-125
-126</pre>
+192
+193
+194</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 192</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hangup'>hangup</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hangup</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
@@ -2759,13 +2864,13 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-131
-132
-133
-134</pre>
+199
+200
+201
+202</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 131</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 199</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hold'>hold</span><span class='lparen'>(</span><span class='id identifier rubyid_timeout'>timeout</span> <span class='op'>=</span> <span class='int'>300</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_timeout'>timeout</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_timeout'>timeout</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span><span class='comma'>,</span> <span class='int'>900</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span>
@@ -2844,63 +2949,81 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-430
-431
-432
-433
-434
-435
-436
-437
-438
-439
-440
-441
-442
-443
-444
-445
-446
-447
-448
-449
-450
-451
-452
-453
-454
-455
-456
-457
-458
-459
-460
-461
-462
-463
-464
-465
-466
-467
-468
-469
-470
-471
-472
-473
-474
-475
-476
-477
-478
-479
-480
-481
-482
-483</pre>
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 430</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 498</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_join_conference'>join_conference</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>muted:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='label'>beep:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>true</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
                     <span class='label'>start_on_enter:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>end_on_exit:</span> <span class='kw'>false</span><span class='comma'>,</span>
@@ -2913,11 +3036,29 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
                     <span class='label'>recording_status_callback_method:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>POST</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
                     <span class='label'>recording_status_callback_event:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>completed</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
                     <span class='label'>result:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='comment'># Validation order + message text mirror the Python reference
+</span>  <span class='comment'># (core/function_result.py::join_conference). Python renders its
+</span>  <span class='comment'># valid-value lists via an f-string over a Python list literal, i.e.
+</span>  <span class='comment'># &quot;one of [&#39;a&#39;, &#39;b&#39;]&quot;; we reproduce that exact form.
+</span>  <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>true</span><span class='words_sep'> </span><span class='tstring_content'>false</span><span class='words_sep'> </span><span class='tstring_content'>onEnter</span><span class='words_sep'> </span><span class='tstring_content'>onExit</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_beep'>beep</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>beep must be one of [&#39;true&#39;, &#39;false&#39;, &#39;onEnter&#39;, &#39;onExit&#39;]</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_max_participants'>max_participants</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_max_participants'>max_participants</span> <span class='op'>&lt;=</span> <span class='int'>0</span> <span class='op'>||</span> <span class='id identifier rubyid_max_participants'>max_participants</span> <span class='op'>&gt;</span> <span class='int'>250</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>max_participants must be a positive integer &lt;= 250</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>do-not-record</span><span class='words_sep'> </span><span class='tstring_content'>record-from-start</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_record'>record</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record must be one of [&#39;do-not-record&#39;, &#39;record-from-start&#39;]</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>trim-silence</span><span class='words_sep'> </span><span class='tstring_content'>do-not-trim</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_trim'>trim</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>trim must be one of [&#39;trim-silence&#39;, &#39;do-not-trim&#39;]</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>GET</span><span class='words_sep'> </span><span class='tstring_content'>POST</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_status_callback_method'>status_callback_method</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>status_callback_method must be one of [&#39;GET&#39;, &#39;POST&#39;]</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>GET</span><span class='words_sep'> </span><span class='tstring_content'>POST</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_recording_status_callback_method'>recording_status_callback_method</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>recording_status_callback_method must be one of [&#39;GET&#39;, &#39;POST&#39;]</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name cannot be empty</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>beep must be one of: true, false, onEnter, onExit</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>true</span><span class='words_sep'> </span><span class='tstring_content'>false</span><span class='words_sep'> </span><span class='tstring_content'>onEnter</span><span class='words_sep'> </span><span class='tstring_content'>onExit</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_beep'>beep</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>max_participants must be 1..250</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_max_participants'>max_participants</span><span class='period'>.</span><span class='id identifier rubyid_between?'>between?</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>250</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>record must be &#39;do-not-record&#39; or &#39;record-from-start&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>do-not-record</span><span class='words_sep'> </span><span class='tstring_content'>record-from-start</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_record'>record</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>trim must be &#39;trim-silence&#39; or &#39;do-not-trim&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>trim-silence</span><span class='words_sep'> </span><span class='tstring_content'>do-not-trim</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_trim'>trim</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_all_defaults'>all_defaults</span> <span class='op'>=</span> <span class='op'>!</span><span class='id identifier rubyid_muted'>muted</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_beep'>beep</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>true</span><span class='tstring_end'>&quot;</span></span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_start_on_enter'>start_on_enter</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_end_on_exit'>end_on_exit</span> <span class='op'>&amp;&amp;</span>
                  <span class='id identifier rubyid_wait_url'>wait_url</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_max_participants'>max_participants</span> <span class='op'>==</span> <span class='int'>250</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_record'>record</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>do-not-record</span><span class='tstring_end'>&quot;</span></span> <span class='op'>&amp;&amp;</span>
@@ -3013,16 +3154,16 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-488
-489
-490
-491
-492
-493
-494</pre>
+574
+575
+576
+577
+578
+579
+580</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 488</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 574</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_join_room'>join_room</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_swml_doc'>swml_doc</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -3030,6 +3171,36 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sections</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>main</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>join_room</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span> <span class='rbrace'>}</span> <span class='rbrace'>}</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
   <span class='rbrace'>}</span>
   <span class='id identifier rubyid_execute_swml'>execute_swml</span><span class='lparen'>(</span><span class='id identifier rubyid_swml_doc'>swml_doc</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="metadata=-instance_method">
+  
+    #<strong>metadata=</strong>(v)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+867
+868
+869</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 867</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_metadata='>metadata=</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_set_metadata'>set_metadata</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -3107,51 +3278,51 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-586
-587
-588
-589
-590
-591
-592
-593
-594
-595
-596
-597
-598
-599
-600
-601
-602
-603
-604
-605
-606
-607
-608
-609
-610
-611
-612
-613
-614
-615
-616
-617
-618
-619
-620
-621
-622
-623
-624
-625
-626
-627</pre>
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 586</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 672</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pay'>pay</span><span class='lparen'>(</span><span class='label'>payment_connector_url:</span><span class='comma'>,</span> <span class='label'>input_method:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dtmf</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
         <span class='label'>status_url:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>payment_method:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>credit-card</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
@@ -3271,16 +3442,16 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-272
-273
-274
-275
-276
-277
-278</pre>
+340
+341
+342
+343
+344
+345
+346</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 272</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 340</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_play_background_file'>play_background_file</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='label'>wait:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_wait'>wait</span>
@@ -3297,7 +3468,7 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <div class="method_details ">
   <h3 class="signature " id="record_call-instance_method">
   
-    #<strong>record_call</strong>(control_id: nil, stereo: false, format: &quot;wav&quot;, direction: &quot;both&quot;, terminators: nil, beep: false, input_sensitivity: 44.0, initial_timeout: nil, end_silence_timeout: nil, max_length: nil, status_url: nil)  &#x21d2; <tt>self</tt> 
+    #<strong>record_call</strong>(control_id: nil, stereo: false, format: RecordFormat::WAV, direction: RecordDirection::BOTH, terminators: nil, beep: false, input_sensitivity: 44.0, initial_timeout: nil, end_silence_timeout: nil, max_length: nil, status_url: nil)  &#x21d2; <tt>self</tt> 
   
 
   
@@ -3347,11 +3518,11 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
         <span class='type'>(<tt>String</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>&quot;wav&quot;</tt>)</em>
+        <em class="default">(defaults to: <tt>RecordFormat::WAV</tt>)</em>
       
       
         &mdash;
-        <div class='inline'><p>&quot;wav&quot; or &quot;mp3&quot;</p></div>
+        <div class='inline'><p>&quot;wav&quot;, &quot;mp3&quot;, or &quot;mp4&quot;</p></div>
       
     </li>
   
@@ -3363,7 +3534,7 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
         <span class='type'>(<tt>String</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>&quot;both&quot;</tt>)</em>
+        <em class="default">(defaults to: <tt>RecordDirection::BOTH</tt>)</em>
       
       
         &mdash;
@@ -3406,43 +3577,43 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313
-314
-315
-316
-317
-318
-319</pre>
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 293</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 361</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_record_call'>record_call</span><span class='lparen'>(</span><span class='label'>control_id:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>stereo:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='label'>format:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wav</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-                <span class='label'>direction:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>both</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>terminators:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>beep:</span> <span class='kw'>false</span><span class='comma'>,</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_record_call'>record_call</span><span class='lparen'>(</span><span class='label'>control_id:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>stereo:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='label'>format:</span> <span class='const'><span class='object_link'><a href="RecordFormat.html" title="SignalWire::Swaig::RecordFormat (module)">RecordFormat</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="RecordFormat.html#WAV-constant" title="SignalWire::Swaig::RecordFormat::WAV (constant)">WAV</a></span></span><span class='comma'>,</span>
+                <span class='label'>direction:</span> <span class='const'><span class='object_link'><a href="RecordDirection.html" title="SignalWire::Swaig::RecordDirection (module)">RecordDirection</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="RecordDirection.html#BOTH-constant" title="SignalWire::Swaig::RecordDirection::BOTH (constant)">BOTH</a></span></span><span class='comma'>,</span> <span class='label'>terminators:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>beep:</span> <span class='kw'>false</span><span class='comma'>,</span>
                 <span class='label'>input_sensitivity:</span> <span class='float'>44.0</span><span class='comma'>,</span> <span class='label'>initial_timeout:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                 <span class='label'>end_silence_timeout:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>max_length:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>status_url:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>format must be &#39;wav&#39; or &#39;mp3&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>wav</span><span class='words_sep'> </span><span class='tstring_content'>mp3</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_format'>format</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>direction must be &#39;speak&#39;, &#39;listen&#39;, or &#39;both&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>speak</span><span class='words_sep'> </span><span class='tstring_content'>listen</span><span class='words_sep'> </span><span class='tstring_content'>both</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_direction'>direction</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>format must be &#39;wav&#39;, &#39;mp3&#39;, or &#39;mp4&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='const'><span class='object_link'><a href="RecordFormat.html" title="SignalWire::Swaig::RecordFormat (module)">RecordFormat</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="RecordFormat.html#ALL-constant" title="SignalWire::Swaig::RecordFormat::ALL (constant)">ALL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_format'>format</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>direction must be &#39;speak&#39;, &#39;listen&#39;, or &#39;both&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='const'><span class='object_link'><a href="RecordDirection.html" title="SignalWire::Swaig::RecordDirection (module)">RecordDirection</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="RecordDirection.html#ALL-constant" title="SignalWire::Swaig::RecordDirection::ALL (constant)">ALL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_direction'>direction</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_record_params'>record_params</span> <span class='op'>=</span> <span class='lbrace'>{</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>stereo</span><span class='tstring_end'>&quot;</span></span>            <span class='op'>=&gt;</span> <span class='id identifier rubyid_stereo'>stereo</span><span class='comma'>,</span>
@@ -3524,12 +3695,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-175
-176
-177</pre>
+243
+244
+245</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 175</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 243</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_global_data'>remove_global_data</span><span class='lparen'>(</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unset_global_data</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span>
@@ -3591,12 +3762,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-189
-190
-191</pre>
+257
+258
+259</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 189</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 257</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_metadata'>remove_metadata</span><span class='lparen'>(</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unset_meta_data</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span>
@@ -3663,12 +3834,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-252
-253
-254</pre>
+320
+321
+322</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 252</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 320</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_replace_in_history'>replace_in_history</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>replace_in_history</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
@@ -3754,19 +3925,19 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-682
-683
-684
-685
-686
-687
-688
-689
-690
-691</pre>
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 682</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 768</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rpc_ai_message'>rpc_ai_message</span><span class='lparen'>(</span><span class='id identifier rubyid_call_id'>call_id</span><span class='comma'>,</span> <span class='id identifier rubyid_message_text'>message_text</span><span class='comma'>,</span> <span class='label'>role:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>system</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_execute_rpc'>execute_rpc</span><span class='lparen'>(</span>
@@ -3835,12 +4006,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-696
-697
-698</pre>
+782
+783
+784</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 696</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 782</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rpc_ai_unhold'>rpc_ai_unhold</span><span class='lparen'>(</span><span class='id identifier rubyid_call_id'>call_id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_execute_rpc'>execute_rpc</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ai_unhold</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>call_id:</span> <span class='id identifier rubyid_call_id'>call_id</span><span class='comma'>,</span> <span class='label'>params:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
@@ -3946,24 +4117,24 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-660
-661
-662
-663
-664
-665
-666
-667
-668
-669
-670
-671
-672
-673
-674</pre>
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 660</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 746</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rpc_dial'>rpc_dial</span><span class='lparen'>(</span><span class='label'>to_number:</span><span class='comma'>,</span> <span class='label'>from_number:</span><span class='comma'>,</span> <span class='label'>dest_swml:</span><span class='comma'>,</span> <span class='label'>device_type:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>phone</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_execute_rpc'>execute_rpc</span><span class='lparen'>(</span>
@@ -4037,12 +4208,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-263
-264
-265</pre>
+331
+332
+333</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 263</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 331</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_say'>say</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>say</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
@@ -4186,30 +4357,30 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-559
-560
-561
-562
-563
-564
-565
-566
-567
-568
-569
-570
-571
-572
-573
-574
-575
-576
-577
-578
-579</pre>
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 559</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 645</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_send_sms'>send_sms</span><span class='lparen'>(</span><span class='label'>to_number:</span><span class='comma'>,</span> <span class='label'>from_number:</span><span class='comma'>,</span> <span class='label'>body:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>media:</span> <span class='kw'>nil</span><span class='comma'>,</span>
              <span class='label'>tags:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>region:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
@@ -4289,12 +4460,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-356
-357
-358</pre>
+424
+425
+426</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 356</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 424</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_end_of_speech_timeout'>set_end_of_speech_timeout</span><span class='lparen'>(</span><span class='id identifier rubyid_milliseconds'>milliseconds</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>end_of_speech_timeout</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_milliseconds'>milliseconds</span><span class='rparen'>)</span>
@@ -4356,12 +4527,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-182
-183
-184</pre>
+250
+251
+252</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 182</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 250</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_metadata'>set_metadata</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>set_meta_data</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
@@ -4408,13 +4579,13 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-48
-49
-50
-51</pre>
+116
+117
+118
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 116</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_post_process'>set_post_process</span><span class='lparen'>(</span><span class='id identifier rubyid_val'>val</span><span class='rparen'>)</span>
   <span class='ivar'>@post_process</span> <span class='op'>=</span> <span class='id identifier rubyid_val'>val</span>
@@ -4462,13 +4633,13 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-41
-42
-43
-44</pre>
+109
+110
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_response'>set_response</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
   <span class='ivar'>@response</span> <span class='op'>=</span> <span class='id identifier rubyid_text'>text</span>
@@ -4531,12 +4702,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-363
-364
-365</pre>
+431
+432
+433</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 363</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 431</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_speech_event_timeout'>set_speech_event_timeout</span><span class='lparen'>(</span><span class='id identifier rubyid_milliseconds'>milliseconds</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>speech_event_timeout</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_milliseconds'>milliseconds</span><span class='rparen'>)</span>
@@ -4598,12 +4769,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-703
-704
-705</pre>
+789
+790
+791</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 703</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 789</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_simulate_user_input'>simulate_user_input</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>user_input</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
@@ -4665,16 +4836,16 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-499
-500
-501
-502
-503
-504
-505</pre>
+585
+586
+587
+588
+589
+590
+591</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 499</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 585</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sip_refer'>sip_refer</span><span class='lparen'>(</span><span class='id identifier rubyid_to_uri'>to_uri</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_swml_doc'>swml_doc</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -4682,6 +4853,36 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sections</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>main</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sip_refer</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>to_uri</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_to_uri'>to_uri</span> <span class='rbrace'>}</span> <span class='rbrace'>}</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
   <span class='rbrace'>}</span>
   <span class='id identifier rubyid_execute_swml'>execute_swml</span><span class='lparen'>(</span><span class='id identifier rubyid_swml_doc'>swml_doc</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="speech_event_timeout=-instance_method">
+  
+    #<strong>speech_event_timeout=</strong>(v)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+879
+880
+881</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 879</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_speech_event_timeout='>speech_event_timeout=</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_set_speech_event_timeout'>set_speech_event_timeout</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4725,12 +4926,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-157
-158
-159</pre>
+225
+226
+227</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 157</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 225</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stop'>stop</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>stop</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
@@ -4777,12 +4978,12 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-282
-283
-284</pre>
+350
+351
+352</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 282</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 350</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stop_background_file'>stop_background_file</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>stop_playback_bg</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
@@ -4846,19 +5047,19 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-324
-325
-326
-327
-328
-329
-330
-331
-332
-333</pre>
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 324</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 392</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stop_record_call'>stop_record_call</span><span class='lparen'>(</span><span class='label'>control_id:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_stop_params'>stop_params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -4929,19 +5130,19 @@ All mutating methods return <code>self</code> for fluent chaining.</p>
       <pre class="lines">
 
 
-539
-540
-541
-542
-543
-544
-545
-546
-547
-548</pre>
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 539</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 625</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stop_tap'>stop_tap</span><span class='lparen'>(</span><span class='label'>control_id:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_stop_params'>stop_params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -5066,23 +5267,23 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-233
-234
-235
-236
-237
-238
-239
-240
-241
-242
-243
-244
-245
-246</pre>
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 233</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 301</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_switch_context'>switch_context</span><span class='lparen'>(</span><span class='label'>system_prompt:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>user_prompt:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                    <span class='label'>consolidate:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='label'>full_reset:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='label'>isolated:</span> <span class='kw'>false</span><span class='rparen'>)</span>
@@ -5155,12 +5356,12 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-218
-219
-220</pre>
+286
+287
+288</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 218</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 286</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_swml_change_context'>swml_change_context</span><span class='lparen'>(</span><span class='id identifier rubyid_context_name'>context_name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>change_context</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_context_name'>context_name</span><span class='rparen'>)</span>
@@ -5222,12 +5423,12 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-211
-212
-213</pre>
+279
+280
+281</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 211</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 279</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_swml_change_step'>swml_change_step</span><span class='lparen'>(</span><span class='id identifier rubyid_step_name'>step_name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>change_step</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_step_name'>step_name</span><span class='rparen'>)</span>
@@ -5322,26 +5523,26 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120</pre>
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 104</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 172</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_swml_transfer'>swml_transfer</span><span class='lparen'>(</span><span class='id identifier rubyid_dest'>dest</span><span class='comma'>,</span> <span class='id identifier rubyid_ai_response'>ai_response</span><span class='comma'>,</span> <span class='label'>final:</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_swml_action'>swml_action</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -5420,20 +5621,20 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206</pre>
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 196</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 264</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_swml_user_event'>swml_user_event</span><span class='lparen'>(</span><span class='id identifier rubyid_event_data'>event_data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_swml_action'>swml_action</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -5454,7 +5655,7 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <div class="method_details ">
   <h3 class="signature " id="tap-instance_method">
   
-    #<strong>tap</strong>(uri, control_id: nil, direction: &quot;both&quot;, codec: &quot;PCMU&quot;, rtp_ptime: 20, status_url: nil)  &#x21d2; <tt>self</tt> 
+    #<strong>tap</strong>(uri, control_id: nil, direction: TapDirection::BOTH, codec: Codec::PCMU, rtp_ptime: 20, status_url: nil)  &#x21d2; <tt>self</tt> 
   
 
   
@@ -5505,7 +5706,7 @@ a simple string context switch. Otherwise emits the full object form.</p>
         <span class='type'>(<tt>String</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>&quot;both&quot;</tt>)</em>
+        <em class="default">(defaults to: <tt>TapDirection::BOTH</tt>)</em>
       
       
         &mdash;
@@ -5521,7 +5722,7 @@ a simple string context switch. Otherwise emits the full object form.</p>
         <span class='type'>(<tt>String</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>&quot;PCMU&quot;</tt>)</em>
+        <em class="default">(defaults to: <tt>Codec::PCMU</tt>)</em>
       
       
         &mdash;
@@ -5593,39 +5794,39 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-516
-517
-518
-519
-520
-521
-522
-523
-524
-525
-526
-527
-528
-529
-530
-531
-532
-533
-534</pre>
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 516</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 602</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_tap'>tap</span><span class='lparen'>(</span><span class='id identifier rubyid_uri'>uri</span><span class='comma'>,</span> <span class='label'>control_id:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>direction:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>both</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>codec:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>PCMU</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_tap'>tap</span><span class='lparen'>(</span><span class='id identifier rubyid_uri'>uri</span><span class='comma'>,</span> <span class='label'>control_id:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>direction:</span> <span class='const'><span class='object_link'><a href="TapDirection.html" title="SignalWire::Swaig::TapDirection (module)">TapDirection</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="TapDirection.html#BOTH-constant" title="SignalWire::Swaig::TapDirection::BOTH (constant)">BOTH</a></span></span><span class='comma'>,</span> <span class='label'>codec:</span> <span class='const'><span class='object_link'><a href="Codec.html" title="SignalWire::Swaig::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec.html#PCMU-constant" title="SignalWire::Swaig::Codec::PCMU (constant)">PCMU</a></span></span><span class='comma'>,</span>
         <span class='label'>rtp_ptime:</span> <span class='int'>20</span><span class='comma'>,</span> <span class='label'>status_url:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>direction must be &#39;speak&#39;, &#39;hear&#39;, or &#39;both&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>speak</span><span class='words_sep'> </span><span class='tstring_content'>hear</span><span class='words_sep'> </span><span class='tstring_content'>both</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_direction'>direction</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>codec must be &#39;PCMU&#39; or &#39;PCMA&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>PCMU</span><span class='words_sep'> </span><span class='tstring_content'>PCMA</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_codec'>codec</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>direction must be &#39;speak&#39;, &#39;hear&#39;, or &#39;both&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='const'><span class='object_link'><a href="TapDirection.html" title="SignalWire::Swaig::TapDirection (module)">TapDirection</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="TapDirection.html#ALL-constant" title="SignalWire::Swaig::TapDirection::ALL (constant)">ALL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_direction'>direction</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>codec must be &#39;PCMU&#39; or &#39;PCMA&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='const'><span class='object_link'><a href="Codec.html" title="SignalWire::Swaig::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec.html#ALL-constant" title="SignalWire::Swaig::Codec::ALL (constant)">ALL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_codec'>codec</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>rtp_ptime must be positive</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_rtp_ptime'>rtp_ptime</span><span class='period'>.</span><span class='id identifier rubyid_positive?'>positive?</span>
 
   <span class='id identifier rubyid_tap_params'>tap_params</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>uri</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_uri'>uri</span> <span class='rbrace'>}</span>
   <span class='id identifier rubyid_tap_params'>tap_params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>control_id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_control_id'>control_id</span> <span class='kw'>if</span> <span class='id identifier rubyid_control_id'>control_id</span>
-  <span class='id identifier rubyid_tap_params'>tap_params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>direction</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>  <span class='op'>=</span> <span class='id identifier rubyid_direction'>direction</span>  <span class='kw'>if</span> <span class='id identifier rubyid_direction'>direction</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>both</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_tap_params'>tap_params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>codec</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>      <span class='op'>=</span> <span class='id identifier rubyid_codec'>codec</span>      <span class='kw'>if</span> <span class='id identifier rubyid_codec'>codec</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>PCMU</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_tap_params'>tap_params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>direction</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>  <span class='op'>=</span> <span class='id identifier rubyid_direction'>direction</span>  <span class='kw'>if</span> <span class='id identifier rubyid_direction'>direction</span> <span class='op'>!=</span> <span class='const'><span class='object_link'><a href="TapDirection.html" title="SignalWire::Swaig::TapDirection (module)">TapDirection</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="TapDirection.html#BOTH-constant" title="SignalWire::Swaig::TapDirection::BOTH (constant)">BOTH</a></span></span>
+  <span class='id identifier rubyid_tap_params'>tap_params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>codec</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>      <span class='op'>=</span> <span class='id identifier rubyid_codec'>codec</span>      <span class='kw'>if</span> <span class='id identifier rubyid_codec'>codec</span> <span class='op'>!=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="SignalWire::Swaig::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec.html#PCMU-constant" title="SignalWire::Swaig::Codec::PCMU (constant)">PCMU</a></span></span>
   <span class='id identifier rubyid_tap_params'>tap_params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>rtp_ptime</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>  <span class='op'>=</span> <span class='id identifier rubyid_rtp_ptime'>rtp_ptime</span>  <span class='kw'>if</span> <span class='id identifier rubyid_rtp_ptime'>rtp_ptime</span> <span class='op'>!=</span> <span class='int'>20</span>
   <span class='id identifier rubyid_tap_params'>tap_params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>status_url</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_status_url'>status_url</span> <span class='kw'>if</span> <span class='id identifier rubyid_status_url'>status_url</span>
 
@@ -5683,21 +5884,21 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-758
-759
-760
-761
-762
-763
-764
-765
-766
-767
-768
-769</pre>
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853
+854
+855</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 758</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 844</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_h'>to_h</span>
   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -5756,12 +5957,12 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-772
-773
-774</pre>
+858
+859
+860</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 772</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 858</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_json'>to_json</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_to_h'>to_h</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
@@ -5826,12 +6027,12 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-370
-371
-372</pre>
+438
+439
+440</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 370</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 438</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_toggle_functions'>toggle_functions</span><span class='lparen'>(</span><span class='id identifier rubyid_toggles'>toggles</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>toggle_functions</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_toggles'>toggles</span><span class='rparen'>)</span>
@@ -5896,12 +6097,12 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-168
-169
-170</pre>
+236
+237
+238</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 168</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 236</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_global_data'>update_global_data</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>set_global_data</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
@@ -5963,12 +6164,12 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-391
-392
-393</pre>
+459
+460
+461</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 391</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 459</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_settings'>update_settings</span><span class='lparen'>(</span><span class='id identifier rubyid_settings'>settings</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_action'>add_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>settings</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_settings'>settings</span><span class='rparen'>)</span>
@@ -6067,21 +6268,21 @@ a simple string context switch. Otherwise emits the full object form.</p>
       <pre class="lines">
 
 
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153</pre>
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 142</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swaig/function_result.rb', line 210</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_wait_for_user'>wait_for_user</span><span class='lparen'>(</span><span class='label'>enabled:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>timeout:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>answer_first:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_wait_value'>wait_value</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_answer_first'>answer_first</span>
@@ -6105,9 +6306,9 @@ a simple string context switch. Otherwise emits the full object form.</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:57 2026 by
+  Generated on Mon Jun 15 17:33:19 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

@@ -353,6 +353,50 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#all_functions-instance_method" title="#all_functions (instance method)">#<strong>all_functions</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>--- Idiomatic Ruby accessors/predicates (additive aliases) --- def-wrappers (not alias_method) so placement is independent of where the get_* target is defined in the class body.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#basic_auth_credentials_with_source-instance_method" title="#basic_auth_credentials_with_source (instance method)">#<strong>basic_auth_credentials_with_source</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#define_tool-instance_method" title="#define_tool (instance method)">#<strong>define_tool</strong>(name:, description:, parameters: {}, secure: false, &amp;handler)  &#x21d2; Object </a>
     
 
@@ -441,7 +485,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_all_functions-instance_method" title="#get_all_functions (instance method)">#<strong>get_all_functions</strong>  &#x21d2; Object </a>
+      <a href="#function%3F-instance_method" title="#function? (instance method)">#<strong>function?</strong>(name)  &#x21d2; Boolean </a>
     
 
     
@@ -455,7 +499,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Snapshot of all registered SWAIG functions keyed by name.</p></div></span>
+    <span class="summary_desc"><div class='inline'><p>Ruby <code>?</code>-predicate form of has_function.</p></div></span>
   
 </li>
 
@@ -478,28 +522,6 @@
 
   
     <span class="summary_desc"><div class='inline'><p>Get the configured basic-auth credentials.</p></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#get_basic_auth_credentials_with_source-instance_method" title="#get_basic_auth_credentials_with_source (instance method)">#<strong>get_basic_auth_credentials_with_source</strong>  &#x21d2; Array(String, String, String) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>Backwards-compat alias for the legacy 3-tuple-only form.</p></div></span>
   
 </li>
 
@@ -566,28 +588,6 @@
 
   
     <span class="summary_desc"><div class='inline'><p>Extension point: register additional Rack routes after Service mounts /health, /ready, /swaig, and the main route.</p></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#has_function-instance_method" title="#has_function (instance method)">#<strong>has_function</strong>(name)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>Whether a SWAIG function with the given name is registered.</p></div></span>
   
 </li>
 
@@ -1084,7 +1084,21 @@
 72
 73
 74
-75</pre>
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 34</span>
@@ -1129,6 +1143,20 @@
                   <span class='lbracket'>[</span><span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span><span class='comma'>,</span> <span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span><span class='rbracket'>]</span>
                 <span class='kw'>end</span>
 
+  <span class='comment'># --- SSL/TLS (server) -------------------------------------------
+</span>  <span class='comment'># Python parity (SecurityConfig.load_from_env): the server can be
+</span>  <span class='comment'># told to serve HTTPS via three env vars, consumed by +serve+ /
+</span>  <span class='comment'># +AgentBase#serve+ to bind WEBrick with SSLEnable. Explicit
+</span>  <span class='comment'># +serve(ssl_cert:, ssl_key:, ssl_enabled:)+ kwargs still override
+</span>  <span class='comment'># these at call time.
+</span>  <span class='comment'>#   SWML_SSL_ENABLED   — &quot;true&quot;/&quot;1&quot;/&quot;yes&quot; (case-insensitive) → on
+</span>  <span class='comment'>#   SWML_SSL_CERT_PATH — PEM certificate path
+</span>  <span class='comment'>#   SWML_SSL_KEY_PATH  — PEM private-key path
+</span>  <span class='ivar'>@ssl_enabled</span>   <span class='op'>=</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>true</span><span class='words_sep'> </span><span class='tstring_content'>1</span><span class='words_sep'> </span><span class='tstring_content'>yes</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SWML_SSL_ENABLED</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='rparen'>)</span>
+  <span class='ivar'>@ssl_cert_path</span> <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SWML_SSL_CERT_PATH</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='ivar'>@ssl_key_path</span>  <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SWML_SSL_KEY_PATH</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='ivar'>@domain</span>        <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SWML_DOMAIN</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+
   <span class='ivar'>@log</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Service &#39;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@name</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; initialised (route=</span><span class='embexpr_beg'>#{</span><span class='ivar'>@route</span><span class='embexpr_end'>}</span><span class='tstring_content'>, port=</span><span class='embexpr_beg'>#{</span><span class='ivar'>@port</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1169,18 +1197,18 @@
       <pre class="lines">
 
 
-198
-199
-200
-201
-202
-203
-204
-205
-206</pre>
+224
+225
+226
+227
+228
+229
+230
+231
+232</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 198</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 224</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_method_name'>method_name</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_kwargs'>kwargs</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_verb'>verb</span> <span class='op'>=</span> <span class='id identifier rubyid_method_name'>method_name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -1566,7 +1594,72 @@ env var forces this to false.</li>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="define_tool-instance_method">
+  <h3 class="signature first" id="all_functions-instance_method">
+  
+    #<strong>all_functions</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>--- Idiomatic Ruby accessors/predicates (additive aliases) ---
+def-wrappers (not alias_method) so placement is independent of where
+the get_* target is defined in the class body.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+156</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 156</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_all_functions'>all_functions</span> <span class='op'>=</span> <span class='id identifier rubyid_get_all_functions'>get_all_functions</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="basic_auth_credentials_with_source-instance_method">
+  
+    #<strong>basic_auth_credentials_with_source</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+157
+158</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 157</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_basic_auth_credentials_with_source'>basic_auth_credentials_with_source</span> <span class='op'>=</span> <span class='id identifier rubyid_get_basic_auth_credentials_with_source'>get_basic_auth_credentials_with_source</span>
+<span class='comment'># Ruby `?`-predicate form of has_function.</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="define_tool-instance_method">
   
     #<strong>define_tool</strong>(name:, description:, parameters: {}, secure: false, &amp;handler)  &#x21d2; <tt>Object</tt> 
   
@@ -1591,21 +1684,21 @@ PORTING_GUIDE for guidance.</p>
       <pre class="lines">
 
 
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95</pre>
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_define_tool'>define_tool</span><span class='lparen'>(</span><span class='label'>name:</span><span class='comma'>,</span> <span class='label'>description:</span><span class='comma'>,</span> <span class='label'>parameters:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>secure:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
   <span class='ivar'>@tools</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -1648,13 +1741,13 @@ PORTING_GUIDE for guidance.</p>
       <pre class="lines">
 
 
-106
-107
-108
-109</pre>
+120
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 120</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_define_tools'>define_tools</span>
   <span class='id identifier rubyid_defs'>defs</span> <span class='op'>=</span> <span class='ivar'>@tools</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_t'>t</span><span class='op'>|</span> <span class='id identifier rubyid_t'>t</span><span class='lbracket'>[</span><span class='symbol'>:definition</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span> <span class='rbrace'>}</span>
@@ -1689,12 +1782,12 @@ PORTING_GUIDE for guidance.</p>
       <pre class="lines">
 
 
-352
-353
-354</pre>
+380
+381
+382</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 352</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 380</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_document'>document</span>
   <span class='ivar'>@document</span>
@@ -1730,29 +1823,29 @@ The <code>sleep</code> verb is special: it also accepts a bare Integer.</p>
       <pre class="lines">
 
 
-216
-217
-218
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235</pre>
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 216</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 242</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_execute_verb'>execute_verb</span><span class='lparen'>(</span><span class='id identifier rubyid_verb_name'>verb_name</span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_kwargs'>kwargs</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_verb_name'>verb_name</span> <span class='op'>=</span> <span class='id identifier rubyid_verb_name'>verb_name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -1780,9 +1873,9 @@ The <code>sleep</code> verb is special: it also accepts a bare Integer.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="get_all_functions-instance_method">
+  <h3 class="signature " id="function?-instance_method">
   
-    #<strong>get_all_functions</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>function?</strong>(name)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1790,13 +1883,25 @@ The <code>sleep</code> verb is special: it also accepts a bare Integer.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Snapshot of all registered SWAIG functions keyed by name.
-(Python parity: ToolRegistry#get_all_functions.)</p>
+    <p>Ruby <code>?</code>-predicate form of has_function.</p>
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1804,22 +1909,12 @@ The <code>sleep</code> verb is special: it also accepts a bare Integer.</p>
       <pre class="lines">
 
 
-145
-146
-147
-148
-149
-150</pre>
+159</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 145</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 159</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_get_all_functions'>get_all_functions</span>
-  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-  <span class='ivar'>@tools</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_out'>out</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span> <span class='rbrace'>}</span>
-  <span class='ivar'>@swaig_functions</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_out'>out</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span> <span class='rbrace'>}</span>
-  <span class='id identifier rubyid_out'>out</span>
-<span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_function?'>function?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='id identifier rubyid_has_function'>has_function</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span></pre>
     </td>
   </tr>
 </table>
@@ -1886,25 +1981,25 @@ When <code>include_source</code> is true, returns a 3-tuple <code>[user, pass, s
       <pre class="lines">
 
 
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260
-261
-262
-263
-264
-265
-266</pre>
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 251</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 277</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_basic_auth_credentials'>get_basic_auth_credentials</span><span class='lparen'>(</span><span class='label'>include_source:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_p'>p</span> <span class='op'>=</span> <span class='ivar'>@basic_auth</span>
@@ -1921,58 +2016,6 @@ When <code>include_source</code> is true, returns a 3-tuple <code>[user, pass, s
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>provided</span><span class='tstring_end'>&#39;</span></span>
     <span class='kw'>end</span>
   <span class='lbracket'>[</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_p'>p</span><span class='comma'>,</span> <span class='id identifier rubyid_source'>source</span><span class='rbracket'>]</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="get_basic_auth_credentials_with_source-instance_method">
-  
-    #<strong>get_basic_auth_credentials_with_source</strong>  &#x21d2; <tt>Array(String, String, String)</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>Backwards-compat alias for the legacy 3-tuple-only form.</p>
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Array(String, String, String)</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-284
-285
-286</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 284</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_get_basic_auth_credentials_with_source'>get_basic_auth_credentials_with_source</span>
-  <span class='id identifier rubyid_get_basic_auth_credentials'>get_basic_auth_credentials</span><span class='lparen'>(</span><span class='label'>include_source:</span> <span class='kw'>true</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2005,15 +2048,15 @@ When <code>include_source</code> is true, returns a 3-tuple <code>[user, pass, s
       <pre class="lines">
 
 
-292
-293
-294
-295
-296
-297</pre>
+320
+321
+322
+323
+324
+325</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 292</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 320</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_full_url'>get_full_url</span><span class='lparen'>(</span><span class='label'>include_auth:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_scheme'>scheme</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http</span><span class='tstring_end'>&#39;</span></span>
@@ -2051,12 +2094,12 @@ When <code>include_source</code> is true, returns a 3-tuple <code>[user, pass, s
       <pre class="lines">
 
 
-139
-140
-141</pre>
+163
+164
+165</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 139</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 163</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_function'>get_function</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='ivar'>@tools</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='ivar'>@swaig_functions</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span>
@@ -2154,55 +2197,15 @@ this to add /post_prompt, /debug_events, /mcp.</p>
       <pre class="lines">
 
 
-190
-191
-192</pre>
+216
+217
+218</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 190</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 216</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handle_additional_route'>handle_additional_route</span><span class='lparen'>(</span><span class='id identifier rubyid__sub_path'>_sub_path</span><span class='comma'>,</span> <span class='id identifier rubyid__request_data'>_request_data</span><span class='comma'>,</span> <span class='id identifier rubyid__env'>_env</span><span class='rparen'>)</span>
   <span class='kw'>nil</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="has_function-instance_method">
-  
-    #<strong>has_function</strong>(name)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>Whether a SWAIG function with the given name is registered.
-(Python parity: ToolRegistry#has_function.)</p>
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-133
-134
-135</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 133</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_has_function'>has_function</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-  <span class='ivar'>@tools</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='ivar'>@swaig_functions</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2233,12 +2236,12 @@ this to add /post_prompt, /debug_events, /mcp.</p>
       <pre class="lines">
 
 
-127
-128
-129</pre>
+141
+142
+143</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 141</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_tool_names'>list_tool_names</span>
   <span class='ivar'>@tools</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span>
@@ -2273,21 +2276,21 @@ implementation — AgentBase overrides with token validation.</p>
       <pre class="lines">
 
 
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124</pre>
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 127</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_function_call'>on_function_call</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid_raw_data'>raw_data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tool'>tool</span> <span class='op'>=</span> <span class='ivar'>@tools</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span>
@@ -2343,12 +2346,12 @@ request is available. Default: delegate to <code>on_swml_request</code>.</p>
       <pre class="lines">
 
 
-323
-324
-325</pre>
+351
+352
+353</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 323</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 351</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_request'>on_request</span><span class='lparen'>(</span><span class='id identifier rubyid_request_data'>request_data</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_callback_path'>callback_path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>request:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_on_swml_request'>on_swml_request</span><span class='lparen'>(</span><span class='id identifier rubyid_request_data'>request_data</span><span class='comma'>,</span> <span class='id identifier rubyid_callback_path'>callback_path</span><span class='comma'>,</span> <span class='label'>request:</span> <span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span>
@@ -2388,12 +2391,12 @@ or headers.</p>
       <pre class="lines">
 
 
-335
-336
-337</pre>
+363
+364
+365</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 335</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 363</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_swml_request'>on_swml_request</span><span class='lparen'>(</span><span class='id identifier rubyid_request_data'>request_data</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_callback_path'>callback_path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>request:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>nil</span>
@@ -2427,12 +2430,12 @@ or headers.</p>
       <pre class="lines">
 
 
-371
-372
-373</pre>
+399
+400
+401</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 371</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 399</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rack_app'>rack_app</span>
   <span class='ivar'>@rack_app</span> <span class='op'>||=</span> <span class='id identifier rubyid_build_rack_app'>build_rack_app</span>
@@ -2467,12 +2470,12 @@ or headers.</p>
       <pre class="lines">
 
 
-303
-304
-305</pre>
+331
+332
+333</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 303</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 331</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_routing_callback'>register_routing_callback</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='ivar'>@routing_callbacks</span><span class='lbracket'>[</span><span class='id identifier rubyid_path'>path</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
@@ -2506,15 +2509,15 @@ or headers.</p>
       <pre class="lines">
 
 
-98
-99
-100
-101
-102
-103</pre>
+112
+113
+114
+115
+116
+117</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_swaig_function'>register_swaig_function</span><span class='lparen'>(</span><span class='id identifier rubyid_func_def'>func_def</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_fname'>fname</span> <span class='op'>=</span> <span class='id identifier rubyid_func_def'>func_def</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>function</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_func_def'>func_def</span><span class='lbracket'>[</span><span class='symbol'>:function</span><span class='rbracket'>]</span>
@@ -2553,20 +2556,20 @@ false when the function was not registered.
       <pre class="lines">
 
 
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165</pre>
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 155</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 181</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_function'>remove_function</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='ivar'>@tools</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -2609,12 +2612,12 @@ false when the function was not registered.
       <pre class="lines">
 
 
-343
-344
-345</pre>
+371
+372
+373</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 343</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 371</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render'>render</span>
   <span class='ivar'>@document</span><span class='period'>.</span><span class='id identifier rubyid_render'>render</span>
@@ -2649,12 +2652,12 @@ default). AgentBase overrides to render with prompts + dynamic config.</p>
       <pre class="lines">
 
 
-178
-179
-180</pre>
+204
+205
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 178</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 204</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render_main_swml'>render_main_swml</span><span class='lparen'>(</span><span class='id identifier rubyid__request_data'>_request_data</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>request:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='ivar'>@document</span><span class='period'>.</span><span class='id identifier rubyid_to_h'>to_h</span>
@@ -2679,12 +2682,12 @@ default). AgentBase overrides to render with prompts + dynamic config.</p>
       <pre class="lines">
 
 
-347
-348
-349</pre>
+375
+376
+377</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 347</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 375</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render_pretty'>render_pretty</span>
   <span class='ivar'>@document</span><span class='period'>.</span><span class='id identifier rubyid_render_pretty'>render_pretty</span>
@@ -2731,12 +2734,12 @@ default). AgentBase overrides to render with prompts + dynamic config.</p>
       <pre class="lines">
 
 
-208
-209
-210</pre>
+234
+235
+236</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 208</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 234</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_respond_to_missing?'>respond_to_missing?</span><span class='lparen'>(</span><span class='id identifier rubyid_method_name'>method_name</span><span class='comma'>,</span> <span class='id identifier rubyid_include_private'>include_private</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../SWML.html" title="SignalWire::SWML (module)">SWML</a></span></span><span class='period'>.</span><span class='id identifier rubyid_schema'><span class='object_link'><a href="../SWML.html#schema-class_method" title="SignalWire::SWML.schema (method)">schema</a></span></span><span class='period'>.</span><span class='id identifier rubyid_valid_verb?'>valid_verb?</span><span class='lparen'>(</span><span class='id identifier rubyid_method_name'>method_name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='kw'>super</span>
@@ -2772,15 +2775,15 @@ Built lazily on first access.</p>
       <pre class="lines">
 
 
-359
-360
-361
-362
-363
-364</pre>
+387
+388
+389
+390
+391
+392</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 359</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 387</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_schema_utils'>schema_utils</span>
   <span class='ivar'>@schema_utils</span> <span class='op'>||=</span> <span class='kw'>begin</span>
@@ -2922,34 +2925,6 @@ constructor-provided values.</p>
       <pre class="lines">
 
 
-390
-391
-392
-393
-394
-395
-396
-397
-398
-399
-400
-401
-402
-403
-404
-405
-406
-407
-408
-409
-410
-411
-412
-413
-414
-415
-416
-417
 418
 419
 420
@@ -2972,10 +2947,32 @@ constructor-provided values.</p>
 437
 438
 439
-440</pre>
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 390</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 418</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_serve'>serve</span><span class='lparen'>(</span><span class='label'>host:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>port:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>ssl_cert:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>ssl_key:</span> <span class='kw'>nil</span><span class='comma'>,</span>
           <span class='label'>ssl_enabled:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>domain:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
@@ -3003,13 +3000,7 @@ constructor-provided values.</p>
     <span class='label'>AccessLog:</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
   <span class='rbrace'>}</span>
 
-  <span class='kw'>if</span> <span class='ivar'>@ssl_enabled</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@ssl_cert_path</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@ssl_key_path</span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>webrick/https</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>openssl</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_webrick_opts'>webrick_opts</span><span class='lbracket'>[</span><span class='symbol'>:SSLEnable</span><span class='rbracket'>]</span>      <span class='op'>=</span> <span class='kw'>true</span>
-    <span class='id identifier rubyid_webrick_opts'>webrick_opts</span><span class='lbracket'>[</span><span class='symbol'>:SSLCertificate</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>X509</span><span class='op'>::</span><span class='const'>Certificate</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='ivar'>@ssl_cert_path</span><span class='rparen'>)</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_webrick_opts'>webrick_opts</span><span class='lbracket'>[</span><span class='symbol'>:SSLPrivateKey</span><span class='rbracket'>]</span>  <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>PKey</span><span class='op'>::</span><span class='const'>RSA</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='ivar'>@ssl_key_path</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
+  <span class='id identifier rubyid__apply_webrick_ssl!'>_apply_webrick_ssl!</span><span class='lparen'>(</span><span class='id identifier rubyid_webrick_opts'>webrick_opts</span><span class='rparen'>)</span>
 
   <span class='ivar'>@server</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>WEBrick</span><span class='op'>::</span><span class='const'>HTTPServer</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>**</span><span class='id identifier rubyid_webrick_opts'>webrick_opts</span><span class='rparen'>)</span>
 
@@ -3057,12 +3048,12 @@ constructor-provided values.</p>
       <pre class="lines">
 
 
-443
-444
-445</pre>
+465
+466
+467</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 443</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 465</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stop'>stop</span>
   <span class='ivar'>@server</span><span class='op'>&amp;.</span><span class='id identifier rubyid_shutdown'>shutdown</span>
@@ -3100,12 +3091,12 @@ session-token validation and ephemeral dynamic-config copies.</p>
       <pre class="lines">
 
 
-172
-173
-174</pre>
+198
+199
+200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 172</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 198</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_swaig_pre_dispatch'>swaig_pre_dispatch</span><span class='lparen'>(</span><span class='id identifier rubyid__request_data'>_request_data</span><span class='comma'>,</span> <span class='id identifier rubyid__func_name'>_func_name</span><span class='comma'>,</span> <span class='id identifier rubyid__env'>_env</span><span class='rparen'>)</span>
   <span class='lbracket'>[</span><span class='kw'>self</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rbracket'>]</span>
@@ -3141,19 +3132,19 @@ Python parity: AuthMixin#validate_basic_auth(username, password).</p>
       <pre class="lines">
 
 
-271
-272
-273
-274
-275
-276
-277
-278
-279
-280</pre>
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 271</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/swml/service.rb', line 297</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate_basic_auth'>validate_basic_auth</span><span class='lparen'>(</span><span class='id identifier rubyid_username'>username</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>openssl</span><span class='tstring_end'>&#39;</span></span>
@@ -3175,9 +3166,9 @@ Python parity: AuthMixin#validate_basic_auth(username, password).</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:55 2026 by
+  Generated on Mon Jun 15 17:33:18 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

@@ -431,6 +431,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(other)  &#x21d2; Object </a>
+    
+
+    
+      (also: #eql?)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Value equality over the message's data (ignores completion state).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#_dispatch_event-instance_method" title="#_dispatch_event (instance method)">#<strong>_dispatch_event</strong>(payload)  &#x21d2; Object </a>
     
 
@@ -475,6 +499,50 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#deconstruct-instance_method" title="#deconstruct (instance method)">#<strong>deconstruct</strong>  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Array pattern matching: the stable identity triple.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deconstruct_keys-instance_method" title="#deconstruct_keys (instance method)">#<strong>deconstruct_keys</strong>(keys)  &#x21d2; Hash{Symbol =&gt; Object} </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Ruby 3.0 pattern matching: <code>case msg; in { direction:, body: }</code>.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#done%3F-instance_method" title="#done? (instance method)">#<strong>done?</strong>  &#x21d2; Boolean </a>
     
 
@@ -492,6 +560,28 @@
 
   
     <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hash-instance_method" title="#hash (instance method)">#<strong>hash</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Hash parity with <span class='object_link'><a href="#==-instance_method" title="SignalWire::Relay::Message#== (method)">#==</a></span> so equal messages share a bucket.</p></div></span>
   
 </li>
 
@@ -611,6 +701,72 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#terminal%3F-instance_method" title="#terminal? (instance method)">#<strong>terminal?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Typed predicate over <span class='object_link'><a href="#state-instance_method" title="SignalWire::Relay::Message#state (method)">#state</a></span>, alongside the bare string.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_h-instance_method" title="#to_h (instance method)">#<strong>to_h</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Semantic Hash view of the message's value fields (the completion machinery — mutex/condition/callbacks — is excluded).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_json-instance_method" title="#to_json (instance method)">#<strong>to_json</strong>(*args)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>JSON serialization of <span class='object_link'><a href="#to_h-instance_method" title="SignalWire::Relay::Message#to_h (method)">#to_h</a></span>.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; Object </a>
     
 
@@ -683,9 +839,6 @@
       <pre class="lines">
 
 
-14
-15
-16
 17
 18
 19
@@ -705,10 +858,13 @@
 33
 34
 35
-36</pre>
+36
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>message_id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>context:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>direction:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>from_number:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
                <span class='label'>to_number:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>body:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>media:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>segments:</span> <span class='int'>0</span><span class='comma'>,</span>
@@ -769,12 +925,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_body'>body</span>
   <span class='ivar'>@body</span>
@@ -810,12 +966,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_context'>context</span>
   <span class='ivar'>@context</span>
@@ -851,12 +1007,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_direction'>direction</span>
   <span class='ivar'>@direction</span>
@@ -892,12 +1048,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_number'>from_number</span>
   <span class='ivar'>@from_number</span>
@@ -933,12 +1089,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_media'>media</span>
   <span class='ivar'>@media</span>
@@ -974,12 +1130,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_message_id'>message_id</span>
   <span class='ivar'>@message_id</span>
@@ -1015,12 +1171,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reason'>reason</span>
   <span class='ivar'>@reason</span>
@@ -1056,12 +1212,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_segments'>segments</span>
   <span class='ivar'>@segments</span>
@@ -1097,12 +1253,12 @@
       <pre class="lines">
 
 
-12
-13
-14</pre>
+15
+16
+17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_state'>state</span>
   <span class='ivar'>@state</span>
@@ -1138,12 +1294,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tags'>tags</span>
   <span class='ivar'>@tags</span>
@@ -1179,12 +1335,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_number'>to_number</span>
   <span class='ivar'>@to_number</span>
@@ -1202,7 +1358,50 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="_dispatch_event-instance_method">
+  <h3 class="signature first" id="==-instance_method">
+  
+    #<strong>==</strong>(other)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='eql?-instance_method'>eql?</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Value equality over the message's data (ignores completion state).</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+173
+174
+175</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 173</span>
+
+<span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="SignalWire::Relay::Message (class)">Message</a></span></span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_to_h'>to_h</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_to_h'>to_h</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_dispatch_event-instance_method">
   
     #<strong>_dispatch_event</strong>(payload)  &#x21d2; <tt>Object</tt> 
   
@@ -1225,19 +1424,6 @@
       <pre class="lines">
 
 
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
 99
 100
 101
@@ -1245,10 +1431,23 @@
 103
 104
 105
-106</pre>
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__dispatch_event'>_dispatch_event</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_event_params'>event_params</span> <span class='op'>=</span> <span class='id identifier rubyid_payload'>payload</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>params</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -1269,7 +1468,7 @@
   <span class='kw'>end</span>
 
   <span class='comment'># Check terminal state
-</span>  <span class='id identifier rubyid__resolve'>_resolve</span><span class='lparen'>(</span><span class='id identifier rubyid_event'>event</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='const'><span class='object_link'><a href="../Relay.html#MESSAGE_TERMINAL_STATES-constant" title="SignalWire::Relay::MESSAGE_TERMINAL_STATES (constant)">MESSAGE_TERMINAL_STATES</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_new_state'>new_state</span><span class='rparen'>)</span>
+</span>  <span class='id identifier rubyid__resolve'>_resolve</span><span class='lparen'>(</span><span class='id identifier rubyid_event'>event</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='const'><span class='object_link'><a href="MessageState.html" title="SignalWire::Relay::MessageState (module)">MessageState</a></span></span><span class='period'>.</span><span class='id identifier rubyid_terminal?'><span class='object_link'><a href="MessageState.html#terminal%3F-class_method" title="SignalWire::Relay::MessageState.terminal? (method)">terminal?</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_new_state'>new_state</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1300,15 +1499,144 @@
       <pre class="lines">
 
 
-44
-45
-46</pre>
+47
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__set_on_completed'>_set_on_completed</span><span class='lparen'>(</span><span class='id identifier rubyid_callback'>callback</span><span class='rparen'>)</span>
   <span class='ivar'>@on_completed</span> <span class='op'>=</span> <span class='id identifier rubyid_callback'>callback</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deconstruct-instance_method">
+  
+    #<strong>deconstruct</strong>  &#x21d2; <tt>Array</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Array pattern matching: the stable identity triple.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+168
+169
+170</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 168</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_deconstruct'>deconstruct</span>
+  <span class='lbracket'>[</span><span class='ivar'>@message_id</span><span class='comma'>,</span> <span class='ivar'>@direction</span><span class='comma'>,</span> <span class='ivar'>@state</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deconstruct_keys-instance_method">
+  
+    #<strong>deconstruct_keys</strong>(keys)  &#x21d2; <tt>Hash{Symbol =&gt; Object}</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Ruby 3.0 pattern matching: <code>case msg; in { direction:, body: }</code>.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>keys</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Symbol&gt;</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash{Symbol =&gt; Object}</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+157
+158
+159
+160
+161
+162
+163
+164</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 157</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_deconstruct_keys'>deconstruct_keys</span><span class='lparen'>(</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_h'>h</span> <span class='op'>=</span> <span class='id identifier rubyid_to_h'>to_h</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_h'>h</span> <span class='kw'>if</span> <span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
+  <span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_acc'>acc</span><span class='op'>|</span>
+    <span class='id identifier rubyid_acc'>acc</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_h'>h</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1356,15 +1684,54 @@
       <pre class="lines">
 
 
-53
-54
-55</pre>
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_done?'>done?</span>
   <span class='ivar'>@done</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hash-instance_method">
+  
+    #<strong>hash</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Hash parity with <span class='object_link'><a href="#==-instance_method" title="SignalWire::Relay::Message#== (method)">#==</a></span> so equal messages share a bucket.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+179
+180
+181</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 179</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hash'>hash</span>
+  <span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='comma'>,</span> <span class='id identifier rubyid_to_h'>to_h</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_hash'>hash</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1386,12 +1753,12 @@
       <pre class="lines">
 
 
-113
-114
-115</pre>
+126
+127
+128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 126</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span>
   <span class='id identifier rubyid_to_s'>to_s</span>
@@ -1425,12 +1792,12 @@
       <pre class="lines">
 
 
-39
-40
-41</pre>
+42
+43
+44</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_completed'>on_completed</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='ivar'>@on_completed</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
@@ -1464,12 +1831,12 @@
       <pre class="lines">
 
 
-49
-50
-51</pre>
+52
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 52</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_event'>on_event</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
   <span class='ivar'>@listeners</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_handler'>handler</span>
@@ -1494,15 +1861,190 @@
       <pre class="lines">
 
 
-59
-60
-61</pre>
+72
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_result'>result</span>
   <span class='ivar'>@result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="terminal?-instance_method">
+  
+    #<strong>terminal?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Typed predicate over <span class='object_link'><a href="#state-instance_method" title="SignalWire::Relay::Message#state (method)">#state</a></span>, alongside the bare string. Agrees with
+<span class='object_link'><a href="MessageState.html#terminal%3F-class_method" title="SignalWire::Relay::MessageState.terminal? (method)">SignalWire::Relay::MessageState.terminal?</a></span> — true once the message has reached a final
+delivery outcome (delivered / undelivered / failed), which is exactly
+when <span class='object_link'><a href="#wait-instance_method" title="SignalWire::Relay::Message#wait (method)">#wait</a></span> unblocks.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 68</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_terminal?'>terminal?</span>
+  <span class='const'><span class='object_link'><a href="MessageState.html" title="SignalWire::Relay::MessageState (module)">MessageState</a></span></span><span class='period'>.</span><span class='id identifier rubyid_terminal?'><span class='object_link'><a href="MessageState.html#terminal%3F-class_method" title="SignalWire::Relay::MessageState.terminal? (method)">terminal?</a></span></span><span class='lparen'>(</span><span class='ivar'>@state</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_h-instance_method">
+  
+    #<strong>to_h</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Semantic Hash view of the message's value fields (the completion
+machinery — mutex/condition/callbacks — is excluded). Symbol keys,
+idiomatic for Ruby. @return [Hash=> Object]</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 133</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_h'>to_h</span>
+  <span class='lbrace'>{</span>
+    <span class='label'>message_id:</span>  <span class='ivar'>@message_id</span><span class='comma'>,</span>
+    <span class='label'>context:</span>     <span class='ivar'>@context</span><span class='comma'>,</span>
+    <span class='label'>direction:</span>   <span class='ivar'>@direction</span><span class='comma'>,</span>
+    <span class='label'>from_number:</span> <span class='ivar'>@from_number</span><span class='comma'>,</span>
+    <span class='label'>to_number:</span>   <span class='ivar'>@to_number</span><span class='comma'>,</span>
+    <span class='label'>body:</span>        <span class='ivar'>@body</span><span class='comma'>,</span>
+    <span class='label'>media:</span>       <span class='ivar'>@media</span><span class='comma'>,</span>
+    <span class='label'>segments:</span>    <span class='ivar'>@segments</span><span class='comma'>,</span>
+    <span class='label'>state:</span>       <span class='ivar'>@state</span><span class='comma'>,</span>
+    <span class='label'>reason:</span>      <span class='ivar'>@reason</span><span class='comma'>,</span>
+    <span class='label'>tags:</span>        <span class='ivar'>@tags</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_json-instance_method">
+  
+    #<strong>to_json</strong>(*args)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns JSON serialization of <span class='object_link'><a href="#to_h-instance_method" title="SignalWire::Relay::Message#to_h (method)">#to_h</a></span>.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>JSON serialization of <span class='object_link'><a href="#to_h-instance_method" title="SignalWire::Relay::Message#to_h (method)">#to_h</a></span>.</p></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+150
+151
+152</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 150</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_json'>to_json</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_to_h'>to_h</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1524,13 +2066,13 @@
       <pre class="lines">
 
 
-108
-109
-110
-111</pre>
+121
+122
+123
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 121</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Message(id=</span><span class='embexpr_beg'>#{</span><span class='ivar'>@message_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>, direction=</span><span class='embexpr_beg'>#{</span><span class='ivar'>@direction</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='tstring_end'>&quot;</span></span> \
@@ -1566,28 +2108,28 @@ Raises ActionTimeoutError if timeout exceeded.</p>
       <pre class="lines">
 
 
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
 78
 79
 80
 81
 82
-83</pre>
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/message.rb', line 78</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_wait'>wait</span><span class='lparen'>(</span><span class='label'>timeout:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='ivar'>@mutex</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>
@@ -1618,9 +2160,9 @@ Raises ActionTimeoutError if timeout exceeded.</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:55 2026 by
+  Generated on Mon Jun 15 17:33:18 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

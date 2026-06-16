@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: SignalWire::Relay::DialState
+  
+    &mdash; SignalWire Ruby SDK
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "SignalWire::Relay::DialState";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (D)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../SignalWire.html" title="SignalWire (module)">SignalWire</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Relay.html" title="SignalWire::Relay (module)">Relay</a></span></span>
+     &raquo; 
+    <span class="title">DialState</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: SignalWire::Relay::DialState
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/signalwire/relay/constants.rb
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Named, frozen view over the outbound-dial vocabulary. Unlike call/message
+states, the reference exposes <em>no</em> flat dial-state constants — the values
+are grounded in +signalwire/relay/client.py+'s
+<code>_handle_dial_event</code> docstring (&quot;<code>dial_state</code> — <code>dialing</code> |
+<code>answered</code> | <code>failed</code>&quot;) and the mock dial-dance. This module names
+them (+DIAL_STATE_*+ above are the single source) and adds <code>ALL</code> +
+<code>TERMINAL</code> + <code>terminal?</code>.</p>
+<p>Both <code>answered</code> and <code>failed</code> are terminal: <span class='object_link'><a href="Client.html#dial-instance_method" title="SignalWire::Relay::Client#dial (method)">Client#dial</a></span> resolves to a
+<span class='object_link'><a href="Call.html" title="SignalWire::Relay::Call (class)">Call</a></span> on <code>answered</code> and raises <span class='object_link'><a href="RelayError.html" title="SignalWire::Relay::RelayError (class)">RelayError</a></span> on <code>failed</code>; <code>dialing</code> is
+the only in-flight state.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="DIALING-constant" class="">DIALING =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="../Relay.html#DIAL_STATE_DIALING-constant" title="SignalWire::Relay::DIAL_STATE_DIALING (constant)">DIAL_STATE_DIALING</a></span></span></pre></dd>
+      
+        <dt id="ANSWERED-constant" class="">ANSWERED =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="../Relay.html#DIAL_STATE_ANSWERED-constant" title="SignalWire::Relay::DIAL_STATE_ANSWERED (constant)">DIAL_STATE_ANSWERED</a></span></span></pre></dd>
+      
+        <dt id="FAILED-constant" class="">FAILED =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="../Relay.html#DIAL_STATE_FAILED-constant" title="SignalWire::Relay::DIAL_STATE_FAILED (constant)">DIAL_STATE_FAILED</a></span></span></pre></dd>
+      
+        <dt id="ALL-constant" class="">ALL =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Returns every dial state.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>every dial state.</p></div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span>
+  <span class='const'><span class='object_link'><a href="../Relay.html#DIAL_STATE_DIALING-constant" title="SignalWire::Relay::DIAL_STATE_DIALING (constant)">DIAL_STATE_DIALING</a></span></span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="../Relay.html#DIAL_STATE_ANSWERED-constant" title="SignalWire::Relay::DIAL_STATE_ANSWERED (constant)">DIAL_STATE_ANSWERED</a></span></span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="../Relay.html#DIAL_STATE_FAILED-constant" title="SignalWire::Relay::DIAL_STATE_FAILED (constant)">DIAL_STATE_FAILED</a></span></span>
+<span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="TERMINAL-constant" class="">TERMINAL =
+          <div class="docstring">
+  <div class="discussion">
+    <p>Returns dial states that resolve the dial (success or failure).</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>dial states that resolve the dial (success or failure).</p></div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span>
+  <span class='const'><span class='object_link'><a href="../Relay.html#DIAL_STATE_ANSWERED-constant" title="SignalWire::Relay::DIAL_STATE_ANSWERED (constant)">DIAL_STATE_ANSWERED</a></span></span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="../Relay.html#DIAL_STATE_FAILED-constant" title="SignalWire::Relay::DIAL_STATE_FAILED (constant)">DIAL_STATE_FAILED</a></span></span>
+<span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#terminal%3F-class_method" title="terminal? (class method)">.<strong>terminal?</strong>(state)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>True when <code>state</code> resolves the dial.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#valid%3F-class_method" title="valid? (class method)">.<strong>valid?</strong>(state)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>True when <code>state</code> is a known dial state.</p></div></span>
+  
+</li>
+
+      
+    </ul>
+    
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="terminal?-class_method">
+  
+    .<strong>terminal?</strong>(state)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns true when <code>state</code> resolves the dial.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>state</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>a <code>dial_state</code> string.</p></div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>true when <code>state</code> resolves the dial.</p></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/constants.rb', line 126</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_terminal?'>terminal?</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="#TERMINAL-constant" title="SignalWire::Relay::DialState::TERMINAL (constant)">TERMINAL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="valid?-class_method">
+  
+    .<strong>valid?</strong>(state)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns true when <code>state</code> is a known dial state.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>state</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>true when <code>state</code> is a known dial state.</p></div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/relay/constants.rb', line 132</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="#ALL-constant" title="SignalWire::Relay::DialState::ALL (constant)">ALL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Jun 15 17:33:17 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.44 (ruby-4.0.5).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -288,6 +288,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#on_summary-instance_method" title="#on_summary (instance method)">#<strong>on_summary</strong>(summary, _raw_data = nil)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Lifecycle hook: on_summary — Python parity (signalwire.prefabs.faq_bot.FAQBotAgent#on_summary).</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#prompt_sections-instance_method" title="#prompt_sections (instance method)">#<strong>prompt_sections</strong>  &#x21d2; Object </a>
     
 
@@ -373,8 +395,6 @@
       <pre class="lines">
 
 
-23
-24
 25
 26
 27
@@ -382,10 +402,12 @@
 29
 30
 31
-32</pre>
+32
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>faqs:</span><span class='comma'>,</span> <span class='label'>suggest_related:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>persona:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>faq_bot</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>route:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/faq</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid__opts'>_opts</span><span class='rparen'>)</span>
@@ -433,12 +455,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_faqs'>faqs</span>
   <span class='ivar'>@faqs</span>
@@ -474,12 +496,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -515,12 +537,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_route'>route</span>
   <span class='ivar'>@route</span>
@@ -552,15 +574,15 @@
       <pre class="lines">
 
 
-49
-50
 51
 52
 53
-54</pre>
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 51</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_global_data'>global_data</span>
   <span class='lbrace'>{</span>
@@ -588,18 +610,18 @@
       <pre class="lines">
 
 
-56
-57
 58
 59
 60
 61
 62
 63
-64</pre>
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 56</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handle_search'>handle_search</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>query</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
@@ -609,6 +631,98 @@
   <span class='kw'>else</span>
     <span class='const'><span class='object_link'><a href="../Swaig.html" title="SignalWire::Swaig (module)">Swaig</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Swaig/FunctionResult.html" title="SignalWire::Swaig::FunctionResult (class)">FunctionResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Swaig/FunctionResult.html#initialize-instance_method" title="SignalWire::Swaig::FunctionResult#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>I don&#39;t have a specific answer for that. Here are the topics I can help with: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@faqs</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='id identifier rubyid_f'>f</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>question</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>; </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="on_summary-instance_method">
+  
+    #<strong>on_summary</strong>(summary, _raw_data = nil)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Lifecycle hook: on_summary — Python parity
+(signalwire.prefabs.faq_bot.FAQBotAgent#on_summary).</p>
+<p>Logs the post-prompt interaction summary; structured (Hash) summaries
+are emitted as pretty JSON. Subclasses may override to persist.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>summary</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>conversation summary</p></div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>_raw_data</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>full raw POST data</p></div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 77</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_on_summary'>on_summary</span><span class='lparen'>(</span><span class='id identifier rubyid_summary'>summary</span><span class='comma'>,</span> <span class='id identifier rubyid__raw_data'>_raw_data</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_summary'>summary</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_summary'>summary</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>FAQ interaction summary: </span><span class='embexpr_beg'>#{</span><span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_pretty_generate'>pretty_generate</span><span class='lparen'>(</span><span class='id identifier rubyid_summary'>summary</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>FAQ interaction summary: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_summary'>summary</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>rescue</span> <span class='const'>StandardError</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error processing summary: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -630,8 +744,6 @@
       <pre class="lines">
 
 
-38
-39
 40
 41
 42
@@ -639,10 +751,12 @@
 44
 45
 46
-47</pre>
+47
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prompt_sections'>prompt_sections</span>
   <span class='id identifier rubyid_bullets'>bullets</span> <span class='op'>=</span> <span class='ivar'>@faqs</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Q: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_f'>f</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>question</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
@@ -674,12 +788,12 @@
       <pre class="lines">
 
 
-34
-35
-36</pre>
+36
+37
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/prefabs/faq_bot.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tools'>tools</span>
   <span class='qwords_beg'>%w[</span><span class='tstring_content'>search_faq</span><span class='tstring_end'>]</span></span>
@@ -694,9 +808,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:55 2026 by
+  Generated on Mon Jun 15 17:33:18 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

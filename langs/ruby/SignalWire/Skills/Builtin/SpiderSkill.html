@@ -127,6 +127,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#cleanup-instance_method" title="#cleanup (instance method)">#<strong>cleanup</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Python parity: <code>SpiderSkill.cleanup</code> closes the HTTP session, clears the response cache, and logs.</p></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#description-instance_method" title="#description (instance method)">#<strong>description</strong>  &#x21d2; Object </a>
     
 
@@ -315,7 +337,7 @@
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../SkillBase.html" title="SignalWire::Skills::SkillBase (class)">SkillBase</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../SkillBase.html#cleanup-instance_method" title="SignalWire::Skills::SkillBase#cleanup (method)">#cleanup</a></span>, <span class='object_link'><a href="../SkillBase.html#get_global_data-instance_method" title="SignalWire::Skills::SkillBase#get_global_data (method)">#get_global_data</a></span>, <span class='object_link'><a href="../SkillBase.html#get_param-instance_method" title="SignalWire::Skills::SkillBase#get_param (method)">#get_param</a></span>, <span class='object_link'><a href="../SkillBase.html#get_prompt_sections-instance_method" title="SignalWire::Skills::SkillBase#get_prompt_sections (method)">#get_prompt_sections</a></span>, <span class='object_link'><a href="../SkillBase.html#initialize-instance_method" title="SignalWire::Skills::SkillBase#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="../SkillBase.html#required_env_vars-instance_method" title="SignalWire::Skills::SkillBase#required_env_vars (method)">#required_env_vars</a></span>, <span class='object_link'><a href="../SkillBase.html#version-instance_method" title="SignalWire::Skills::SkillBase#version (method)">#version</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../SkillBase.html#get_global_data-instance_method" title="SignalWire::Skills::SkillBase#get_global_data (method)">#get_global_data</a></span>, <span class='object_link'><a href="../SkillBase.html#get_param-instance_method" title="SignalWire::Skills::SkillBase#get_param (method)">#get_param</a></span>, <span class='object_link'><a href="../SkillBase.html#get_prompt_sections-instance_method" title="SignalWire::Skills::SkillBase#get_prompt_sections (method)">#get_prompt_sections</a></span>, <span class='object_link'><a href="../SkillBase.html#get_skill_data-instance_method" title="SignalWire::Skills::SkillBase#get_skill_data (method)">#get_skill_data</a></span>, <span class='object_link'><a href="../SkillBase.html#initialize-instance_method" title="SignalWire::Skills::SkillBase#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="../SkillBase.html#required_env_vars-instance_method" title="SignalWire::Skills::SkillBase#required_env_vars (method)">#required_env_vars</a></span>, <span class='object_link'><a href="../SkillBase.html#update_skill_data-instance_method" title="SignalWire::Skills::SkillBase#update_skill_data (method)">#update_skill_data</a></span>, <span class='object_link'><a href="../SkillBase.html#validate_env_vars-instance_method" title="SignalWire::Skills::SkillBase#validate_env_vars (method)">#validate_env_vars</a></span>, <span class='object_link'><a href="../SkillBase.html#validate_packages-instance_method" title="SignalWire::Skills::SkillBase#validate_packages (method)">#validate_packages</a></span>, <span class='object_link'><a href="../SkillBase.html#version-instance_method" title="SignalWire::Skills::SkillBase#version (method)">#version</a></span></p>
 <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -329,7 +351,56 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="description-instance_method">
+  <h3 class="signature first" id="cleanup-instance_method">
+  
+    #<strong>cleanup</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Python parity: <code>SpiderSkill.cleanup</code> closes the HTTP session, clears
+the response cache, and logs. Ruby opens a fresh Net::HTTP connection
+per request (no persistent session to close), so teardown here drops
+the response cache and logs that the skill was cleaned up. Safe to
+call more than once.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/skills/builtin/spider.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_cleanup'>cleanup</span>
+  <span class='ivar'>@cache</span><span class='op'>&amp;.</span><span class='id identifier rubyid_clear'>clear</span>
+  <span class='ivar'>@cache</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Spider skill cleaned up</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="description-instance_method">
   
     #<strong>description</strong>  &#x21d2; <tt>Object</tt> 
   
@@ -369,12 +440,12 @@
       <pre class="lines">
 
 
-53
-54
-55</pre>
+69
+70
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/skills/builtin/spider.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/skills/builtin/spider.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_hints'>get_hints</span>
   <span class='qwords_beg'>%w[</span><span class='tstring_content'>scrape</span><span class='words_sep'> </span><span class='tstring_content'>crawl</span><span class='words_sep'> </span><span class='tstring_content'>extract</span><span class='words_sep'> </span><span class='tstring_content'>web\ page</span><span class='words_sep'> </span><span class='tstring_content'>website</span><span class='words_sep'> </span><span class='tstring_content'>spider</span><span class='tstring_end'>]</span></span>
@@ -399,16 +470,16 @@
       <pre class="lines">
 
 
-57
-58
-59
-60
-61
-62
-63</pre>
+73
+74
+75
+76
+77
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/skills/builtin/spider.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/skills/builtin/spider.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_parameter_schema'>get_parameter_schema</span>
   <span class='lbrace'>{</span>
@@ -437,12 +508,12 @@
       <pre class="lines">
 
 
-26
-27
-28</pre>
+42
+43
+44</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/skills/builtin/spider.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/skills/builtin/spider.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_instance_key'>instance_key</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>spider_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_get_param'>get_param</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>tool_name</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>spider</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -493,31 +564,31 @@
       <pre class="lines">
 
 
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
 46
 47
 48
 49
 50
-51</pre>
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/signalwire/skills/builtin/spider.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'lib/signalwire/skills/builtin/spider.rb', line 46</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_tools'>register_tools</span>
   <span class='lbracket'>[</span>
@@ -568,7 +639,11 @@
 21
 22
 23
-24</pre>
+24
+25
+26
+27
+28</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/signalwire/skills/builtin/spider.rb', line 17</span>
@@ -579,6 +654,10 @@
   <span class='ivar'>@user_agent</span>      <span class='op'>=</span> <span class='id identifier rubyid_get_param'>get_param</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>user_agent</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
   <span class='ivar'>@tool_prefix</span>     <span class='op'>=</span> <span class='id identifier rubyid_get_param'>get_param</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>tool_name</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
   <span class='ivar'>@tool_prefix</span>     <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@tool_prefix</span><span class='embexpr_end'>}</span><span class='tstring_content'>_</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='ivar'>@tool_prefix</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='ivar'>@cache_enabled</span>   <span class='op'>=</span> <span class='id identifier rubyid_get_param'>get_param</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>cache_enabled</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>default:</span> <span class='kw'>true</span><span class='rparen'>)</span> <span class='op'>!=</span> <span class='kw'>false</span>
+  <span class='comment'># Response cache, mirroring Python&#39;s per-instance fetch cache. Held as
+</span>  <span class='comment'># state so #cleanup has something concrete to tear down.
+</span>  <span class='ivar'>@cache</span> <span class='op'>=</span> <span class='ivar'>@cache_enabled</span> <span class='op'>?</span> <span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='op'>:</span> <span class='kw'>nil</span>
   <span class='kw'>true</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -639,9 +718,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu May 21 15:20:56 2026 by
+  Generated on Mon Jun 15 17:33:19 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-3.1.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>
