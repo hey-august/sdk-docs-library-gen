@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::datamap::DataMap Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -134,20 +121,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classsignalwir
 </div><!--header-->
 <div class="contents">
 
-<p>Fluent builder for SWAIG data_map tools (server-side, no webhook needed).  
- <a href="#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="datamap_8hpp_source.html">datamap.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5856a335d9378292507c91469b4d9944" id="r_a5856a335d9378292507c91469b4d9944"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5856a335d9378292507c91469b4d9944">DataMap</a> (const std::string &amp;function_name)</td></tr>
 <tr class="memitem:a9492a059712802e94c09a0f9be6409ee" id="r_a9492a059712802e94c09a0f9be6409ee"><td class="memItemLeft"><a class="el" href="#a5856a335d9378292507c91469b4d9944">DataMap</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a9492a059712802e94c09a0f9be6409ee">purpose</a> (const std::string &amp;desc)</td></tr>
-<tr class="memdesc:a9492a059712802e94c09a0f9be6409ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the LLM-facing tool description (the "purpose").  <br /></td></tr>
 <tr class="memitem:a3b06a19836264c8dee623ed1ee136441" id="r_a3b06a19836264c8dee623ed1ee136441"><td class="memItemLeft"><a class="el" href="#a5856a335d9378292507c91469b4d9944">DataMap</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a3b06a19836264c8dee623ed1ee136441">description</a> (const std::string &amp;desc)</td></tr>
-<tr class="memdesc:a3b06a19836264c8dee623ed1ee136441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for <a class="el" href="#a9492a059712802e94c09a0f9be6409ee" title="Set the LLM-facing tool description (the &quot;purpose&quot;).">purpose()</a>.  <br /></td></tr>
 <tr class="memitem:a6387c15f67ec2433f60e77cc4c93182c" id="r_a6387c15f67ec2433f60e77cc4c93182c"><td class="memItemLeft"><a class="el" href="#a5856a335d9378292507c91469b4d9944">DataMap</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a6387c15f67ec2433f60e77cc4c93182c">parameter</a> (const std::string &amp;name, const std::string &amp;param_type, const std::string &amp;desc, bool required=false, const std::vector&lt; std::string &gt; &amp;enum_values={})</td></tr>
-<tr class="memdesc:a6387c15f67ec2433f60e77cc4c93182c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a parameter to this data-map tool — the <span class="tt">desc</span> is LLM-FACING.  <br /></td></tr>
 <tr class="memitem:a05a2932350ff5811c8ae25f99f19d3a7" id="r_a05a2932350ff5811c8ae25f99f19d3a7"><td class="memItemLeft"><a class="el" href="#a5856a335d9378292507c91469b4d9944">DataMap</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a05a2932350ff5811c8ae25f99f19d3a7">expression</a> (const std::string &amp;test_value, const std::string &amp;pattern, const <a class="el" href="classsignalwire_1_1swaig_1_1FunctionResult.html">swaig::FunctionResult</a> &amp;output, const <a class="el" href="classsignalwire_1_1swaig_1_1FunctionResult.html">swaig::FunctionResult</a> *nomatch_output=nullptr)</td></tr>
 <tr class="memdesc:a05a2932350ff5811c8ae25f99f19d3a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an expression pattern for pattern-based responses.  <br /></td></tr>
 <tr class="memitem:af10dbb65b21b163ecf00d27f7aa12cbf" id="r_af10dbb65b21b163ecf00d27f7aa12cbf"><td class="memItemLeft"><a class="el" href="#a5856a335d9378292507c91469b4d9944">DataMap</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af10dbb65b21b163ecf00d27f7aa12cbf">webhook</a> (const std::string &amp;method, const std::string &amp;url, const <a class="el" href="namespacesignalwire_1_1datamap.html#a2701bcdebfd311dbc6adbf58ff3f7275">json</a> &amp;headers=json::object(), const std::string &amp;form_param=&quot;&quot;, bool input_args_as_params=false, const std::vector&lt; std::string &gt; &amp;require_args={})</td></tr>
@@ -169,11 +150,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a689915c182cb442c3a83cd3b7784e9e9" id="r_a689915c182cb442c3a83cd3b7784e9e9"><td class="memItemLeft"><a class="el" href="#a5856a335d9378292507c91469b4d9944">DataMap</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a689915c182cb442c3a83cd3b7784e9e9">global_error_keys</a> (const std::vector&lt; std::string &gt; &amp;keys)</td></tr>
 <tr class="memdesc:a689915c182cb442c3a83cd3b7784e9e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set top-level error keys.  <br /></td></tr>
 <tr class="memitem:a8989a373519c0aaa36462ee2b61a6987" id="r_a8989a373519c0aaa36462ee2b61a6987"><td class="memItemLeft"><a class="el" href="namespacesignalwire_1_1datamap.html#a2701bcdebfd311dbc6adbf58ff3f7275">json</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8989a373519c0aaa36462ee2b61a6987">to_swaig_function</a> () const</td></tr>
-<tr class="memdesc:a8989a373519c0aaa36462ee2b61a6987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert to a SWAIG function definition JSON.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Fluent builder for SWAIG data_map tools (server-side, no webhook needed). </p>
-<p>Every setter returns *this for chaining. </p>
+<div class="textblock"><p>Fluent builder for SWAIG data_map tools (server-side, no webhook needed). Every setter returns *this for chaining. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5856a335d9378292507c91469b4d9944" name="a5856a335d9378292507c91469b4d9944"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5856a335d9378292507c91469b4d9944">&#9670;&#160;</a></span>DataMap()</h2>
@@ -234,9 +213,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Alias for <a class="el" href="#a9492a059712802e94c09a0f9be6409ee" title="Set the LLM-facing tool description (the &quot;purpose&quot;).">purpose()</a>. </p>
-<p>Sets the LLM-facing tool description. This string is read by the model to decide WHEN to call this tool. See <a class="el" href="#a9492a059712802e94c09a0f9be6409ee" title="Set the LLM-facing tool description (the &quot;purpose&quot;).">purpose()</a> for bad-vs-good examples. </p>
+<p>Alias for <a class="el" href="#a9492a059712802e94c09a0f9be6409ee">purpose()</a>. Sets the LLM-facing tool description. This string is read by the model to decide WHEN to call this tool. See <a class="el" href="#a9492a059712802e94c09a0f9be6409ee">purpose()</a> for bad-vs-good examples. </p>
 
 </div>
 </div>
@@ -401,8 +378,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add a parameter to this data-map tool — the <span class="tt">desc</span> is LLM-FACING. </p>
+<p>Add a parameter to this data-map tool — the <span class="tt">desc</span> is LLM-FACING.</p>
 <p>Each parameter description is rendered into the OpenAI tool schema under parameters.properties.&lt;name&gt;.description and sent to the model. The model uses it to decide HOW to fill in the argument from user speech. It is prompt engineering, not developer FYI.</p>
 <p>Bad vs good: BAD : .parameter("city", "string", "the city") GOOD: .parameter("city", "string", "The name of the city to get weather for, e.g. " "'San Francisco'. Ask the user if they did not " "provide one. Include the state or country if the " "city name is ambiguous.") </p>
 
@@ -441,10 +417,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set the LLM-facing tool description (the "purpose"). </p>
-<p>PROMPT ENGINEERING, not developer documentation.</p>
-<p>The description string is rendered into the OpenAI tool schema <span class="tt"><a class="el" href="#a3b06a19836264c8dee623ed1ee136441" title="Alias for purpose().">description</a></span> field on every LLM turn. The model reads it to decide WHEN to call this tool. A vague <a class="el" href="#a9492a059712802e94c09a0f9be6409ee" title="Set the LLM-facing tool description (the &quot;purpose&quot;).">purpose()</a> is the #1 cause of "the model has the right tool but doesn't call it" failures with data-map tools.</p>
+<p>Set the LLM-facing tool description (the "purpose"). PROMPT ENGINEERING, not developer documentation.</p>
+<p>The description string is rendered into the OpenAI tool schema <span class="tt"><a class="el" href="#a3b06a19836264c8dee623ed1ee136441">description</a></span> field on every LLM turn. The model reads it to decide WHEN to call this tool. A vague <a class="el" href="#a9492a059712802e94c09a0f9be6409ee">purpose()</a> is the #1 cause of "the model has the right tool but doesn't call it" failures with data-map tools.</p>
 <p>Bad vs good: BAD : .purpose("weather api") GOOD: .purpose("Get the current weather conditions and " "forecast for a specific city. Use this " "whenever the user asks about weather, " "temperature, rain, or similar conditions in " "a named location.") </p>
 
 </div>
@@ -454,6 +428,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacesignalwire_1_1datamap.html#a2701bcdebfd311dbc6adbf58ff3f7275">json</a> signalwire::datamap::DataMap::to_swaig_function </td>
@@ -462,9 +439,13 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Convert to a SWAIG function definition JSON. </p>
+<p>Convert to a SWAIG function definition JSON [[nodiscard]]: the built tool definition is the output of the builder; dropping it discards the whole <a class="el" href="classsignalwire_1_1datamap_1_1DataMap.html">DataMap</a>. (The fluent <a class="el" href="classsignalwire_1_1datamap_1_1DataMap.html">DataMap</a>&amp; setters above are intentionally NOT nodiscard.) </p>
 
 </div>
 </div>
@@ -530,8 +511,9 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/cpp/include/signalwire/datamap/<a class="el" href="datamap_8hpp_source.html">datamap.hpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>_build/sdks/signalwire-cpp/include/signalwire/datamap/<a class="el" href="datamap_8hpp_source.html">datamap.hpp</a></li>
+<li>_build/sdks/signalwire-cpp/src/datamap/<a class="el" href="datamap_8cpp.html">datamap.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

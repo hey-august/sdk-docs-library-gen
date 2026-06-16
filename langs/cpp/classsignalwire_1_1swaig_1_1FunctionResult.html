@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::swaig::FunctionResult Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -134,9 +121,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classsignalwir
 </div><!--header-->
 <div class="contents">
 
-<p>Builder for SWAIG function results with 40+ action methods.  
- <a href="#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="function__result_8hpp_source.html">function_result.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -165,6 +149,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae50d405c218d0084357f1847e8919730" id="r_ae50d405c218d0084357f1847e8919730"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ae50d405c218d0084357f1847e8919730">play_background_file</a> (const std::string &amp;filename, bool wait=false)</td></tr>
 <tr class="memitem:a3af1671c4fe4185393ef182040e218df" id="r_a3af1671c4fe4185393ef182040e218df"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a3af1671c4fe4185393ef182040e218df">stop_background_file</a> ()</td></tr>
 <tr class="memitem:a6c3381a5e1745f102ae69d07ab28d043" id="r_a6c3381a5e1745f102ae69d07ab28d043"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a6c3381a5e1745f102ae69d07ab28d043">record_call</a> (const std::string &amp;control_id=&quot;&quot;, bool stereo=false, const std::string &amp;format=&quot;wav&quot;, const std::string &amp;direction=&quot;both&quot;, const std::string &amp;terminators=&quot;&quot;, bool beep=false, double input_sensitivity=44.0, std::optional&lt; double &gt; initial_timeout=std::nullopt, std::optional&lt; double &gt; end_silence_timeout=std::nullopt, std::optional&lt; double &gt; max_length=std::nullopt, const std::string &amp;status_url=&quot;&quot;)</td></tr>
+<tr class="memitem:af4e0076f76b4c96d71968ce48897eb5a" id="r_af4e0076f76b4c96d71968ce48897eb5a"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af4e0076f76b4c96d71968ce48897eb5a">record_call</a> (const std::string &amp;control_id, bool stereo, <a class="el" href="namespacesignalwire_1_1swaig.html#a9e918e00cc4eb7a9cc04880ed34c2f32">RecordFormat</a> format, <a class="el" href="namespacesignalwire_1_1swaig.html#a25b5291e2b811c7af577743348ad9845">RecordDirection</a> direction, const std::string &amp;terminators=&quot;&quot;, bool beep=false, double input_sensitivity=44.0, std::optional&lt; double &gt; initial_timeout=std::nullopt, std::optional&lt; double &gt; end_silence_timeout=std::nullopt, std::optional&lt; double &gt; max_length=std::nullopt, const std::string &amp;status_url=&quot;&quot;)</td></tr>
 <tr class="memitem:a408cf10aa6217acb479253620c4def87" id="r_a408cf10aa6217acb479253620c4def87"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a408cf10aa6217acb479253620c4def87">stop_record_call</a> (const std::string &amp;control_id=&quot;&quot;)</td></tr>
 <tr class="memitem:a61fd7fe3386e218f9363822c95919dc9" id="r_a61fd7fe3386e218f9363822c95919dc9"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a61fd7fe3386e218f9363822c95919dc9">add_dynamic_hints</a> (const <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a> &amp;hints)</td></tr>
 <tr class="memitem:a33c404ecfdfabc3272217d8068b1fac9" id="r_a33c404ecfdfabc3272217d8068b1fac9"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a33c404ecfdfabc3272217d8068b1fac9">clear_dynamic_hints</a> ()</td></tr>
@@ -176,10 +161,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4a2db8006e61ef5c73dc09f2262d5f25" id="r_a4a2db8006e61ef5c73dc09f2262d5f25"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4a2db8006e61ef5c73dc09f2262d5f25">update_settings</a> (const <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a> &amp;settings)</td></tr>
 <tr class="memitem:af4a603645914a0ba9b60a232ce1649e0" id="r_af4a603645914a0ba9b60a232ce1649e0"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af4a603645914a0ba9b60a232ce1649e0">simulate_user_input</a> (const std::string &amp;text)</td></tr>
 <tr class="memitem:a7962e7acc3f65af3b7aeac9fd7cf6ae0" id="r_a7962e7acc3f65af3b7aeac9fd7cf6ae0"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a7962e7acc3f65af3b7aeac9fd7cf6ae0">execute_swml</a> (const <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a> &amp;swml_content, bool transfer=false)</td></tr>
-<tr class="memitem:a98fc4b2c89867913fe73b147c8e7344a" id="r_a98fc4b2c89867913fe73b147c8e7344a"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a98fc4b2c89867913fe73b147c8e7344a">join_conference</a> (const std::string &amp;name, bool muted=false, const std::string &amp;beep=&quot;true&quot;)</td></tr>
+<tr class="memitem:a413e5c869662d756473216a31dff71af" id="r_a413e5c869662d756473216a31dff71af"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a413e5c869662d756473216a31dff71af">join_conference</a> (const std::string &amp;name, bool muted=false, const std::string &amp;beep=&quot;true&quot;, bool start_on_enter=true, bool end_on_exit=false, std::optional&lt; std::string &gt; wait_url=std::nullopt, int max_participants=250, const std::string &amp;record=&quot;do-not-record&quot;, std::optional&lt; std::string &gt; region=std::nullopt, const std::string &amp;trim=&quot;trim-silence&quot;, std::optional&lt; std::string &gt; coach=std::nullopt, std::optional&lt; std::string &gt; status_callback_event=std::nullopt, std::optional&lt; std::string &gt; status_callback=std::nullopt, const std::string &amp;status_callback_method=&quot;POST&quot;, std::optional&lt; std::string &gt; recording_status_callback=std::nullopt, const std::string &amp;recording_status_callback_method=&quot;POST&quot;, const std::string &amp;recording_status_callback_event=&quot;completed&quot;, std::optional&lt; <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a> &gt; result=std::nullopt)</td></tr>
+<tr class="memitem:aca20a595a74a83f46fc854c4f3509244" id="r_aca20a595a74a83f46fc854c4f3509244"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aca20a595a74a83f46fc854c4f3509244">join_conference</a> (const std::string &amp;name, const <a class="el" href="structsignalwire_1_1swaig_1_1JoinConferenceOptions.html">JoinConferenceOptions</a> &amp;opts)</td></tr>
 <tr class="memitem:a2dbc5d24989c83e045409c6f575c5c1f" id="r_a2dbc5d24989c83e045409c6f575c5c1f"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2dbc5d24989c83e045409c6f575c5c1f">join_room</a> (const std::string &amp;name)</td></tr>
 <tr class="memitem:a0a6e8185f9615e21a36d137279f76a7b" id="r_a0a6e8185f9615e21a36d137279f76a7b"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a0a6e8185f9615e21a36d137279f76a7b">sip_refer</a> (const std::string &amp;to_uri)</td></tr>
 <tr class="memitem:af26aa3c5757734215146b54b9f0809c0" id="r_af26aa3c5757734215146b54b9f0809c0"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af26aa3c5757734215146b54b9f0809c0">tap</a> (const std::string &amp;uri, const std::string &amp;control_id=&quot;&quot;, const std::string &amp;direction=&quot;both&quot;, const std::string &amp;codec=&quot;PCMU&quot;, int rtp_ptime=20, const std::string &amp;status_url=&quot;&quot;)</td></tr>
+<tr class="memitem:a369d258bf387293f5ee3be6cc0e29554" id="r_a369d258bf387293f5ee3be6cc0e29554"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a369d258bf387293f5ee3be6cc0e29554">tap</a> (const std::string &amp;uri, const std::string &amp;control_id, <a class="el" href="namespacesignalwire_1_1swaig.html#a58ca8ad82516b0dae8dbd289e871b02c">TapDirection</a> direction, <a class="el" href="namespacesignalwire_1_1swaig.html#a8a8e14920b358cf1895c56db63d12c28">Codec</a> codec, int rtp_ptime=20, const std::string &amp;status_url=&quot;&quot;)</td></tr>
 <tr class="memitem:a65d7590b5a6061748e8d934e93b1acbf" id="r_a65d7590b5a6061748e8d934e93b1acbf"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a65d7590b5a6061748e8d934e93b1acbf">stop_tap</a> (const std::string &amp;control_id=&quot;&quot;)</td></tr>
 <tr class="memitem:af00545b731675ed4e0480ef1d17ee803" id="r_af00545b731675ed4e0480ef1d17ee803"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af00545b731675ed4e0480ef1d17ee803">send_sms</a> (const std::string &amp;to, const std::string &amp;from, const std::string &amp;body=&quot;&quot;, const std::vector&lt; std::string &gt; &amp;media={}, const std::vector&lt; std::string &gt; &amp;tags={}, const std::string &amp;region=&quot;&quot;)</td></tr>
 <tr class="memitem:a2eba33a368577562ca4e4f26d1e6f9ba" id="r_a2eba33a368577562ca4e4f26d1e6f9ba"><td class="memItemLeft"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2eba33a368577562ca4e4f26d1e6f9ba">pay</a> (const std::string &amp;payment_connector_url, const std::string &amp;input_method=&quot;dtmf&quot;, const std::string &amp;status_url=&quot;&quot;, const std::string &amp;payment_method=&quot;credit-card&quot;, int timeout=5, int max_attempts=1, bool security_code=true, const std::string &amp;postal_code=&quot;true&quot;, int min_postal_code_length=0, const std::string &amp;token_type=&quot;reusable&quot;, const std::string &amp;charge_amount=&quot;&quot;, const std::string &amp;currency=&quot;usd&quot;, const std::string &amp;language=&quot;en-US&quot;, const std::string &amp;voice=&quot;woman&quot;, const std::string &amp;description=&quot;&quot;, const std::string &amp;valid_card_types=&quot;visa mastercard amex&quot;, const std::vector&lt; <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a> &gt; &amp;parameters={}, const std::vector&lt; <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a> &gt; &amp;prompts={}, const std::string &amp;ai_response=&quot;The payment status is ${pay_result}, do not mention anything else about collecting payment if successful.&quot;)</td></tr>
@@ -192,13 +179,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aef48a36d10530705d4678612954cbc07" id="r_aef48a36d10530705d4678612954cbc07"><td class="memItemLeft">static <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a>&#160;</td><td class="memItemRight"><a class="el" href="#aef48a36d10530705d4678612954cbc07">create_payment_prompt</a> (const std::string &amp;for_situation, const std::vector&lt; <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a> &gt; &amp;actions, const std::string &amp;card_type=&quot;&quot;, const std::string &amp;error_type=&quot;&quot;)</td></tr>
-<tr class="memitem:a4f9c9bc58323ca9ff505f13f31272636" id="r_a4f9c9bc58323ca9ff505f13f31272636"><td class="memItemLeft">static <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4f9c9bc58323ca9ff505f13f31272636">create_payment_action</a> (const std::string &amp;action_type, const std::string &amp;phrase)</td></tr>
-<tr class="memitem:a3249d452444b62ecbacecbfa8f95b6d7" id="r_a3249d452444b62ecbacecbfa8f95b6d7"><td class="memItemLeft">static <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3249d452444b62ecbacecbfa8f95b6d7">create_payment_parameter</a> (const std::string &amp;name, const std::string &amp;value)</td></tr>
+<tr class="memitem:a4c7beaf17b373dab0325b13b0a18502d" id="r_a4c7beaf17b373dab0325b13b0a18502d"><td class="memItemLeft">static <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4c7beaf17b373dab0325b13b0a18502d">create_payment_prompt</a> (const std::string &amp;for_situation, const std::vector&lt; <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a> &gt; &amp;actions, const std::string &amp;card_type=&quot;&quot;, const std::string &amp;error_type=&quot;&quot;)</td></tr>
+<tr class="memitem:aad851882648a6aed659297678496b466" id="r_aad851882648a6aed659297678496b466"><td class="memItemLeft">static <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a>&#160;</td><td class="memItemRight"><a class="el" href="#aad851882648a6aed659297678496b466">create_payment_action</a> (const std::string &amp;action_type, const std::string &amp;phrase)</td></tr>
+<tr class="memitem:a4c8eea80c34752c582fa129db9bbe440" id="r_a4c8eea80c34752c582fa129db9bbe440"><td class="memItemLeft">static <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4c8eea80c34752c582fa129db9bbe440">create_payment_parameter</a> (const std::string &amp;name, const std::string &amp;value)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Builder for SWAIG function results with 40+ action methods. </p>
-<p>Every method returns *this for chaining. </p>
+<div class="textblock"><p>Builder for SWAIG function results with 40+ action methods. Every method returns *this for chaining. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a848778a913196df937e4476fef0d6a3e" name="a848778a913196df937e4476fef0d6a3e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a848778a913196df937e4476fef0d6a3e">&#9670;&#160;</a></span>FunctionResult()</h2>
@@ -328,8 +314,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4f9c9bc58323ca9ff505f13f31272636" name="a4f9c9bc58323ca9ff505f13f31272636"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f9c9bc58323ca9ff505f13f31272636">&#9670;&#160;</a></span>create_payment_action()</h2>
+<a id="aad851882648a6aed659297678496b466" name="aad851882648a6aed659297678496b466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad851882648a6aed659297678496b466">&#9670;&#160;</a></span>create_payment_action()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,15 +336,15 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a3249d452444b62ecbacecbfa8f95b6d7" name="a3249d452444b62ecbacecbfa8f95b6d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3249d452444b62ecbacecbfa8f95b6d7">&#9670;&#160;</a></span>create_payment_parameter()</h2>
+<a id="a4c8eea80c34752c582fa129db9bbe440" name="a4c8eea80c34752c582fa129db9bbe440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c8eea80c34752c582fa129db9bbe440">&#9670;&#160;</a></span>create_payment_parameter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -379,15 +365,15 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aef48a36d10530705d4678612954cbc07" name="aef48a36d10530705d4678612954cbc07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef48a36d10530705d4678612954cbc07">&#9670;&#160;</a></span>create_payment_prompt()</h2>
+<a id="a4c7beaf17b373dab0325b13b0a18502d" name="a4c7beaf17b373dab0325b13b0a18502d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c7beaf17b373dab0325b13b0a18502d">&#9670;&#160;</a></span>create_payment_prompt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -418,7 +404,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -545,8 +531,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a98fc4b2c89867913fe73b147c8e7344a" name="a98fc4b2c89867913fe73b147c8e7344a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98fc4b2c89867913fe73b147c8e7344a">&#9670;&#160;</a></span>join_conference()</h2>
+<a id="a413e5c869662d756473216a31dff71af" name="a413e5c869662d756473216a31dff71af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a413e5c869662d756473216a31dff71af">&#9670;&#160;</a></span>join_conference() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -564,10 +550,109 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>beep</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;true&quot;</span>&#160;)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>beep</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;true&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>start_on_enter</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>end_on_exit</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; std::string &gt;</td>          <td class="paramname"><span class="paramname"><em>wait_url</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max_participants</em></span><span class="paramdefsep"> = </span><span class="paramdefval">250</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>record</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;do-not-record&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; std::string &gt;</td>          <td class="paramname"><span class="paramname"><em>region</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>trim</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;trim-silence&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; std::string &gt;</td>          <td class="paramname"><span class="paramname"><em>coach</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; std::string &gt;</td>          <td class="paramname"><span class="paramname"><em>status_callback_event</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; std::string &gt;</td>          <td class="paramname"><span class="paramname"><em>status_callback</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>status_callback_method</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;POST&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; std::string &gt;</td>          <td class="paramname"><span class="paramname"><em>recording_status_callback</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>recording_status_callback_method</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;POST&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>recording_status_callback_event</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;completed&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; <a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>result</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Join an ad-hoc audio conference (SWML <span class="tt"><a class="el" href="#a413e5c869662d756473216a31dff71af">join_conference</a></span>). Full parity with Python <span class="tt">core/function_result.py</span>: 18 optional params past <span class="tt">name</span>, 7 validations, and simple (bare-name) vs full-object emission.</p>
+<p>Flat positional overload — mirrors the Python signature 1:1 so the cross-language audit lines up on parameter count/types. The closed-set params are bare <span class="tt">std::string</span> (Python uses bare <span class="tt">str</span>); the options-struct overload below adds the typed <span class="tt">enum class</span> affordance. </p>
+
+</div>
+</div>
+<a id="aca20a595a74a83f46fc854c4f3509244" name="aca20a595a74a83f46fc854c4f3509244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca20a595a74a83f46fc854c4f3509244">&#9670;&#160;</a></span>join_conference() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp; signalwire::swaig::FunctionResult::join_conference </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structsignalwire_1_1swaig_1_1JoinConferenceOptions.html">JoinConferenceOptions</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>opts</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Options-bag overload — the C++-idiomatic way to pass the 18 optional params (named <span class="tt">std::optional</span> fields + closed-set enums). Delegates to the flat overload, so behavior + validation + emission are identical. </p>
 
 </div>
 </div>
@@ -715,8 +800,75 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af4e0076f76b4c96d71968ce48897eb5a" name="af4e0076f76b4c96d71968ce48897eb5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4e0076f76b4c96d71968ce48897eb5a">&#9670;&#160;</a></span>record_call() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp; signalwire::swaig::FunctionResult::record_call </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>control_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>stereo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacesignalwire_1_1swaig.html#a9e918e00cc4eb7a9cc04880ed34c2f32">RecordFormat</a></td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacesignalwire_1_1swaig.html#a25b5291e2b811c7af577743348ad9845">RecordDirection</a></td>          <td class="paramname"><span class="paramname"><em>direction</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>terminators</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>beep</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>input_sensitivity</em></span><span class="paramdefsep"> = </span><span class="paramdefval">44.0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; double &gt;</td>          <td class="paramname"><span class="paramname"><em>initial_timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; double &gt;</td>          <td class="paramname"><span class="paramname"><em>end_silence_timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; double &gt;</td>          <td class="paramname"><span class="paramname"><em>max_length</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>status_url</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Typed overload — <span class="tt">format</span>/<span class="tt">direction</span> as the <span class="tt"><a class="el" href="namespacesignalwire_1_1swaig.html#a9e918e00cc4eb7a9cc04880ed34c2f32">RecordFormat</a></span> / <span class="tt"><a class="el" href="namespacesignalwire_1_1swaig.html#a25b5291e2b811c7af577743348ad9845">RecordDirection</a></span> closed-set enums for call-site typo checking. Declared after the std::string overload (equal arity) so the enumerator's dedup keeps the string signature canonical; normalizes the enums to their wire strings via <span class="tt"><a class="el" href="namespacesignalwire_1_1swaig.html#a952c9bfe85bb7eb9340ff1f5e4ffff15">record_format_value</a></span>/<span class="tt"><a class="el" href="namespacesignalwire_1_1swaig.html#a7059466cdd2624d64ec4dcfad165a7e8">record_direction_value</a></span> and delegates to the std::string <span class="tt"><a class="el" href="#a6c3381a5e1745f102ae69d07ab28d043">record_call</a></span>, so the emitted SWML is byte-identical. </p>
+
+</div>
+</div>
 <a id="a6c3381a5e1745f102ae69d07ab28d043" name="a6c3381a5e1745f102ae69d07ab28d043"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c3381a5e1745f102ae69d07ab28d043">&#9670;&#160;</a></span>record_call()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c3381a5e1745f102ae69d07ab28d043">&#9670;&#160;</a></span>record_call() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1259,8 +1411,50 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a369d258bf387293f5ee3be6cc0e29554" name="a369d258bf387293f5ee3be6cc0e29554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a369d258bf387293f5ee3be6cc0e29554">&#9670;&#160;</a></span>tap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a848778a913196df937e4476fef0d6a3e">FunctionResult</a> &amp; signalwire::swaig::FunctionResult::tap </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>uri</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>control_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacesignalwire_1_1swaig.html#a58ca8ad82516b0dae8dbd289e871b02c">TapDirection</a></td>          <td class="paramname"><span class="paramname"><em>direction</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacesignalwire_1_1swaig.html#a8a8e14920b358cf1895c56db63d12c28">Codec</a></td>          <td class="paramname"><span class="paramname"><em>codec</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>rtp_ptime</em></span><span class="paramdefsep"> = </span><span class="paramdefval">20</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>status_url</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Typed overload — <span class="tt">direction</span>/<span class="tt">codec</span> as the <span class="tt"><a class="el" href="namespacesignalwire_1_1swaig.html#a58ca8ad82516b0dae8dbd289e871b02c">TapDirection</a></span> / <span class="tt"><a class="el" href="namespacesignalwire_1_1swaig.html#a8a8e14920b358cf1895c56db63d12c28">Codec</a></span> closed-set enums for call-site typo checking. Declared after the std::string overload (equal arity) so the enumerator's dedup keeps the string signature canonical; normalizes the enums via <span class="tt"><a class="el" href="namespacesignalwire_1_1swaig.html#af4c8612791a264d33e8171da9f889073">tap_direction_value</a></span>/<span class="tt"><a class="el" href="namespacesignalwire_1_1swaig.html#a4f30ea92d51636e8aea6302a5e55463b">codec_value</a></span> and delegates to the std::string <span class="tt"><a class="el" href="#af26aa3c5757734215146b54b9f0809c0">tap</a></span>, so the emitted SWML is byte-identical. NOTE the tap direction set is {speak,hear,both} (<span class="tt">hear</span>, not record_call's <span class="tt">listen</span>). </p>
+
+</div>
+</div>
 <a id="af26aa3c5757734215146b54b9f0809c0" name="af26aa3c5757734215146b54b9f0809c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af26aa3c5757734215146b54b9f0809c0">&#9670;&#160;</a></span>tap()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af26aa3c5757734215146b54b9f0809c0">&#9670;&#160;</a></span>tap() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1305,6 +1499,9 @@ Static Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacesignalwire_1_1swaig.html#a6d89d7bbb06741cabf3264363f7f6a68">json</a> signalwire::swaig::FunctionResult::to_json </td>
@@ -1313,6 +1510,11 @@ Static Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -1322,6 +1524,9 @@ Static Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string signalwire::swaig::FunctionResult::to_string </td>
@@ -1330,6 +1535,11 @@ Static Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -1411,8 +1621,9 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/cpp/include/signalwire/swaig/<a class="el" href="function__result_8hpp_source.html">function_result.hpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>_build/sdks/signalwire-cpp/include/signalwire/swaig/<a class="el" href="function__result_8hpp_source.html">function_result.hpp</a></li>
+<li>_build/sdks/signalwire-cpp/src/swaig/<a class="el" href="function__result_8cpp.html">function_result.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

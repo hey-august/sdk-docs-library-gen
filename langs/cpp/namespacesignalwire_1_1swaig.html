@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::swaig Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -136,17 +123,92 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacesigna
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:EnumOrString" id="r_EnumOrString"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structsignalwire_1_1swaig_1_1EnumOrString.html">EnumOrString</a></td></tr>
 <tr class="memitem:FunctionResult" id="r_FunctionResult"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classsignalwire_1_1swaig_1_1FunctionResult.html">FunctionResult</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builder for SWAIG function results with 40+ action methods.  <a href="classsignalwire_1_1swaig_1_1FunctionResult.html#details">More...</a><br /></td></tr>
+<tr class="memitem:JoinConferenceOptions" id="r_JoinConferenceOptions"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structsignalwire_1_1swaig_1_1JoinConferenceOptions.html">JoinConferenceOptions</a></td></tr>
+<tr class="memitem:ParameterSchema" id="r_ParameterSchema"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classsignalwire_1_1swaig_1_1ParameterSchema.html">ParameterSchema</a></td></tr>
 <tr class="memitem:ToolDefinition" id="r_ToolDefinition"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structsignalwire_1_1swaig_1_1ToolDefinition.html">ToolDefinition</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of a SWAIG tool (function).  <a href="structsignalwire_1_1swaig_1_1ToolDefinition.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a6d89d7bbb06741cabf3264363f7f6a68" id="r_a6d89d7bbb06741cabf3264363f7f6a68"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a6d89d7bbb06741cabf3264363f7f6a68">json</a> = nlohmann::json</td></tr>
+<tr class="memitem:a0040159392c1c6cf3042f26fca7128cc" id="r_a0040159392c1c6cf3042f26fca7128cc"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a0040159392c1c6cf3042f26fca7128cc">BeepField</a> = <a class="el" href="structsignalwire_1_1swaig_1_1EnumOrString.html">EnumOrString</a>&lt;<a class="el" href="#a8ac5fe04c9937c5a479f12547e2da31f">ConferenceBeep</a>, &amp;<a class="el" href="#a58cc23ee1ae0b88c24d8e5ef5abb809d">conference_beep_value</a>&gt;</td></tr>
+<tr class="memitem:a312087d7d412ebcd3949b60f44c4db22" id="r_a312087d7d412ebcd3949b60f44c4db22"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a312087d7d412ebcd3949b60f44c4db22">RecordField</a> = <a class="el" href="structsignalwire_1_1swaig_1_1EnumOrString.html">EnumOrString</a>&lt;<a class="el" href="#a6992fd57cedb06bd83f45aaccb4fa86f">ConferenceRecord</a>, &amp;<a class="el" href="#aad6859795391c3f6697d0ee0962948d6">conference_record_value</a>&gt;</td></tr>
+<tr class="memitem:aa72c6cd27dce85ff5dbdabc05aa9275c" id="r_aa72c6cd27dce85ff5dbdabc05aa9275c"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#aa72c6cd27dce85ff5dbdabc05aa9275c">TrimField</a> = <a class="el" href="structsignalwire_1_1swaig_1_1EnumOrString.html">EnumOrString</a>&lt;<a class="el" href="#a7153cba877ec7e47b5e8a661e0a35421">ConferenceTrim</a>, &amp;<a class="el" href="#a49ff067599db312c65848cc3184e360a">conference_trim_value</a>&gt;</td></tr>
+<tr class="memitem:a183268082c877e215e82574f1fe2c570" id="r_a183268082c877e215e82574f1fe2c570"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a183268082c877e215e82574f1fe2c570">MethodField</a> = <a class="el" href="structsignalwire_1_1swaig_1_1EnumOrString.html">EnumOrString</a>&lt;<a class="el" href="#a7692f21e2a5d0d8c5a22bfe18709eabf">CallbackMethod</a>, &amp;<a class="el" href="#a64ce2dd5be667bdee7b78a444e1d0ad9">callback_method_value</a>&gt;</td></tr>
 <tr class="memitem:ac23e264b5f56d320234b09d751415282" id="r_ac23e264b5f56d320234b09d751415282"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ac23e264b5f56d320234b09d751415282">ToolHandler</a> = std::function&lt;<a class="el" href="classsignalwire_1_1swaig_1_1FunctionResult.html">FunctionResult</a>(const <a class="el" href="#a6d89d7bbb06741cabf3264363f7f6a68">json</a>&amp; args, const <a class="el" href="#a6d89d7bbb06741cabf3264363f7f6a68">json</a>&amp; raw_data)&gt;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a8ac5fe04c9937c5a479f12547e2da31f" id="r_a8ac5fe04c9937c5a479f12547e2da31f"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a8ac5fe04c9937c5a479f12547e2da31f">ConferenceBeep</a> { <a class="el" href="#a8ac5fe04c9937c5a479f12547e2da31faf827cf462f62848df37c5e1e94a4da74">True</a>
+, <a class="el" href="#a8ac5fe04c9937c5a479f12547e2da31faf8320b26d30ab433c5a54546d21f414c">False</a>
+, <a class="el" href="#a8ac5fe04c9937c5a479f12547e2da31fad26d8f96861fe247a1885391d562bef0">OnEnter</a>
+, <a class="el" href="#a8ac5fe04c9937c5a479f12547e2da31fa401b0572a5e3b960959886516846a144">OnExit</a>
+ }</td></tr>
+<tr class="memdesc:a8ac5fe04c9937c5a479f12547e2da31f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">beep</span> — when the conference plays an enter/leave tone.  <a href="#a8ac5fe04c9937c5a479f12547e2da31f">More...</a><br /></td></tr>
+<tr class="memitem:a6992fd57cedb06bd83f45aaccb4fa86f" id="r_a6992fd57cedb06bd83f45aaccb4fa86f"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a6992fd57cedb06bd83f45aaccb4fa86f">ConferenceRecord</a> { <a class="el" href="#a6992fd57cedb06bd83f45aaccb4fa86fa023f5b8cb76c0dc8d208264e210caec3">DoNotRecord</a>
+, <a class="el" href="#a6992fd57cedb06bd83f45aaccb4fa86faf2d7bd2481614a47f6d5ec1dab652e2f">RecordFromStart</a>
+ }</td></tr>
+<tr class="memdesc:a6992fd57cedb06bd83f45aaccb4fa86f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">record</span> — conference recording mode.  <a href="#a6992fd57cedb06bd83f45aaccb4fa86f">More...</a><br /></td></tr>
+<tr class="memitem:a7153cba877ec7e47b5e8a661e0a35421" id="r_a7153cba877ec7e47b5e8a661e0a35421"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a7153cba877ec7e47b5e8a661e0a35421">ConferenceTrim</a> { <a class="el" href="#a7153cba877ec7e47b5e8a661e0a35421a1daf9a6368d50e8f8f3ac49fec3c8ecf">TrimSilence</a>
+, <a class="el" href="#a7153cba877ec7e47b5e8a661e0a35421a20ca1f9cc3381f29dea1e3d33ba4c9c9">DoNotTrim</a>
+ }</td></tr>
+<tr class="memdesc:a7153cba877ec7e47b5e8a661e0a35421"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">trim</span> — leading/trailing silence handling on recordings.  <a href="#a7153cba877ec7e47b5e8a661e0a35421">More...</a><br /></td></tr>
+<tr class="memitem:a7692f21e2a5d0d8c5a22bfe18709eabf" id="r_a7692f21e2a5d0d8c5a22bfe18709eabf"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a7692f21e2a5d0d8c5a22bfe18709eabf">CallbackMethod</a> { <a class="el" href="#a7692f21e2a5d0d8c5a22bfe18709eabfac55582518cba2c464f29f5bae1c68def">Get</a>
+, <a class="el" href="#a7692f21e2a5d0d8c5a22bfe18709eabfa03d947a2158373c3b9d74325850cb8b9">Post</a>
+ }</td></tr>
+<tr class="memdesc:a7692f21e2a5d0d8c5a22bfe18709eabf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">status_callback_method</span> / <span class="tt">recording_status_callback_method</span> — HTTP verb.  <a href="#a7692f21e2a5d0d8c5a22bfe18709eabf">More...</a><br /></td></tr>
+<tr class="memitem:a9e918e00cc4eb7a9cc04880ed34c2f32" id="r_a9e918e00cc4eb7a9cc04880ed34c2f32"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a9e918e00cc4eb7a9cc04880ed34c2f32">RecordFormat</a> { <a class="el" href="#a9e918e00cc4eb7a9cc04880ed34c2f32a0bc5cdc666c1935c50d8ece1b53edbc4">Wav</a>
+, <a class="el" href="#a9e918e00cc4eb7a9cc04880ed34c2f32ad7d4845656ae6671b059af6f9093886a">Mp3</a>
+, <a class="el" href="#a9e918e00cc4eb7a9cc04880ed34c2f32a7d761542d4b5ea168dc156e85a9a2949">Mp4</a>
+ }</td></tr>
+<tr class="memitem:a25b5291e2b811c7af577743348ad9845" id="r_a25b5291e2b811c7af577743348ad9845"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a25b5291e2b811c7af577743348ad9845">RecordDirection</a> { <a class="el" href="#a25b5291e2b811c7af577743348ad9845a8b1e2b9b342dd37344c6343dc23a6733">Speak</a>
+, <a class="el" href="#a25b5291e2b811c7af577743348ad9845ace6802b46091c31e2ec2363883fe8369">Listen</a>
+, <a class="el" href="#a25b5291e2b811c7af577743348ad9845a130c5b3473c57faa76e2a1c54e26f88e">Both</a>
+ }</td></tr>
+<tr class="memitem:a58ca8ad82516b0dae8dbd289e871b02c" id="r_a58ca8ad82516b0dae8dbd289e871b02c"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a58ca8ad82516b0dae8dbd289e871b02c">TapDirection</a> { <a class="el" href="#a58ca8ad82516b0dae8dbd289e871b02ca8b1e2b9b342dd37344c6343dc23a6733">Speak</a>
+, <a class="el" href="#a58ca8ad82516b0dae8dbd289e871b02ca4dd5c9c9f06869f5e6a0757bfa151aa6">Hear</a>
+, <a class="el" href="#a58ca8ad82516b0dae8dbd289e871b02ca130c5b3473c57faa76e2a1c54e26f88e">Both</a>
+ }</td></tr>
+<tr class="memitem:a8a8e14920b358cf1895c56db63d12c28" id="r_a8a8e14920b358cf1895c56db63d12c28"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a8a8e14920b358cf1895c56db63d12c28">Codec</a> { <a class="el" href="#a8a8e14920b358cf1895c56db63d12c28a9ab7d8d4245756ecea0452cf4a2a35ba">Pcmu</a>
+, <a class="el" href="#a8a8e14920b358cf1895c56db63d12c28a35185edd0487a565e203618b6d69d4ad">Pcma</a>
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a58cc23ee1ae0b88c24d8e5ef5abb809d" id="r_a58cc23ee1ae0b88c24d8e5ef5abb809d"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a58cc23ee1ae0b88c24d8e5ef5abb809d">conference_beep_value</a> (<a class="el" href="#a8ac5fe04c9937c5a479f12547e2da31f">ConferenceBeep</a> v)</td></tr>
+<tr class="memitem:aad6859795391c3f6697d0ee0962948d6" id="r_aad6859795391c3f6697d0ee0962948d6"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aad6859795391c3f6697d0ee0962948d6">conference_record_value</a> (<a class="el" href="#a6992fd57cedb06bd83f45aaccb4fa86f">ConferenceRecord</a> v)</td></tr>
+<tr class="memitem:a49ff067599db312c65848cc3184e360a" id="r_a49ff067599db312c65848cc3184e360a"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a49ff067599db312c65848cc3184e360a">conference_trim_value</a> (<a class="el" href="#a7153cba877ec7e47b5e8a661e0a35421">ConferenceTrim</a> v)</td></tr>
+<tr class="memitem:a64ce2dd5be667bdee7b78a444e1d0ad9" id="r_a64ce2dd5be667bdee7b78a444e1d0ad9"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a64ce2dd5be667bdee7b78a444e1d0ad9">callback_method_value</a> (<a class="el" href="#a7692f21e2a5d0d8c5a22bfe18709eabf">CallbackMethod</a> v)</td></tr>
+<tr class="memitem:a952c9bfe85bb7eb9340ff1f5e4ffff15" id="r_a952c9bfe85bb7eb9340ff1f5e4ffff15"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a952c9bfe85bb7eb9340ff1f5e4ffff15">record_format_value</a> (<a class="el" href="#a9e918e00cc4eb7a9cc04880ed34c2f32">RecordFormat</a> v)</td></tr>
+<tr class="memitem:a7059466cdd2624d64ec4dcfad165a7e8" id="r_a7059466cdd2624d64ec4dcfad165a7e8"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a7059466cdd2624d64ec4dcfad165a7e8">record_direction_value</a> (<a class="el" href="#a25b5291e2b811c7af577743348ad9845">RecordDirection</a> v)</td></tr>
+<tr class="memitem:af4c8612791a264d33e8171da9f889073" id="r_af4c8612791a264d33e8171da9f889073"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#af4c8612791a264d33e8171da9f889073">tap_direction_value</a> (<a class="el" href="#a58ca8ad82516b0dae8dbd289e871b02c">TapDirection</a> v)</td></tr>
+<tr class="memitem:a4f30ea92d51636e8aea6302a5e55463b" id="r_a4f30ea92d51636e8aea6302a5e55463b"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a4f30ea92d51636e8aea6302a5e55463b">codec_value</a> (<a class="el" href="#a8a8e14920b358cf1895c56db63d12c28">Codec</a> v)</td></tr>
+<tr class="memitem:acc56cea70a131f2f76f8a725b8710ca6" id="r_acc56cea70a131f2f76f8a725b8710ca6"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#acc56cea70a131f2f76f8a725b8710ca6">to_string</a> (<a class="el" href="#a9e918e00cc4eb7a9cc04880ed34c2f32">RecordFormat</a> v)</td></tr>
+<tr class="memitem:a806eb88e590f547f690d35c5e6355553" id="r_a806eb88e590f547f690d35c5e6355553"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a806eb88e590f547f690d35c5e6355553">to_string</a> (<a class="el" href="#a25b5291e2b811c7af577743348ad9845">RecordDirection</a> v)</td></tr>
+<tr class="memitem:a8eb1c2d2c3da765db9c059827346cdf4" id="r_a8eb1c2d2c3da765db9c059827346cdf4"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a8eb1c2d2c3da765db9c059827346cdf4">to_string</a> (<a class="el" href="#a58ca8ad82516b0dae8dbd289e871b02c">TapDirection</a> v)</td></tr>
+<tr class="memitem:a8211678420f9bfa844cd7fa5927ce959" id="r_a8211678420f9bfa844cd7fa5927ce959"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a8211678420f9bfa844cd7fa5927ce959">to_string</a> (<a class="el" href="#a8a8e14920b358cf1895c56db63d12c28">Codec</a> v)</td></tr>
+<tr class="memitem:ac6a1212ce99b6efdd7bdcb0d715b10ab" id="r_ac6a1212ce99b6efdd7bdcb0d715b10ab"><td class="memItemLeft">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ac6a1212ce99b6efdd7bdcb0d715b10ab">record_format_values</a> ()</td></tr>
+<tr class="memitem:a0a1a0e44292fec99a1a0503e51e22d85" id="r_a0a1a0e44292fec99a1a0503e51e22d85"><td class="memItemLeft">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0a1a0e44292fec99a1a0503e51e22d85">record_direction_values</a> ()</td></tr>
+<tr class="memitem:ad3e923c238733ce0dd237ab31c0343c4" id="r_ad3e923c238733ce0dd237ab31c0343c4"><td class="memItemLeft">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad3e923c238733ce0dd237ab31c0343c4">tap_direction_values</a> ()</td></tr>
+<tr class="memitem:a2b36b974b3fcbc52b89a1e2034c9a85e" id="r_a2b36b974b3fcbc52b89a1e2034c9a85e"><td class="memItemLeft">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a2b36b974b3fcbc52b89a1e2034c9a85e">codec_values</a> ()</td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
+<a id="a0040159392c1c6cf3042f26fca7128cc" name="a0040159392c1c6cf3042f26fca7128cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0040159392c1c6cf3042f26fca7128cc">&#9670;&#160;</a></span>BeepField</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a0040159392c1c6cf3042f26fca7128cc">signalwire::swaig::BeepField</a> = <a class="el" href="structsignalwire_1_1swaig_1_1EnumOrString.html">EnumOrString</a>&lt;<a class="el" href="#a8ac5fe04c9937c5a479f12547e2da31f">ConferenceBeep</a>, &amp;<a class="el" href="#a58cc23ee1ae0b88c24d8e5ef5abb809d">conference_beep_value</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6d89d7bbb06741cabf3264363f7f6a68" name="a6d89d7bbb06741cabf3264363f7f6a68"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6d89d7bbb06741cabf3264363f7f6a68">&#9670;&#160;</a></span>json</h2>
 
@@ -155,6 +217,34 @@ Typedefs</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="#a6d89d7bbb06741cabf3264363f7f6a68">signalwire::swaig::json</a> = nlohmann::json</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a183268082c877e215e82574f1fe2c570" name="a183268082c877e215e82574f1fe2c570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a183268082c877e215e82574f1fe2c570">&#9670;&#160;</a></span>MethodField</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a183268082c877e215e82574f1fe2c570">signalwire::swaig::MethodField</a> = <a class="el" href="structsignalwire_1_1swaig_1_1EnumOrString.html">EnumOrString</a>&lt;<a class="el" href="#a7692f21e2a5d0d8c5a22bfe18709eabf">CallbackMethod</a>, &amp;<a class="el" href="#a64ce2dd5be667bdee7b78a444e1d0ad9">callback_method_value</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a312087d7d412ebcd3949b60f44c4db22" name="a312087d7d412ebcd3949b60f44c4db22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a312087d7d412ebcd3949b60f44c4db22">&#9670;&#160;</a></span>RecordField</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a312087d7d412ebcd3949b60f44c4db22">signalwire::swaig::RecordField</a> = <a class="el" href="structsignalwire_1_1swaig_1_1EnumOrString.html">EnumOrString</a>&lt;<a class="el" href="#a6992fd57cedb06bd83f45aaccb4fa86f">ConferenceRecord</a>, &amp;<a class="el" href="#aad6859795391c3f6697d0ee0962948d6">conference_record_value</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -171,6 +261,649 @@ Typedefs</h2></td></tr>
           <td class="memname">using <a class="el" href="#ac23e264b5f56d320234b09d751415282">signalwire::swaig::ToolHandler</a> = std::function&lt;<a class="el" href="classsignalwire_1_1swaig_1_1FunctionResult.html">FunctionResult</a>(const <a class="el" href="#a6d89d7bbb06741cabf3264363f7f6a68">json</a>&amp; args, const <a class="el" href="#a6d89d7bbb06741cabf3264363f7f6a68">json</a>&amp; raw_data)&gt;</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa72c6cd27dce85ff5dbdabc05aa9275c" name="aa72c6cd27dce85ff5dbdabc05aa9275c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72c6cd27dce85ff5dbdabc05aa9275c">&#9670;&#160;</a></span>TrimField</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#aa72c6cd27dce85ff5dbdabc05aa9275c">signalwire::swaig::TrimField</a> = <a class="el" href="structsignalwire_1_1swaig_1_1EnumOrString.html">EnumOrString</a>&lt;<a class="el" href="#a7153cba877ec7e47b5e8a661e0a35421">ConferenceTrim</a>, &amp;<a class="el" href="#a49ff067599db312c65848cc3184e360a">conference_trim_value</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="a7692f21e2a5d0d8c5a22bfe18709eabf" name="a7692f21e2a5d0d8c5a22bfe18709eabf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7692f21e2a5d0d8c5a22bfe18709eabf">&#9670;&#160;</a></span>CallbackMethod</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a7692f21e2a5d0d8c5a22bfe18709eabf">signalwire::swaig::CallbackMethod</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><span class="tt">status_callback_method</span> / <span class="tt">recording_status_callback_method</span> — HTTP verb. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7692f21e2a5d0d8c5a22bfe18709eabfac55582518cba2c464f29f5bae1c68def" name="a7692f21e2a5d0d8c5a22bfe18709eabfac55582518cba2c464f29f5bae1c68def"></a>Get&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7692f21e2a5d0d8c5a22bfe18709eabfa03d947a2158373c3b9d74325850cb8b9" name="a7692f21e2a5d0d8c5a22bfe18709eabfa03d947a2158373c3b9d74325850cb8b9"></a>Post&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a8a8e14920b358cf1895c56db63d12c28" name="a8a8e14920b358cf1895c56db63d12c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a8e14920b358cf1895c56db63d12c28">&#9670;&#160;</a></span>Codec</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a8a8e14920b358cf1895c56db63d12c28">signalwire::swaig::Codec</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Media codec for <span class="tt"><a class="el" href="classsignalwire_1_1swaig_1_1FunctionResult.html#af26aa3c5757734215146b54b9f0809c0">FunctionResult::tap</a></span> (SWAIG tap only). Mirrors the reference's <span class="tt">codec in {"PCMU","PCMA"}</span> validation. The wire strings are upper-case. Distinct from the wider RELAY codec set — do not unify. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8a8e14920b358cf1895c56db63d12c28a9ab7d8d4245756ecea0452cf4a2a35ba" name="a8a8e14920b358cf1895c56db63d12c28a9ab7d8d4245756ecea0452cf4a2a35ba"></a>Pcmu&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8a8e14920b358cf1895c56db63d12c28a35185edd0487a565e203618b6d69d4ad" name="a8a8e14920b358cf1895c56db63d12c28a35185edd0487a565e203618b6d69d4ad"></a>Pcma&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a8ac5fe04c9937c5a479f12547e2da31f" name="a8ac5fe04c9937c5a479f12547e2da31f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac5fe04c9937c5a479f12547e2da31f">&#9670;&#160;</a></span>ConferenceBeep</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a8ac5fe04c9937c5a479f12547e2da31f">signalwire::swaig::ConferenceBeep</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><span class="tt">beep</span> — when the conference plays an enter/leave tone. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8ac5fe04c9937c5a479f12547e2da31faf827cf462f62848df37c5e1e94a4da74" name="a8ac5fe04c9937c5a479f12547e2da31faf827cf462f62848df37c5e1e94a4da74"></a>True&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8ac5fe04c9937c5a479f12547e2da31faf8320b26d30ab433c5a54546d21f414c" name="a8ac5fe04c9937c5a479f12547e2da31faf8320b26d30ab433c5a54546d21f414c"></a>False&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8ac5fe04c9937c5a479f12547e2da31fad26d8f96861fe247a1885391d562bef0" name="a8ac5fe04c9937c5a479f12547e2da31fad26d8f96861fe247a1885391d562bef0"></a>OnEnter&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8ac5fe04c9937c5a479f12547e2da31fa401b0572a5e3b960959886516846a144" name="a8ac5fe04c9937c5a479f12547e2da31fa401b0572a5e3b960959886516846a144"></a>OnExit&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a6992fd57cedb06bd83f45aaccb4fa86f" name="a6992fd57cedb06bd83f45aaccb4fa86f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6992fd57cedb06bd83f45aaccb4fa86f">&#9670;&#160;</a></span>ConferenceRecord</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a6992fd57cedb06bd83f45aaccb4fa86f">signalwire::swaig::ConferenceRecord</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><span class="tt">record</span> — conference recording mode. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6992fd57cedb06bd83f45aaccb4fa86fa023f5b8cb76c0dc8d208264e210caec3" name="a6992fd57cedb06bd83f45aaccb4fa86fa023f5b8cb76c0dc8d208264e210caec3"></a>DoNotRecord&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6992fd57cedb06bd83f45aaccb4fa86faf2d7bd2481614a47f6d5ec1dab652e2f" name="a6992fd57cedb06bd83f45aaccb4fa86faf2d7bd2481614a47f6d5ec1dab652e2f"></a>RecordFromStart&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a7153cba877ec7e47b5e8a661e0a35421" name="a7153cba877ec7e47b5e8a661e0a35421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7153cba877ec7e47b5e8a661e0a35421">&#9670;&#160;</a></span>ConferenceTrim</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a7153cba877ec7e47b5e8a661e0a35421">signalwire::swaig::ConferenceTrim</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><span class="tt">trim</span> — leading/trailing silence handling on recordings. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7153cba877ec7e47b5e8a661e0a35421a1daf9a6368d50e8f8f3ac49fec3c8ecf" name="a7153cba877ec7e47b5e8a661e0a35421a1daf9a6368d50e8f8f3ac49fec3c8ecf"></a>TrimSilence&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7153cba877ec7e47b5e8a661e0a35421a20ca1f9cc3381f29dea1e3d33ba4c9c9" name="a7153cba877ec7e47b5e8a661e0a35421a20ca1f9cc3381f29dea1e3d33ba4c9c9"></a>DoNotTrim&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a25b5291e2b811c7af577743348ad9845" name="a25b5291e2b811c7af577743348ad9845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25b5291e2b811c7af577743348ad9845">&#9670;&#160;</a></span>RecordDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a25b5291e2b811c7af577743348ad9845">signalwire::swaig::RecordDirection</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Audio direction for <span class="tt"><a class="el" href="classsignalwire_1_1swaig_1_1FunctionResult.html#a6c3381a5e1745f102ae69d07ab28d043">FunctionResult::record_call</a></span>. Mirrors the reference's <span class="tt">direction in {"speak","listen","both"}</span> validation. NOTE: differs from <span class="tt"><a class="el" href="#a58ca8ad82516b0dae8dbd289e871b02c">TapDirection</a></span> — record_call uses <span class="tt">listen</span>, tap uses <span class="tt">hear</span>. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a25b5291e2b811c7af577743348ad9845a8b1e2b9b342dd37344c6343dc23a6733" name="a25b5291e2b811c7af577743348ad9845a8b1e2b9b342dd37344c6343dc23a6733"></a>Speak&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a25b5291e2b811c7af577743348ad9845ace6802b46091c31e2ec2363883fe8369" name="a25b5291e2b811c7af577743348ad9845ace6802b46091c31e2ec2363883fe8369"></a>Listen&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a25b5291e2b811c7af577743348ad9845a130c5b3473c57faa76e2a1c54e26f88e" name="a25b5291e2b811c7af577743348ad9845a130c5b3473c57faa76e2a1c54e26f88e"></a>Both&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a9e918e00cc4eb7a9cc04880ed34c2f32" name="a9e918e00cc4eb7a9cc04880ed34c2f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e918e00cc4eb7a9cc04880ed34c2f32">&#9670;&#160;</a></span>RecordFormat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a9e918e00cc4eb7a9cc04880ed34c2f32">signalwire::swaig::RecordFormat</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Recording container format for <span class="tt"><a class="el" href="classsignalwire_1_1swaig_1_1FunctionResult.html#a6c3381a5e1745f102ae69d07ab28d043">FunctionResult::record_call</a></span>. Mirrors the reference's <span class="tt">format in {"wav","mp3","mp4"}</span> validation. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9e918e00cc4eb7a9cc04880ed34c2f32a0bc5cdc666c1935c50d8ece1b53edbc4" name="a9e918e00cc4eb7a9cc04880ed34c2f32a0bc5cdc666c1935c50d8ece1b53edbc4"></a>Wav&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9e918e00cc4eb7a9cc04880ed34c2f32ad7d4845656ae6671b059af6f9093886a" name="a9e918e00cc4eb7a9cc04880ed34c2f32ad7d4845656ae6671b059af6f9093886a"></a>Mp3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9e918e00cc4eb7a9cc04880ed34c2f32a7d761542d4b5ea168dc156e85a9a2949" name="a9e918e00cc4eb7a9cc04880ed34c2f32a7d761542d4b5ea168dc156e85a9a2949"></a>Mp4&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a58ca8ad82516b0dae8dbd289e871b02c" name="a58ca8ad82516b0dae8dbd289e871b02c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58ca8ad82516b0dae8dbd289e871b02c">&#9670;&#160;</a></span>TapDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a58ca8ad82516b0dae8dbd289e871b02c">signalwire::swaig::TapDirection</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Audio direction for <span class="tt"><a class="el" href="classsignalwire_1_1swaig_1_1FunctionResult.html#af26aa3c5757734215146b54b9f0809c0">FunctionResult::tap</a></span>. Mirrors the reference's <span class="tt">direction in {"speak","hear","both"}</span> validation. NOTE: differs from <span class="tt"><a class="el" href="#a25b5291e2b811c7af577743348ad9845">RecordDirection</a></span> — tap uses <span class="tt">hear</span>, record_call uses <span class="tt">listen</span>. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a58ca8ad82516b0dae8dbd289e871b02ca8b1e2b9b342dd37344c6343dc23a6733" name="a58ca8ad82516b0dae8dbd289e871b02ca8b1e2b9b342dd37344c6343dc23a6733"></a>Speak&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a58ca8ad82516b0dae8dbd289e871b02ca4dd5c9c9f06869f5e6a0757bfa151aa6" name="a58ca8ad82516b0dae8dbd289e871b02ca4dd5c9c9f06869f5e6a0757bfa151aa6"></a>Hear&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a58ca8ad82516b0dae8dbd289e871b02ca130c5b3473c57faa76e2a1c54e26f88e" name="a58ca8ad82516b0dae8dbd289e871b02ca130c5b3473c57faa76e2a1c54e26f88e"></a>Both&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a64ce2dd5be667bdee7b78a444e1d0ad9" name="a64ce2dd5be667bdee7b78a444e1d0ad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ce2dd5be667bdee7b78a444e1d0ad9">&#9670;&#160;</a></span>callback_method_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::callback_method_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7692f21e2a5d0d8c5a22bfe18709eabf">CallbackMethod</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4f30ea92d51636e8aea6302a5e55463b" name="a4f30ea92d51636e8aea6302a5e55463b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f30ea92d51636e8aea6302a5e55463b">&#9670;&#160;</a></span>codec_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::codec_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8a8e14920b358cf1895c56db63d12c28">Codec</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b36b974b3fcbc52b89a1e2034c9a85e" name="a2b36b974b3fcbc52b89a1e2034c9a85e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b36b974b3fcbc52b89a1e2034c9a85e">&#9670;&#160;</a></span>codec_values()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; signalwire::swaig::codec_values </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a58cc23ee1ae0b88c24d8e5ef5abb809d" name="a58cc23ee1ae0b88c24d8e5ef5abb809d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58cc23ee1ae0b88c24d8e5ef5abb809d">&#9670;&#160;</a></span>conference_beep_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::conference_beep_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8ac5fe04c9937c5a479f12547e2da31f">ConferenceBeep</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad6859795391c3f6697d0ee0962948d6" name="aad6859795391c3f6697d0ee0962948d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad6859795391c3f6697d0ee0962948d6">&#9670;&#160;</a></span>conference_record_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::conference_record_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6992fd57cedb06bd83f45aaccb4fa86f">ConferenceRecord</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a49ff067599db312c65848cc3184e360a" name="a49ff067599db312c65848cc3184e360a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ff067599db312c65848cc3184e360a">&#9670;&#160;</a></span>conference_trim_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::conference_trim_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7153cba877ec7e47b5e8a661e0a35421">ConferenceTrim</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7059466cdd2624d64ec4dcfad165a7e8" name="a7059466cdd2624d64ec4dcfad165a7e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7059466cdd2624d64ec4dcfad165a7e8">&#9670;&#160;</a></span>record_direction_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::record_direction_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a25b5291e2b811c7af577743348ad9845">RecordDirection</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a1a0e44292fec99a1a0503e51e22d85" name="a0a1a0e44292fec99a1a0503e51e22d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1a0e44292fec99a1a0503e51e22d85">&#9670;&#160;</a></span>record_direction_values()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; signalwire::swaig::record_direction_values </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a952c9bfe85bb7eb9340ff1f5e4ffff15" name="a952c9bfe85bb7eb9340ff1f5e4ffff15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a952c9bfe85bb7eb9340ff1f5e4ffff15">&#9670;&#160;</a></span>record_format_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::record_format_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a9e918e00cc4eb7a9cc04880ed34c2f32">RecordFormat</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac6a1212ce99b6efdd7bdcb0d715b10ab" name="ac6a1212ce99b6efdd7bdcb0d715b10ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a1212ce99b6efdd7bdcb0d715b10ab">&#9670;&#160;</a></span>record_format_values()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; signalwire::swaig::record_format_values </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Helper: the closed-set values for the Tier-1 SWAIG enums, as the exact wire strings, ready to hand to <span class="tt">enum_of(...)</span>. These reuse the SAME <span class="tt">*_value()</span> normalization point as the typed <span class="tt"><a class="el" href="classsignalwire_1_1swaig_1_1FunctionResult.html">FunctionResult</a></span> overloads, so a schema built with <span class="tt"><a class="el" href="#ac6a1212ce99b6efdd7bdcb0d715b10ab">record_format_values()</a></span> lists precisely the strings <span class="tt"><a class="el" href="classsignalwire_1_1swaig_1_1FunctionResult.html#a6c3381a5e1745f102ae69d07ab28d043">FunctionResult::record_call</a></span> accepts — one source of truth for each set. </p>
+
+</div>
+</div>
+<a id="af4c8612791a264d33e8171da9f889073" name="af4c8612791a264d33e8171da9f889073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c8612791a264d33e8171da9f889073">&#9670;&#160;</a></span>tap_direction_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::tap_direction_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a58ca8ad82516b0dae8dbd289e871b02c">TapDirection</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3e923c238733ce0dd237ab31c0343c4" name="ad3e923c238733ce0dd237ab31c0343c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3e923c238733ce0dd237ab31c0343c4">&#9670;&#160;</a></span>tap_direction_values()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; signalwire::swaig::tap_direction_values </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8211678420f9bfa844cd7fa5927ce959" name="a8211678420f9bfa844cd7fa5927ce959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8211678420f9bfa844cd7fa5927ce959">&#9670;&#160;</a></span>to_string() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::to_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8a8e14920b358cf1895c56db63d12c28">Codec</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a806eb88e590f547f690d35c5e6355553" name="a806eb88e590f547f690d35c5e6355553"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a806eb88e590f547f690d35c5e6355553">&#9670;&#160;</a></span>to_string() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::to_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a25b5291e2b811c7af577743348ad9845">RecordDirection</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc56cea70a131f2f76f8a725b8710ca6" name="acc56cea70a131f2f76f8a725b8710ca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc56cea70a131f2f76f8a725b8710ca6">&#9670;&#160;</a></span>to_string() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::to_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a9e918e00cc4eb7a9cc04880ed34c2f32">RecordFormat</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>ADL <span class="tt"><a class="el" href="#acc56cea70a131f2f76f8a725b8710ca6">to_string</a></span> overloads so these enums stringify the same way the <span class="tt">*_value()</span> mappers do (the single wire-string normalization point). </p>
+
+</div>
+</div>
+<a id="a8eb1c2d2c3da765db9c059827346cdf4" name="a8eb1c2d2c3da765db9c059827346cdf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eb1c2d2c3da765db9c059827346cdf4">&#9670;&#160;</a></span>to_string() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::swaig::to_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a58ca8ad82516b0dae8dbd289e871b02c">TapDirection</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

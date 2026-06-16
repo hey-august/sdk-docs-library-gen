@@ -85,18 +85,22 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"action_8hpp.html",
-"classsignalwire_1_1agent_1_1AgentBase.html#ab3ba33d813084aa98ef226476d862589",
-"classsignalwire_1_1datamap_1_1DataMap.html#a7d1dd25c9bd4a1fb06c0fd59ed542186",
-"classsignalwire_1_1relay_1_1Call.html#a835589fffd800529bd4b457cac5faebf",
-"classsignalwire_1_1rest_1_1SignalWireRestError.html#a186693e485c96552260d8f8db7627569",
-"classsignalwire_1_1swml_1_1Service.html#a02d944d50a05717e6b6fcc634da9103f",
-"functions.html",
-"namespacesignalwire_1_1utils_1_1url__validator.html#a6e15e3c3429d06d99dcdabca52677e30",
-"structsignalwire_1_1rest_1_1RestClient_1_1CallingNamespace.html#a37347a271cdb536e2944ff392531a4c6",
-"structsignalwire_1_1rest_1_1RestClient_1_1CompatPhoneNumbers.html#ace41543fdd3e335fcfec0a798a8f88de",
-"structsignalwire_1_1rest_1_1RestClient_1_1LogsFax.html#aa3c0be936d882bd0e062899ef4f89785",
-"structsignalwire_1_1rest_1_1RestClient_1_1SipProfileNamespace.html#acb5fb68dd6bb524c88deaeb172aa13da"
+"action_8cpp.html",
+"classsignalwire_1_1agent_1_1AgentBase.html#a929704a5131a701178a151c5c7031015",
+"classsignalwire_1_1contexts_1_1Step.html#ae6c10c0fded88b1980bc60648d05abfc",
+"classsignalwire_1_1relay_1_1Call.html#a374d6abe758abf44f0165f427815e97e",
+"classsignalwire_1_1rest_1_1PaginatedIterator.html#a9d017985cdac9d24f654939eec07a5a5",
+"classsignalwire_1_1skills_1_1DateTimeSkill.html#a4c306c88be5639893e8c8f94cd98cc4c",
+"classsignalwire_1_1skills_1_1SkillBase.html#ac6d66609a8b4b74ccd1fd9cb31abb652",
+"classsignalwire_1_1swaig_1_1FunctionResult.html#a7962e7acc3f65af3b7aeac9fd7cf6ae0",
+"classsignalwire_1_1swml_1_1Service.html#a9fb29c45b846c5c1115c4d580ea4c238",
+"globals_func.html",
+"namespacesignalwire_1_1skills_1_1web__search__core.html#a75e9bc9720ad57aec142cae6d5561a4a",
+"structsignalwire_1_1relay_1_1DialEvent.html",
+"structsignalwire_1_1rest_1_1RestClient_1_1CompatCalls.html",
+"structsignalwire_1_1rest_1_1RestClient_1_1FabricConferenceRooms.html#a571680d00677fd3370876323a46e48f6",
+"structsignalwire_1_1rest_1_1RestClient_1_1PhoneNumbersNamespace.html#a8052eb9ee237f51adfe7bb6dd2a59369",
+"structsignalwire_1_1rest_1_1RestClient_1_1VideoRoomTokens.html#a7e0a58c71633cd4e393a8c5f67a6c935"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

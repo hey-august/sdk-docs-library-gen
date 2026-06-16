@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::relay::WebSocketClient Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -134,9 +121,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classsignalwir
 </div><!--header-->
 <div class="contents">
 
-<p>Minimal WebSocket client using raw TCP sockets + OpenSSL TLS.  
- <a href="#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="websocket_8hpp_source.html">websocket.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -152,9 +136,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae257251639ebad69cb50ef8dd5b010ed" id="r_ae257251639ebad69cb50ef8dd5b010ed"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae257251639ebad69cb50ef8dd5b010ed">WebSocketClient</a> (const WebSocketClient &amp;)=delete</td></tr>
 <tr class="memitem:ac4de22d2bfddac7f219f3e42f2d9230d" id="r_ac4de22d2bfddac7f219f3e42f2d9230d"><td class="memItemLeft"><a class="el" href="#a914d5678a255072f360c2f3cecf1ae2c">WebSocketClient</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac4de22d2bfddac7f219f3e42f2d9230d">operator=</a> (const <a class="el" href="#a914d5678a255072f360c2f3cecf1ae2c">WebSocketClient</a> &amp;)=delete</td></tr>
 <tr class="memitem:afe1466f507883650e2b3419208e60b2e" id="r_afe1466f507883650e2b3419208e60b2e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#afe1466f507883650e2b3419208e60b2e">connect</a> (const std::string &amp;host, int port=443)</td></tr>
-<tr class="memdesc:afe1466f507883650e2b3419208e60b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to wss://host:port/ with TLS.  <br /></td></tr>
 <tr class="memitem:a405ef6f039bb479bff113fa0c7cf8c61" id="r_a405ef6f039bb479bff113fa0c7cf8c61"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a405ef6f039bb479bff113fa0c7cf8c61">connect_plain</a> (const std::string &amp;host, int port)</td></tr>
-<tr class="memdesc:a405ef6f039bb479bff113fa0c7cf8c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to ws://host:port/ without TLS (plain TCP).  <br /></td></tr>
 <tr class="memitem:ac33c0758d81148e4953049baf2294c1b" id="r_ac33c0758d81148e4953049baf2294c1b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac33c0758d81148e4953049baf2294c1b">close</a> (int code=1000, const std::string &amp;reason=&quot;&quot;)</td></tr>
 <tr class="memdesc:ac33c0758d81148e4953049baf2294c1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the WebSocket connection gracefully.  <br /></td></tr>
 <tr class="memitem:a5fd326181cecb3638141d808639c9bd3" id="r_a5fd326181cecb3638141d808639c9bd3"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a5fd326181cecb3638141d808639c9bd3">send</a> (const std::string &amp;message)</td></tr>
@@ -169,8 +151,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1c0880865a5f19ccf90ffb1788424d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set callback for errors.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Minimal WebSocket client using raw TCP sockets + OpenSSL TLS. </p>
-<p>Implements RFC 6455 text frame encoding/decoding for JSON-RPC transport. </p>
+<div class="textblock"><p>WebSocket client for the RELAY JSON-RPC transport.</p>
+<p>Wraps IXWebSocket (cross-platform, OpenSSL-backed TLS) while preserving a minimal synchronous interface: <a class="el" href="#afe1466f507883650e2b3419208e60b2e">connect()</a> blocks until the handshake completes (or fails/times out), <a class="el" href="#a5fd326181cecb3638141d808639c9bd3" title="Send a text frame.">send()</a> pushes a text frame, and the on_message / on_close / on_error callbacks are invoked from IXWebSocket's background event thread. RFC 6455 framing, ping/pong, and TLS are handled by IXWebSocket — this class only adapts its async event model to the synchronous <a class="el" href="#afe1466f507883650e2b3419208e60b2e">connect()</a> contract <a class="el" href="classsignalwire_1_1relay_1_1RelayClient.html">relay::RelayClient</a> depends on.</p>
+<p>TLS certificate verification is ALWAYS on for the <a class="el" href="#afe1466f507883650e2b3419208e60b2e">connect()</a> (wss://) path. To trust a private/self-signed CA (e.g. the porting-sdk test CA), set the SSL_CERT_FILE environment variable to the CA bundle — the same cross-port idiom the other ports honor; it is wired into ix::SocketTLSOptions::caFile. When unset, the system trust store is used (production / public CAs). </p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="ab2582da4a32ee8aecd7448a123101ae4" name="ab2582da4a32ee8aecd7448a123101ae4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2582da4a32ee8aecd7448a123101ae4">&#9670;&#160;</a></span>CloseCallback</h2>
@@ -316,8 +299,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Connect to wss://host:port/ with TLS. </p>
+<p>Connect to wss://host:port/ with TLS. Blocks until the WebSocket is open or the attempt fails/times out. Verifies the server certificate against the system store (or SSL_CERT_FILE when set). </p>
 
 </div>
 </div>
@@ -339,9 +321,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Connect to ws://host:port/ without TLS (plain TCP). </p>
-<p>Used by audit fixtures and local dev servers that don't speak TLS. Production always uses TLS via the <a class="el" href="#afe1466f507883650e2b3419208e60b2e" title="Connect to wss://host:port/ with TLS.">connect()</a> overload above. </p>
+<p>Connect to ws://host:port/ without TLS (plain TCP). Used by audit fixtures and local dev servers that don't speak TLS. Production always uses TLS via the <a class="el" href="#afe1466f507883650e2b3419208e60b2e">connect()</a> overload above. </p>
 
 </div>
 </div>
@@ -497,8 +477,9 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/cpp/include/signalwire/relay/<a class="el" href="websocket_8hpp_source.html">websocket.hpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>_build/sdks/signalwire-cpp/include/signalwire/relay/<a class="el" href="websocket_8hpp_source.html">websocket.hpp</a></li>
+<li>_build/sdks/signalwire-cpp/src/relay/<a class="el" href="websocket_8cpp.html">websocket.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

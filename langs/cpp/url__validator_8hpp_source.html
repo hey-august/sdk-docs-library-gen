@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -6,9 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SignalWire C++ SDK: /airlock/sdks/cpp/include/signalwire/utils/url_validator.hpp Source File</title>
+<title>SignalWire C++ SDK: _build/sdks/signalwire-cpp/include/signalwire/utils/url_validator.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -151,33 +138,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('url__validator
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespacesignalwire_1_1utils_1_1url__validator.html">   16</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesignalwire_1_1utils_1_1url__validator.html">url_validator</a> {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">extern</span> <span class="keyword">const</span> std::array&lt;const char*, 9&gt; <a class="code hl_variable" href="namespacesignalwire_1_1utils_1_1url__validator.html#a6e15e3c3429d06d99dcdabca52677e30">BLOCKED_NETWORKS</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">extern</span> <span class="keyword">const</span> std::array&lt;const char*, 9&gt; <a class="code hl_variable" href="namespacesignalwire_1_1utils_1_1url__validator.html#aa08bdd440cf2e83f71e5e06550bcc445">BLOCKED_NETWORKS</a>;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespacesignalwire_1_1utils_1_1url__validator.html#ae81fde57c786ad9c2dbf3c39019a0f99">   32</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacesignalwire_1_1utils_1_1url__validator.html#ae81fde57c786ad9c2dbf3c39019a0f99">ResolverFn</a> =</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::function&lt;std::optional&lt;std::vector&lt;std::string&gt;&gt;(<span class="keyword">const</span> std::string&amp;)&gt;;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="namespacesignalwire_1_1utils_1_1url__validator.html#ad9b165a3e04186e78943258ce13cd259">   36</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacesignalwire_1_1utils_1_1url__validator.html#ad9b165a3e04186e78943258ce13cd259">_set_resolver</a>(<a class="code hl_typedef" href="namespacesignalwire_1_1utils_1_1url__validator.html#ae81fde57c786ad9c2dbf3c39019a0f99">ResolverFn</a> resolver);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacesignalwire_1_1utils_1_1url__validator.html#ad9b165a3e04186e78943258ce13cd259">_set_resolver</a>(<a class="code hl_typedef" href="namespacesignalwire_1_1utils_1_1url__validator.html#ae81fde57c786ad9c2dbf3c39019a0f99">ResolverFn</a> resolver);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespacesignalwire_1_1utils_1_1url__validator.html#ac0de7c702bd0fdecb483b73b97633081">   48</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacesignalwire_1_1utils_1_1url__validator.html#ac0de7c702bd0fdecb483b73b97633081">validate_url</a>(<span class="keyword">const</span> std::string&amp; url, <span class="keywordtype">bool</span> allow_private = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacesignalwire_1_1utils_1_1url__validator.html#ac0de7c702bd0fdecb483b73b97633081">validate_url</a>(<span class="keyword">const</span> std::string&amp; url, <span class="keywordtype">bool</span> allow_private = <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}  <span class="comment">// namespace url_validator</span></div>
 </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}  <span class="comment">// namespace utils</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}  <span class="comment">// namespace signalwire</span></div>
 <div class="ttc" id="anamespacesignalwire_1_1utils_1_1url__validator_html"><div class="ttname"><a href="namespacesignalwire_1_1utils_1_1url__validator.html">signalwire::utils::url_validator</a></div><div class="ttdef"><b>Definition</b> url_validator.hpp:16</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1utils_1_1url__validator_html_a6e15e3c3429d06d99dcdabca52677e30"><div class="ttname"><a href="namespacesignalwire_1_1utils_1_1url__validator.html#a6e15e3c3429d06d99dcdabca52677e30">signalwire::utils::url_validator::BLOCKED_NETWORKS</a></div><div class="ttdeci">const std::array&lt; const char *, 9 &gt; BLOCKED_NETWORKS</div><div class="ttdoc">Cross-port SSRF block list.</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1utils_1_1url__validator_html_ac0de7c702bd0fdecb483b73b97633081"><div class="ttname"><a href="namespacesignalwire_1_1utils_1_1url__validator.html#ac0de7c702bd0fdecb483b73b97633081">signalwire::utils::url_validator::validate_url</a></div><div class="ttdeci">bool validate_url(const std::string &amp;url, bool allow_private=false)</div><div class="ttdoc">Validate that a URL is safe to fetch.</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1utils_1_1url__validator_html_ad9b165a3e04186e78943258ce13cd259"><div class="ttname"><a href="namespacesignalwire_1_1utils_1_1url__validator.html#ad9b165a3e04186e78943258ce13cd259">signalwire::utils::url_validator::_set_resolver</a></div><div class="ttdeci">void _set_resolver(ResolverFn resolver)</div><div class="ttdoc">Install a custom resolver (for tests).</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1utils_1_1url__validator_html_ae81fde57c786ad9c2dbf3c39019a0f99"><div class="ttname"><a href="namespacesignalwire_1_1utils_1_1url__validator.html#ae81fde57c786ad9c2dbf3c39019a0f99">signalwire::utils::url_validator::ResolverFn</a></div><div class="ttdeci">std::function&lt; std::optional&lt; std::vector&lt; std::string &gt; &gt;(const std::string &amp;)&gt; ResolverFn</div><div class="ttdoc">Pluggable resolver.</div><div class="ttdef"><b>Definition</b> url_validator.hpp:32</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1utils_1_1url__validator_html_aa08bdd440cf2e83f71e5e06550bcc445"><div class="ttname"><a href="namespacesignalwire_1_1utils_1_1url__validator.html#aa08bdd440cf2e83f71e5e06550bcc445">signalwire::utils::url_validator::BLOCKED_NETWORKS</a></div><div class="ttdeci">const std::array&lt; const char *, 9 &gt; BLOCKED_NETWORKS</div><div class="ttdef"><b>Definition</b> url_validator.cpp:28</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1utils_1_1url__validator_html_ac0de7c702bd0fdecb483b73b97633081"><div class="ttname"><a href="namespacesignalwire_1_1utils_1_1url__validator.html#ac0de7c702bd0fdecb483b73b97633081">signalwire::utils::url_validator::validate_url</a></div><div class="ttdeci">bool validate_url(const std::string &amp;url, bool allow_private=false)</div><div class="ttdef"><b>Definition</b> url_validator.cpp:189</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1utils_1_1url__validator_html_ad9b165a3e04186e78943258ce13cd259"><div class="ttname"><a href="namespacesignalwire_1_1utils_1_1url__validator.html#ad9b165a3e04186e78943258ce13cd259">signalwire::utils::url_validator::_set_resolver</a></div><div class="ttdeci">void _set_resolver(ResolverFn resolver)</div><div class="ttdef"><b>Definition</b> url_validator.cpp:185</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1utils_1_1url__validator_html_ae81fde57c786ad9c2dbf3c39019a0f99"><div class="ttname"><a href="namespacesignalwire_1_1utils_1_1url__validator.html#ae81fde57c786ad9c2dbf3c39019a0f99">signalwire::utils::url_validator::ResolverFn</a></div><div class="ttdeci">std::function&lt; std::optional&lt; std::vector&lt; std::string &gt; &gt;(const std::string &amp;)&gt; ResolverFn</div><div class="ttdef"><b>Definition</b> url_validator.hpp:32</div></div>
 <div class="ttc" id="anamespacesignalwire_1_1utils_html"><div class="ttname"><a href="namespacesignalwire_1_1utils.html">signalwire::utils</a></div><div class="ttdef"><b>Definition</b> schema_utils.hpp:28</div></div>
-<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdoc">SignalWire webhook signature validation.</div><div class="ttdef"><b>Definition</b> agent_base.hpp:28</div></div>
+<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_df511e5bd85cec96854b39d5e1c27aa8.html">cpp</a></li><li class="navelem"><a href="dir_07f37e320deb3031a60f4b23b9c60eb5.html">include</a></li><li class="navelem"><a href="dir_165c9c3495e164118c3b5e72d60f21a2.html">signalwire</a></li><li class="navelem"><a href="dir_6dc733878dc1d0abdc83319dccb36f93.html">utils</a></li><li class="navelem"><a href="url__validator_8hpp.html">url_validator.hpp</a></li>
+    <li class="navelem"><a href="dir_45b9293d3daaa82c00b5908f14ebb805.html">_build</a></li><li class="navelem"><a href="dir_2d0381b86cb8190e94539f1366a75a48.html">sdks</a></li><li class="navelem"><a href="dir_229e6c122c130a81955a352883f61d86.html">signalwire-cpp</a></li><li class="navelem"><a href="dir_0eb769a141c66eb9b7388f3811644b95.html">include</a></li><li class="navelem"><a href="dir_0abfdaf45bf5d4fd35fecbf72a0d26fd.html">signalwire</a></li><li class="navelem"><a href="dir_032cfde9a18745a72581a6979bf0f870.html">utils</a></li><li class="navelem"><a href="url__validator_8hpp.html">url_validator.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

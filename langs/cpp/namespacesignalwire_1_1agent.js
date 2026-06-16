@@ -8,5 +8,6 @@ var namespacesignalwire_1_1agent =
     [ "DynamicConfigCallback", "namespacesignalwire_1_1agent.html#a36b7ba841955ddc895c57367d91992bc", null ],
     [ "json", "namespacesignalwire_1_1agent.html#ac83e185b68552a0e78ed0dec5e002712", null ],
     [ "PomSection", "namespacesignalwire_1_1agent.html#ad61781ce367625670091a89f7c26228d", null ],
-    [ "SummaryCallback", "namespacesignalwire_1_1agent.html#a3c344835a6e73facee49c15efee4f99d", null ]
+    [ "SummaryCallback", "namespacesignalwire_1_1agent.html#a3c344835a6e73facee49c15efee4f99d", null ],
+    [ "sorted_list_str", "namespacesignalwire_1_1agent.html#aa81d5724fdefc523ef8584be3fd8f215", null ]
 ];

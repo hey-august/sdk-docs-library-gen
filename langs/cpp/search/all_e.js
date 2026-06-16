@@ -4,11 +4,16 @@ var searchData=
   ['name_5f_1',['name_',['../classsignalwire_1_1swml_1_1Service.html#a0049aeeeacb263d9259b7697dab89975',1,'signalwire::swml::Service']]],
   ['native_20tools_20auto_20injected_20by_20the_20runtime_2',['Native tools auto-injected by the runtime',['../classsignalwire_1_1contexts_1_1ContextBuilder.html#autotoc_md28',1,'']]],
   ['native_5ffunctions_5f_3',['native_functions_',['../classsignalwire_1_1agent_1_1AgentBase.html#a8389b4806489dbf2417642b19766e487',1,'signalwire::agent::AgentBase']]],
-  ['next_4',['next',['../classsignalwire_1_1rest_1_1PaginatedIterator.html#a9d017985cdac9d24f654939eec07a5a5',1,'signalwire::rest::PaginatedIterator']]],
-  ['node_5fid_5',['node_id',['../structsignalwire_1_1relay_1_1CallEvent.html#adc49076b175332fc81f3a25f5e210273',1,'signalwire::relay::CallEvent::node_id'],['../classsignalwire_1_1relay_1_1Action.html#ac1d5387d5a42930aded2018cf6c76adf',1,'signalwire::relay::Action::node_id()'],['../classsignalwire_1_1relay_1_1Call.html#a420b114f9845d94f05ae15076f7908fc',1,'signalwire::relay::Call::node_id()']]],
-  ['number_5fgroups_6',['number_groups',['../classsignalwire_1_1rest_1_1RestClient.html#ae2795ff01836ade4a5fd52dc1d125fc3',1,'signalwire::rest::RestClient']]],
-  ['numbered_7',['numbered',['../classsignalwire_1_1pom_1_1Section.html#a5aa887ba9a979761789ab88ee04422e5',1,'signalwire::pom::Section']]],
-  ['numberedbullets_8',['numberedBullets',['../classsignalwire_1_1pom_1_1Section.html#ae0af07ac9848c3e6926da37fc738ec8b',1,'signalwire::pom::Section']]],
-  ['numbergroupsnamespace_9',['NumberGroupsNamespace',['../structsignalwire_1_1rest_1_1RestClient_1_1NumberGroupsNamespace.html',1,'signalwire::rest::RestClient::NumberGroupsNamespace'],['../structsignalwire_1_1rest_1_1RestClient_1_1NumberGroupsNamespace.html#acb60f214f3df15ea6a1facd671b20438',1,'signalwire::rest::RestClient::NumberGroupsNamespace::NumberGroupsNamespace()']]],
-  ['numbers_10',['numbers',['../structsignalwire_1_1rest_1_1RestClient_1_1RegistryNamespace.html#a98b91544eb3436619c9f07ff8a750fe0',1,'signalwire::rest::RestClient::RegistryNamespace']]]
+  ['native_5fvector_5fsearch_2ecpp_4',['native_vector_search.cpp',['../native__vector__search_8cpp.html',1,'']]],
+  ['nativevectorsearch_5',['NativeVectorSearch',['../namespacesignalwire_1_1skills.html#aea0a47c823a2b793429d857f6210eb95a2b61e151607de004ecc5f80c3d496e93',1,'signalwire::skills']]],
+  ['nativevectorsearchskill_6',['NativeVectorSearchSkill',['../classsignalwire_1_1skills_1_1NativeVectorSearchSkill.html',1,'signalwire::skills']]],
+  ['nativevectorsearchskillr_7',['NativeVectorSearchSkillR',['../classsignalwire_1_1skills_1_1NativeVectorSearchSkillR.html',1,'signalwire::skills']]],
+  ['next_8',['next',['../classsignalwire_1_1rest_1_1PaginatedIterator.html#a9d017985cdac9d24f654939eec07a5a5',1,'signalwire::rest::PaginatedIterator']]],
+  ['node_5fid_9',['node_id',['../structsignalwire_1_1relay_1_1CallEvent.html#adc49076b175332fc81f3a25f5e210273',1,'signalwire::relay::CallEvent::node_id'],['../classsignalwire_1_1relay_1_1Action.html#ac1d5387d5a42930aded2018cf6c76adf',1,'signalwire::relay::Action::node_id()'],['../classsignalwire_1_1relay_1_1Call.html#a420b114f9845d94f05ae15076f7908fc',1,'signalwire::relay::Call::node_id()']]],
+  ['number_10',['number',['../classsignalwire_1_1swaig_1_1ParameterSchema.html#a4f21c22ab560a14f83076a16697a63ad',1,'signalwire::swaig::ParameterSchema']]],
+  ['number_5fgroups_11',['number_groups',['../classsignalwire_1_1rest_1_1RestClient.html#ae2795ff01836ade4a5fd52dc1d125fc3',1,'signalwire::rest::RestClient']]],
+  ['numbered_12',['numbered',['../classsignalwire_1_1pom_1_1Section.html#a5aa887ba9a979761789ab88ee04422e5',1,'signalwire::pom::Section']]],
+  ['numberedbullets_13',['numberedBullets',['../classsignalwire_1_1pom_1_1Section.html#ae0af07ac9848c3e6926da37fc738ec8b',1,'signalwire::pom::Section']]],
+  ['numbergroupsnamespace_14',['NumberGroupsNamespace',['../structsignalwire_1_1rest_1_1RestClient_1_1NumberGroupsNamespace.html',1,'signalwire::rest::RestClient::NumberGroupsNamespace'],['../structsignalwire_1_1rest_1_1RestClient_1_1NumberGroupsNamespace.html#acb60f214f3df15ea6a1facd671b20438',1,'signalwire::rest::RestClient::NumberGroupsNamespace::NumberGroupsNamespace()']]],
+  ['numbers_15',['numbers',['../structsignalwire_1_1rest_1_1RestClient_1_1RegistryNamespace.html#a98b91544eb3436619c9f07ff8a750fe0',1,'signalwire::rest::RestClient::RegistryNamespace']]]
 ];

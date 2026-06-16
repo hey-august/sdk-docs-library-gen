@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::security::SessionManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -134,9 +121,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classsignalwir
 </div><!--header-->
 <div class="contents">
 
-<p>Manages HMAC-SHA256 based session tokens for secure SWAIG tool calls.  
- <a href="#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="session__manager_8hpp_source.html">session_manager.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -146,17 +130,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af419a08512a1e5a36ddd7f78b062ecdb" id="r_af419a08512a1e5a36ddd7f78b062ecdb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af419a08512a1e5a36ddd7f78b062ecdb">SessionManager</a> (const std::vector&lt; uint8_t &gt; &amp;secret)</td></tr>
 <tr class="memdesc:af419a08512a1e5a36ddd7f78b062ecdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with a specific secret (for testing).  <br /></td></tr>
 <tr class="memitem:aa415339079da1375c651b230a06b9c5d" id="r_aa415339079da1375c651b230a06b9c5d"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aa415339079da1375c651b230a06b9c5d">create_token</a> (const std::string &amp;function_name, const std::string &amp;call_id, int expiry_seconds=3600) const</td></tr>
-<tr class="memdesc:aa415339079da1375c651b230a06b9c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a signed token for a function call.  <br /></td></tr>
-<tr class="memitem:ae23de35b038ee12209b2e9a08d3c7d8f" id="r_ae23de35b038ee12209b2e9a08d3c7d8f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae23de35b038ee12209b2e9a08d3c7d8f">validate_token</a> (const std::string &amp;token, const std::string &amp;function_name, const std::string &amp;call_id) const</td></tr>
-<tr class="memdesc:ae23de35b038ee12209b2e9a08d3c7d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate a token.  <br /></td></tr>
+<tr class="memitem:a6d3f5b4662072c2031ffe51a993d409d" id="r_a6d3f5b4662072c2031ffe51a993d409d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6d3f5b4662072c2031ffe51a993d409d">validate_token</a> (std::string_view token, std::string_view function_name, std::string_view call_id) const</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af8adcf089aa662d4e6962f3410a46c91" id="r_af8adcf089aa662d4e6962f3410a46c91"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#af8adcf089aa662d4e6962f3410a46c91">timing_safe_compare</a> (const std::string &amp;a, const std::string &amp;b)</td></tr>
-<tr class="memdesc:af8adcf089aa662d4e6962f3410a46c91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timing-safe comparison of two byte sequences.  <br /></td></tr>
+<tr class="memitem:a3897e2fbddf11585b88c521a144415fb" id="r_a3897e2fbddf11585b88c521a144415fb"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a3897e2fbddf11585b88c521a144415fb">timing_safe_compare</a> (const std::string &amp;a, const std::string &amp;b)</td></tr>
+<tr class="memdesc:a3897e2fbddf11585b88c521a144415fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timing-safe comparison of two byte sequences.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Manages HMAC-SHA256 based session tokens for secure SWAIG tool calls. </p>
+<div class="textblock"><p>Manages HMAC-SHA256 based session tokens for secure SWAIG tool calls.</p>
 <p>Token format: base64(functionName:callID:expiryTimestamp) + "." + hex(hmac_signature) </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aac7532200625a00a44017ca02fbf3f34" name="aac7532200625a00a44017ca02fbf3f34"></a>
@@ -229,9 +211,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Create a signed token for a function call. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Create a signed token for a function call </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">function_name</td><td>The SWAIG function name </td></tr>
     <tr><td class="paramname">call_id</td><td>The call identifier </td></tr>
@@ -243,8 +223,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af8adcf089aa662d4e6962f3410a46c91" name="af8adcf089aa662d4e6962f3410a46c91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8adcf089aa662d4e6962f3410a46c91">&#9670;&#160;</a></span>timing_safe_compare()</h2>
+<a id="a3897e2fbddf11585b88c521a144415fb" name="a3897e2fbddf11585b88c521a144415fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3897e2fbddf11585b88c521a144415fb">&#9670;&#160;</a></span>timing_safe_compare()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,32 +254,38 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae23de35b038ee12209b2e9a08d3c7d8f" name="ae23de35b038ee12209b2e9a08d3c7d8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae23de35b038ee12209b2e9a08d3c7d8f">&#9670;&#160;</a></span>validate_token()</h2>
+<a id="a6d3f5b4662072c2031ffe51a993d409d" name="a6d3f5b4662072c2031ffe51a993d409d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d3f5b4662072c2031ffe51a993d409d">&#9670;&#160;</a></span>validate_token()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool signalwire::security::SessionManager::validate_token </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>token</em></span>, </td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>token</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>function_name</em></span>, </td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>function_name</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>call_id</em></span>&#160;) const</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>call_id</em></span>&#160;) const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Validate a token. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Validate a token </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">token</td><td>The token to validate </td></tr>
     <tr><td class="paramname">function_name</td><td>Expected function name </td></tr>
@@ -307,12 +293,14 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if token is valid and not expired </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if token is valid and not expired</dd></dl>
+<p>All three params are consumed read-only (parsed/compared, never stored), so they take std::string_view — consistent with the webhook_validator entry points in this module. [[nodiscard]]: the validity result is the reason to call it. </p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/cpp/include/signalwire/security/<a class="el" href="session__manager_8hpp_source.html">session_manager.hpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>_build/sdks/signalwire-cpp/include/signalwire/security/<a class="el" href="session__manager_8hpp_source.html">session_manager.hpp</a></li>
+<li>_build/sdks/signalwire-cpp/src/security/<a class="el" href="session__manager_8cpp.html">session_manager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

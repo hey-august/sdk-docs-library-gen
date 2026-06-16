@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['webhookvalidatoroptions_0',['WebhookValidatorOptions',['../structsignalwire_1_1security_1_1WebhookValidatorOptions.html',1,'signalwire::security']]],
-  ['websocketclient_1',['WebSocketClient',['../classsignalwire_1_1relay_1_1WebSocketClient.html',1,'signalwire::relay']]]
+  ['tlsserverconfig_0',['TlsServerConfig',['../structsignalwire_1_1server_1_1TlsServerConfig.html',1,'signalwire::server']]],
+  ['tooldefinition_1',['ToolDefinition',['../structsignalwire_1_1swaig_1_1ToolDefinition.html',1,'signalwire::swaig']]]
 ];

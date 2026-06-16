@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::rest Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -141,7 +128,6 @@ Classes</h2></td></tr>
 <tr class="memitem:HttpClient" id="r_HttpClient"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classsignalwire_1_1rest_1_1HttpClient.html">HttpClient</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP client with Basic Auth support using cpp-httplib.  <a href="classsignalwire_1_1rest_1_1HttpClient.html#details">More...</a><br /></td></tr>
 <tr class="memitem:PaginatedIterator" id="r_PaginatedIterator"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classsignalwire_1_1rest_1_1PaginatedIterator.html">PaginatedIterator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates items across paginated API responses.  <a href="classsignalwire_1_1rest_1_1PaginatedIterator.html#details">More...</a><br /></td></tr>
 <tr class="memitem:RestClient" id="r_RestClient"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classsignalwire_1_1rest_1_1RestClient.html">RestClient</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top-level SignalWire REST client with all API namespaces.  <a href="classsignalwire_1_1rest_1_1RestClient.html#details">More...</a><br /></td></tr>
 <tr class="memitem:SignalWireRestError" id="r_SignalWireRestError"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classsignalwire_1_1rest_1_1SignalWireRestError.html">SignalWireRestError</a></td></tr>
@@ -169,12 +155,13 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#a72143ace77c2c9601a993eadc491f0d4aeec3bee6aa1cd9fe37e89ffe13deeb35">Dialogflow</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a72143ace77c2c9601a993eadc491f0d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of <span class="tt">call_handler</span> values accepted by <span class="tt">phone_numbers.update</span>.  <a href="#a72143ace77c2c9601a993eadc491f0d4">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3e234e74cc0fd92414ad3b37a2035306" id="r_a3e234e74cc0fd92414ad3b37a2035306"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a3e234e74cc0fd92414ad3b37a2035306">to_wire_string</a> (<a class="el" href="#a72143ace77c2c9601a993eadc491f0d4">PhoneCallHandler</a> h)</td></tr>
-<tr class="memdesc:a3e234e74cc0fd92414ad3b37a2035306"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a <span class="tt"><a class="el" href="#a72143ace77c2c9601a993eadc491f0d4" title="Enumeration of call_handler values accepted by phone_numbers.update.">PhoneCallHandler</a></span> to its wire string.  <br /></td></tr>
+<tr class="memdesc:a3e234e74cc0fd92414ad3b37a2035306"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a <span class="tt"><a class="el" href="#a72143ace77c2c9601a993eadc491f0d4">PhoneCallHandler</a></span> to its wire string.  <br /></td></tr>
+<tr class="memitem:a185552b3930ee4176a2d5dd58f7c4921" id="r_a185552b3930ee4176a2d5dd58f7c4921"><td class="memItemLeft">static std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a185552b3930ee4176a2d5dd58f7c4921">parse_url</a> (const std::string &amp;base_url)</td></tr>
+<tr class="memitem:a57daa54a62a3a4091e3867142af8e429" id="r_a57daa54a62a3a4091e3867142af8e429"><td class="memItemLeft">static httplib::Headers&#160;</td><td class="memItemRight"><a class="el" href="#a57daa54a62a3a4091e3867142af8e429">make_headers</a> (const std::string &amp;auth, const std::map&lt; std::string, std::string &gt; &amp;extra)</td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="ae3cd0214c39daa46553ee712f5ecc3e8" name="ae3cd0214c39daa46553ee712f5ecc3e8"></a>
@@ -211,10 +198,9 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Enumeration of <span class="tt">call_handler</span> values accepted by <span class="tt">phone_numbers.update</span>. </p>
+<p>Enumeration of <span class="tt">call_handler</span> values accepted by <span class="tt">phone_numbers.update</span>.</p>
 <p>Setting a phone number's <span class="tt">call_handler</span> + the handler-specific companion field routes inbound calls and auto-materializes the matching Fabric resource on the server. The typed <span class="tt">set_*</span> helpers on <span class="tt">PhoneNumbersNamespace</span> wrap the low-level update call with the right combination — prefer those over constructing the wire body by hand.</p>
-<p>Named <span class="tt"><a class="el" href="#a72143ace77c2c9601a993eadc491f0d4" title="Enumeration of call_handler values accepted by phone_numbers.update.">PhoneCallHandler</a></span> (not <span class="tt">CallHandler</span>) to avoid colliding with <span class="tt"><a class="el" href="namespacesignalwire_1_1relay.html#aa60db81c17236fecad65d60e9196fb75" title="Callback for inbound calls.">signalwire::relay::InboundCallHandler</a></span> — the callback type used by the RELAY client for inbound-call events.</p>
+<p>Named <span class="tt"><a class="el" href="#a72143ace77c2c9601a993eadc491f0d4">PhoneCallHandler</a></span> (not <span class="tt">CallHandler</span>) to avoid colliding with <span class="tt"><a class="el" href="namespacesignalwire_1_1relay.html#aa60db81c17236fecad65d60e9196fb75" title="Callback for inbound calls.">signalwire::relay::InboundCallHandler</a></span> — the callback type used by the RELAY client for inbound-call events.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Enum value  </th><th class="markdownTableHeadNone">Wire value  </th><th class="markdownTableHeadNone">Companion field  </th><th class="markdownTableHeadNone">Auto-materializes  </th></tr>
@@ -259,6 +245,60 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a57daa54a62a3a4091e3867142af8e429" name="a57daa54a62a3a4091e3867142af8e429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57daa54a62a3a4091e3867142af8e429">&#9670;&#160;</a></span>make_headers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">httplib::Headers signalwire::rest::make_headers </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>auth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; std::string, std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>extra</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a185552b3930ee4176a2d5dd58f7c4921" name="a185552b3930ee4176a2d5dd58f7c4921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a185552b3930ee4176a2d5dd58f7c4921">&#9670;&#160;</a></span>parse_url()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; std::string, std::string &gt; signalwire::rest::parse_url </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>base_url</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3e234e74cc0fd92414ad3b37a2035306" name="a3e234e74cc0fd92414ad3b37a2035306"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e234e74cc0fd92414ad3b37a2035306">&#9670;&#160;</a></span>to_wire_string()</h2>
 
@@ -277,12 +317,12 @@ Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Serialize a <span class="tt"><a class="el" href="#a72143ace77c2c9601a993eadc491f0d4" title="Enumeration of call_handler values accepted by phone_numbers.update.">PhoneCallHandler</a></span> to its wire string. </p>
+<p>Serialize a <span class="tt"><a class="el" href="#a72143ace77c2c9601a993eadc491f0d4">PhoneCallHandler</a></span> to its wire string. </p>
 
 </div>
 </div>

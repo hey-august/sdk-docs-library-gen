@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -6,9 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SignalWire C++ SDK: /airlock/sdks/cpp/include/signalwire/swml/schema.hpp Source File</title>
+<title>SignalWire C++ SDK: _build/sdks/signalwire-cpp/include/signalwire/swml/schema.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -158,46 +145,48 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('schema_8hpp_so
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classsignalwire_1_1swml_1_1Schema.html">   22</a></span><span class="keyword">class </span><a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#a5d530f211a99908d0798ed82aaf54706">Schema</a> {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classsignalwire_1_1swml_1_1Schema.html#a5d530f211a99908d0798ed82aaf54706">   24</a></span>    <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#a5d530f211a99908d0798ed82aaf54706">Schema</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classsignalwire_1_1swml_1_1Schema.html#aa8fc89347eb51e3d1894de6c282ed118">   27</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#aa8fc89347eb51e3d1894de6c282ed118">load_from_string</a>(<span class="keyword">const</span> std::string&amp; schema_json);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classsignalwire_1_1swml_1_1Schema.html#a1548ea9251746f2c722ec1744b6f5967">   30</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#a1548ea9251746f2c722ec1744b6f5967">load_from_file</a>(<span class="keyword">const</span> std::string&amp; path);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classsignalwire_1_1swml_1_1Schema.html#a3dc3d1fef5008d73d25d214591c1c220">   33</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#a3dc3d1fef5008d73d25d214591c1c220">load_embedded</a>();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classsignalwire_1_1swml_1_1Schema.html#a7257c021864af4de223dfe92b44a1314">   36</a></span>    <span class="keyword">const</span> std::vector&lt;VerbDefinition&gt;&amp; <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#a7257c021864af4de223dfe92b44a1314">verb_definitions</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> verbs_; }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classsignalwire_1_1swml_1_1Schema.html#af26868c2762e2fa7467f2f86ab0529a1">   39</a></span>    <span class="keyword">const</span> <a class="code hl_struct" href="structsignalwire_1_1swml_1_1VerbDefinition.html">VerbDefinition</a>* <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#af26868c2762e2fa7467f2f86ab0529a1">find_verb</a>(<span class="keyword">const</span> std::string&amp; verb_name) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classsignalwire_1_1swml_1_1Schema.html#a095980f7011849385a09f8fd2242b9a3">   42</a></span>    std::vector&lt;std::string&gt; <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#a095980f7011849385a09f8fd2242b9a3">verb_names</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classsignalwire_1_1swml_1_1Schema.html#acbbaf20e4bb0e0d754b95633689de695">   45</a></span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacesignalwire_1_1swml.html#a4ded4aee74900e90fa8e781c401be9ce">json</a>&amp; <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#acbbaf20e4bb0e0d754b95633689de695">raw</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> schema_; }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> extract_verbs();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_typedef" href="namespacesignalwire_1_1swml.html#a4ded4aee74900e90fa8e781c401be9ce">json</a> schema_;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::vector&lt;VerbDefinition&gt; verbs_;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    std::map&lt;std::string, size_t&gt; verb_index_;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// [[nodiscard]] on the load_* calls: the bool reports parse success;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// ignoring it (then using an unpopulated schema) is a bug.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#aa8fc89347eb51e3d1894de6c282ed118">load_from_string</a>(<span class="keyword">const</span> std::string&amp; schema_json);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#a1548ea9251746f2c722ec1744b6f5967">load_from_file</a>(<span class="keyword">const</span> std::string&amp; path);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#a3dc3d1fef5008d73d25d214591c1c220">load_embedded</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classsignalwire_1_1swml_1_1Schema.html#a7257c021864af4de223dfe92b44a1314">   38</a></span>    [[nodiscard]] <span class="keyword">const</span> std::vector&lt;VerbDefinition&gt;&amp; <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#a7257c021864af4de223dfe92b44a1314">verb_definitions</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> verbs_; }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    [[nodiscard]] <span class="keyword">const</span> <a class="code hl_struct" href="structsignalwire_1_1swml_1_1VerbDefinition.html">VerbDefinition</a>* <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#af26868c2762e2fa7467f2f86ab0529a1">find_verb</a>(<span class="keyword">const</span> std::string&amp; verb_name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    [[nodiscard]] std::vector&lt;std::string&gt; <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#a095980f7011849385a09f8fd2242b9a3">verb_names</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classsignalwire_1_1swml_1_1Schema.html#acbbaf20e4bb0e0d754b95633689de695">   47</a></span>    [[nodiscard]] <span class="keyword">const</span> <a class="code hl_typedef" href="namespacesignalwire_1_1swml.html#a4ded4aee74900e90fa8e781c401be9ce">json</a>&amp; <a class="code hl_function" href="classsignalwire_1_1swml_1_1Schema.html#acbbaf20e4bb0e0d754b95633689de695">raw</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> schema_; }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> extract_verbs();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_typedef" href="namespacesignalwire_1_1swml.html#a4ded4aee74900e90fa8e781c401be9ce">json</a> schema_;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    std::vector&lt;VerbDefinition&gt; verbs_;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    std::map&lt;std::string, size_t&gt; verb_index_;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
 </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespacesignalwire_1_1swml.html#afc7ef19d9921ce5a141f64a4e37383a8">   56</a></span><span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="namespacesignalwire_1_1swml.html#afc7ef19d9921ce5a141f64a4e37383a8">get_embedded_schema</a>();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>} <span class="comment">// namespace swml</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>} <span class="comment">// namespace signalwire</span></div>
-<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_a095980f7011849385a09f8fd2242b9a3"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#a095980f7011849385a09f8fd2242b9a3">signalwire::swml::Schema::verb_names</a></div><div class="ttdeci">std::vector&lt; std::string &gt; verb_names() const</div><div class="ttdoc">Get all verb names.</div></div>
-<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_a1548ea9251746f2c722ec1744b6f5967"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#a1548ea9251746f2c722ec1744b6f5967">signalwire::swml::Schema::load_from_file</a></div><div class="ttdeci">bool load_from_file(const std::string &amp;path)</div><div class="ttdoc">Load schema from a file path.</div></div>
-<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_a3dc3d1fef5008d73d25d214591c1c220"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#a3dc3d1fef5008d73d25d214591c1c220">signalwire::swml::Schema::load_embedded</a></div><div class="ttdeci">bool load_embedded()</div><div class="ttdoc">Load the embedded schema.</div></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>[[nodiscard]] <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="namespacesignalwire_1_1swml.html#afc7ef19d9921ce5a141f64a4e37383a8">get_embedded_schema</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>} <span class="comment">// namespace swml</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>} <span class="comment">// namespace signalwire</span></div>
+<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_a095980f7011849385a09f8fd2242b9a3"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#a095980f7011849385a09f8fd2242b9a3">signalwire::swml::Schema::verb_names</a></div><div class="ttdeci">std::vector&lt; std::string &gt; verb_names() const</div><div class="ttdoc">Get all verb names.</div><div class="ttdef"><b>Definition</b> schema.cpp:162</div></div>
+<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_a1548ea9251746f2c722ec1744b6f5967"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#a1548ea9251746f2c722ec1744b6f5967">signalwire::swml::Schema::load_from_file</a></div><div class="ttdeci">bool load_from_file(const std::string &amp;path)</div><div class="ttdoc">Load schema from a file path.</div><div class="ttdef"><b>Definition</b> schema.cpp:68</div></div>
+<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_a3dc3d1fef5008d73d25d214591c1c220"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#a3dc3d1fef5008d73d25d214591c1c220">signalwire::swml::Schema::load_embedded</a></div><div class="ttdeci">bool load_embedded()</div><div class="ttdoc">Load the embedded schema.</div><div class="ttdef"><b>Definition</b> schema.cpp:79</div></div>
 <div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_a5d530f211a99908d0798ed82aaf54706"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#a5d530f211a99908d0798ed82aaf54706">signalwire::swml::Schema::Schema</a></div><div class="ttdeci">Schema()=default</div></div>
-<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_a7257c021864af4de223dfe92b44a1314"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#a7257c021864af4de223dfe92b44a1314">signalwire::swml::Schema::verb_definitions</a></div><div class="ttdeci">const std::vector&lt; VerbDefinition &gt; &amp; verb_definitions() const</div><div class="ttdoc">Get all verb definitions.</div><div class="ttdef"><b>Definition</b> schema.hpp:36</div></div>
-<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_aa8fc89347eb51e3d1894de6c282ed118"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#aa8fc89347eb51e3d1894de6c282ed118">signalwire::swml::Schema::load_from_string</a></div><div class="ttdeci">bool load_from_string(const std::string &amp;schema_json)</div><div class="ttdoc">Load schema from a JSON string.</div></div>
-<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_acbbaf20e4bb0e0d754b95633689de695"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#acbbaf20e4bb0e0d754b95633689de695">signalwire::swml::Schema::raw</a></div><div class="ttdeci">const json &amp; raw() const</div><div class="ttdoc">Get the raw schema JSON.</div><div class="ttdef"><b>Definition</b> schema.hpp:45</div></div>
-<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_af26868c2762e2fa7467f2f86ab0529a1"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#af26868c2762e2fa7467f2f86ab0529a1">signalwire::swml::Schema::find_verb</a></div><div class="ttdeci">const VerbDefinition * find_verb(const std::string &amp;verb_name) const</div><div class="ttdoc">Get a specific verb definition by verb name.</div></div>
+<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_a7257c021864af4de223dfe92b44a1314"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#a7257c021864af4de223dfe92b44a1314">signalwire::swml::Schema::verb_definitions</a></div><div class="ttdeci">const std::vector&lt; VerbDefinition &gt; &amp; verb_definitions() const</div><div class="ttdoc">Get all verb definitions.</div><div class="ttdef"><b>Definition</b> schema.hpp:38</div></div>
+<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_aa8fc89347eb51e3d1894de6c282ed118"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#aa8fc89347eb51e3d1894de6c282ed118">signalwire::swml::Schema::load_from_string</a></div><div class="ttdeci">bool load_from_string(const std::string &amp;schema_json)</div><div class="ttdoc">Load schema from a JSON string.</div><div class="ttdef"><b>Definition</b> schema.cpp:57</div></div>
+<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_acbbaf20e4bb0e0d754b95633689de695"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#acbbaf20e4bb0e0d754b95633689de695">signalwire::swml::Schema::raw</a></div><div class="ttdeci">const json &amp; raw() const</div><div class="ttdoc">Get the raw schema JSON.</div><div class="ttdef"><b>Definition</b> schema.hpp:47</div></div>
+<div class="ttc" id="aclasssignalwire_1_1swml_1_1Schema_html_af26868c2762e2fa7467f2f86ab0529a1"><div class="ttname"><a href="classsignalwire_1_1swml_1_1Schema.html#af26868c2762e2fa7467f2f86ab0529a1">signalwire::swml::Schema::find_verb</a></div><div class="ttdeci">const VerbDefinition * find_verb(const std::string &amp;verb_name) const</div><div class="ttdoc">Get a specific verb definition by verb name.</div><div class="ttdef"><b>Definition</b> schema.cpp:154</div></div>
 <div class="ttc" id="anamespacesignalwire_1_1swml_html"><div class="ttname"><a href="namespacesignalwire_1_1swml.html">signalwire::swml</a></div><div class="ttdef"><b>Definition</b> document.hpp:10</div></div>
 <div class="ttc" id="anamespacesignalwire_1_1swml_html_a4ded4aee74900e90fa8e781c401be9ce"><div class="ttname"><a href="namespacesignalwire_1_1swml.html#a4ded4aee74900e90fa8e781c401be9ce">signalwire::swml::json</a></div><div class="ttdeci">nlohmann::json json</div><div class="ttdef"><b>Definition</b> document.hpp:12</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1swml_html_afc7ef19d9921ce5a141f64a4e37383a8"><div class="ttname"><a href="namespacesignalwire_1_1swml.html#afc7ef19d9921ce5a141f64a4e37383a8">signalwire::swml::get_embedded_schema</a></div><div class="ttdeci">const std::string &amp; get_embedded_schema()</div><div class="ttdoc">Get the embedded schema JSON string.</div></div>
-<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdoc">SignalWire webhook signature validation.</div><div class="ttdef"><b>Definition</b> agent_base.hpp:28</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1swml_html_afc7ef19d9921ce5a141f64a4e37383a8"><div class="ttname"><a href="namespacesignalwire_1_1swml.html#afc7ef19d9921ce5a141f64a4e37383a8">signalwire::swml::get_embedded_schema</a></div><div class="ttdeci">const std::string &amp; get_embedded_schema()</div><div class="ttdoc">Get the embedded schema JSON string.</div><div class="ttdef"><b>Definition</b> schema.cpp:52</div></div>
+<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:29</div></div>
 <div class="ttc" id="astructsignalwire_1_1swml_1_1VerbDefinition_html"><div class="ttname"><a href="structsignalwire_1_1swml_1_1VerbDefinition.html">signalwire::swml::VerbDefinition</a></div><div class="ttdoc">Represents a verb definition extracted from the SWML schema.</div><div class="ttdef"><b>Definition</b> schema.hpp:14</div></div>
 <div class="ttc" id="astructsignalwire_1_1swml_1_1VerbDefinition_html_a0395c3e257a3e6699e646023ec495d89"><div class="ttname"><a href="structsignalwire_1_1swml_1_1VerbDefinition.html#a0395c3e257a3e6699e646023ec495d89">signalwire::swml::VerbDefinition::verb_name</a></div><div class="ttdeci">std::string verb_name</div><div class="ttdef"><b>Definition</b> schema.hpp:16</div></div>
 <div class="ttc" id="astructsignalwire_1_1swml_1_1VerbDefinition_html_a5fa20c0ed04dd0d894ea98815d31844b"><div class="ttname"><a href="structsignalwire_1_1swml_1_1VerbDefinition.html#a5fa20c0ed04dd0d894ea98815d31844b">signalwire::swml::VerbDefinition::properties</a></div><div class="ttdeci">json properties</div><div class="ttdef"><b>Definition</b> schema.hpp:17</div></div>
@@ -209,7 +198,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('schema_8hpp_so
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_df511e5bd85cec96854b39d5e1c27aa8.html">cpp</a></li><li class="navelem"><a href="dir_07f37e320deb3031a60f4b23b9c60eb5.html">include</a></li><li class="navelem"><a href="dir_165c9c3495e164118c3b5e72d60f21a2.html">signalwire</a></li><li class="navelem"><a href="dir_97ef07327973a30da6f546e7f791c24a.html">swml</a></li><li class="navelem"><a href="schema_8hpp.html">schema.hpp</a></li>
+    <li class="navelem"><a href="dir_45b9293d3daaa82c00b5908f14ebb805.html">_build</a></li><li class="navelem"><a href="dir_2d0381b86cb8190e94539f1366a75a48.html">sdks</a></li><li class="navelem"><a href="dir_229e6c122c130a81955a352883f61d86.html">signalwire-cpp</a></li><li class="navelem"><a href="dir_0eb769a141c66eb9b7388f3811644b95.html">include</a></li><li class="navelem"><a href="dir_0abfdaf45bf5d4fd35fecbf72a0d26fd.html">signalwire</a></li><li class="navelem"><a href="dir_4a4d0cbab35debbdac694aed1c78e560.html">swml</a></li><li class="navelem"><a href="schema_8hpp.html">schema.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -140,7 +127,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structsignalwi
   <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a3c09f588e514814f9b6ddcd76b893f43">CompletedCallback</a> typedef</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#acd99f0c86798e8190c4fba2b94a14a51">direction</a></td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a81f13e6de7cfa9b20d8e6616aed56920">from</a></td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a0c5a0735a6d23af9d1209c047019bf28">from_params</a>(const json &amp;params)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a89e48339c2d9af24c083c9e472bbd0c7">from_params</a>(const json &amp;params)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a6739fdebd8fd4d61b69fce0a1b5bb3a2">is_delivered</a>() const</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#af5744c3c2d5529ef376ee1795af44576">is_failed</a>() const</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#aa0dd5d3149ec60818f58ee3e6d6b5801">is_terminal</a>() const</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
@@ -148,18 +135,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structsignalwi
   <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a19566440c226f7aa82d0e0c0479f0904">Message</a>()</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a76aea1737734b28f76a5292e0cd4d1ca">Message</a>(const Message &amp;)=default</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a1c89a17068e4ab4c0998276bfe946406">message_id</a></td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#afcab7dcaa208ee0d0f2a40ec50011f09">on_completed</a>(CompletedCallback cb)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#acc565fb66732a0da17d32d164975e788">operator=</a>(const Message &amp;)=default</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a24fab07a8a82b4e37bf400c18421cd45">reason</a>() const</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a5ce5e1f2f81ec3989c410a4b3775eed8">region</a></td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a1c71059a43982e5036499d604aabf3e5">set_reason</a>(const std::string &amp;r)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a75acbc08d05045bf579d782008e28d11">set_state</a>(const std::string &amp;s)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a833a4b3639c0d3c89c084830759c1423">state</a>() const</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#ab2c630b84c0acd45ebe5b8217436f2c6">tags</a></td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a4f5513e55e0693d3d749f17238171a5d">to</a></td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a9c62e8b932beb94de74cb2f2d0bad48b">update_state</a>(const std::string &amp;new_state)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a11bedfe298bc164afb5e4f52349a5613">wait</a>(int timeout_ms=0)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a6bcdf1c075dc0671354abde4299a4cb4">~Message</a>()=default</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#ade5320aca1585b4c700f3c0de311e0cc">message_state</a>() const</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#afcab7dcaa208ee0d0f2a40ec50011f09">on_completed</a>(CompletedCallback cb)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#acc565fb66732a0da17d32d164975e788">operator=</a>(const Message &amp;)=default</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a24fab07a8a82b4e37bf400c18421cd45">reason</a>() const</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a5ce5e1f2f81ec3989c410a4b3775eed8">region</a></td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a1c71059a43982e5036499d604aabf3e5">set_reason</a>(const std::string &amp;r)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a75acbc08d05045bf579d782008e28d11">set_state</a>(const std::string &amp;s)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a833a4b3639c0d3c89c084830759c1423">state</a>() const</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#ab2c630b84c0acd45ebe5b8217436f2c6">tags</a></td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a4f5513e55e0693d3d749f17238171a5d">to</a></td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a9c62e8b932beb94de74cb2f2d0bad48b">update_state</a>(const std::string &amp;new_state)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a11bedfe298bc164afb5e4f52349a5613">wait</a>(int timeout_ms=0)</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a6bcdf1c075dc0671354abde4299a4cb4">~Message</a>()=default</td><td class="entry"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">signalwire::relay::Message</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

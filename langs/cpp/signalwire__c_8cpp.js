@@ -1,0 +1,28 @@
+var signalwire__c_8cpp =
+[
+    [ "CToolContext", "structCToolContext.html", "structCToolContext" ],
+    [ "sw_agent_add_hint", "signalwire__c_8cpp.html#a687c6a53c53576ad23a170df5af2adff", null ],
+    [ "sw_agent_add_section", "signalwire__c_8cpp.html#a9ed6717953d8a3bd98eb73db432ff4a6", null ],
+    [ "sw_agent_add_section_bullets", "signalwire__c_8cpp.html#a4b20a47372c63841ae9c097e4191944b", null ],
+    [ "sw_agent_add_skill", "signalwire__c_8cpp.html#a1835f8d234f3e7b504e10eaf7bb80f76", null ],
+    [ "sw_agent_create", "signalwire__c_8cpp.html#ac9e766ff710e54ad8db410ef9f73ad06", null ],
+    [ "sw_agent_create_full", "signalwire__c_8cpp.html#a9033a5732c889a724e91b606ca33c7de", null ],
+    [ "sw_agent_define_tool", "signalwire__c_8cpp.html#a9d1fe1f38741e8e6415c09420cbec6ad", null ],
+    [ "sw_agent_destroy", "signalwire__c_8cpp.html#a44d1d1f31f789425a677f6ee8ab2c80b", null ],
+    [ "sw_agent_list_tools", "signalwire__c_8cpp.html#a5f5b7fa8939d91eb8202a899e6dd6696", null ],
+    [ "sw_agent_render_swml", "signalwire__c_8cpp.html#a9835ead1ecc711fc7797981f3599b946", null ],
+    [ "sw_agent_run", "signalwire__c_8cpp.html#aaebe5e2f69fa69c2062f2698fd5aa828", null ],
+    [ "sw_agent_serve", "signalwire__c_8cpp.html#a13909a2289f11cced49212946e437e46", null ],
+    [ "sw_agent_set_auth", "signalwire__c_8cpp.html#a7a47021a826bdbb4e2baa8d171ff2720", null ],
+    [ "sw_agent_set_global_data", "signalwire__c_8cpp.html#ad2f85266c9bf6a465e3aa7369c69866c", null ],
+    [ "sw_agent_set_param", "signalwire__c_8cpp.html#ad679b906323987c8527a537e40ee7bfb", null ],
+    [ "sw_agent_set_post_prompt", "signalwire__c_8cpp.html#a0dcd540ec17b2bed5692556cf800be8d", null ],
+    [ "sw_agent_set_prompt", "signalwire__c_8cpp.html#af0d922a81d8bad92407840acdce3a9f9", null ],
+    [ "sw_agent_stop", "signalwire__c_8cpp.html#ab0bf6b6554fafdf30f3173ae8dfb39cf", null ],
+    [ "sw_free_string", "signalwire__c_8cpp.html#ac5427cb60f66fa4ba76c44745d0b66c8", null ],
+    [ "sw_free_string_array", "signalwire__c_8cpp.html#a107190ffc345abe8c378e0df773dbc11", null ],
+    [ "sw_result_add_action", "signalwire__c_8cpp.html#a21c63e14d029d03781d2827e9b6f0627", null ],
+    [ "sw_result_create", "signalwire__c_8cpp.html#a2dd1f3946d145d9252f61d1f1da6cb36", null ],
+    [ "sw_result_destroy", "signalwire__c_8cpp.html#a43fc5f2cb8a3217d9291cff487e5fcc7", null ],
+    [ "sw_result_to_json", "signalwire__c_8cpp.html#a2745aed4d4ff4fdb5c9482448af6966c", null ]
+];

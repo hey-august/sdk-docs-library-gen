@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['errorcallback_0',['ErrorCallback',['../classsignalwire_1_1relay_1_1WebSocketClient.html#a78cd7ce62e23738f68c9340dc5eb73d5',1,'signalwire::relay::WebSocketClient']]],
-  ['eventhandler_1',['EventHandler',['../namespacesignalwire_1_1relay.html#a4a38d39cf26268c4ab626182a53fed24',1,'signalwire::relay']]]
+  ['debugeventcallback_0',['DebugEventCallback',['../namespacesignalwire_1_1agent.html#a1eb54827c046cfcc8dd96978374a0925',1,'signalwire::agent']]],
+  ['dynamicconfigcallback_1',['DynamicConfigCallback',['../namespacesignalwire_1_1agent.html#a36b7ba841955ddc895c57367d91992bc',1,'signalwire::agent']]]
 ];

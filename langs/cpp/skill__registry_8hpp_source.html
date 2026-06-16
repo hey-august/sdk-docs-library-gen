@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -6,9 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SignalWire C++ SDK: /airlock/sdks/cpp/include/signalwire/skills/skill_registry.hpp Source File</title>
+<title>SignalWire C++ SDK: _build/sdks/signalwire-cpp/include/signalwire/skills/skill_registry.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -153,7 +140,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('skill__registr
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classsignalwire_1_1skills_1_1SkillRegistry.html">   18</a></span><span class="keyword">class </span>SkillRegistry {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a82299a1468d6959eb0a151de1b3cc5e6">   20</a></span>    <span class="keyword">static</span> SkillRegistry&amp; <a class="code hl_function" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a82299a1468d6959eb0a151de1b3cc5e6">instance</a>() {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a82299a1468d6959eb0a151de1b3cc5e6">   20</a></span>    [[nodiscard]] <span class="keyword">static</span> SkillRegistry&amp; <a class="code hl_function" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a82299a1468d6959eb0a151de1b3cc5e6">instance</a>() {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">static</span> SkillRegistry registry;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">return</span> registry;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
@@ -167,7 +154,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('skill__registr
 </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
 <div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a7bd35e9b78c149948bdd92585d898e0d">   32</a></span>    std::unique_ptr&lt;SkillBase&gt; <a class="code hl_function" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a7bd35e9b78c149948bdd92585d898e0d">create</a>(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a7bd35e9b78c149948bdd92585d898e0d">   32</a></span>    [[nodiscard]] std::unique_ptr&lt;SkillBase&gt; <a class="code hl_function" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a7bd35e9b78c149948bdd92585d898e0d">create</a>(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        std::lock_guard&lt;std::mutex&gt; lock(mutex_);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">auto</span> it = factories_.find(name);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span> (it != factories_.end()) {</div>
@@ -178,14 +165,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('skill__registr
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
 <div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a85001afb728f1e42b569bb4d80dc67ed">   42</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a85001afb728f1e42b569bb4d80dc67ed">has_skill</a>(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a85001afb728f1e42b569bb4d80dc67ed">   42</a></span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a85001afb728f1e42b569bb4d80dc67ed">has_skill</a>(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        std::lock_guard&lt;std::mutex&gt; lock(mutex_);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">return</span> factories_.find(name) != factories_.end();</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
 </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
 <div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a4b18412604cdb33fb0b900815184c7b8">   48</a></span>    std::vector&lt;std::string&gt; <a class="code hl_function" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a4b18412604cdb33fb0b900815184c7b8">list_skills</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a4b18412604cdb33fb0b900815184c7b8">   48</a></span>    [[nodiscard]] std::vector&lt;std::string&gt; <a class="code hl_function" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a4b18412604cdb33fb0b900815184c7b8">list_skills</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        std::lock_guard&lt;std::mutex&gt; lock(mutex_);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        std::vector&lt;std::string&gt; names;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [k, v] : factories_) {</div>
@@ -213,7 +200,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('skill__registr
 </div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
 <div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a66fb621a139dc9a9c8ef74fbf2f7769c">   84</a></span>    std::vector&lt;std::string&gt; <a class="code hl_function" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a66fb621a139dc9a9c8ef74fbf2f7769c">external_paths</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a66fb621a139dc9a9c8ef74fbf2f7769c">   84</a></span>    [[nodiscard]] std::vector&lt;std::string&gt; <a class="code hl_function" href="classsignalwire_1_1skills_1_1SkillRegistry.html#a66fb621a139dc9a9c8ef74fbf2f7769c">external_paths</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        std::lock_guard&lt;std::mutex&gt; lock(mutex_);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span> external_paths_;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
@@ -244,22 +231,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('skill__registr
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">    }</span></div>
 </div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="namespacesignalwire_1_1skills.html#a1b7df1c99325d083b3f3f02c1baa8787">  114</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacesignalwire_1_1skills.html#a1b7df1c99325d083b3f3f02c1baa8787">ensure_builtin_skills_registered</a>();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacesignalwire_1_1skills.html#a1b7df1c99325d083b3f3f02c1baa8787">ensure_builtin_skills_registered</a>();</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>} <span class="comment">// namespace skills</span></div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>} <span class="comment">// namespace signalwire</span></div>
 <div class="ttc" id="aclasssignalwire_1_1skills_1_1SkillRegistry_html"><div class="ttname"><a href="classsignalwire_1_1skills_1_1SkillRegistry.html">signalwire::skills::SkillRegistry</a></div><div class="ttdoc">Global registry of skill factories.</div><div class="ttdef"><b>Definition</b> skill_registry.hpp:18</div></div>
 <div class="ttc" id="aclasssignalwire_1_1skills_1_1SkillRegistry_html_a244b989b16e2f24d63d180ecb0c629df"><div class="ttname"><a href="classsignalwire_1_1skills_1_1SkillRegistry.html#a244b989b16e2f24d63d180ecb0c629df">signalwire::skills::SkillRegistry::register_skill</a></div><div class="ttdeci">void register_skill(const std::string &amp;name, SkillFactory factory)</div><div class="ttdoc">Register a skill factory.</div><div class="ttdef"><b>Definition</b> skill_registry.hpp:26</div></div>
 <div class="ttc" id="aclasssignalwire_1_1skills_1_1SkillRegistry_html_a4b18412604cdb33fb0b900815184c7b8"><div class="ttname"><a href="classsignalwire_1_1skills_1_1SkillRegistry.html#a4b18412604cdb33fb0b900815184c7b8">signalwire::skills::SkillRegistry::list_skills</a></div><div class="ttdeci">std::vector&lt; std::string &gt; list_skills() const</div><div class="ttdoc">List all registered skill names.</div><div class="ttdef"><b>Definition</b> skill_registry.hpp:48</div></div>
-<div class="ttc" id="aclasssignalwire_1_1skills_1_1SkillRegistry_html_a66fb621a139dc9a9c8ef74fbf2f7769c"><div class="ttname"><a href="classsignalwire_1_1skills_1_1SkillRegistry.html#a66fb621a139dc9a9c8ef74fbf2f7769c">signalwire::skills::SkillRegistry::external_paths</a></div><div class="ttdeci">std::vector&lt; std::string &gt; external_paths() const</div><div class="ttdoc">Returns the registered external skill directories.</div><div class="ttdef"><b>Definition</b> skill_registry.hpp:84</div></div>
+<div class="ttc" id="aclasssignalwire_1_1skills_1_1SkillRegistry_html_a66fb621a139dc9a9c8ef74fbf2f7769c"><div class="ttname"><a href="classsignalwire_1_1skills_1_1SkillRegistry.html#a66fb621a139dc9a9c8ef74fbf2f7769c">signalwire::skills::SkillRegistry::external_paths</a></div><div class="ttdeci">std::vector&lt; std::string &gt; external_paths() const</div><div class="ttdef"><b>Definition</b> skill_registry.hpp:84</div></div>
 <div class="ttc" id="aclasssignalwire_1_1skills_1_1SkillRegistry_html_a7bd35e9b78c149948bdd92585d898e0d"><div class="ttname"><a href="classsignalwire_1_1skills_1_1SkillRegistry.html#a7bd35e9b78c149948bdd92585d898e0d">signalwire::skills::SkillRegistry::create</a></div><div class="ttdeci">std::unique_ptr&lt; SkillBase &gt; create(const std::string &amp;name) const</div><div class="ttdoc">Create a skill instance by name.</div><div class="ttdef"><b>Definition</b> skill_registry.hpp:32</div></div>
 <div class="ttc" id="aclasssignalwire_1_1skills_1_1SkillRegistry_html_a82299a1468d6959eb0a151de1b3cc5e6"><div class="ttname"><a href="classsignalwire_1_1skills_1_1SkillRegistry.html#a82299a1468d6959eb0a151de1b3cc5e6">signalwire::skills::SkillRegistry::instance</a></div><div class="ttdeci">static SkillRegistry &amp; instance()</div><div class="ttdef"><b>Definition</b> skill_registry.hpp:20</div></div>
 <div class="ttc" id="aclasssignalwire_1_1skills_1_1SkillRegistry_html_a85001afb728f1e42b569bb4d80dc67ed"><div class="ttname"><a href="classsignalwire_1_1skills_1_1SkillRegistry.html#a85001afb728f1e42b569bb4d80dc67ed">signalwire::skills::SkillRegistry::has_skill</a></div><div class="ttdeci">bool has_skill(const std::string &amp;name) const</div><div class="ttdoc">Check if a skill is registered.</div><div class="ttdef"><b>Definition</b> skill_registry.hpp:42</div></div>
-<div class="ttc" id="aclasssignalwire_1_1skills_1_1SkillRegistry_html_a90dc81e589c59d0c9aaecf214ba335ff"><div class="ttname"><a href="classsignalwire_1_1skills_1_1SkillRegistry.html#a90dc81e589c59d0c9aaecf214ba335ff">signalwire::skills::SkillRegistry::add_skill_directory</a></div><div class="ttdeci">void add_skill_directory(const std::string &amp;path)</div><div class="ttdoc">Add a directory to search for skills.</div><div class="ttdef"><b>Definition</b> skill_registry.hpp:65</div></div>
+<div class="ttc" id="aclasssignalwire_1_1skills_1_1SkillRegistry_html_a90dc81e589c59d0c9aaecf214ba335ff"><div class="ttname"><a href="classsignalwire_1_1skills_1_1SkillRegistry.html#a90dc81e589c59d0c9aaecf214ba335ff">signalwire::skills::SkillRegistry::add_skill_directory</a></div><div class="ttdeci">void add_skill_directory(const std::string &amp;path)</div><div class="ttdef"><b>Definition</b> skill_registry.hpp:65</div></div>
 <div class="ttc" id="anamespacesignalwire_1_1skills_html"><div class="ttname"><a href="namespacesignalwire_1_1skills.html">signalwire::skills</a></div><div class="ttdef"><b>Definition</b> skill_base.hpp:14</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1skills_html_a1b7df1c99325d083b3f3f02c1baa8787"><div class="ttname"><a href="namespacesignalwire_1_1skills.html#a1b7df1c99325d083b3f3f02c1baa8787">signalwire::skills::ensure_builtin_skills_registered</a></div><div class="ttdeci">void ensure_builtin_skills_registered()</div><div class="ttdoc">Ensure all built-in skills are registered.</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1skills_html_a1b7df1c99325d083b3f3f02c1baa8787"><div class="ttname"><a href="namespacesignalwire_1_1skills.html#a1b7df1c99325d083b3f3f02c1baa8787">signalwire::skills::ensure_builtin_skills_registered</a></div><div class="ttdeci">void ensure_builtin_skills_registered()</div><div class="ttdef"><b>Definition</b> skill_registry.cpp:443</div></div>
 <div class="ttc" id="anamespacesignalwire_1_1skills_html_af747e566b0f9faf5634ea601e7ea25c1"><div class="ttname"><a href="namespacesignalwire_1_1skills.html#af747e566b0f9faf5634ea601e7ea25c1">signalwire::skills::SkillFactory</a></div><div class="ttdeci">std::function&lt; std::unique_ptr&lt; SkillBase &gt;()&gt; SkillFactory</div><div class="ttdoc">Factory function type for creating skill instances.</div><div class="ttdef"><b>Definition</b> skill_base.hpp:118</div></div>
-<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdoc">SignalWire webhook signature validation.</div><div class="ttdef"><b>Definition</b> agent_base.hpp:28</div></div>
+<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:29</div></div>
 <div class="ttc" id="askill__base_8hpp_html"><div class="ttname"><a href="skill__base_8hpp.html">skill_base.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -267,7 +254,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('skill__registr
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_df511e5bd85cec96854b39d5e1c27aa8.html">cpp</a></li><li class="navelem"><a href="dir_07f37e320deb3031a60f4b23b9c60eb5.html">include</a></li><li class="navelem"><a href="dir_165c9c3495e164118c3b5e72d60f21a2.html">signalwire</a></li><li class="navelem"><a href="dir_72da83e85636cd9cccc15c516332de7b.html">skills</a></li><li class="navelem"><a href="skill__registry_8hpp.html">skill_registry.hpp</a></li>
+    <li class="navelem"><a href="dir_45b9293d3daaa82c00b5908f14ebb805.html">_build</a></li><li class="navelem"><a href="dir_2d0381b86cb8190e94539f1366a75a48.html">sdks</a></li><li class="navelem"><a href="dir_229e6c122c130a81955a352883f61d86.html">signalwire-cpp</a></li><li class="navelem"><a href="dir_0eb769a141c66eb9b7388f3811644b95.html">include</a></li><li class="navelem"><a href="dir_0abfdaf45bf5d4fd35fecbf72a0d26fd.html">signalwire</a></li><li class="navelem"><a href="dir_bd00b25e7fa770df7aefa08eb6ce222c.html">skills</a></li><li class="navelem"><a href="skill__registry_8hpp.html">skill_registry.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

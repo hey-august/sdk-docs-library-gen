@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::contexts::Step Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -149,13 +136,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a408651d17a36d340c049471f9e90e139" id="r_a408651d17a36d340c049471f9e90e139"><td class="memItemLeft"><a class="el" href="#ae6c10c0fded88b1980bc60648d05abfc">Step</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a408651d17a36d340c049471f9e90e139">set_step_criteria</a> (const std::string &amp;criteria)</td></tr>
 <tr class="memdesc:a408651d17a36d340c049471f9e90e139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set step completion criteria.  <br /></td></tr>
 <tr class="memitem:a00dcfc8ad52917642514ccbc7e4a9774" id="r_a00dcfc8ad52917642514ccbc7e4a9774"><td class="memItemLeft"><a class="el" href="#ae6c10c0fded88b1980bc60648d05abfc">Step</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a00dcfc8ad52917642514ccbc7e4a9774">set_functions</a> (const std::variant&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;functions)</td></tr>
-<tr class="memdesc:a00dcfc8ad52917642514ccbc7e4a9774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set which non-internal functions are callable while this step is active.  <br /></td></tr>
 <tr class="memitem:a2dc838e7a6b653b4366debaa199804b3" id="r_a2dc838e7a6b653b4366debaa199804b3"><td class="memItemLeft"><a class="el" href="#ae6c10c0fded88b1980bc60648d05abfc">Step</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2dc838e7a6b653b4366debaa199804b3">set_valid_steps</a> (const std::vector&lt; std::string &gt; &amp;steps)</td></tr>
 <tr class="memdesc:a2dc838e7a6b653b4366debaa199804b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set which steps can be navigated to from this step.  <br /></td></tr>
 <tr class="memitem:a9bd71a25df18815440eecda83d1a6ea0" id="r_a9bd71a25df18815440eecda83d1a6ea0"><td class="memItemLeft"><a class="el" href="#ae6c10c0fded88b1980bc60648d05abfc">Step</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a9bd71a25df18815440eecda83d1a6ea0">set_valid_contexts</a> (const std::vector&lt; std::string &gt; &amp;ctxs)</td></tr>
 <tr class="memdesc:a9bd71a25df18815440eecda83d1a6ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set which contexts can be navigated to from this step.  <br /></td></tr>
 <tr class="memitem:a4e215645dfd2726e0fcf3ffb8beb4088" id="r_a4e215645dfd2726e0fcf3ffb8beb4088"><td class="memItemLeft"><a class="el" href="#ae6c10c0fded88b1980bc60648d05abfc">Step</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4e215645dfd2726e0fcf3ffb8beb4088">set_end</a> (bool end)</td></tr>
-<tr class="memdesc:a4e215645dfd2726e0fcf3ffb8beb4088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark this step as terminal for the step flow.  <br /></td></tr>
 <tr class="memitem:acf378e240f8c4601fdd3575568719d77" id="r_acf378e240f8c4601fdd3575568719d77"><td class="memItemLeft"><a class="el" href="#ae6c10c0fded88b1980bc60648d05abfc">Step</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#acf378e240f8c4601fdd3575568719d77">set_skip_user_turn</a> (bool skip)</td></tr>
 <tr class="memdesc:acf378e240f8c4601fdd3575568719d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether to skip waiting for user input.  <br /></td></tr>
 <tr class="memitem:a3b08036fc1cb9438a9d50e009fc088ac" id="r_a3b08036fc1cb9438a9d50e009fc088ac"><td class="memItemLeft"><a class="el" href="#ae6c10c0fded88b1980bc60648d05abfc">Step</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a3b08036fc1cb9438a9d50e009fc088ac">set_skip_to_next_step</a> (bool skip)</td></tr>
@@ -163,7 +148,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa363511d0dd0a8700251ec79748a4989" id="r_aa363511d0dd0a8700251ec79748a4989"><td class="memItemLeft"><a class="el" href="#ae6c10c0fded88b1980bc60648d05abfc">Step</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aa363511d0dd0a8700251ec79748a4989">set_gather_info</a> (const std::string &amp;output_key=&quot;&quot;, const std::string &amp;completion_action=&quot;&quot;, const std::string &amp;prompt=&quot;&quot;)</td></tr>
 <tr class="memdesc:aa363511d0dd0a8700251ec79748a4989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable info gathering on this step.  <br /></td></tr>
 <tr class="memitem:a1e804d5cdb7474f190d3cd21a01be64e" id="r_a1e804d5cdb7474f190d3cd21a01be64e"><td class="memItemLeft"><a class="el" href="#ae6c10c0fded88b1980bc60648d05abfc">Step</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a1e804d5cdb7474f190d3cd21a01be64e">add_gather_question</a> (const std::string &amp;key, const std::string &amp;question, const std::string &amp;type=&quot;string&quot;, bool confirm=false, const std::string &amp;prompt=&quot;&quot;, const std::vector&lt; std::string &gt; &amp;functions={})</td></tr>
-<tr class="memdesc:a1e804d5cdb7474f190d3cd21a01be64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a gather question (set_gather_info must be called first).  <br /></td></tr>
 <tr class="memitem:ad3c765163486fe7511fee1eaaf90242b" id="r_ad3c765163486fe7511fee1eaaf90242b"><td class="memItemLeft"><a class="el" href="#ae6c10c0fded88b1980bc60648d05abfc">Step</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad3c765163486fe7511fee1eaaf90242b">clear_sections</a> ()</td></tr>
 <tr class="memdesc:ad3c765163486fe7511fee1eaaf90242b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all sections and text.  <br /></td></tr>
 <tr class="memitem:a7e0b3ebc1f5d71948678b08aaafe8030" id="r_a7e0b3ebc1f5d71948678b08aaafe8030"><td class="memItemLeft"><a class="el" href="#ae6c10c0fded88b1980bc60648d05abfc">Step</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a7e0b3ebc1f5d71948678b08aaafe8030">set_reset_system_prompt</a> (const std::string &amp;sp)</td></tr>
@@ -291,8 +275,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add a gather question (set_gather_info must be called first). </p>
+<p>Add a gather question (set_gather_info must be called first).</p>
 <p>IMPORTANT — gather mode locks function access: While the model is asking gather questions, the runtime forcibly deactivates ALL of the step's other functions. The only callable tools during a gather question are:</p>
 <ul>
 <li>gather_submit (the native answer-submission tool)</li>
@@ -363,7 +346,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -409,8 +392,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Mark this step as terminal for the step flow. </p>
+<p>Mark this step as terminal for the step flow.</p>
 <p>IMPORTANT: end=true does NOT end the conversation or hang up the call. It exits step mode entirely after this step executes — clearing the steps list, current step index, valid_steps, and valid_contexts. The agent keeps running, but operates only under the base system prompt and the context-level prompt; no more step instructions are injected and no more next_step tool is offered.</p>
 <p>To actually end the call, call a hangup tool or define a hangup hook. </p>
 
@@ -430,8 +412,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set which non-internal functions are callable while this step is active. </p>
+<p>Set which non-internal functions are callable while this step is active.</p>
 <p>IMPORTANT — inheritance behavior: If you do NOT call this method, the step inherits whichever function set was active on the previous step (or the previous context's last step). The server-side runtime only resets the active set when a step explicitly declares its <span class="tt">functions</span> field. This is the most common source of bugs in multi-step agents: forgetting set_functions on a later step lets the previous step's tools leak through. Best practice is to call set_functions explicitly on every step that should differ from the previous one.</p>
 <p>Keep the per-step active set small: LLM tool selection accuracy degrades noticeably past ~7-8 simultaneously-active tools per call. Use per-step whitelisting to partition large tool collections.</p>
 <p>Internal functions (e.g. gather_submit, hangup hook) are ALWAYS protected and cannot be deactivated by this whitelist. The native navigation tools next_step and change_context are injected automatically when set_valid_steps / set_valid_contexts is used; they are not affected by this list.</p>
@@ -666,6 +647,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacesignalwire_1_1contexts.html#ac7903cedb620d664b7295bc71e5892a6">json</a> signalwire::contexts::Step::to_json </td>
@@ -674,6 +658,11 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Serialize to JSON. </p>
@@ -698,7 +687,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -723,15 +712,16 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/cpp/include/signalwire/contexts/<a class="el" href="contexts_8hpp_source.html">contexts.hpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>_build/sdks/signalwire-cpp/include/signalwire/contexts/<a class="el" href="contexts_8hpp_source.html">contexts.hpp</a></li>
+<li>_build/sdks/signalwire-cpp/src/contexts/<a class="el" href="contexts_8cpp.html">contexts.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

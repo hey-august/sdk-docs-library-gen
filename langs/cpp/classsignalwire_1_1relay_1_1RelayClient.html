@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::relay::RelayClient Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -134,9 +121,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classsignalwir
 </div><!--header-->
 <div class="contents">
 
-<p>Real-time call control and messaging client over WebSocket.  
- <a href="#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="client_8hpp_source.html">client.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -154,14 +138,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1210608075c5fde31e572152505ccb65" id="r_a1210608075c5fde31e572152505ccb65"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1210608075c5fde31e572152505ccb65">is_connected</a> () const</td></tr>
 <tr class="memitem:a5c6f972e4b4bca93d66f77f49e4007ba" id="r_a5c6f972e4b4bca93d66f77f49e4007ba"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5c6f972e4b4bca93d66f77f49e4007ba">on_call</a> (<a class="el" href="namespacesignalwire_1_1relay.html#aa60db81c17236fecad65d60e9196fb75">InboundCallHandler</a> handler)</td></tr>
 <tr class="memitem:a2c1ffec3d79c3a0f97397cf43a123588" id="r_a2c1ffec3d79c3a0f97397cf43a123588"><td class="memItemLeft"><a class="el" href="classsignalwire_1_1relay_1_1Call.html">Call</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2c1ffec3d79c3a0f97397cf43a123588">dial</a> (const <a class="el" href="namespacesignalwire_1_1relay.html#aed6f7e959b357bc670a72f501475c31e">json</a> &amp;devices, const std::string &amp;tag=&quot;&quot;, int dial_timeout_ms=120000, int max_duration=0)</td></tr>
-<tr class="memdesc:a2c1ffec3d79c3a0f97397cf43a123588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dial outbound.  <br /></td></tr>
 <tr class="memitem:af00285cf3876c9e6f260c001d018ceec" id="r_af00285cf3876c9e6f260c001d018ceec"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af00285cf3876c9e6f260c001d018ceec">on_event</a> (<a class="el" href="namespacesignalwire_1_1relay.html#a4a38d39cf26268c4ab626182a53fed24">EventHandler</a> handler)</td></tr>
-<tr class="memdesc:af00285cf3876c9e6f260c001d018ceec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a generic event observer.  <br /></td></tr>
 <tr class="memitem:a8df86c18a7a15590ad718bd29dd89b2f" id="r_a8df86c18a7a15590ad718bd29dd89b2f"><td class="memItemLeft"><a class="el" href="namespacesignalwire_1_1relay.html#aed6f7e959b357bc670a72f501475c31e">json</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8df86c18a7a15590ad718bd29dd89b2f">send_raw_request</a> (const std::string &amp;method, const <a class="el" href="namespacesignalwire_1_1relay.html#aed6f7e959b357bc670a72f501475c31e">json</a> &amp;params)</td></tr>
-<tr class="memdesc:a8df86c18a7a15590ad718bd29dd89b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a JSON-RPC request to the server.  <br /></td></tr>
 <tr class="memitem:a68ae0b0d4a0e74562e1ff241a53a8a44" id="r_a68ae0b0d4a0e74562e1ff241a53a8a44"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a68ae0b0d4a0e74562e1ff241a53a8a44">on_message</a> (<a class="el" href="namespacesignalwire_1_1relay.html#a3bc6aebb81338d9df92d7a7a56631aec">InboundMessageHandler</a> handler)</td></tr>
 <tr class="memitem:abf517665540dfb2ffca9cef0b0b72d26" id="r_abf517665540dfb2ffca9cef0b0b72d26"><td class="memItemLeft"><a class="el" href="structsignalwire_1_1relay_1_1Message.html">Message</a>&#160;</td><td class="memItemRight"><a class="el" href="#abf517665540dfb2ffca9cef0b0b72d26">send_message</a> (const std::string &amp;from, const std::string &amp;to, const std::string &amp;body, const std::vector&lt; std::string &gt; &amp;media={}, const std::vector&lt; std::string &gt; &amp;tags={}, const std::string &amp;region=&quot;&quot;, const std::string &amp;context=&quot;&quot;)</td></tr>
-<tr class="memdesc:abf517665540dfb2ffca9cef0b0b72d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an SMS/MMS message via messaging.send.  <br /></td></tr>
 <tr class="memitem:a6fbdfd0432acb6e375b2857683631f3c" id="r_a6fbdfd0432acb6e375b2857683631f3c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6fbdfd0432acb6e375b2857683631f3c">subscribe</a> (const std::vector&lt; std::string &gt; &amp;contexts)</td></tr>
 <tr class="memitem:a83e49160d1367258549c586f30456975" id="r_a83e49160d1367258549c586f30456975"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a83e49160d1367258549c586f30456975">unsubscribe</a> (const std::vector&lt; std::string &gt; &amp;contexts)</td></tr>
 <tr class="memitem:a32e4ab18f52f8f239eb6f3ad7a55bbbd" id="r_a32e4ab18f52f8f239eb6f3ad7a55bbbd"><td class="memItemLeft">const <a class="el" href="structsignalwire_1_1relay_1_1RelayConfig.html">RelayConfig</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a32e4ab18f52f8f239eb6f3ad7a55bbbd">config</a> () const</td></tr>
@@ -173,15 +153,13 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aab45825c05e0dd355c4ba0fa6982c573" id="r_aab45825c05e0dd355c4ba0fa6982c573"><td class="memItemLeft">static <a class="el" href="#ae9ef4d7b64f6f4bf3545ece4cb44ae8b">RelayClient</a>&#160;</td><td class="memItemRight"><a class="el" href="#aab45825c05e0dd355c4ba0fa6982c573">from_env</a> ()</td></tr>
-<tr class="memdesc:aab45825c05e0dd355c4ba0fa6982c573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from environment variables: SIGNALWIRE_PROJECT_ID, SIGNALWIRE_API_TOKEN, SIGNALWIRE_SPACE.  <br /></td></tr>
+<tr class="memitem:a2589c55b9c2420e1c24941d5389af3d4" id="r_a2589c55b9c2420e1c24941d5389af3d4"><td class="memItemLeft">static <a class="el" href="#ae9ef4d7b64f6f4bf3545ece4cb44ae8b">RelayClient</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2589c55b9c2420e1c24941d5389af3d4">from_env</a> ()</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Real-time call control and messaging client over WebSocket. </p>
-<p>Implements the full JSON-RPC 2.0 protocol with four correlation mechanisms:</p><ol type="1">
+<div class="textblock"><p>Real-time call control and messaging client over WebSocket. Implements the full JSON-RPC 2.0 protocol with four correlation mechanisms:</p><ol type="1">
 <li>JSON-RPC id -&gt; pending map for RPC response matching</li>
-<li>call_id -&gt; <a class="el" href="classsignalwire_1_1relay_1_1Call.html" title="Represents a live call with methods for call control.">Call</a> object map for event routing</li>
-<li>control_id -&gt; <a class="el" href="classsignalwire_1_1relay_1_1Action.html" title="Represents a controllable in-progress operation (play, record, collect, etc.) Uses shared internal st...">Action</a> per <a class="el" href="classsignalwire_1_1relay_1_1Call.html" title="Represents a live call with methods for call control.">Call</a> for action event routing</li>
+<li>call_id -&gt; <a class="el" href="classsignalwire_1_1relay_1_1Call.html">Call</a> object map for event routing</li>
+<li>control_id -&gt; <a class="el" href="classsignalwire_1_1relay_1_1Action.html">Action</a> per <a class="el" href="classsignalwire_1_1relay_1_1Call.html">Call</a> for action event routing</li>
 <li>tag -&gt; pending dials map for dial event matching </li>
 </ol>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -358,10 +336,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Dial outbound. </p>
-<p>The <span class="tt">devices</span> argument is the nested "device-of-leg-of-leg" array used by the Python SDK (<span class="tt">[[{type:phone,...}]]</span>). Returns a <a class="el" href="classsignalwire_1_1relay_1_1Call.html" title="Represents a live call with methods for call control.">Call</a> once the server emits calling.call.dial(answered) for the dial's tag, or an empty <a class="el" href="classsignalwire_1_1relay_1_1Call.html" title="Represents a live call with methods for call control.">Call</a> on timeout / failure.</p>
-<p><span class="tt">tag</span> lets callers pin an explicit dial tag for journal-based assertions; if blank, a UUID is generated. <span class="tt">dial_timeout_ms</span> caps how long <a class="el" href="#a2c1ffec3d79c3a0f97397cf43a123588" title="Dial outbound.">dial()</a> blocks waiting for the server's terminal dial event. <span class="tt">max_duration</span> (seconds) is forwarded into the calling.dial frame when non-zero. </p>
+<p>Dial outbound. The <span class="tt">devices</span> argument is the nested "device-of-leg-of-leg" array used by the Python SDK (<span class="tt">[[{type:phone,...}]]</span>). Returns a <a class="el" href="classsignalwire_1_1relay_1_1Call.html">Call</a> once the server emits calling.call.dial(answered) for the dial's tag, or an empty <a class="el" href="classsignalwire_1_1relay_1_1Call.html">Call</a> on timeout / failure.</p>
+<p><span class="tt">tag</span> lets callers pin an explicit dial tag for journal-based assertions; if blank, a UUID is generated. <span class="tt">dial_timeout_ms</span> caps how long <a class="el" href="#a2c1ffec3d79c3a0f97397cf43a123588">dial()</a> blocks waiting for the server's terminal dial event. <span class="tt">max_duration</span> (seconds) is forwarded into the calling.dial frame when non-zero. </p>
 
 </div>
 </div>
@@ -420,8 +396,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aab45825c05e0dd355c4ba0fa6982c573" name="aab45825c05e0dd355c4ba0fa6982c573"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab45825c05e0dd355c4ba0fa6982c573">&#9670;&#160;</a></span>from_env()</h2>
+<a id="a2589c55b9c2420e1c24941d5389af3d4" name="a2589c55b9c2420e1c24941d5389af3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2589c55b9c2420e1c24941d5389af3d4">&#9670;&#160;</a></span>from_env()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -442,8 +418,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Construct from environment variables: SIGNALWIRE_PROJECT_ID, SIGNALWIRE_API_TOKEN, SIGNALWIRE_SPACE. </p>
+<p>Construct from environment variables: SIGNALWIRE_PROJECT_ID, SIGNALWIRE_API_TOKEN, SIGNALWIRE_SPACE </p>
 
 </div>
 </div>
@@ -503,9 +478,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Register a generic event observer. </p>
-<p>Called for every dispatched <span class="tt">signalwire.event</span> after typed routing (on_call/on_message/action callbacks) has run. Multiple registrations are NOT supported — the most-recent registration wins. </p>
+<p>Register a generic event observer. Called for every dispatched <span class="tt">signalwire.event</span> after typed routing (on_call/on_message/action callbacks) has run. Multiple registrations are NOT supported — the most-recent registration wins. </p>
 
 </div>
 </div>
@@ -657,9 +630,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Send an SMS/MMS message via messaging.send. </p>
-<p>Returns a <a class="el" href="structsignalwire_1_1relay_1_1Message.html" title="Represents an SMS/MMS message tracked through delivery states.">Message</a> tracker whose state advances as the server pushes messaging.state events. Use <span class="tt"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a11bedfe298bc164afb5e4f52349a5613" title="Block until message reaches a terminal state.">Message::wait()</a></span> to block until the terminal state (<span class="tt">delivered</span> / <span class="tt">undelivered</span> / <span class="tt">failed</span>). </p>
+<p>Send an SMS/MMS message via messaging.send. Returns a <a class="el" href="structsignalwire_1_1relay_1_1Message.html">Message</a> tracker whose state advances as the server pushes messaging.state events. Use <span class="tt"><a class="el" href="structsignalwire_1_1relay_1_1Message.html#a11bedfe298bc164afb5e4f52349a5613">Message::wait()</a></span> to block until the terminal state (<span class="tt">delivered</span> / <span class="tt">undelivered</span> / <span class="tt">failed</span>). </p>
 
 </div>
 </div>
@@ -681,9 +652,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Send a JSON-RPC request to the server. </p>
-<p>Public so harnesses and tests can drive arbitrary methods (e.g. an explicit <span class="tt">signalwire.subscribe</span> ack frame for the audit fixture). </p>
+<p>Send a JSON-RPC request to the server. Public so harnesses and tests can drive arbitrary methods (e.g. an explicit <span class="tt">signalwire.subscribe</span> ack frame for the audit fixture). </p>
 
 </div>
 </div>
@@ -738,8 +707,9 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/cpp/include/signalwire/relay/<a class="el" href="client_8hpp_source.html">client.hpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>_build/sdks/signalwire-cpp/include/signalwire/relay/<a class="el" href="client_8hpp_source.html">client.hpp</a></li>
+<li>_build/sdks/signalwire-cpp/src/relay/<a class="el" href="client_8cpp.html">client.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

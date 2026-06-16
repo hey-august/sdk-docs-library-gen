@@ -10,6 +10,7 @@ var classsignalwire_1_1relay_1_1RelayClient =
     [ "disconnect", "classsignalwire_1_1relay_1_1RelayClient.html#a3616f5b6eb4a5479eb217b1f297f6679", null ],
     [ "execute", "classsignalwire_1_1relay_1_1RelayClient.html#a8b60f1d5768efa2b324c842994e23c9f", null ],
     [ "find_call", "classsignalwire_1_1relay_1_1RelayClient.html#a64bf5afbfe2e983c359cffcfab871aac", null ],
+    [ "from_env", "classsignalwire_1_1relay_1_1RelayClient.html#a2589c55b9c2420e1c24941d5389af3d4", null ],
     [ "is_connected", "classsignalwire_1_1relay_1_1RelayClient.html#a1210608075c5fde31e572152505ccb65", null ],
     [ "on_call", "classsignalwire_1_1relay_1_1RelayClient.html#a5c6f972e4b4bca93d66f77f49e4007ba", null ],
     [ "on_event", "classsignalwire_1_1relay_1_1RelayClient.html#af00285cf3876c9e6f260c001d018ceec", null ],

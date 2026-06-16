@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -6,9 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SignalWire C++ SDK: /airlock/sdks/cpp/include/signalwire/signalwire_c.h File Reference</title>
+<title>SignalWire C++ SDK: _build/sdks/signalwire-cpp/include/signalwire/signalwire_c.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -145,53 +132,29 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac9e766ff710e54ad8db410ef9f73ad06" id="r_ac9e766ff710e54ad8db410ef9f73ad06"><td class="memItemLeft"><a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac9e766ff710e54ad8db410ef9f73ad06">sw_agent_create</a> (const char *name)</td></tr>
-<tr class="memdesc:ac9e766ff710e54ad8db410ef9f73ad06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new agent with the given name.  <br /></td></tr>
 <tr class="memitem:a9033a5732c889a724e91b606ca33c7de" id="r_a9033a5732c889a724e91b606ca33c7de"><td class="memItemLeft"><a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9033a5732c889a724e91b606ca33c7de">sw_agent_create_full</a> (const char *name, const char *route, const char *host, int port)</td></tr>
-<tr class="memdesc:a9033a5732c889a724e91b606ca33c7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new agent with name, route, host, and port.  <br /></td></tr>
 <tr class="memitem:a6d8778eabf7aba6b399b77f51879f734" id="r_a6d8778eabf7aba6b399b77f51879f734"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6d8778eabf7aba6b399b77f51879f734">sw_agent_destroy</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent)</td></tr>
-<tr class="memdesc:a6d8778eabf7aba6b399b77f51879f734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy an agent and free all associated resources.  <br /></td></tr>
 <tr class="memitem:afa9940ff65359f6ecd8ba2456bcfc010" id="r_afa9940ff65359f6ecd8ba2456bcfc010"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afa9940ff65359f6ecd8ba2456bcfc010">sw_agent_set_prompt</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent, const char *text)</td></tr>
-<tr class="memdesc:afa9940ff65359f6ecd8ba2456bcfc010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the raw prompt text (replaces POM).  <br /></td></tr>
 <tr class="memitem:a7f0bfa586f08d4643e9532c93315398b" id="r_a7f0bfa586f08d4643e9532c93315398b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7f0bfa586f08d4643e9532c93315398b">sw_agent_add_section</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent, const char *title, const char *body)</td></tr>
-<tr class="memdesc:a7f0bfa586f08d4643e9532c93315398b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a POM section with title and body.  <br /></td></tr>
 <tr class="memitem:ae134f9e0cfd13a61b27b709fa9f07f78" id="r_ae134f9e0cfd13a61b27b709fa9f07f78"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae134f9e0cfd13a61b27b709fa9f07f78">sw_agent_add_section_bullets</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent, const char *title, const char **bullets)</td></tr>
-<tr class="memdesc:ae134f9e0cfd13a61b27b709fa9f07f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a POM section with title and bullet points.  <br /></td></tr>
 <tr class="memitem:ab763f13c0dfe457e164569a99710a36c" id="r_ab763f13c0dfe457e164569a99710a36c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab763f13c0dfe457e164569a99710a36c">sw_agent_set_post_prompt</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent, const char *text)</td></tr>
-<tr class="memdesc:ab763f13c0dfe457e164569a99710a36c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the post-prompt text for summary generation.  <br /></td></tr>
 <tr class="memitem:a0b7b3446360ec9615f4a76a690f89337" id="r_a0b7b3446360ec9615f4a76a690f89337"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0b7b3446360ec9615f4a76a690f89337">sw_agent_define_tool</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent, const char *name, const char *description, const char *params_json, <a class="el" href="#a6676e53f4bc55fb9580ddedbdf6b4d71">sw_tool_handler_t</a> handler, void *user_data)</td></tr>
-<tr class="memdesc:a0b7b3446360ec9615f4a76a690f89337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a tool (SWAIG function) on the agent.  <br /></td></tr>
 <tr class="memitem:a1ea408ca794b546b426a26d4be31db8c" id="r_a1ea408ca794b546b426a26d4be31db8c"><td class="memItemLeft">char **&#160;</td><td class="memItemRight"><a class="el" href="#a1ea408ca794b546b426a26d4be31db8c">sw_agent_list_tools</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent)</td></tr>
-<tr class="memdesc:a1ea408ca794b546b426a26d4be31db8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">List tool names.  <br /></td></tr>
 <tr class="memitem:a107190ffc345abe8c378e0df773dbc11" id="r_a107190ffc345abe8c378e0df773dbc11"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a107190ffc345abe8c378e0df773dbc11">sw_free_string_array</a> (char **arr)</td></tr>
-<tr class="memdesc:a107190ffc345abe8c378e0df773dbc11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a string array returned by <a class="el" href="#a1ea408ca794b546b426a26d4be31db8c" title="List tool names.">sw_agent_list_tools()</a>.  <br /></td></tr>
 <tr class="memitem:a432f0cd06cd1f0300d1704a3f0dd415b" id="r_a432f0cd06cd1f0300d1704a3f0dd415b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a432f0cd06cd1f0300d1704a3f0dd415b">sw_agent_set_param</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent, const char *key, const char *value_json)</td></tr>
-<tr class="memdesc:a432f0cd06cd1f0300d1704a3f0dd415b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a single AI parameter (value is a JSON string).  <br /></td></tr>
 <tr class="memitem:aeff0fa040a725f8ecd839e1f01b6f599" id="r_aeff0fa040a725f8ecd839e1f01b6f599"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aeff0fa040a725f8ecd839e1f01b6f599">sw_agent_set_global_data</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent, const char *json_str)</td></tr>
-<tr class="memdesc:aeff0fa040a725f8ecd839e1f01b6f599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set global data (JSON object string).  <br /></td></tr>
 <tr class="memitem:ac901f9e5c976e5484af7fcb6d901bf7d" id="r_ac901f9e5c976e5484af7fcb6d901bf7d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac901f9e5c976e5484af7fcb6d901bf7d">sw_agent_add_hint</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent, const char *hint)</td></tr>
-<tr class="memdesc:ac901f9e5c976e5484af7fcb6d901bf7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a speech recognition hint.  <br /></td></tr>
 <tr class="memitem:a042a941622bc660e2edad04c9e611451" id="r_a042a941622bc660e2edad04c9e611451"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a042a941622bc660e2edad04c9e611451">sw_agent_set_auth</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent, const char *username, const char *password)</td></tr>
-<tr class="memdesc:a042a941622bc660e2edad04c9e611451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set basic auth credentials.  <br /></td></tr>
 <tr class="memitem:a23d13b631a64ac376a3f4cb2314aa5df" id="r_a23d13b631a64ac376a3f4cb2314aa5df"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a23d13b631a64ac376a3f4cb2314aa5df">sw_agent_add_skill</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent, const char *skill_name, const char *params_json)</td></tr>
-<tr class="memdesc:a23d13b631a64ac376a3f4cb2314aa5df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a skill by name with optional params (JSON string, or NULL).  <br /></td></tr>
 <tr class="memitem:a90ccaae6d735206678f3e2ce30340e16" id="r_a90ccaae6d735206678f3e2ce30340e16"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a90ccaae6d735206678f3e2ce30340e16">sw_agent_run</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent)</td></tr>
-<tr class="memdesc:a90ccaae6d735206678f3e2ce30340e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the agent HTTP server (blocking).  <br /></td></tr>
 <tr class="memitem:a18c74483d67d82ef923fcf0defca0627" id="r_a18c74483d67d82ef923fcf0defca0627"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a18c74483d67d82ef923fcf0defca0627">sw_agent_serve</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent)</td></tr>
-<tr class="memdesc:a18c74483d67d82ef923fcf0defca0627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the agent HTTP server (blocking, same as run).  <br /></td></tr>
 <tr class="memitem:a20279c3ac2d6dbea8bc5226bc0954800" id="r_a20279c3ac2d6dbea8bc5226bc0954800"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a20279c3ac2d6dbea8bc5226bc0954800">sw_agent_stop</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent)</td></tr>
-<tr class="memdesc:a20279c3ac2d6dbea8bc5226bc0954800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the agent HTTP server.  <br /></td></tr>
 <tr class="memitem:a6e22eff2eaf0788c0f21a4b63b3cbcdc" id="r_a6e22eff2eaf0788c0f21a4b63b3cbcdc"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="#a6e22eff2eaf0788c0f21a4b63b3cbcdc">sw_agent_render_swml</a> (<a class="el" href="#a6b064adca8c7f1d8ee7584b6c8bb15e6">sw_agent_t</a> agent)</td></tr>
-<tr class="memdesc:a6e22eff2eaf0788c0f21a4b63b3cbcdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the agent's SWML document as a JSON string.  <br /></td></tr>
 <tr class="memitem:ac5427cb60f66fa4ba76c44745d0b66c8" id="r_ac5427cb60f66fa4ba76c44745d0b66c8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac5427cb60f66fa4ba76c44745d0b66c8">sw_free_string</a> (char *str)</td></tr>
-<tr class="memdesc:ac5427cb60f66fa4ba76c44745d0b66c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a string returned by <a class="el" href="#a6e22eff2eaf0788c0f21a4b63b3cbcdc" title="Render the agent&#39;s SWML document as a JSON string.">sw_agent_render_swml()</a>.  <br /></td></tr>
 <tr class="memitem:a2dd1f3946d145d9252f61d1f1da6cb36" id="r_a2dd1f3946d145d9252f61d1f1da6cb36"><td class="memItemLeft"><a class="el" href="#a687ea7362a157060bd6bd4a13d8b6542">sw_function_result_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2dd1f3946d145d9252f61d1f1da6cb36">sw_result_create</a> (const char *response)</td></tr>
-<tr class="memdesc:a2dd1f3946d145d9252f61d1f1da6cb36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new FunctionResult with a response string.  <br /></td></tr>
 <tr class="memitem:a9af3e0d921f2c33341cfdeacb355f1cd" id="r_a9af3e0d921f2c33341cfdeacb355f1cd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9af3e0d921f2c33341cfdeacb355f1cd">sw_result_add_action</a> (<a class="el" href="#a687ea7362a157060bd6bd4a13d8b6542">sw_function_result_t</a> result, const char *action_name, const char *action_data_json)</td></tr>
-<tr class="memdesc:a9af3e0d921f2c33341cfdeacb355f1cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an action to a FunctionResult (action_data is a JSON string).  <br /></td></tr>
 <tr class="memitem:a627768527360220c4c29d37de514a37b" id="r_a627768527360220c4c29d37de514a37b"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="#a627768527360220c4c29d37de514a37b">sw_result_to_json</a> (<a class="el" href="#a687ea7362a157060bd6bd4a13d8b6542">sw_function_result_t</a> result)</td></tr>
-<tr class="memdesc:a627768527360220c4c29d37de514a37b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a FunctionResult to a JSON string.  <br /></td></tr>
 <tr class="memitem:a4aa03fa939103ac51c945b96c4397813" id="r_a4aa03fa939103ac51c945b96c4397813"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4aa03fa939103ac51c945b96c4397813">sw_result_destroy</a> (<a class="el" href="#a687ea7362a157060bd6bd4a13d8b6542">sw_function_result_t</a> result)</td></tr>
-<tr class="memdesc:a4aa03fa939103ac51c945b96c4397813"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy a FunctionResult.  <br /></td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="a6b064adca8c7f1d8ee7584b6c8bb15e6" name="a6b064adca8c7f1d8ee7584b6c8bb15e6"></a>
@@ -255,7 +218,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Add a speech recognition hint. </p>
 
 </div>
@@ -283,7 +245,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Add a POM section with title and body. </p>
 
 </div>
@@ -311,9 +272,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add a POM section with title and bullet points. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Add a POM section with title and bullet points. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bullets</td><td>NULL-terminated array of C strings. </td></tr>
   </table>
@@ -345,7 +304,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Add a skill by name with optional params (JSON string, or NULL). </p>
 
 </div>
@@ -364,9 +322,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Create a new agent with the given name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Create a new agent with the given name. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>Display name for the agent (UTF-8). </td></tr>
   </table>
@@ -404,7 +360,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Create a new agent with name, route, host, and port. </p>
 
 </div>
@@ -447,9 +402,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Define a tool (SWAIG function) on the agent. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Define a tool (SWAIG function) on the agent. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>Function name. </td></tr>
     <tr><td class="paramname">description</td><td>Human-readable description. </td></tr>
@@ -476,7 +429,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Destroy an agent and free all associated resources. </p>
 
 </div>
@@ -495,9 +447,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>List tool names. </p>
-<p>Returns a NULL-terminated array of strings. Caller must free the array and each string with <a class="el" href="#a107190ffc345abe8c378e0df773dbc11" title="Free a string array returned by sw_agent_list_tools().">sw_free_string_array()</a>. </p>
+<p>List tool names. Returns a NULL-terminated array of strings. Caller must free the array and each string with <a class="el" href="#a107190ffc345abe8c378e0df773dbc11">sw_free_string_array()</a>. </p>
 
 </div>
 </div>
@@ -515,9 +465,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Render the agent's SWML document as a JSON string. </p>
-<p>Caller must free the returned string with <a class="el" href="#ac5427cb60f66fa4ba76c44745d0b66c8" title="Free a string returned by sw_agent_render_swml().">sw_free_string()</a>. </p>
+<p>Render the agent's SWML document as a JSON string. Caller must free the returned string with <a class="el" href="#ac5427cb60f66fa4ba76c44745d0b66c8">sw_free_string()</a>. </p>
 
 </div>
 </div>
@@ -535,7 +483,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Start the agent HTTP server (blocking). </p>
 
 </div>
@@ -554,7 +501,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Start the agent HTTP server (blocking, same as run). </p>
 
 </div>
@@ -582,7 +528,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Set basic auth credentials. </p>
 
 </div>
@@ -605,7 +550,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Set global data (JSON object string). </p>
 
 </div>
@@ -633,7 +577,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Set a single AI parameter (value is a JSON string). </p>
 
 </div>
@@ -656,7 +599,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Set the post-prompt text for summary generation. </p>
 
 </div>
@@ -679,7 +621,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Set the raw prompt text (replaces POM). </p>
 
 </div>
@@ -698,7 +639,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Stop the agent HTTP server. </p>
 
 </div>
@@ -717,8 +657,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Free a string returned by <a class="el" href="#a6e22eff2eaf0788c0f21a4b63b3cbcdc" title="Render the agent&#39;s SWML document as a JSON string.">sw_agent_render_swml()</a>. </p>
+<p>Free a string returned by <a class="el" href="#a6e22eff2eaf0788c0f21a4b63b3cbcdc">sw_agent_render_swml()</a>. </p>
 
 </div>
 </div>
@@ -736,8 +675,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Free a string array returned by <a class="el" href="#a1ea408ca794b546b426a26d4be31db8c" title="List tool names.">sw_agent_list_tools()</a>. </p>
+<p>Free a string array returned by <a class="el" href="#a1ea408ca794b546b426a26d4be31db8c">sw_agent_list_tools()</a>. </p>
 
 </div>
 </div>
@@ -764,7 +702,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Add an action to a FunctionResult (action_data is a JSON string). </p>
 
 </div>
@@ -783,7 +720,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Create a new FunctionResult with a response string. </p>
 
 </div>
@@ -802,7 +738,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Destroy a FunctionResult. </p>
 
 </div>
@@ -821,9 +756,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serialize a FunctionResult to a JSON string. </p>
-<p>Caller must free the returned string with <a class="el" href="#ac5427cb60f66fa4ba76c44745d0b66c8" title="Free a string returned by sw_agent_render_swml().">sw_free_string()</a>. </p>
+<p>Serialize a FunctionResult to a JSON string. Caller must free the returned string with <a class="el" href="#ac5427cb60f66fa4ba76c44745d0b66c8">sw_free_string()</a>. </p>
 
 </div>
 </div>
@@ -840,7 +773,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_df511e5bd85cec96854b39d5e1c27aa8.html">cpp</a></li><li class="navelem"><a href="dir_07f37e320deb3031a60f4b23b9c60eb5.html">include</a></li><li class="navelem"><a href="dir_165c9c3495e164118c3b5e72d60f21a2.html">signalwire</a></li><li class="navelem"><a href="signalwire__c_8h.html">signalwire_c.h</a></li>
+    <li class="navelem"><a href="dir_45b9293d3daaa82c00b5908f14ebb805.html">_build</a></li><li class="navelem"><a href="dir_2d0381b86cb8190e94539f1366a75a48.html">sdks</a></li><li class="navelem"><a href="dir_229e6c122c130a81955a352883f61d86.html">signalwire-cpp</a></li><li class="navelem"><a href="dir_0eb769a141c66eb9b7388f3811644b95.html">include</a></li><li class="navelem"><a href="dir_0abfdaf45bf5d4fd35fecbf72a0d26fd.html">signalwire</a></li><li class="navelem"><a href="signalwire__c_8h.html">signalwire_c.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::agent Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -148,13 +135,16 @@ Classes</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:ac83e185b68552a0e78ed0dec5e002712" id="r_ac83e185b68552a0e78ed0dec5e002712"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ac83e185b68552a0e78ed0dec5e002712">json</a> = nlohmann::json</td></tr>
 <tr class="memitem:ad61781ce367625670091a89f7c26228d" id="r_ad61781ce367625670091a89f7c26228d"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ad61781ce367625670091a89f7c26228d">PomSection</a> = <a class="el" href="classsignalwire_1_1pom_1_1Section.html">signalwire::pom::Section</a></td></tr>
-<tr class="memdesc:ad61781ce367625670091a89f7c26228d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Back-compat alias for the original <span class="tt"><a class="el" href="#ad61781ce367625670091a89f7c26228d" title="Back-compat alias for the original signalwire::agent::PomSection type.">signalwire::agent::PomSection</a></span> type.  <br /></td></tr>
 <tr class="memitem:a36b7ba841955ddc895c57367d91992bc" id="r_a36b7ba841955ddc895c57367d91992bc"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a36b7ba841955ddc895c57367d91992bc">DynamicConfigCallback</a></td></tr>
 <tr class="memdesc:a36b7ba841955ddc895c57367d91992bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamic config callback type.  <br /></td></tr>
 <tr class="memitem:a3c344835a6e73facee49c15efee4f99d" id="r_a3c344835a6e73facee49c15efee4f99d"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a3c344835a6e73facee49c15efee4f99d">SummaryCallback</a> = std::function&lt;void(const <a class="el" href="#ac83e185b68552a0e78ed0dec5e002712">json</a>&amp; summary, const <a class="el" href="#ac83e185b68552a0e78ed0dec5e002712">json</a>&amp; raw_data)&gt;</td></tr>
 <tr class="memdesc:a3c344835a6e73facee49c15efee4f99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Summary callback type.  <br /></td></tr>
 <tr class="memitem:a1eb54827c046cfcc8dd96978374a0925" id="r_a1eb54827c046cfcc8dd96978374a0925"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a1eb54827c046cfcc8dd96978374a0925">DebugEventCallback</a> = std::function&lt;void(const <a class="el" href="#ac83e185b68552a0e78ed0dec5e002712">json</a>&amp; event)&gt;</td></tr>
 <tr class="memdesc:a1eb54827c046cfcc8dd96978374a0925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug event callback type.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa81d5724fdefc523ef8584be3fd8f215" id="r_aa81d5724fdefc523ef8584be3fd8f215"><td class="memItemLeft">static std::string&#160;</td><td class="memItemRight"><a class="el" href="#aa81d5724fdefc523ef8584be3fd8f215">sorted_list_str</a> (const std::set&lt; std::string &gt; &amp;s)</td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="a1eb54827c046cfcc8dd96978374a0925" name="a1eb54827c046cfcc8dd96978374a0925"></a>
@@ -190,8 +180,8 @@ Typedefs</h2></td></tr>
 <div class="line">    <span class="keyword">const</span> std::map&lt;std::string, std::string&gt;&amp; headers,</div>
 <div class="line">    <span class="keyword">class</span> <a class="code hl_class" href="classsignalwire_1_1agent_1_1AgentBase.html">AgentBase</a>&amp; agent_copy</div>
 <div class="line">)&gt;</div>
-<div class="ttc" id="aclasssignalwire_1_1agent_1_1AgentBase_html"><div class="ttname"><a href="classsignalwire_1_1agent_1_1AgentBase.html">signalwire::agent::AgentBase</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:100</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1agent_html_ac83e185b68552a0e78ed0dec5e002712"><div class="ttname"><a href="#ac83e185b68552a0e78ed0dec5e002712">signalwire::agent::json</a></div><div class="ttdeci">nlohmann::json json</div><div class="ttdef"><b>Definition</b> agent_base.hpp:33</div></div>
+<div class="ttc" id="aclasssignalwire_1_1agent_1_1AgentBase_html"><div class="ttname"><a href="classsignalwire_1_1agent_1_1AgentBase.html">signalwire::agent::AgentBase</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:113</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1agent_html_ac83e185b68552a0e78ed0dec5e002712"><div class="ttname"><a href="#ac83e185b68552a0e78ed0dec5e002712">signalwire::agent::json</a></div><div class="ttdeci">nlohmann::json json</div><div class="ttdef"><b>Definition</b> agent_base.hpp:34</div></div>
 </div><!-- fragment -->
 <p>Dynamic config callback type. </p>
 
@@ -222,9 +212,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Back-compat alias for the original <span class="tt"><a class="el" href="#ad61781ce367625670091a89f7c26228d" title="Back-compat alias for the original signalwire::agent::PomSection type.">signalwire::agent::PomSection</a></span> type. </p>
-<p>The implementation now lives in <span class="tt"><a class="el" href="classsignalwire_1_1pom_1_1Section.html" title="One section in the Prompt Object Model tree.">signalwire::pom::Section</a></span> — see <span class="tt"><a class="el" href="pom_8hpp.html">signalwire/pom/pom.hpp</a></span> for the full API (render_markdown, render_xml, numbered/numberedBullets fields, etc.). New code should use <span class="tt"><a class="el" href="classsignalwire_1_1pom_1_1Section.html" title="One section in the Prompt Object Model tree.">signalwire::pom::Section</a></span> directly. </p>
+<p>Back-compat alias for the original <span class="tt"><a class="el" href="#ad61781ce367625670091a89f7c26228d">signalwire::agent::PomSection</a></span> type. The implementation now lives in <span class="tt"><a class="el" href="classsignalwire_1_1pom_1_1Section.html">signalwire::pom::Section</a></span> — see <span class="tt"><a class="el" href="pom_8hpp.html">signalwire/pom/pom.hpp</a></span> for the full API (render_markdown, render_xml, numbered/numberedBullets fields, etc.). New code should use <span class="tt"><a class="el" href="classsignalwire_1_1pom_1_1Section.html">signalwire::pom::Section</a></span> directly. </p>
 
 </div>
 </div>
@@ -241,6 +229,32 @@ Typedefs</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Summary callback type. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="aa81d5724fdefc523ef8584be3fd8f215" name="aa81d5724fdefc523ef8584be3fd8f215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa81d5724fdefc523ef8584be3fd8f215">&#9670;&#160;</a></span>sorted_list_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string signalwire::agent::sorted_list_str </td>
+          <td>(</td>
+          <td class="paramtype">const std::set&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['questions_0',['questions',['../classsignalwire_1_1contexts_1_1GatherInfo.html#a88bff32eacb4c213b6dd3059c8a17c12',1,'signalwire::contexts::GatherInfo']]],
-  ['queues_1',['queues',['../structsignalwire_1_1rest_1_1RestClient_1_1CompatNamespace.html#aeb0f1d265cc427857680a1e0a0b3c154',1,'signalwire::rest::RestClient::CompatNamespace::queues'],['../classsignalwire_1_1rest_1_1RestClient.html#a8657021109b47d648caf22a6556a3bfd',1,'signalwire::rest::RestClient::queues()']]],
-  ['queuesnamespace_2',['QueuesNamespace',['../structsignalwire_1_1rest_1_1RestClient_1_1QueuesNamespace.html',1,'signalwire::rest::RestClient::QueuesNamespace'],['../structsignalwire_1_1rest_1_1RestClient_1_1QueuesNamespace.html#a703e2d6a40b980f9df715e444a8a3f06',1,'signalwire::rest::RestClient::QueuesNamespace::QueuesNamespace()']]]
+  ['queued_1',['Queued',['../namespacesignalwire_1_1relay.html#a75996324635ebc14a81465f46d9af84da7b2f31b90fe1c2cc33a52233c1925df3',1,'signalwire::relay']]],
+  ['queues_2',['queues',['../structsignalwire_1_1rest_1_1RestClient_1_1CompatNamespace.html#aeb0f1d265cc427857680a1e0a0b3c154',1,'signalwire::rest::RestClient::CompatNamespace::queues'],['../classsignalwire_1_1rest_1_1RestClient.html#a8657021109b47d648caf22a6556a3bfd',1,'signalwire::rest::RestClient::queues()']]],
+  ['queuesnamespace_3',['QueuesNamespace',['../structsignalwire_1_1rest_1_1RestClient_1_1QueuesNamespace.html',1,'signalwire::rest::RestClient::QueuesNamespace'],['../structsignalwire_1_1rest_1_1RestClient_1_1QueuesNamespace.html#a703e2d6a40b980f9df715e444a8a3f06',1,'signalwire::rest::RestClient::QueuesNamespace::QueuesNamespace()']]]
 ];

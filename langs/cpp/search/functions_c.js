@@ -34,7 +34,7 @@ var searchData=
   ['load_5ffrom_5fstring_31',['load_from_string',['../classsignalwire_1_1swml_1_1Schema.html#aa8fc89347eb51e3d1894de6c282ed118',1,'signalwire::swml::Schema']]],
   ['load_5fschema_32',['load_schema',['../classsignalwire_1_1utils_1_1SchemaUtils.html#ac321d8a8baf8c46af4c59df5abbd7b75',1,'signalwire::utils::SchemaUtils']]],
   ['load_5fskill_33',['load_skill',['../classsignalwire_1_1skills_1_1SkillManager.html#a7b0d1929d81654f5062ddaadd72a91f2',1,'signalwire::skills::SkillManager']]],
-  ['log_34',['log',['../classsignalwire_1_1Logger.html#a2d04980b37dffc03bf0eaaf41feead76',1,'signalwire::Logger']]],
+  ['log_34',['log',['../classsignalwire_1_1Logger.html#a34da3705cf88cd4ab871c47bba6f1a3d',1,'signalwire::Logger']]],
   ['logger_35',['Logger',['../classsignalwire_1_1logging_1_1Logger.html#abe42b791d1caed546d17ddb12faf68d2',1,'signalwire::logging::Logger']]],
   ['logs_36',['logs',['../classsignalwire_1_1rest_1_1RestClient.html#acfadba4e5a9c150e79e79e17de1a8ced',1,'signalwire::rest::RestClient']]],
   ['logsconferences_37',['LogsConferences',['../structsignalwire_1_1rest_1_1RestClient_1_1LogsConferences.html#aa36da07b27b86b96e56d72b09e60ccfb',1,'signalwire::rest::RestClient::LogsConferences']]],

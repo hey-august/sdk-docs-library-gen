@@ -4,7 +4,7 @@ var namespacesignalwire_1_1utils =
       [ "ResolverFn", "namespacesignalwire_1_1utils_1_1url__validator.html#ae81fde57c786ad9c2dbf3c39019a0f99", null ],
       [ "_set_resolver", "namespacesignalwire_1_1utils_1_1url__validator.html#ad9b165a3e04186e78943258ce13cd259", null ],
       [ "validate_url", "namespacesignalwire_1_1utils_1_1url__validator.html#ac0de7c702bd0fdecb483b73b97633081", null ],
-      [ "BLOCKED_NETWORKS", "namespacesignalwire_1_1utils_1_1url__validator.html#a6e15e3c3429d06d99dcdabca52677e30", null ]
+      [ "BLOCKED_NETWORKS", "namespacesignalwire_1_1utils_1_1url__validator.html#aa08bdd440cf2e83f71e5e06550bcc445", null ]
     ] ],
     [ "SchemaValidationError", "classsignalwire_1_1utils_1_1SchemaValidationError.html", "classsignalwire_1_1utils_1_1SchemaValidationError" ],
     [ "VerbInfo", "structsignalwire_1_1utils_1_1VerbInfo.html", "structsignalwire_1_1utils_1_1VerbInfo" ],

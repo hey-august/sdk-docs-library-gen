@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -6,9 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SignalWire C++ SDK: /airlock/sdks/cpp/include/signalwire/signalwire.hpp Source File</title>
+<title>SignalWire C++ SDK: _build/sdks/signalwire-cpp/include/signalwire/signalwire.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -159,7 +146,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('signalwire_8hp
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesignalwire.html">signalwire</a> {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_class" href="classsignalwire_1_1rest_1_1RestClient.html">rest::RestClient</a> <a class="code hl_function" href="namespacesignalwire.html#a32a359f22db35d0848fdc259ab0c8be7">RestClient</a>(</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>[[nodiscard]] <a class="code hl_class" href="classsignalwire_1_1rest_1_1RestClient.html">rest::RestClient</a> <a class="code hl_function" href="namespacesignalwire.html#a32a359f22db35d0848fdc259ab0c8be7">RestClient</a>(</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args = {},</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">const</span> std::map&lt;std::string, std::string&gt;&amp; kwargs = {});</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
@@ -167,7 +154,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('signalwire_8hp
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacesignalwire.html#a0dbe740bb175a9d1d97073718f9c994c">add_skill_directory</a>(<span class="keyword">const</span> std::string&amp; path);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>std::map&lt;std::string, std::map&lt;std::string, std::string&gt;&gt;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>[[nodiscard]] std::map&lt;std::string, std::map&lt;std::string, std::string&gt;&gt;</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><a class="code hl_function" href="namespacesignalwire.html#a28f20fd382bbc4e934effd1dc56ef31b">list_skills_with_params</a>();</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>} <span class="comment">// namespace signalwire</span></div>
@@ -178,11 +165,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('signalwire_8hp
 <div class="ttc" id="afunction__result_8hpp_html"><div class="ttname"><a href="function__result_8hpp.html">function_result.hpp</a></div></div>
 <div class="ttc" id="alogging_8hpp_html"><div class="ttname"><a href="logging_8hpp.html">logging.hpp</a></div></div>
 <div class="ttc" id="anamespacesignalwire_1_1skills_html_af747e566b0f9faf5634ea601e7ea25c1"><div class="ttname"><a href="namespacesignalwire_1_1skills.html#af747e566b0f9faf5634ea601e7ea25c1">signalwire::skills::SkillFactory</a></div><div class="ttdeci">std::function&lt; std::unique_ptr&lt; SkillBase &gt;()&gt; SkillFactory</div><div class="ttdoc">Factory function type for creating skill instances.</div><div class="ttdef"><b>Definition</b> skill_base.hpp:118</div></div>
-<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdoc">SignalWire webhook signature validation.</div><div class="ttdef"><b>Definition</b> agent_base.hpp:28</div></div>
-<div class="ttc" id="anamespacesignalwire_html_a0dbe740bb175a9d1d97073718f9c994c"><div class="ttname"><a href="namespacesignalwire.html#a0dbe740bb175a9d1d97073718f9c994c">signalwire::add_skill_directory</a></div><div class="ttdeci">void add_skill_directory(const std::string &amp;path)</div><div class="ttdoc">Add a directory to search for skills.</div><div class="ttdef"><b>Definition</b> signalwire.cpp:94</div></div>
-<div class="ttc" id="anamespacesignalwire_html_a28f20fd382bbc4e934effd1dc56ef31b"><div class="ttname"><a href="namespacesignalwire.html#a28f20fd382bbc4e934effd1dc56ef31b">signalwire::list_skills_with_params</a></div><div class="ttdeci">std::map&lt; std::string, std::map&lt; std::string, std::string &gt; &gt; list_skills_with_params()</div><div class="ttdoc">Get complete schema for all available skills.</div><div class="ttdef"><b>Definition</b> signalwire.cpp:99</div></div>
-<div class="ttc" id="anamespacesignalwire_html_a32a359f22db35d0848fdc259ab0c8be7"><div class="ttname"><a href="namespacesignalwire.html#a32a359f22db35d0848fdc259ab0c8be7">signalwire::RestClient</a></div><div class="ttdeci">rest::RestClient RestClient(const std::vector&lt; std::string &gt; &amp;args={}, const std::map&lt; std::string, std::string &gt; &amp;kwargs={})</div><div class="ttdoc">Top-level convenience entry points — mirror Python&#39;s signalwire/__init__.py package-level helpers (Re...</div><div class="ttdef"><b>Definition</b> signalwire.cpp:46</div></div>
-<div class="ttc" id="anamespacesignalwire_html_aaf84cd9818d8a1444252e8bc88ef37e3"><div class="ttname"><a href="namespacesignalwire.html#aaf84cd9818d8a1444252e8bc88ef37e3">signalwire::register_skill</a></div><div class="ttdeci">void register_skill(skills::SkillFactory factory)</div><div class="ttdoc">Register a custom skill class with the global skill registry.</div><div class="ttdef"><b>Definition</b> signalwire.cpp:79</div></div>
+<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:29</div></div>
+<div class="ttc" id="anamespacesignalwire_html_a0dbe740bb175a9d1d97073718f9c994c"><div class="ttname"><a href="namespacesignalwire.html#a0dbe740bb175a9d1d97073718f9c994c">signalwire::add_skill_directory</a></div><div class="ttdeci">void add_skill_directory(const std::string &amp;path)</div><div class="ttdef"><b>Definition</b> signalwire.cpp:94</div></div>
+<div class="ttc" id="anamespacesignalwire_html_a28f20fd382bbc4e934effd1dc56ef31b"><div class="ttname"><a href="namespacesignalwire.html#a28f20fd382bbc4e934effd1dc56ef31b">signalwire::list_skills_with_params</a></div><div class="ttdeci">std::map&lt; std::string, std::map&lt; std::string, std::string &gt; &gt; list_skills_with_params()</div><div class="ttdef"><b>Definition</b> signalwire.cpp:99</div></div>
+<div class="ttc" id="anamespacesignalwire_html_a32a359f22db35d0848fdc259ab0c8be7"><div class="ttname"><a href="namespacesignalwire.html#a32a359f22db35d0848fdc259ab0c8be7">signalwire::RestClient</a></div><div class="ttdeci">rest::RestClient RestClient(const std::vector&lt; std::string &gt; &amp;args={}, const std::map&lt; std::string, std::string &gt; &amp;kwargs={})</div><div class="ttdef"><b>Definition</b> signalwire.cpp:46</div></div>
+<div class="ttc" id="anamespacesignalwire_html_aaf84cd9818d8a1444252e8bc88ef37e3"><div class="ttname"><a href="namespacesignalwire.html#aaf84cd9818d8a1444252e8bc88ef37e3">signalwire::register_skill</a></div><div class="ttdeci">void register_skill(skills::SkillFactory factory)</div><div class="ttdef"><b>Definition</b> signalwire.cpp:79</div></div>
 <div class="ttc" id="arest__client_8hpp_html"><div class="ttname"><a href="rest__client_8hpp.html">rest_client.hpp</a></div></div>
 <div class="ttc" id="aschema_8hpp_html"><div class="ttname"><a href="schema_8hpp.html">schema.hpp</a></div></div>
 <div class="ttc" id="aservice_8hpp_html"><div class="ttname"><a href="service_8hpp.html">service.hpp</a></div></div>
@@ -196,7 +183,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('signalwire_8hp
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_df511e5bd85cec96854b39d5e1c27aa8.html">cpp</a></li><li class="navelem"><a href="dir_07f37e320deb3031a60f4b23b9c60eb5.html">include</a></li><li class="navelem"><a href="dir_165c9c3495e164118c3b5e72d60f21a2.html">signalwire</a></li><li class="navelem"><a href="signalwire_8hpp.html">signalwire.hpp</a></li>
+    <li class="navelem"><a href="dir_45b9293d3daaa82c00b5908f14ebb805.html">_build</a></li><li class="navelem"><a href="dir_2d0381b86cb8190e94539f1366a75a48.html">sdks</a></li><li class="navelem"><a href="dir_229e6c122c130a81955a352883f61d86.html">signalwire-cpp</a></li><li class="navelem"><a href="dir_0eb769a141c66eb9b7388f3811644b95.html">include</a></li><li class="navelem"><a href="dir_0abfdaf45bf5d4fd35fecbf72a0d26fd.html">signalwire</a></li><li class="navelem"><a href="signalwire_8hpp.html">signalwire.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

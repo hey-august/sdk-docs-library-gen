@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: SignalWire C++ SDK</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,8 +120,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
   <div class="headertitle"><div class="title">SignalWire C++ SDK </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__2airlock_2sdks_2cpp_2README"></a></p>
-<div align="center"> <a href="https://signalwire.com" target="_blank"><img src="https://github.com/user-attachments/assets/0c8ed3b9-8c50-4dc6-9cc4-cc6cd137fd50" alt="" width="500" class="inline"/> </a></div><div align="center"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
+<div class="textblock"><p><a class="anchor" id="md___build_2sdks_2signalwire-cpp_2README"></a></p>
+<div align="center"> <a href="https://signalwire.com" target="_blank"><img src="/assets/img/signalwire-wordmark.png" alt="" width="500" class="inline"/> </a></div><div align="center"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
 <div align="center">SignalWire SDK for C++</div></h1>
 <div align="center"></div><div align="center"><em>Build AI voice agents, control live calls over WebSocket, and manage every SignalWire resource over REST &ndash; all from modern C++17.</em></div><div align="center"></div><div align="center"> <a href="https://developer.signalwire.com/sdks/agents-sdk" target="_blank">Documentation</a> &middot; <a href="https://github.com/signalwire/signalwire-docs/issues/new/choose" target="_blank">Report an Issue</a> &middot; <a href="https://github.com/signalwire/signalwire-cpp" target="_blank">GitHub</a> </div><div align="center"></div><div align="center"><a href="https://discord.com/invite/F2WNYTNjuF" target="_blank"><img src="https://img.shields.io/badge/Discord%20Community-5865F2" alt="Discord" class="inline"/></a> <a href="LICENSE"><img src="https://img.shields.io/badge/MIT-License-blue" alt="MIT License" class="inline"/></a> <a href="https://github.com/signalwire/signalwire-cpp" target="_blank"><img src="https://img.shields.io/github/stars/signalwire/signalwire-cpp" alt="GitHub Stars" class="inline"/></a></div><div align="center"></div><hr  />
 <h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
@@ -185,10 +172,10 @@ AI Agents</h2>
 <div class="line">    <a class="code hl_namespace" href="namespacesignalwire_1_1agent.html">agent</a>.run();  <span class="comment">// Serves on http://0.0.0.0:3000/agent</span></div>
 <div class="line">}</div>
 <div class="ttc" id="aagent__base_8hpp_html"><div class="ttname"><a href="agent__base_8hpp.html">agent_base.hpp</a></div></div>
-<div class="ttc" id="aclasssignalwire_1_1agent_1_1AgentBase_html"><div class="ttname"><a href="classsignalwire_1_1agent_1_1AgentBase.html">signalwire::agent::AgentBase</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:100</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1agent_html"><div class="ttname"><a href="namespacesignalwire_1_1agent.html">signalwire::agent</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:31</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1agent_html_ac83e185b68552a0e78ed0dec5e002712"><div class="ttname"><a href="namespacesignalwire_1_1agent.html#ac83e185b68552a0e78ed0dec5e002712">signalwire::agent::json</a></div><div class="ttdeci">nlohmann::json json</div><div class="ttdef"><b>Definition</b> agent_base.hpp:33</div></div>
-<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdoc">SignalWire webhook signature validation.</div><div class="ttdef"><b>Definition</b> agent_base.hpp:28</div></div>
+<div class="ttc" id="aclasssignalwire_1_1agent_1_1AgentBase_html"><div class="ttname"><a href="classsignalwire_1_1agent_1_1AgentBase.html">signalwire::agent::AgentBase</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:113</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1agent_html"><div class="ttname"><a href="namespacesignalwire_1_1agent.html">signalwire::agent</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:32</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1agent_html_ac83e185b68552a0e78ed0dec5e002712"><div class="ttname"><a href="namespacesignalwire_1_1agent.html#ac83e185b68552a0e78ed0dec5e002712">signalwire::agent::json</a></div><div class="ttdeci">nlohmann::json json</div><div class="ttdef"><b>Definition</b> agent_base.hpp:34</div></div>
+<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:29</div></div>
 <div class="ttc" id="anamespacesignalwire_html_a597a913b1ed4dec3657caa0f2b26009a"><div class="ttname"><a href="namespacesignalwire.html#a597a913b1ed4dec3657caa0f2b26009a">signalwire::json</a></div><div class="ttdeci">nlohmann::json json</div><div class="ttdef"><b>Definition</b> common.hpp:32</div></div>
 </div><!-- fragment --><p>Test locally without running a server:</p>
 <div class="fragment"><div class="line">bin/swaig-test http://localhost:3000/agent --list-tools</div>
@@ -244,7 +231,7 @@ RELAY Client</h2>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacesignalwire_1_1relay.html">signalwire::relay</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> client = <a class="code hl_function" href="classsignalwire_1_1relay_1_1RelayClient.html#aab45825c05e0dd355c4ba0fa6982c573">RelayClient::from_env</a>();</div>
+<div class="line">    <span class="keyword">auto</span> client = <a class="code hl_function" href="classsignalwire_1_1relay_1_1RelayClient.html#a2589c55b9c2420e1c24941d5389af3d4">RelayClient::from_env</a>();</div>
 <div class="line"> </div>
 <div class="line">    client.on_call([](<a class="code hl_class" href="classsignalwire_1_1relay_1_1Call.html">Call</a>&amp; call) {</div>
 <div class="line">        call.<a class="code hl_function" href="classsignalwire_1_1relay_1_1Call.html#a74bba14c8b2c8e9a9bc7ce04618120b8">answer</a>();</div>
@@ -257,12 +244,12 @@ RELAY Client</h2>
 <div class="line"> </div>
 <div class="line">    client.run();</div>
 <div class="line">}</div>
-<div class="ttc" id="aclasssignalwire_1_1relay_1_1Action_html_abf496532e48f0cb8712129abd105f23b"><div class="ttname"><a href="classsignalwire_1_1relay_1_1Action.html#abf496532e48f0cb8712129abd105f23b">signalwire::relay::Action::wait</a></div><div class="ttdeci">bool wait(int timeout_ms=0)</div><div class="ttdoc">Block until the action completes or times out.</div></div>
-<div class="ttc" id="aclasssignalwire_1_1relay_1_1Call_html"><div class="ttname"><a href="classsignalwire_1_1relay_1_1Call.html">signalwire::relay::Call</a></div><div class="ttdoc">Represents a live call with methods for call control.</div><div class="ttdef"><b>Definition</b> call.hpp:31</div></div>
-<div class="ttc" id="aclasssignalwire_1_1relay_1_1Call_html_a74bba14c8b2c8e9a9bc7ce04618120b8"><div class="ttname"><a href="classsignalwire_1_1relay_1_1Call.html#a74bba14c8b2c8e9a9bc7ce04618120b8">signalwire::relay::Call::answer</a></div><div class="ttdeci">Action answer()</div></div>
-<div class="ttc" id="aclasssignalwire_1_1relay_1_1Call_html_a835589fffd800529bd4b457cac5faebf"><div class="ttname"><a href="classsignalwire_1_1relay_1_1Call.html#a835589fffd800529bd4b457cac5faebf">signalwire::relay::Call::hangup</a></div><div class="ttdeci">Action hangup(const std::string &amp;reason=&quot;hangup&quot;)</div></div>
-<div class="ttc" id="aclasssignalwire_1_1relay_1_1Call_html_a9ade73c609b9995a70b83ffac1d5de07"><div class="ttname"><a href="classsignalwire_1_1relay_1_1Call.html#a9ade73c609b9995a70b83ffac1d5de07">signalwire::relay::Call::play</a></div><div class="ttdeci">Action play(const json &amp;media, double volume=0.0, const std::string &amp;control_id=&quot;&quot;)</div></div>
-<div class="ttc" id="aclasssignalwire_1_1relay_1_1RelayClient_html_aab45825c05e0dd355c4ba0fa6982c573"><div class="ttname"><a href="classsignalwire_1_1relay_1_1RelayClient.html#aab45825c05e0dd355c4ba0fa6982c573">signalwire::relay::RelayClient::from_env</a></div><div class="ttdeci">static RelayClient from_env()</div><div class="ttdoc">Construct from environment variables: SIGNALWIRE_PROJECT_ID, SIGNALWIRE_API_TOKEN,...</div></div>
+<div class="ttc" id="aclasssignalwire_1_1relay_1_1Action_html_abf496532e48f0cb8712129abd105f23b"><div class="ttname"><a href="classsignalwire_1_1relay_1_1Action.html#abf496532e48f0cb8712129abd105f23b">signalwire::relay::Action::wait</a></div><div class="ttdeci">bool wait(int timeout_ms=0)</div><div class="ttdef"><b>Definition</b> action.cpp:43</div></div>
+<div class="ttc" id="aclasssignalwire_1_1relay_1_1Call_html"><div class="ttname"><a href="classsignalwire_1_1relay_1_1Call.html">signalwire::relay::Call</a></div><div class="ttdef"><b>Definition</b> call.hpp:33</div></div>
+<div class="ttc" id="aclasssignalwire_1_1relay_1_1Call_html_a74bba14c8b2c8e9a9bc7ce04618120b8"><div class="ttname"><a href="classsignalwire_1_1relay_1_1Call.html#a74bba14c8b2c8e9a9bc7ce04618120b8">signalwire::relay::Call::answer</a></div><div class="ttdeci">Action answer()</div><div class="ttdef"><b>Definition</b> call.cpp:139</div></div>
+<div class="ttc" id="aclasssignalwire_1_1relay_1_1Call_html_a835589fffd800529bd4b457cac5faebf"><div class="ttname"><a href="classsignalwire_1_1relay_1_1Call.html#a835589fffd800529bd4b457cac5faebf">signalwire::relay::Call::hangup</a></div><div class="ttdeci">Action hangup(const std::string &amp;reason=&quot;hangup&quot;)</div><div class="ttdef"><b>Definition</b> call.cpp:143</div></div>
+<div class="ttc" id="aclasssignalwire_1_1relay_1_1Call_html_a9ade73c609b9995a70b83ffac1d5de07"><div class="ttname"><a href="classsignalwire_1_1relay_1_1Call.html#a9ade73c609b9995a70b83ffac1d5de07">signalwire::relay::Call::play</a></div><div class="ttdeci">Action play(const json &amp;media, double volume=0.0, const std::string &amp;control_id=&quot;&quot;)</div><div class="ttdef"><b>Definition</b> call.cpp:214</div></div>
+<div class="ttc" id="aclasssignalwire_1_1relay_1_1RelayClient_html_a2589c55b9c2420e1c24941d5389af3d4"><div class="ttname"><a href="classsignalwire_1_1relay_1_1RelayClient.html#a2589c55b9c2420e1c24941d5389af3d4">signalwire::relay::RelayClient::from_env</a></div><div class="ttdeci">static RelayClient from_env()</div><div class="ttdef"><b>Definition</b> client.cpp:57</div></div>
 <div class="ttc" id="aclient_8hpp_html"><div class="ttname"><a href="client_8hpp.html">client.hpp</a></div></div>
 <div class="ttc" id="anamespacesignalwire_1_1relay_html"><div class="ttname"><a href="namespacesignalwire_1_1relay.html">signalwire::relay</a></div><div class="ttdef"><b>Definition</b> action.hpp:14</div></div>
 </div><!-- fragment --><ul>
@@ -282,7 +269,7 @@ REST Client</h2>
 <div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="namespacesignalwire.html#a597a913b1ed4dec3657caa0f2b26009a">json</a> = nlohmann::json;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> client = <a class="code hl_function" href="classsignalwire_1_1rest_1_1RestClient.html#abcdb28a5a1d1a0c8ba2103c34886d9c9">RestClient::from_env</a>();</div>
+<div class="line">    <span class="keyword">auto</span> client = <a class="code hl_function" href="classsignalwire_1_1rest_1_1RestClient.html#a0698d130bff67ef95571c308ce875948">RestClient::from_env</a>();</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">auto</span> agents = client.fabric().agents.list();</div>
 <div class="line">    <span class="keyword">auto</span> call   = client.calling().dial({</div>
@@ -292,8 +279,8 @@ REST Client</h2>
 <div class="line">    <span class="keyword">auto</span> numbers = client.phone_numbers().search({{<span class="stringliteral">&quot;area_code&quot;</span>, <span class="stringliteral">&quot;512&quot;</span>}});</div>
 <div class="line">    <span class="keyword">auto</span> results = client.datasphere().documents.search({{<span class="stringliteral">&quot;query_string&quot;</span>, <span class="stringliteral">&quot;billing policy&quot;</span>}});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclasssignalwire_1_1rest_1_1RestClient_html_abcdb28a5a1d1a0c8ba2103c34886d9c9"><div class="ttname"><a href="classsignalwire_1_1rest_1_1RestClient.html#abcdb28a5a1d1a0c8ba2103c34886d9c9">signalwire::rest::RestClient::from_env</a></div><div class="ttdeci">static RestClient from_env()</div><div class="ttdoc">Initialize from environment variables.</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1rest_html"><div class="ttname"><a href="namespacesignalwire_1_1rest.html">signalwire::rest</a></div><div class="ttdef"><b>Definition</b> http_client.hpp:12</div></div>
+<div class="ttc" id="aclasssignalwire_1_1rest_1_1RestClient_html_a0698d130bff67ef95571c308ce875948"><div class="ttname"><a href="classsignalwire_1_1rest_1_1RestClient.html#a0698d130bff67ef95571c308ce875948">signalwire::rest::RestClient::from_env</a></div><div class="ttdeci">static RestClient from_env()</div><div class="ttdoc">Initialize from environment variables.</div><div class="ttdef"><b>Definition</b> rest_client.cpp:18</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1rest_html"><div class="ttname"><a href="namespacesignalwire_1_1rest.html">signalwire::rest</a></div><div class="ttdef"><b>Definition</b> http_client.hpp:14</div></div>
 <div class="ttc" id="arest__client_8hpp_html"><div class="ttname"><a href="rest__client_8hpp.html">rest_client.hpp</a></div></div>
 </div><!-- fragment --><ul>
 <li>21 namespaced API surfaces: Fabric (13 resource types), Calling (37 commands), Video, Datasphere, Compat (Twilio-compatible), Phone Numbers, SIP, Queues, Recordings, and more</li>

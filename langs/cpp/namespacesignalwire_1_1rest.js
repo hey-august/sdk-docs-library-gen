@@ -19,5 +19,7 @@ var namespacesignalwire_1_1rest =
       [ "VideoRoom", "namespacesignalwire_1_1rest.html#a72143ace77c2c9601a993eadc491f0d4a2b160b8a3a66f3085aa83cb0d7e14669", null ],
       [ "Dialogflow", "namespacesignalwire_1_1rest.html#a72143ace77c2c9601a993eadc491f0d4aeec3bee6aa1cd9fe37e89ffe13deeb35", null ]
     ] ],
+    [ "make_headers", "namespacesignalwire_1_1rest.html#a57daa54a62a3a4091e3867142af8e429", null ],
+    [ "parse_url", "namespacesignalwire_1_1rest.html#a185552b3930ee4176a2d5dd58f7c4921", null ],
     [ "to_wire_string", "namespacesignalwire_1_1rest.html#a3e234e74cc0fd92414ad3b37a2035306", null ]
 ];

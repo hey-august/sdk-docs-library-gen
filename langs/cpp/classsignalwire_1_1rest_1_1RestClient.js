@@ -66,6 +66,7 @@ var classsignalwire_1_1rest_1_1RestClient =
     [ "compat", "classsignalwire_1_1rest_1_1RestClient.html#a416f06ea469f25302ca19937f5eec8e7", null ],
     [ "datasphere", "classsignalwire_1_1rest_1_1RestClient.html#afc4be0b3c477d07f72600e1d95fea71a", null ],
     [ "fabric", "classsignalwire_1_1rest_1_1RestClient.html#a383307d4ce69674f4ee46f29dadf0982", null ],
+    [ "from_env", "classsignalwire_1_1rest_1_1RestClient.html#a0698d130bff67ef95571c308ce875948", null ],
     [ "http_client", "classsignalwire_1_1rest_1_1RestClient.html#a1a40f216aa2b3180cb2fe33962a75b8d", null ],
     [ "imported_numbers", "classsignalwire_1_1rest_1_1RestClient.html#a7c01f2fa2829c7b30b71b5a9e4ecbc2d", null ],
     [ "logs", "classsignalwire_1_1rest_1_1RestClient.html#acfadba4e5a9c150e79e79e17de1a8ced", null ],
@@ -82,5 +83,6 @@ var classsignalwire_1_1rest_1_1RestClient =
     [ "short_codes", "classsignalwire_1_1rest_1_1RestClient.html#a3aa02dcaf2112c9128170d9e0f075cb0", null ],
     [ "sip_profile", "classsignalwire_1_1rest_1_1RestClient.html#aa1acc2f4c210d50e11a11312c4bad8dc", null ],
     [ "verified_callers", "classsignalwire_1_1rest_1_1RestClient.html#ae78554ced7275d5005a8e2d64061080a", null ],
-    [ "video", "classsignalwire_1_1rest_1_1RestClient.html#af806f08ff9587e5d00ff128cb54429c2", null ]
+    [ "video", "classsignalwire_1_1rest_1_1RestClient.html#af806f08ff9587e5d00ff128cb54429c2", null ],
+    [ "with_base_url", "classsignalwire_1_1rest_1_1RestClient.html#a3fba15dcbd4b9bb5eff7956966040b99", null ]
 ];

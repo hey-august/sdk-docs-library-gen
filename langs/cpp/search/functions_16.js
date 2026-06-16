@@ -6,7 +6,7 @@ var searchData=
   ['validate_5fauth_3',['validate_auth',['../classsignalwire_1_1agent_1_1AgentBase.html#a3561eed0388e382bc818fcba6f997587',1,'signalwire::agent::AgentBase::validate_auth()'],['../classsignalwire_1_1swml_1_1Service.html#a8f15f716e7c7edd0ef5a8a08b8ec6ad0',1,'signalwire::swml::Service::validate_auth(const httplib::Request &amp;req, httplib::Response &amp;res) const']]],
   ['validate_5fbasic_5fauth_4',['validate_basic_auth',['../classsignalwire_1_1swml_1_1Service.html#a0821838b9238ada44da9450db8381b0f',1,'signalwire::swml::Service']]],
   ['validate_5fdocument_5',['validate_document',['../classsignalwire_1_1utils_1_1SchemaUtils.html#a323f1ba3e00262b1bdb501ad53af026a',1,'signalwire::utils::SchemaUtils']]],
-  ['validate_5ftoken_6',['validate_token',['../classsignalwire_1_1security_1_1SessionManager.html#ae23de35b038ee12209b2e9a08d3c7d8f',1,'signalwire::security::SessionManager']]],
+  ['validate_5ftoken_6',['validate_token',['../classsignalwire_1_1security_1_1SessionManager.html#a6d3f5b4662072c2031ffe51a993d409d',1,'signalwire::security::SessionManager']]],
   ['validate_5ftool_5ftoken_7',['validate_tool_token',['../classsignalwire_1_1agent_1_1AgentBase.html#a6e5281272c01a777009d606b6cdc0ce8',1,'signalwire::agent::AgentBase']]],
   ['validate_5furl_8',['validate_url',['../namespacesignalwire_1_1utils_1_1url__validator.html#ac0de7c702bd0fdecb483b73b97633081',1,'signalwire::utils::url_validator']]],
   ['validate_5fverb_9',['validate_verb',['../classsignalwire_1_1utils_1_1SchemaUtils.html#a3859dd9340dd03141269421b88410f25',1,'signalwire::utils::SchemaUtils']]],

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['message_2ehpp_0',['message.hpp',['../message_8hpp.html',1,'']]]
+  ['http_5fclient_2ecpp_0',['http_client.cpp',['../http__client_8cpp.html',1,'']]],
+  ['http_5fclient_2ehpp_1',['http_client.hpp',['../http__client_8hpp.html',1,'']]]
 ];

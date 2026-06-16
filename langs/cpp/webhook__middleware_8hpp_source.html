@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -6,9 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SignalWire C++ SDK: /airlock/sdks/cpp/include/signalwire/security/webhook_middleware.hpp Source File</title>
+<title>SignalWire C++ SDK: _build/sdks/signalwire-cpp/include/signalwire/security/webhook_middleware.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -158,20 +145,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('webhook__middl
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
 </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="namespacesignalwire_1_1security.html#ae8f7032913bce56280eb2391f32f0006">   64</a></span><a class="code hl_typedef" href="namespacesignalwire_1_1security.html#ac934ddc26ced1b9332fb18288d45a601">HttpHandler</a> <a class="code hl_function" href="namespacesignalwire_1_1security.html#ae8f7032913bce56280eb2391f32f0006">WrapWithSignatureValidation</a>(std::string_view signing_key,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><a class="code hl_typedef" href="namespacesignalwire_1_1security.html#ac934ddc26ced1b9332fb18288d45a601">HttpHandler</a> <a class="code hl_function" href="namespacesignalwire_1_1security.html#ae8f7032913bce56280eb2391f32f0006">WrapWithSignatureValidation</a>(std::string_view signing_key,</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                        <a class="code hl_typedef" href="namespacesignalwire_1_1security.html#ac934ddc26ced1b9332fb18288d45a601">HttpHandler</a> downstream,</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                        <a class="code hl_struct" href="structsignalwire_1_1security_1_1WebhookValidatorOptions.html">WebhookValidatorOptions</a> opts = {});</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>} <span class="comment">// namespace security</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>} <span class="comment">// namespace signalwire</span></div>
-<div class="ttc" id="anamespacehttplib_html"><div class="ttname"><a href="namespacehttplib.html">httplib</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:26</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1security_html"><div class="ttname"><a href="namespacesignalwire_1_1security.html">signalwire::security</a></div><div class="ttdef"><b>Definition</b> session_manager.hpp:9</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1security_html_ac934ddc26ced1b9332fb18288d45a601"><div class="ttname"><a href="namespacesignalwire_1_1security.html#ac934ddc26ced1b9332fb18288d45a601">signalwire::security::HttpHandler</a></div><div class="ttdeci">std::function&lt; void(const httplib::Request &amp;, httplib::Response &amp;)&gt; HttpHandler</div><div class="ttdoc">A cpp-httplib handler signature, lifted into a typedef so the adapter stays framework-agnostic at the...</div><div class="ttdef"><b>Definition</b> webhook_middleware.hpp:19</div></div>
-<div class="ttc" id="anamespacesignalwire_1_1security_html_ae8f7032913bce56280eb2391f32f0006"><div class="ttname"><a href="namespacesignalwire_1_1security.html#ae8f7032913bce56280eb2391f32f0006">signalwire::security::WrapWithSignatureValidation</a></div><div class="ttdeci">HttpHandler WrapWithSignatureValidation(std::string_view signing_key, HttpHandler downstream, WebhookValidatorOptions opts={})</div><div class="ttdoc">Wrap a downstream cpp-httplib POST handler with SignalWire webhook signature validation.</div></div>
-<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdoc">SignalWire webhook signature validation.</div><div class="ttdef"><b>Definition</b> agent_base.hpp:28</div></div>
-<div class="ttc" id="astructsignalwire_1_1security_1_1WebhookValidatorOptions_html"><div class="ttname"><a href="structsignalwire_1_1security_1_1WebhookValidatorOptions.html">signalwire::security::WebhookValidatorOptions</a></div><div class="ttdoc">Optional knobs for WrapWithSignatureValidation.</div><div class="ttdef"><b>Definition</b> webhook_middleware.hpp:26</div></div>
-<div class="ttc" id="astructsignalwire_1_1security_1_1WebhookValidatorOptions_html_a938686c8b0756f5baf0d04520c372849"><div class="ttname"><a href="structsignalwire_1_1security_1_1WebhookValidatorOptions.html#a938686c8b0756f5baf0d04520c372849">signalwire::security::WebhookValidatorOptions::trust_proxy</a></div><div class="ttdeci">bool trust_proxy</div><div class="ttdoc">If true, honor X-Forwarded-Proto / X-Forwarded-Host when reconstructing the URL.</div><div class="ttdef"><b>Definition</b> webhook_middleware.hpp:29</div></div>
-<div class="ttc" id="astructsignalwire_1_1security_1_1WebhookValidatorOptions_html_ae0e6a19ddcfdf499425cbac642a3a041"><div class="ttname"><a href="structsignalwire_1_1security_1_1WebhookValidatorOptions.html#ae0e6a19ddcfdf499425cbac642a3a041">signalwire::security::WebhookValidatorOptions::proxy_url_base</a></div><div class="ttdeci">std::string proxy_url_base</div><div class="ttdoc">Optional base URL (e.g.</div><div class="ttdef"><b>Definition</b> webhook_middleware.hpp:34</div></div>
+<div class="ttc" id="anamespacehttplib_html"><div class="ttname"><a href="namespacehttplib.html">httplib</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:27</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1security_html"><div class="ttname"><a href="namespacesignalwire_1_1security.html">signalwire::security</a></div><div class="ttdef"><b>Definition</b> session_manager.hpp:10</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1security_html_ac934ddc26ced1b9332fb18288d45a601"><div class="ttname"><a href="namespacesignalwire_1_1security.html#ac934ddc26ced1b9332fb18288d45a601">signalwire::security::HttpHandler</a></div><div class="ttdeci">std::function&lt; void(const httplib::Request &amp;, httplib::Response &amp;)&gt; HttpHandler</div><div class="ttdef"><b>Definition</b> webhook_middleware.hpp:19</div></div>
+<div class="ttc" id="anamespacesignalwire_1_1security_html_ae8f7032913bce56280eb2391f32f0006"><div class="ttname"><a href="namespacesignalwire_1_1security.html#ae8f7032913bce56280eb2391f32f0006">signalwire::security::WrapWithSignatureValidation</a></div><div class="ttdeci">HttpHandler WrapWithSignatureValidation(std::string_view signing_key, HttpHandler downstream, WebhookValidatorOptions opts={})</div><div class="ttdef"><b>Definition</b> webhook_middleware.cpp:107</div></div>
+<div class="ttc" id="anamespacesignalwire_html"><div class="ttname"><a href="namespacesignalwire.html">signalwire</a></div><div class="ttdef"><b>Definition</b> agent_base.hpp:29</div></div>
+<div class="ttc" id="astructsignalwire_1_1security_1_1WebhookValidatorOptions_html"><div class="ttname"><a href="structsignalwire_1_1security_1_1WebhookValidatorOptions.html">signalwire::security::WebhookValidatorOptions</a></div><div class="ttdef"><b>Definition</b> webhook_middleware.hpp:26</div></div>
+<div class="ttc" id="astructsignalwire_1_1security_1_1WebhookValidatorOptions_html_a938686c8b0756f5baf0d04520c372849"><div class="ttname"><a href="structsignalwire_1_1security_1_1WebhookValidatorOptions.html#a938686c8b0756f5baf0d04520c372849">signalwire::security::WebhookValidatorOptions::trust_proxy</a></div><div class="ttdeci">bool trust_proxy</div><div class="ttdef"><b>Definition</b> webhook_middleware.hpp:29</div></div>
+<div class="ttc" id="astructsignalwire_1_1security_1_1WebhookValidatorOptions_html_ae0e6a19ddcfdf499425cbac642a3a041"><div class="ttname"><a href="structsignalwire_1_1security_1_1WebhookValidatorOptions.html#ae0e6a19ddcfdf499425cbac642a3a041">signalwire::security::WebhookValidatorOptions::proxy_url_base</a></div><div class="ttdeci">std::string proxy_url_base</div><div class="ttdef"><b>Definition</b> webhook_middleware.hpp:34</div></div>
 <div class="ttc" id="awebhook__validator_8hpp_html"><div class="ttname"><a href="webhook__validator_8hpp.html">webhook_validator.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -179,7 +166,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('webhook__middl
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_df511e5bd85cec96854b39d5e1c27aa8.html">cpp</a></li><li class="navelem"><a href="dir_07f37e320deb3031a60f4b23b9c60eb5.html">include</a></li><li class="navelem"><a href="dir_165c9c3495e164118c3b5e72d60f21a2.html">signalwire</a></li><li class="navelem"><a href="dir_10d808f22e68ff9794ff499c381a0228.html">security</a></li><li class="navelem"><a href="webhook__middleware_8hpp.html">webhook_middleware.hpp</a></li>
+    <li class="navelem"><a href="dir_45b9293d3daaa82c00b5908f14ebb805.html">_build</a></li><li class="navelem"><a href="dir_2d0381b86cb8190e94539f1366a75a48.html">sdks</a></li><li class="navelem"><a href="dir_229e6c122c130a81955a352883f61d86.html">signalwire-cpp</a></li><li class="navelem"><a href="dir_0eb769a141c66eb9b7388f3811644b95.html">include</a></li><li class="navelem"><a href="dir_0abfdaf45bf5d4fd35fecbf72a0d26fd.html">signalwire</a></li><li class="navelem"><a href="dir_7fdc3a5c31534d83d0a6a87710e4c960.html">security</a></li><li class="navelem"><a href="webhook__middleware_8hpp.html">webhook_middleware.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['off_0',['OFF',['../namespacesignalwire_1_1logging.html#a053cd517050472c0ec1df12e6629a42aa88559a0cfd8250c9d65970cc145c92d4',1,'signalwire::logging']]],
-  ['off_1',['Off',['../namespacesignalwire.html#a9ba861b3c2304ef132f42a76ed3c2c82ad15305d7a4e34e02489c74a5ef542f36',1,'signalwire']]]
+  ['get_0',['Get',['../namespacesignalwire_1_1swaig.html#a7692f21e2a5d0d8c5a22bfe18709eabfac55582518cba2c464f29f5bae1c68def',1,'signalwire::swaig']]],
+  ['googlemaps_1',['GoogleMaps',['../namespacesignalwire_1_1skills.html#aea0a47c823a2b793429d857f6210eb95aaddefca19981affa2ff560e5262683de',1,'signalwire::skills']]]
 ];

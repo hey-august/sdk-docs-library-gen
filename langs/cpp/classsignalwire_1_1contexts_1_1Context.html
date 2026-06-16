@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::contexts::Context Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -149,7 +136,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a81f87efbad70727532b978d5c2dcd64e" id="r_a81f87efbad70727532b978d5c2dcd64e"><td class="memItemLeft"><a class="el" href="#aba7f133bb02740ce41e98f378d0396e6">Context</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a81f87efbad70727532b978d5c2dcd64e">move_step</a> (const std::string &amp;name, int position)</td></tr>
 <tr class="memdesc:a81f87efbad70727532b978d5c2dcd64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move a step to a specific position.  <br /></td></tr>
 <tr class="memitem:ae52c94f016e61828914cb3868ea0190f" id="r_ae52c94f016e61828914cb3868ea0190f"><td class="memItemLeft"><a class="el" href="#aba7f133bb02740ce41e98f378d0396e6">Context</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ae52c94f016e61828914cb3868ea0190f">set_initial_step</a> (const std::string &amp;step_name)</td></tr>
-<tr class="memdesc:ae52c94f016e61828914cb3868ea0190f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set which step the context starts on when entered.  <br /></td></tr>
 <tr class="memitem:ac71cb3329c49343540723adbd5035d77" id="r_ac71cb3329c49343540723adbd5035d77"><td class="memItemLeft"><a class="el" href="#aba7f133bb02740ce41e98f378d0396e6">Context</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac71cb3329c49343540723adbd5035d77">set_valid_contexts</a> (const std::vector&lt; std::string &gt; &amp;ctxs)</td></tr>
 <tr class="memdesc:ac71cb3329c49343540723adbd5035d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set valid contexts for navigation.  <br /></td></tr>
 <tr class="memitem:a661529b43a87ce90a09aa1cdd7a28b74" id="r_a661529b43a87ce90a09aa1cdd7a28b74"><td class="memItemLeft"><a class="el" href="#aba7f133bb02740ce41e98f378d0396e6">Context</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a661529b43a87ce90a09aa1cdd7a28b74">set_valid_steps</a> (const std::vector&lt; std::string &gt; &amp;steps)</td></tr>
@@ -165,7 +151,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5124be29626a328a02e167650bc2fc6e" id="r_a5124be29626a328a02e167650bc2fc6e"><td class="memItemLeft"><a class="el" href="#aba7f133bb02740ce41e98f378d0396e6">Context</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5124be29626a328a02e167650bc2fc6e">set_user_prompt</a> (const std::string &amp;up)</td></tr>
 <tr class="memdesc:a5124be29626a328a02e167650bc2fc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set user prompt.  <br /></td></tr>
 <tr class="memitem:a429039c7448b71cebdf7103c19eedb53" id="r_a429039c7448b71cebdf7103c19eedb53"><td class="memItemLeft"><a class="el" href="#aba7f133bb02740ce41e98f378d0396e6">Context</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a429039c7448b71cebdf7103c19eedb53">set_isolated</a> (bool isolated)</td></tr>
-<tr class="memdesc:a429039c7448b71cebdf7103c19eedb53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark this context as isolated — entering it wipes conversation history.  <br /></td></tr>
 <tr class="memitem:ade78e2de9761ea64192288a5b9426687" id="r_ade78e2de9761ea64192288a5b9426687"><td class="memItemLeft"><a class="el" href="#aba7f133bb02740ce41e98f378d0396e6">Context</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ade78e2de9761ea64192288a5b9426687">set_prompt</a> (const std::string &amp;prompt)</td></tr>
 <tr class="memdesc:ade78e2de9761ea64192288a5b9426687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set prompt text directly.  <br /></td></tr>
 <tr class="memitem:a235e921b88097b750a7df3f99a259201" id="r_a235e921b88097b750a7df3f99a259201"><td class="memItemLeft"><a class="el" href="#aba7f133bb02740ce41e98f378d0396e6">Context</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a235e921b88097b750a7df3f99a259201">add_section</a> (const std::string &amp;title, const std::string &amp;body)</td></tr>
@@ -431,6 +416,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classsignalwire_1_1contexts_1_1Step.html">Step</a> * signalwire::contexts::Context::get_step </td>
@@ -439,6 +427,11 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Get an existing step by name. </p>
@@ -463,7 +456,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -488,7 +481,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -652,8 +645,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set which step the context starts on when entered. </p>
+<p>Set which step the context starts on when entered.</p>
 <p>By default, a context starts on its first step (index 0). Use this to skip a preamble step on re-entry via change_context. </p>
 
 </div>
@@ -672,8 +664,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Mark this context as isolated — entering it wipes conversation history. </p>
+<p>Mark this context as isolated — entering it wipes conversation history.</p>
 <p>When isolated=true and the context is entered via change_context, the runtime wipes the conversation array. The model starts fresh with only the new context's system_prompt + step instructions, with no memory of prior turns.</p>
 <p>EXCEPTION — reset overrides the wipe: If the context also has a reset configuration (via set_consolidate or set_full_reset), the wipe is skipped in favor of the reset behavior. Use reset with consolidate=true to summarize prior history into a single message instead of dropping it entirely.</p>
 <p>Use cases: switching to a sensitive billing flow that should not see prior small-talk; handing off to a different agent persona; resetting after a long off-topic detour. </p>
@@ -812,7 +803,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -837,7 +828,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -849,6 +840,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacesignalwire_1_1contexts.html#ac7903cedb620d664b7295bc71e5892a6">json</a> signalwire::contexts::Context::to_json </td>
@@ -857,6 +851,11 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Serialize to JSON. </p>
@@ -881,15 +880,16 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/cpp/include/signalwire/contexts/<a class="el" href="contexts_8hpp_source.html">contexts.hpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>_build/sdks/signalwire-cpp/include/signalwire/contexts/<a class="el" href="contexts_8hpp_source.html">contexts.hpp</a></li>
+<li>_build/sdks/signalwire-cpp/src/contexts/<a class="el" href="contexts_8cpp.html">contexts.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

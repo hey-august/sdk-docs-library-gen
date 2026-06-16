@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['callflow_0',['CallFlow',['../namespacesignalwire_1_1rest.html#a72143ace77c2c9601a993eadc491f0d4a855c2c72f8afa55d02e42cd10e85f44d',1,'signalwire::rest']]]
+  ['both_0',['Both',['../namespacesignalwire_1_1swaig.html#a25b5291e2b811c7af577743348ad9845a130c5b3473c57faa76e2a1c54e26f88e',1,'signalwire::swaig::Both'],['../namespacesignalwire_1_1swaig.html#a58ca8ad82516b0dae8dbd289e871b02ca130c5b3473c57faa76e2a1c54e26f88e',1,'signalwire::swaig::Both']]]
 ];

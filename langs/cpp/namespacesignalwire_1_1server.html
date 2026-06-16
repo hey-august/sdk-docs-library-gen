@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::server Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -138,10 +125,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacesigna
 Classes</h2></td></tr>
 <tr class="memitem:AgentServer" id="r_AgentServer"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classsignalwire_1_1server_1_1AgentServer.html">AgentServer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multi-agent hosting server.  <a href="classsignalwire_1_1server_1_1AgentServer.html#details">More...</a><br /></td></tr>
+<tr class="memitem:TlsServerConfig" id="r_TlsServerConfig"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structsignalwire_1_1server_1_1TlsServerConfig.html">TlsServerConfig</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolved TLS configuration for an in-process HTTP server.  <a href="structsignalwire_1_1server_1_1TlsServerConfig.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:acfac20e151f9593c60a6cc03fc0b5ae1" id="r_acfac20e151f9593c60a6cc03fc0b5ae1"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#acfac20e151f9593c60a6cc03fc0b5ae1">json</a> = nlohmann::json</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ac1d25a1dc8e47794ecb6bff3b7b0a263" id="r_ac1d25a1dc8e47794ecb6bff3b7b0a263"><td class="memItemLeft"><a class="el" href="structsignalwire_1_1server_1_1TlsServerConfig.html">TlsServerConfig</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac1d25a1dc8e47794ecb6bff3b7b0a263">resolve_tls_config_from_env</a> ()</td></tr>
+<tr class="memitem:a35d5983b5bafe5cc9b7cd144f3043f62" id="r_a35d5983b5bafe5cc9b7cd144f3043f62"><td class="memItemLeft">std::unique_ptr&lt; httplib::Server &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a35d5983b5bafe5cc9b7cd144f3043f62">make_http_server</a> (const <a class="el" href="structsignalwire_1_1server_1_1TlsServerConfig.html">TlsServerConfig</a> &amp;cfg)</td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="acfac20e151f9593c60a6cc03fc0b5ae1" name="acfac20e151f9593c60a6cc03fc0b5ae1"></a>
@@ -155,6 +149,59 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a35d5983b5bafe5cc9b7cd144f3043f62" name="a35d5983b5bafe5cc9b7cd144f3043f62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d5983b5bafe5cc9b7cd144f3043f62">&#9670;&#160;</a></span>make_http_server()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; httplib::Server &gt; signalwire::server::make_http_server </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsignalwire_1_1server_1_1TlsServerConfig.html">TlsServerConfig</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cfg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construct the httplib server for the given config. When cfg.usable(), an SSLServer (TLS termination in-process) is returned upcast to Server*; otherwise a plain Server. Returns nullptr only on allocation failure. When an SSLServer is requested but its cert/key fail to load, the returned server's is_valid() is false — callers log and refuse to listen, the same failure mode as a bad bind. </p>
+
+</div>
+</div>
+<a id="ac1d25a1dc8e47794ecb6bff3b7b0a263" name="ac1d25a1dc8e47794ecb6bff3b7b0a263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1d25a1dc8e47794ecb6bff3b7b0a263">&#9670;&#160;</a></span>resolve_tls_config_from_env()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsignalwire_1_1server_1_1TlsServerConfig.html">TlsServerConfig</a> signalwire::server::resolve_tls_config_from_env </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Resolve TLS config from the SWML_SSL_* environment variables, mirroring signalwire-python's SecurityConfig.load_from_env(). Returns enabled=false when SWML_SSL_ENABLED is unset/false. </p>
 
 </div>
 </div>

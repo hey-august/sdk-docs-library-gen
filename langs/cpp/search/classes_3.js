@@ -1,15 +1,8 @@
 var searchData=
 [
-  ['fabricaddresses_0',['FabricAddresses',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricAddresses.html',1,'signalwire::rest::RestClient']]],
-  ['fabriccallflows_1',['FabricCallFlows',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricCallFlows.html',1,'signalwire::rest::RestClient']]],
-  ['fabricconferencerooms_2',['FabricConferenceRooms',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricConferenceRooms.html',1,'signalwire::rest::RestClient']]],
-  ['fabriccxmlapplications_3',['FabricCxmlApplications',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricCxmlApplications.html',1,'signalwire::rest::RestClient']]],
-  ['fabricgenericresources_4',['FabricGenericResources',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricGenericResources.html',1,'signalwire::rest::RestClient']]],
-  ['fabricnamespace_5',['FabricNamespace',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricNamespace.html',1,'signalwire::rest::RestClient']]],
-  ['fabricresource_6',['FabricResource',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricResource.html',1,'signalwire::rest::RestClient']]],
-  ['fabricresourceput_7',['FabricResourcePUT',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricResourcePUT.html',1,'signalwire::rest::RestClient']]],
-  ['fabricsubscribers_8',['FabricSubscribers',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricSubscribers.html',1,'signalwire::rest::RestClient']]],
-  ['fabrictokens_9',['FabricTokens',['../structsignalwire_1_1rest_1_1RestClient_1_1FabricTokens.html',1,'signalwire::rest::RestClient']]],
-  ['faqbotagent_10',['FAQBotAgent',['../classsignalwire_1_1prefabs_1_1FAQBotAgent.html',1,'signalwire::prefabs']]],
-  ['functionresult_11',['FunctionResult',['../classsignalwire_1_1swaig_1_1FunctionResult.html',1,'signalwire::swaig']]]
+  ['enumorstring_0',['EnumOrString',['../structsignalwire_1_1swaig_1_1EnumOrString.html',1,'signalwire::swaig']]],
+  ['enumorstring_3c_20callbackmethod_2c_20_26callback_5fmethod_5fvalue_20_3e_1',['EnumOrString&lt; CallbackMethod, &amp;callback_method_value &gt;',['../structsignalwire_1_1swaig_1_1EnumOrString.html',1,'signalwire::swaig']]],
+  ['enumorstring_3c_20conferencebeep_2c_20_26conference_5fbeep_5fvalue_20_3e_2',['EnumOrString&lt; ConferenceBeep, &amp;conference_beep_value &gt;',['../structsignalwire_1_1swaig_1_1EnumOrString.html',1,'signalwire::swaig']]],
+  ['enumorstring_3c_20conferencerecord_2c_20_26conference_5frecord_5fvalue_20_3e_3',['EnumOrString&lt; ConferenceRecord, &amp;conference_record_value &gt;',['../structsignalwire_1_1swaig_1_1EnumOrString.html',1,'signalwire::swaig']]],
+  ['enumorstring_3c_20conferencetrim_2c_20_26conference_5ftrim_5fvalue_20_3e_4',['EnumOrString&lt; ConferenceTrim, &amp;conference_trim_value &gt;',['../structsignalwire_1_1swaig_1_1EnumOrString.html',1,'signalwire::swaig']]]
 ];

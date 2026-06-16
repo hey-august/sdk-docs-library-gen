@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['message_0',['Message',['../structsignalwire_1_1relay_1_1Message.html',1,'signalwire::relay']]],
-  ['messageevent_1',['MessageEvent',['../structsignalwire_1_1relay_1_1MessageEvent.html',1,'signalwire::relay']]],
-  ['mfanamespace_2',['MFANamespace',['../structsignalwire_1_1rest_1_1RestClient_1_1MFANamespace.html',1,'signalwire::rest::RestClient']]]
+  ['joinconferenceoptions_0',['JoinConferenceOptions',['../structsignalwire_1_1swaig_1_1JoinConferenceOptions.html',1,'signalwire::swaig']]],
+  ['jokeskill_1',['JokeSkill',['../classsignalwire_1_1skills_1_1JokeSkill.html',1,'signalwire::skills']]],
+  ['jokeskillr_2',['JokeSkillR',['../classsignalwire_1_1skills_1_1JokeSkillR.html',1,'signalwire::skills']]]
 ];

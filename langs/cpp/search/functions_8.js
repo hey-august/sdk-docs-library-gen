@@ -11,13 +11,14 @@ var searchData=
   ['has_5fnext_8',['has_next',['../classsignalwire_1_1rest_1_1PaginatedIterator.html#a902e077e8d6fd861b776faa6f51b2716',1,'signalwire::rest::PaginatedIterator']]],
   ['has_5fquestions_9',['has_questions',['../classsignalwire_1_1contexts_1_1GatherInfo.html#aa7609b7a57f56b0ced4dfc4d77cb241e',1,'signalwire::contexts::GatherInfo']]],
   ['has_5fsection_10',['has_section',['../classsignalwire_1_1swml_1_1Document.html#abc3af71a4eeb6cd5a15458c653e11feb',1,'signalwire::swml::Document']]],
-  ['has_5fskill_11',['has_skill',['../classsignalwire_1_1agent_1_1AgentBase.html#aa5a57f02f9204b09b9486a17d39d8a6a',1,'signalwire::agent::AgentBase::has_skill()'],['../classsignalwire_1_1skills_1_1SkillRegistry.html#a85001afb728f1e42b569bb4d80dc67ed',1,'signalwire::skills::SkillRegistry::has_skill()']]],
+  ['has_5fskill_11',['has_skill',['../classsignalwire_1_1agent_1_1AgentBase.html#aa5a57f02f9204b09b9486a17d39d8a6a',1,'signalwire::agent::AgentBase::has_skill(const std::string &amp;skill_name) const'],['../classsignalwire_1_1agent_1_1AgentBase.html#a65e06c4b2c01bf4250b18cf01462df25',1,'signalwire::agent::AgentBase::has_skill(skills::SkillName skill_name) const'],['../classsignalwire_1_1skills_1_1SkillRegistry.html#a85001afb728f1e42b569bb4d80dc67ed',1,'signalwire::skills::SkillRegistry::has_skill()']]],
   ['has_5fsteps_12',['has_steps',['../classsignalwire_1_1contexts_1_1Context.html#a269436e9f924780efbf3423c0c1b4737',1,'signalwire::contexts::Context']]],
   ['has_5ftool_13',['has_tool',['../classsignalwire_1_1swml_1_1Service.html#ae3dac3aa49a89ef9db4b97dd0bc5a427',1,'signalwire::swml::Service']]],
   ['hold_14',['hold',['../classsignalwire_1_1relay_1_1Call.html#aa0cc75f58499cba98e67174caf0c87db',1,'signalwire::relay::Call::hold()'],['../structsignalwire_1_1rest_1_1RestClient_1_1CallingNamespace.html#a6697d7e1a48c8d996b5b1d06ccb3694a',1,'signalwire::rest::RestClient::CallingNamespace::hold()'],['../classsignalwire_1_1swaig_1_1FunctionResult.html#aba826de818e846ab9a036d98e9bd10ff',1,'signalwire::swaig::FunctionResult::hold()']]],
   ['http_15',['http',['../classsignalwire_1_1rest_1_1PaginatedIterator.html#a668f28ea839782e1c29f9775c8b31a2d',1,'signalwire::rest::PaginatedIterator']]],
   ['http_5fclient_16',['http_client',['../classsignalwire_1_1rest_1_1RestClient.html#a1a40f216aa2b3180cb2fe33962a75b8d',1,'signalwire::rest::RestClient']]],
   ['http_5fget_17',['http_get',['../namespacesignalwire_1_1skills.html#a0824907169bdb6676f10cbaf5e7410fd',1,'signalwire::skills']]],
-  ['http_5fpost_18',['http_post',['../namespacesignalwire_1_1skills.html#a69ea8483b8ea813a4f69935faf90b5c3',1,'signalwire::skills']]],
-  ['httpclient_19',['HttpClient',['../classsignalwire_1_1rest_1_1HttpClient.html#a677649f23faa5c4dbbc4a52cf001021e',1,'signalwire::rest::HttpClient']]]
+  ['http_5fget_5fms_18',['http_get_ms',['../namespacesignalwire_1_1skills.html#a08db480f0611ff179eeb663ac5ebb830',1,'signalwire::skills']]],
+  ['http_5fpost_19',['http_post',['../namespacesignalwire_1_1skills.html#a69ea8483b8ea813a4f69935faf90b5c3',1,'signalwire::skills']]],
+  ['httpclient_20',['HttpClient',['../classsignalwire_1_1rest_1_1HttpClient.html#a677649f23faa5c4dbbc4a52cf001021e',1,'signalwire::rest::HttpClient']]]
 ];

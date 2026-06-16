@@ -7,5 +7,6 @@ var namespacesignalwire_1_1swml =
     [ "Verb", "structsignalwire_1_1swml_1_1Verb.html", "structsignalwire_1_1swml_1_1Verb" ],
     [ "VerbDefinition", "structsignalwire_1_1swml_1_1VerbDefinition.html", "structsignalwire_1_1swml_1_1VerbDefinition" ],
     [ "json", "namespacesignalwire_1_1swml.html#a4ded4aee74900e90fa8e781c401be9ce", null ],
-    [ "get_embedded_schema", "namespacesignalwire_1_1swml.html#afc7ef19d9921ce5a141f64a4e37383a8", null ]
+    [ "get_embedded_schema", "namespacesignalwire_1_1swml.html#afc7ef19d9921ce5a141f64a4e37383a8", null ],
+    [ "KNOWN_VERBS", "namespacesignalwire_1_1swml.html#af1dcd0a188e336c680a833e9a26d10c0", null ]
 ];

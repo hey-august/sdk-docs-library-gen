@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::core::logging_config Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -137,7 +124,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacesigna
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5957f52d5862836c416c1c90d12c4a39" id="r_a5957f52d5862836c416c1c90d12c4a39"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a5957f52d5862836c416c1c90d12c4a39">get_execution_mode</a> ()</td></tr>
-<tr class="memdesc:a5957f52d5862836c416c1c90d12c4a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cross-language SDK contract for serverless / deployment-mode detection.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a5957f52d5862836c416c1c90d12c4a39" name="a5957f52d5862836c416c1c90d12c4a39"></a>
@@ -154,9 +140,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Cross-language SDK contract for serverless / deployment-mode detection. </p>
-<p>Mirrors <span class="tt"><a class="el" href="#a5957f52d5862836c416c1c90d12c4a39" title="Cross-language SDK contract for serverless / deployment-mode detection.">signalwire.core.logging_config.get_execution_mode</a></span> in the Python reference. Order of precedence (FIRST match wins):</p>
+<p>Cross-language SDK contract for serverless / deployment-mode detection.</p>
+<p>Mirrors <span class="tt"><a class="el" href="#a5957f52d5862836c416c1c90d12c4a39">signalwire.core.logging_config.get_execution_mode</a></span> in the Python reference. Order of precedence (FIRST match wins):</p>
 <ol type="1">
 <li>GATEWAY_INTERFACE -&gt; "cgi"</li>
 <li>AWS_LAMBDA_FUNCTION_NAME or LAMBDA_TASK_ROOT -&gt; "lambda"</li>

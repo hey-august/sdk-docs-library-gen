@@ -35,5 +35,6 @@ var namespacesignalwire =
     [ "register_skill", "namespacesignalwire.html#aaf84cd9818d8a1444252e8bc88ef37e3", null ],
     [ "RestClient", "namespacesignalwire.html#a32a359f22db35d0848fdc259ab0c8be7", null ],
     [ "timing_safe_compare", "namespacesignalwire.html#a3ee88bac2f5dc919f30d5af7036c735d", null ],
-    [ "url_encode", "namespacesignalwire.html#ac7520c8c626ad00f5a500f3456dbf4bc", null ]
+    [ "url_encode", "namespacesignalwire.html#ac7520c8c626ad00f5a500f3456dbf4bc", null ],
+    [ "logger_init_", "namespacesignalwire.html#a3feb4159d304c941dd5d1012af415883", null ]
 ];

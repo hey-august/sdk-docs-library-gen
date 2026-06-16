@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire C++ SDK: signalwire::pom::PromptObjectModel Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire C++ SDK
    </div>
-   <div id="projectbrief">Native C++ SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -144,34 +131,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afaa80486a1eaece558b2dd36dbe1999f" id="r_afaa80486a1eaece558b2dd36dbe1999f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afaa80486a1eaece558b2dd36dbe1999f">PromptObjectModel</a> ()=default</td></tr>
 <tr class="memitem:af61aaee2830928977decaec33d352290" id="r_af61aaee2830928977decaec33d352290"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af61aaee2830928977decaec33d352290">PromptObjectModel</a> (bool debug_flag)</td></tr>
 <tr class="memitem:acdfd4db7e0ffea4c918741cba1447464" id="r_acdfd4db7e0ffea4c918741cba1447464"><td class="memItemLeft"><a class="el" href="classsignalwire_1_1pom_1_1Section.html">Section</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#acdfd4db7e0ffea4c918741cba1447464">add_section</a> (const std::string &amp;title=&quot;&quot;, const std::string &amp;body=&quot;&quot;, const std::vector&lt; std::string &gt; &amp;bullets={}, std::optional&lt; bool &gt; numbered=std::nullopt, bool numbered_bullets=false)</td></tr>
-<tr class="memdesc:acdfd4db7e0ffea4c918741cba1447464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a new top-level section.  <br /></td></tr>
 <tr class="memitem:a671f35c7782a813d803931a8d19d8c7b" id="r_a671f35c7782a813d803931a8d19d8c7b"><td class="memItemLeft"><a class="el" href="classsignalwire_1_1pom_1_1Section.html">Section</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a671f35c7782a813d803931a8d19d8c7b">find_section</a> (const std::string &amp;title)</td></tr>
-<tr class="memdesc:a671f35c7782a813d803931a8d19d8c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively search for a section by title.  <br /></td></tr>
 <tr class="memitem:a1673551baa4c13d90d053668ce5ba0b1" id="r_a1673551baa4c13d90d053668ce5ba0b1"><td class="memItemLeft">const <a class="el" href="classsignalwire_1_1pom_1_1Section.html">Section</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a1673551baa4c13d90d053668ce5ba0b1">find_section</a> (const std::string &amp;title) const</td></tr>
 <tr class="memitem:acfe110fb53ceddb5583c9d08be36dac5" id="r_acfe110fb53ceddb5583c9d08be36dac5"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#acfe110fb53ceddb5583c9d08be36dac5">to_json</a> () const</td></tr>
-<tr class="memdesc:acfe110fb53ceddb5583c9d08be36dac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whole-tree JSON serializer.  <br /></td></tr>
 <tr class="memitem:aac5d6c3a6af21cff3026662089015949" id="r_aac5d6c3a6af21cff3026662089015949"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aac5d6c3a6af21cff3026662089015949">to_yaml</a> () const</td></tr>
-<tr class="memdesc:aac5d6c3a6af21cff3026662089015949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whole-tree YAML serializer.  <br /></td></tr>
 <tr class="memitem:abcb4c5293312617a7ed10a0cf70f9fb5" id="r_abcb4c5293312617a7ed10a0cf70f9fb5"><td class="memItemLeft"><a class="el" href="namespacesignalwire_1_1pom.html#ac770e0e4be7f559ab8a6ccfd2d1ffbee">json</a>&#160;</td><td class="memItemRight"><a class="el" href="#abcb4c5293312617a7ed10a0cf70f9fb5">to_dict</a> () const</td></tr>
-<tr class="memdesc:abcb4c5293312617a7ed10a0cf70f9fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whole-tree dict view (a <span class="tt"><a class="el" href="namespacesignalwire_1_1pom.html#ac770e0e4be7f559ab8a6ccfd2d1ffbee">json</a></span> array).  <br /></td></tr>
 <tr class="memitem:a8b2901b8403e266e7fbbfdf25d6fae27" id="r_a8b2901b8403e266e7fbbfdf25d6fae27"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a8b2901b8403e266e7fbbfdf25d6fae27">render_markdown</a> () const</td></tr>
 <tr class="memdesc:a8b2901b8403e266e7fbbfdf25d6fae27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render entire POM as Markdown.  <br /></td></tr>
 <tr class="memitem:aab0f079d3cfd92c6067e60db3a8620c0" id="r_aab0f079d3cfd92c6067e60db3a8620c0"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aab0f079d3cfd92c6067e60db3a8620c0">render_xml</a> () const</td></tr>
-<tr class="memdesc:aab0f079d3cfd92c6067e60db3a8620c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render entire POM as XML (with <span class="tt">&lt;?xml ... ?
-</span> <br /></td></tr>
 <tr class="memitem:a80c9f77108078c249ff4605424e89de4" id="r_a80c9f77108078c249ff4605424e89de4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a80c9f77108078c249ff4605424e89de4">add_pom_as_subsection</a> (const std::string &amp;target_title, const <a class="el" href="#afaa80486a1eaece558b2dd36dbe1999f">PromptObjectModel</a> &amp;pom_to_add)</td></tr>
-<tr class="memdesc:a80c9f77108078c249ff4605424e89de4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add every top-level section of <span class="tt">pom_to_add</span> as a subsection of the section identified by <span class="tt">target_title</span>.  <br /></td></tr>
 <tr class="memitem:a9f363b3d230e1386501b4000b2258571" id="r_a9f363b3d230e1386501b4000b2258571"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9f363b3d230e1386501b4000b2258571">add_pom_as_subsection</a> (<a class="el" href="classsignalwire_1_1pom_1_1Section.html">Section</a> &amp;target, const <a class="el" href="#afaa80486a1eaece558b2dd36dbe1999f">PromptObjectModel</a> &amp;pom_to_add)</td></tr>
-<tr class="memdesc:a9f363b3d230e1386501b4000b2258571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add every top-level section of <span class="tt">pom_to_add</span> as a subsection of the given <span class="tt">target</span> <a class="el" href="classsignalwire_1_1pom_1_1Section.html" title="One section in the Prompt Object Model tree.">Section</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a48a041c6ec4ab1896ef27c4498f93d07" id="r_a48a041c6ec4ab1896ef27c4498f93d07"><td class="memItemLeft">static <a class="el" href="#afaa80486a1eaece558b2dd36dbe1999f">PromptObjectModel</a>&#160;</td><td class="memItemRight"><a class="el" href="#a48a041c6ec4ab1896ef27c4498f93d07">from_json</a> (const std::string &amp;json_text)</td></tr>
-<tr class="memdesc:a48a041c6ec4ab1896ef27c4498f93d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a POM from a JSON string.  <br /></td></tr>
-<tr class="memitem:a6ab2c7d333e92b5c80091cd6a060bedb" id="r_a6ab2c7d333e92b5c80091cd6a060bedb"><td class="memItemLeft">static <a class="el" href="#afaa80486a1eaece558b2dd36dbe1999f">PromptObjectModel</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6ab2c7d333e92b5c80091cd6a060bedb">from_json</a> (const <a class="el" href="namespacesignalwire_1_1pom.html#ac770e0e4be7f559ab8a6ccfd2d1ffbee">json</a> &amp;data)</td></tr>
-<tr class="memdesc:a6ab2c7d333e92b5c80091cd6a060bedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a POM directly from an already-parsed <span class="tt"><a class="el" href="namespacesignalwire_1_1pom.html#ac770e0e4be7f559ab8a6ccfd2d1ffbee">json</a></span> value.  <br /></td></tr>
-<tr class="memitem:afca4fb97c97902dfb79a2f2b0dfc4bd7" id="r_afca4fb97c97902dfb79a2f2b0dfc4bd7"><td class="memItemLeft">static <a class="el" href="#afaa80486a1eaece558b2dd36dbe1999f">PromptObjectModel</a>&#160;</td><td class="memItemRight"><a class="el" href="#afca4fb97c97902dfb79a2f2b0dfc4bd7">from_yaml</a> (const std::string &amp;yaml_text)</td></tr>
-<tr class="memdesc:afca4fb97c97902dfb79a2f2b0dfc4bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a POM from a YAML string (minimal POM-shaped subset only).  <br /></td></tr>
+<tr class="memitem:a9673cd38fbd5373a4449c52369111958" id="r_a9673cd38fbd5373a4449c52369111958"><td class="memItemLeft">static <a class="el" href="#afaa80486a1eaece558b2dd36dbe1999f">PromptObjectModel</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9673cd38fbd5373a4449c52369111958">from_json</a> (const std::string &amp;json_text)</td></tr>
+<tr class="memitem:ae5fcbd0f7e5f3d1f70ff2cca199508f7" id="r_ae5fcbd0f7e5f3d1f70ff2cca199508f7"><td class="memItemLeft">static <a class="el" href="#afaa80486a1eaece558b2dd36dbe1999f">PromptObjectModel</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae5fcbd0f7e5f3d1f70ff2cca199508f7">from_json</a> (const <a class="el" href="namespacesignalwire_1_1pom.html#ac770e0e4be7f559ab8a6ccfd2d1ffbee">json</a> &amp;data)</td></tr>
+<tr class="memdesc:ae5fcbd0f7e5f3d1f70ff2cca199508f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a POM directly from an already-parsed <span class="tt"><a class="el" href="namespacesignalwire_1_1pom.html#ac770e0e4be7f559ab8a6ccfd2d1ffbee">json</a></span> value.  <br /></td></tr>
+<tr class="memitem:aaa9438b058db099ca8d06b31cc91ff1f" id="r_aaa9438b058db099ca8d06b31cc91ff1f"><td class="memItemLeft">static <a class="el" href="#afaa80486a1eaece558b2dd36dbe1999f">PromptObjectModel</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaa9438b058db099ca8d06b31cc91ff1f">from_yaml</a> (const std::string &amp;yaml_text)</td></tr>
+<tr class="memdesc:aaa9438b058db099ca8d06b31cc91ff1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a POM from a YAML string (minimal POM-shaped subset only).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -250,9 +227,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add every top-level section of <span class="tt">pom_to_add</span> as a subsection of the section identified by <span class="tt">target_title</span>. </p>
-<p>Throws <span class="tt">std::invalid_argument</span> when no matching section exists. </p>
+<p>Add every top-level section of <span class="tt">pom_to_add</span> as a subsection of the section identified by <span class="tt">target_title</span>. Throws <span class="tt">std::invalid_argument</span> when no matching section exists. </p>
 
 </div>
 </div>
@@ -274,9 +249,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add every top-level section of <span class="tt">pom_to_add</span> as a subsection of the given <span class="tt">target</span> <a class="el" href="classsignalwire_1_1pom_1_1Section.html" title="One section in the Prompt Object Model tree.">Section</a>. </p>
-<p>Caller owns <span class="tt">target</span>. </p>
+<p>Add every top-level section of <span class="tt">pom_to_add</span> as a subsection of the given <span class="tt">target</span> <a class="el" href="classsignalwire_1_1pom_1_1Section.html">Section</a>. Caller owns <span class="tt">target</span>. </p>
 
 </div>
 </div>
@@ -313,9 +286,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Append a new top-level section. </p>
-<p><span class="tt">title</span> may be empty <em>only</em> for the very first section (Python enforces "Only the first section can
+<p>Append a new top-level section. <span class="tt">title</span> may be empty <em>only</em> for the very first section (Python enforces "Only the first section can
 have no title"); subsequent calls without a title throw <span class="tt">std::invalid_argument</span>. </p>
 
 </div>
@@ -325,6 +296,9 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classsignalwire_1_1pom_1_1Section.html">Section</a> * signalwire::pom::PromptObjectModel::find_section </td>
@@ -333,10 +307,13 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Recursively search for a section by title. </p>
-<p>Returns a pointer to the owned section so callers can mutate it; returns <span class="tt">nullptr</span> when nothing matches. Pointer is invalidated by any subsequent mutation of the POM that grows <span class="tt"><a class="el" href="#ae2a52664be008fa1d4149243866731cf">sections</a></span> or <span class="tt">subsections</span> (caller's responsibility — same contract as <span class="tt">std::vector::data()</span>). </p>
+<p>Recursively search for a section by title. Returns a pointer to the owned section so callers can mutate it; returns <span class="tt">nullptr</span> when nothing matches. Pointer is invalidated by any subsequent mutation of the POM that grows <span class="tt"><a class="el" href="#ae2a52664be008fa1d4149243866731cf">sections</a></span> or <span class="tt">subsections</span> (caller's responsibility — same contract as <span class="tt">std::vector::data()</span>). </p>
 
 </div>
 </div>
@@ -345,6 +322,9 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const <a class="el" href="classsignalwire_1_1pom_1_1Section.html">Section</a> * signalwire::pom::PromptObjectModel::find_section </td>
@@ -353,12 +333,17 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a6ab2c7d333e92b5c80091cd6a060bedb" name="a6ab2c7d333e92b5c80091cd6a060bedb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ab2c7d333e92b5c80091cd6a060bedb">&#9670;&#160;</a></span>from_json() <span class="overload">[1/2]</span></h2>
+<a id="ae5fcbd0f7e5f3d1f70ff2cca199508f7" name="ae5fcbd0f7e5f3d1f70ff2cca199508f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5fcbd0f7e5f3d1f70ff2cca199508f7">&#9670;&#160;</a></span>from_json() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -375,7 +360,7 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -384,8 +369,8 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
 
 </div>
 </div>
-<a id="a48a041c6ec4ab1896ef27c4498f93d07" name="a48a041c6ec4ab1896ef27c4498f93d07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48a041c6ec4ab1896ef27c4498f93d07">&#9670;&#160;</a></span>from_json() <span class="overload">[2/2]</span></h2>
+<a id="a9673cd38fbd5373a4449c52369111958" name="a9673cd38fbd5373a4449c52369111958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9673cd38fbd5373a4449c52369111958">&#9670;&#160;</a></span>from_json() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -402,18 +387,16 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Build a POM from a JSON string. </p>
-<p>Throws <span class="tt">nlohmann::json::parse_error</span> on malformed JSON, and <span class="tt">std::invalid_argument</span> on shape violations (missing required fields, wrong types, etc.). </p>
+<p>Build a POM from a JSON string. Throws <span class="tt">nlohmann::json::parse_error</span> on malformed JSON, and <span class="tt">std::invalid_argument</span> on shape violations (missing required fields, wrong types, etc.). </p>
 
 </div>
 </div>
-<a id="afca4fb97c97902dfb79a2f2b0dfc4bd7" name="afca4fb97c97902dfb79a2f2b0dfc4bd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afca4fb97c97902dfb79a2f2b0dfc4bd7">&#9670;&#160;</a></span>from_yaml()</h2>
+<a id="aaa9438b058db099ca8d06b31cc91ff1f" name="aaa9438b058db099ca8d06b31cc91ff1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa9438b058db099ca8d06b31cc91ff1f">&#9670;&#160;</a></span>from_yaml()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -430,7 +413,7 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -444,6 +427,9 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string signalwire::pom::PromptObjectModel::render_markdown </td>
@@ -452,6 +438,11 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Render entire POM as Markdown. </p>
@@ -463,6 +454,9 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string signalwire::pom::PromptObjectModel::render_xml </td>
@@ -471,11 +465,13 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Render entire POM as XML (with <span class="tt">&lt;?xml ... ?
-</span></p>
-<p>&gt; prolog and a <span class="tt">&lt;prompt&gt;</span> root element). </p>
+<p>Render entire POM as XML (with <span class="tt">&lt;?xml ... ?&gt;</span> prolog and a <span class="tt">&lt;prompt&gt;</span> root element). </p>
 
 </div>
 </div>
@@ -484,6 +480,9 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacesignalwire_1_1pom.html#ac770e0e4be7f559ab8a6ccfd2d1ffbee">json</a> signalwire::pom::PromptObjectModel::to_dict </td>
@@ -492,10 +491,13 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Whole-tree dict view (a <span class="tt"><a class="el" href="namespacesignalwire_1_1pom.html#ac770e0e4be7f559ab8a6ccfd2d1ffbee">json</a></span> array). </p>
-<p>Identical content to <span class="tt"><a class="el" href="#acfe110fb53ceddb5583c9d08be36dac5" title="Whole-tree JSON serializer.">to_json</a></span>, returned as a parsed <span class="tt"><a class="el" href="namespacesignalwire_1_1pom.html#ac770e0e4be7f559ab8a6ccfd2d1ffbee">json</a></span> value. </p>
+<p>Whole-tree dict view (a <span class="tt"><a class="el" href="namespacesignalwire_1_1pom.html#ac770e0e4be7f559ab8a6ccfd2d1ffbee">json</a></span> array). Identical content to <span class="tt"><a class="el" href="#acfe110fb53ceddb5583c9d08be36dac5">to_json</a></span>, returned as a parsed <span class="tt"><a class="el" href="namespacesignalwire_1_1pom.html#ac770e0e4be7f559ab8a6ccfd2d1ffbee">json</a></span> value. </p>
 
 </div>
 </div>
@@ -504,6 +506,9 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string signalwire::pom::PromptObjectModel::to_json </td>
@@ -512,10 +517,13 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Whole-tree JSON serializer. </p>
-<p>Returns a pretty-printed (indent=2) JSON array string, matching Python's <span class="tt">json.dumps(..., indent=2)</span>. </p>
+<p>Whole-tree JSON serializer. Returns a pretty-printed (indent=2) JSON array string, matching Python's <span class="tt">json.dumps(..., indent=2)</span>. </p>
 
 </div>
 </div>
@@ -524,6 +532,9 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string signalwire::pom::PromptObjectModel::to_yaml </td>
@@ -532,10 +543,13 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Whole-tree YAML serializer. </p>
-<p>Returns a YAML document representing the JSON-equivalent list-of-dicts structure. </p>
+<p>Whole-tree YAML serializer. Returns a YAML document representing the JSON-equivalent list-of-dicts structure. </p>
 
 </div>
 </div>
@@ -568,8 +582,9 @@ have no title"); subsequent calls without a title throw <span class="tt">std::in
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/cpp/include/signalwire/pom/<a class="el" href="pom_8hpp_source.html">pom.hpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>_build/sdks/signalwire-cpp/include/signalwire/pom/<a class="el" href="pom_8hpp_source.html">pom.hpp</a></li>
+<li>_build/sdks/signalwire-cpp/src/pom/<a class="el" href="pom_8cpp.html">pom.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

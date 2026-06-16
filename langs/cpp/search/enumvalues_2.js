@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['debug_0',['DEBUG',['../namespacesignalwire_1_1logging.html#a053cd517050472c0ec1df12e6629a42aadc30ec20708ef7b0f641ef78b7880a15',1,'signalwire::logging']]],
-  ['debug_1',['Debug',['../namespacesignalwire.html#a9ba861b3c2304ef132f42a76ed3c2c82aa603905470e2a5b8c13e96b579ef0dba',1,'signalwire']]],
-  ['dialogflow_2',['Dialogflow',['../namespacesignalwire_1_1rest.html#a72143ace77c2c9601a993eadc491f0d4aeec3bee6aa1cd9fe37e89ffe13deeb35',1,'signalwire::rest']]]
+  ['callflow_0',['CallFlow',['../namespacesignalwire_1_1rest.html#a72143ace77c2c9601a993eadc491f0d4a855c2c72f8afa55d02e42cd10e85f44d',1,'signalwire::rest']]],
+  ['claudeskills_1',['ClaudeSkills',['../namespacesignalwire_1_1skills.html#aea0a47c823a2b793429d857f6210eb95a5464dfb791e1b17acc141e2025b331d0',1,'signalwire::skills']]],
+  ['created_2',['Created',['../namespacesignalwire_1_1relay.html#aefc86b798a99217ea909fda264548975a0eceeb45861f9585dd7a97a3e36f85c6',1,'signalwire::relay']]],
+  ['customskills_3',['CustomSkills',['../namespacesignalwire_1_1skills.html#aea0a47c823a2b793429d857f6210eb95a1cfcf79f0d15992efd3704e4935c905f',1,'signalwire::skills']]]
 ];

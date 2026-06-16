@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['phonecallhandler_0',['PhoneCallHandler',['../namespacesignalwire_1_1rest.html#a72143ace77c2c9601a993eadc491f0d4',1,'signalwire::rest']]]
+  ['dialstate_0',['DialState',['../namespacesignalwire_1_1relay.html#ac910115eb46b6c32d476be13c7509d1c',1,'signalwire::relay']]]
 ];
