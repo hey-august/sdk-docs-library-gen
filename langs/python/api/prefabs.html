@@ -1,0 +1,5479 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="pom.html">
+      
+      
+        <link rel="next" href="relay.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>signalwire.prefabs - SignalWire Python SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#signalwireprefabs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="SignalWire Python SDK" class="md-header__button md-logo" aria-label="SignalWire Python SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SignalWire Python SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              signalwire.prefabs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="SignalWire Python SDK" class="md-nav__button md-logo" aria-label="SignalWire Python SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SignalWire Python SDK
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Api
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Api
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agent-server.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.agent_server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cli.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="core.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="livewire.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.livewire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mcp-gateway.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.mcp_gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pom.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.pom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.prefabs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="prefabs.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.prefabs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        prefabs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfoGathererAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InfoGathererAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent.set_question_callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_question_callback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent.on_swml_request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_swml_request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent.start_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        start_questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent.submit_answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        submit_answer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.FAQBotAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQBotAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQBotAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.FAQBotAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.FAQBotAgent.search_faqs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        search_faqs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.FAQBotAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ConciergeAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConciergeAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ConciergeAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ConciergeAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ConciergeAgent.check_availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        check_availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ConciergeAgent.get_directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_directions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ConciergeAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.SurveyAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SurveyAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SurveyAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.SurveyAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.SurveyAgent.validate_response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        validate_response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.SurveyAgent.log_response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        log_response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.SurveyAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ReceptionistAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReceptionistAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ReceptionistAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ReceptionistAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ReceptionistAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        concierge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="concierge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge.ConciergeAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConciergeAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ConciergeAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge.ConciergeAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge.ConciergeAgent.check_availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        check_availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge.ConciergeAgent.get_directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_directions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge.ConciergeAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.faq_bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        faq_bot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="faq_bot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.faq_bot.FAQBotAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQBotAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQBotAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.faq_bot.FAQBotAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.faq_bot.FAQBotAgent.search_faqs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        search_faqs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.faq_bot.FAQBotAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        info_gatherer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="info_gatherer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfoGathererAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InfoGathererAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent.set_question_callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_question_callback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent.on_swml_request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_swml_request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent.start_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        start_questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent.submit_answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        submit_answer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.receptionist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        receptionist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="receptionist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.receptionist.ReceptionistAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReceptionistAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ReceptionistAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.receptionist.ReceptionistAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.receptionist.ReceptionistAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        survey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="survey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey.SurveyAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SurveyAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SurveyAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey.SurveyAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey.SurveyAgent.validate_response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        validate_response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey.SurveyAgent.log_response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        log_response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey.SurveyAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="relay.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.relay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rest.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.rest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="search.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="skills.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.skills
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="utils.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.utils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        prefabs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfoGathererAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InfoGathererAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent.set_question_callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_question_callback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent.on_swml_request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_swml_request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent.start_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        start_questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.InfoGathererAgent.submit_answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        submit_answer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.FAQBotAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQBotAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQBotAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.FAQBotAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.FAQBotAgent.search_faqs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        search_faqs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.FAQBotAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ConciergeAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConciergeAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ConciergeAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ConciergeAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ConciergeAgent.check_availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        check_availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ConciergeAgent.get_directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_directions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ConciergeAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.SurveyAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SurveyAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SurveyAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.SurveyAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.SurveyAgent.validate_response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        validate_response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.SurveyAgent.log_response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        log_response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.SurveyAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ReceptionistAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReceptionistAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ReceptionistAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ReceptionistAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.ReceptionistAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        concierge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="concierge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge.ConciergeAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConciergeAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ConciergeAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge.ConciergeAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge.ConciergeAgent.check_availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        check_availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge.ConciergeAgent.get_directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_directions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.concierge.ConciergeAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.faq_bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        faq_bot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="faq_bot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.faq_bot.FAQBotAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQBotAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQBotAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.faq_bot.FAQBotAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.faq_bot.FAQBotAgent.search_faqs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        search_faqs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.faq_bot.FAQBotAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        info_gatherer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="info_gatherer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfoGathererAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InfoGathererAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent.set_question_callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_question_callback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent.on_swml_request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_swml_request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent.start_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        start_questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.info_gatherer.InfoGathererAgent.submit_answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        submit_answer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.receptionist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        receptionist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="receptionist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.receptionist.ReceptionistAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReceptionistAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ReceptionistAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.receptionist.ReceptionistAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.receptionist.ReceptionistAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        survey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="survey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey.SurveyAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SurveyAgent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SurveyAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey.SurveyAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey.SurveyAgent.validate_response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        validate_response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey.SurveyAgent.log_response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        log_response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.prefabs.survey.SurveyAgent.on_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="signalwireprefabs">signalwire.prefabs</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="signalwire.prefabs"></a>
+    <div class="doc doc-contents first">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="signalwire.prefabs.InfoGathererAgent" class="doc doc-heading">
+            <code>InfoGathererAgent</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="AgentBase (signalwire.core.agent_base.AgentBase)" href="core.html#signalwire.core.agent_base.AgentBase">AgentBase</a></code></p>
+
+
+
+        <p>A prefab agent designed to collect answers to a series of questions.</p>
+<p>This agent will:
+1. Ask if the user is ready to begin
+2. Ask each question in sequence
+3. Store the answers for later use</p>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>agent = InfoGathererAgent(
+    questions=[
+        {"key_name": "full_name", "question_text": "What is your full name?"},
+        {"key_name": "email", "question_text": "What is your email address?", "confirm": True},
+        {"key_name": "reason", "question_text": "How can I help you today?"}
+    ]
+)</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.InfoGathererAgent.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">questions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;info_gatherer&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="s1">&#39;/info_gatherer&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize an information gathering agent</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>questions</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional list of questions to ask. If None, questions will be determined
+      dynamically via a callback function. Each question dict should have:
+- key_name: Identifier for storing the answer
+- question_text: The actual question to ask the user
+- confirm: (Optional) If set to True, the agent will confirm the answer before submitting</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Agent name for the route</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;info_gatherer&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>route</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>HTTP route for this agent</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;/info_gatherer&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional arguments for AgentBase</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.InfoGathererAgent.set_question_callback" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_question_callback</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Set a callback function for dynamic question configuration</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>callback</code>
+            </td>
+            <td>
+                  <code><span title="typing.Callable">Callable</span>[[<span title="dict">dict</span>, <span title="dict">dict</span>, <span title="dict">dict</span>], <span title="typing.List">List</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Function that takes (query_params, body_params, headers) and returns
+     a list of question dictionaries. Each question dict should have:
+     - key_name: Identifier for storing the answer
+     - question_text: The actual question to ask the user
+     - confirm: (Optional) If True, agent will confirm answer before submitting</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>def my_question_callback(query_params, body_params, headers):
+    question_set = query_params.get('set', 'default')
+    if question_set == 'support':
+        return [
+            {"key_name": "name", "question_text": "What is your name?"},
+            {"key_name": "issue", "question_text": "What's the issue?"}
+        ]
+    else:
+        return [{"key_name": "name", "question_text": "What is your name?"}]</p>
+<p>agent.set_question_callback(my_question_callback)</p>
+</details>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.InfoGathererAgent.on_swml_request" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">on_swml_request</span><span class="p">(</span><span class="n">request_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">callback_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Handle dynamic configuration using the callback function</p>
+<p>This method is called when SWML is requested and allows us to configure
+the agent just-in-time using the provided callback.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.InfoGathererAgent.start_questions" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">start_questions</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Start the question sequence by retrieving the first question</p>
+<p>This function gets the current question index from global_data
+and returns the corresponding question.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.InfoGathererAgent.submit_answer" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">submit_answer</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Submit an answer to the current question and move to the next one</p>
+<p>This function:
+1. Stores the answer in global_data
+2. Increments the question index
+3. Returns the next question or completion message</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="signalwire.prefabs.FAQBotAgent" class="doc doc-heading">
+            <code>FAQBotAgent</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="AgentBase (signalwire.core.agent_base.AgentBase)" href="core.html#signalwire.core.agent_base.AgentBase">AgentBase</a></code></p>
+
+
+
+        <p>A prefab agent designed to answer frequently asked questions based on
+a provided list of question/answer pairs.</p>
+<p>This agent will:
+1. Match user questions against the FAQ database
+2. Provide the most relevant answer
+3. Suggest other relevant questions when appropriate</p>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>agent = FAQBotAgent(
+    faqs=[
+        {
+            "question": "What is SignalWire?",
+            "answer": "SignalWire is a developer-friendly cloud communications platform."
+        },
+        {
+            "question": "How much does it cost?",
+            "answer": "SignalWire offers pay-as-you-go pricing with no monthly fees."
+        }
+    ]
+)</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.FAQBotAgent.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">faqs</span><span class="p">,</span> <span class="n">suggest_related</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">persona</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;faq_bot&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="s1">&#39;/faq&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize an FAQ bot agent</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>faqs</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of FAQ items, each with:
+- question: The question text
+- answer: The answer text
+- categories: Optional list of category tags</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>suggest_related</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to suggest related questions</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>persona</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional custom personality description</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Agent name for the route</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;faq_bot&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>route</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>HTTP route for this agent</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;/faq&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional arguments for AgentBase</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.FAQBotAgent.search_faqs" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">search_faqs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Search for FAQs matching a specific query or category</p>
+<p>This function helps find relevant FAQs based on a search query or category.
+It returns matching FAQs in order of relevance.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.FAQBotAgent.on_summary" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">on_summary</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">raw_data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Process the interaction summary</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>summary</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Summary data from the conversation</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>raw_data</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The complete raw POST data from the request</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="signalwire.prefabs.ConciergeAgent" class="doc doc-heading">
+            <code>ConciergeAgent</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="AgentBase (signalwire.core.agent_base.AgentBase)" href="core.html#signalwire.core.agent_base.AgentBase">AgentBase</a></code></p>
+
+
+
+        <p>A prefab agent designed to act as a virtual concierge, providing information
+and services to users.</p>
+<p>This agent will:
+1. Welcome users and explain available services
+2. Answer questions about amenities, hours, and directions
+3. Help with bookings and reservations
+4. Provide personalized recommendations</p>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>agent = ConciergeAgent(
+    venue_name="Grand Hotel",
+    services=["room service", "spa bookings", "restaurant reservations"],
+    amenities={
+        "pool": {"hours": "7 AM - 10 PM", "location": "2nd Floor"},
+        "gym": {"hours": "24 hours", "location": "3rd Floor"}
+    }
+)</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.ConciergeAgent.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">venue_name</span><span class="p">,</span> <span class="n">services</span><span class="p">,</span> <span class="n">amenities</span><span class="p">,</span> <span class="n">hours_of_operation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">special_instructions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">welcome_message</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;concierge&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="s1">&#39;/concierge&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize a concierge agent</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>venue_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the venue or business</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>services</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of services offered</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>amenities</code>
+            </td>
+            <td>
+                  <code><span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dictionary of amenities with details</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>hours_of_operation</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional dictionary of operating hours</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>special_instructions</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[<span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional list of special instructions</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>welcome_message</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional custom welcome message</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Agent name for the route</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;concierge&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>route</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>HTTP route for this agent</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;/concierge&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional arguments for AgentBase</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.ConciergeAgent.check_availability" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">check_availability</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Check availability for a service on a specific date and time</p>
+<p>This is a simulated function that would typically connect to a real booking system.
+In this example, it returns a mock availability response.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.ConciergeAgent.get_directions" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_directions</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide directions to a specific location or amenity</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.ConciergeAgent.on_summary" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">on_summary</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">raw_data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Process the interaction summary</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>summary</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Summary data from the conversation</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>raw_data</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The complete raw POST data from the request</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="signalwire.prefabs.SurveyAgent" class="doc doc-heading">
+            <code>SurveyAgent</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="AgentBase (signalwire.core.agent_base.AgentBase)" href="core.html#signalwire.core.agent_base.AgentBase">AgentBase</a></code></p>
+
+
+
+        <p>A prefab agent designed to conduct automated surveys with users.</p>
+<p>This agent will:
+1. Introduce the survey purpose and structure
+2. Ask predefined questions in sequence
+3. Collect and validate responses
+4. Provide a summary of collected responses</p>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>agent = SurveyAgent(
+    survey_name="Customer Satisfaction Survey",
+    introduction="We'd like to get your feedback on your recent experience.",
+    questions=[
+        {
+            "id": "satisfaction",
+            "text": "How satisfied were you with our service?",
+            "type": "rating",
+            "scale": 5,
+            "required": True
+        },
+        {
+            "id": "comments",
+            "text": "Do you have any additional comments?",
+            "type": "open_ended",
+            "required": False
+        }
+    ]
+)</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.SurveyAgent.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">survey_name</span><span class="p">,</span> <span class="n">questions</span><span class="p">,</span> <span class="n">introduction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">conclusion</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">brand_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;survey&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="s1">&#39;/survey&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize a survey agent</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>survey_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the survey</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>questions</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of question objects with the following keys:
+- id: Unique identifier for the question
+- text: The question text to ask
+- type: Type of question (rating, multiple_choice, yes_no, open_ended)
+- options: List of options for multiple_choice questions
+- scale: For rating questions, the scale (e.g., 1-5)
+- required: Whether the question requires an answer</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>introduction</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional custom introduction message</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>conclusion</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional custom conclusion message</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>brand_name</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional brand or company name</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>max_retries</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Maximum number of times to retry invalid answers</p>
+              </div>
+            </td>
+            <td>
+                  <code>2</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name for the agent (default: "survey")</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;survey&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>route</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>HTTP route for the agent (default: "/survey")</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;/survey&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional arguments for AgentBase</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.SurveyAgent.validate_response" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">validate_response</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Validate if a response meets the requirements for a specific question</p>
+<p>This function checks if a user's response is valid for the specified question
+based on the question type and constraints.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.SurveyAgent.log_response" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">log_response</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Log a validated response to a survey question</p>
+<p>This function would typically connect to a database or API to store the response.
+In this example, it just acknowledges that the response was received.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.SurveyAgent.on_summary" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">on_summary</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">raw_data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Process the survey results summary</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>summary</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Summary data containing survey responses</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>raw_data</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The complete raw POST data from the request</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="signalwire.prefabs.ReceptionistAgent" class="doc doc-heading">
+            <code>ReceptionistAgent</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="AgentBase (signalwire.core.agent_base.AgentBase)" href="core.html#signalwire.core.agent_base.AgentBase">AgentBase</a></code></p>
+
+
+
+        <p>A prefab agent designed to act as a receptionist that:
+1. Greets callers
+2. Collects basic information about their needs
+3. Transfers them to the appropriate department</p>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>agent = ReceptionistAgent(
+    departments=[
+        {"name": "sales", "description": "For product inquiries, pricing, and purchasing", "number": "+15551235555"},
+        {"name": "support", "description": "For technical help and troubleshooting", "number": "+15551236666"}
+    ]
+)</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.ReceptionistAgent.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">departments</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;receptionist&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="s1">&#39;/receptionist&#39;</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s1">&#39;Thank you for calling. How can I help you today?&#39;</span><span class="p">,</span> <span class="n">voice</span><span class="o">=</span><span class="s1">&#39;rime.spore&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize a receptionist agent</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>departments</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of departments to transfer to, each with:
+- name: Department identifier (e.g., "sales")
+- description: Description of department's purpose
+- number: Phone number for transfer</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Agent name for the route</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;receptionist&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>route</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>HTTP route for this agent</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;/receptionist&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>greeting</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initial greeting message</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;Thank you for calling. How can I help you today?&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>voice</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Voice ID to use</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;rime.spore&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional arguments for AgentBase</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="signalwire.prefabs.ReceptionistAgent.on_summary" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">on_summary</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">raw_data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Process the conversation summary</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>summary</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Summary data from the conversation</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>raw_data</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The complete raw POST data from the request</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="signalwire.prefabs.concierge" class="doc doc-heading">
+            <code>concierge</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="signalwire.prefabs.concierge.ConciergeAgent" class="doc doc-heading">
+            <code>ConciergeAgent</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="AgentBase (signalwire.core.agent_base.AgentBase)" href="core.html#signalwire.core.agent_base.AgentBase">AgentBase</a></code></p>
+
+
+
+        <p>A prefab agent designed to act as a virtual concierge, providing information
+and services to users.</p>
+<p>This agent will:
+1. Welcome users and explain available services
+2. Answer questions about amenities, hours, and directions
+3. Help with bookings and reservations
+4. Provide personalized recommendations</p>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>agent = ConciergeAgent(
+    venue_name="Grand Hotel",
+    services=["room service", "spa bookings", "restaurant reservations"],
+    amenities={
+        "pool": {"hours": "7 AM - 10 PM", "location": "2nd Floor"},
+        "gym": {"hours": "24 hours", "location": "3rd Floor"}
+    }
+)</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.concierge.ConciergeAgent.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">venue_name</span><span class="p">,</span> <span class="n">services</span><span class="p">,</span> <span class="n">amenities</span><span class="p">,</span> <span class="n">hours_of_operation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">special_instructions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">welcome_message</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;concierge&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="s1">&#39;/concierge&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize a concierge agent</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>venue_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the venue or business</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>services</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of services offered</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>amenities</code>
+            </td>
+            <td>
+                  <code><span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dictionary of amenities with details</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>hours_of_operation</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional dictionary of operating hours</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>special_instructions</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[<span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional list of special instructions</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>welcome_message</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional custom welcome message</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Agent name for the route</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;concierge&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>route</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>HTTP route for this agent</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;/concierge&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional arguments for AgentBase</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.concierge.ConciergeAgent.check_availability" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">check_availability</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Check availability for a service on a specific date and time</p>
+<p>This is a simulated function that would typically connect to a real booking system.
+In this example, it returns a mock availability response.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.concierge.ConciergeAgent.get_directions" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_directions</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide directions to a specific location or amenity</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.concierge.ConciergeAgent.on_summary" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">on_summary</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">raw_data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Process the interaction summary</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>summary</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Summary data from the conversation</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>raw_data</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The complete raw POST data from the request</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="signalwire.prefabs.faq_bot" class="doc doc-heading">
+            <code>faq_bot</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="signalwire.prefabs.faq_bot.FAQBotAgent" class="doc doc-heading">
+            <code>FAQBotAgent</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="AgentBase (signalwire.core.agent_base.AgentBase)" href="core.html#signalwire.core.agent_base.AgentBase">AgentBase</a></code></p>
+
+
+
+        <p>A prefab agent designed to answer frequently asked questions based on
+a provided list of question/answer pairs.</p>
+<p>This agent will:
+1. Match user questions against the FAQ database
+2. Provide the most relevant answer
+3. Suggest other relevant questions when appropriate</p>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>agent = FAQBotAgent(
+    faqs=[
+        {
+            "question": "What is SignalWire?",
+            "answer": "SignalWire is a developer-friendly cloud communications platform."
+        },
+        {
+            "question": "How much does it cost?",
+            "answer": "SignalWire offers pay-as-you-go pricing with no monthly fees."
+        }
+    ]
+)</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.faq_bot.FAQBotAgent.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">faqs</span><span class="p">,</span> <span class="n">suggest_related</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">persona</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;faq_bot&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="s1">&#39;/faq&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize an FAQ bot agent</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>faqs</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of FAQ items, each with:
+- question: The question text
+- answer: The answer text
+- categories: Optional list of category tags</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>suggest_related</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to suggest related questions</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>persona</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional custom personality description</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Agent name for the route</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;faq_bot&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>route</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>HTTP route for this agent</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;/faq&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional arguments for AgentBase</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.faq_bot.FAQBotAgent.search_faqs" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">search_faqs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Search for FAQs matching a specific query or category</p>
+<p>This function helps find relevant FAQs based on a search query or category.
+It returns matching FAQs in order of relevance.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.faq_bot.FAQBotAgent.on_summary" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">on_summary</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">raw_data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Process the interaction summary</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>summary</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Summary data from the conversation</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>raw_data</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The complete raw POST data from the request</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="signalwire.prefabs.info_gatherer" class="doc doc-heading">
+            <code>info_gatherer</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="signalwire.prefabs.info_gatherer.InfoGathererAgent" class="doc doc-heading">
+            <code>InfoGathererAgent</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="AgentBase (signalwire.core.agent_base.AgentBase)" href="core.html#signalwire.core.agent_base.AgentBase">AgentBase</a></code></p>
+
+
+
+        <p>A prefab agent designed to collect answers to a series of questions.</p>
+<p>This agent will:
+1. Ask if the user is ready to begin
+2. Ask each question in sequence
+3. Store the answers for later use</p>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>agent = InfoGathererAgent(
+    questions=[
+        {"key_name": "full_name", "question_text": "What is your full name?"},
+        {"key_name": "email", "question_text": "What is your email address?", "confirm": True},
+        {"key_name": "reason", "question_text": "How can I help you today?"}
+    ]
+)</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.info_gatherer.InfoGathererAgent.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">questions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;info_gatherer&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="s1">&#39;/info_gatherer&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize an information gathering agent</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>questions</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional list of questions to ask. If None, questions will be determined
+      dynamically via a callback function. Each question dict should have:
+- key_name: Identifier for storing the answer
+- question_text: The actual question to ask the user
+- confirm: (Optional) If set to True, the agent will confirm the answer before submitting</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Agent name for the route</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;info_gatherer&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>route</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>HTTP route for this agent</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;/info_gatherer&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional arguments for AgentBase</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.info_gatherer.InfoGathererAgent.set_question_callback" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_question_callback</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Set a callback function for dynamic question configuration</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>callback</code>
+            </td>
+            <td>
+                  <code><span title="typing.Callable">Callable</span>[[<span title="dict">dict</span>, <span title="dict">dict</span>, <span title="dict">dict</span>], <span title="typing.List">List</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Function that takes (query_params, body_params, headers) and returns
+     a list of question dictionaries. Each question dict should have:
+     - key_name: Identifier for storing the answer
+     - question_text: The actual question to ask the user
+     - confirm: (Optional) If True, agent will confirm answer before submitting</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>def my_question_callback(query_params, body_params, headers):
+    question_set = query_params.get('set', 'default')
+    if question_set == 'support':
+        return [
+            {"key_name": "name", "question_text": "What is your name?"},
+            {"key_name": "issue", "question_text": "What's the issue?"}
+        ]
+    else:
+        return [{"key_name": "name", "question_text": "What is your name?"}]</p>
+<p>agent.set_question_callback(my_question_callback)</p>
+</details>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.info_gatherer.InfoGathererAgent.on_swml_request" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">on_swml_request</span><span class="p">(</span><span class="n">request_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">callback_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Handle dynamic configuration using the callback function</p>
+<p>This method is called when SWML is requested and allows us to configure
+the agent just-in-time using the provided callback.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.info_gatherer.InfoGathererAgent.start_questions" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">start_questions</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Start the question sequence by retrieving the first question</p>
+<p>This function gets the current question index from global_data
+and returns the corresponding question.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.info_gatherer.InfoGathererAgent.submit_answer" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">submit_answer</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Submit an answer to the current question and move to the next one</p>
+<p>This function:
+1. Stores the answer in global_data
+2. Increments the question index
+3. Returns the next question or completion message</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="signalwire.prefabs.receptionist" class="doc doc-heading">
+            <code>receptionist</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="signalwire.prefabs.receptionist.ReceptionistAgent" class="doc doc-heading">
+            <code>ReceptionistAgent</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="AgentBase (signalwire.core.agent_base.AgentBase)" href="core.html#signalwire.core.agent_base.AgentBase">AgentBase</a></code></p>
+
+
+
+        <p>A prefab agent designed to act as a receptionist that:
+1. Greets callers
+2. Collects basic information about their needs
+3. Transfers them to the appropriate department</p>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>agent = ReceptionistAgent(
+    departments=[
+        {"name": "sales", "description": "For product inquiries, pricing, and purchasing", "number": "+15551235555"},
+        {"name": "support", "description": "For technical help and troubleshooting", "number": "+15551236666"}
+    ]
+)</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.receptionist.ReceptionistAgent.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">departments</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;receptionist&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="s1">&#39;/receptionist&#39;</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s1">&#39;Thank you for calling. How can I help you today?&#39;</span><span class="p">,</span> <span class="n">voice</span><span class="o">=</span><span class="s1">&#39;rime.spore&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize a receptionist agent</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>departments</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of departments to transfer to, each with:
+- name: Department identifier (e.g., "sales")
+- description: Description of department's purpose
+- number: Phone number for transfer</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Agent name for the route</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;receptionist&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>route</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>HTTP route for this agent</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;/receptionist&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>greeting</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initial greeting message</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;Thank you for calling. How can I help you today?&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>voice</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Voice ID to use</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;rime.spore&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional arguments for AgentBase</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.receptionist.ReceptionistAgent.on_summary" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">on_summary</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">raw_data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Process the conversation summary</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>summary</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Summary data from the conversation</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>raw_data</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The complete raw POST data from the request</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="signalwire.prefabs.survey" class="doc doc-heading">
+            <code>survey</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="signalwire.prefabs.survey.SurveyAgent" class="doc doc-heading">
+            <code>SurveyAgent</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="AgentBase (signalwire.core.agent_base.AgentBase)" href="core.html#signalwire.core.agent_base.AgentBase">AgentBase</a></code></p>
+
+
+
+        <p>A prefab agent designed to conduct automated surveys with users.</p>
+<p>This agent will:
+1. Introduce the survey purpose and structure
+2. Ask predefined questions in sequence
+3. Collect and validate responses
+4. Provide a summary of collected responses</p>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>agent = SurveyAgent(
+    survey_name="Customer Satisfaction Survey",
+    introduction="We'd like to get your feedback on your recent experience.",
+    questions=[
+        {
+            "id": "satisfaction",
+            "text": "How satisfied were you with our service?",
+            "type": "rating",
+            "scale": 5,
+            "required": True
+        },
+        {
+            "id": "comments",
+            "text": "Do you have any additional comments?",
+            "type": "open_ended",
+            "required": False
+        }
+    ]
+)</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.survey.SurveyAgent.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">survey_name</span><span class="p">,</span> <span class="n">questions</span><span class="p">,</span> <span class="n">introduction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">conclusion</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">brand_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;survey&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="s1">&#39;/survey&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize a survey agent</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>survey_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the survey</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>questions</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of question objects with the following keys:
+- id: Unique identifier for the question
+- text: The question text to ask
+- type: Type of question (rating, multiple_choice, yes_no, open_ended)
+- options: List of options for multiple_choice questions
+- scale: For rating questions, the scale (e.g., 1-5)
+- required: Whether the question requires an answer</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>introduction</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional custom introduction message</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>conclusion</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional custom conclusion message</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>brand_name</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional brand or company name</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>max_retries</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Maximum number of times to retry invalid answers</p>
+              </div>
+            </td>
+            <td>
+                  <code>2</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name for the agent (default: "survey")</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;survey&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>route</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>HTTP route for the agent (default: "/survey")</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;/survey&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional arguments for AgentBase</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.survey.SurveyAgent.validate_response" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">validate_response</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Validate if a response meets the requirements for a specific question</p>
+<p>This function checks if a user's response is valid for the specified question
+based on the question type and constraints.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.survey.SurveyAgent.log_response" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">log_response</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Log a validated response to a survey question</p>
+<p>This function would typically connect to a database or API to store the response.
+In this example, it just acknowledges that the response was received.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="signalwire.prefabs.survey.SurveyAgent.on_summary" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">on_summary</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">raw_data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Process the survey results summary</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>summary</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Summary data containing survey responses</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>raw_data</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The complete raw POST data from the request</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

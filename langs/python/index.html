@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="api/agents.html">
+        <link rel="next" href="api/agent-server.html">
       
       
         
@@ -26,9 +26,6 @@
     
     
       <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -58,14 +55,7 @@
   </head>
   
   
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -74,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#signalwire-python-sdk" class="md-skip">
+        <a href="#whats-in-this-sdk" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +76,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="index.html" title="SignalWire Python SDK" class="md-header__button md-logo" aria-label="SignalWire Python SDK" data-md-component="logo">
       
@@ -108,38 +100,12 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Home
             
           </span>
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
-      </label>
-    
-  
-</form>
-      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -171,8 +137,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -198,132 +162,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="index.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Overview
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="api/agents.html" class="md-tabs__link">
-          
-  
-  
-  AI Agents
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="api/rest.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  REST
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="api/relay.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Relay (Realtime)
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="api/swml.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  SWML / POM
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="api/skills.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Skills
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -337,12 +175,8 @@
                     
 
 
-  
 
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="index.html" title="SignalWire Python SDK" class="md-nav__button md-logo" aria-label="SignalWire Python SDK" data-md-component="logo">
       
@@ -368,8 +202,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -378,7 +210,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Home
   
 
     
@@ -396,7 +228,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Home
   
 
     
@@ -412,8 +244,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -422,10 +252,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
+  <a href="#whats-in-this-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install
+        What's in this SDK
       
     </span>
   </a>
@@ -433,10 +263,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quickstart-an-ai-agent-in-10-lines" class="md-nav__link">
+  <a href="#ai-agents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quickstart — an AI agent in 10 lines
+        AI Agents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relay-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RELAY Client
       
     </span>
   </a>
@@ -444,10 +313,148 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#surface" class="md-nav__link">
+  <a href="#rest-client" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Surface
+        REST Client
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skills-and-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills and Extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorials
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
       
     </span>
   </a>
@@ -470,31 +477,57 @@
   
     
     
-    
-    
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    AI Agents
+    Api
   
 
     
@@ -510,7 +543,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    AI Agents
+    Api
   
 
           </label>
@@ -523,14 +556,14 @@
   
   
     <li class="md-nav__item">
-      <a href="api/agents.html" class="md-nav__link">
+      <a href="api/agent-server.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    AgentBase
+    signalwire.agent_server
   
 
     
@@ -551,14 +584,322 @@
   
   
     <li class="md-nav__item">
-      <a href="api/agent-server.html" class="md-nav__link">
+      <a href="api/cli.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    AgentServer
+    signalwire.cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/core.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/livewire.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.livewire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/mcp-gateway.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.mcp_gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/pom.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.pom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/prefabs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.prefabs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/relay.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.relay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/rest.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.rest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/search.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/skills.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.skills
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/utils.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.utils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.web
   
 
     
@@ -579,120 +920,246 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/rest.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    REST
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/relay.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Relay (Realtime)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/swml.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SWML / POM
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/skills.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Skills
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
                 </div>
               </div>
             
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whats-in-this-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's in this SDK
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Agents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relay-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RELAY Client
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST Client
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skills-and-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills and Extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorials
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
             
           
           
@@ -704,40 +1171,339 @@
 
 
 
-<h1 id="signalwire-python-sdk">SignalWire Python SDK<a class="headerlink" href="#signalwire-python-sdk" title="Permanent link">&para;</a></h1>
-<p>The official SignalWire SDK for Python. Build voice, messaging, video,
-and AI-agent applications using SWML, the Relay realtime protocol, and
-the SignalWire REST APIs — from one library.</p>
-<div class="admonition tip">
-<p class="admonition-title">Native generator: MkDocs Material + mkdocstrings</p>
-<p>This pane is generated directly from Python docstrings via
-<a href="https://mkdocstrings.github.io/">mkdocstrings</a>, themed with
-<a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.</p>
+  <h1>Home</h1>
+
+<!-- Header -->
+<div align="center">
+    <a href="https://signalwire.com" target="_blank">
+        <img src="/assets/img/signalwire-wordmark.png" width="500" />
+    </a>
+
+# SignalWire SDK for Python
+
+_Build AI voice agents, control live calls over WebSocket, and manage every SignalWire resource over REST -- all from one package._
+
+<p align="center">
+  <a href="https://developer.signalwire.com/sdks/agents-sdk" target="_blank">Documentation</a> &middot;
+  <a href="https://github.com/signalwire/signalwire-docs/issues/new/choose" target="_blank">Report an Issue</a> &middot;
+  <a href="https://pypi.org/project/signalwire-sdk/" target="_blank">PyPI</a>
+</p>
+
+<a href="https://discord.com/invite/F2WNYTNjuF" target="_blank"><img src="https://img.shields.io/badge/Discord%20Community-5865F2" alt="Discord" /></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/MIT-License-blue" alt="MIT License" /></a>
+<a href="https://github.com/signalwire/signalwire-python" target="_blank"><img src="https://img.shields.io/github/stars/signalwire/signalwire-python" alt="GitHub Stars" /></a>
+
 </div>
-<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>signalwire-sdk
-</code></pre></div>
-<h2 id="quickstart-an-ai-agent-in-10-lines">Quickstart — an AI agent in 10 lines<a class="headerlink" href="#quickstart-an-ai-agent-in-10-lines" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">signalwire.agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentBase</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">HelloAgent</span><span class="p">(</span><span class="n">AgentBase</span><span class="p">):</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="s2">&quot;/hello&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">prompt_add_section</span><span class="p">(</span><span class="s2">&quot;Personality&quot;</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="s2">&quot;You are friendly.&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">prompt_add_section</span><span class="p">(</span><span class="s2">&quot;Goal&quot;</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="s2">&quot;Greet the caller and find out what they need.&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">HelloAgent</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</code></pre></div>
-<h2 id="surface">Surface<a class="headerlink" href="#surface" title="Permanent link">&para;</a></h2>
+
+<hr />
+<h2 id="whats-in-this-sdk">What's in this SDK</h2>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>What it does</th>
+<th>Quick link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI Agents</strong></td>
+<td>Build voice agents that handle calls autonomously -- the platform runs the AI pipeline, your code defines the persona, tools, and call flow</td>
+<td><a href="#ai-agents">Agent Guide</a></td>
+</tr>
+<tr>
+<td><strong>RELAY Client</strong></td>
+<td>Control live calls and SMS/MMS in real time over WebSocket -- answer, play, record, collect DTMF, conference, transfer, and more</td>
+<td><a href="relay/README.md">RELAY docs</a></td>
+</tr>
+<tr>
+<td><strong>REST Client</strong></td>
+<td>Manage SignalWire resources over HTTP -- phone numbers, SIP endpoints, Fabric AI agents, video rooms, messaging, and 18+ API namespaces</td>
+<td><a href="rest/README.md">REST docs</a></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">pip install signalwire-sdk
+</code></pre>
+<hr />
+<h2 id="ai-agents">AI Agents</h2>
+<p>Each agent is a self-contained microservice that generates <a href="docs/swml_service_guide.md">SWML</a> (SignalWire Markup Language) and handles <a href="docs/swaig_reference.md">SWAIG</a> (SignalWire AI Gateway) tool calls. The SignalWire platform runs the entire AI pipeline (STT, LLM, TTS) -- your agent just defines the behavior.</p>
+<pre><code class="language-python">from signalwire import AgentBase
+from signalwire.core.function_result import FunctionResult
+
+class MyAgent(AgentBase):
+    def __init__(self):
+        super().__init__(name=&quot;my-agent&quot;, route=&quot;/agent&quot;)
+
+        self.add_language(name=&quot;English&quot;, code=&quot;en-US&quot;, voice=&quot;inworld.Mark&quot;)
+        self.prompt_add_section(&quot;Role&quot;, body=&quot;You are a helpful assistant.&quot;)
+
+    @AgentBase.tool(name=&quot;get_time&quot;)
+    def get_time(self):
+        &quot;&quot;&quot;Get the current time&quot;&quot;&quot;
+        from datetime import datetime
+        return FunctionResult(f&quot;The time is {datetime.now().strftime('%H:%M:%S')}&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    agent = MyAgent()
+    agent.run()
+</code></pre>
+<p>Test locally without running a server:</p>
+<pre><code class="language-bash">swaig-test my_agent.py --list-tools
+swaig-test my_agent.py --dump-swml
+swaig-test my_agent.py --exec get_time
+</code></pre>
+<h3 id="agent-features">Agent Features</h3>
 <ul>
-<li><strong>AI Agents</strong> — <code>AgentBase</code>, <code>AgentServer</code>, prefabs</li>
-<li><strong>REST</strong> — calls, messages, fabric resources</li>
-<li><strong>Relay</strong> — realtime websocket client</li>
-<li><strong>SWML / POM</strong> — programmatic SignalWire Markup Language</li>
-<li><strong>Skills</strong> — pluggable agent capabilities (datetime, web search, MCP…)</li>
+<li><strong>Prompt Object Model (POM)</strong> -- structured prompt composition via <code>prompt_add_section()</code></li>
+<li><strong>SWAIG tools</strong> -- define functions with <code>@AgentBase.tool()</code> that the AI calls mid-conversation, with native access to the call's media stack</li>
+<li><strong>Skills system</strong> -- add capabilities with one-liners: <code>agent.add_skill("datetime")</code></li>
+<li><strong>Contexts and steps</strong> -- structured multi-step workflows with navigation control</li>
+<li><strong>DataMap tools</strong> -- tools that execute on SignalWire's servers, calling REST APIs without your own webhook</li>
+<li><strong>Dynamic configuration</strong> -- per-request agent customization for multi-tenant deployments</li>
+<li><strong>Call flow control</strong> -- pre-answer, post-answer, and post-AI verb insertion</li>
+<li><strong>Prefab agents</strong> -- ready-to-use archetypes (InfoGatherer, Survey, FAQ, Receptionist, Concierge)</li>
+<li><strong>Multi-agent hosting</strong> -- serve multiple agents on a single server with <code>AgentServer</code></li>
+<li><strong>Local search</strong> -- offline document search with vector similarity and keyword matching</li>
+<li><strong>SIP routing</strong> -- route SIP calls to agents based on usernames</li>
+<li><strong>Session state</strong> -- persistent conversation state with global data and post-prompt summaries</li>
+<li><strong>Security</strong> -- auto-generated basic auth, function-specific HMAC tokens, SSL support</li>
+<li><strong>Serverless</strong> -- auto-detects Lambda, CGI, Google Cloud Functions, Azure Functions</li>
 </ul>
-<p>Use the navigation above to dive in.</p>
+<h3 id="agent-examples">Agent Examples</h3>
+<p>The <a href="examples/"><code>examples/</code></a> directory contains 50+ working examples:</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>What it demonstrates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="examples/simple_agent.py">simple_agent.py</a></td>
+<td>POM prompts, SWAIG tools, multilingual support, LLM tuning</td>
+</tr>
+<tr>
+<td><a href="examples/contexts_demo.py">contexts_demo.py</a></td>
+<td>Multi-persona workflow with context switching and step navigation</td>
+</tr>
+<tr>
+<td><a href="examples/data_map_demo.py">data_map_demo.py</a></td>
+<td>Server-side API tools without webhooks</td>
+</tr>
+<tr>
+<td><a href="examples/skills_demo.py">skills_demo.py</a></td>
+<td>Loading built-in skills (datetime, math)</td>
+</tr>
+<tr>
+<td><a href="examples/call_flow_and_actions_demo.py">call_flow_and_actions_demo.py</a></td>
+<td>Call flow verbs, debug events, FunctionResult actions</td>
+</tr>
+<tr>
+<td><a href="examples/session_and_state_demo.py">session_and_state_demo.py</a></td>
+<td>on_summary, global data, post-prompt summaries</td>
+</tr>
+<tr>
+<td><a href="examples/multi_agent_server.py">multi_agent_server.py</a></td>
+<td>Multiple agents on one server</td>
+</tr>
+<tr>
+<td><a href="examples/lambda_agent.py">lambda_agent.py</a></td>
+<td>AWS Lambda deployment with Mangum</td>
+</tr>
+<tr>
+<td><a href="examples/comprehensive_dynamic_agent.py">comprehensive_dynamic_agent.py</a></td>
+<td>Per-request dynamic configuration, multi-tenant routing</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="examples/README.md">examples/README.md</a> for the full list organized by category.</p>
+<hr />
+<h2 id="relay-client">RELAY Client</h2>
+<p>Real-time call control and messaging over WebSocket. The RELAY client connects to SignalWire via the Blade protocol and gives you imperative, async control over live phone calls and SMS/MMS.</p>
+<pre><code class="language-python">from signalwire.relay import RelayClient
+
+client = RelayClient(project=&quot;...&quot;, token=&quot;...&quot;, host=&quot;example.signalwire.com&quot;, contexts=[&quot;default&quot;])
+
+@client.on_call
+async def handle(call):
+    await call.answer()
+    action = await call.play([{&quot;type&quot;: &quot;tts&quot;, &quot;params&quot;: {&quot;text&quot;: &quot;Welcome!&quot;}}])
+    await action.wait()
+    await call.hangup()
+
+client.run()
+</code></pre>
+<ul>
+<li>57+ calling methods (play, record, collect, detect, tap, stream, AI, conferencing, and more)</li>
+<li>SMS/MMS messaging with delivery tracking</li>
+<li>Action objects with <code>wait()</code>, <code>stop()</code>, <code>pause()</code>, <code>resume()</code></li>
+<li>Auto-reconnect with exponential backoff</li>
+</ul>
+<p>See the <strong><a href="relay/README.md">RELAY documentation</a></strong> for the full guide, API reference, and examples.</p>
+<hr />
+<h2 id="rest-client">REST Client</h2>
+<p>Synchronous REST client for managing SignalWire resources and controlling calls over HTTP. No WebSocket required.</p>
+<pre><code class="language-python">from signalwire.rest import RestClient
+
+client = RestClient(project=&quot;...&quot;, token=&quot;...&quot;, host=&quot;example.signalwire.com&quot;)
+
+client.fabric.ai_agents.create(name=&quot;Support Bot&quot;, prompt={&quot;text&quot;: &quot;You are helpful.&quot;})
+client.calling.play(call_id, play=[{&quot;type&quot;: &quot;tts&quot;, &quot;text&quot;: &quot;Hello!&quot;}])
+client.phone_numbers.search(area_code=&quot;512&quot;)
+client.datasphere.documents.search(query_string=&quot;billing policy&quot;)
+</code></pre>
+<ul>
+<li>21 namespaced API surfaces: Fabric (13 resource types), Calling (37 commands), Video, Datasphere, Compat (Twilio-compatible), Phone Numbers, SIP, Queues, Recordings, and more</li>
+<li>Shared <code>requests.Session</code> for connection pooling</li>
+<li>Dict returns -- raw JSON, no wrapper objects</li>
+</ul>
+<p>See the <strong><a href="rest/README.md">REST documentation</a></strong> for the full guide, API reference, and examples.</p>
+<hr />
+<h2 id="installation">Installation</h2>
+<pre><code class="language-bash"># Core SDK (agents, RELAY, REST)
+pip install signalwire-sdk
+
+# With search (pick one based on your needs)
+pip install signalwire-sdk[search-queryonly]   # Query pre-built .swsearch files (~400MB)
+pip install signalwire-sdk[search]              # Build + query search indexes (~500MB)
+pip install signalwire-sdk[search-full]         # + PDF, DOCX, Excel, HTML processing (~600MB)
+pip install signalwire-sdk[search-all]          # All search features (~700MB)
+</code></pre>
+<h2 id="documentation">Documentation</h2>
+<p>Full reference documentation is available at <strong><a href="https://developer.signalwire.com/sdks/agents-sdk">developer.signalwire.com/sdks/agents-sdk</a></strong>.</p>
+<p>Guides are also available in the <a href="docs/"><code>docs/</code></a> directory:</p>
+<h3 id="getting-started">Getting Started</h3>
+<ul>
+<li><a href="docs/agent_guide.md">Agent Guide</a> -- creating agents, prompt configuration, dynamic setup</li>
+<li><a href="docs/architecture.md">Architecture</a> -- SDK architecture and core concepts</li>
+<li><a href="docs/sdk_features.md">SDK Features</a> -- feature overview, SDK vs raw SWML comparison</li>
+</ul>
+<h3 id="core-features">Core Features</h3>
+<ul>
+<li><a href="docs/swaig_reference.md">SWAIG Reference</a> -- function results, actions, post_data lifecycle</li>
+<li><a href="docs/contexts_guide.md">Contexts and Steps</a> -- structured workflows, navigation, gather mode</li>
+<li><a href="docs/datamap_guide.md">DataMap Guide</a> -- serverless API tools without webhooks</li>
+<li><a href="docs/llm_parameters.md">LLM Parameters</a> -- temperature, top_p, barge confidence tuning</li>
+<li><a href="docs/swml_service_guide.md">SWML Service Guide</a> -- low-level construction of SWML documents</li>
+</ul>
+<h3 id="skills-and-extensions">Skills and Extensions</h3>
+<ul>
+<li><a href="docs/skills_system.md">Skills System</a> -- built-in skills and the modular framework</li>
+<li><a href="docs/third_party_skills.md">Third-Party Skills</a> -- creating and publishing custom skills</li>
+<li><a href="docs/mcp_gateway_reference.md">MCP Gateway</a> -- Model Context Protocol integration</li>
+</ul>
+<h3 id="search-system">Search System</h3>
+<ul>
+<li><a href="docs/search_overview.md">Search Overview</a> -- architecture, installation, quick start</li>
+<li><a href="docs/search_indexing.md">Search Indexing</a> -- building indexes, chunking, embeddings</li>
+<li><a href="docs/search_integration.md">Search Integration</a> -- agent integration, skills, HTTP API</li>
+<li><a href="docs/search_deployment.md">Search Deployment</a> -- production deployment, pgvector, scaling</li>
+</ul>
+<h3 id="deployment">Deployment</h3>
+<ul>
+<li><a href="docs/cli_guide.md">CLI Guide</a> -- <code>swaig-test</code> and <code>sw-search</code> command reference</li>
+<li><a href="docs/cloud_functions_guide.md">Cloud Functions</a> -- Lambda, Cloud Functions, Azure deployment</li>
+<li><a href="docs/bedrock_agent.md">Bedrock Agent</a> -- Amazon Bedrock integration</li>
+<li><a href="docs/configuration.md">Configuration</a> -- environment variables, SSL, proxy setup</li>
+<li><a href="docs/security.md">Security</a> -- authentication and security model</li>
+</ul>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="docs/api_reference.md">API Reference</a> -- complete class and method reference</li>
+<li><a href="docs/web_service.md">Web Service</a> -- HTTP server and endpoint details</li>
+<li><a href="docs/skills_parameter_schema.md">Skills Parameter Schema</a> -- skill parameter definitions</li>
+</ul>
+<h3 id="tutorials">Tutorials</h3>
+<ul>
+<li><a href="tutorial/multi_agents/README.md">Multi-Agent Tutorial</a> -- 5-lesson guide from first agent to multi-agent systems</li>
+<li><a href="tutorial/fred/tutorial/README.md">Fred Bot Tutorial</a> -- build a Wikipedia AI assistant step-by-step</li>
+</ul>
+<h2 id="environment-variables">Environment Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Used by</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGNALWIRE_PROJECT_ID</code></td>
+<td>RELAY, REST</td>
+<td>Project identifier</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_API_TOKEN</code></td>
+<td>RELAY, REST</td>
+<td>API token</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_SPACE</code></td>
+<td>RELAY, REST</td>
+<td>Space hostname (e.g. <code>example.signalwire.com</code>)</td>
+</tr>
+<tr>
+<td><code>SWML_BASIC_AUTH_USER</code></td>
+<td>Agents</td>
+<td>Basic auth username (default: auto-generated)</td>
+</tr>
+<tr>
+<td><code>SWML_BASIC_AUTH_PASSWORD</code></td>
+<td>Agents</td>
+<td>Basic auth password (default: auto-generated)</td>
+</tr>
+<tr>
+<td><code>SWML_PROXY_URL_BASE</code></td>
+<td>Agents</td>
+<td>Base URL when behind a reverse proxy</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_ENABLED</code></td>
+<td>Agents</td>
+<td>Enable HTTPS (<code>true</code>, <code>1</code>, <code>yes</code>)</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_CERT_PATH</code></td>
+<td>Agents</td>
+<td>Path to SSL certificate</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_KEY_PATH</code></td>
+<td>Agents</td>
+<td>Path to SSL private key</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_LOG_LEVEL</code></td>
+<td>All</td>
+<td>Logging level (<code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code>)</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_LOG_MODE</code></td>
+<td>All</td>
+<td>Set to <code>off</code> to suppress all logging</td>
+</tr>
+</tbody>
+</table>
+<h2 id="testing">Testing</h2>
+<pre><code class="language-bash"># Install dev dependencies
+pip install -r requirements-dev.txt
+
+# Run the test suite
+pytest
+
+# Run by category
+pytest -m unit
+pytest -m integration
+pytest -m skills
+
+# Coverage
+pytest --cov=signalwire --cov-report=html
+</code></pre>
+<h2 id="license">License</h2>
+<p>MIT -- see <a href="LICENSE">LICENSE</a> for details.</p>
 
 
 
@@ -757,12 +1523,6 @@ the SignalWire REST APIs — from one library.</p>
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
-</button>
         
       </main>
       
@@ -793,7 +1553,7 @@ the SignalWire REST APIs — from one library.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "toc.integrate"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.79ae519e.min.js"></script>

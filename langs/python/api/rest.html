@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="agent-server.html">
+        <link rel="prev" href="relay.html">
       
       
-        <link rel="next" href="relay.html">
+        <link rel="next" href="search.html">
       
       
         
@@ -23,14 +23,11 @@
     
     
       
-        <title>REST - SignalWire Python SDK</title>
+        <title>signalwire.rest - SignalWire Python SDK</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -60,14 +57,7 @@
   </head>
   
   
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rest-client" class="md-skip">
+        <a href="#signalwirerest" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +78,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../index.html" title="SignalWire Python SDK" class="md-header__button md-logo" aria-label="SignalWire Python SDK" data-md-component="logo">
       
@@ -110,38 +102,12 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              REST
+              signalwire.rest
             
           </span>
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
-      </label>
-    
-  
-</form>
-      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -173,8 +139,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -200,132 +164,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../index.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Overview
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="agents.html" class="md-tabs__link">
-          
-  
-  
-  AI Agents
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="rest.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  REST
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="relay.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Relay (Realtime)
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="swml.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  SWML / POM
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="skills.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Skills
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -339,12 +177,8 @@
                     
 
 
-  
 
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../index.html" title="SignalWire Python SDK" class="md-nav__button md-logo" aria-label="SignalWire Python SDK" data-md-component="logo">
       
@@ -371,7 +205,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Home
   
 
     
@@ -388,35 +222,63 @@
       
   
   
+    
   
   
-    
-    
+  
     
     
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
         
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    AI Agents
+    Api
   
 
     
@@ -427,44 +289,16 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    AI Agents
+    Api
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="agents.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AgentBase
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -480,7 +314,7 @@
   <span class="md-ellipsis">
     
   
-    AgentServer
+    signalwire.agent_server
   
 
     
@@ -494,15 +328,204 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cli.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.cli
   
 
     
-      
-      
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="core.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="livewire.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.livewire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mcp-gateway.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.mcp_gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pom.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.pom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="prefabs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.prefabs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="relay.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.relay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
     
@@ -524,7 +547,7 @@
   <span class="md-ellipsis">
     
   
-    REST
+    signalwire.rest
   
 
     
@@ -542,7 +565,7 @@
   <span class="md-ellipsis">
     
   
-    REST
+    signalwire.rest
   
 
     
@@ -568,10 +591,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#signalwire.rest.client" class="md-nav__link">
+  <a href="#signalwire.rest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;client
+        rest
       
     </span>
   </a>
@@ -579,15 +602,127 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#signalwire.rest.client.RestClient" class="md-nav__link">
+  <a href="#signalwire.rest.RestClient" class="md-nav__link">
     <span class="md-ellipsis">
       
-        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;RestClient
+        RestClient
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label=" RestClient">
+    <nav class="md-nav" aria-label="RestClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.RestClient--or-use-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Or use environment variables:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.RestClient--signalwire_project_id-signalwire_api_token-signalwire_space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIGNALWIRE_PROJECT_ID, SIGNALWIRE_API_TOKEN, SIGNALWIRE_SPACE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.RestClient--use-namespaced-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use namespaced resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest.SignalWireRestError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SignalWireRestError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest.PhoneCallHandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PhoneCallHandler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest.call_handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        call_handler
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="call_handler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.call_handler.PhoneCallHandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PhoneCallHandler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest.client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.client.RestClient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RestClient
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RestClient">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -627,6 +762,1145 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.addresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        addresses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="addresses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.addresses.AddressesResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AddressesResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        calling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="calling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.calling.CallingNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CallingNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="chat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.chat.ChatResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ChatResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="compat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatAccounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatAccounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatCalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatCalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatMessages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatMessages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatFaxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatFaxes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatConferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatConferences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatPhoneNumbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatPhoneNumbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatApplications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatApplications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatLamlBins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatLamlBins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatQueues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatQueues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatRecordings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatRecordings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatTranscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatTranscriptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatTokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatTokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.datasphere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        datasphere
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="datasphere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.datasphere.DatasphereDocuments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DatasphereDocuments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.datasphere.DatasphereNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DatasphereNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fabric
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fabric">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.FabricResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FabricResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.FabricResourcePUT" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FabricResourcePUT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.AutoMaterializedWebhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AutoMaterializedWebhook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.CallFlowsResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CallFlowsResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.ConferenceRoomsResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConferenceRoomsResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.SubscribersResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SubscribersResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.CxmlApplicationsResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CxmlApplicationsResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.GenericResources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GenericResources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GenericResources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.GenericResources.assign_phone_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assign_phone_route
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.FabricAddresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FabricAddresses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.FabricTokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FabricTokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.FabricNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FabricNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.imported_numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        imported_numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="imported_numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.imported_numbers.ImportedNumbersResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ImportedNumbersResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs.MessageLogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MessageLogs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs.VoiceLogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VoiceLogs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs.FaxLogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FaxLogs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs.ConferenceLogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConferenceLogs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs.LogsNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LogsNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lookup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="lookup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.lookup.LookupResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LookupResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.mfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mfa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mfa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.mfa.MfaResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MfaResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.number_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        number_groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="number_groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.number_groups.NumberGroupsResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NumberGroupsResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phone_numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="phone_numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PhoneNumbersResource
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PhoneNumbersResource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_swml_webhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_swml_webhook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_cxml_webhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_cxml_webhook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_cxml_application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_cxml_application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_ai_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_ai_agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_call_flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_call_flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_relay_application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_relay_application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_relay_topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_relay_topic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.project.ProjectTokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProjectTokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.project.ProjectNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProjectNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.pubsub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pubsub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pubsub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.pubsub.PubSubResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PubSubResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        queues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="queues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.queues.QueuesResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QueuesResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.recordings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        recordings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="recordings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.recordings.RecordingsResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RecordingsResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry.RegistryBrands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegistryBrands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry.RegistryCampaigns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegistryCampaigns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry.RegistryOrders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegistryOrders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry.RegistryNumbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegistryNumbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry.RegistryNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegistryNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.short_codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        short_codes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="short_codes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.short_codes.ShortCodesResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ShortCodesResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.sip_profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sip_profile
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="sip_profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.sip_profile.SipProfileResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SipProfileResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.verified_callers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        verified_callers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="verified_callers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.verified_callers.VerifiedCallersResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VerifiedCallersResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        video
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="video">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoRooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoRooms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoRoomTokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoRoomTokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoRoomSessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoRoomSessions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoRoomRecordings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoRoomRecordings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoConferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoConferences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoConferenceTokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoConferenceTokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoStreams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoStreams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
@@ -635,22 +1909,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="relay.html" class="md-nav__link">
+      <a href="search.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Relay (Realtime)
+    signalwire.search
   
 
     
@@ -662,36 +1937,10 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="swml.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SWML / POM
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -704,7 +1953,7 @@
   <span class="md-ellipsis">
     
   
-    Skills
+    signalwire.skills
   
 
     
@@ -716,6 +1965,70 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="utils.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.utils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    signalwire.web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
   </ul>
 </nav>
@@ -723,6 +2036,1344 @@
                 </div>
               </div>
             
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest.RestClient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RestClient
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RestClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.RestClient--or-use-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Or use environment variables:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.RestClient--signalwire_project_id-signalwire_api_token-signalwire_space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIGNALWIRE_PROJECT_ID, SIGNALWIRE_API_TOKEN, SIGNALWIRE_SPACE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.RestClient--use-namespaced-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use namespaced resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest.SignalWireRestError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SignalWireRestError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest.PhoneCallHandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PhoneCallHandler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest.call_handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        call_handler
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="call_handler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.call_handler.PhoneCallHandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PhoneCallHandler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest.client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.client.RestClient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RestClient
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RestClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.client.RestClient--or-use-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Or use environment variables:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.client.RestClient--signalwire_project_id-signalwire_api_token-signalwire_space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIGNALWIRE_PROJECT_ID, SIGNALWIRE_API_TOKEN, SIGNALWIRE_SPACE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.client.RestClient--use-namespaced-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use namespaced resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        namespaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="namespaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.addresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        addresses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="addresses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.addresses.AddressesResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AddressesResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        calling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="calling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.calling.CallingNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CallingNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="chat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.chat.ChatResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ChatResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="compat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatAccounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatAccounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatCalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatCalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatMessages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatMessages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatFaxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatFaxes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatConferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatConferences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatPhoneNumbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatPhoneNumbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatApplications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatApplications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatLamlBins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatLamlBins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatQueues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatQueues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatRecordings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatRecordings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatTranscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatTranscriptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatTokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatTokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.compat.CompatNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompatNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.datasphere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        datasphere
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="datasphere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.datasphere.DatasphereDocuments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DatasphereDocuments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.datasphere.DatasphereNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DatasphereNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fabric
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fabric">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.FabricResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FabricResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.FabricResourcePUT" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FabricResourcePUT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.AutoMaterializedWebhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AutoMaterializedWebhook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.CallFlowsResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CallFlowsResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.ConferenceRoomsResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConferenceRoomsResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.SubscribersResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SubscribersResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.CxmlApplicationsResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CxmlApplicationsResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.GenericResources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GenericResources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GenericResources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.GenericResources.assign_phone_route" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assign_phone_route
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.FabricAddresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FabricAddresses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.FabricTokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FabricTokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.fabric.FabricNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FabricNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.imported_numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        imported_numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="imported_numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.imported_numbers.ImportedNumbersResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ImportedNumbersResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs.MessageLogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MessageLogs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs.VoiceLogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VoiceLogs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs.FaxLogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FaxLogs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs.ConferenceLogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConferenceLogs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.logs.LogsNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LogsNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lookup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="lookup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.lookup.LookupResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LookupResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.mfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mfa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mfa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.mfa.MfaResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MfaResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.number_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        number_groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="number_groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.number_groups.NumberGroupsResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NumberGroupsResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phone_numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="phone_numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PhoneNumbersResource
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PhoneNumbersResource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_swml_webhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_swml_webhook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_cxml_webhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_cxml_webhook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_cxml_application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_cxml_application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_ai_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_ai_agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_call_flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_call_flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_relay_application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_relay_application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_relay_topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_relay_topic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.project.ProjectTokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProjectTokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.project.ProjectNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProjectNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.pubsub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pubsub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pubsub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.pubsub.PubSubResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PubSubResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        queues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="queues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.queues.QueuesResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QueuesResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.recordings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        recordings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="recordings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.recordings.RecordingsResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RecordingsResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry.RegistryBrands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegistryBrands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry.RegistryCampaigns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegistryCampaigns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry.RegistryOrders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegistryOrders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry.RegistryNumbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegistryNumbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.registry.RegistryNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegistryNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.short_codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        short_codes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="short_codes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.short_codes.ShortCodesResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ShortCodesResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.sip_profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sip_profile
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="sip_profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.sip_profile.SipProfileResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SipProfileResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.verified_callers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        verified_callers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="verified_callers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.verified_callers.VerifiedCallersResource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VerifiedCallersResource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        video
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="video">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoRooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoRooms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoRoomTokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoRoomTokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoRoomSessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoRoomSessions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoRoomRecordings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoRoomRecordings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoConferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoConferences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoConferenceTokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoConferenceTokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoStreams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoStreams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalwire.rest.namespaces.video.VideoNamespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VideoNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
             
           
           
@@ -734,16 +3385,14 @@
 
 
 
-<h1 id="rest-client">REST Client<a class="headerlink" href="#rest-client" title="Permanent link">&para;</a></h1>
-<p>The synchronous REST client for the SignalWire platform APIs:
-calls, messages, fabric resources, and more.</p>
+<h1 id="signalwirerest">signalwire.rest</h1>
 
 
 <div class="doc doc-object doc-module">
 
 
 
-<a id="signalwire.rest.client"></a>
+<a id="signalwire.rest"></a>
     <div class="doc doc-contents first">
 
         <p>Copyright (c) 2025 SignalWire</p>
@@ -774,13 +3423,12 @@ See LICENSE file in the project root for full license information.</p>
 
 
 
-<h2 id="signalwire.rest.client.RestClient" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">RestClient</span>
+<h2 id="signalwire.rest.RestClient" class="doc doc-heading">
+            <code>RestClient</code>
 
 
-<a href="#signalwire.rest.client.RestClient" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">RestClient</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</code></pre></div>
+</h2>
+
 
     <div class="doc doc-contents ">
 
@@ -796,10 +3444,10 @@ See LICENSE file in the project root for full license information.</p>
     token="your-api-token",
     host="your-space.signalwire.com",
 )</p>
-<h3 id="signalwire.rest.client.RestClient--or-use-environment-variables">Or use environment variables:<a class="headerlink" href="#signalwire.rest.client.RestClient--or-use-environment-variables" title="Permanent link">&para;</a></h3>
-<h3 id="signalwire.rest.client.RestClient--signalwire_project_id-signalwire_api_token-signalwire_space">SIGNALWIRE_PROJECT_ID, SIGNALWIRE_API_TOKEN, SIGNALWIRE_SPACE<a class="headerlink" href="#signalwire.rest.client.RestClient--signalwire_project_id-signalwire_api_token-signalwire_space" title="Permanent link">&para;</a></h3>
+<h3 id="signalwire.rest.RestClient--or-use-environment-variables">Or use environment variables:</h3>
+<h3 id="signalwire.rest.RestClient--signalwire_project_id-signalwire_api_token-signalwire_space">SIGNALWIRE_PROJECT_ID, SIGNALWIRE_API_TOKEN, SIGNALWIRE_SPACE</h3>
 <p>client = RestClient()</p>
-<h3 id="signalwire.rest.client.RestClient--use-namespaced-resources">Use namespaced resources<a class="headerlink" href="#signalwire.rest.client.RestClient--use-namespaced-resources" title="Permanent link">&para;</a></h3>
+<h3 id="signalwire.rest.RestClient--use-namespaced-resources">Use namespaced resources</h3>
 <p>client.fabric.ai_agents.list()
 client.calling.play(call_id, play=[...])
 client.phone_numbers.search(area_code="512")
@@ -813,115 +3461,4358 @@ client.compat.calls.list()</p>
 
 
 
-                  <details class="mkdocstrings-source">
-                    <summary>Source code in <code>signalwire/rest/client.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-61"> 61</a></span>
-<span class="normal"><a href="#__codelineno-0-62"> 62</a></span>
-<span class="normal"><a href="#__codelineno-0-63"> 63</a></span>
-<span class="normal"><a href="#__codelineno-0-64"> 64</a></span>
-<span class="normal"><a href="#__codelineno-0-65"> 65</a></span>
-<span class="normal"><a href="#__codelineno-0-66"> 66</a></span>
-<span class="normal"><a href="#__codelineno-0-67"> 67</a></span>
-<span class="normal"><a href="#__codelineno-0-68"> 68</a></span>
-<span class="normal"><a href="#__codelineno-0-69"> 69</a></span>
-<span class="normal"><a href="#__codelineno-0-70"> 70</a></span>
-<span class="normal"><a href="#__codelineno-0-71"> 71</a></span>
-<span class="normal"><a href="#__codelineno-0-72"> 72</a></span>
-<span class="normal"><a href="#__codelineno-0-73"> 73</a></span>
-<span class="normal"><a href="#__codelineno-0-74"> 74</a></span>
-<span class="normal"><a href="#__codelineno-0-75"> 75</a></span>
-<span class="normal"><a href="#__codelineno-0-76"> 76</a></span>
-<span class="normal"><a href="#__codelineno-0-77"> 77</a></span>
-<span class="normal"><a href="#__codelineno-0-78"> 78</a></span>
-<span class="normal"><a href="#__codelineno-0-79"> 79</a></span>
-<span class="normal"><a href="#__codelineno-0-80"> 80</a></span>
-<span class="normal"><a href="#__codelineno-0-81"> 81</a></span>
-<span class="normal"><a href="#__codelineno-0-82"> 82</a></span>
-<span class="normal"><a href="#__codelineno-0-83"> 83</a></span>
-<span class="normal"><a href="#__codelineno-0-84"> 84</a></span>
-<span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
-<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
-<span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
-<span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
-<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
-<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
-<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
-<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
-<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
-<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
-<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
-<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
-<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
-<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
-<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
-<span class="normal"><a href="#__codelineno-0-100">100</a></span>
-<span class="normal"><a href="#__codelineno-0-101">101</a></span>
-<span class="normal"><a href="#__codelineno-0-102">102</a></span>
-<span class="normal"><a href="#__codelineno-0-103">103</a></span>
-<span class="normal"><a href="#__codelineno-0-104">104</a></span>
-<span class="normal"><a href="#__codelineno-0-105">105</a></span>
-<span class="normal"><a href="#__codelineno-0-106">106</a></span>
-<span class="normal"><a href="#__codelineno-0-107">107</a></span>
-<span class="normal"><a href="#__codelineno-0-108">108</a></span>
-<span class="normal"><a href="#__codelineno-0-109">109</a></span>
-<span class="normal"><a href="#__codelineno-0-110">110</a></span>
-<span class="normal"><a href="#__codelineno-0-111">111</a></span>
-<span class="normal"><a href="#__codelineno-0-112">112</a></span>
-<span class="normal"><a href="#__codelineno-0-113">113</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a>    <span class="n">project</span> <span class="o">=</span> <span class="n">project</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SIGNALWIRE_PROJECT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="n">token</span> <span class="o">=</span> <span class="n">token</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SIGNALWIRE_API_TOKEN&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="n">host</span> <span class="o">=</span> <span class="n">host</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SIGNALWIRE_SPACE&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">project</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">token</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">host</span><span class="p">:</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>            <span class="s2">&quot;project, token, and host are required. &quot;</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>            <span class="s2">&quot;Provide them as arguments or set SIGNALWIRE_PROJECT_ID, &quot;</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a>            <span class="s2">&quot;SIGNALWIRE_API_TOKEN, and SIGNALWIRE_SPACE environment variables.&quot;</span>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a>        <span class="p">)</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">project</span>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_http</span> <span class="o">=</span> <span class="n">HttpClient</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">host</span><span class="p">)</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="c1"># Fabric API</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">fabric</span> <span class="o">=</span> <span class="n">FabricNamespace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="c1"># Calling API</span>
-<a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">calling</span> <span class="o">=</span> <span class="n">CallingNamespace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="c1"># Relay REST resources</span>
-<a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">phone_numbers</span> <span class="o">=</span> <span class="n">PhoneNumbersResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">addresses</span> <span class="o">=</span> <span class="n">AddressesResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">queues</span> <span class="o">=</span> <span class="n">QueuesResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">recordings</span> <span class="o">=</span> <span class="n">RecordingsResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">number_groups</span> <span class="o">=</span> <span class="n">NumberGroupsResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">verified_callers</span> <span class="o">=</span> <span class="n">VerifiedCallersResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">sip_profile</span> <span class="o">=</span> <span class="n">SipProfileResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span> <span class="o">=</span> <span class="n">LookupResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">short_codes</span> <span class="o">=</span> <span class="n">ShortCodesResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">imported_numbers</span> <span class="o">=</span> <span class="n">ImportedNumbersResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">mfa</span> <span class="o">=</span> <span class="n">MfaResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">registry</span> <span class="o">=</span> <span class="n">RegistryNamespace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a>    <span class="c1"># Datasphere API</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">datasphere</span> <span class="o">=</span> <span class="n">DatasphereNamespace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="c1"># Video API</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">video</span> <span class="o">=</span> <span class="n">VideoNamespace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a>    <span class="c1"># Logs</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">logs</span> <span class="o">=</span> <span class="n">LogsNamespace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-104" name="__codelineno-0-104"></a>
-<a id="__codelineno-0-105" name="__codelineno-0-105"></a>    <span class="c1"># Project management</span>
-<a id="__codelineno-0-106" name="__codelineno-0-106"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">project</span> <span class="o">=</span> <span class="n">ProjectNamespace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-107" name="__codelineno-0-107"></a>
-<a id="__codelineno-0-108" name="__codelineno-0-108"></a>    <span class="c1"># PubSub &amp; Chat</span>
-<a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">pubsub</span> <span class="o">=</span> <span class="n">PubSubResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-110" name="__codelineno-0-110"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">chat</span> <span class="o">=</span> <span class="n">ChatResource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">)</span>
-<a id="__codelineno-0-111" name="__codelineno-0-111"></a>
-<a id="__codelineno-0-112" name="__codelineno-0-112"></a>    <span class="c1"># Compatibility (Twilio-compatible) API</span>
-<a id="__codelineno-0-113" name="__codelineno-0-113"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">compat</span> <span class="o">=</span> <span class="n">CompatNamespace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_http</span><span class="p">,</span> <span class="n">project</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-                  </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="signalwire.rest.SignalWireRestError" class="doc doc-heading">
+            <code>SignalWireRestError</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="Exception">Exception</span></code></p>
+
+
+
+        <p>Raised when the SignalWire REST API returns a non-2xx response.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="signalwire.rest.PhoneCallHandler" class="doc doc-heading">
+            <code>PhoneCallHandler</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="str">str</span></code>, <code><span title="enum.Enum">Enum</span></code></p>
+
+
+
+        <p><code>call_handler</code> values for <code>phone_numbers.update</code>.</p>
+<p>Each value is a <code>str</code> subclass, so passing the enum member directly into
+<code>phone_numbers.update(..., call_handler=PhoneCallHandler.RELAY_SCRIPT)</code>
+serializes to the wire value without <code>.value</code> indirection.</p>
+<p>================= ============================= =======================
+Enum member       Companion field (required)    Auto-creates resource
+================= ============================= =======================
+RELAY_SCRIPT      call_relay_script_url         swml_webhook
+LAML_WEBHOOKS     call_request_url              cxml_webhook
+LAML_APPLICATION  call_laml_application_id      cxml_application
+AI_AGENT          call_ai_agent_id              ai_agent
+CALL_FLOW         call_flow_id                  call_flow
+RELAY_APPLICATION call_relay_application        relay_application
+RELAY_TOPIC       call_relay_topic              (routes via RELAY)
+RELAY_CONTEXT     call_relay_context            (legacy, prefer topic)
+RELAY_CONNECTOR   (connector config)            (internal)
+VIDEO_ROOM        call_video_room_id            (routes to Video API)
+DIALOGFLOW        call_dialogflow_agent_id      (none)
+================= ============================= =======================</p>
+<p>Note: <code>LAML_WEBHOOKS</code> (wire value <code>laml_webhooks</code>) produces a <strong>cXML</strong>
+handler, not a generic webhook. For SWML, use <code>RELAY_SCRIPT</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="signalwire.rest.call_handler" class="doc doc-heading">
+            <code>call_handler</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="signalwire.rest.call_handler.PhoneCallHandler" class="doc doc-heading">
+            <code>PhoneCallHandler</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="str">str</span></code>, <code><span title="enum.Enum">Enum</span></code></p>
+
+
+
+        <p><code>call_handler</code> values for <code>phone_numbers.update</code>.</p>
+<p>Each value is a <code>str</code> subclass, so passing the enum member directly into
+<code>phone_numbers.update(..., call_handler=PhoneCallHandler.RELAY_SCRIPT)</code>
+serializes to the wire value without <code>.value</code> indirection.</p>
+<p>================= ============================= =======================
+Enum member       Companion field (required)    Auto-creates resource
+================= ============================= =======================
+RELAY_SCRIPT      call_relay_script_url         swml_webhook
+LAML_WEBHOOKS     call_request_url              cxml_webhook
+LAML_APPLICATION  call_laml_application_id      cxml_application
+AI_AGENT          call_ai_agent_id              ai_agent
+CALL_FLOW         call_flow_id                  call_flow
+RELAY_APPLICATION call_relay_application        relay_application
+RELAY_TOPIC       call_relay_topic              (routes via RELAY)
+RELAY_CONTEXT     call_relay_context            (legacy, prefer topic)
+RELAY_CONNECTOR   (connector config)            (internal)
+VIDEO_ROOM        call_video_room_id            (routes to Video API)
+DIALOGFLOW        call_dialogflow_agent_id      (none)
+================= ============================= =======================</p>
+<p>Note: <code>LAML_WEBHOOKS</code> (wire value <code>laml_webhooks</code>) produces a <strong>cXML</strong>
+handler, not a generic webhook. For SWML, use <code>RELAY_SCRIPT</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="signalwire.rest.client" class="doc doc-heading">
+            <code>client</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="signalwire.rest.client.RestClient" class="doc doc-heading">
+            <code>RestClient</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>REST client for the SignalWire platform APIs.</p>
+
+
+<details class="usage" open>
+  <summary>Usage</summary>
+  <p>client = RestClient(
+    project="your-project-id",
+    token="your-api-token",
+    host="your-space.signalwire.com",
+)</p>
+<h4 id="signalwire.rest.client.RestClient--or-use-environment-variables">Or use environment variables:</h4>
+<h4 id="signalwire.rest.client.RestClient--signalwire_project_id-signalwire_api_token-signalwire_space">SIGNALWIRE_PROJECT_ID, SIGNALWIRE_API_TOKEN, SIGNALWIRE_SPACE</h4>
+<p>client = RestClient()</p>
+<h4 id="signalwire.rest.client.RestClient--use-namespaced-resources">Use namespaced resources</h4>
+<p>client.fabric.ai_agents.list()
+client.calling.play(call_id, play=[...])
+client.phone_numbers.search(area_code="512")
+client.video.rooms.create(name="standup")
+client.compat.calls.list()</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="signalwire.rest.namespaces" class="doc doc-heading">
+            <code>namespaces</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.addresses" class="doc doc-heading">
+            <code>addresses</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.addresses.AddressesResource" class="doc doc-heading">
+            <code>AddressesResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Address management (no update endpoint).</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.calling" class="doc doc-heading">
+            <code>calling</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.calling.CallingNamespace" class="doc doc-heading">
+            <code>CallingNamespace</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>REST call control — all 37 commands dispatched via single POST endpoint.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.chat" class="doc doc-heading">
+            <code>chat</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.chat.ChatResource" class="doc doc-heading">
+            <code>ChatResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Chat token generation.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.compat" class="doc doc-heading">
+            <code>compat</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatAccounts" class="doc doc-heading">
+            <code>CompatAccounts</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Compat account/subproject management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatCalls" class="doc doc-heading">
+            <code>CompatCalls</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Compat call management with recording and stream sub-resources.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatMessages" class="doc doc-heading">
+            <code>CompatMessages</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Compat message management with media sub-resources.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatFaxes" class="doc doc-heading">
+            <code>CompatFaxes</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Compat fax management with media sub-resources.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatConferences" class="doc doc-heading">
+            <code>CompatConferences</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Compat conference management with participants, recordings, and streams.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatPhoneNumbers" class="doc doc-heading">
+            <code>CompatPhoneNumbers</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Compat phone number management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatApplications" class="doc doc-heading">
+            <code>CompatApplications</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Compat application management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatLamlBins" class="doc doc-heading">
+            <code>CompatLamlBins</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Compat cXML/LaML script management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatQueues" class="doc doc-heading">
+            <code>CompatQueues</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Compat queue management with members.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatRecordings" class="doc doc-heading">
+            <code>CompatRecordings</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Compat recording management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatTranscriptions" class="doc doc-heading">
+            <code>CompatTranscriptions</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Compat transcription management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatTokens" class="doc doc-heading">
+            <code>CompatTokens</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Compat API token management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.compat.CompatNamespace" class="doc doc-heading">
+            <code>CompatNamespace</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Twilio-compatible LAML API namespace with AccountSid scoping.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.datasphere" class="doc doc-heading">
+            <code>datasphere</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.datasphere.DatasphereDocuments" class="doc doc-heading">
+            <code>DatasphereDocuments</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Document management with search and chunk operations.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.datasphere.DatasphereNamespace" class="doc doc-heading">
+            <code>DatasphereNamespace</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Datasphere API namespace.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.fabric" class="doc doc-heading">
+            <code>fabric</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.fabric.FabricResource" class="doc doc-heading">
+            <code>FabricResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudWithAddresses">CrudWithAddresses</span></code></p>
+
+
+
+        <p>Standard fabric resource with CRUD + addresses.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.fabric.FabricResourcePUT" class="doc doc-heading">
+            <code>FabricResourcePUT</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudWithAddresses">CrudWithAddresses</span></code></p>
+
+
+
+        <p>Fabric resource that uses PUT for updates.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.fabric.AutoMaterializedWebhook" class="doc doc-heading">
+            <code>AutoMaterializedWebhook</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="FabricResource (signalwire.rest.namespaces.fabric.FabricResource)" href="#signalwire.rest.namespaces.fabric.FabricResource">FabricResource</a></code></p>
+
+
+
+        <p>Fabric webhook resource that's normally auto-created by phone_numbers.set_*.</p>
+<p>Exposed for backwards compatibility. The binding model for these resources
+is on the phone number (see <code>phone_numbers.set_swml_webhook</code> /
+<code>set_cxml_webhook</code>) — setting <code>call_handler</code> on a phone number
+auto-materializes the webhook. Calling <code>create</code> here produces an orphan
+resource that isn't bound to any phone number.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.fabric.CallFlowsResource" class="doc doc-heading">
+            <code>CallFlowsResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="FabricResourcePUT (signalwire.rest.namespaces.fabric.FabricResourcePUT)" href="#signalwire.rest.namespaces.fabric.FabricResourcePUT">FabricResourcePUT</a></code></p>
+
+
+
+        <p>Call flows with version management.</p>
+<p>Note: call_flow (singular) is used in address/version paths per the API spec.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.fabric.ConferenceRoomsResource" class="doc doc-heading">
+            <code>ConferenceRoomsResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="FabricResourcePUT (signalwire.rest.namespaces.fabric.FabricResourcePUT)" href="#signalwire.rest.namespaces.fabric.FabricResourcePUT">FabricResourcePUT</a></code></p>
+
+
+
+        <p>Conference rooms — uses singular 'conference_room' for sub-resource paths.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.fabric.SubscribersResource" class="doc doc-heading">
+            <code>SubscribersResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="FabricResourcePUT (signalwire.rest.namespaces.fabric.FabricResourcePUT)" href="#signalwire.rest.namespaces.fabric.FabricResourcePUT">FabricResourcePUT</a></code></p>
+
+
+
+        <p>Subscribers with SIP endpoint management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.fabric.CxmlApplicationsResource" class="doc doc-heading">
+            <code>CxmlApplicationsResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="FabricResourcePUT (signalwire.rest.namespaces.fabric.FabricResourcePUT)" href="#signalwire.rest.namespaces.fabric.FabricResourcePUT">FabricResourcePUT</a></code></p>
+
+
+
+        <p>cXML applications — no create method (read/update/delete only).</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.fabric.GenericResources" class="doc doc-heading">
+            <code>GenericResources</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Generic resource operations across all fabric resource types.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="signalwire.rest.namespaces.fabric.GenericResources.assign_phone_route" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">assign_phone_route</span><span class="p">(</span><span class="n">resource_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Deprecated for the common binding cases. Use <code>phone_numbers.set_*</code> helpers.</p>
+<p>This endpoint (<code>POST /api/fabric/resources/{id}/phone_routes</code>) accepts
+only a narrow set of legacy resource types as the attach target. It
+<strong>does not work</strong> for <code>swml_webhook</code> / <code>cxml_webhook</code> / <code>ai_agent</code>
+bindings — those are configured on the phone number and the Fabric
+resource is auto-materialized (see <code>phone_numbers.set_swml_webhook</code>
+etc.). The authoritative list of accepting resource types lives in the
+OpenAPI spec; routing here for those types returns 404 or 422.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.fabric.FabricAddresses" class="doc doc-heading">
+            <code>FabricAddresses</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Read-only fabric addresses.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.fabric.FabricTokens" class="doc doc-heading">
+            <code>FabricTokens</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Subscriber, guest, invite, and embed token creation.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.fabric.FabricNamespace" class="doc doc-heading">
+            <code>FabricNamespace</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Fabric API namespace grouping all resource types.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.imported_numbers" class="doc doc-heading">
+            <code>imported_numbers</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.imported_numbers.ImportedNumbersResource" class="doc doc-heading">
+            <code>ImportedNumbersResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Import externally-hosted phone numbers.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.logs" class="doc doc-heading">
+            <code>logs</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.logs.MessageLogs" class="doc doc-heading">
+            <code>MessageLogs</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Message log queries.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.logs.VoiceLogs" class="doc doc-heading">
+            <code>VoiceLogs</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Voice log queries.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.logs.FaxLogs" class="doc doc-heading">
+            <code>FaxLogs</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Fax log queries.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.logs.ConferenceLogs" class="doc doc-heading">
+            <code>ConferenceLogs</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Conference log queries.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.logs.LogsNamespace" class="doc doc-heading">
+            <code>LogsNamespace</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Logs API namespace.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.lookup" class="doc doc-heading">
+            <code>lookup</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.lookup.LookupResource" class="doc doc-heading">
+            <code>LookupResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Phone number lookup (carrier, CNAM).</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.mfa" class="doc doc-heading">
+            <code>mfa</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.mfa.MfaResource" class="doc doc-heading">
+            <code>MfaResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Multi-factor authentication via SMS or phone call.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.number_groups" class="doc doc-heading">
+            <code>number_groups</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.number_groups.NumberGroupsResource" class="doc doc-heading">
+            <code>NumberGroupsResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Number group management with membership operations.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.phone_numbers" class="doc doc-heading">
+            <code>phone_numbers</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource" class="doc doc-heading">
+            <code>PhoneNumbersResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Phone number management.</p>
+<p>Supports the standard CRUD surface plus typed helpers for binding an
+inbound call to a handler (SWML webhook, cXML webhook, AI agent, call
+flow, RELAY application/topic). The binding model is: set
+<code>call_handler</code> + the handler-specific companion field on the phone
+number; the server auto-materializes the matching Fabric resource.
+See :mod:<code>signalwire.rest.call_handler</code> for the enum, and the
+porting-sdk's <code>phone-binding.md</code> for the full model.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_swml_webhook" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_swml_webhook</span><span class="p">(</span><span class="n">resource_id</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span></code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Route inbound calls to an SWML webhook URL.</p>
+<p>Your backend returns an SWML document per call. The server
+auto-creates a <code>swml_webhook</code> Fabric resource keyed off this URL.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_cxml_webhook" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_cxml_webhook</span><span class="p">(</span><span class="n">resource_id</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">fallback_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status_callback_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span></code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Route inbound calls to a cXML (Twilio-compat / LAML) webhook.</p>
+<p>Despite the wire value <code>laml_webhooks</code> being plural, this creates
+a single <code>cxml_webhook</code> Fabric resource. <code>fallback_url</code> is used
+when the primary URL fails; <code>status_callback_url</code> receives call
+status updates.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_cxml_application" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_cxml_application</span><span class="p">(</span><span class="n">resource_id</span><span class="p">,</span> <span class="n">application_id</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span></code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Route inbound calls to an existing cXML application by ID.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_ai_agent" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_ai_agent</span><span class="p">(</span><span class="n">resource_id</span><span class="p">,</span> <span class="n">agent_id</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span></code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Route inbound calls to an AI Agent Fabric resource by ID.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_call_flow" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_call_flow</span><span class="p">(</span><span class="n">resource_id</span><span class="p">,</span> <span class="n">flow_id</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span></code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Route inbound calls to a Call Flow by ID.</p>
+<p><code>version</code> accepts <code>"working_copy"</code> or <code>"current_deployed"</code>
+(server default when omitted).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_relay_application" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_relay_application</span><span class="p">(</span><span class="n">resource_id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span></code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Route inbound calls to a named RELAY application.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="signalwire.rest.namespaces.phone_numbers.PhoneNumbersResource.set_relay_topic" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_relay_topic</span><span class="p">(</span><span class="n">resource_id</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">status_callback_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span></code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Route inbound calls to a RELAY topic (client subscription).</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.project" class="doc doc-heading">
+            <code>project</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.project.ProjectTokens" class="doc doc-heading">
+            <code>ProjectTokens</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Project API token management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.project.ProjectNamespace" class="doc doc-heading">
+            <code>ProjectNamespace</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Project API namespace.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.pubsub" class="doc doc-heading">
+            <code>pubsub</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.pubsub.PubSubResource" class="doc doc-heading">
+            <code>PubSubResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>PubSub token generation.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.queues" class="doc doc-heading">
+            <code>queues</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.queues.QueuesResource" class="doc doc-heading">
+            <code>QueuesResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Queue management with member operations.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.recordings" class="doc doc-heading">
+            <code>recordings</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.recordings.RecordingsResource" class="doc doc-heading">
+            <code>RecordingsResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Recording management (read-only + delete).</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.registry" class="doc doc-heading">
+            <code>registry</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.registry.RegistryBrands" class="doc doc-heading">
+            <code>RegistryBrands</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>10DLC brand management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.registry.RegistryCampaigns" class="doc doc-heading">
+            <code>RegistryCampaigns</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>10DLC campaign management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.registry.RegistryOrders" class="doc doc-heading">
+            <code>RegistryOrders</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>10DLC assignment order management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.registry.RegistryNumbers" class="doc doc-heading">
+            <code>RegistryNumbers</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>10DLC number assignment management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.registry.RegistryNamespace" class="doc doc-heading">
+            <code>RegistryNamespace</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>10DLC Campaign Registry namespace.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.short_codes" class="doc doc-heading">
+            <code>short_codes</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.short_codes.ShortCodesResource" class="doc doc-heading">
+            <code>ShortCodesResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Short code management (read + update only).</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.sip_profile" class="doc doc-heading">
+            <code>sip_profile</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.sip_profile.SipProfileResource" class="doc doc-heading">
+            <code>SipProfileResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Project SIP profile (singleton resource).</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.verified_callers" class="doc doc-heading">
+            <code>verified_callers</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.verified_callers.VerifiedCallersResource" class="doc doc-heading">
+            <code>VerifiedCallersResource</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Verified caller ID management with verification flow.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="signalwire.rest.namespaces.video" class="doc doc-heading">
+            <code>video</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>Copyright (c) 2025 SignalWire</p>
+<p>This file is part of the SignalWire SDK.</p>
+<p>Licensed under the MIT License.
+See LICENSE file in the project root for full license information.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.video.VideoRooms" class="doc doc-heading">
+            <code>VideoRooms</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Video room management with streams.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.video.VideoRoomTokens" class="doc doc-heading">
+            <code>VideoRoomTokens</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Video room token generation.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.video.VideoRoomSessions" class="doc doc-heading">
+            <code>VideoRoomSessions</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Video room session management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.video.VideoRoomRecordings" class="doc doc-heading">
+            <code>VideoRoomRecordings</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Video room recording management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.video.VideoConferences" class="doc doc-heading">
+            <code>VideoConferences</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.CrudResource">CrudResource</span></code></p>
+
+
+
+        <p>Video conference management with tokens and streams.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.video.VideoConferenceTokens" class="doc doc-heading">
+            <code>VideoConferenceTokens</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Video conference token management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.video.VideoStreams" class="doc doc-heading">
+            <code>VideoStreams</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="signalwire.rest._base.BaseResource">BaseResource</span></code></p>
+
+
+
+        <p>Video stream management.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="signalwire.rest.namespaces.video.VideoNamespace" class="doc doc-heading">
+            <code>VideoNamespace</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Video API namespace.</p>
+
+
+
+
+
+
+
+
 
 
 
@@ -954,6 +7845,20 @@ client.compat.calls.list()</p>
 </div>
 
 
+  </div>
+
+    </div>
+
+</div>
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
 
 
 
@@ -971,12 +7876,6 @@ client.compat.calls.list()</p>
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
-</button>
         
       </main>
       
@@ -1007,7 +7906,7 @@ client.compat.calls.list()</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
