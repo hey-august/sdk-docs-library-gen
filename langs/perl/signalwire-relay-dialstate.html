@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#Three-distinct-state-vocabularies">Three distinct state vocabularies</a></li>
+    </ul>
+  </li>
+  <li><a href="#CONSTANTS">CONSTANTS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#states">states</a></li>
+      <li><a href="#is_state">is_state</a></li>
+      <li><a href="#is_terminal">is_terminal</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>SignalWire::Relay::DialState - RELAY dial-outcome states as a typed closed set</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use SignalWire::Relay::DialState qw(DIALING ANSWERED FAILED);
+
+    # Named constants and bare wire strings are interchangeable:
+    $event-&gt;dial_state eq ANSWERED;     # constant
+    $event-&gt;dial_state eq &#39;answered&#39;;   # string (Python parity)
+
+    # Membership / terminality (false on unknown — never dies):
+    SignalWire::Relay::DialState-&gt;is_state(&#39;dialing&#39;);         # 1
+    SignalWire::Relay::DialState-&gt;is_terminal(&#39;answered&#39;);     # 1
+    SignalWire::Relay::DialState-&gt;is_terminal(&#39;failed&#39;);       # 1
+    SignalWire::Relay::DialState-&gt;is_terminal(&#39;dialing&#39;);      # 0
+    @{ SignalWire::Relay::DialState-&gt;states };  # dialing, answered, failed</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The RELAY dial-outcome states, surfaced as typed, named constants. An outbound dial reports progress via the <code>calling.call.dial</code> event&#39;s <code>dial_state</code> field: <code>dialing</code> while in progress, then a terminal outcome of <code>answered</code> (a leg picked up — the dial succeeded) or <code>failed</code> (no leg answered). Each constant&#39;s value is the exact wire string the server sends.</p>
+
+<p>The constants <b>are</b> the canonical wire strings, so the dial flow is unchanged: it still compares plain strings (see <a href="https://metacpan.org/pod/SignalWire::Relay::Client">SignalWire::Relay::Client</a>&#39;s dial dispatch, which resolves a pending dial on <code>answered</code> and rejects on <code>failed</code>). That keeps parity with the Python reference and leaves forward-compatible server states working.</p>
+
+<p>Grounded in the port&#39;s <a href="https://metacpan.org/pod/SignalWire::Relay::Constants">SignalWire::Relay::Constants</a> (<code>DIAL_STATES</code> / <code>DIAL_TERMINAL_STATES</code>), which are the single source the lists below are derived from.</p>
+
+<h2 id="Three-distinct-state-vocabularies">Three distinct state vocabularies</h2>
+
+<p><a href="https://metacpan.org/pod/SignalWire::Relay::CallState">CallState</a>, <code>DialState</code>, and <a href="https://metacpan.org/pod/SignalWire::Relay::MessageState">MessageState</a> are <b>distinct</b> sets and must never be conflated. <code>answered</code> is a <b>terminal</b> <code>DialState</code> but a <b>non-terminal</b> <code>CallState</code> — the same string with opposite terminality, because they are different vocabularies. <code>failed</code> is not a <code>CallState</code> at all.</p>
+
+<h1 id="CONSTANTS">CONSTANTS</h1>
+
+<p>Exported on request via <a href="https://metacpan.org/pod/Exporter">Exporter</a>; <code>:all</code> pulls every state.</p>
+
+<pre><code>    DIALING  =&gt; &#39;dialing&#39;
+    ANSWERED =&gt; &#39;answered&#39;
+    FAILED   =&gt; &#39;failed&#39;</code></pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="states">states</h2>
+
+<pre><code>    my $aref = SignalWire::Relay::DialState-&gt;states;</code></pre>
+
+<p>Arrayref of the dial-outcome states, in order.</p>
+
+<h2 id="is_state">is_state</h2>
+
+<pre><code>    my $bool = SignalWire::Relay::DialState-&gt;is_state($value);</code></pre>
+
+<p>True if <code>$value</code> is a known dial state. Returns false (never dies) on <code>undef</code> or an unknown/forward-compatible value.</p>
+
+<h2 id="is_terminal">is_terminal</h2>
+
+<pre><code>    my $bool = SignalWire::Relay::DialState-&gt;is_terminal($value);</code></pre>
+
+<p>True if <code>$value</code> is a terminal dial state (<code>answered</code> or <code>failed</code>). Returns false on <code>undef</code>, the in-progress <code>dialing</code> state, or an unknown value — it never dies, since these mirror server-emitted values that can grow.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://metacpan.org/pod/SignalWire::Relay::Client">SignalWire::Relay::Client</a>, <a href="https://metacpan.org/pod/SignalWire::Relay::Constants">SignalWire::Relay::Constants</a>, <a href="https://metacpan.org/pod/SignalWire::Relay::CallState">SignalWire::Relay::CallState</a>, <a href="https://metacpan.org/pod/SignalWire::Relay::MessageState">SignalWire::Relay::MessageState</a>.</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>Copyright (c) 2025 SignalWire. Licensed under the MIT License.</p>
+
+</body>
+</html>
+

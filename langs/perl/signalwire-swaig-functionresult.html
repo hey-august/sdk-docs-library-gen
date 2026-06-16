@@ -1,128 +1,98 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8" />
-<title>SignalWire::SWAIG::FunctionResult — SignalWire Perl SDK</title>
-<link rel="stylesheet" href="assets/style.css" />
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 </head>
 <body>
-<nav>
-  <div class="brand"><div class="brand-title">SignalWire</div><div class="brand-sub">Perl SDK · Pod::Simple::XHTML</div></div>
-  <div class="group">Overview</div>
-  <ul><li><a href="index.html">Home</a></li></ul>
-  <div class="group">Top</div>
-  <ul>
-    <li><a href="signalwire.html">SignalWire</a></li>
-    <li><a href="signalwire-contexts.html">SignalWire::Contexts</a></li>
-    <li><a href="signalwire-datamap.html">SignalWire::DataMap</a></li>
-    <li><a href="signalwire-logging.html">SignalWire::Logging</a></li>
-    <li><a href="signalwire-utils.html">SignalWire::Utils</a></li>
-  </ul>
-  <div class="group">Agent</div>
-  <ul>
-    <li><a href="signalwire-agent-agentbase.html">SignalWire::Agent::AgentBase</a></li>
-  </ul>
-  <div class="group">Contexts</div>
-  <ul>
-    <li><a href="signalwire-contexts-contextbuilder.html">SignalWire::Contexts::ContextBuilder</a></li>
-  </ul>
-  <div class="group">Core</div>
-  <ul>
-    <li><a href="signalwire-core-loggingconfig.html">SignalWire::Core::LoggingConfig</a></li>
-  </ul>
-  <div class="group">POM</div>
-  <ul>
-    <li><a href="signalwire-pom-promptobjectmodel.html">SignalWire::POM::PromptObjectModel</a></li>
-    <li><a href="signalwire-pom-section.html">SignalWire::POM::Section</a></li>
-  </ul>
-  <div class="group">Prefabs</div>
-  <ul>
-    <li><a href="signalwire-prefabs-concierge.html">SignalWire::Prefabs::Concierge</a></li>
-    <li><a href="signalwire-prefabs-faqbot.html">SignalWire::Prefabs::FAQBot</a></li>
-    <li><a href="signalwire-prefabs-infogatherer.html">SignalWire::Prefabs::InfoGatherer</a></li>
-    <li><a href="signalwire-prefabs-receptionist.html">SignalWire::Prefabs::Receptionist</a></li>
-    <li><a href="signalwire-prefabs-survey.html">SignalWire::Prefabs::Survey</a></li>
-  </ul>
-  <div class="group">REST</div>
-  <ul>
-    <li><a href="signalwire-rest-httpclient.html">SignalWire::REST::HttpClient</a></li>
-    <li><a href="signalwire-rest-namespaces-base.html">SignalWire::REST::Namespaces::Base</a></li>
-    <li><a href="signalwire-rest-namespaces-calling.html">SignalWire::REST::Namespaces::Calling</a></li>
-    <li><a href="signalwire-rest-namespaces-chat.html">SignalWire::REST::Namespaces::Chat</a></li>
-    <li><a href="signalwire-rest-namespaces-compat.html">SignalWire::REST::Namespaces::Compat</a></li>
-    <li><a href="signalwire-rest-namespaces-datasphere.html">SignalWire::REST::Namespaces::Datasphere</a></li>
-    <li><a href="signalwire-rest-namespaces-fabric.html">SignalWire::REST::Namespaces::Fabric</a></li>
-    <li><a href="signalwire-rest-namespaces-logs.html">SignalWire::REST::Namespaces::Logs</a></li>
-    <li><a href="signalwire-rest-namespaces-phonenumbers.html">SignalWire::REST::Namespaces::PhoneNumbers</a></li>
-    <li><a href="signalwire-rest-namespaces-project.html">SignalWire::REST::Namespaces::Project</a></li>
-    <li><a href="signalwire-rest-namespaces-pubsub.html">SignalWire::REST::Namespaces::PubSub</a></li>
-    <li><a href="signalwire-rest-namespaces-registry.html">SignalWire::REST::Namespaces::Registry</a></li>
-    <li><a href="signalwire-rest-namespaces-resources.html">SignalWire::REST::Namespaces::Resources</a></li>
-    <li><a href="signalwire-rest-namespaces-video.html">SignalWire::REST::Namespaces::Video</a></li>
-    <li><a href="signalwire-rest-pagination.html">SignalWire::REST::Pagination</a></li>
-    <li><a href="signalwire-rest-phonecallhandler.html">SignalWire::REST::PhoneCallHandler</a></li>
-    <li><a href="signalwire-rest-restclient.html">SignalWire::REST::RestClient</a></li>
-  </ul>
-  <div class="group">Relay</div>
-  <ul>
-    <li><a href="signalwire-relay-action.html">SignalWire::Relay::Action</a></li>
-    <li><a href="signalwire-relay-call.html">SignalWire::Relay::Call</a></li>
-    <li><a href="signalwire-relay-client.html">SignalWire::Relay::Client</a></li>
-    <li><a href="signalwire-relay-constants.html">SignalWire::Relay::Constants</a></li>
-    <li><a href="signalwire-relay-event.html">SignalWire::Relay::Event</a></li>
-    <li><a href="signalwire-relay-message.html">SignalWire::Relay::Message</a></li>
-  </ul>
-  <div class="group">SWAIG</div>
-  <ul>
-    <li><a href="signalwire-swaig-functionresult.html" class="active">SignalWire::SWAIG::FunctionResult</a></li>
-  </ul>
-  <div class="group">SWML</div>
-  <ul>
-    <li><a href="signalwire-swml-document.html">SignalWire::SWML::Document</a></li>
-    <li><a href="signalwire-swml-schema.html">SignalWire::SWML::Schema</a></li>
-    <li><a href="signalwire-swml-service.html">SignalWire::SWML::Service</a></li>
-  </ul>
-  <div class="group">Security</div>
-  <ul>
-    <li><a href="signalwire-security-sessionmanager.html">SignalWire::Security::SessionManager</a></li>
-    <li><a href="signalwire-security-webhookmiddleware.html">SignalWire::Security::WebhookMiddleware</a></li>
-    <li><a href="signalwire-security-webhookvalidator.html">SignalWire::Security::WebhookValidator</a></li>
-  </ul>
-  <div class="group">Server</div>
-  <ul>
-    <li><a href="signalwire-server-agentserver.html">SignalWire::Server::AgentServer</a></li>
-  </ul>
-  <div class="group">Skills</div>
-  <ul>
-    <li><a href="signalwire-skills-builtin-apininjastrivia.html">SignalWire::Skills::Builtin::ApiNinjasTrivia</a></li>
-    <li><a href="signalwire-skills-builtin-claudeskills.html">SignalWire::Skills::Builtin::ClaudeSkills</a></li>
-    <li><a href="signalwire-skills-builtin-customskills.html">SignalWire::Skills::Builtin::CustomSkills</a></li>
-    <li><a href="signalwire-skills-builtin-datasphere.html">SignalWire::Skills::Builtin::Datasphere</a></li>
-    <li><a href="signalwire-skills-builtin-datasphereserverless.html">SignalWire::Skills::Builtin::DatasphereServerless</a></li>
-    <li><a href="signalwire-skills-builtin-datetime.html">SignalWire::Skills::Builtin::Datetime</a></li>
-    <li><a href="signalwire-skills-builtin-googlemaps.html">SignalWire::Skills::Builtin::GoogleMaps</a></li>
-    <li><a href="signalwire-skills-builtin-infogatherer.html">SignalWire::Skills::Builtin::InfoGatherer</a></li>
-    <li><a href="signalwire-skills-builtin-joke.html">SignalWire::Skills::Builtin::Joke</a></li>
-    <li><a href="signalwire-skills-builtin-math.html">SignalWire::Skills::Builtin::Math</a></li>
-    <li><a href="signalwire-skills-builtin-mcpgateway.html">SignalWire::Skills::Builtin::McpGateway</a></li>
-    <li><a href="signalwire-skills-builtin-nativevectorsearch.html">SignalWire::Skills::Builtin::NativeVectorSearch</a></li>
-    <li><a href="signalwire-skills-builtin-playbackgroundfile.html">SignalWire::Skills::Builtin::PlayBackgroundFile</a></li>
-    <li><a href="signalwire-skills-builtin-spider.html">SignalWire::Skills::Builtin::Spider</a></li>
-    <li><a href="signalwire-skills-builtin-swmltransfer.html">SignalWire::Skills::Builtin::SwmlTransfer</a></li>
-    <li><a href="signalwire-skills-builtin-weatherapi.html">SignalWire::Skills::Builtin::WeatherApi</a></li>
-    <li><a href="signalwire-skills-builtin-websearch.html">SignalWire::Skills::Builtin::WebSearch</a></li>
-    <li><a href="signalwire-skills-builtin-wikipediasearch.html">SignalWire::Skills::Builtin::WikipediaSearch</a></li>
-    <li><a href="signalwire-skills-skillbase.html">SignalWire::Skills::SkillBase</a></li>
-    <li><a href="signalwire-skills-skillmanager.html">SignalWire::Skills::SkillManager</a></li>
-    <li><a href="signalwire-skills-skillregistry.html">SignalWire::Skills::SkillRegistry</a></li>
-  </ul>
-  <div class="group">Utils</div>
-  <ul>
-    <li><a href="signalwire-utils-urlvalidator.html">SignalWire::Utils::UrlValidator</a></li>
-  </ul>
-</nav>
-<main>
-<h2>SignalWire::SWAIG::FunctionResult</h2><p><em>No POD documentation found in this module.</em></p>
-</main>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#Core">Core</a></li>
+      <li><a href="#Call-control">Call control</a></li>
+      <li><a href="#State-and-data">State and data</a></li>
+      <li><a href="#Media">Media</a></li>
+      <li><a href="#Speech-and-AI">Speech and AI</a></li>
+      <li><a href="#Advanced-RPC">Advanced / RPC</a></li>
+      <li><a href="#Serialization">Serialization</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>SignalWire::SWAIG::FunctionResult - build SWAIG function responses and actions</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use SignalWire::SWAIG::FunctionResult;
+
+    # Plain spoken response:
+    my $result = SignalWire::SWAIG::FunctionResult-&gt;new(&#39;Order placed.&#39;);
+
+    # Response plus call-control actions (chainable, fluent style):
+    my $result = SignalWire::SWAIG::FunctionResult-&gt;new
+        -&gt;set_response(&#39;Connecting you now.&#39;)
+        -&gt;connect(&#39;+15551234567&#39;, final =&gt; 1);
+
+    my $payload = $result-&gt;to_hash;   # ready for JSON emission
+    my $json    = $result-&gt;to_json;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p><a href="https://metacpan.org/pod/SignalWire::SWAIG::FunctionResult">SignalWire::SWAIG::FunctionResult</a> is the Perl port of <code>signalwire.core.function_result.FunctionResult</code>. A SWAIG function handler returns one of these to tell the agent what to say and which call-control actions to perform. The action list is serialised to the wire shape the SignalWire AI engine expects.</p>
+
+<p>Most mutators return <code>$self</code> so calls chain fluently. The constructor accepts either <code>new(response =&gt; $text)</code>, the positional shorthand <code>new($text)</code>, or <code>new($text, post_process =&gt; 1)</code>.</p>
+
+<p>The class-method payment helpers (<code>create_payment_prompt</code>, <code>create_payment_action</code>, <code>create_payment_parameter</code>) may be invoked as class or instance methods — they build plain hashrefs and hold no state.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<p>The surface mirrors the Python reference; see that documentation for the authoritative per-argument contract. Grouped by area:</p>
+
+<h2 id="Core">Core</h2>
+
+<p><code>set_response</code>, <code>set_post_process</code>, <code>add_action</code>, <code>add_actions</code>.</p>
+
+<h2 id="Call-control">Call control</h2>
+
+<p><code>connect</code>, <code>swml_transfer</code>, <code>hangup</code>, <code>hold</code>, <code>wait_for_user</code>, <code>stop</code>, <code>join_conference</code>, <code>join_room</code>, <code>sip_refer</code>, <code>send_sms</code>, <code>pay</code>.</p>
+
+<h2 id="State-and-data">State and data</h2>
+
+<p><code>update_global_data</code>, <code>remove_global_data</code>, <code>set_metadata</code>, <code>remove_metadata</code>, <code>swml_user_event</code>, <code>swml_change_step</code>, <code>swml_change_context</code>, <code>switch_context</code>, <code>replace_in_history</code>.</p>
+
+<h2 id="Media">Media</h2>
+
+<p><code>say</code>, <code>play_background_file</code>, <code>stop_background_file</code>, <code>record_call</code>, <code>stop_record_call</code>, <code>tap</code>, <code>stop_tap</code>.</p>
+
+<h2 id="Speech-and-AI">Speech and AI</h2>
+
+<p><code>add_dynamic_hints</code>, <code>clear_dynamic_hints</code>, <code>set_end_of_speech_timeout</code>, <code>set_speech_event_timeout</code>, <code>toggle_functions</code>, <code>enable_functions_on_timeout</code>, <code>enable_extensive_data</code>, <code>update_settings</code>, <code>simulate_user_input</code>.</p>
+
+<h2 id="Advanced-RPC">Advanced / RPC</h2>
+
+<p><code>execute_swml</code>, <code>execute_rpc</code>, <code>rpc_dial</code>, <code>rpc_ai_message</code>, <code>rpc_ai_unhold</code>.</p>
+
+<h2 id="Serialization">Serialization</h2>
+
+<p><code>to_hash</code> (the Python <code>to_dict</code> equivalent) and <code>to_json</code>.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://metacpan.org/pod/SignalWire::SWAIG::RecordCall">SignalWire::SWAIG::RecordCall</a>, <a href="https://metacpan.org/pod/SignalWire::SWAIG::Tap">SignalWire::SWAIG::Tap</a>, and <a href="https://metacpan.org/pod/SignalWire::SWAIG::JoinConference">SignalWire::SWAIG::JoinConference</a> for the typed closed sets accepted by <code>record_call</code>, <code>tap</code>, and <code>join_conference</code>.</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>Copyright (c) 2025 SignalWire. Licensed under the MIT License.</p>
+
 </body>
 </html>
+

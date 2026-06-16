@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#Property-kinds">Property kinds</a></li>
+      <li><a href="#Marking-required-fields">Marking required fields</a></li>
+    </ul>
+  </li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#string-number-integer-boolean-enum-array-object">string / number / integer / boolean / enum / array / object</a></li>
+      <li><a href="#required">required</a></li>
+      <li><a href="#to_hash">to_hash</a></li>
+      <li><a href="#to_dict">to_dict</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>SignalWire::SWAIG::ParameterSchema - fluent, typed builder for a SWAIG tool&#39;s JSON-Schema <code>parameters</code></p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use SignalWire::SWAIG::ParameterSchema;
+    use SignalWire::SWAIG::RecordCall;
+
+    my $params = SignalWire::SWAIG::ParameterSchema-&gt;new
+        -&gt;string(&#39;service&#39;, &#39;The service to book&#39;)
+        -&gt;string(&#39;date&#39;,    &#39;Appointment date, YYYY-MM-DD&#39;)
+        -&gt;enum(&#39;format&#39;, SignalWire::SWAIG::RecordCall-&gt;formats,
+               &#39;Recording container format&#39;)
+        -&gt;integer(&#39;seats&#39;, &#39;How many seats&#39;, default =&gt; 1)
+        -&gt;required(&#39;service&#39;, &#39;date&#39;)
+        -&gt;to_hash;
+
+    # $params is the SAME hashref you would have hand-written:
+    #   {
+    #     type       =&gt; &#39;object&#39;,
+    #     properties =&gt; {
+    #         service =&gt; { type =&gt; &#39;string&#39;,  description =&gt; &#39;The service to book&#39; },
+    #         date    =&gt; { type =&gt; &#39;string&#39;,  description =&gt; &#39;Appointment date, YYYY-MM-DD&#39; },
+    #         format  =&gt; { type =&gt; &#39;string&#39;,  description =&gt; &#39;Recording container format&#39;,
+    #                      enum =&gt; [&#39;wav&#39;,&#39;mp3&#39;,&#39;mp4&#39;] },
+    #         seats   =&gt; { type =&gt; &#39;integer&#39;, description =&gt; &#39;How many seats&#39;, default =&gt; 1 },
+    #     },
+    #     required =&gt; [&#39;service&#39;,&#39;date&#39;],
+    #   }
+
+    $agent-&gt;define_tool(
+        name        =&gt; &#39;book_appointment&#39;,
+        description =&gt; &#39;Book an appointment for a service on a date.&#39;,
+        parameters  =&gt; $params,          # typed-built, same wire shape
+        handler     =&gt; sub { ... },
+    );</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>A SWAIG tool&#39;s argument schema is the JSON-Schema <code>parameters</code> object that <a href="https://metacpan.org/pod/SignalWire::Agent::AgentBase">SignalWire::Agent::AgentBase</a>&#39;s <code>define_tool</code> renders into the SWAIG function block. It is normally written by hand as nested hashrefs. This class builds the <b>exact same hashref</b> through a fluent, named, typed API: <code>-&gt;to_hash</code> returns the identical <code>{ type =&gt; &#39;object&#39;, properties =&gt; {...}, required =&gt; [...] }</code> structure a hand-written literal produces, byte for byte (<code>required</code> is omitted when no property was marked required, just as hand-written schemas omit it).</p>
+
+<p>It is a <b>convenience over the same wire output, not a new format</b>. The untyped-hashref path into <code>define_tool</code> is unchanged and still accepted, so Python parity and every existing caller keep working; the builder is purely additive (see <i>PORT_ADDITIONS.md</i>). This is the Perl realisation of the cross-port Tier-2 flagship idiom: a typed SWAIG tool-parameter builder.</p>
+
+<h2 id="Property-kinds">Property kinds</h2>
+
+<p>Each kind method has the form <code>-&gt;KIND($name, $description, %opts)</code> and returns <code>$self</code> so calls chain. The <code>$description</code> second positional is the LLM-facing prompt text (it may also be given as <code>description =&gt; ...</code> in <code>%opts</code>). <code>%opts</code> carries the optional facets: <code>required =&gt; 1</code> (shorthand for also calling <code>-&gt;required($name)</code>), <code>default =&gt; ...</code>, <code>enum =&gt; [...]</code>, <code>format =&gt; ...</code>, and any other JSON-Schema keyword, emitted verbatim in caller-given order.</p>
+
+<ul>
+
+<li><p><code>-&gt;string($name, $desc, %opts)</code> — <code>{ type =&gt; &#39;string&#39; }</code>.</p>
+
+</li>
+<li><p><code>-&gt;number($name, $desc, %opts)</code> — <code>{ type =&gt; &#39;number&#39; }</code>.</p>
+
+</li>
+<li><p><code>-&gt;integer($name, $desc, %opts)</code> — <code>{ type =&gt; &#39;integer&#39; }</code>.</p>
+
+</li>
+<li><p><code>-&gt;boolean($name, $desc, %opts)</code> — <code>{ type =&gt; &#39;boolean&#39; }</code>.</p>
+
+</li>
+<li><p><code>-&gt;enum($name, $values, $desc, %opts)</code> — a closed-set string, <code>{ type =&gt; &#39;string&#39;, enum =&gt; [ @$values ] }</code>. <code>$values</code> is an arrayref of accepted values; pass a Tier-1 constant set directly (<code>SignalWire::SWAIG::RecordCall-&gt;formats</code>, <code>SignalWire::SWAIG::Tap-&gt;codecs</code>, ...) so the schema&#39;s <code>enum</code> is single-sourced from the same closed set the verb validates against. Pass <code>type =&gt; &#39;integer&#39;</code> in <code>%opts</code> for a numeric enum.</p>
+
+</li>
+<li><p><code>-&gt;array($name, $desc, %opts)</code> — <code>{ type =&gt; &#39;array&#39; }</code>, with an optional <code>of =&gt; ...</code> element spec rendered as <code>items</code>. <code>of</code> may be a kind-name string (<code>&#39;string&#39;</code>, <code>&#39;object&#39;</code>, ...), a nested <code>ParameterSchema</code>, or a raw hashref items schema. Omit <code>of</code> for an untyped array.</p>
+
+</li>
+<li><p><code>-&gt;object($name, $desc, %opts)</code> — <code>{ type =&gt; &#39;object&#39; }</code>, with an optional <code>properties =&gt; ...</code> nested spec. <code>properties</code> may be a nested <code>ParameterSchema</code>, a coderef called with a fresh child schema, or a raw hashref. The nested <code>properties</code>/<code>required</code> are spliced in. Omit <code>properties</code> for an open object.</p>
+
+</li>
+</ul>
+
+<h2 id="Marking-required-fields">Marking required fields</h2>
+
+<ul>
+
+<li><p><code>-&gt;required(@names)</code> — mark already-declared properties required. Accumulates across calls and de-duplicates on emit, preserving first-seen order. Equivalent to passing <code>required =&gt; 1</code> on each kind call.</p>
+
+</li>
+</ul>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>    my $schema = SignalWire::SWAIG::ParameterSchema-&gt;new;</code></pre>
+
+<p>Construct an empty builder.</p>
+
+<h2 id="string-number-integer-boolean-enum-array-object">string / number / integer / boolean / enum / array / object</h2>
+
+<p>Add a property of the named kind. See <a href="#Property-kinds">&quot;Property kinds&quot;</a>. Each returns <code>$self</code>. Dies on a duplicate property name.</p>
+
+<h2 id="required">required</h2>
+
+<pre><code>    $schema-&gt;required(&#39;a&#39;, &#39;b&#39;);</code></pre>
+
+<p>Mark properties required. See <a href="#Marking-required-fields">&quot;Marking required fields&quot;</a>. Returns <code>$self</code>.</p>
+
+<h2 id="to_hash">to_hash</h2>
+
+<pre><code>    my $params = $schema-&gt;to_hash;</code></pre>
+
+<p>Render the JSON-Schema <code>parameters</code> hashref. <code>required</code> is omitted when empty. The result is is_deeply- and JSON-identical to the equivalent hand-written literal and shares no references with the builder&#39;s internal state.</p>
+
+<h2 id="to_dict">to_dict</h2>
+
+<p>Alias for <a href="#to_hash">&quot;to_hash&quot;</a>, matching the SDK&#39;s serialiser naming. Identical output.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://metacpan.org/pod/SignalWire::Agent::AgentBase">SignalWire::Agent::AgentBase</a> (<code>define_tool</code>), <a href="https://metacpan.org/pod/SignalWire::SWML::Service">SignalWire::SWML::Service</a> (<code>define_tool</code>), <a href="https://metacpan.org/pod/SignalWire::SWAIG::RecordCall">SignalWire::SWAIG::RecordCall</a>, <a href="https://metacpan.org/pod/SignalWire::SWAIG::Tap">SignalWire::SWAIG::Tap</a> (Tier-1 closed-set constant sets that drop into <code>-&gt;enum</code>), <a href="https://metacpan.org/pod/SignalWire::POM::Section">SignalWire::POM::Section</a> (sibling Tier-2 typed-builder idiom).</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>Copyright (c) 2025 SignalWire. Licensed under the MIT License.</p>
+
+</body>
+</html>
+

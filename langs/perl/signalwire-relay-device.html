@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#The-shape-is-typed-the-discriminant-is-not">The shape is typed; the discriminant is not</a></li>
+    </ul>
+  </li>
+  <li><a href="#ATTRIBUTES">ATTRIBUTES</a>
+    <ul>
+      <li><a href="#type">type</a></li>
+      <li><a href="#params">params</a></li>
+    </ul>
+  </li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#to_hash">to_hash</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>SignalWire::Relay::Device - a typed RELAY device object ({ type, params })</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use SignalWire::Relay::Device;
+
+    my $device = SignalWire::Relay::Device-&gt;new(
+        type   =&gt; &#39;phone&#39;,
+        params =&gt; {
+            to_number   =&gt; &#39;+15551234567&#39;,
+            from_number =&gt; &#39;+15557654321&#39;,
+            timeout     =&gt; 30,
+        },
+    );
+
+    $device-&gt;type;     # &#39;phone&#39;
+    $device-&gt;params;   # { to_number =&gt; ..., from_number =&gt; ..., timeout =&gt; 30 }
+
+    # to_hash yields the exact wire hashref the relay verbs accept:
+    my $wire = $device-&gt;to_hash;
+    # { type =&gt; &#39;phone&#39;, params =&gt; { to_number =&gt; ..., ... } }
+
+    # Drop-in for the hand-written hashref in a devices matrix:
+    $call-&gt;connect( devices =&gt; [[ $device-&gt;to_hash ]] );</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>A RELAY <b>device</b> object — the <code>{ type, params }</code> pair that names one leg of a dial / connect / refer / tap target. It recurs as a raw hashref across the relay calling layer (<code>$client-&gt;dial(devices =&gt; [...])</code>, <code>$call-&gt;connect</code> / <code>$call-&gt;refer</code>, and the <code>device</code> field on <a href="https://metacpan.org/pod/SignalWire::Relay::Call">SignalWire::Relay::Call</a> / the <code>CallState</code> / <code>CallReceive</code> events).</p>
+
+<p>This class types the <b>shape</b> of that hashref so callers can build one with a constructor and named accessors instead of hand-assembling a nested map. <a href="#to_hash">&quot;to_hash&quot;</a> yields the byte-identical wire hashref the raw form produced, so a <code>Device</code> is a drop-in replacement wherever a device hashref is accepted — the existing relay verbs are unchanged (additive, parity-preserving).</p>
+
+<p>Grounded in <code>relay-protocol/calling.connect.params.json</code> and <code>calling.dial.params.json</code>, where each device is <code>{ &quot;type&quot;: &lt;string&gt;, &quot;params&quot;: &lt;object&gt; }</code> with <code>type</code> required.</p>
+
+<h2 id="The-shape-is-typed-the-discriminant-is-not">The shape is typed; the discriminant is not</h2>
+
+<p><code>type</code> is kept a plain <b>string</b>: the device-type set (<code>phone</code>, <code>sip</code>, ...) is <b>not</b> enumerated in the wire schema (it is an open <code>{ &quot;type&quot;: &quot;string&quot; }</code>), so turning it into a closed enum would reject valid and forward-compatible values. Per the idiom rule, this class types the <b>knowable shape</b> and leaves the <b>unbounded discriminant</b> a string. <code>params</code> is a per-type arbitrary object, also left untyped.</p>
+
+<p>Construction fails fast (Moo <code>isa</code>): <code>type</code> is required and must be a non-empty string; <code>params</code> must be a hashref when supplied.</p>
+
+<h1 id="ATTRIBUTES">ATTRIBUTES</h1>
+
+<h2 id="type">type</h2>
+
+<p>The device type discriminant (e.g. <code>phone</code>, <code>sip</code>). Required, read-only, a non-empty string.</p>
+
+<h2 id="params">params</h2>
+
+<p>The per-type parameters hashref (e.g. <code>to_number</code> / <code>from_number</code> for a <code>phone</code> device). Read-only; defaults to an empty hashref.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="to_hash">to_hash</h2>
+
+<pre><code>    my $wire = $device-&gt;to_hash;</code></pre>
+
+<p>Return the canonical RELAY device wire hashref <code>{ type, params }</code> — exactly the raw shape the relay verbs already accept. <code>params</code> is snapshotted at construction and copied again here, so each emitted hash is independent: mutating one <code>to_hash</code> never affects the Device or a later emission, and a mutation of the caller&#39;s original hashref after construction does not leak in.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://metacpan.org/pod/SignalWire::Relay::Call">SignalWire::Relay::Call</a>, <a href="https://metacpan.org/pod/SignalWire::Relay::Client">SignalWire::Relay::Client</a>, <a href="https://metacpan.org/pod/SignalWire::Relay::Event">SignalWire::Relay::Event</a>.</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>Copyright (c) 2025 SignalWire. Licensed under the MIT License.</p>
+
+</body>
+</html>
+

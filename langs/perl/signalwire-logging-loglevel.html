@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#CONSTANTS">CONSTANTS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#all">all</a></li>
+      <li><a href="#is_valid">is_valid</a></li>
+      <li><a href="#severity">severity</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>SignalWire::Logging::LogLevel - log levels as a typed closed set</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use SignalWire::Logging::LogLevel qw(DEBUG);
+
+    my $log = SignalWire::Logging-&gt;new( level =&gt; DEBUG );  # imported constant
+    SignalWire::Logging-&gt;new( level =&gt; &#39;debug&#39; );          # string (parity)
+    $ENV{SIGNALWIRE_LOG_LEVEL} = SignalWire::Logging::LogLevel::WARN();
+
+    # Membership / ordering helpers:
+    SignalWire::Logging::LogLevel-&gt;is_valid(&#39;warn&#39;);  # 1
+    SignalWire::Logging::LogLevel-&gt;severity(&#39;error&#39;); # 3
+    @{ SignalWire::Logging::LogLevel-&gt;all };           # debug,info,warn,error</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The four log levels, surfaced as typed, named constants whose values are the exact level strings <a href="https://metacpan.org/pod/SignalWire::Logging">SignalWire::Logging</a> recognises in its private <code>%LEVELS</code> table and emits from <code>debug</code>/<code>info</code>/<code>warn</code>/<code>error</code>.</p>
+
+<p>The constants <b>are</b> the canonical level strings, so nothing about <a href="https://metacpan.org/pod/SignalWire::Logging">SignalWire::Logging</a> changes: the <code>level</code> attribute, the <code>SIGNALWIRE_LOG_LEVEL</code> env var, and the level methods all still take / emit plain strings. That keeps parity with the Python reference (stdlib <code>logging</code> level names) and leaves any custom threshold string working exactly as before.</p>
+
+<p>This buys a single source of truth for the four levels (otherwise they live only inside the <code>%LEVELS</code> table), plus editor autocomplete and the membership/severity helpers below.</p>
+
+<h1 id="CONSTANTS">CONSTANTS</h1>
+
+<p>Exported on request via <a href="https://metacpan.org/pod/Exporter">Exporter</a>; <code>:all</code> pulls every constant.</p>
+
+<pre><code>    DEBUG =&gt; &#39;debug&#39;    WARN  =&gt; &#39;warn&#39;
+    INFO  =&gt; &#39;info&#39;     ERROR =&gt; &#39;error&#39;</code></pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="all">all</h2>
+
+<pre><code>    my $aref = SignalWire::Logging::LogLevel-&gt;all;</code></pre>
+
+<p>Arrayref of the four level strings in ascending severity (not alphabetical — severity is the natural reading order for log levels).</p>
+
+<h2 id="is_valid">is_valid</h2>
+
+<pre><code>    my $bool = SignalWire::Logging::LogLevel-&gt;is_valid($level);</code></pre>
+
+<p>True if <code>$level</code> is one of the four known levels, false otherwise. Accepts the bareword constant too.</p>
+
+<h2 id="severity">severity</h2>
+
+<pre><code>    my $n = SignalWire::Logging::LogLevel-&gt;severity($level);</code></pre>
+
+<p>The ascending-severity integer for <code>$level</code> (<code>debug</code>=0 .. <code>error</code>=3), or <code>undef</code> for an unknown level. These are the same threshold numbers <a href="https://metacpan.org/pod/SignalWire::Logging">SignalWire::Logging</a> uses internally to decide whether a message clears the configured threshold.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://metacpan.org/pod/SignalWire::Logging">SignalWire::Logging</a>, <a href="https://metacpan.org/pod/SignalWire::Skills::SkillName">SignalWire::Skills::SkillName</a>.</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>Copyright (c) 2025 SignalWire. Licensed under the MIT License.</p>
+
+</body>
+</html>
+

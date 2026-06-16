@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#CONSTANTS">CONSTANTS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#beeps-records-trims-methods">beeps / records / trims / methods</a></li>
+      <li><a href="#is_beep-is_record-is_trim-is_method">is_beep / is_record / is_trim / is_method</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>SignalWire::SWAIG::JoinConference - typed closed sets for FunctionResult-&gt;join_conference</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use SignalWire::SWAIG::JoinConference qw(ON_ENTER RECORD_FROM_START);
+    use SignalWire::SWAIG::FunctionResult;
+
+    my $result = SignalWire::SWAIG::FunctionResult-&gt;new;
+
+    # Named constants and bare wire strings are interchangeable:
+    $result-&gt;join_conference( &#39;lobby&#39;,
+        beep   =&gt; ON_ENTER,
+        record =&gt; RECORD_FROM_START );
+    $result-&gt;join_conference( &#39;lobby&#39;,
+        beep   =&gt; &#39;onEnter&#39;,
+        record =&gt; &#39;record-from-start&#39; );
+
+    # Membership / iteration helpers:
+    SignalWire::SWAIG::JoinConference-&gt;is_beep(&#39;onEnter&#39;);  # 1
+    @{ SignalWire::SWAIG::JoinConference-&gt;records };        # do-not-record,...</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The four closed-set string parameters of <a href="https://metacpan.org/pod/SignalWire::SWAIG::FunctionResult">SignalWire::SWAIG::FunctionResult</a>&#39;s <code>join_conference</code> verb, surfaced as typed, named constants:</p>
+
+<ul>
+
+<li><p><b>BEEP</b> — beep behaviour: <code>true</code>, <code>false</code>, <code>onEnter</code>, or <code>onExit</code>.</p>
+
+</li>
+<li><p><b>RECORD</b> — recording mode: <code>do-not-record</code> or <code>record-from-start</code>.</p>
+
+</li>
+<li><p><b>TRIM</b> — silence trimming: <code>trim-silence</code> or <code>do-not-trim</code>.</p>
+
+</li>
+<li><p><b>METHOD</b> — HTTP method for the status / recording-status callbacks: <code>GET</code> or <code>POST</code> (shared by <code>status_callback_method</code> and <code>recording_status_callback_method</code>).</p>
+
+</li>
+</ul>
+
+<p><code>join_conference</code> validates each inline and dies on anything outside the set, reproducing the Python reference&#39;s exact <code>ValueError</code> messages (e.g. <code>beep must be one of [&#39;true&#39;, &#39;false&#39;, &#39;onEnter&#39;, &#39;onExit&#39;]</code>). This module hoists those literal sets into a single source of truth so the accepted values are discoverable and autocompletable. The constants <b>are</b> the canonical wire strings, so <code>join_conference</code>&#39;s signature is unchanged, preserving Python parity.</p>
+
+<p>The constant <b>names</b> use shouting identifiers (<code>ON_ENTER</code>); the <b>values</b> are the camelCase wire strings the SWML verb expects (<code>onEnter</code>).</p>
+
+<h1 id="CONSTANTS">CONSTANTS</h1>
+
+<p>Exported on request via <a href="https://metacpan.org/pod/Exporter">Exporter</a>. Tags: <code>:beep</code>, <code>:record</code>, <code>:trim</code>, <code>:methods</code>, and <code>:all</code>.</p>
+
+<pre><code>    BEEP_TRUE  =&gt; &#39;true&#39;      DO_NOT_RECORD     =&gt; &#39;do-not-record&#39;
+    BEEP_FALSE =&gt; &#39;false&#39;     RECORD_FROM_START =&gt; &#39;record-from-start&#39;
+    ON_ENTER   =&gt; &#39;onEnter&#39;   TRIM_SILENCE      =&gt; &#39;trim-silence&#39;
+    ON_EXIT    =&gt; &#39;onExit&#39;    DO_NOT_TRIM       =&gt; &#39;do-not-trim&#39;
+    GET        =&gt; &#39;GET&#39;       POST              =&gt; &#39;POST&#39;</code></pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="beeps-records-trims-methods">beeps / records / trims / methods</h2>
+
+<pre><code>    my $aref = SignalWire::SWAIG::JoinConference-&gt;beeps;
+    my $aref = SignalWire::SWAIG::JoinConference-&gt;records;
+    my $aref = SignalWire::SWAIG::JoinConference-&gt;trims;
+    my $aref = SignalWire::SWAIG::JoinConference-&gt;methods;</code></pre>
+
+<p>Arrayrefs of the accepted strings for each set, in the order <code>join_conference</code> lists them in its validation messages.</p>
+
+<h2 id="is_beep-is_record-is_trim-is_method">is_beep / is_record / is_trim / is_method</h2>
+
+<pre><code>    my $bool = SignalWire::SWAIG::JoinConference-&gt;is_beep($value);
+    my $bool = SignalWire::SWAIG::JoinConference-&gt;is_record($value);
+    my $bool = SignalWire::SWAIG::JoinConference-&gt;is_trim($value);
+    my $bool = SignalWire::SWAIG::JoinConference-&gt;is_method($value);</code></pre>
+
+<p>True if <code>$value</code> is an accepted member of the corresponding set. Each accepts the bareword constant too (it is just the string).</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://metacpan.org/pod/SignalWire::SWAIG::FunctionResult">SignalWire::SWAIG::FunctionResult</a>, <a href="https://metacpan.org/pod/SignalWire::SWAIG::RecordCall">SignalWire::SWAIG::RecordCall</a>, <a href="https://metacpan.org/pod/SignalWire::SWAIG::Tap">SignalWire::SWAIG::Tap</a>.</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>Copyright (c) 2025 SignalWire. Licensed under the MIT License.</p>
+
+</body>
+</html>
+

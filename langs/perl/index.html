@@ -1,145 +1,361 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<title>Overview — SignalWire Perl SDK</title>
-<link rel="stylesheet" href="assets/style.css" />
-</head>
-<body>
-<nav>
-  <div class="brand"><div class="brand-title">SignalWire</div><div class="brand-sub">Perl SDK · Pod::Simple::XHTML</div></div>
-  <div class="group">Overview</div>
-  <ul><li><a href="index.html" class="active">Home</a></li></ul>
-  <div class="group">Top</div>
-  <ul>
-    <li><a href="signalwire.html">SignalWire</a></li>
-    <li><a href="signalwire-contexts.html">SignalWire::Contexts</a></li>
-    <li><a href="signalwire-datamap.html">SignalWire::DataMap</a></li>
-    <li><a href="signalwire-logging.html">SignalWire::Logging</a></li>
-    <li><a href="signalwire-utils.html">SignalWire::Utils</a></li>
-  </ul>
-  <div class="group">Agent</div>
-  <ul>
-    <li><a href="signalwire-agent-agentbase.html">SignalWire::Agent::AgentBase</a></li>
-  </ul>
-  <div class="group">Contexts</div>
-  <ul>
-    <li><a href="signalwire-contexts-contextbuilder.html">SignalWire::Contexts::ContextBuilder</a></li>
-  </ul>
-  <div class="group">Core</div>
-  <ul>
-    <li><a href="signalwire-core-loggingconfig.html">SignalWire::Core::LoggingConfig</a></li>
-  </ul>
-  <div class="group">POM</div>
-  <ul>
-    <li><a href="signalwire-pom-promptobjectmodel.html">SignalWire::POM::PromptObjectModel</a></li>
-    <li><a href="signalwire-pom-section.html">SignalWire::POM::Section</a></li>
-  </ul>
-  <div class="group">Prefabs</div>
-  <ul>
-    <li><a href="signalwire-prefabs-concierge.html">SignalWire::Prefabs::Concierge</a></li>
-    <li><a href="signalwire-prefabs-faqbot.html">SignalWire::Prefabs::FAQBot</a></li>
-    <li><a href="signalwire-prefabs-infogatherer.html">SignalWire::Prefabs::InfoGatherer</a></li>
-    <li><a href="signalwire-prefabs-receptionist.html">SignalWire::Prefabs::Receptionist</a></li>
-    <li><a href="signalwire-prefabs-survey.html">SignalWire::Prefabs::Survey</a></li>
-  </ul>
-  <div class="group">REST</div>
-  <ul>
-    <li><a href="signalwire-rest-httpclient.html">SignalWire::REST::HttpClient</a></li>
-    <li><a href="signalwire-rest-namespaces-base.html">SignalWire::REST::Namespaces::Base</a></li>
-    <li><a href="signalwire-rest-namespaces-calling.html">SignalWire::REST::Namespaces::Calling</a></li>
-    <li><a href="signalwire-rest-namespaces-chat.html">SignalWire::REST::Namespaces::Chat</a></li>
-    <li><a href="signalwire-rest-namespaces-compat.html">SignalWire::REST::Namespaces::Compat</a></li>
-    <li><a href="signalwire-rest-namespaces-datasphere.html">SignalWire::REST::Namespaces::Datasphere</a></li>
-    <li><a href="signalwire-rest-namespaces-fabric.html">SignalWire::REST::Namespaces::Fabric</a></li>
-    <li><a href="signalwire-rest-namespaces-logs.html">SignalWire::REST::Namespaces::Logs</a></li>
-    <li><a href="signalwire-rest-namespaces-phonenumbers.html">SignalWire::REST::Namespaces::PhoneNumbers</a></li>
-    <li><a href="signalwire-rest-namespaces-project.html">SignalWire::REST::Namespaces::Project</a></li>
-    <li><a href="signalwire-rest-namespaces-pubsub.html">SignalWire::REST::Namespaces::PubSub</a></li>
-    <li><a href="signalwire-rest-namespaces-registry.html">SignalWire::REST::Namespaces::Registry</a></li>
-    <li><a href="signalwire-rest-namespaces-resources.html">SignalWire::REST::Namespaces::Resources</a></li>
-    <li><a href="signalwire-rest-namespaces-video.html">SignalWire::REST::Namespaces::Video</a></li>
-    <li><a href="signalwire-rest-pagination.html">SignalWire::REST::Pagination</a></li>
-    <li><a href="signalwire-rest-phonecallhandler.html">SignalWire::REST::PhoneCallHandler</a></li>
-    <li><a href="signalwire-rest-restclient.html">SignalWire::REST::RestClient</a></li>
-  </ul>
-  <div class="group">Relay</div>
-  <ul>
-    <li><a href="signalwire-relay-action.html">SignalWire::Relay::Action</a></li>
-    <li><a href="signalwire-relay-call.html">SignalWire::Relay::Call</a></li>
-    <li><a href="signalwire-relay-client.html">SignalWire::Relay::Client</a></li>
-    <li><a href="signalwire-relay-constants.html">SignalWire::Relay::Constants</a></li>
-    <li><a href="signalwire-relay-event.html">SignalWire::Relay::Event</a></li>
-    <li><a href="signalwire-relay-message.html">SignalWire::Relay::Message</a></li>
-  </ul>
-  <div class="group">SWAIG</div>
-  <ul>
-    <li><a href="signalwire-swaig-functionresult.html">SignalWire::SWAIG::FunctionResult</a></li>
-  </ul>
-  <div class="group">SWML</div>
-  <ul>
-    <li><a href="signalwire-swml-document.html">SignalWire::SWML::Document</a></li>
-    <li><a href="signalwire-swml-schema.html">SignalWire::SWML::Schema</a></li>
-    <li><a href="signalwire-swml-service.html">SignalWire::SWML::Service</a></li>
-  </ul>
-  <div class="group">Security</div>
-  <ul>
-    <li><a href="signalwire-security-sessionmanager.html">SignalWire::Security::SessionManager</a></li>
-    <li><a href="signalwire-security-webhookmiddleware.html">SignalWire::Security::WebhookMiddleware</a></li>
-    <li><a href="signalwire-security-webhookvalidator.html">SignalWire::Security::WebhookValidator</a></li>
-  </ul>
-  <div class="group">Server</div>
-  <ul>
-    <li><a href="signalwire-server-agentserver.html">SignalWire::Server::AgentServer</a></li>
-  </ul>
-  <div class="group">Skills</div>
-  <ul>
-    <li><a href="signalwire-skills-builtin-apininjastrivia.html">SignalWire::Skills::Builtin::ApiNinjasTrivia</a></li>
-    <li><a href="signalwire-skills-builtin-claudeskills.html">SignalWire::Skills::Builtin::ClaudeSkills</a></li>
-    <li><a href="signalwire-skills-builtin-customskills.html">SignalWire::Skills::Builtin::CustomSkills</a></li>
-    <li><a href="signalwire-skills-builtin-datasphere.html">SignalWire::Skills::Builtin::Datasphere</a></li>
-    <li><a href="signalwire-skills-builtin-datasphereserverless.html">SignalWire::Skills::Builtin::DatasphereServerless</a></li>
-    <li><a href="signalwire-skills-builtin-datetime.html">SignalWire::Skills::Builtin::Datetime</a></li>
-    <li><a href="signalwire-skills-builtin-googlemaps.html">SignalWire::Skills::Builtin::GoogleMaps</a></li>
-    <li><a href="signalwire-skills-builtin-infogatherer.html">SignalWire::Skills::Builtin::InfoGatherer</a></li>
-    <li><a href="signalwire-skills-builtin-joke.html">SignalWire::Skills::Builtin::Joke</a></li>
-    <li><a href="signalwire-skills-builtin-math.html">SignalWire::Skills::Builtin::Math</a></li>
-    <li><a href="signalwire-skills-builtin-mcpgateway.html">SignalWire::Skills::Builtin::McpGateway</a></li>
-    <li><a href="signalwire-skills-builtin-nativevectorsearch.html">SignalWire::Skills::Builtin::NativeVectorSearch</a></li>
-    <li><a href="signalwire-skills-builtin-playbackgroundfile.html">SignalWire::Skills::Builtin::PlayBackgroundFile</a></li>
-    <li><a href="signalwire-skills-builtin-spider.html">SignalWire::Skills::Builtin::Spider</a></li>
-    <li><a href="signalwire-skills-builtin-swmltransfer.html">SignalWire::Skills::Builtin::SwmlTransfer</a></li>
-    <li><a href="signalwire-skills-builtin-weatherapi.html">SignalWire::Skills::Builtin::WeatherApi</a></li>
-    <li><a href="signalwire-skills-builtin-websearch.html">SignalWire::Skills::Builtin::WebSearch</a></li>
-    <li><a href="signalwire-skills-builtin-wikipediasearch.html">SignalWire::Skills::Builtin::WikipediaSearch</a></li>
-    <li><a href="signalwire-skills-skillbase.html">SignalWire::Skills::SkillBase</a></li>
-    <li><a href="signalwire-skills-skillmanager.html">SignalWire::Skills::SkillManager</a></li>
-    <li><a href="signalwire-skills-skillregistry.html">SignalWire::Skills::SkillRegistry</a></li>
-  </ul>
-  <div class="group">Utils</div>
-  <ul>
-    <li><a href="signalwire-utils-urlvalidator.html">SignalWire::Utils::UrlValidator</a></li>
-  </ul>
-</nav>
-<main>
-<h1>SignalWire Perl SDK <span class="pill">Pod::Simple::XHTML</span></h1>
-<p>Native Perl SDK for SignalWire. Build voice, messaging, and AI-agent
-applications in Perl using SWML, the Relay realtime protocol, and the
-SignalWire REST APIs.</p>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>SignalWire Perl SDK</title></head><body><!-- Header -->
+<div align="center">
+    <a href="https://signalwire.com" target="_blank">
+        <img src="/assets/img/signalwire-wordmark.png" width="500" />
+    </a>
+<h1>SignalWire SDK for Perl</h1>
+<p><em>Build AI voice agents, control live calls over WebSocket, and manage every SignalWire resource over REST -- all from one package.</em></p>
+<p align="center">
+  <a href="https://developer.signalwire.com/sdks/agents-sdk" target="_blank">Documentation</a> &middot;
+  <a href="https://github.com/signalwire/signalwire-docs/issues/new/choose" target="_blank">Report an Issue</a> &middot;
+  <a href="https://metacpan.org/pod/SignalWire" target="_blank">CPAN</a>
+</p>
+<p><a href="https://discord.com/invite/F2WNYTNjuF" target="_blank"><img src="https://img.shields.io/badge/Discord%20Community-5865F2" alt="Discord" /></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/MIT-License-blue" alt="MIT License" /></a>
+<a href="https://github.com/signalwire/signalwire-perl" target="_blank"><img src="https://img.shields.io/github/stars/signalwire/signalwire-perl" alt="GitHub Stars" /></a></p>
+<p><a href="https://codespaces.new/signalwire/signalwire-perl" target="_blank"><img src="https://github.com/codespaces/badge.svg" alt="Open in GitHub Codespaces" /></a>
+<a href="https://replit.com/new/github/signalwire/signalwire-perl" target="_blank"><img src="https://replit.com/badge/github/signalwire/signalwire-perl" alt="Run on Replit" /></a></p>
+</div>
+<hr />
+<h2>What's in this SDK</h2>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>What it does</th>
+<th>Quick link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI Agents</strong></td>
+<td>Build voice agents that handle calls autonomously -- the platform runs the AI pipeline, your code defines the persona, tools, and call flow</td>
+<td><a href="#ai-agents">Agent Guide</a></td>
+</tr>
+<tr>
+<td><strong>RELAY Client</strong></td>
+<td>Control live calls and SMS/MMS in real time over WebSocket -- answer, play, record, collect DTMF, conference, transfer, and more</td>
+<td><a href="relay/README.md">RELAY docs</a></td>
+</tr>
+<tr>
+<td><strong>REST Client</strong></td>
+<td>Manage SignalWire resources over HTTP -- phone numbers, SIP endpoints, Fabric AI agents, video rooms, messaging, and 18+ API namespaces</td>
+<td><a href="rest/README.md">REST docs</a></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">cpanm SignalWire
+</code></pre>
+<hr />
+<h2>AI Agents</h2>
+<p>Each agent is a self-contained microservice that generates <a href="docs/swml_service_guide.md">SWML</a> (SignalWire Markup Language) and handles <a href="docs/swaig_reference.md">SWAIG</a> (SignalWire AI Gateway) tool calls. The SignalWire platform runs the entire AI pipeline (STT, LLM, TTS) -- your agent just defines the behavior.</p>
+<pre><code class="language-perl">use strict;
+use warnings;
+use SignalWire;
+use SignalWire::Agent::AgentBase;
+use SignalWire::SWAIG::FunctionResult;
+use POSIX qw(strftime);
 
-<blockquote style="border-left:4px solid var(--accent); background:#f3f3f7; padding:8px 14px; margin:16px 0;">
-This pane is generated directly from POD inside each <code>.pm</code> via
-<code>Pod::Simple::XHTML</code>, with custom CSS in place of the rather
-spartan default Pod::Html output.
-</blockquote>
+my $agent = SignalWire::Agent::AgentBase-&gt;new(
+    name  =&gt; 'my-agent',
+    route =&gt; '/agent',
+);
 
-<h2>Install</h2>
-<pre><code>cpanm SignalWire</code></pre>
+$agent-&gt;add_language(name =&gt; 'English', code =&gt; 'en-US', voice =&gt; 'inworld.Mark');
+$agent-&gt;prompt_add_section('Role', 'You are a helpful assistant.');
 
-<h2>Modules</h2>
-<p>Browse the package tree in the sidebar — modules grouped by domain
-(Agent, REST, Relay, SWML, POM, Skills, etc.).</p>
+$agent-&gt;define_tool(
+    name        =&gt; 'get_time',
+    description =&gt; 'Get the current time',
+    parameters  =&gt; {},
+    handler     =&gt; sub {
+        my ($args, $raw_data) = @_;
+        return SignalWire::SWAIG::FunctionResult-&gt;new(
+            response =&gt; 'The time is ' . strftime('%H:%M:%S', localtime),
+        );
+    },
+);
 
-</main>
-</body>
-</html>
+$agent-&gt;run;
+</code></pre>
+<p>Test locally without running a server:</p>
+<pre><code class="language-bash">swaig-test my_agent.pl --list-tools
+swaig-test my_agent.pl --dump-swml
+swaig-test my_agent.pl --exec get_time
+</code></pre>
+<h3>Agent Features</h3>
+<ul>
+<li><strong>Prompt Object Model (POM)</strong> -- structured prompt composition via <code>prompt_add_section()</code></li>
+<li><strong>SWAIG tools</strong> -- define functions with <code>define_tool()</code> that the AI calls mid-conversation, with native access to the call's media stack</li>
+<li><strong>Skills system</strong> -- add capabilities with one-liners: <code>$agent-&gt;add_skill('datetime')</code></li>
+<li><strong>Contexts and steps</strong> -- structured multi-step workflows with navigation control</li>
+<li><strong>DataMap tools</strong> -- tools that execute on SignalWire's servers, calling REST APIs without your own webhook</li>
+<li><strong>Dynamic configuration</strong> -- per-request agent customization for multi-tenant deployments</li>
+<li><strong>Call flow control</strong> -- pre-answer, post-answer, and post-AI verb insertion</li>
+<li><strong>Prefab agents</strong> -- ready-to-use archetypes (InfoGatherer, Survey, FAQ, Receptionist, Concierge)</li>
+<li><strong>Multi-agent hosting</strong> -- serve multiple agents on a single server with <code>SignalWire::Agent::AgentServer</code></li>
+<li><strong>SIP routing</strong> -- route SIP calls to agents based on usernames</li>
+<li><strong>Session state</strong> -- persistent conversation state with global data and post-prompt summaries</li>
+<li><strong>Security</strong> -- auto-generated basic auth, function-specific HMAC tokens, SSL support</li>
+<li><strong>Serverless</strong> -- auto-detects Lambda, CGI, Google Cloud Functions, Azure Functions</li>
+<li><strong>PSGI/Plack</strong> -- run standalone or mount in any PSGI-compatible framework</li>
+</ul>
+<h3>Agent Examples</h3>
+<p>The <a href="examples/"><code>examples/</code></a> directory contains 39 working examples:</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>What it demonstrates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="examples/simple_agent.pl">simple_agent.pl</a></td>
+<td>POM prompts, SWAIG tools, multilingual support, LLM tuning</td>
+</tr>
+<tr>
+<td><a href="examples/contexts_demo.pl">contexts_demo.pl</a></td>
+<td>Multi-persona workflow with context switching and step navigation</td>
+</tr>
+<tr>
+<td><a href="examples/datamap_demo.pl">datamap_demo.pl</a></td>
+<td>Server-side API tools without webhooks</td>
+</tr>
+<tr>
+<td><a href="examples/skills_demo.pl">skills_demo.pl</a></td>
+<td>Loading built-in skills (datetime, math)</td>
+</tr>
+<tr>
+<td><a href="examples/call_flow.pl">call_flow.pl</a></td>
+<td>Call flow verbs, debug events, FunctionResult actions</td>
+</tr>
+<tr>
+<td><a href="examples/session_state.pl">session_state.pl</a></td>
+<td>on_summary, global data, post-prompt summaries</td>
+</tr>
+<tr>
+<td><a href="examples/multi_agent_server.pl">multi_agent_server.pl</a></td>
+<td>Multiple agents on one server</td>
+</tr>
+<tr>
+<td><a href="examples/lambda_agent.pl">lambda_agent.pl</a></td>
+<td>AWS Lambda deployment</td>
+</tr>
+<tr>
+<td><a href="examples/comprehensive_dynamic.pl">comprehensive_dynamic.pl</a></td>
+<td>Per-request dynamic configuration, multi-tenant routing</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="examples/README.md">examples/README.md</a> for the full list organized by category.</p>
+<hr />
+<h2>RELAY Client</h2>
+<p>Real-time call control and messaging over WebSocket. The RELAY client connects to SignalWire via the Blade protocol and gives you imperative control over live phone calls and SMS/MMS.</p>
+<pre><code class="language-perl">use strict;
+use warnings;
+use SignalWire::Relay::Client;
+
+my $client = SignalWire::Relay::Client-&gt;new(
+    project  =&gt; $ENV{SIGNALWIRE_PROJECT_ID},
+    token    =&gt; $ENV{SIGNALWIRE_API_TOKEN},
+    host     =&gt; $ENV{SIGNALWIRE_SPACE} // 'relay.signalwire.com',
+    contexts =&gt; ['default'],
+);
+
+$client-&gt;on_call(sub {
+    my ($call) = @_;
+    $call-&gt;answer;
+    my $action = $call-&gt;play(
+        media =&gt; [{ type =&gt; 'tts', params =&gt; { text =&gt; 'Welcome!' } }],
+    );
+    $action-&gt;wait;
+    $call-&gt;hangup;
+});
+
+$client-&gt;run;
+</code></pre>
+<ul>
+<li>57+ calling methods (play, record, collect, detect, tap, stream, AI, conferencing, and more)</li>
+<li>SMS/MMS messaging with delivery tracking</li>
+<li>Action objects with <code>wait()</code>, <code>stop()</code>, <code>pause()</code>, <code>resume()</code></li>
+<li>Auto-reconnect with exponential backoff</li>
+</ul>
+<p>See the <strong><a href="relay/README.md">RELAY documentation</a></strong> for the full guide, API reference, and examples.</p>
+<hr />
+<h2>REST Client</h2>
+<p>Synchronous REST client for managing SignalWire resources and controlling calls over HTTP. No WebSocket required.</p>
+<pre><code class="language-perl">use strict;
+use warnings;
+use SignalWire::REST::RestClient;
+
+my $client = SignalWire::REST::RestClient-&gt;new(
+    project =&gt; $ENV{SIGNALWIRE_PROJECT_ID},
+    token   =&gt; $ENV{SIGNALWIRE_API_TOKEN},
+    host    =&gt; $ENV{SIGNALWIRE_SPACE},
+);
+
+$client-&gt;fabric-&gt;ai_agents-&gt;create(name =&gt; 'Support Bot', prompt =&gt; { text =&gt; 'You are helpful.' });
+$client-&gt;calling-&gt;play($call_id, play =&gt; [{ type =&gt; 'tts', text =&gt; 'Hello!' }]);
+$client-&gt;phone_numbers-&gt;search(area_code =&gt; '512');
+$client-&gt;datasphere-&gt;documents-&gt;search(query_string =&gt; 'billing policy');
+</code></pre>
+<ul>
+<li>21 namespaced API surfaces: Fabric (13 resource types), Calling (37 commands), Video, Datasphere, Compat (Twilio-compatible), Phone Numbers, SIP, Queues, Recordings, and more</li>
+<li>HTTP::Tiny for lightweight, dependency-free HTTP</li>
+<li>Hash ref returns -- raw data, no wrapper objects</li>
+</ul>
+<p>See the <strong><a href="rest/README.md">REST documentation</a></strong> for the full guide, API reference, and examples.</p>
+<hr />
+<h2>Installation</h2>
+<pre><code class="language-bash"># From CPAN
+cpanm SignalWire
+
+# From source
+cpanm --installdeps .
+perl Makefile.PL
+make test
+make install
+</code></pre>
+<h2>Documentation</h2>
+<p>Full reference documentation is available at <strong><a href="https://developer.signalwire.com/sdks/agents-sdk">developer.signalwire.com/sdks/agents-sdk</a></strong>.</p>
+<p>Guides are also available in the <a href="docs/"><code>docs/</code></a> directory:</p>
+<h3>Getting Started</h3>
+<ul>
+<li><a href="docs/agent_guide.md">Agent Guide</a> -- creating agents, prompt configuration, dynamic setup</li>
+<li><a href="docs/architecture.md">Architecture</a> -- SDK architecture and core concepts</li>
+<li><a href="docs/sdk_features.md">SDK Features</a> -- feature overview, SDK vs raw SWML comparison</li>
+</ul>
+<h3>Core Features</h3>
+<ul>
+<li><a href="docs/swaig_reference.md">SWAIG Reference</a> -- function results, actions, post_data lifecycle</li>
+<li><a href="docs/contexts_guide.md">Contexts and Steps</a> -- structured workflows, navigation, gather mode</li>
+<li><a href="docs/datamap_guide.md">DataMap Guide</a> -- serverless API tools without webhooks</li>
+<li><a href="docs/llm_parameters.md">LLM Parameters</a> -- temperature, top_p, barge confidence tuning</li>
+<li><a href="docs/swml_service_guide.md">SWML Service Guide</a> -- low-level construction of SWML documents</li>
+</ul>
+<h3>Skills and Extensions</h3>
+<ul>
+<li><a href="docs/skills_system.md">Skills System</a> -- built-in skills and the modular framework</li>
+<li><a href="docs/third_party_skills.md">Third-Party Skills</a> -- creating and publishing custom skills</li>
+<li><a href="docs/mcp_gateway_reference.md">MCP Gateway</a> -- Model Context Protocol integration</li>
+</ul>
+<h3>Deployment</h3>
+<ul>
+<li><a href="docs/cli_guide.md">CLI Guide</a> -- <code>swaig-test</code> command reference</li>
+<li><a href="docs/cloud_functions_guide.md">Cloud Functions</a> -- Lambda, Cloud Functions, Azure deployment</li>
+<li><a href="docs/configuration.md">Configuration</a> -- environment variables, SSL, proxy setup</li>
+<li><a href="docs/security.md">Security</a> -- authentication and security model</li>
+</ul>
+<h3>Reference</h3>
+<ul>
+<li><a href="docs/api_reference.md">API Reference</a> -- complete class and method reference</li>
+<li><a href="docs/web_service.md">Web Service</a> -- HTTP server and endpoint details</li>
+<li><a href="docs/skills_parameter_schema.md">Skills Parameter Schema</a> -- skill parameter definitions</li>
+</ul>
+<h2>Environment Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Used by</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGNALWIRE_PROJECT_ID</code></td>
+<td>RELAY, REST</td>
+<td>Project identifier</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_API_TOKEN</code></td>
+<td>RELAY, REST</td>
+<td>API token</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_SPACE</code></td>
+<td>RELAY, REST</td>
+<td>Space hostname (e.g. <code>example.signalwire.com</code>)</td>
+</tr>
+<tr>
+<td><code>SWML_BASIC_AUTH_USER</code></td>
+<td>Agents</td>
+<td>Basic auth username (default: auto-generated)</td>
+</tr>
+<tr>
+<td><code>SWML_BASIC_AUTH_PASSWORD</code></td>
+<td>Agents</td>
+<td>Basic auth password (default: auto-generated)</td>
+</tr>
+<tr>
+<td><code>SWML_PROXY_URL_BASE</code></td>
+<td>Agents</td>
+<td>Base URL when behind a reverse proxy</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_ENABLED</code></td>
+<td>Agents</td>
+<td>Enable HTTPS (<code>true</code>, <code>1</code>, <code>yes</code>)</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_CERT_PATH</code></td>
+<td>Agents</td>
+<td>Path to SSL certificate</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_KEY_PATH</code></td>
+<td>Agents</td>
+<td>Path to SSL private key</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_LOG_LEVEL</code></td>
+<td>All</td>
+<td>Logging level (<code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code>)</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_LOG_MODE</code></td>
+<td>All</td>
+<td>Set to <code>off</code> to suppress all logging</td>
+</tr>
+</tbody>
+</table>
+<h2>Testing</h2>
+<pre><code class="language-bash"># Install dependencies
+cpanm --installdeps .
+
+# Run the full test suite
+prove -lv t/
+
+# Run a single test
+prove -lv t/06_agent.t
+
+# Coverage
+cover -test -report html
+</code></pre>
+<h2>License</h2>
+<p>MIT -- see <a href="LICENSE">LICENSE</a> for details.</p>
+<h2>Modules</h2><ul><li><a href="signalwire.html">SignalWire</a></li>
+<li><a href="signalwire-logging-loglevel.html">SignalWire::Logging::LogLevel</a></li>
+<li><a href="signalwire-pom-promptobjectmodel.html">SignalWire::POM::PromptObjectModel</a></li>
+<li><a href="signalwire-pom-section.html">SignalWire::POM::Section</a></li>
+<li><a href="signalwire-rest-namespaces-phonenumbers.html">SignalWire::REST::Namespaces::PhoneNumbers</a></li>
+<li><a href="signalwire-rest-pagination.html">SignalWire::REST::Pagination</a></li>
+<li><a href="signalwire-relay-action.html">SignalWire::Relay::Action</a></li>
+<li><a href="signalwire-relay-call.html">SignalWire::Relay::Call</a></li>
+<li><a href="signalwire-relay-callstate.html">SignalWire::Relay::CallState</a></li>
+<li><a href="signalwire-relay-client.html">SignalWire::Relay::Client</a></li>
+<li><a href="signalwire-relay-device.html">SignalWire::Relay::Device</a></li>
+<li><a href="signalwire-relay-dialstate.html">SignalWire::Relay::DialState</a></li>
+<li><a href="signalwire-relay-event.html">SignalWire::Relay::Event</a></li>
+<li><a href="signalwire-relay-message.html">SignalWire::Relay::Message</a></li>
+<li><a href="signalwire-relay-messagestate.html">SignalWire::Relay::MessageState</a></li>
+<li><a href="signalwire-swaig-functionresult.html">SignalWire::SWAIG::FunctionResult</a></li>
+<li><a href="signalwire-swaig-joinconference.html">SignalWire::SWAIG::JoinConference</a></li>
+<li><a href="signalwire-swaig-parameterschema.html">SignalWire::SWAIG::ParameterSchema</a></li>
+<li><a href="signalwire-swaig-recordcall.html">SignalWire::SWAIG::RecordCall</a></li>
+<li><a href="signalwire-swaig-tap.html">SignalWire::SWAIG::Tap</a></li>
+<li><a href="signalwire-security-webhookmiddleware.html">SignalWire::Security::WebhookMiddleware</a></li>
+<li><a href="signalwire-security-webhookvalidator.html">SignalWire::Security::WebhookValidator</a></li>
+<li><a href="signalwire-skills-skillbase.html">SignalWire::Skills::SkillBase</a></li>
+<li><a href="signalwire-skills-skillname.html">SignalWire::Skills::SkillName</a></li></ul></body></html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#CONSTANTS">CONSTANTS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#directions">directions</a></li>
+      <li><a href="#codecs">codecs</a></li>
+      <li><a href="#is_direction">is_direction</a></li>
+      <li><a href="#is_codec">is_codec</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>SignalWire::SWAIG::Tap - typed closed sets for FunctionResult-&gt;tap</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use SignalWire::SWAIG::Tap qw(SPEAK HEAR BOTH PCMU PCMA);
+    use SignalWire::SWAIG::FunctionResult;
+
+    my $result = SignalWire::SWAIG::FunctionResult-&gt;new;
+
+    # Named constants and bare wire strings are interchangeable:
+    $result-&gt;tap( &#39;rtp://1.2.3.4:5000&#39;, direction =&gt; HEAR,   codec =&gt; PCMA );
+    $result-&gt;tap( &#39;rtp://1.2.3.4:5000&#39;, direction =&gt; &#39;hear&#39;, codec =&gt; &#39;PCMA&#39; );
+
+    # Membership / iteration helpers:
+    SignalWire::SWAIG::Tap-&gt;is_direction(&#39;hear&#39;);  # 1
+    SignalWire::SWAIG::Tap-&gt;is_codec(&#39;OPUS&#39;);      # 0 (RELAY-only codec)
+    @{ SignalWire::SWAIG::Tap-&gt;codecs };           # (&#39;PCMU&#39;,&#39;PCMA&#39;)</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The two closed-set string parameters of <a href="https://metacpan.org/pod/SignalWire::SWAIG::FunctionResult">SignalWire::SWAIG::FunctionResult</a>&#39;s <code>tap</code> verb, surfaced as typed, named constants:</p>
+
+<ul>
+
+<li><p><b>DIRECTION</b> — which audio channel(s) to tap: <code>speak</code>, <code>hear</code>, or <code>both</code>.</p>
+
+</li>
+<li><p><b>CODEC</b> — the RTP codec for the tapped media: <code>PCMU</code> or <code>PCMA</code>.</p>
+
+</li>
+</ul>
+
+<p><code>tap</code> validates both inline and dies on anything outside the set; this module hoists those literal sets into a single source of truth so the accepted values are discoverable and autocompletable instead of living only inside the <code>die</code> strings. The constants <b>are</b> the canonical wire strings, so <code>tap</code>&#39;s signature is unchanged.</p>
+
+<p><b>Distinct from RecordCall.</b> The tap direction set is <code>{speak, hear, both}</code>: the inbound-listen channel is <code>hear</code>, not <code>record_call</code>&#39;s <code>listen</code>. Likewise this two-value codec set <code>{PCMU, PCMA}</code> is the SWAIG-tap codec set only — a strict subset of the RELAY connect/stream codec superset (<code>PCMU</code>, <code>PCMA</code>, <code>OPUS</code>, <code>G722</code>, ...). These vocabularies must never be conflated.</p>
+
+<h1 id="CONSTANTS">CONSTANTS</h1>
+
+<p>Exported on request via <a href="https://metacpan.org/pod/Exporter">Exporter</a>. The <code>:directions</code> tag pulls <code>SPEAK</code>/<code>HEAR</code>/<code>BOTH</code>; <code>:codecs</code> pulls <code>PCMU</code>/<code>PCMA</code>; <code>:all</code> pulls every constant.</p>
+
+<pre><code>    SPEAK =&gt; &#39;speak&#39;    PCMU =&gt; &#39;PCMU&#39;
+    HEAR  =&gt; &#39;hear&#39;     PCMA =&gt; &#39;PCMA&#39;
+    BOTH  =&gt; &#39;both&#39;</code></pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="directions">directions</h2>
+
+<pre><code>    my $aref = SignalWire::SWAIG::Tap-&gt;directions;</code></pre>
+
+<p>Arrayref of the accepted tap-direction strings.</p>
+
+<h2 id="codecs">codecs</h2>
+
+<pre><code>    my $aref = SignalWire::SWAIG::Tap-&gt;codecs;</code></pre>
+
+<p>Arrayref of the accepted tap-codec strings.</p>
+
+<h2 id="is_direction">is_direction</h2>
+
+<pre><code>    my $bool = SignalWire::SWAIG::Tap-&gt;is_direction($value);</code></pre>
+
+<p>True if <code>$value</code> is an accepted tap direction. Accepts the bareword constant too (it is just the string).</p>
+
+<h2 id="is_codec">is_codec</h2>
+
+<pre><code>    my $bool = SignalWire::SWAIG::Tap-&gt;is_codec($value);</code></pre>
+
+<p>True if <code>$value</code> is an accepted tap codec.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://metacpan.org/pod/SignalWire::SWAIG::FunctionResult">SignalWire::SWAIG::FunctionResult</a>, <a href="https://metacpan.org/pod/SignalWire::SWAIG::RecordCall">SignalWire::SWAIG::RecordCall</a>, <a href="https://metacpan.org/pod/SignalWire::SWAIG::JoinConference">SignalWire::SWAIG::JoinConference</a>.</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>Copyright (c) 2025 SignalWire. Licensed under the MIT License.</p>
+
+</body>
+</html>
+

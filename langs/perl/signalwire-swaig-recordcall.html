@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#CONSTANTS">CONSTANTS</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#formats">formats</a></li>
+      <li><a href="#directions">directions</a></li>
+      <li><a href="#is_format">is_format</a></li>
+      <li><a href="#is_direction">is_direction</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>SignalWire::SWAIG::RecordCall - typed closed sets for FunctionResult-&gt;record_call</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use SignalWire::SWAIG::RecordCall qw(MP3 BOTH);
+    use SignalWire::SWAIG::FunctionResult;
+
+    my $result = SignalWire::SWAIG::FunctionResult-&gt;new;
+
+    # Named constants and bare wire strings are interchangeable:
+    $result-&gt;record_call( format =&gt; MP3,   direction =&gt; BOTH );
+    $result-&gt;record_call( format =&gt; &#39;mp3&#39;, direction =&gt; &#39;both&#39; );
+
+    # Membership / iteration helpers:
+    SignalWire::SWAIG::RecordCall-&gt;is_format(&#39;mp3&#39;);     # 1
+    SignalWire::SWAIG::RecordCall-&gt;is_direction(&#39;hear&#39;); # 0 (that&#39;s tap&#39;s word)
+    @{ SignalWire::SWAIG::RecordCall-&gt;formats };         # (&#39;wav&#39;,&#39;mp3&#39;,&#39;mp4&#39;)</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The two closed-set string parameters of <a href="https://metacpan.org/pod/SignalWire::SWAIG::FunctionResult">SignalWire::SWAIG::FunctionResult</a>&#39;s <code>record_call</code> verb, surfaced as typed, named constants:</p>
+
+<ul>
+
+<li><p><b>FORMAT</b> — the recording container: <code>wav</code>, <code>mp3</code>, or <code>mp4</code>.</p>
+
+</li>
+<li><p><b>DIRECTION</b> — which audio channel(s) to capture: <code>speak</code>, <code>listen</code>, or <code>both</code>.</p>
+
+</li>
+</ul>
+
+<p>These sets are not merely advisory. <code>record_call</code> validates both inline and dies on anything outside the set; this module hoists those literal sets into a single source of truth so the accepted values are discoverable and autocompletable instead of living only inside the <code>die</code> strings. The constants <b>are</b> the canonical wire strings, so <code>record_call</code>&#39;s signature is unchanged — it still takes plain <code>format =&gt; ...</code> / <code>direction =&gt; ...</code> strings, preserving Python parity.</p>
+
+<p>The record <code>direction</code> here is the write-side record-channel selector. It is unrelated to the read-only inbound/outbound <code>direction</code> field on Relay message events, and it uses <code>listen</code> where <a href="https://metacpan.org/pod/SignalWire::SWAIG::Tap">SignalWire::SWAIG::Tap</a> uses <code>hear</code> — the two vocabularies must never be unified.</p>
+
+<h1 id="CONSTANTS">CONSTANTS</h1>
+
+<p>Exported on request via <a href="https://metacpan.org/pod/Exporter">Exporter</a>. The <code>:formats</code> tag pulls <code>WAV</code>/<code>MP3</code>/<code>MP4</code>; <code>:directions</code> pulls <code>SPEAK</code>/<code>LISTEN</code>/<code>BOTH</code>; <code>:all</code> pulls every constant.</p>
+
+<pre><code>    WAV    =&gt; &#39;wav&#39;      SPEAK  =&gt; &#39;speak&#39;
+    MP3    =&gt; &#39;mp3&#39;      LISTEN =&gt; &#39;listen&#39;
+    MP4    =&gt; &#39;mp4&#39;      BOTH   =&gt; &#39;both&#39;</code></pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="formats">formats</h2>
+
+<pre><code>    my $aref = SignalWire::SWAIG::RecordCall-&gt;formats;</code></pre>
+
+<p>Arrayref of the accepted format strings, in the order <code>record_call</code> lists them in its validation message.</p>
+
+<h2 id="directions">directions</h2>
+
+<pre><code>    my $aref = SignalWire::SWAIG::RecordCall-&gt;directions;</code></pre>
+
+<p>Arrayref of the accepted record-direction strings.</p>
+
+<h2 id="is_format">is_format</h2>
+
+<pre><code>    my $bool = SignalWire::SWAIG::RecordCall-&gt;is_format($value);</code></pre>
+
+<p>True if <code>$value</code> is an accepted recording format. Accepts the bareword constant too (it is just the string).</p>
+
+<h2 id="is_direction">is_direction</h2>
+
+<pre><code>    my $bool = SignalWire::SWAIG::RecordCall-&gt;is_direction($value);</code></pre>
+
+<p>True if <code>$value</code> is an accepted record direction.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://metacpan.org/pod/SignalWire::SWAIG::FunctionResult">SignalWire::SWAIG::FunctionResult</a>, <a href="https://metacpan.org/pod/SignalWire::SWAIG::Tap">SignalWire::SWAIG::Tap</a>, <a href="https://metacpan.org/pod/SignalWire::SWAIG::JoinConference">SignalWire::SWAIG::JoinConference</a>, <a href="https://metacpan.org/pod/SignalWire::Skills::SkillName">SignalWire::Skills::SkillName</a>, <a href="https://metacpan.org/pod/SignalWire::Logging::LogLevel">SignalWire::Logging::LogLevel</a>.</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>Copyright (c) 2025 SignalWire. Licensed under the MIT License.</p>
+
+</body>
+</html>
+

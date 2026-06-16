@@ -1,128 +1,68 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8" />
-<title>SignalWire::Relay::Event — SignalWire Perl SDK</title>
-<link rel="stylesheet" href="assets/style.css" />
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 </head>
 <body>
-<nav>
-  <div class="brand"><div class="brand-title">SignalWire</div><div class="brand-sub">Perl SDK · Pod::Simple::XHTML</div></div>
-  <div class="group">Overview</div>
-  <ul><li><a href="index.html">Home</a></li></ul>
-  <div class="group">Top</div>
-  <ul>
-    <li><a href="signalwire.html">SignalWire</a></li>
-    <li><a href="signalwire-contexts.html">SignalWire::Contexts</a></li>
-    <li><a href="signalwire-datamap.html">SignalWire::DataMap</a></li>
-    <li><a href="signalwire-logging.html">SignalWire::Logging</a></li>
-    <li><a href="signalwire-utils.html">SignalWire::Utils</a></li>
-  </ul>
-  <div class="group">Agent</div>
-  <ul>
-    <li><a href="signalwire-agent-agentbase.html">SignalWire::Agent::AgentBase</a></li>
-  </ul>
-  <div class="group">Contexts</div>
-  <ul>
-    <li><a href="signalwire-contexts-contextbuilder.html">SignalWire::Contexts::ContextBuilder</a></li>
-  </ul>
-  <div class="group">Core</div>
-  <ul>
-    <li><a href="signalwire-core-loggingconfig.html">SignalWire::Core::LoggingConfig</a></li>
-  </ul>
-  <div class="group">POM</div>
-  <ul>
-    <li><a href="signalwire-pom-promptobjectmodel.html">SignalWire::POM::PromptObjectModel</a></li>
-    <li><a href="signalwire-pom-section.html">SignalWire::POM::Section</a></li>
-  </ul>
-  <div class="group">Prefabs</div>
-  <ul>
-    <li><a href="signalwire-prefabs-concierge.html">SignalWire::Prefabs::Concierge</a></li>
-    <li><a href="signalwire-prefabs-faqbot.html">SignalWire::Prefabs::FAQBot</a></li>
-    <li><a href="signalwire-prefabs-infogatherer.html">SignalWire::Prefabs::InfoGatherer</a></li>
-    <li><a href="signalwire-prefabs-receptionist.html">SignalWire::Prefabs::Receptionist</a></li>
-    <li><a href="signalwire-prefabs-survey.html">SignalWire::Prefabs::Survey</a></li>
-  </ul>
-  <div class="group">REST</div>
-  <ul>
-    <li><a href="signalwire-rest-httpclient.html">SignalWire::REST::HttpClient</a></li>
-    <li><a href="signalwire-rest-namespaces-base.html">SignalWire::REST::Namespaces::Base</a></li>
-    <li><a href="signalwire-rest-namespaces-calling.html">SignalWire::REST::Namespaces::Calling</a></li>
-    <li><a href="signalwire-rest-namespaces-chat.html">SignalWire::REST::Namespaces::Chat</a></li>
-    <li><a href="signalwire-rest-namespaces-compat.html">SignalWire::REST::Namespaces::Compat</a></li>
-    <li><a href="signalwire-rest-namespaces-datasphere.html">SignalWire::REST::Namespaces::Datasphere</a></li>
-    <li><a href="signalwire-rest-namespaces-fabric.html">SignalWire::REST::Namespaces::Fabric</a></li>
-    <li><a href="signalwire-rest-namespaces-logs.html">SignalWire::REST::Namespaces::Logs</a></li>
-    <li><a href="signalwire-rest-namespaces-phonenumbers.html">SignalWire::REST::Namespaces::PhoneNumbers</a></li>
-    <li><a href="signalwire-rest-namespaces-project.html">SignalWire::REST::Namespaces::Project</a></li>
-    <li><a href="signalwire-rest-namespaces-pubsub.html">SignalWire::REST::Namespaces::PubSub</a></li>
-    <li><a href="signalwire-rest-namespaces-registry.html">SignalWire::REST::Namespaces::Registry</a></li>
-    <li><a href="signalwire-rest-namespaces-resources.html">SignalWire::REST::Namespaces::Resources</a></li>
-    <li><a href="signalwire-rest-namespaces-video.html">SignalWire::REST::Namespaces::Video</a></li>
-    <li><a href="signalwire-rest-pagination.html">SignalWire::REST::Pagination</a></li>
-    <li><a href="signalwire-rest-phonecallhandler.html">SignalWire::REST::PhoneCallHandler</a></li>
-    <li><a href="signalwire-rest-restclient.html">SignalWire::REST::RestClient</a></li>
-  </ul>
-  <div class="group">Relay</div>
-  <ul>
-    <li><a href="signalwire-relay-action.html">SignalWire::Relay::Action</a></li>
-    <li><a href="signalwire-relay-call.html">SignalWire::Relay::Call</a></li>
-    <li><a href="signalwire-relay-client.html">SignalWire::Relay::Client</a></li>
-    <li><a href="signalwire-relay-constants.html">SignalWire::Relay::Constants</a></li>
-    <li><a href="signalwire-relay-event.html" class="active">SignalWire::Relay::Event</a></li>
-    <li><a href="signalwire-relay-message.html">SignalWire::Relay::Message</a></li>
-  </ul>
-  <div class="group">SWAIG</div>
-  <ul>
-    <li><a href="signalwire-swaig-functionresult.html">SignalWire::SWAIG::FunctionResult</a></li>
-  </ul>
-  <div class="group">SWML</div>
-  <ul>
-    <li><a href="signalwire-swml-document.html">SignalWire::SWML::Document</a></li>
-    <li><a href="signalwire-swml-schema.html">SignalWire::SWML::Schema</a></li>
-    <li><a href="signalwire-swml-service.html">SignalWire::SWML::Service</a></li>
-  </ul>
-  <div class="group">Security</div>
-  <ul>
-    <li><a href="signalwire-security-sessionmanager.html">SignalWire::Security::SessionManager</a></li>
-    <li><a href="signalwire-security-webhookmiddleware.html">SignalWire::Security::WebhookMiddleware</a></li>
-    <li><a href="signalwire-security-webhookvalidator.html">SignalWire::Security::WebhookValidator</a></li>
-  </ul>
-  <div class="group">Server</div>
-  <ul>
-    <li><a href="signalwire-server-agentserver.html">SignalWire::Server::AgentServer</a></li>
-  </ul>
-  <div class="group">Skills</div>
-  <ul>
-    <li><a href="signalwire-skills-builtin-apininjastrivia.html">SignalWire::Skills::Builtin::ApiNinjasTrivia</a></li>
-    <li><a href="signalwire-skills-builtin-claudeskills.html">SignalWire::Skills::Builtin::ClaudeSkills</a></li>
-    <li><a href="signalwire-skills-builtin-customskills.html">SignalWire::Skills::Builtin::CustomSkills</a></li>
-    <li><a href="signalwire-skills-builtin-datasphere.html">SignalWire::Skills::Builtin::Datasphere</a></li>
-    <li><a href="signalwire-skills-builtin-datasphereserverless.html">SignalWire::Skills::Builtin::DatasphereServerless</a></li>
-    <li><a href="signalwire-skills-builtin-datetime.html">SignalWire::Skills::Builtin::Datetime</a></li>
-    <li><a href="signalwire-skills-builtin-googlemaps.html">SignalWire::Skills::Builtin::GoogleMaps</a></li>
-    <li><a href="signalwire-skills-builtin-infogatherer.html">SignalWire::Skills::Builtin::InfoGatherer</a></li>
-    <li><a href="signalwire-skills-builtin-joke.html">SignalWire::Skills::Builtin::Joke</a></li>
-    <li><a href="signalwire-skills-builtin-math.html">SignalWire::Skills::Builtin::Math</a></li>
-    <li><a href="signalwire-skills-builtin-mcpgateway.html">SignalWire::Skills::Builtin::McpGateway</a></li>
-    <li><a href="signalwire-skills-builtin-nativevectorsearch.html">SignalWire::Skills::Builtin::NativeVectorSearch</a></li>
-    <li><a href="signalwire-skills-builtin-playbackgroundfile.html">SignalWire::Skills::Builtin::PlayBackgroundFile</a></li>
-    <li><a href="signalwire-skills-builtin-spider.html">SignalWire::Skills::Builtin::Spider</a></li>
-    <li><a href="signalwire-skills-builtin-swmltransfer.html">SignalWire::Skills::Builtin::SwmlTransfer</a></li>
-    <li><a href="signalwire-skills-builtin-weatherapi.html">SignalWire::Skills::Builtin::WeatherApi</a></li>
-    <li><a href="signalwire-skills-builtin-websearch.html">SignalWire::Skills::Builtin::WebSearch</a></li>
-    <li><a href="signalwire-skills-builtin-wikipediasearch.html">SignalWire::Skills::Builtin::WikipediaSearch</a></li>
-    <li><a href="signalwire-skills-skillbase.html">SignalWire::Skills::SkillBase</a></li>
-    <li><a href="signalwire-skills-skillmanager.html">SignalWire::Skills::SkillManager</a></li>
-    <li><a href="signalwire-skills-skillregistry.html">SignalWire::Skills::SkillRegistry</a></li>
-  </ul>
-  <div class="group">Utils</div>
-  <ul>
-    <li><a href="signalwire-utils-urlvalidator.html">SignalWire::Utils::UrlValidator</a></li>
-  </ul>
-</nav>
-<main>
-<h2>SignalWire::Relay::Event</h2><p><em>No POD documentation found in this module.</em></p>
-</main>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#parse_event">parse_event</a></li>
+    </ul>
+  </li>
+  <li><a href="#EVENT-TYPES">EVENT TYPES</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>SignalWire::Relay::Event - typed RELAY event objects and their factory</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use SignalWire::Relay::Event;
+
+    my $event = SignalWire::Relay::Event-&gt;parse_event(
+        &#39;calling.call.state&#39;,
+        { call_id =&gt; $id, call_state =&gt; &#39;answered&#39; },
+    );
+
+    $event-&gt;event_type;   # &#39;calling.call.state&#39;
+    $event-&gt;call_state;   # &#39;answered&#39;  (on the ::CallState subclass)</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p><a href="https://metacpan.org/pod/SignalWire::Relay::Event">SignalWire::Relay::Event</a> is the base class for every RELAY event the client receives. Each concrete event type is a small read-only Moo subclass that exposes the fields relevant to it (for example <code>::CallState</code> carries <code>call_state</code> / <code>end_reason</code> / <code>peer</code>, while <code>::MessageReceive</code> carries <code>from_number</code> / <code>body</code> / <code>media</code>). All subclasses inherit <code>event_type</code>, <code>timestamp</code>, and the raw <code>params</code> hashref from the base class.</p>
+
+<p>The event objects are read-only data carriers built from the server payload; they deliberately carry no <code>isa</code> constraints so a forward- compatible server shape is never rejected — unknown fields are simply ignored by Moo.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="parse_event">parse_event</h2>
+
+<pre><code>    my $event = SignalWire::Relay::Event-&gt;parse_event($event_type, $params);</code></pre>
+
+<p>Class-method factory. Looks <code>$event_type</code> up in the internal event-class map and returns an instance of the matching subclass, populated from <code>$params</code> (which defaults to an empty hashref). Unknown event types fall back to a base <a href="https://metacpan.org/pod/SignalWire::Relay::Event">SignalWire::Relay::Event</a> carrying the raw type and params. Normally called by <a href="https://metacpan.org/pod/SignalWire::Relay::Client">SignalWire::Relay::Client</a> as it demultiplexes the WebSocket stream.</p>
+
+<h1 id="EVENT-TYPES">EVENT TYPES</h1>
+
+<p>The recognised <code>event_type</code> strings and their subclasses include the <code>calling.call.*</code> family (state, receive, dial, connect, disconnect, play, record, collect, detect, fax, tap, stream, transcribe, pay, send_digits, refer, ai), <code>calling.conference</code>, <code>messaging.receive</code> / <code>messaging.state</code>, and the <code>signalwire.*</code> session events (<code>authorization.state</code>, <code>disconnect</code>).</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://metacpan.org/pod/SignalWire::Relay::Client">SignalWire::Relay::Client</a>, <a href="https://metacpan.org/pod/SignalWire::Relay::Call">SignalWire::Relay::Call</a>, <a href="https://metacpan.org/pod/SignalWire::Relay::Message">SignalWire::Relay::Message</a>.</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
+<p>Copyright (c) 2025 SignalWire. Licensed under the MIT License.</p>
+
 </body>
 </html>
+
