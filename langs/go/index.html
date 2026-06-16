@@ -22,50 +22,383 @@
     <li><a href="pom.html" data-pkg="pom">pom</a></li>
     <li><a href="prefabs.html" data-pkg="prefabs">prefabs</a></li>
     <li><a href="relay.html" data-pkg="relay">relay</a></li>
-    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
     <li><a href="rest.html" data-pkg="rest">rest</a></li>
+    <li><a href="rest-namespaces.html" data-pkg="rest-namespaces">rest.namespaces</a></li>
     <li><a href="security.html" data-pkg="security">security</a></li>
     <li><a href="server.html" data-pkg="server">server</a></li>
-    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
     <li><a href="skills.html" data-pkg="skills">skills</a></li>
+    <li><a href="skills-all.html" data-pkg="skills-all">skills.all</a></li>
+    <li><a href="skills-builtin.html" data-pkg="skills-builtin">skills.builtin</a></li>
+    <li><a href="skills-builtin-spider.html" data-pkg="skills-builtin-spider">skills.builtin.spider</a></li>
     <li><a href="swaig.html" data-pkg="swaig">swaig</a></li>
     <li><a href="swml.html" data-pkg="swml">swml</a></li>
     <li><a href="util.html" data-pkg="util">util</a></li>
   </ul>
 </nav>
 <main>
-
-<h1>SignalWire Go SDK <span class="pill">godoc</span></h1>
-<p>Native Go SDK for SignalWire. Build voice, messaging, and AI-agent applications
-in Go using SWML, the Relay realtime protocol, and the SignalWire REST APIs.</p>
-
-<blockquote>
-This pane was generated from Go source comments using <code>gomarkdoc</code>,
-then styled to match the look of <a href="https://pkg.go.dev">pkg.go.dev</a>.
-</blockquote>
-
-<h2>Install</h2>
-<pre><code>go get github.com/signalwire/signalwire-go@latest</code></pre>
-
-<h2>Quickstart</h2>
-<pre><code>package main
+<!-- Header -->
+<div align="center">
+    <a href="https://signalwire.com" target="_blank">
+        <img src="/assets/img/signalwire-wordmark.png" width="500" />
+    </a>
+<h1>SignalWire SDK for Go</h1>
+<p><em>Build AI voice agents, control live calls over WebSocket, and manage every SignalWire resource over REST -- all from one package.</em></p>
+<p align="center">
+  <a href="https://developer.signalwire.com/sdks/agents-sdk" target="_blank">Documentation</a> &middot;
+  <a href="https://github.com/signalwire/signalwire-docs/issues/new/choose" target="_blank">Report an Issue</a> &middot;
+  <a href="https://pkg.go.dev/github.com/signalwire/signalwire-go" target="_blank">pkg.go.dev</a>
+</p>
+<p><a href="https://discord.com/invite/F2WNYTNjuF" target="_blank"><img src="https://img.shields.io/badge/Discord%20Community-5865F2" alt="Discord" /></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/MIT-License-blue" alt="MIT License" /></a>
+<a href="https://github.com/signalwire/signalwire-go" target="_blank"><img src="https://img.shields.io/github/stars/signalwire/signalwire-go" alt="GitHub Stars" /></a></p>
+</div>
+<hr />
+<h2>What's in this SDK</h2>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>What it does</th>
+<th>Quick link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI Agents</strong></td>
+<td>Build voice agents that handle calls autonomously -- the platform runs the AI pipeline, your code defines the persona, tools, and call flow</td>
+<td><a href="#ai-agents">Agent Guide</a></td>
+</tr>
+<tr>
+<td><strong>RELAY Client</strong></td>
+<td>Control live calls and SMS/MMS in real time over WebSocket -- answer, play, record, collect DTMF, conference, transfer, and more</td>
+<td><a href="relay/README.md">RELAY docs</a></td>
+</tr>
+<tr>
+<td><strong>REST Client</strong></td>
+<td>Manage SignalWire resources over HTTP -- phone numbers, SIP endpoints, Fabric AI agents, video rooms, messaging, and 18+ API namespaces</td>
+<td><a href="rest/README.md">REST docs</a></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">go get github.com/signalwire/signalwire-go
+</code></pre>
+<hr />
+<h2>AI Agents</h2>
+<p>Each agent is a self-contained microservice that generates <a href="docs/swml_service_guide.md">SWML</a> (SignalWire Markup Language) and handles <a href="docs/swaig_reference.md">SWAIG</a> (SignalWire AI Gateway) tool calls. The SignalWire platform runs the entire AI pipeline (STT, LLM, TTS) -- your agent just defines the behavior.</p>
+<pre><code class="language-go">package main
 
 import (
-    "github.com/signalwire/signalwire-go/pkg/agent"
+	&quot;fmt&quot;
+	&quot;time&quot;
+
+	&quot;github.com/signalwire/signalwire-go/pkg/agent&quot;
+	&quot;github.com/signalwire/signalwire-go/pkg/swaig&quot;
 )
 
 func main() {
-    a := agent.NewAgentBase(
-        agent.WithName("hello"),
-        agent.WithRoute("/hello"),
-    )
-    a.PromptAddSection("Personality", "You are friendly.")
-    a.PromptAddSection("Goal", "Greet the caller and find out what they need.")
-    a.Run()
-}</code></pre>
+	a := agent.NewAgentBase(
+		agent.WithName(&quot;my-agent&quot;),
+		agent.WithRoute(&quot;/agent&quot;),
+	)
 
-<h2>Packages</h2>
-<p>Select a package from the sidebar to view its API documentation.</p>
+	a.AddLanguage(map[string]any{
+		&quot;name&quot;: &quot;English&quot;, &quot;code&quot;: &quot;en-US&quot;, &quot;voice&quot;: &quot;rime.spore&quot;,
+	})
+	a.SetPromptText(&quot;You are a helpful assistant.&quot;)
+
+	a.DefineTool(agent.ToolDefinition{
+		Name:        &quot;get_time&quot;,
+		Description: &quot;Get the current time&quot;,
+		Handler: func(args map[string]any, rawData map[string]any) *swaig.FunctionResult {
+			now := time.Now().Format(&quot;03:04 PM MST&quot;)
+			return swaig.NewFunctionResult(fmt.Sprintf(&quot;The time is %s&quot;, now))
+		},
+	})
+
+	a.Run()
+}
+</code></pre>
+<p>Test locally without running a server:</p>
+<pre><code class="language-bash">go run ./cmd/swaig-test --list-tools ./examples/simple_agent/
+go run ./cmd/swaig-test --dump-swml ./examples/simple_agent/
+go run ./cmd/swaig-test --exec get_time ./examples/simple_agent/
+</code></pre>
+<h3>Agent Features</h3>
+<ul>
+<li><strong>Prompt Object Model (POM)</strong> -- structured prompt composition via <code>PromptAddSection()</code></li>
+<li><strong>SWAIG tools</strong> -- define functions with <code>DefineTool()</code> that the AI calls mid-conversation, with native access to the call's media stack</li>
+<li><strong>Skills system</strong> -- add capabilities with one-liners: <code>agent.AddSkill(&quot;datetime&quot;)</code></li>
+<li><strong>Contexts and steps</strong> -- structured multi-step workflows with navigation control</li>
+<li><strong>DataMap tools</strong> -- tools that execute on SignalWire's servers, calling REST APIs without your own webhook</li>
+<li><strong>Dynamic configuration</strong> -- per-request agent customization for multi-tenant deployments</li>
+<li><strong>Call flow control</strong> -- pre-answer, post-answer, and post-AI verb insertion</li>
+<li><strong>Prefab agents</strong> -- ready-to-use archetypes (InfoGatherer, Survey, FAQ, Receptionist, Concierge)</li>
+<li><strong>Multi-agent hosting</strong> -- serve multiple agents on a single server with <code>AgentServer</code></li>
+<li><strong>SIP routing</strong> -- route SIP calls to agents based on usernames</li>
+<li><strong>Session state</strong> -- persistent conversation state with global data and post-prompt summaries</li>
+<li><strong>Security</strong> -- auto-generated basic auth, function-specific HMAC tokens, SSL support</li>
+<li><strong>Serverless</strong> -- deploy to Lambda, Cloud Functions, Azure Functions</li>
+</ul>
+<h3>Agent Examples</h3>
+<p>The <a href="examples/"><code>examples/</code></a> directory contains 40+ working examples:</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>What it demonstrates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="examples/simple_agent/">simple_agent</a></td>
+<td>POM prompts, SWAIG tools, multilingual support, LLM tuning</td>
+</tr>
+<tr>
+<td><a href="examples/contexts_demo/">contexts_demo</a></td>
+<td>Multi-persona workflow with context switching and step navigation</td>
+</tr>
+<tr>
+<td><a href="examples/datamap_demo/">datamap_demo</a></td>
+<td>Server-side API tools without webhooks</td>
+</tr>
+<tr>
+<td><a href="examples/skills_demo/">skills_demo</a></td>
+<td>Loading built-in skills (datetime, math)</td>
+</tr>
+<tr>
+<td><a href="examples/call_flow/">call_flow</a></td>
+<td>Call flow verbs, debug events, FunctionResult actions</td>
+</tr>
+<tr>
+<td><a href="examples/session_state/">session_state</a></td>
+<td>OnSummary, global data, post-prompt summaries</td>
+</tr>
+<tr>
+<td><a href="examples/multi_agent_server/">multi_agent_server</a></td>
+<td>Multiple agents on one server</td>
+</tr>
+<tr>
+<td><a href="examples/lambda/">lambda</a></td>
+<td>AWS Lambda deployment with AsRouter()</td>
+</tr>
+<tr>
+<td><a href="examples/comprehensive_dynamic/">comprehensive_dynamic</a></td>
+<td>Per-request dynamic configuration, multi-tenant routing</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="examples/README.md">examples/README.md</a> for the full list organized by category.</p>
+<hr />
+<h2>RELAY Client</h2>
+<p>Real-time call control and messaging over WebSocket. The RELAY client connects to SignalWire via the Blade protocol and gives you goroutine-safe, imperative control over live phone calls and SMS/MMS.</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;os&quot;
+	&quot;time&quot;
+
+	&quot;github.com/signalwire/signalwire-go/pkg/relay&quot;
+)
+
+func main() {
+	client := relay.NewRelayClient(
+		relay.WithProject(os.Getenv(&quot;SIGNALWIRE_PROJECT_ID&quot;)),
+		relay.WithToken(os.Getenv(&quot;SIGNALWIRE_API_TOKEN&quot;)),
+		relay.WithSpace(os.Getenv(&quot;SIGNALWIRE_SPACE&quot;)),
+		relay.WithContexts(&quot;default&quot;),
+	)
+
+	client.OnCall(func(call *relay.Call) {
+		call.Answer()
+		action := call.Play([]map[string]any{
+			{&quot;type&quot;: &quot;tts&quot;, &quot;text&quot;: &quot;Welcome to SignalWire!&quot;},
+		})
+		ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+		defer cancel()
+		action.Wait(ctx)
+		call.Hangup(&quot;&quot;)
+	})
+
+	fmt.Println(&quot;Waiting for inbound calls ...&quot;)
+	client.Run()
+}
+</code></pre>
+<ul>
+<li>57+ calling methods (play, record, collect, detect, tap, stream, AI, conferencing, and more)</li>
+<li>SMS/MMS messaging with delivery tracking</li>
+<li>Action objects with <code>Wait()</code>, <code>Stop()</code>, <code>Pause()</code>, <code>Resume()</code></li>
+<li>Auto-reconnect with exponential backoff</li>
+</ul>
+<p>See the <strong><a href="relay/README.md">RELAY documentation</a></strong> for the full guide, API reference, and examples.</p>
+<hr />
+<h2>REST Client</h2>
+<p>Synchronous REST client for managing SignalWire resources and controlling calls over HTTP. No WebSocket required.</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;os&quot;
+
+	&quot;github.com/signalwire/signalwire-go/pkg/rest&quot;
+)
+
+func main() {
+	// Reads from SIGNALWIRE_PROJECT_ID, SIGNALWIRE_API_TOKEN, SIGNALWIRE_SPACE
+	client, err := rest.NewRestClient(&quot;&quot;, &quot;&quot;, &quot;&quot;)
+	if err != nil {
+		fmt.Printf(&quot;Error: %v\n&quot;, err)
+		os.Exit(1)
+	}
+
+	client.Fabric.AIAgents.Create(map[string]any{
+		&quot;name&quot;:   &quot;Support Bot&quot;,
+		&quot;prompt&quot;: map[string]any{&quot;text&quot;: &quot;You are helpful.&quot;},
+	})
+
+	client.Calling.Dial(map[string]any{
+		&quot;from&quot;: &quot;+15559876543&quot;,
+		&quot;to&quot;:   &quot;+15551234567&quot;,
+		&quot;url&quot;:  &quot;https://example.com/call-handler&quot;,
+	})
+
+	results, _ := client.PhoneNumbers.Search(map[string]string{&quot;area_code&quot;: &quot;512&quot;})
+	fmt.Println(results)
+}
+</code></pre>
+<ul>
+<li>21 namespaced API surfaces: Fabric (13 resource types), Calling (37 commands), Video, Datasphere, Compat (Twilio-compatible), Phone Numbers, SIP, Queues, Recordings, and more</li>
+<li>Shared <code>http.Client</code> for connection pooling</li>
+<li><code>map[string]any</code> returns -- raw JSON, no wrapper objects</li>
+</ul>
+<p>See the <strong><a href="rest/README.md">REST documentation</a></strong> for the full guide, API reference, and examples.</p>
+<hr />
+<h2>Installation</h2>
+<pre><code class="language-bash">go get github.com/signalwire/signalwire-go
+</code></pre>
+<p>Requires Go 1.22 or later.</p>
+<h2>Documentation</h2>
+<p>Full reference documentation is available at <strong><a href="https://developer.signalwire.com/sdks/agents-sdk">developer.signalwire.com/sdks/agents-sdk</a></strong>.</p>
+<p>Guides are also available in the <a href="docs/"><code>docs/</code></a> directory:</p>
+<h3>Getting Started</h3>
+<ul>
+<li><a href="docs/agent_guide.md">Agent Guide</a> -- creating agents, prompt configuration, dynamic setup</li>
+<li><a href="docs/architecture.md">Architecture</a> -- SDK architecture and core concepts</li>
+<li><a href="docs/sdk_features.md">SDK Features</a> -- feature overview, SDK vs raw SWML comparison</li>
+</ul>
+<h3>Core Features</h3>
+<ul>
+<li><a href="docs/swaig_reference.md">SWAIG Reference</a> -- function results, actions, post_data lifecycle</li>
+<li><a href="docs/contexts_guide.md">Contexts and Steps</a> -- structured workflows, navigation, gather mode</li>
+<li><a href="docs/datamap_guide.md">DataMap Guide</a> -- serverless API tools without webhooks</li>
+<li><a href="docs/llm_parameters.md">LLM Parameters</a> -- temperature, top_p, barge confidence tuning</li>
+<li><a href="docs/swml_service_guide.md">SWML Service Guide</a> -- low-level construction of SWML documents</li>
+</ul>
+<h3>Skills and Extensions</h3>
+<ul>
+<li><a href="docs/skills_system.md">Skills System</a> -- built-in skills and the modular framework</li>
+<li><a href="docs/third_party_skills.md">Third-Party Skills</a> -- creating and publishing custom skills</li>
+<li><a href="docs/mcp_gateway_reference.md">MCP Gateway</a> -- Model Context Protocol integration</li>
+</ul>
+<h3>Deployment</h3>
+<ul>
+<li><a href="docs/cli_guide.md">CLI Guide</a> -- <code>swaig-test</code> command reference</li>
+<li><a href="docs/cloud_functions_guide.md">Cloud Functions</a> -- Lambda, Cloud Functions, Azure deployment</li>
+<li><a href="docs/configuration.md">Configuration</a> -- environment variables, SSL, proxy setup</li>
+<li><a href="docs/security.md">Security</a> -- authentication and security model</li>
+</ul>
+<h3>Reference</h3>
+<ul>
+<li><a href="docs/api_reference.md">API Reference</a> -- complete type and method reference</li>
+<li><a href="docs/web_service.md">Web Service</a> -- HTTP server and endpoint details</li>
+<li><a href="docs/skills_parameter_schema.md">Skills Parameter Schema</a> -- skill parameter definitions</li>
+</ul>
+<h2>Environment Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Used by</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGNALWIRE_PROJECT_ID</code></td>
+<td>RELAY, REST</td>
+<td>Project identifier</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_API_TOKEN</code></td>
+<td>RELAY, REST</td>
+<td>API token</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_SPACE</code></td>
+<td>RELAY, REST</td>
+<td>Space hostname (e.g. <code>example.signalwire.com</code>)</td>
+</tr>
+<tr>
+<td><code>SWML_BASIC_AUTH_USER</code></td>
+<td>Agents</td>
+<td>Basic auth username (default: auto-generated)</td>
+</tr>
+<tr>
+<td><code>SWML_BASIC_AUTH_PASSWORD</code></td>
+<td>Agents</td>
+<td>Basic auth password (default: auto-generated)</td>
+</tr>
+<tr>
+<td><code>SWML_PROXY_URL_BASE</code></td>
+<td>Agents</td>
+<td>Base URL when behind a reverse proxy</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_ENABLED</code></td>
+<td>Agents</td>
+<td>Enable HTTPS (<code>true</code>, <code>1</code>, <code>yes</code>)</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_CERT_PATH</code></td>
+<td>Agents</td>
+<td>Path to SSL certificate</td>
+</tr>
+<tr>
+<td><code>SWML_SSL_KEY_PATH</code></td>
+<td>Agents</td>
+<td>Path to SSL private key</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_LOG_LEVEL</code></td>
+<td>All</td>
+<td>Logging level (<code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code>)</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_LOG_MODE</code></td>
+<td>All</td>
+<td>Set to <code>off</code> to suppress all logging</td>
+</tr>
+</tbody>
+</table>
+<h2>Testing</h2>
+<pre><code class="language-bash"># Run the test suite
+go test ./...
+
+# Run with verbose output
+go test -v ./...
+
+# Run by package
+go test ./pkg/agent/...
+go test ./pkg/relay/...
+go test ./pkg/rest/...
+
+# Coverage
+go test -coverprofile=coverage.out ./...
+go tool cover -html=coverage.out
+</code></pre>
+<h2>License</h2>
+<p>MIT -- see <a href="LICENSE">LICENSE</a> for details.</p>
 
 </main>
 </body>
