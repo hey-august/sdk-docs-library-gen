@@ -71,6 +71,24 @@ output on disk is never modified.
 | Rust | rustdoc |
 | TypeScript | TypeDoc |
 
+## Regenerating
+
+[mise](https://mise.jdx.dev) pins the language runtimes and orchestrates the
+generators. The SDK sources and the heavy toolchains are gitignored; the
+configs that produce the panes are committed under `build/`.
+
+```bash
+mise install            # language runtimes (node, python, go, java, …)
+mise run setup          # doc generators + the local C toolchain shims
+mise run pull           # clone/pull all 10 SDK sources into _build/sdks
+mise run gen            # regenerate every pane  (or: mise run gen:rust, …)
+```
+
+On this container a few tools come from Homebrew rather than mise (Ruby, Rust,
+Doxygen, the .NET SDK) and `mise run setup` builds a `cc`/`ld` shim around brew's
+gcc/binutils/glibc, since the base image ships no C toolchain. See `build/` and
+`mise.toml` for details.
+
 ## Layout
 
 ```
@@ -82,5 +100,8 @@ assets/js/app.js         dropdowns, routing, theme manager + iframe bridge
 assets/img/, assets/fonts/  logo, favicon, product icons, brand fonts
 home/                    overview pane
 langs/<id>/              generated docs for each SDK
-_build/                  build configs + toolchains (gitignored)
+mise.toml                runtime pins + gen tasks
+build/<id>/              committed generator config + scripts per language
+build/scripts/           pull.sh, setup.sh, the SDK manifest
+_build/                  cloned SDK sources + installed toolchains (gitignored)
 ```

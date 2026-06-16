@@ -1,0 +1,86 @@
+# Orchestration for the SDK docs library.
+#
+#   mise run pull            # clone/pull all 10 SDK sources into _build/sdks
+#   mise run setup           # install the doc generators into the pinned runtimes
+#   mise run gen:typescript  # regenerate one language pane into langs/<id>
+#   mise run gen             # regenerate every pane
+#
+# mise pins the language *runtimes*; the `setup` task installs each language's
+# doc *generator* into its runtime. Heavy toolchains, cloned SDK sources, and
+# scratch build output all live under _build/ (gitignored). Only this file and
+# build/ are committed.
+
+[tools]
+node   = "22"             # typedoc (TypeScript)
+python = "3.12"           # mkdocs-material + mkdocstrings (Python)
+go     = "1.22"           # gomarkdoc (Go)
+java   = "temurin-21"     # javadoc (Java)
+# Ruby (yard), Rust (rustdoc), and Doxygen (C++/PHP) are installed from Homebrew
+# by the setup task, not mise: this container has no working C toolchain to
+# compile Ruby from source, the rustup installer host is unreliable here, and
+# Doxygen ships no Linux/arm64 release binary (the ubi backend grabs an x86_64
+# build that can't run). Perl (Pod::Simple) and the .NET SDK (docfx) are
+# likewise system/brew installs — see setup.sh.
+
+[env]
+# Headless rendering workaround for this container (see project memory).
+FONTCONFIG_FILE = "{{config_root}}/_build/tools/fonts.conf"
+# Homebrew (ruby, rustdoc, perl, dotnet) must be reachable from `mise run`.
+# _build/tools/bin holds a cc->clang shim so cargo/rustc can link (this
+# container has no `cc` on PATH); setup.sh creates it.
+_.path = ["{{config_root}}/_build/tools/bin", "/home/linuxbrew/.linuxbrew/bin"]
+
+[tasks.pull]
+description = "Clone or pull all SDK sources into _build/sdks"
+run = "bash build/scripts/pull.sh"
+
+[tasks.setup]
+description = "Install doc generators into the pinned runtimes"
+run = "bash build/scripts/setup.sh"
+
+[tasks."gen:typescript"]
+description = "Regenerate the TypeScript pane (TypeDoc)"
+run = "bash build/typescript/gen.sh"
+
+[tasks."gen:python"]
+description = "Regenerate the Python pane (MkDocs Material)"
+run = "bash build/python/gen.sh"
+
+[tasks."gen:ruby"]
+description = "Regenerate the Ruby pane (YARD)"
+run = "bash build/ruby/gen.sh"
+
+[tasks."gen:go"]
+description = "Regenerate the Go pane (gomarkdoc)"
+run = "bash build/go/gen.sh"
+
+[tasks."gen:rust"]
+description = "Regenerate the Rust pane (rustdoc)"
+run = "bash build/rust/gen.sh"
+
+[tasks."gen:java"]
+description = "Regenerate the Java pane (Javadoc)"
+run = "bash build/java/gen.sh"
+
+[tasks."gen:cpp"]
+description = "Regenerate the C++ pane (Doxygen)"
+run = "bash build/cpp/gen.sh"
+
+[tasks."gen:php"]
+description = "Regenerate the PHP pane (Doxygen)"
+run = "bash build/php/gen.sh"
+
+[tasks."gen:dotnet"]
+description = "Regenerate the .NET pane (DocFX)"
+run = "bash build/dotnet/gen.sh"
+
+[tasks."gen:perl"]
+description = "Regenerate the Perl pane (Pod::Simple::XHTML)"
+run = "bash build/perl/gen.sh"
+
+[tasks.gen]
+description = "Regenerate every pane"
+depends = [
+  "gen:typescript", "gen:python", "gen:ruby", "gen:go", "gen:rust",
+  "gen:java", "gen:cpp", "gen:php", "gen:dotnet", "gen:perl",
+]
