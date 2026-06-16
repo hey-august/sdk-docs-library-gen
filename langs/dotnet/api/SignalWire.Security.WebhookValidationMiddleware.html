@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/signalwire/signalwire-dotnet/new/main/apiSpec/new?filename=SignalWire_Security_WebhookValidationMiddleware.md&amp;value=---%0Auid%3A%20SignalWire.Security.WebhookValidationMiddleware%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="SignalWire_Security_WebhookValidationMiddleware" data-uid="SignalWire.Security.WebhookValidationMiddleware" class="text-break">
-Class WebhookValidationMiddleware  
+Class WebhookValidationMiddleware  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Security/WebhookValidationMiddleware.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -162,7 +162,7 @@ is pure CPU work and the dispatch surface uses synchronous strings.</p>
 
   <h3 id="SignalWire_Security_WebhookValidationMiddleware__ctor_System_String_System_Boolean_" data-uid="SignalWire.Security.WebhookValidationMiddleware.#ctor(System.String,System.Boolean)">
   WebhookValidationMiddleware(string, bool)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Security/WebhookValidationMiddleware.cs/#L74"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Construct a middleware bound to a single signing key.</p>
@@ -210,7 +210,7 @@ spoofable; opt in only when you control the proxy chain.</p>
 
   <h3 id="SignalWire_Security_WebhookValidationMiddleware_SignalWireSignatureHeader" data-uid="SignalWire.Security.WebhookValidationMiddleware.SignalWireSignatureHeader">
   SignalWireSignatureHeader
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Security/WebhookValidationMiddleware.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The canonical SignalWire signature header name.</p>
@@ -241,7 +241,7 @@ spoofable; opt in only when you control the proxy chain.</p>
 
   <h3 id="SignalWire_Security_WebhookValidationMiddleware_TwilioCompatSignatureHeader" data-uid="SignalWire.Security.WebhookValidationMiddleware.TwilioCompatSignatureHeader">
   TwilioCompatSignatureHeader
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Security/WebhookValidationMiddleware.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Legacy alias for cXML/Twilio-compat callers.</p>
@@ -277,7 +277,7 @@ spoofable; opt in only when you control the proxy chain.</p>
 
   <h3 id="SignalWire_Security_WebhookValidationMiddleware_ExtractSignatureHeader_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.Security.WebhookValidationMiddleware.ExtractSignatureHeader(System.Collections.Generic.Dictionary{System.String,System.String})">
   ExtractSignatureHeader(Dictionary&lt;string, string&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Security/WebhookValidationMiddleware.cs/#L135"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Pull <code>X-SignalWire-Signature</code> from request headers, or the
@@ -316,7 +316,7 @@ lookups are case-insensitive (proxies / browsers vary).</p>
 
   <h3 id="SignalWire_Security_WebhookValidationMiddleware_ReconstructUrl_System_Collections_Generic_Dictionary_System_String_System_String__System_String_System_String_System_Int32_" data-uid="SignalWire.Security.WebhookValidationMiddleware.ReconstructUrl(System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String,System.Int32)">
   ReconstructUrl(Dictionary&lt;string, string&gt;, string, string?, int)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Security/WebhookValidationMiddleware.cs/#L155"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reconstruct the public URL SignalWire POSTed to. Resolution order:</p>
@@ -362,7 +362,7 @@ lookups are case-insensitive (proxies / browsers vary).</p>
 
   <h3 id="SignalWire_Security_WebhookValidationMiddleware_Validate_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_String_System_String_System_Int32_" data-uid="SignalWire.Security.WebhookValidationMiddleware.Validate(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String,System.Int32)">
   Validate(string, string, Dictionary&lt;string, string&gt;, string?, string?, int)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Security/WebhookValidationMiddleware.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Validate the incoming request and return a 403 short-circuit
@@ -418,8 +418,6 @@ and standalone HttpListener integrations can wire it in directly.</p>
 
 </article>
 
-        <div class="contribution d-print-none">
-        </div>
 
 
       </div>

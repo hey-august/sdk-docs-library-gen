@@ -1,5 +1,5 @@
 {
-  "source_base_path": "/airlock/sdks/_docs-poc/_build/dotnet",
+  "source_base_path": "/airlock/sdk-docs-library-gen/_build/sdks/signalwire-dotnet",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -1244,6 +1244,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.CallState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.CallState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.CallState",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.CallState.yml\" sourcestartlinenumber=\"1\">Lifecycle state of a RELAY <xref href=\"SignalWire.Relay.Call\" data-throw-if-not-resolved=\"false\"></xref>, as a typed, compile-time\nclosed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.CallStateExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.CallStateExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.CallStateExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.CallStateExtensions.yml\" sourcestartlinenumber=\"1\">Wire-string mapping, parsing, and terminal-state predicate for\n<xref href=\"SignalWire.Relay.CallState\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SignalWire.Relay.Client.yml",
       "output": {
         ".html": {
@@ -1300,6 +1328,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.Device.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.Device.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.Device",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.Device.yml\" sourcestartlinenumber=\"1\">A typed RELAY device object — the <code>{type, params}</code> shape that recurs\nacross <code>connect</code> / <code>refer</code> / <code>dial</code> / <code>tap</code> and the\nringback list.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.DialState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.DialState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.DialState",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.DialState.yml\" sourcestartlinenumber=\"1\">Outcome state of a RELAY dial attempt (<code>calling.call.dial</code>), as a\ntyped, compile-time closed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.DialStateExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.DialStateExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.DialStateExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.DialStateExtensions.yml\" sourcestartlinenumber=\"1\">Wire-string mapping, parsing, and terminal-outcome predicate for\n<xref href=\"SignalWire.Relay.DialState\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SignalWire.Relay.Event.yml",
       "output": {
         ".html": {
@@ -1339,6 +1409,34 @@
       "IsMRef": true,
       "Title": "SignalWire.Relay.Message",
       "Summary": "<p sourcefile=\"api/SignalWire.Relay.Message.yml\" sourcestartlinenumber=\"1\">Represents a RELAY messaging message (SMS / MMS).</p>\n<p sourcefile=\"api/SignalWire.Relay.Message.yml\" sourcestartlinenumber=\"3\">A Message is created when you send or receive a message through the\nRELAY messaging namespace. It accumulates state-change events and\nresolves once the message reaches a terminal state (delivered,\nundelivered, or failed).</p>\n<p sourcefile=\"api/SignalWire.Relay.Message.yml\" sourcestartlinenumber=\"8\">Uses <xref href=\"System.Threading.Tasks.TaskCompletionSource\" data-throw-if-not-resolved=\"false\"></xref> for native async/await support.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.MessageState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.MessageState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.MessageState",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.MessageState.yml\" sourcestartlinenumber=\"1\">Delivery state of a RELAY <xref href=\"SignalWire.Relay.Message\" data-throw-if-not-resolved=\"false\"></xref> (SMS / MMS), as a typed,\ncompile-time closed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Relay.MessageStateExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Relay.MessageStateExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Relay.MessageStateExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.Relay.MessageStateExtensions.yml\" sourcestartlinenumber=\"1\">Wire-string mapping, parsing, and terminal-state predicate for\n<xref href=\"SignalWire.Relay.MessageState\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1440,6 +1538,146 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.CallbackMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.CallbackMethod.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.CallbackMethod",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.CallbackMethod.yml\" sourcestartlinenumber=\"1\">HTTP method for the <code>status_callback</code> / <code>recording_status_callback</code>\nURLs on <xref href=\"SignalWire.SWAIG.FunctionResult.JoinConference(System.String%2cSignalWire.SWAIG.JoinConferenceOptions)\" data-throw-if-not-resolved=\"false\"></xref>,\nas a typed, compile-time-checked closed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.CallbackMethodExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.CallbackMethodExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.CallbackMethodExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.CallbackMethodExtensions.yml\" sourcestartlinenumber=\"1\">Maps <xref href=\"SignalWire.SWAIG.CallbackMethod\" data-throw-if-not-resolved=\"false\"></xref> members to the canonical wire values\n(uppercase HTTP verbs) that the SWML <code>join_conference</code> action expects on\nits <code>status_callback_method</code> / <code>recording_status_callback_method</code> keys.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.Codec.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.Codec.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.Codec",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.Codec.yml\" sourcestartlinenumber=\"1\">Media codec for <xref href=\"SignalWire.SWAIG.FunctionResult.Tap(System.String%2cSystem.String%2cSignalWire.SWAIG.TapDirection%2cSignalWire.SWAIG.Codec%2cSystem.Int32%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>, as a typed,\ncompile-time-checked closed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.CodecExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.CodecExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.CodecExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.CodecExtensions.yml\" sourcestartlinenumber=\"1\">Maps <xref href=\"SignalWire.SWAIG.Codec\" data-throw-if-not-resolved=\"false\"></xref> members to the canonical wire values that the SWML\n<code>tap</code> action expects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.ConferenceBeep.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.ConferenceBeep.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.ConferenceBeep",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.ConferenceBeep.yml\" sourcestartlinenumber=\"1\">Beep behaviour for <xref href=\"SignalWire.SWAIG.FunctionResult.JoinConference(System.String%2cSignalWire.SWAIG.JoinConferenceOptions)\" data-throw-if-not-resolved=\"false\"></xref>,\nas a typed, compile-time-checked closed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.ConferenceBeepExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.ConferenceBeepExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.ConferenceBeepExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.ConferenceBeepExtensions.yml\" sourcestartlinenumber=\"1\">Maps <xref href=\"SignalWire.SWAIG.ConferenceBeep\" data-throw-if-not-resolved=\"false\"></xref> members to the canonical wire values that\nthe SWML <code>join_conference</code> action expects on its <code>beep</code> key.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.ConferenceRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.ConferenceRecord.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.ConferenceRecord",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.ConferenceRecord.yml\" sourcestartlinenumber=\"1\">Recording mode for <xref href=\"SignalWire.SWAIG.FunctionResult.JoinConference(System.String%2cSignalWire.SWAIG.JoinConferenceOptions)\" data-throw-if-not-resolved=\"false\"></xref>,\nas a typed, compile-time-checked closed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.ConferenceRecordExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.ConferenceRecordExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.ConferenceRecordExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.ConferenceRecordExtensions.yml\" sourcestartlinenumber=\"1\">Maps <xref href=\"SignalWire.SWAIG.ConferenceRecord\" data-throw-if-not-resolved=\"false\"></xref> members to the canonical wire values that\nthe SWML <code>join_conference</code> action expects on its <code>record</code> key.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.ConferenceTrim.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.ConferenceTrim.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.ConferenceTrim",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.ConferenceTrim.yml\" sourcestartlinenumber=\"1\">Silence-trim mode for <xref href=\"SignalWire.SWAIG.FunctionResult.JoinConference(System.String%2cSignalWire.SWAIG.JoinConferenceOptions)\" data-throw-if-not-resolved=\"false\"></xref>,\nas a typed, compile-time-checked closed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.ConferenceTrimExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.ConferenceTrimExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.ConferenceTrimExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.ConferenceTrimExtensions.yml\" sourcestartlinenumber=\"1\">Maps <xref href=\"SignalWire.SWAIG.ConferenceTrim\" data-throw-if-not-resolved=\"false\"></xref> members to the canonical wire values that\nthe SWML <code>join_conference</code> action expects on its <code>trim</code> key.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SignalWire.SWAIG.FunctionResult.yml",
       "output": {
         ".html": {
@@ -1451,6 +1689,118 @@
       "IsMRef": true,
       "Title": "SignalWire.SWAIG.FunctionResult",
       "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.FunctionResult.yml\" sourcestartlinenumber=\"1\">Builds a SWAIG function result with an optional response, actions, and post-processing flag.\nAll action methods return <code>this</code> for fluent chaining.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.JoinConferenceOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.JoinConferenceOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.JoinConferenceOptions",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.JoinConferenceOptions.yml\" sourcestartlinenumber=\"1\">Typed options bag for the convenience overload\n<xref href=\"SignalWire.SWAIG.FunctionResult.JoinConference(System.String%2cSignalWire.SWAIG.JoinConferenceOptions)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.ParameterSchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.ParameterSchema.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.ParameterSchema",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.ParameterSchema.yml\" sourcestartlinenumber=\"1\">Fluent, type-safe builder for a SWAIG tool's <code>parameters</code> — the\nJSON-Schema <code>properties</code> map passed as the third argument to\n<xref href=\"SignalWire.SWML.Service.DefineTool(System.String%2cSystem.String%2cSystem.Collections.Generic.Dictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Func%7bSystem.Collections.Generic.Dictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Collections.Generic.Dictionary%7bSystem.String%2cSystem.Object%7d%2cSignalWire.SWAIG.FunctionResult%7d%2cSystem.Boolean)\" data-throw-if-not-resolved=\"false\"></xref> /\nSignalWire.Agent.AgentBase.DefineTool.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.RecordDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.RecordDirection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.RecordDirection",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.RecordDirection.yml\" sourcestartlinenumber=\"1\">Audio direction for <xref href=\"SignalWire.SWAIG.FunctionResult.RecordCall(System.String%2cSystem.Boolean%2cSignalWire.SWAIG.RecordFormat%2cSignalWire.SWAIG.RecordDirection%2cSystem.String%2cSystem.Boolean%2cSystem.Double%2cSystem.Nullable%7bSystem.Double%7d%2cSystem.Nullable%7bSystem.Double%7d%2cSystem.Nullable%7bSystem.Double%7d%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>, as a typed,\ncompile-time-checked closed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.RecordDirectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.RecordDirectionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.RecordDirectionExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.RecordDirectionExtensions.yml\" sourcestartlinenumber=\"1\">Maps <xref href=\"SignalWire.SWAIG.RecordDirection\" data-throw-if-not-resolved=\"false\"></xref> members to the canonical wire values that\nthe SWML <code>record_call</code> action expects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.RecordFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.RecordFormat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.RecordFormat",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.RecordFormat.yml\" sourcestartlinenumber=\"1\">Recording container format for <xref href=\"SignalWire.SWAIG.FunctionResult.RecordCall(System.String%2cSystem.Boolean%2cSignalWire.SWAIG.RecordFormat%2cSignalWire.SWAIG.RecordDirection%2cSystem.String%2cSystem.Boolean%2cSystem.Double%2cSystem.Nullable%7bSystem.Double%7d%2cSystem.Nullable%7bSystem.Double%7d%2cSystem.Nullable%7bSystem.Double%7d%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>, as a\ntyped, compile-time-checked closed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.RecordFormatExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.RecordFormatExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.RecordFormatExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.RecordFormatExtensions.yml\" sourcestartlinenumber=\"1\">Maps <xref href=\"SignalWire.SWAIG.RecordFormat\" data-throw-if-not-resolved=\"false\"></xref> members to the canonical wire values that the\nSWML <code>record_call</code> action expects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.TapDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.TapDirection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.TapDirection",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.TapDirection.yml\" sourcestartlinenumber=\"1\">Audio direction for <xref href=\"SignalWire.SWAIG.FunctionResult.Tap(System.String%2cSystem.String%2cSignalWire.SWAIG.TapDirection%2cSignalWire.SWAIG.Codec%2cSystem.Int32%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>, as a typed,\ncompile-time-checked closed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.SWAIG.TapDirectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.SWAIG.TapDirectionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.SWAIG.TapDirectionExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.SWAIG.TapDirectionExtensions.yml\" sourcestartlinenumber=\"1\">Maps <xref href=\"SignalWire.SWAIG.TapDirection\" data-throw-if-not-resolved=\"false\"></xref> members to the canonical wire values that the\nSWML <code>tap</code> action expects.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1940,7 +2290,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "SignalWire.Skills.Builtin.WebSearchSkill",
-      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.WebSearchSkill.yml\" sourcestartlinenumber=\"1\">Web search skill backed by Google Custom Search.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.WebSearchSkill.yml\" sourcestartlinenumber=\"3\">Mirrors signalwire-python's <code>signalwire.skills.web_search.skill</code>\n(the <code>WebSearchSkill.search_and_scrape_best</code> path). The full\nPython implementation also scrapes each result URL and quality-scores\nthe extracted text — a Reddit-aware extractor, a per-domain weight\ntable, and a length/diversity scorer. The .NET port ships the search\ncall faithfully and falls back to formatted titles+snippets when the\nper-result scrape isn't requested. The audit only verifies that a\nreal GET to Google CSE is issued and that the response is parsed,\nso this surface is sufficient for parity. Per-result scraping can be\nlayered on top without breaking the audit contract.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.WebSearchSkill.yml\" sourcestartlinenumber=\"14\">Upstream URL override: <code>WEB_SEARCH_BASE_URL</code> (used by\naudit_skills_dispatch.py to point at a local fixture). When set, the\nURL is rewritten to the override host while the path\n<code>/customsearch/v1</code> is preserved.</p>\n"
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.Builtin.WebSearchSkill.yml\" sourcestartlinenumber=\"1\">Web search skill backed by Google Custom Search.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.WebSearchSkill.yml\" sourcestartlinenumber=\"3\">Mirrors signalwire-python's <code>signalwire.skills.web_search.skill</code>\n(the <code>WebSearchSkill.search_and_scrape_best</code> path). The CSE call is\nissued faithfully, then each result URL is scraped and a header line +\nper-result title/url/snippet (plus scraped content) is formatted.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.WebSearchSkill.yml\" sourcestartlinenumber=\"8\">Latency control (Python skill.py commits 51101da + 295745b) bounds the\nwhole tool call so a single slow site can never blow past the SignalWire\nkernel's ~55s webhook timeout:\n<code>per_page_timeout</code> (2.0s)  caps each page scrape (a per-request\nlinked <xref href=\"System.Threading.CancellationTokenSource\" data-throw-if-not-resolved=\"false\"></xref> with\n<code>CancelAfter</code>).\n<code>overall_deadline</code> (10.0s) is the wall-clock budget for the whole\ncall; once it fires, in-flight scrapes are abandoned and we return\nwhat we have (a <xref href=\"System.Threading.CancellationTokenSource\" data-throw-if-not-resolved=\"false\"></xref>\nwith <code>CancelAfter(overall_deadline)</code>). THIS IS THE CONTRACT.\n<code>parallel_scrape</code> (true) dispatches each scrape as a Task and awaits\n<xref href=\"System.Threading.Tasks.Task.WhenAll(System.Threading.Tasks.Task%5b%5d)\" data-throw-if-not-resolved=\"false\"></xref>,\nharvesting whatever completed when the deadline cancels (best-effort).\n<code>snippets_only</code> (false) skips scraping entirely and formats the CSE\nsnippets directly. Sub-second response.\nWhen the deadline fires OR no scraped page meets the quality threshold, the\nhandler falls back to formatting the CSE snippets into a NON-empty response\nrather than the empty no-results message, so the kernel never sees a\nwebhook timeout.</p>\n<p sourcefile=\"api/SignalWire.Skills.Builtin.WebSearchSkill.yml\" sourcestartlinenumber=\"28\">Upstream URL override: <code>WEB_SEARCH_BASE_URL</code> (used by\naudit_skills_dispatch.py to point at a local fixture). When set, the\nURL is rewritten to the override host while the path\n<code>/customsearch/v1</code> is preserved.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1997,6 +2347,34 @@
       "IsMRef": true,
       "Title": "SignalWire.Skills.SkillManager",
       "Summary": "<p sourcefile=\"api/SignalWire.Skills.SkillManager.yml\" sourcestartlinenumber=\"1\">Loads, unloads, and queries skills on behalf of an <xref href=\"SignalWire.Agent.AgentBase\" data-throw-if-not-resolved=\"false\"></xref>.\nValidates env vars, calls Setup/RegisterTools, and merges hints/globalData/prompts.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.SkillName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.SkillName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.SkillName",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.SkillName.yml\" sourcestartlinenumber=\"1\">Built-in skill names as a typed, compile-time-checked closed set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SignalWire.Skills.SkillNameExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SignalWire.Skills.SkillNameExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SignalWire.Skills.SkillNameExtensions",
+      "Summary": "<p sourcefile=\"api/SignalWire.Skills.SkillNameExtensions.yml\" sourcestartlinenumber=\"1\">Maps <xref href=\"SignalWire.Skills.SkillName\" data-throw-if-not-resolved=\"false\"></xref> members to the canonical snake_case wire names\nthat <xref href=\"SignalWire.Skills.SkillRegistry\" data-throw-if-not-resolved=\"false\"></xref> registers.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2072,11 +2450,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "api/toc.json"
-        },
         ".html": {
           "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""
@@ -2095,11 +2473,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
-        },
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/signalwire/signalwire-dotnet/new/main/apiSpec/new?filename=SignalWire_Prefabs_InfoGathererAgent.md&amp;value=---%0Auid%3A%20SignalWire.Prefabs.InfoGathererAgent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="SignalWire_Prefabs_InfoGathererAgent" data-uid="SignalWire.Prefabs.InfoGathererAgent" class="text-break">
-Class InfoGathererAgent  
+Class InfoGathererAgent  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Prefabs/InfoGathererAgent.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -186,6 +186,15 @@ Registers <code>start_questions</code> and <code>submit_answer</code> tools.</p>
     </div>
     <div>
       <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_AddLanguage_System_String_System_String_System_String_">AgentBase.AddLanguage(string, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_AddLanguage_System_String_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__">AgentBase.AddLanguage(string, string, string, Dictionary&lt;string, object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_SetLanguageParams_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__">AgentBase.SetLanguageParams(string, Dictionary&lt;string, object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_GetLanguageParams_System_String_">AgentBase.GetLanguageParams(string)</a>
     </div>
     <div>
       <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_SetLanguages_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___">AgentBase.SetLanguages(List&lt;Dictionary&lt;string, object&gt;&gt;)</a>
@@ -293,13 +302,22 @@ Registers <code>start_questions</code> and <code>submit_answer</code> tools.</p>
       <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_AddSkill_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__">AgentBase.AddSkill(string, Dictionary&lt;string, object&gt;)</a>
     </div>
     <div>
+      <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_AddSkill_SignalWire_Skills_SkillName_System_Collections_Generic_Dictionary_System_String_System_Object__">AgentBase.AddSkill(SkillName, Dictionary&lt;string, object&gt;)</a>
+    </div>
+    <div>
       <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_RemoveSkill_System_String_">AgentBase.RemoveSkill(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_RemoveSkill_SignalWire_Skills_SkillName_">AgentBase.RemoveSkill(SkillName)</a>
     </div>
     <div>
       <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_ListSkills">AgentBase.ListSkills()</a>
     </div>
     <div>
       <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_HasSkill_System_String_">AgentBase.HasSkill(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_HasSkill_SignalWire_Skills_SkillName_">AgentBase.HasSkill(SkillName)</a>
     </div>
     <div>
       <a class="xref" href="SignalWire.Agent.AgentBase.html#SignalWire_Agent_AgentBase_SetDynamicConfigCallback_System_Action_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_String__SignalWire_Agent_AgentBase__">AgentBase.SetDynamicConfigCallback(Action&lt;Dictionary&lt;string, object&gt;, Dictionary&lt;string, object&gt;, Dictionary&lt;string, string&gt;, AgentBase&gt;)</a>
@@ -487,7 +505,7 @@ Registers <code>start_questions</code> and <code>submit_answer</code> tools.</p>
 
   <h3 id="SignalWire_Prefabs_InfoGathererAgent__ctor_System_String_System_Collections_Generic_List_System_Collections_Generic_Dictionary_System_String_System_Object___SignalWire_Agent_AgentOptions_" data-uid="SignalWire.Prefabs.InfoGathererAgent.#ctor(System.String,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},SignalWire.Agent.AgentOptions)">
   InfoGathererAgent(string, List&lt;Dictionary&lt;string, object&gt;&gt;, AgentOptions?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Prefabs/InfoGathererAgent.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -529,7 +547,7 @@ Registers <code>start_questions</code> and <code>submit_answer</code> tools.</p>
 
   <h3 id="SignalWire_Prefabs_InfoGathererAgent_GetQuestions" data-uid="SignalWire.Prefabs.InfoGathererAgent.GetQuestions">
   GetQuestions()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Prefabs/InfoGathererAgent.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -560,7 +578,7 @@ Registers <code>start_questions</code> and <code>submit_answer</code> tools.</p>
 
   <h3 id="SignalWire_Prefabs_InfoGathererAgent_StartQuestions_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Prefabs.InfoGathererAgent.StartQuestions(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
   StartQuestions(Dictionary&lt;string, object&gt;, Dictionary&lt;string, object?&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Prefabs/InfoGathererAgent.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>SWAIG tool handler for the <code>start_questions</code> tool.
@@ -600,7 +618,7 @@ Registers <code>start_questions</code> and <code>submit_answer</code> tools.</p>
 
   <h3 id="SignalWire_Prefabs_InfoGathererAgent_SubmitAnswer_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Prefabs.InfoGathererAgent.SubmitAnswer(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
   SubmitAnswer(Dictionary&lt;string, object&gt;, Dictionary&lt;string, object?&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Prefabs/InfoGathererAgent.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>SWAIG tool handler for the <code>submit_answer</code> tool.
@@ -639,8 +657,6 @@ Registers <code>start_questions</code> and <code>submit_answer</code> tools.</p>
 
 </article>
 
-        <div class="contribution d-print-none">
-        </div>
 
 
       </div>

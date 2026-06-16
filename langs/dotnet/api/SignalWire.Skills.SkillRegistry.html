@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/signalwire/signalwire-dotnet/new/main/apiSpec/new?filename=SignalWire_Skills_SkillRegistry.md&amp;value=---%0Auid%3A%20SignalWire.Skills.SkillRegistry%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="SignalWire_Skills_SkillRegistry" data-uid="SignalWire.Skills.SkillRegistry" class="text-break">
-Class SkillRegistry  
+Class SkillRegistry  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Skills/SkillRegistry.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -155,7 +155,7 @@ All 18 built-in skills are registered lazily on first access.</p>
 
   <h3 id="SignalWire_Skills_SkillRegistry_ExternalPaths" data-uid="SignalWire.Skills.SkillRegistry.ExternalPaths">
   ExternalPaths
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Skills/SkillRegistry.cs/#L114"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>External skill-source paths added via
@@ -188,7 +188,7 @@ All 18 built-in skills are registered lazily on first access.</p>
 
   <h3 id="SignalWire_Skills_SkillRegistry_Instance" data-uid="SignalWire.Skills.SkillRegistry.Instance">
   Instance
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Skills/SkillRegistry.cs/#L63"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -219,7 +219,7 @@ All 18 built-in skills are registered lazily on first access.</p>
 
   <h3 id="SignalWire_Skills_SkillRegistry_Logger" data-uid="SignalWire.Skills.SkillRegistry.Logger">
   Logger
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Skills/SkillRegistry.cs/#L108"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The skill_registry logger.
@@ -256,7 +256,7 @@ All 18 built-in skills are registered lazily on first access.</p>
 
   <h3 id="SignalWire_Skills_SkillRegistry_AddSkillDirectory_System_String_" data-uid="SignalWire.Skills.SkillRegistry.AddSkillDirectory(System.String)">
   AddSkillDirectory(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Skills/SkillRegistry.cs/#L120"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Add a directory to the external skill-source path list.
@@ -291,20 +291,27 @@ Throws when the path does not exist or is not a directory.
 
   <h3 id="SignalWire_Skills_SkillRegistry_DiscoverSkills" data-uid="SignalWire.Skills.SkillRegistry.DiscoverSkills">
   DiscoverSkills()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Skills/SkillRegistry.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Deprecated no-op: skills are loaded on-demand.
-(Python parity: <code>SkillRegistry.discover_skills</code> — kept for
-backwards compatibility; the Python doc says exactly this.)</p>
+  <div class="markdown level1 summary"><p>Discover and return all available skills.
+Skills resolve on-demand, so there is nothing to eagerly register;
+this returns the discoverable inventory (mirrors <a class="xref" href="SignalWire.Skills.SkillRegistry.html#SignalWire_Skills_SkillRegistry_ListSkills">ListSkills()</a>).
+(Python parity: <code>SkillRegistry.discover_skills</code> now returns
+<code>list_skills()</code> — it was a no-op until the reference stub was fixed.)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void DiscoverSkills()</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; DiscoverSkills()</code></pre>
   </div>
 
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -320,7 +327,7 @@ backwards compatibility; the Python doc says exactly this.)</p>
 
   <h3 id="SignalWire_Skills_SkillRegistry_GetFactory_System_String_" data-uid="SignalWire.Skills.SkillRegistry.GetFactory(System.String)">
   GetFactory(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Skills/SkillRegistry.cs/#L139"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Get the factory for a skill name. Checks custom registrations first,
@@ -358,7 +365,7 @@ then falls back to built-in factories.</p>
 
   <h3 id="SignalWire_Skills_SkillRegistry_ListSkills" data-uid="SignalWire.Skills.SkillRegistry.ListSkills">
   ListSkills()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Skills/SkillRegistry.cs/#L162"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Return all known skill names (builtins + custom), sorted.</p>
@@ -390,7 +397,7 @@ then falls back to built-in factories.</p>
 
   <h3 id="SignalWire_Skills_SkillRegistry_RegisterSkill_System_String_System_Func_SignalWire_Skills_SkillBase__" data-uid="SignalWire.Skills.SkillRegistry.RegisterSkill(System.String,System.Func{SignalWire.Skills.SkillBase})">
   RegisterSkill(string, Func&lt;SkillBase&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Skills/SkillRegistry.cs/#L88"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Register a custom skill factory.</p>
@@ -424,7 +431,7 @@ then falls back to built-in factories.</p>
 
   <h3 id="SignalWire_Skills_SkillRegistry_Reset" data-uid="SignalWire.Skills.SkillRegistry.Reset">
   Reset()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Skills/SkillRegistry.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reset the singleton (for testing).</p>
@@ -450,8 +457,6 @@ then falls back to built-in factories.</p>
 
 </article>
 
-        <div class="contribution d-print-none">
-        </div>
 
 
       </div>

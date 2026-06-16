@@ -117,6 +117,12 @@ as a first-class C# method.</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Relay.CallStateExtensions.html">CallStateExtensions</a></dt>
+      <dd><p>Wire-string mapping, parsing, and terminal-state predicate for
+<a class="xref" href="SignalWire.Relay.CallState.html">CallState</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="SignalWire.Relay.Client.html">Client</a></dt>
       <dd><p>RELAY Client -- manages the WebSocket connection to SignalWire, sends
 JSON-RPC 2.0 requests, and dispatches inbound events to the correct
@@ -146,6 +152,19 @@ and per-event-type action terminal states.</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Relay.Device.html">Device</a></dt>
+      <dd><p>A typed RELAY device object — the <code>{type, params}</code> shape that recurs
+across <code>connect</code> / <code>refer</code> / <code>dial</code> / <code>tap</code> and the
+ringback list.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Relay.DialStateExtensions.html">DialStateExtensions</a></dt>
+      <dd><p>Wire-string mapping, parsing, and terminal-outcome predicate for
+<a class="xref" href="SignalWire.Relay.DialState.html">DialState</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="SignalWire.Relay.Event.html">Event</a></dt>
       <dd><p>Represents a single RELAY event received from the server.
 Carries the event type, a timestamp, and the params dictionary
@@ -165,6 +184,12 @@ RELAY messaging namespace. It accumulates state-change events and
 resolves once the message reaches a terminal state (delivered,
 undelivered, or failed).</p>
 <p>Uses <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskcompletionsource">TaskCompletionSource</a> for native async/await support.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Relay.MessageStateExtensions.html">MessageStateExtensions</a></dt>
+      <dd><p>Wire-string mapping, parsing, and terminal-state predicate for
+<a class="xref" href="SignalWire.Relay.MessageState.html">MessageState</a>.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -197,12 +222,31 @@ undelivered, or failed).</p>
       <dd><p>Handle for calling.transcribe operations.</p>
 </dd>
     </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Relay.CallState.html">CallState</a></dt>
+      <dd><p>Lifecycle state of a RELAY <a class="xref" href="SignalWire.Relay.Call.html">Call</a>, as a typed, compile-time
+closed set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Relay.DialState.html">DialState</a></dt>
+      <dd><p>Outcome state of a RELAY dial attempt (<code>calling.call.dial</code>), as a
+typed, compile-time closed set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.Relay.MessageState.html">MessageState</a></dt>
+      <dd><p>Delivery state of a RELAY <a class="xref" href="SignalWire.Relay.Message.html">Message</a> (SMS / MMS), as a typed,
+compile-time closed set.</p>
+</dd>
+    </dl>
 
 
 </article>
 
-        <div class="contribution d-print-none">
-        </div>
 
 
       </div>

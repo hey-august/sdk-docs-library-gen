@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/signalwire/signalwire-dotnet/new/main/apiSpec/new?filename=SignalWire_REST_RestClient.md&amp;value=---%0Auid%3A%20SignalWire.REST.RestClient%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="SignalWire_REST_RestClient" data-uid="SignalWire.REST.RestClient" class="text-break">
-Class RestClient  
+Class RestClient  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -105,7 +105,7 @@ supplied explicitly or pulled from environment variables.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class RestClient</code></pre>
+    <pre><code class="lang-csharp hljs">public class RestClient : IDisposable</code></pre>
   </div>
 
 
@@ -119,6 +119,12 @@ supplied explicitly or pulled from environment variables.</p>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -160,7 +166,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient__ctor_System_String_System_String_System_String_" data-uid="SignalWire.REST.RestClient.#ctor(System.String,System.String,System.String)">
   RestClient(string, string, string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -202,7 +208,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Addresses" data-uid="SignalWire.REST.RestClient.Addresses">
   Addresses
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Addresses.</p>
@@ -234,7 +240,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_BaseUrl" data-uid="SignalWire.REST.RestClient.BaseUrl">
   BaseUrl
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -265,7 +271,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Calling" data-uid="SignalWire.REST.RestClient.Calling">
   Calling
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calling API (37 call-control commands).</p>
@@ -297,7 +303,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Chat" data-uid="SignalWire.REST.RestClient.Chat">
   Chat
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L164"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Chat tokens.</p>
@@ -329,7 +335,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Compat" data-uid="SignalWire.REST.RestClient.Compat">
   Compat
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L102"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Compatibility (Twilio-compatible LaML) API.</p>
@@ -361,7 +367,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Datasphere" data-uid="SignalWire.REST.RestClient.Datasphere">
   Datasphere
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Datasphere documents.</p>
@@ -393,7 +399,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Fabric" data-uid="SignalWire.REST.RestClient.Fabric">
   Fabric
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L84"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Fabric API (sub-resources: subscribers, sip_endpoints, call_flows, ...).</p>
@@ -425,7 +431,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Http" data-uid="SignalWire.REST.RestClient.Http">
   Http
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -456,7 +462,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_ImportedNumbers" data-uid="SignalWire.REST.RestClient.ImportedNumbers">
   ImportedNumbers
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L140"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Imported phone numbers (create only).</p>
@@ -488,7 +494,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Logs" data-uid="SignalWire.REST.RestClient.Logs">
   Logs
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L152"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Logs (messages, voice, fax, conferences).</p>
@@ -520,7 +526,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Lookup" data-uid="SignalWire.REST.RestClient.Lookup">
   Lookup
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Phone number lookup.</p>
@@ -552,7 +558,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Mfa" data-uid="SignalWire.REST.RestClient.Mfa">
   Mfa
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L144"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Multi-factor authentication (sms/call/verify dispatch).</p>
@@ -584,7 +590,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_NumberGroups" data-uid="SignalWire.REST.RestClient.NumberGroups">
   NumberGroups
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L118"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Number groups (with membership operations).</p>
@@ -616,7 +622,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_PhoneNumbers" data-uid="SignalWire.REST.RestClient.PhoneNumbers">
   PhoneNumbers
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Phone numbers.</p>
@@ -648,7 +654,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Project" data-uid="SignalWire.REST.RestClient.Project">
   Project
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L156"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Project management.</p>
@@ -680,7 +686,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_ProjectId" data-uid="SignalWire.REST.RestClient.ProjectId">
   ProjectId
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L73"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -711,7 +717,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Pubsub" data-uid="SignalWire.REST.RestClient.Pubsub">
   Pubsub
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L160"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>PubSub tokens.</p>
@@ -743,7 +749,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Queues" data-uid="SignalWire.REST.RestClient.Queues">
   Queues
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L110"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Queues (Relay queues at /api/relay/rest/queues with member ops).</p>
@@ -775,7 +781,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Recordings" data-uid="SignalWire.REST.RestClient.Recordings">
   Recordings
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L114"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Recordings (Relay recordings at /api/relay/rest/recordings).</p>
@@ -807,7 +813,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_Registry" data-uid="SignalWire.REST.RestClient.Registry">
   Registry
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L148"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Registry (10DLC brands, campaigns, orders, numbers).</p>
@@ -839,7 +845,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_ShortCodes" data-uid="SignalWire.REST.RestClient.ShortCodes">
   ShortCodes
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L136"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Short codes (PUT for update).</p>
@@ -871,7 +877,7 @@ supplied explicitly or pulled from environment variables.</p>
 
   <h3 id="SignalWire_REST_RestClient_SipProfile" data-uid="SignalWire.REST.RestClient.SipProfile">
   SipProfile
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L128"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>SIP profile (singleton at /api/relay/rest/sip_profile;
@@ -905,7 +911,7 @@ existing tests via BasePath).</p>
 
   <h3 id="SignalWire_REST_RestClient_Space" data-uid="SignalWire.REST.RestClient.Space">
   Space
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -936,7 +942,7 @@ existing tests via BasePath).</p>
 
   <h3 id="SignalWire_REST_RestClient_Token" data-uid="SignalWire.REST.RestClient.Token">
   Token
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L74"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -967,7 +973,7 @@ existing tests via BasePath).</p>
 
   <h3 id="SignalWire_REST_RestClient_VerifiedCallers" data-uid="SignalWire.REST.RestClient.VerifiedCallers">
   VerifiedCallers
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L122"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Verified callers.</p>
@@ -999,7 +1005,7 @@ existing tests via BasePath).</p>
 
   <h3 id="SignalWire_REST_RestClient_Video" data-uid="SignalWire.REST.RestClient.Video">
   Video
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L98"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Video rooms (Python-parity entry-point with sub-namespaces).</p>
@@ -1027,11 +1033,74 @@ existing tests via BasePath).</p>
 
 
 
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SignalWire_REST_RestClient_Dispose_" data-uid="SignalWire.REST.RestClient.Dispose*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Dispose" data-uid="SignalWire.REST.RestClient.Dispose">
+  Dispose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Dispose the owned REST <a class="xref" href="SignalWire.REST.HttpClient.html">HttpClient</a> (which, in turn, only
+disposes its inner <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.httpclient">HttpClient</a> because it
+created it). <code>RestClient</code> always constructs its own transport, so
+it always owns it. Idempotent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_REST_RestClient_Dispose_" data-uid="SignalWire.REST.RestClient.Dispose*"></a>
+
+  <h3 id="SignalWire_REST_RestClient_Dispose_System_Boolean_" data-uid="SignalWire.REST.RestClient.Dispose(System.Boolean)">
+  Dispose(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/REST/RestClient.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>disposing</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
-        <div class="contribution d-print-none">
-        </div>
 
 
       </div>

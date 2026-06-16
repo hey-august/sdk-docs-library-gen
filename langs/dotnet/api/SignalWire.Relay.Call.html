@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/signalwire/signalwire-dotnet/new/main/apiSpec/new?filename=SignalWire_Relay_Call.md&amp;value=---%0Auid%3A%20SignalWire.Relay.Call%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="SignalWire_Relay_Call" data-uid="SignalWire.Relay.Call" class="text-break">
-Class Call  
+Class Call  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -160,7 +160,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call__ctor_System_Collections_Generic_Dictionary_System_String_System_Object__SignalWire_Relay_Client_" data-uid="SignalWire.Relay.Call.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},SignalWire.Relay.Client)">
   Call(Dictionary&lt;string, object?&gt;, Client)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -197,7 +197,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_Actions" data-uid="SignalWire.Relay.Call.Actions">
   Actions
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>controlId =&gt; Action</p>
@@ -229,7 +229,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_CallId" data-uid="SignalWire.Relay.Call.CallId">
   CallId
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -256,11 +256,48 @@ as a first-class C# method.</p>
 
 
 
+  <a id="SignalWire_Relay_Call_CallState_" data-uid="SignalWire.Relay.Call.CallState*"></a>
+
+  <h3 id="SignalWire_Relay_Call_CallState" data-uid="SignalWire.Relay.Call.CallState">
+  CallState
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The current call lifecycle state as the typed <a class="xref" href="SignalWire.Relay.CallState.html">CallState</a>
+enum, parsed from <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_State">State</a>. Returns <code>null</code> when
+<a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_State">State</a> is an unrecognised (e.g. newly-introduced server)
+value — read <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_State">State</a> for the raw string in that case. This
+is a typed convenience alongside the parity-bearing string
+<a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_State">State</a>; it always agrees with it for known states.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CallState? CallState { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.CallState.html">CallState</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SignalWire_Relay_Call_Client_" data-uid="SignalWire.Relay.Call.Client*"></a>
 
   <h3 id="SignalWire_Relay_Call_Client" data-uid="SignalWire.Relay.Call.Client">
   Client
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -291,7 +328,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_Context" data-uid="SignalWire.Relay.Call.Context">
   Context
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -322,7 +359,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_Device" data-uid="SignalWire.Relay.Call.Device">
   Device
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -353,7 +390,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_DialWinner" data-uid="SignalWire.Relay.Call.DialWinner">
   DialWinner
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -384,7 +421,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_Direction" data-uid="SignalWire.Relay.Call.Direction">
   Direction
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -415,7 +452,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_EndReason" data-uid="SignalWire.Relay.Call.EndReason">
   EndReason
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -446,7 +483,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_NodeId" data-uid="SignalWire.Relay.Call.NodeId">
   NodeId
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -477,7 +514,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_OnEventCallbacks" data-uid="SignalWire.Relay.Call.OnEventCallbacks">
   OnEventCallbacks
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>User-registered event callbacks (catch-all).</p>
@@ -509,7 +546,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_Peer" data-uid="SignalWire.Relay.Call.Peer">
   Peer
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -540,7 +577,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_State" data-uid="SignalWire.Relay.Call.State">
   State
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -571,7 +608,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_Tag" data-uid="SignalWire.Relay.Call.Tag">
   Tag
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -602,7 +639,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_TypedListeners" data-uid="SignalWire.Relay.Call.TypedListeners">
   TypedListeners
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Per-event-type listeners registered via <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_On_System_String_System_Action_SignalWire_Relay_Event__">On(string, Action&lt;Event&gt;)</a>.</p>
@@ -638,7 +675,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_AI_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.AI(System.Collections.Generic.Dictionary{System.String,System.Object})">
   AI(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L330"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -674,7 +711,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_AiHoldAsync" data-uid="SignalWire.Relay.Call.AiHoldAsync">
   AiHoldAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L272"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -705,7 +742,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_AiMessageAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.AiMessageAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   AiMessageAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L269"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -741,7 +778,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_AiUnholdAsync" data-uid="SignalWire.Relay.Call.AiUnholdAsync">
   AiUnholdAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L275"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -772,7 +809,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_AmazonBedrockAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.AmazonBedrockAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   AmazonBedrockAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L266"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -808,7 +845,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_AnswerAsync" data-uid="SignalWire.Relay.Call.AnswerAsync">
   AnswerAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L209"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -839,7 +876,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_BindDigitAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.BindDigitAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   BindDigitAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L248"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -875,7 +912,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_ClearDigitBindingsAsync" data-uid="SignalWire.Relay.Call.ClearDigitBindingsAsync">
   ClearDigitBindingsAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L251"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -906,7 +943,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_Collect_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.Collect(System.Collections.Generic.Dictionary{System.String,System.Object})">
   Collect(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L303"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -942,7 +979,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_ConnectAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.ConnectAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   ConnectAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L218"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -978,7 +1015,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_DenoiseAsync" data-uid="SignalWire.Relay.Call.DenoiseAsync">
   DenoiseAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L230"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1009,7 +1046,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_DenoiseStopAsync" data-uid="SignalWire.Relay.Call.DenoiseStopAsync">
   DenoiseStopAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L233"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1040,7 +1077,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_Detect_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.Detect(System.Collections.Generic.Dictionary{System.String,System.Object})">
   Detect(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L309"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1072,11 +1109,144 @@ as a first-class C# method.</p>
 
 
 
+  <a id="SignalWire_Relay_Call_DetectAnsweringMachine_" data-uid="SignalWire.Relay.Call.DetectAnsweringMachine*"></a>
+
+  <h3 id="SignalWire_Relay_Call_DetectAnsweringMachine_System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Int32__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Nullable_System_Double__System_Action_SignalWire_Relay_Action__" data-uid="SignalWire.Relay.Call.DetectAnsweringMachine(System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Double},System.Action{SignalWire.Relay.Action})">
+  DetectAnsweringMachine(double?, double?, double?, int?, bool?, bool?, double?, Action&lt;Action&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L455"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Detect human vs answering machine (AMD). Typed convenience over <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_Detect_System_Collections_Generic_Dictionary_System_String_System_Object__">Detect(Dictionary&lt;string, object?&gt;?)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DetectAction DetectAnsweringMachine(double? initialTimeout = null, double? endSilenceTimeout = null, double? machineVoiceThreshold = null, int? machineWordsThreshold = null, bool? detectInterruptions = null, bool? detectMessageEnd = null, double? timeout = null, Action&lt;Action&gt;? onCompleted = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>initialTimeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>endSilenceTimeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>machineVoiceThreshold</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>machineWordsThreshold</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+    <dt><code>detectInterruptions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>detectMessageEnd</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>timeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>onCompleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SignalWire.Relay.Action.html">Action</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.DetectAction.html">DetectAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Call_DetectDigit_" data-uid="SignalWire.Relay.Call.DetectDigit*"></a>
+
+  <h3 id="SignalWire_Relay_Call_DetectDigit_System_String_System_Nullable_System_Double__System_Action_SignalWire_Relay_Action__" data-uid="SignalWire.Relay.Call.DetectDigit(System.String,System.Nullable{System.Double},System.Action{SignalWire.Relay.Action})">
+  DetectDigit(string?, double?, Action&lt;Action&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L435"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Detect DTMF digits. Typed convenience over <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_Detect_System_Collections_Generic_Dictionary_System_String_System_Object__">Detect(Dictionary&lt;string, object?&gt;?)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DetectAction DetectDigit(string? digits = null, double? timeout = null, Action&lt;Action&gt;? onCompleted = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digits</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>timeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>onCompleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SignalWire.Relay.Action.html">Action</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.DetectAction.html">DetectAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Call_DetectFax_" data-uid="SignalWire.Relay.Call.DetectFax*"></a>
+
+  <h3 id="SignalWire_Relay_Call_DetectFax_System_String_System_Nullable_System_Double__System_Action_SignalWire_Relay_Action__" data-uid="SignalWire.Relay.Call.DetectFax(System.String,System.Nullable{System.Double},System.Action{SignalWire.Relay.Action})">
+  DetectFax(string?, double?, Action&lt;Action&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L485"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Detect a fax tone (CED/CNG). Typed convenience over <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_Detect_System_Collections_Generic_Dictionary_System_String_System_Object__">Detect(Dictionary&lt;string, object?&gt;?)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DetectAction DetectFax(string? tone = null, double? timeout = null, Action&lt;Action&gt;? onCompleted = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tone</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>timeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>onCompleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SignalWire.Relay.Action.html">Action</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.DetectAction.html">DetectAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SignalWire_Relay_Call_DisconnectAsync_" data-uid="SignalWire.Relay.Call.DisconnectAsync*"></a>
 
   <h3 id="SignalWire_Relay_Call_DisconnectAsync" data-uid="SignalWire.Relay.Call.DisconnectAsync">
   DisconnectAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L221"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1107,7 +1277,7 @@ as a first-class C# method.</p>
 
   <h3 id="SignalWire_Relay_Call_DispatchEvent_SignalWire_Relay_Event_" data-uid="SignalWire.Relay.Call.DispatchEvent(SignalWire.Relay.Event)">
   DispatchEvent(Event)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Central event router invoked by the Client whenever a server event
@@ -1140,7 +1310,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_EchoAsync" data-uid="SignalWire.Relay.Call.EchoAsync">
   EchoAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L245"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1171,7 +1341,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_HangupAsync_System_String_" data-uid="SignalWire.Relay.Call.HangupAsync(System.String)">
   HangupAsync(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L212"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1207,7 +1377,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_HoldAsync" data-uid="SignalWire.Relay.Call.HoldAsync">
   HoldAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L224"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1238,7 +1408,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_JoinConferenceAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.JoinConferenceAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   JoinConferenceAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L239"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1274,7 +1444,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_JoinRoomAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.JoinRoomAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   JoinRoomAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L260"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1310,7 +1480,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_LeaveConferenceAsync" data-uid="SignalWire.Relay.Call.LeaveConferenceAsync">
   LeaveConferenceAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L242"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1341,7 +1511,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_LeaveRoomAsync" data-uid="SignalWire.Relay.Call.LeaveRoomAsync">
   LeaveRoomAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L263"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1372,7 +1542,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_LiveTranscribeAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.LiveTranscribeAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   LiveTranscribeAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L254"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1408,7 +1578,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_LiveTranslateAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.LiveTranslateAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   LiveTranslateAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L257"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1444,7 +1614,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_On_System_Action_SignalWire_Relay_Event_SignalWire_Relay_Call__" data-uid="SignalWire.Relay.Call.On(System.Action{SignalWire.Relay.Event,SignalWire.Relay.Call})">
   On(Action&lt;Event, Call&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L174"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Register a generic event listener on this call.</p>
@@ -1481,7 +1651,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_On_System_String_System_Action_SignalWire_Relay_Event__" data-uid="SignalWire.Relay.Call.On(System.String,System.Action{SignalWire.Relay.Event})">
   On(string, Action&lt;Event&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L181"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Register a per-event-type listener (mirrors Python <code>call.on(event_type, handler)</code>).</p>
@@ -1520,7 +1690,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_PassAsync" data-uid="SignalWire.Relay.Call.PassAsync">
   PassAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L215"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1551,7 +1721,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_Pay_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.Pay(System.Collections.Generic.Dictionary{System.String,System.Object})">
   Pay(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L324"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1587,7 +1757,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_Play_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.Play(System.Collections.Generic.Dictionary{System.String,System.Object})">
   Play(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L297"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1623,7 +1793,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_PlayAndCollect_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.PlayAndCollect(System.Collections.Generic.Dictionary{System.String,System.Object})">
   PlayAndCollect(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L306"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1655,11 +1825,273 @@ targets this call.</p>
 
 
 
+  <a id="SignalWire_Relay_Call_PlayAudio_" data-uid="SignalWire.Relay.Call.PlayAudio*"></a>
+
+  <h3 id="SignalWire_Relay_Call_PlayAudio_System_String_System_Nullable_System_Double__System_Action_SignalWire_Relay_Action__" data-uid="SignalWire.Relay.Call.PlayAudio(System.String,System.Nullable{System.Double},System.Action{SignalWire.Relay.Action})">
+  PlayAudio(string, double?, Action&lt;Action&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L367"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Play an audio file from a URL. Typed convenience over <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_Play_System_Collections_Generic_Dictionary_System_String_System_Object__">Play(Dictionary&lt;string, object?&gt;?)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayAction PlayAudio(string url, double? volume = null, Action&lt;Action&gt;? onCompleted = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>url</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>volume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>onCompleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SignalWire.Relay.Action.html">Action</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.PlayAction.html">PlayAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Call_PlayRingtone_" data-uid="SignalWire.Relay.Call.PlayRingtone*"></a>
+
+  <h3 id="SignalWire_Relay_Call_PlayRingtone_System_String_System_Nullable_System_Double__System_Nullable_System_Double__System_Action_SignalWire_Relay_Action__" data-uid="SignalWire.Relay.Call.PlayRingtone(System.String,System.Nullable{System.Double},System.Nullable{System.Double},System.Action{SignalWire.Relay.Action})">
+  PlayRingtone(string, double?, double?, Action&lt;Action&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L407"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Play a named ringtone by country code. Typed convenience over <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_Play_System_Collections_Generic_Dictionary_System_String_System_Object__">Play(Dictionary&lt;string, object?&gt;?)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayAction PlayRingtone(string name, double? duration = null, double? volume = null, Action&lt;Action&gt;? onCompleted = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>volume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>onCompleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SignalWire.Relay.Action.html">Action</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.PlayAction.html">PlayAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Call_PlaySilence_" data-uid="SignalWire.Relay.Call.PlaySilence*"></a>
+
+  <h3 id="SignalWire_Relay_Call_PlaySilence_System_Double_System_Action_SignalWire_Relay_Action__" data-uid="SignalWire.Relay.Call.PlaySilence(System.Double,System.Action{SignalWire.Relay.Action})">
+  PlaySilence(double, Action&lt;Action&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L388"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Play silence for <code class="paramref">duration</code> seconds. Typed convenience over <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_Play_System_Collections_Generic_Dictionary_System_String_System_Object__">Play(Dictionary&lt;string, object?&gt;?)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayAction PlaySilence(double duration, Action&lt;Action&gt;? onCompleted = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>onCompleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SignalWire.Relay.Action.html">Action</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.PlayAction.html">PlayAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Call_PlayTts_" data-uid="SignalWire.Relay.Call.PlayTts*"></a>
+
+  <h3 id="SignalWire_Relay_Call_PlayTts_System_String_System_String_System_String_System_String_System_Nullable_System_Double__System_Action_SignalWire_Relay_Action__" data-uid="SignalWire.Relay.Call.PlayTts(System.String,System.String,System.String,System.String,System.Nullable{System.Double},System.Action{SignalWire.Relay.Action})">
+  PlayTts(string, string?, string?, string?, double?, Action&lt;Action&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L343"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Play text-to-speech. Typed convenience over <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_Play_System_Collections_Generic_Dictionary_System_String_System_Object__">Play(Dictionary&lt;string, object?&gt;?)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayAction PlayTts(string text, string? language = null, string? gender = null, string? voice = null, double? volume = null, Action&lt;Action&gt;? onCompleted = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>language</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>gender</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>voice</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>volume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>onCompleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SignalWire.Relay.Action.html">Action</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.PlayAction.html">PlayAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Call_PromptAudio_" data-uid="SignalWire.Relay.Call.PromptAudio*"></a>
+
+  <h3 id="SignalWire_Relay_Call_PromptAudio_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Nullable_System_Double__System_Action_SignalWire_Relay_Action__" data-uid="SignalWire.Relay.Call.PromptAudio(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Nullable{System.Double},System.Action{SignalWire.Relay.Action})">
+  PromptAudio(string, Dictionary&lt;string, object?&gt;, double?, Action&lt;Action&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L538"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Play an audio file then collect input. Typed media over <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_PlayAndCollect_System_Collections_Generic_Dictionary_System_String_System_Object__">PlayAndCollect(Dictionary&lt;string, object?&gt;?)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CollectAction PromptAudio(string url, Dictionary&lt;string, object?&gt; collect, double? volume = null, Action&lt;Action&gt;? onCompleted = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>url</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>collect</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>volume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>onCompleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SignalWire.Relay.Action.html">Action</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.CollectAction.html">CollectAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Call_PromptTts_" data-uid="SignalWire.Relay.Call.PromptTts*"></a>
+
+  <h3 id="SignalWire_Relay_Call_PromptTts_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_String_System_String_System_String_System_Nullable_System_Double__System_Action_SignalWire_Relay_Action__" data-uid="SignalWire.Relay.Call.PromptTts(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.String,System.String,System.Nullable{System.Double},System.Action{SignalWire.Relay.Action})">
+  PromptTts(string, Dictionary&lt;string, object?&gt;, string?, string?, string?, double?, Action&lt;Action&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L512"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Play TTS then collect input. Typed media over <a class="xref" href="SignalWire.Relay.Call.html#SignalWire_Relay_Call_PlayAndCollect_System_Collections_Generic_Dictionary_System_String_System_Object__">PlayAndCollect(Dictionary&lt;string, object?&gt;?)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CollectAction PromptTts(string text, Dictionary&lt;string, object?&gt; collect, string? language = null, string? gender = null, string? voice = null, double? volume = null, Action&lt;Action&gt;? onCompleted = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>collect</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>language</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>gender</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>voice</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>volume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>onCompleted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SignalWire.Relay.Action.html">Action</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SignalWire.Relay.CollectAction.html">CollectAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SignalWire_Relay_Call_QueueEnterAsync_" data-uid="SignalWire.Relay.Call.QueueEnterAsync*"></a>
 
   <h3 id="SignalWire_Relay_Call_QueueEnterAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.QueueEnterAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   QueueEnterAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L281"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1695,7 +2127,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_QueueLeaveAsync" data-uid="SignalWire.Relay.Call.QueueLeaveAsync">
   QueueLeaveAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L284"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1726,7 +2158,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_ReceiveFax_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.ReceiveFax(System.Collections.Generic.Dictionary{System.String,System.Object})">
   ReceiveFax(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L315"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1762,7 +2194,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_Record_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.Record(System.Collections.Generic.Dictionary{System.String,System.Object})">
   Record(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L300"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1798,7 +2230,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_ReferAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.ReferAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   ReferAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L287"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1834,7 +2266,7 @@ targets this call.</p>
 
   <h3 id="SignalWire_Relay_Call_ResolveAllActions" data-uid="SignalWire.Relay.Call.ResolveAllActions">
   ResolveAllActions()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L196"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Mark every outstanding action as completed.
@@ -1862,7 +2294,7 @@ Called when the call enters a terminal state (ended).</p>
 
   <h3 id="SignalWire_Relay_Call_SendDigitsAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.SendDigitsAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   SendDigitsAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L290"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1898,7 +2330,7 @@ Called when the call enters a terminal state (ended).</p>
 
   <h3 id="SignalWire_Relay_Call_SendFax_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.SendFax(System.Collections.Generic.Dictionary{System.String,System.Object})">
   SendFax(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L312"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1934,7 +2366,7 @@ Called when the call enters a terminal state (ended).</p>
 
   <h3 id="SignalWire_Relay_Call_Stream_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.Stream(System.Collections.Generic.Dictionary{System.String,System.Object})">
   Stream(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L321"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1970,7 +2402,7 @@ Called when the call enters a terminal state (ended).</p>
 
   <h3 id="SignalWire_Relay_Call_Tap_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.Tap(System.Collections.Generic.Dictionary{System.String,System.Object})">
   Tap(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L318"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2006,7 +2438,7 @@ Called when the call enters a terminal state (ended).</p>
 
   <h3 id="SignalWire_Relay_Call_Transcribe_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.Transcribe(System.Collections.Generic.Dictionary{System.String,System.Object})">
   Transcribe(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L327"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2042,7 +2474,7 @@ Called when the call enters a terminal state (ended).</p>
 
   <h3 id="SignalWire_Relay_Call_TransferAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.TransferAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   TransferAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L236"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2078,7 +2510,7 @@ Called when the call enters a terminal state (ended).</p>
 
   <h3 id="SignalWire_Relay_Call_UnholdAsync" data-uid="SignalWire.Relay.Call.UnholdAsync">
   UnholdAsync()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L227"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2109,7 +2541,7 @@ Called when the call enters a terminal state (ended).</p>
 
   <h3 id="SignalWire_Relay_Call_UserEventAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Call.UserEventAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
   UserEventAsync(Dictionary&lt;string, object?&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L278"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2141,11 +2573,120 @@ Called when the call enters a terminal state (ended).</p>
 
 
 
+  <a id="SignalWire_Relay_Call_WaitForAnsweredAsync_" data-uid="SignalWire.Relay.Call.WaitForAnsweredAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Call_WaitForAnsweredAsync_System_Nullable_System_Double__" data-uid="SignalWire.Relay.Call.WaitForAnsweredAsync(System.Nullable{System.Double})">
+  WaitForAnsweredAsync(double?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L646"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Wait until the call is answered (immediate if already answered or past it).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Event&gt; WaitForAnsweredAsync(double? timeout = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>timeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="SignalWire.Relay.Event.html">Event</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Call_WaitForEndingAsync_" data-uid="SignalWire.Relay.Call.WaitForEndingAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Call_WaitForEndingAsync_System_Nullable_System_Double__" data-uid="SignalWire.Relay.Call.WaitForEndingAsync(System.Nullable{System.Double})">
+  WaitForEndingAsync(double?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L654"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Wait until the call is ending (immediate if already ending or past it).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Event&gt; WaitForEndingAsync(double? timeout = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>timeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="SignalWire.Relay.Event.html">Event</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SignalWire_Relay_Call_WaitForRingingAsync_" data-uid="SignalWire.Relay.Call.WaitForRingingAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Call_WaitForRingingAsync_System_Nullable_System_Double__" data-uid="SignalWire.Relay.Call.WaitForRingingAsync(System.Nullable{System.Double})">
+  WaitForRingingAsync(double?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Call.cs/#L650"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Wait until the call is ringing (immediate if already ringing or past it).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Event&gt; WaitForRingingAsync(double? timeout = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>timeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="SignalWire.Relay.Event.html">Event</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
-        <div class="contribution d-print-none">
-        </div>
 
 
       </div>

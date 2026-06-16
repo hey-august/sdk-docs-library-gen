@@ -234,15 +234,28 @@ audit fixture sees the documented page on the wire.</p>
       <dt><a class="xref" href="SignalWire.Skills.Builtin.WebSearchSkill.html">WebSearchSkill</a></dt>
       <dd><p>Web search skill backed by Google Custom Search.</p>
 <p>Mirrors signalwire-python's <code>signalwire.skills.web_search.skill</code>
-(the <code>WebSearchSkill.search_and_scrape_best</code> path). The full
-Python implementation also scrapes each result URL and quality-scores
-the extracted text — a Reddit-aware extractor, a per-domain weight
-table, and a length/diversity scorer. The .NET port ships the search
-call faithfully and falls back to formatted titles+snippets when the
-per-result scrape isn't requested. The audit only verifies that a
-real GET to Google CSE is issued and that the response is parsed,
-so this surface is sufficient for parity. Per-result scraping can be
-layered on top without breaking the audit contract.</p>
+(the <code>WebSearchSkill.search_and_scrape_best</code> path). The CSE call is
+issued faithfully, then each result URL is scraped and a header line +
+per-result title/url/snippet (plus scraped content) is formatted.</p>
+<p>Latency control (Python skill.py commits 51101da + 295745b) bounds the
+whole tool call so a single slow site can never blow past the SignalWire
+kernel's ~55s webhook timeout:
+<code>per_page_timeout</code> (2.0s)  caps each page scrape (a per-request
+linked <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtokensource">CancellationTokenSource</a> with
+<code>CancelAfter</code>).
+<code>overall_deadline</code> (10.0s) is the wall-clock budget for the whole
+call; once it fires, in-flight scrapes are abandoned and we return
+what we have (a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtokensource">CancellationTokenSource</a>
+with <code>CancelAfter(overall_deadline)</code>). THIS IS THE CONTRACT.
+<code>parallel_scrape</code> (true) dispatches each scrape as a Task and awaits
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task.whenall#system-threading-tasks-task-whenall(system-threading-tasks-task())">WhenAll(params Task[])</a>,
+harvesting whatever completed when the deadline cancels (best-effort).
+<code>snippets_only</code> (false) skips scraping entirely and formats the CSE
+snippets directly. Sub-second response.
+When the deadline fires OR no scraped page meets the quality threshold, the
+handler falls back to formatting the CSE snippets into a NON-empty response
+rather than the empty no-results message, so the kernel never sees a
+webhook timeout.</p>
 <p>Upstream URL override: <code>WEB_SEARCH_BASE_URL</code> (used by
 audit_skills_dispatch.py to point at a local fixture). When set, the
 URL is rewritten to the override host while the path
@@ -267,8 +280,6 @@ fixture sees the documented Wikipedia API path on the wire.</p>
 
 </article>
 
-        <div class="contribution d-print-none">
-        </div>
 
 
       </div>

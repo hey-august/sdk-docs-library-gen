@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/signalwire/signalwire-dotnet/new/main/apiSpec/new?filename=SignalWire_Relay_Client.md&amp;value=---%0Auid%3A%20SignalWire.Relay.Client%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="SignalWire_Relay_Client" data-uid="SignalWire.Relay.Client" class="text-break">
-Class Client  
+Class Client  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -106,7 +106,7 @@ native C# async pattern instead of polling loops.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Client</code></pre>
+    <pre><code class="lang-csharp hljs">public class Client : IAsyncDisposable</code></pre>
   </div>
 
 
@@ -120,6 +120,12 @@ native C# async pattern instead of polling loops.</p>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -161,7 +167,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client__ctor_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="SignalWire.Relay.Client.#ctor(System.Collections.Generic.Dictionary{System.String,System.String})">
   Client(Dictionary&lt;string, string&gt;?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L91"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -196,7 +202,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client_Agent" data-uid="SignalWire.Relay.Client.Agent">
   Agent
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -227,7 +233,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client_AuthorizationState" data-uid="SignalWire.Relay.Client.AuthorizationState">
   AuthorizationState
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -258,7 +264,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client_Calls" data-uid="SignalWire.Relay.Client.Calls">
   Calls
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>callId =&gt; Call.</p>
@@ -290,7 +296,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client_Connected" data-uid="SignalWire.Relay.Client.Connected">
   Connected
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -321,7 +327,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client_Contexts" data-uid="SignalWire.Relay.Client.Contexts">
   Contexts
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -352,7 +358,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client_Host" data-uid="SignalWire.Relay.Client.Host">
   Host
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -383,7 +389,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client_InboundQueue" data-uid="SignalWire.Relay.Client.InboundQueue">
   InboundQueue
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Messages received from the transport layer. Test code can enqueue here.</p>
@@ -415,7 +421,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client_Messages" data-uid="SignalWire.Relay.Client.Messages">
   Messages
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>messageId =&gt; Message.</p>
@@ -447,7 +453,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client_OnCallHandler" data-uid="SignalWire.Relay.Client.OnCallHandler">
   OnCallHandler
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -478,7 +484,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client_OnEventHandler" data-uid="SignalWire.Relay.Client.OnEventHandler">
   OnEventHandler
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -509,7 +515,7 @@ native C# async pattern instead of polling loops.</p>
 
   <h3 id="SignalWire_Relay_Client_OnMessageHandler" data-uid="SignalWire.Relay.Client.OnMessageHandler">
   OnMessageHandler
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Inbound message handler. Mirrors Python's <code>@client.on_message</code>:
@@ -543,7 +549,7 @@ fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">M
 
   <h3 id="SignalWire_Relay_Client_Pending" data-uid="SignalWire.Relay.Client.Pending">
   Pending
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>JSON-RPC id =&gt; pending request TCS.</p>
@@ -575,7 +581,7 @@ fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">M
 
   <h3 id="SignalWire_Relay_Client_PendingDials" data-uid="SignalWire.Relay.Client.PendingDials">
   PendingDials
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>tag =&gt; pending dial TCS.</p>
@@ -607,7 +613,7 @@ fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">M
 
   <h3 id="SignalWire_Relay_Client_Project" data-uid="SignalWire.Relay.Client.Project">
   Project
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -638,7 +644,7 @@ fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">M
 
   <h3 id="SignalWire_Relay_Client_Protocol" data-uid="SignalWire.Relay.Client.Protocol">
   Protocol
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -669,7 +675,7 @@ fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">M
 
   <h3 id="SignalWire_Relay_Client_Scheme" data-uid="SignalWire.Relay.Client.Scheme">
   Scheme
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -700,7 +706,7 @@ fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">M
 
   <h3 id="SignalWire_Relay_Client_SessionId" data-uid="SignalWire.Relay.Client.SessionId">
   SessionId
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -731,7 +737,7 @@ fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">M
 
   <h3 id="SignalWire_Relay_Client_Token" data-uid="SignalWire.Relay.Client.Token">
   Token
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -764,9 +770,9 @@ fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">M
 
   <a id="SignalWire_Relay_Client_AuthenticateAsync_" data-uid="SignalWire.Relay.Client.AuthenticateAsync*"></a>
 
-  <h3 id="SignalWire_Relay_Client_AuthenticateAsync" data-uid="SignalWire.Relay.Client.AuthenticateAsync">
-  AuthenticateAsync()
-  
+  <h3 id="SignalWire_Relay_Client_AuthenticateAsync_System_Threading_CancellationToken_" data-uid="SignalWire.Relay.Client.AuthenticateAsync(System.Threading.CancellationToken)">
+  AuthenticateAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L174"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Send the signalwire.connect RPC to authenticate.</p>
@@ -774,9 +780,14 @@ fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">M
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task AuthenticateAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public Task AuthenticateAsync(CancellationToken cancellationToken = default)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
@@ -798,7 +809,7 @@ fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">M
 
   <h3 id="SignalWire_Relay_Client_BuildWebSocketUri" data-uid="SignalWire.Relay.Client.BuildWebSocketUri">
   BuildWebSocketUri()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L122"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Build the full WebSocket URL: <a class="xref" href="SignalWire.Relay.Client.html#SignalWire_Relay_Client_Scheme">Scheme</a>://<a class="xref" href="SignalWire.Relay.Client.html#SignalWire_Relay_Client_Host">Host</a>/api/relay/ws.</p>
@@ -828,9 +839,9 @@ fires with a fully-formed <a class="xref" href="SignalWire.Relay.Message.html">M
 
   <a id="SignalWire_Relay_Client_ConnectAsync_" data-uid="SignalWire.Relay.Client.ConnectAsync*"></a>
 
-  <h3 id="SignalWire_Relay_Client_ConnectAsync" data-uid="SignalWire.Relay.Client.ConnectAsync">
-  ConnectAsync()
-  
+  <h3 id="SignalWire_Relay_Client_ConnectAsync_System_Threading_CancellationToken_" data-uid="SignalWire.Relay.Client.ConnectAsync(System.Threading.CancellationToken)">
+  ConnectAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L138"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Establish the WebSocket connection and authenticate. Opens a real
@@ -841,9 +852,14 @@ that pumps inbound frames into <a class="xref" href="SignalWire.Relay.Client.htm
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Task ConnectAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Task ConnectAsync(CancellationToken cancellationToken = default)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
@@ -863,9 +879,9 @@ that pumps inbound frames into <a class="xref" href="SignalWire.Relay.Client.htm
 
   <a id="SignalWire_Relay_Client_DialAsync_" data-uid="SignalWire.Relay.Client.DialAsync*"></a>
 
-  <h3 id="SignalWire_Relay_Client_DialAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Client.DialAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
-  DialAsync(Dictionary&lt;string, object?&gt;)
-  
+  <h3 id="SignalWire_Relay_Client_DialAsync_System_Collections_Generic_Dictionary_System_String_System_Object__System_Threading_CancellationToken_" data-uid="SignalWire.Relay.Client.DialAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
+  DialAsync(Dictionary&lt;string, object?&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L770"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Originate an outbound call, awaiting until the dial resolves.
@@ -876,12 +892,14 @@ resolve-or-throw deadline.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;Call&gt; DialAsync(Dictionary&lt;string, object?&gt; params_)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;Call&gt; DialAsync(Dictionary&lt;string, object?&gt; params_, CancellationToken cancellationToken = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>params_</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd></dd>
   </dl>
 
@@ -905,7 +923,7 @@ resolve-or-throw deadline.</p>
 
   <h3 id="SignalWire_Relay_Client_Disconnect" data-uid="SignalWire.Relay.Client.Disconnect">
   Disconnect()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L230"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gracefully close the connection.</p>
@@ -928,11 +946,51 @@ resolve-or-throw deadline.</p>
 
 
 
+  <a id="SignalWire_Relay_Client_DisposeAsync_" data-uid="SignalWire.Relay.Client.DisposeAsync*"></a>
+
+  <h3 id="SignalWire_Relay_Client_DisposeAsync" data-uid="SignalWire.Relay.Client.DisposeAsync">
+  DisposeAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L277"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously release the connection and all owned IDisposables —
+the WebSocket (<code>_ws</code>), the lifetime token source (<code>_cts</code>),
+and the send lock (<code>_sendLock</code>). This is the .NET analogue of
+Python's <code><strong>aexit</strong></code>: <code>await using var client = ...;</code> closes
+the socket and frees the handles deterministically instead of leaking
+them until finalization. Idempotent.</p>
+<p>Closes gracefully when the socket is still open (best-effort
+close handshake), cancels the reader loop, waits briefly for it to
+unwind, then disposes every owned resource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ValueTask DisposeAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask">ValueTask</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SignalWire_Relay_Client_ExecuteAsync_" data-uid="SignalWire.Relay.Client.ExecuteAsync*"></a>
 
-  <h3 id="SignalWire_Relay_Client_ExecuteAsync_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Client.ExecuteAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
-  ExecuteAsync(string, Dictionary&lt;string, object?&gt;?)
-  
+  <h3 id="SignalWire_Relay_Client_ExecuteAsync_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Threading_CancellationToken_" data-uid="SignalWire.Relay.Client.ExecuteAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
+  ExecuteAsync(string, Dictionary&lt;string, object?&gt;?, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L476"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Send a JSON-RPC request and await the matching response.
@@ -941,7 +999,7 @@ Returns the &quot;result&quot; portion of the response.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;Dictionary&lt;string, object?&gt;&gt; ExecuteAsync(string method, Dictionary&lt;string, object?&gt;? params_ = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;Dictionary&lt;string, object?&gt;&gt; ExecuteAsync(string method, Dictionary&lt;string, object?&gt;? params_ = null, CancellationToken cancellationToken = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -949,6 +1007,8 @@ Returns the &quot;result&quot; portion of the response.</p>
     <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
     <dt><code>params_</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd></dd>
   </dl>
 
@@ -972,7 +1032,7 @@ Returns the &quot;result&quot; portion of the response.</p>
 
   <h3 id="SignalWire_Relay_Client_GetCall_System_String_" data-uid="SignalWire.Relay.Client.GetCall(System.String)">
   GetCall(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L911"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1008,7 +1068,7 @@ Returns the &quot;result&quot; portion of the response.</p>
 
   <h3 id="SignalWire_Relay_Client_HandleEvent_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Client.HandleEvent(System.Collections.Generic.Dictionary{System.String,System.Object})">
   HandleEvent(Dictionary&lt;string, object?&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L645"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Route a signalwire.event payload to the appropriate handler.</p>
@@ -1040,7 +1100,7 @@ Returns the &quot;result&quot; portion of the response.</p>
 
   <h3 id="SignalWire_Relay_Client_HandleMessage_System_String_" data-uid="SignalWire.Relay.Client.HandleMessage(System.String)">
   HandleMessage(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L583"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Parse a raw JSON string from the server and route it.</p>
@@ -1072,7 +1132,7 @@ Returns the &quot;result&quot; portion of the response.</p>
 
   <h3 id="SignalWire_Relay_Client_OnCall_System_Func_SignalWire_Relay_Call_SignalWire_Relay_Event_System_Threading_Tasks_Task__" data-uid="SignalWire.Relay.Client.OnCall(System.Func{SignalWire.Relay.Call,SignalWire.Relay.Event,System.Threading.Tasks.Task})">
   OnCall(Func&lt;Call, Event, Task&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L896"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Register a handler for inbound calls.</p>
@@ -1109,7 +1169,7 @@ Returns the &quot;result&quot; portion of the response.</p>
 
   <h3 id="SignalWire_Relay_Client_OnMessage_System_Func_SignalWire_Relay_Message_SignalWire_Relay_Event_System_Threading_Tasks_Task__" data-uid="SignalWire.Relay.Client.OnMessage(System.Func{SignalWire.Relay.Message,SignalWire.Relay.Event,System.Threading.Tasks.Task})">
   OnMessage(Func&lt;Message, Event, Task&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L903"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Register a handler for inbound messages.</p>
@@ -1146,7 +1206,7 @@ Returns the &quot;result&quot; portion of the response.</p>
 
   <h3 id="SignalWire_Relay_Client_ReadLoopAsync_System_Threading_CancellationToken_" data-uid="SignalWire.Relay.Client.ReadLoopAsync(System.Threading.CancellationToken)">
   ReadLoopAsync(CancellationToken)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L402"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reader loop that pulls UTF-8 text frames off the socket and routes
@@ -1185,7 +1245,7 @@ fragmented frames by accumulating them until <a class="xref" href="https://learn
 
   <h3 id="SignalWire_Relay_Client_ReadOnce" data-uid="SignalWire.Relay.Client.ReadOnce">
   ReadOnce()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L460"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Read one queued message synchronously (test helper for harness use).</p>
@@ -1210,9 +1270,9 @@ fragmented frames by accumulating them until <a class="xref" href="https://learn
 
   <a id="SignalWire_Relay_Client_ReceiveAsync_" data-uid="SignalWire.Relay.Client.ReceiveAsync*"></a>
 
-  <h3 id="SignalWire_Relay_Client_ReceiveAsync_System_Collections_Generic_IEnumerable_System_String__" data-uid="SignalWire.Relay.Client.ReceiveAsync(System.Collections.Generic.IEnumerable{System.String})">
-  ReceiveAsync(IEnumerable&lt;string&gt;)
-  
+  <h3 id="SignalWire_Relay_Client_ReceiveAsync_System_Collections_Generic_IEnumerable_System_String__System_Threading_CancellationToken_" data-uid="SignalWire.Relay.Client.ReceiveAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+  ReceiveAsync(IEnumerable&lt;string&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L860"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Subscribe to one or more inbound contexts.</p>
@@ -1220,12 +1280,14 @@ fragmented frames by accumulating them until <a class="xref" href="https://learn
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task ReceiveAsync(IEnumerable&lt;string&gt; contexts)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task ReceiveAsync(IEnumerable&lt;string&gt; contexts, CancellationToken cancellationToken = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>contexts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd></dd>
   </dl>
 
@@ -1247,9 +1309,9 @@ fragmented frames by accumulating them until <a class="xref" href="https://learn
 
   <a id="SignalWire_Relay_Client_ReconnectAsync_" data-uid="SignalWire.Relay.Client.ReconnectAsync*"></a>
 
-  <h3 id="SignalWire_Relay_Client_ReconnectAsync" data-uid="SignalWire.Relay.Client.ReconnectAsync">
-  ReconnectAsync()
-  
+  <h3 id="SignalWire_Relay_Client_ReconnectAsync_System_Threading_CancellationToken_" data-uid="SignalWire.Relay.Client.ReconnectAsync(System.Threading.CancellationToken)">
+  ReconnectAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L334"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reconnect with exponential back-off (1s to 30s cap).</p>
@@ -1257,9 +1319,14 @@ fragmented frames by accumulating them until <a class="xref" href="https://learn
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task ReconnectAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public Task ReconnectAsync(CancellationToken cancellationToken = default)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
@@ -1279,22 +1346,27 @@ fragmented frames by accumulating them until <a class="xref" href="https://learn
 
   <a id="SignalWire_Relay_Client_RunAsync_" data-uid="SignalWire.Relay.Client.RunAsync*"></a>
 
-  <h3 id="SignalWire_Relay_Client_RunAsync" data-uid="SignalWire.Relay.Client.RunAsync">
-  RunAsync()
-  
+  <h3 id="SignalWire_Relay_Client_RunAsync_System_Threading_CancellationToken_" data-uid="SignalWire.Relay.Client.RunAsync(System.Threading.CancellationToken)">
+  RunAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L359"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Main event loop -- drains the inbound queue and processes messages
 until disconnect. Used by the test path that pushes JSON strings
 into <a class="xref" href="SignalWire.Relay.Client.html#SignalWire_Relay_Client_InboundQueue">InboundQueue</a>; production reads come from the
-WebSocket reader started in <a class="xref" href="SignalWire.Relay.Client.html#SignalWire_Relay_Client_ConnectAsync">ConnectAsync()</a>.</p>
+WebSocket reader started in <a class="xref" href="SignalWire.Relay.Client.html#SignalWire_Relay_Client_ConnectAsync_System_Threading_CancellationToken_">ConnectAsync(CancellationToken)</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task RunAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public Task RunAsync(CancellationToken cancellationToken = default)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
@@ -1316,7 +1388,7 @@ WebSocket reader started in <a class="xref" href="SignalWire.Relay.Client.html#S
 
   <h3 id="SignalWire_Relay_Client_Send_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Client.Send(System.Collections.Generic.Dictionary{System.String,System.Object})">
   Send(Dictionary&lt;string, object?&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L529"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Encode and send a JSON message. Real production path writes to the
@@ -1349,7 +1421,7 @@ WebSocket; tests override this to capture payloads in memory.</p>
 
   <h3 id="SignalWire_Relay_Client_SendAck_System_String_" data-uid="SignalWire.Relay.Client.SendAck(System.String)">
   SendAck(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L568"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Send an acknowledgement (empty result) for a server-initiated request.</p>
@@ -1379,9 +1451,9 @@ WebSocket; tests override this to capture payloads in memory.</p>
 
   <a id="SignalWire_Relay_Client_SendMessageAsync_" data-uid="SignalWire.Relay.Client.SendMessageAsync*"></a>
 
-  <h3 id="SignalWire_Relay_Client_SendMessageAsync_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="SignalWire.Relay.Client.SendMessageAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
-  SendMessageAsync(Dictionary&lt;string, object?&gt;)
-  
+  <h3 id="SignalWire_Relay_Client_SendMessageAsync_System_Collections_Generic_Dictionary_System_String_System_Object__System_Threading_CancellationToken_" data-uid="SignalWire.Relay.Client.SendMessageAsync(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationToken)">
+  SendMessageAsync(Dictionary&lt;string, object?&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L829"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Send an outbound message.</p>
@@ -1389,12 +1461,14 @@ WebSocket; tests override this to capture payloads in memory.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;Message&gt; SendMessageAsync(Dictionary&lt;string, object?&gt; params_)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;Message&gt; SendMessageAsync(Dictionary&lt;string, object?&gt; params_, CancellationToken cancellationToken = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>params_</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd></dd>
   </dl>
 
@@ -1416,9 +1490,9 @@ WebSocket; tests override this to capture payloads in memory.</p>
 
   <a id="SignalWire_Relay_Client_UnreceiveAsync_" data-uid="SignalWire.Relay.Client.UnreceiveAsync*"></a>
 
-  <h3 id="SignalWire_Relay_Client_UnreceiveAsync_System_Collections_Generic_IEnumerable_System_String__" data-uid="SignalWire.Relay.Client.UnreceiveAsync(System.Collections.Generic.IEnumerable{System.String})">
-  UnreceiveAsync(IEnumerable&lt;string&gt;)
-  
+  <h3 id="SignalWire_Relay_Client_UnreceiveAsync_System_Collections_Generic_IEnumerable_System_String__System_Threading_CancellationToken_" data-uid="SignalWire.Relay.Client.UnreceiveAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+  UnreceiveAsync(IEnumerable&lt;string&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/signalwire/signalwire-dotnet/blob/main/src/SignalWire/Relay/Client.cs/#L881"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Unsubscribe from one or more contexts.</p>
@@ -1426,12 +1500,14 @@ WebSocket; tests override this to capture payloads in memory.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task UnreceiveAsync(IEnumerable&lt;string&gt; contexts)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task UnreceiveAsync(IEnumerable&lt;string&gt; contexts, CancellationToken cancellationToken = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>contexts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd></dd>
   </dl>
 
@@ -1454,8 +1530,6 @@ WebSocket; tests override this to capture payloads in memory.</p>
 
 </article>
 
-        <div class="contribution d-print-none">
-        </div>
 
 
       </div>

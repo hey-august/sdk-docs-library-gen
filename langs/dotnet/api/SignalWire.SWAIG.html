@@ -95,17 +95,130 @@
 Classes
 </h3>
     <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.CallbackMethodExtensions.html">CallbackMethodExtensions</a></dt>
+      <dd><p>Maps <a class="xref" href="SignalWire.SWAIG.CallbackMethod.html">CallbackMethod</a> members to the canonical wire values
+(uppercase HTTP verbs) that the SWML <code>join_conference</code> action expects on
+its <code>status_callback_method</code> / <code>recording_status_callback_method</code> keys.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.CodecExtensions.html">CodecExtensions</a></dt>
+      <dd><p>Maps <a class="xref" href="SignalWire.SWAIG.Codec.html">Codec</a> members to the canonical wire values that the SWML
+<code>tap</code> action expects.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.ConferenceBeepExtensions.html">ConferenceBeepExtensions</a></dt>
+      <dd><p>Maps <a class="xref" href="SignalWire.SWAIG.ConferenceBeep.html">ConferenceBeep</a> members to the canonical wire values that
+the SWML <code>join_conference</code> action expects on its <code>beep</code> key.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.ConferenceRecordExtensions.html">ConferenceRecordExtensions</a></dt>
+      <dd><p>Maps <a class="xref" href="SignalWire.SWAIG.ConferenceRecord.html">ConferenceRecord</a> members to the canonical wire values that
+the SWML <code>join_conference</code> action expects on its <code>record</code> key.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.ConferenceTrimExtensions.html">ConferenceTrimExtensions</a></dt>
+      <dd><p>Maps <a class="xref" href="SignalWire.SWAIG.ConferenceTrim.html">ConferenceTrim</a> members to the canonical wire values that
+the SWML <code>join_conference</code> action expects on its <code>trim</code> key.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="SignalWire.SWAIG.FunctionResult.html">FunctionResult</a></dt>
       <dd><p>Builds a SWAIG function result with an optional response, actions, and post-processing flag.
 All action methods return <code>this</code> for fluent chaining.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.JoinConferenceOptions.html">JoinConferenceOptions</a></dt>
+      <dd><p>Typed options bag for the convenience overload
+<a class="xref" href="SignalWire.SWAIG.FunctionResult.html#SignalWire_SWAIG_FunctionResult_JoinConference_System_String_SignalWire_SWAIG_JoinConferenceOptions_">JoinConference(string, JoinConferenceOptions?)</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.ParameterSchema.html">ParameterSchema</a></dt>
+      <dd><p>Fluent, type-safe builder for a SWAIG tool's <code>parameters</code> — the
+JSON-Schema <code>properties</code> map passed as the third argument to
+<a class="xref" href="SignalWire.SWML.Service.html#SignalWire_SWML_Service_DefineTool_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Func_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__SignalWire_SWAIG_FunctionResult__System_Boolean_">DefineTool(string, string, Dictionary&lt;string, object&gt;, Func&lt;Dictionary&lt;string, object&gt;, Dictionary&lt;string, object?&gt;, FunctionResult&gt;, bool)</a> /
+SignalWire.Agent.AgentBase.DefineTool.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.RecordDirectionExtensions.html">RecordDirectionExtensions</a></dt>
+      <dd><p>Maps <a class="xref" href="SignalWire.SWAIG.RecordDirection.html">RecordDirection</a> members to the canonical wire values that
+the SWML <code>record_call</code> action expects.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.RecordFormatExtensions.html">RecordFormatExtensions</a></dt>
+      <dd><p>Maps <a class="xref" href="SignalWire.SWAIG.RecordFormat.html">RecordFormat</a> members to the canonical wire values that the
+SWML <code>record_call</code> action expects.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.TapDirectionExtensions.html">TapDirectionExtensions</a></dt>
+      <dd><p>Maps <a class="xref" href="SignalWire.SWAIG.TapDirection.html">TapDirection</a> members to the canonical wire values that the
+SWML <code>tap</code> action expects.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.CallbackMethod.html">CallbackMethod</a></dt>
+      <dd><p>HTTP method for the <code>status_callback</code> / <code>recording_status_callback</code>
+URLs on <a class="xref" href="SignalWire.SWAIG.FunctionResult.html#SignalWire_SWAIG_FunctionResult_JoinConference_System_String_SignalWire_SWAIG_JoinConferenceOptions_">JoinConference(string, JoinConferenceOptions?)</a>,
+as a typed, compile-time-checked closed set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.Codec.html">Codec</a></dt>
+      <dd><p>Media codec for <a class="xref" href="SignalWire.SWAIG.FunctionResult.html#SignalWire_SWAIG_FunctionResult_Tap_System_String_System_String_SignalWire_SWAIG_TapDirection_SignalWire_SWAIG_Codec_System_Int32_System_String_">Tap(string, string, TapDirection, Codec, int, string?)</a>, as a typed,
+compile-time-checked closed set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.ConferenceBeep.html">ConferenceBeep</a></dt>
+      <dd><p>Beep behaviour for <a class="xref" href="SignalWire.SWAIG.FunctionResult.html#SignalWire_SWAIG_FunctionResult_JoinConference_System_String_SignalWire_SWAIG_JoinConferenceOptions_">JoinConference(string, JoinConferenceOptions?)</a>,
+as a typed, compile-time-checked closed set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.ConferenceRecord.html">ConferenceRecord</a></dt>
+      <dd><p>Recording mode for <a class="xref" href="SignalWire.SWAIG.FunctionResult.html#SignalWire_SWAIG_FunctionResult_JoinConference_System_String_SignalWire_SWAIG_JoinConferenceOptions_">JoinConference(string, JoinConferenceOptions?)</a>,
+as a typed, compile-time-checked closed set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.ConferenceTrim.html">ConferenceTrim</a></dt>
+      <dd><p>Silence-trim mode for <a class="xref" href="SignalWire.SWAIG.FunctionResult.html#SignalWire_SWAIG_FunctionResult_JoinConference_System_String_SignalWire_SWAIG_JoinConferenceOptions_">JoinConference(string, JoinConferenceOptions?)</a>,
+as a typed, compile-time-checked closed set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.RecordDirection.html">RecordDirection</a></dt>
+      <dd><p>Audio direction for <a class="xref" href="SignalWire.SWAIG.FunctionResult.html#SignalWire_SWAIG_FunctionResult_RecordCall_System_String_System_Boolean_SignalWire_SWAIG_RecordFormat_SignalWire_SWAIG_RecordDirection_System_String_System_Boolean_System_Double_System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_String_">RecordCall(string, bool, RecordFormat, RecordDirection, string?, bool, double, double?, double?, double?, string?)</a>, as a typed,
+compile-time-checked closed set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.RecordFormat.html">RecordFormat</a></dt>
+      <dd><p>Recording container format for <a class="xref" href="SignalWire.SWAIG.FunctionResult.html#SignalWire_SWAIG_FunctionResult_RecordCall_System_String_System_Boolean_SignalWire_SWAIG_RecordFormat_SignalWire_SWAIG_RecordDirection_System_String_System_Boolean_System_Double_System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Double__System_String_">RecordCall(string, bool, RecordFormat, RecordDirection, string?, bool, double, double?, double?, double?, string?)</a>, as a
+typed, compile-time-checked closed set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SignalWire.SWAIG.TapDirection.html">TapDirection</a></dt>
+      <dd><p>Audio direction for <a class="xref" href="SignalWire.SWAIG.FunctionResult.html#SignalWire_SWAIG_FunctionResult_Tap_System_String_System_String_SignalWire_SWAIG_TapDirection_SignalWire_SWAIG_Codec_System_Int32_System_String_">Tap(string, string, TapDirection, Codec, int, string?)</a>, as a typed,
+compile-time-checked closed set.</p>
 </dd>
     </dl>
 
 
 </article>
 
-        <div class="contribution d-print-none">
-        </div>
 
 
       </div>

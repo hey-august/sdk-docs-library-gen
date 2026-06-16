@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>SignalWire .NET SDK | SignalWire .NET SDK </title>
+      <title>SignalWire SDK for .NET | SignalWire .NET SDK </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="SignalWire .NET SDK | SignalWire .NET SDK ">
+      <meta name="title" content="SignalWire SDK for .NET | SignalWire .NET SDK ">
       
       
       <link rel="icon" href="favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/signalwire/signalwire-dotnet/blob/main/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -71,41 +71,200 @@
         </div>
 
         <article data-uid="">
-<h1 id="signalwire-net-sdk">SignalWire .NET SDK</h1>
 
-<p>The official SignalWire SDK for .NET. Build voice, messaging, video,
-and AI-agent applications using SWML, the Relay realtime protocol, and
-the SignalWire REST APIs — from one library.</p>
-<blockquote>
-<p><strong>Native generator:</strong> <a href="https://dotnet.github.io/docfx/">DocFX</a> — Microsoft's
-official documentation generator for .NET. The .NET docs themselves are
-built with this tool.</p>
-</blockquote>
-<h2 id="install">Install</h2>
+<!-- Header -->
+<div align="center">
+    <a href="https://signalwire.com" target="_blank">
+        <img src="/assets/img/signalwire-wordmark.png" width="500">
+    </a>
+<h1 id="signalwire-sdk-for-net">SignalWire SDK for .NET</h1>
+<p><em>Build AI voice agents, control live calls over WebSocket, and manage every SignalWire resource over REST -- all from one package.</em></p>
+<p align="center">
+  <a href="https://developer.signalwire.com/sdks/agents-sdk" target="_blank">Documentation</a> &middot;
+  <a href="https://github.com/signalwire/signalwire-docs/issues/new/choose" target="_blank">Report an Issue</a> &middot;
+  <a href="https://www.nuget.org/packages/SignalWire.Sdk" target="_blank">NuGet</a>
+</p>
+<p><a href="https://discord.com/invite/F2WNYTNjuF" target="_blank"><img src="https://img.shields.io/badge/Discord%20Community-5865F2" alt="Discord"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/MIT-License-blue" alt="MIT License"></a>
+<a href="https://github.com/signalwire/signalwire-dotnet" target="_blank"><img src="https://img.shields.io/github/stars/signalwire/signalwire-dotnet" alt="GitHub Stars"></a></p>
+<p><a href="https://codespaces.new/signalwire/signalwire-dotnet" target="_blank"><img src="https://github.com/codespaces/badge.svg" alt="Open in GitHub Codespaces"></a>
+<a href="https://replit.com/new/github/signalwire/signalwire-dotnet" target="_blank"><img src="https://replit.com/badge/github/signalwire/signalwire-dotnet" alt="Run on Replit"></a></p>
+</div>
+<hr>
+<h2 id="whats-in-this-sdk">What's in this SDK</h2>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>What it does</th>
+<th>Quick link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI Agents</strong></td>
+<td>Build voice agents that handle calls autonomously -- the platform runs the AI pipeline, your code defines the persona, tools, and call flow</td>
+<td><a href="#ai-agents">Agent Guide</a></td>
+</tr>
+<tr>
+<td><strong>RELAY Client</strong></td>
+<td>Control live calls and SMS/MMS in real time over WebSocket -- answer, play, record, collect DTMF, conference, transfer, and more</td>
+<td><a href="relay/README.md">RELAY docs</a></td>
+</tr>
+<tr>
+<td><strong>REST Client</strong></td>
+<td>Manage SignalWire resources over HTTP -- phone numbers, SIP endpoints, Fabric AI agents, video rooms, messaging, and 18+ API namespaces</td>
+<td><a href="rest/README.md">REST docs</a></td>
+</tr>
+</tbody>
+</table>
 <pre><code class="lang-bash">dotnet add package SignalWire.Sdk
 </code></pre>
-<h2 id="quickstart--an-ai-agent">Quickstart — an AI agent</h2>
-<pre><code class="lang-csharp">using SignalWire.Agents;
+<hr>
+<h2 id="ai-agents">AI Agents</h2>
+<p>Each agent is a self-contained microservice that generates SWML (SignalWire Markup Language) and handles SWAIG (SignalWire AI Gateway) tool calls. The SignalWire platform runs the entire AI pipeline (STT, LLM, TTS) -- your agent just defines the behavior.</p>
+<pre><code class="lang-csharp">using SignalWire.Agent;
+using SignalWire.SWAIG;
 
-var agent = new AgentBase(&quot;hello&quot;, route: &quot;/hello&quot;);
-agent.PromptAddSection(&quot;Personality&quot;, body: &quot;You are friendly.&quot;);
-agent.PromptAddSection(&quot;Goal&quot;, body: &quot;Greet the caller.&quot;);
-await agent.RunAsync();
+var agent = new AgentBase(new AgentOptions { Name = &quot;my-agent&quot;, Route = &quot;/agent&quot; });
+
+agent.AddLanguage(&quot;English&quot;, &quot;en-US&quot;, &quot;inworld.Mark&quot;);
+agent.PromptAddSection(&quot;Role&quot;, &quot;You are a helpful assistant.&quot;);
+
+agent.DefineTool(&quot;get_time&quot;, &quot;Get the current time&quot;, new { },
+    (args, rawData) =&gt; new FunctionResult($&quot;The time is {DateTime.Now:HH:mm:ss}&quot;));
+
+agent.Run();
 </code></pre>
-<h2 id="surface">Surface</h2>
+<h3 id="agent-features">Agent Features</h3>
 <ul>
-<li><strong>AI Agents</strong> — <code>AgentBase</code>, <code>AgentServer</code>, prefabs</li>
-<li><strong>REST</strong> — calls, messages, fabric resources</li>
-<li><strong>Relay</strong> — realtime WebSocket client</li>
-<li><strong>SWML / POM</strong> — programmatic SignalWire Markup Language</li>
-<li><strong>Skills</strong> — pluggable agent capabilities</li>
+<li><strong>Prompt Object Model (POM)</strong> -- structured prompt composition via <code>PromptAddSection()</code></li>
+<li><strong>SWAIG tools</strong> -- define functions with <code>DefineTool()</code> that the AI calls mid-conversation</li>
+<li><strong>Skills system</strong> -- add capabilities with one-liners: <code>agent.AddSkill(&quot;datetime&quot;)</code></li>
+<li><strong>Contexts and steps</strong> -- structured multi-step workflows with navigation control</li>
+<li><strong>DataMap tools</strong> -- tools that execute on SignalWire's servers without your own webhook</li>
+<li><strong>Dynamic configuration</strong> -- per-request agent customization for multi-tenant deployments</li>
+<li><strong>Call flow control</strong> -- pre-answer, post-answer, and post-AI verb insertion</li>
+<li><strong>Prefab agents</strong> -- ready-to-use archetypes (InfoGatherer, Survey, FAQ, Receptionist, Concierge)</li>
+<li><strong>Multi-agent hosting</strong> -- serve multiple agents on a single server with <code>AgentServer</code></li>
+<li><strong>SIP routing</strong> -- route SIP calls to agents based on usernames</li>
+<li><strong>Session state</strong> -- persistent conversation state with global data and post-prompt summaries</li>
+<li><strong>Security</strong> -- auto-generated basic auth, function-specific HMAC tokens</li>
+<li><strong>Serverless</strong> -- Azure Functions, AWS Lambda, and auto-detection adapters</li>
 </ul>
-<p>Browse the <strong>API</strong> tab above to dive in.</p>
+<hr>
+<h2 id="relay-client">RELAY Client</h2>
+<p>Real-time call control and messaging over WebSocket. The RELAY client connects to SignalWire via the Blade protocol and gives you async control over live phone calls and SMS/MMS.</p>
+<pre><code class="lang-csharp">using SignalWire.Relay;
+
+var client = new RelayClient(new RelayOptions
+{
+    Project = &quot;your-project-id&quot;,
+    Token = &quot;your-token&quot;,
+    Host = &quot;example.signalwire.com&quot;,
+    Contexts = [&quot;default&quot;],
+});
+
+client.OnCall(async call =&gt;
+{
+    await call.Answer();
+    var action = await call.Play(new[] { new TtsMedia(&quot;Welcome to SignalWire!&quot;) });
+    await action.Wait();
+    await call.Hangup();
+});
+
+await client.Run();
+</code></pre>
+<ul>
+<li>57+ calling methods (play, record, collect, detect, tap, stream, AI, conferencing, and more)</li>
+<li>SMS/MMS messaging with delivery tracking</li>
+<li>Action objects with <code>Wait()</code>, <code>Stop()</code>, <code>Pause()</code>, <code>Resume()</code></li>
+<li>Auto-reconnect with exponential backoff</li>
+</ul>
+<p>See the <strong><a href="relay/README.md">RELAY documentation</a></strong> for the full guide, API reference, and examples.</p>
+<hr>
+<h2 id="rest-client">REST Client</h2>
+<p>Synchronous REST client for managing SignalWire resources and controlling calls over HTTP.</p>
+<pre><code class="lang-csharp">using SignalWire.REST;
+
+var client = new RestClient(&quot;project-id&quot;, &quot;token&quot;, &quot;example.signalwire.com&quot;);
+
+client.Fabric.AiAgents.Create(new { name = &quot;Support Bot&quot; });
+client.Calling.Play(callId, new { play = new[] { new { type = &quot;tts&quot;, text = &quot;Hello!&quot; } } });
+client.PhoneNumbers.List(new { area_code = &quot;512&quot; });
+client.Datasphere.Documents.Search(new { query_string = &quot;billing policy&quot; });
+</code></pre>
+<ul>
+<li>21 namespaced API surfaces: Fabric, Calling, Video, Datasphere, Compat, and more</li>
+<li>HttpClient with connection pooling</li>
+<li>Dictionary returns -- raw data, no wrapper objects</li>
+</ul>
+<p>See the <strong><a href="rest/README.md">REST documentation</a></strong> for the full guide, API reference, and examples.</p>
+<hr>
+<h2 id="installation">Installation</h2>
+<pre><code class="lang-bash">dotnet add package SignalWire.Sdk
+</code></pre>
+<p>Requires .NET 8.0+. Works with C#, F#, VB.NET, and any CLR language.</p>
+<h2 id="environment-variables">Environment Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Used by</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGNALWIRE_PROJECT_ID</code></td>
+<td>RELAY, REST</td>
+<td>Project identifier</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_API_TOKEN</code></td>
+<td>RELAY, REST</td>
+<td>API token</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_SPACE</code></td>
+<td>RELAY, REST</td>
+<td>Space hostname</td>
+</tr>
+<tr>
+<td><code>SWML_BASIC_AUTH_USER</code></td>
+<td>Agents</td>
+<td>Basic auth username (default: auto-generated)</td>
+</tr>
+<tr>
+<td><code>SWML_BASIC_AUTH_PASSWORD</code></td>
+<td>Agents</td>
+<td>Basic auth password (default: auto-generated)</td>
+</tr>
+<tr>
+<td><code>SWML_PROXY_URL_BASE</code></td>
+<td>Agents</td>
+<td>Base URL when behind a reverse proxy</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_LOG_LEVEL</code></td>
+<td>All</td>
+<td>Logging level (<code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code>)</td>
+</tr>
+<tr>
+<td><code>SIGNALWIRE_LOG_MODE</code></td>
+<td>All</td>
+<td>Set to <code>off</code> to suppress all logging</td>
+</tr>
+</tbody>
+</table>
+<h2 id="testing">Testing</h2>
+<pre><code class="lang-bash">dotnet test
+</code></pre>
+<h2 id="license">License</h2>
+<p>MIT -- see <a href="LICENSE">LICENSE</a> for details.</p>
 
 </article>
 
-        <div class="contribution d-print-none">
-        </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
 
