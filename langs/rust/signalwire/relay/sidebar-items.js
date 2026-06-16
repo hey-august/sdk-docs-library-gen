@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["action","call","client","constants","event","message"]};
+window.SIDEBAR_ITEMS = {"mod":["action","call","client","constants","device","error","event","message","state_enums"]};

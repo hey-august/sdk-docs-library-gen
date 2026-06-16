@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["function_result"]};
+window.SIDEBAR_ITEMS = {"mod":["function_result","media_enums","params_builder"]};

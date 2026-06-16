@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["agent_server"]};
+window.SIDEBAR_ITEMS = {"mod":["agent_server","error"]};

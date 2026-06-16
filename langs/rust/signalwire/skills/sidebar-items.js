@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["builtin","skill_base","skill_manager","skill_registry"]};
+window.SIDEBAR_ITEMS = {"mod":["builtin","skill_base","skill_manager","skill_name","skill_registry"]};

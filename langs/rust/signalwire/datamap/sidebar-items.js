@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["datamap"]};
+window.SIDEBAR_ITEMS = {"struct":["DataMap"]};

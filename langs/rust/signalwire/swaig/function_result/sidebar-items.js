@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["FunctionResult"]};
+window.SIDEBAR_ITEMS = {"enum":["KeysArg"],"struct":["FunctionResult"]};

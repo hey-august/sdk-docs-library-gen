@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["pom","section"]};
+window.SIDEBAR_ITEMS = {"mod":["section"],"struct":["PromptObjectModel"]};

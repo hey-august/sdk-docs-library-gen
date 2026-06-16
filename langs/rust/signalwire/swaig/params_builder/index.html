@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Typed builder for SWAIG tool-parameter JSON schemas."><title>signalwire::swaig::params_builder - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../static.files/rustdoc-17e0aaed.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="signalwire" data-themes="" data-resource-suffix="" data-rustdoc-version="1.96.0 (ac68faa20 2026-05-25) (Homebrew)" data-channel="1.96.0" data-search-js="search-b5634cc7.js" data-stringdex-js="stringdex-2da4960a.js" data-settings-js="settings-170eb4bf.js" ><script src="../../../static.files/storage-41dd4d93.js"></script><script defer src="../sidebar-items.js"></script><script defer src="../../../static.files/main-5013f961.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-f7c3ffd8.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-044be391.svg"></head><body class="rustdoc mod"><a class="skip-main-content" href="#main-content">Skip to main content</a><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">Module params_builder</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../../signalwire/index.html">signalwire</a><span class="version">1.1.2</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">Module params_<wbr>builder</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#two-outputs-both-byte-identical-to-the-hand-written-forms" title="Two outputs, both byte-identical to the hand-written forms">Two outputs, both byte-identical to the hand-written forms</a></li><li><a href="#closed-set-enum-properties" title="Closed-set (enum) properties">Closed-set (enum) properties</a></li></ul><h3><a href="#structs">Module Items</a></h3><ul class="block"><li><a href="#structs" title="Structs">Structs</a></li><li><a href="#enums" title="Enums">Enums</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="../index.html">In signalwire::<wbr>swaig</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content" tabindex="-1"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../../index.html">signalwire</a>::<wbr><a href="../index.html">swaig</a></div><h1>Module <span>params_<wbr>builder</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../../src/signalwire/swaig/params_builder.rs.html#1-713">Source</a> </span></div><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Typed builder for SWAIG tool-parameter JSON schemas.</p>
+<p><a href="crate::agent::AgentBase::define_tool"><code>AgentBase::define_tool</code></a> / <a href="../../swml/service/struct.Service.html#method.define_tool" title="method signalwire::swml::service::Service::define_tool"><code>Service::define_tool</code></a> take the function’s
+parameter schema as an untyped <code>serde_json::Value</code> — a <code>properties</code> object
+hand-written as nested <code>json!({ ... })</code>:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>agent.define_tool(
+    <span class="string">"search_faqs"</span>,
+    <span class="string">"Search the FAQ knowledge base"</span>,
+    <span class="macro">json!</span>({
+        <span class="string">"query"</span>: {<span class="string">"type"</span>: <span class="string">"string"</span>, <span class="string">"description"</span>: <span class="string">"The question or keywords"</span>},
+    }),
+    handler,
+    <span class="bool-val">false</span>,
+);</code></pre></div>
+<p>That is easy to typo (<code>"strign"</code>, <code>"desciption"</code>, a forgotten <code>"type"</code>) and
+the compiler can’t help. <a href="struct.ParamsBuilder.html" title="struct signalwire::swaig::params_builder::ParamsBuilder"><code>ParamsBuilder</code></a> is an <em>additive</em>, fully-typed
+convenience over the <strong>exact same wire output</strong>: it produces the identical
+<code>properties</code> object — so it drops straight into the existing, unchanged
+<code>define_tool</code> path. It is not a new format.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>signalwire::swaig::ParamsBuilder;
+<span class="kw">use </span>serde_json::json;
+
+<span class="kw">let </span>params = ParamsBuilder::new()
+    .string(<span class="string">"query"</span>, <span class="string">"The question or keywords to search"</span>)
+    .build();
+
+<span class="comment">// Byte-identical to the hand-written form above:
+</span><span class="macro">assert_eq!</span>(
+    params,
+    <span class="macro">json!</span>({<span class="string">"query"</span>: {<span class="string">"type"</span>: <span class="string">"string"</span>, <span class="string">"description"</span>: <span class="string">"The question or keywords to search"</span>}})
+);</code></pre></div><h3 id="two-outputs-both-byte-identical-to-the-hand-written-forms"><a class="doc-anchor" href="#two-outputs-both-byte-identical-to-the-hand-written-forms">§</a>Two outputs, both byte-identical to the hand-written forms</h3>
+<ul>
+<li><a href="struct.ParamsBuilder.html#method.build" title="method signalwire::swaig::params_builder::ParamsBuilder::build"><code>build</code></a> returns the <strong><code>properties</code> object</strong> — what
+Rust’s <code>define_tool(parameters)</code> accepts (it wraps it as
+<code>{"type":"object","properties": &lt;this&gt;}</code>).</li>
+<li><a href="struct.ParamsBuilder.html#method.build_schema" title="method signalwire::swaig::params_builder::ParamsBuilder::build_schema"><code>build_schema</code></a> returns the <strong>full</strong> JSON
+schema <code>{"type":"object","properties":{…},"required":[…]}</code> — exactly the
+shape the Python reference’s <code>_ensure_parameter_structure</code> emits and the
+shape hand-written for <code>register_swaig_function</code> / <code>DataMap</code> full
+definitions. This is the form that carries a top-level
+<a href="struct.ParamsBuilder.html#method.required" title="method signalwire::swaig::params_builder::ParamsBuilder::required"><code>required</code></a> list.</li>
+</ul>
+<h3 id="closed-set-enum-properties"><a class="doc-anchor" href="#closed-set-enum-properties">§</a>Closed-set (enum) properties</h3>
+<p><a href="struct.ParamsBuilder.html#method.enum_of" title="method signalwire::swaig::params_builder::ParamsBuilder::enum_of"><code>enum_of</code></a> renders a schema <code>"enum": [...]</code> from any
+iterator of <code>impl AsRef&lt;str&gt;</code>, so the Tier-1 media enums plug straight in via
+their <code>all()</code> slices:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>signalwire::swaig::{ParamsBuilder, RecordFormat};
+<span class="kw">use </span>serde_json::json;
+
+<span class="kw">let </span>params = ParamsBuilder::new()
+    .enum_of(<span class="string">"fmt"</span>, RecordFormat::all(), <span class="string">"Recording container format"</span>)
+    .build();
+
+<span class="macro">assert_eq!</span>(
+    params,
+    <span class="macro">json!</span>({<span class="string">"fmt"</span>: {<span class="string">"type"</span>: <span class="string">"string"</span>, <span class="string">"enum"</span>: [<span class="string">"wav"</span>, <span class="string">"mp3"</span>, <span class="string">"mp4"</span>], <span class="string">"description"</span>: <span class="string">"Recording container format"</span>}})
+);</code></pre></div></div></details><h2 id="structs" class="section-header">Structs<a href="#structs" class="anchor">§</a></h2><dl class="item-table"><dt><a class="struct" href="struct.ParamsBuilder.html" title="struct signalwire::swaig::params_builder::ParamsBuilder">Params<wbr>Builder</a></dt><dd>Fluent, typed builder for a SWAIG tool’s parameter schema.</dd><dt><a class="struct" href="struct.PropertyBuilder.html" title="struct signalwire::swaig::params_builder::PropertyBuilder">Property<wbr>Builder</a></dt><dd>A single parameter property under construction.</dd></dl><h2 id="enums" class="section-header">Enums<a href="#enums" class="anchor">§</a></h2><dl class="item-table"><dt><a class="enum" href="enum.ParamKind.html" title="enum signalwire::swaig::params_builder::ParamKind">Param<wbr>Kind</a></dt><dd>The JSON-Schema primitive types a SWAIG parameter property can declare.</dd></dl></section></div></main></body></html>

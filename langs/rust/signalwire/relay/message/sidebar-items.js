@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Message"],"type":["MessageCompletedCallback"]};
+window.SIDEBAR_ITEMS = {"struct":["Message"],"type":["MessageCompletedCallback","MessageEventCallback"]};

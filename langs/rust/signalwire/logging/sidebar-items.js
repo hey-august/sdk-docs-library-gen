@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":["Level"],"fn":["init"],"struct":["Logger"]};
+window.SIDEBAR_ITEMS = {"enum":["Level"],"fn":["init"],"struct":["Logger","ParseLevelError"]};
