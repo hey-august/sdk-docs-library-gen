@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\Relay\Client Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,47 +120,27 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\Relay\Client Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>RELAY Client – manages the WebSocket connection to <a class="el" href="namespaceSignalWire.html">SignalWire</a>, sends JSON-RPC requests, and dispatches inbound events to the correct Call or Message objects.  
- <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9780fd502ec596392123b14de985e535" id="r_a9780fd502ec596392123b14de985e535"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9780fd502ec596392123b14de985e535">__construct</a> (array $options)</td></tr>
 <tr class="memitem:ab2431190ba131713a7dce6131ecaf0e6" id="r_ab2431190ba131713a7dce6131ecaf0e6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab2431190ba131713a7dce6131ecaf0e6">connect</a> ()</td></tr>
-<tr class="memdesc:ab2431190ba131713a7dce6131ecaf0e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the WebSocket connection and run the JSON-RPC <span class="tt">signalwire.connect</span> handshake.  <br /></td></tr>
 <tr class="memitem:a32a5265c7ec091eaf3543806a2c707f5" id="r_a32a5265c7ec091eaf3543806a2c707f5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a32a5265c7ec091eaf3543806a2c707f5">authenticate</a> ()</td></tr>
-<tr class="memdesc:a32a5265c7ec091eaf3543806a2c707f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the signalwire.connect RPC to authenticate and bind a session.  <br /></td></tr>
 <tr class="memitem:a3655c165c0ebccf3b23d9cc4c7c37cd4" id="r_a3655c165c0ebccf3b23d9cc4c7c37cd4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3655c165c0ebccf3b23d9cc4c7c37cd4">disconnect</a> ()</td></tr>
-<tr class="memdesc:a3655c165c0ebccf3b23d9cc4c7c37cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gracefully close the connection.  <br /></td></tr>
 <tr class="memitem:a9afc343b940f87196316e4ca125f7927" id="r_a9afc343b940f87196316e4ca125f7927"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9afc343b940f87196316e4ca125f7927">reconnect</a> ()</td></tr>
-<tr class="memdesc:a9afc343b940f87196316e4ca125f7927"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reconnect with exponential back-off (1 s -&gt; 30 s cap).  <br /></td></tr>
 <tr class="memitem:a3d8214de820225dba1de99d5a1c84121" id="r_a3d8214de820225dba1de99d5a1c84121"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3d8214de820225dba1de99d5a1c84121">run</a> ()</td></tr>
-<tr class="memdesc:a3d8214de820225dba1de99d5a1c84121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main event loop – reads messages until disconnect.  <br /></td></tr>
 <tr class="memitem:ac270d4c0cd356310cd3e7d6285b93cd6" id="r_ac270d4c0cd356310cd3e7d6285b93cd6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac270d4c0cd356310cd3e7d6285b93cd6">execute</a> (string $method, array $params=[])</td></tr>
-<tr class="memdesc:ac270d4c0cd356310cd3e7d6285b93cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a JSON-RPC request and synchronously wait for the matching response.  <br /></td></tr>
 <tr class="memitem:a21960a7a3131424c326e6e94c4de2c78" id="r_a21960a7a3131424c326e6e94c4de2c78"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a21960a7a3131424c326e6e94c4de2c78">send</a> (array $msg)</td></tr>
-<tr class="memdesc:a21960a7a3131424c326e6e94c4de2c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode and send a JSON message over the WebSocket.  <br /></td></tr>
 <tr class="memitem:a4a0f6e9762312b4ca273921e252be000" id="r_a4a0f6e9762312b4ca273921e252be000"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4a0f6e9762312b4ca273921e252be000">readOnce</a> ()</td></tr>
-<tr class="memdesc:a4a0f6e9762312b4ca273921e252be000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a single inbound frame from the WebSocket and dispatch it.  <br /></td></tr>
 <tr class="memitem:afc2d7e3076fbb5f60390888f73fe4633" id="r_afc2d7e3076fbb5f60390888f73fe4633"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afc2d7e3076fbb5f60390888f73fe4633">sendAck</a> (string $id)</td></tr>
-<tr class="memdesc:afc2d7e3076fbb5f60390888f73fe4633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an acknowledgement (empty result) for a server-initiated request.  <br /></td></tr>
 <tr class="memitem:acd4385453f10bae09479e0ab88a87cfb" id="r_acd4385453f10bae09479e0ab88a87cfb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acd4385453f10bae09479e0ab88a87cfb">handleMessage</a> (string $raw)</td></tr>
-<tr class="memdesc:acd4385453f10bae09479e0ab88a87cfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a raw JSON string from the server and route it.  <br /></td></tr>
 <tr class="memitem:a6a8fa4b40c35ec67263b1693781866d7" id="r_a6a8fa4b40c35ec67263b1693781866d7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6a8fa4b40c35ec67263b1693781866d7">handleEvent</a> (array $outerParams)</td></tr>
-<tr class="memdesc:a6a8fa4b40c35ec67263b1693781866d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Route a signalwire.event payload to the appropriate handler.  <br /></td></tr>
 <tr class="memitem:a479ae9336604791f61ba19c02c2f94b6" id="r_a479ae9336604791f61ba19c02c2f94b6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a479ae9336604791f61ba19c02c2f94b6">dial</a> (array $devices, array $opts=[])</td></tr>
-<tr class="memdesc:a479ae9336604791f61ba19c02c2f94b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Originate an outbound call, blocking until <span class="tt">calling.call.dial</span> resolves with a winner or fails.  <br /></td></tr>
 <tr class="memitem:afdecbe10f6071c0be2b4260b2c68972a" id="r_afdecbe10f6071c0be2b4260b2c68972a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afdecbe10f6071c0be2b4260b2c68972a">sendMessage</a> (array $params)</td></tr>
-<tr class="memdesc:afdecbe10f6071c0be2b4260b2c68972a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an outbound message.  <br /></td></tr>
 <tr class="memitem:a9dd012537ac09a581b822b9caf7b0fac" id="r_a9dd012537ac09a581b822b9caf7b0fac"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9dd012537ac09a581b822b9caf7b0fac">receive</a> (array $contexts)</td></tr>
-<tr class="memdesc:a9dd012537ac09a581b822b9caf7b0fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to one or more inbound contexts so that events for those contexts are delivered to this client.  <br /></td></tr>
 <tr class="memitem:abafdec748727debf5fc90626b4bd12a9" id="r_abafdec748727debf5fc90626b4bd12a9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abafdec748727debf5fc90626b4bd12a9">unreceive</a> (array $contexts)</td></tr>
-<tr class="memdesc:abafdec748727debf5fc90626b4bd12a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribe from one or more contexts.  <br /></td></tr>
 <tr class="memitem:ad658a4db0cd369ed6239138d98d57e5f" id="r_ad658a4db0cd369ed6239138d98d57e5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad658a4db0cd369ed6239138d98d57e5f">onCall</a> (callable $cb)</td></tr>
-<tr class="memdesc:ad658a4db0cd369ed6239138d98d57e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a handler for inbound calls.  <br /></td></tr>
 <tr class="memitem:ab99a03f11cecfd5e0cfc73e1fb954ac7" id="r_ab99a03f11cecfd5e0cfc73e1fb954ac7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab99a03f11cecfd5e0cfc73e1fb954ac7">onMessage</a> (callable $cb)</td></tr>
-<tr class="memdesc:ab99a03f11cecfd5e0cfc73e1fb954ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a handler for inbound messages.  <br /></td></tr>
 <tr class="memitem:a53d37acc7e34fea71bd460801c36067b" id="r_a53d37acc7e34fea71bd460801c36067b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a53d37acc7e34fea71bd460801c36067b">getCall</a> (string $callId)</td></tr>
 <tr class="memitem:a8b7f14d7266ab6ae681658d4d980ed1f" id="r_a8b7f14d7266ab6ae681658d4d980ed1f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8b7f14d7266ab6ae681658d4d980ed1f">getCalls</a> ()</td></tr>
 <tr class="memitem:a85fe099a19014eb5f483d91dcc6d5f1e" id="r_a85fe099a19014eb5f483d91dcc6d5f1e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a85fe099a19014eb5f483d91dcc6d5f1e">getMessages</a> ()</td></tr>
@@ -189,6 +156,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aba574d977fd63f2a902b515df244f24d" id="r_aba574d977fd63f2a902b515df244f24d"><td class="memItemLeft">array&#160;</td><td class="memItemRight"><a class="el" href="#aba574d977fd63f2a902b515df244f24d">$contexts</a> = []</td></tr>
 <tr class="memitem:ab3de1aa280c63d76f2bfbc103f58d868" id="r_ab3de1aa280c63d76f2bfbc103f58d868"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ab3de1aa280c63d76f2bfbc103f58d868">$connected</a> = false</td></tr>
 <tr class="memitem:ada3fbd5d2ea775988c7ed61451983f58" id="r_ada3fbd5d2ea775988c7ed61451983f58"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#ada3fbd5d2ea775988c7ed61451983f58">$sessionId</a> = null</td></tr>
+<tr class="memitem:a9d0fbcb02e78304aa6e2f29adad94e1b" id="r_a9d0fbcb02e78304aa6e2f29adad94e1b"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a9d0fbcb02e78304aa6e2f29adad94e1b">$caFile</a> = null</td></tr>
 <tr class="memitem:abd3e1b33fa6be68edd7d153dbd6d53ab" id="r_abd3e1b33fa6be68edd7d153dbd6d53ab"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#abd3e1b33fa6be68edd7d153dbd6d53ab">$protocol</a> = null</td></tr>
 <tr class="memitem:a8bad5c777f15953cde062bf74d32cdb0" id="r_a8bad5c777f15953cde062bf74d32cdb0"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a8bad5c777f15953cde062bf74d32cdb0">$authorizationState</a> = null</td></tr>
 <tr class="memitem:a1fc5da1dc92ce8ce8eac6a2b1803e61b" id="r_a1fc5da1dc92ce8ce8eac6a2b1803e61b"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a1fc5da1dc92ce8ce8eac6a2b1803e61b">$agent</a> = 'signalwire-agents-php/1.0'</td></tr>
@@ -203,15 +171,13 @@ Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a11c94ce297729a68d901fdca979ef450" id="r_a11c94ce297729a68d901fdca979ef450"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a11c94ce297729a68d901fdca979ef450">createSocket</a> ()</td></tr>
-<tr class="memdesc:a11c94ce297729a68d901fdca979ef450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hook for tests to inject a fake transport.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a57580e400156728b7559b8cab3008f6a" id="r_a57580e400156728b7559b8cab3008f6a"><td class="memItemLeft"><a class="el" href="classSignalWire_1_1Relay_1_1WebSocket.html">WebSocket</a>&#160;</td><td class="memItemRight"><a class="el" href="#a57580e400156728b7559b8cab3008f6a">$socket</a> = null</td></tr>
-<tr class="memdesc:a57580e400156728b7559b8cab3008f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The WebSocket transport.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>RELAY Client – manages the WebSocket connection to <a class="el" href="namespaceSignalWire.html">SignalWire</a>, sends JSON-RPC requests, and dispatches inbound events to the correct Call or Message objects. </p>
+<div class="textblock"><p>RELAY Client – manages the WebSocket connection to <a class="el" href="namespaceSignalWire.html">SignalWire</a>, sends JSON-RPC requests, and dispatches inbound events to the correct Call or Message objects.</p>
 <p>The transport layer (WebSocket send/receive) is abstracted behind thin methods so that unit tests can subclass or mock without needing a real WebSocket extension. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9780fd502ec596392123b14de985e535" name="a9780fd502ec596392123b14de985e535"></a>
@@ -246,8 +212,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Send the signalwire.connect RPC to authenticate and bind a session. </p>
+<p>Send the signalwire.connect RPC to authenticate and bind a session.</p>
 <p>Sends project/token both at the top level AND nested under <span class="tt">authentication</span>. Python sends the nested form; the audit fixture accepts either; sending both is forward-compatible (per SUBAGENT_PLAYBOOK lessons-learned). </p>
 
 </div>
@@ -266,9 +231,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Open the WebSocket connection and run the JSON-RPC <span class="tt">signalwire.connect</span> handshake. </p>
-<p>Throws on transport or auth failure.</p>
+<p>Open the WebSocket connection and run the JSON-RPC <span class="tt">signalwire.connect</span> handshake. Throws on transport or auth failure.</p>
 <p>The transport URI is <span class="tt">&lt;scheme&gt;://&lt;host&gt;&lt;relayPath&gt;</span> (defaults to <span class="tt">wss://&lt;host&gt;/api/relay/ws</span>). Tests point SIGNALWIRE_RELAY_SCHEME at <span class="tt">ws</span> and SIGNALWIRE_RELAY_HOST at the fixture's host:port. </p>
 
 </div>
@@ -295,9 +258,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Hook for tests to inject a fake transport. </p>
-<p>Production builds a real WebSocket; subclassing this method is the supported way to drive the JSON-RPC layer in isolation. </p>
+<p>Hook for tests to inject a fake transport. Production builds a real WebSocket; subclassing this method is the supported way to drive the JSON-RPC layer in isolation. </p>
 
 </div>
 </div>
@@ -319,8 +280,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Originate an outbound call, blocking until <span class="tt">calling.call.dial</span> resolves with a winner or fails. </p>
+<p>Originate an outbound call, blocking until <span class="tt">calling.call.dial</span> resolves with a winner or fails.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array&lt;int,array&lt;int,array&lt;string,mixed&gt;&gt;&gt;</td><td>$devices Two-dimensional array of devices: each outer entry is one parallel "leg" of the dial, each inner entry is a serial step within that leg. Mirrors the Python <span class="tt">[[device, device], [device]]</span> shape. </td></tr>
@@ -357,7 +317,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Gracefully close the connection. </p>
 
 </div>
@@ -380,9 +339,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Send a JSON-RPC request and synchronously wait for the matching response. </p>
-<p>Returns the "result" portion of the response.</p>
+<p>Send a JSON-RPC request and synchronously wait for the matching response. Returns the "result" portion of the response.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"></td><td></td></tr>
@@ -460,7 +417,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Route a signalwire.event payload to the appropriate handler. </p>
 
 </div>
@@ -479,7 +435,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Parse a raw JSON string from the server and route it. </p>
 
 </div>
@@ -498,7 +453,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Register a handler for inbound calls. </p>
 
 </div>
@@ -517,7 +471,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Register a handler for inbound messages. </p>
 
 </div>
@@ -536,8 +489,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Read a single inbound frame from the WebSocket and dispatch it. </p>
+<p>Read a single inbound frame from the WebSocket and dispatch it.</p>
 <p>Returns silently on a read timeout (no frame within $this-&gt;readTimeout seconds — the run loop will call again). Throws on socket errors so the run loop can trigger reconnect. </p>
 
 </div>
@@ -556,7 +508,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Subscribe to one or more inbound contexts so that events for those contexts are delivered to this client. </p>
 
 </div>
@@ -575,7 +526,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Reconnect with exponential back-off (1 s -&gt; 30 s cap). </p>
 
 </div>
@@ -594,8 +544,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Main event loop – reads messages until disconnect. </p>
+<p>Main event loop – reads messages until disconnect.</p>
 <p>Auto-reconnects with exponential backoff on transport errors, preserving authorization_state across reconnects so the server can fast-path the session resumption. </p>
 
 </div>
@@ -614,9 +563,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Encode and send a JSON message over the WebSocket. </p>
-<p>Throws if the socket is closed; the run loop catches and triggers reconnect. </p>
+<p>Encode and send a JSON message over the WebSocket. Throws if the socket is closed; the run loop catches and triggers reconnect. </p>
 
 </div>
 </div>
@@ -634,8 +581,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Send an acknowledgement (empty result) for a server-initiated request. </p>
+<p>Send an acknowledgement (empty result) for a server-initiated request.</p>
 <p>Best-effort: an ACK that fails because the socket dropped during the request handling is not propagated as an exception (the run loop will already trigger reconnect on the next read). </p>
 
 </div>
@@ -654,8 +600,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Send an outbound message. </p>
+<p>Send an outbound message.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array&lt;string,mixed&gt;</td><td>$params Outbound messaging.send params (<span class="tt">to_number</span>, <span class="tt">from_number</span>, <span class="tt">body</span>, <span class="tt">media</span>, <span class="tt">tags</span>, <span class="tt">context</span>). </td></tr>
@@ -680,7 +625,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Unsubscribe from one or more contexts. </p>
 
 </div>
@@ -711,6 +655,21 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d0fbcb02e78304aa6e2f29adad94e1b" name="a9d0fbcb02e78304aa6e2f29adad94e1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d0fbcb02e78304aa6e2f29adad94e1b">&#9670;&#160;</a></span>$caFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string SignalWire\Relay\Client::$caFile = null</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Optional path to a CA bundle (PEM) used to verify the server certificate on <span class="tt">wss://</span> connections. Sourced from the <span class="tt">ca_file</span> option or the <span class="tt">SIGNALWIRE_CA_FILE</span> / <span class="tt">SSL_CERT_FILE</span> env vars. Peer verification stays enabled regardless; this only selects which CA to trust (system store when null). </p>
 
 </div>
 </div>
@@ -957,9 +916,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>The WebSocket transport. </p>
-<p>May be null before connect() or after a disconnect; tests may inject a fake to bypass real I/O without removing the real transport from production code (subclassing is the supported path). </p>
+<p>The WebSocket transport. May be null before connect() or after a disconnect; tests may inject a fake to bypass real I/O without removing the real transport from production code (subclassing is the supported path). </p>
 
 </div>
 </div>
@@ -978,7 +935,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/Relay/<a class="el" href="Client_8php.html">Client.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/Relay/<a class="el" href="Client_8php.html">Client.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -16,7 +16,7 @@ var annotated_dup =
       ] ],
       [ "Logging", "namespaceSignalWire_1_1Logging.html", [
         [ "Logger", "classSignalWire_1_1Logging_1_1Logger.html", "classSignalWire_1_1Logging_1_1Logger" ],
-        [ "LoggingConfig", "classSignalWire_1_1Logging_1_1LoggingConfig.html", null ]
+        [ "LoggingConfig", "classSignalWire_1_1Logging_1_1LoggingConfig.html", "classSignalWire_1_1Logging_1_1LoggingConfig" ]
       ] ],
       [ "POM", "namespaceSignalWire_1_1POM.html", [
         [ "PromptObjectModel", "classSignalWire_1_1POM_1_1PromptObjectModel.html", "classSignalWire_1_1POM_1_1PromptObjectModel" ],
@@ -37,6 +37,7 @@ var annotated_dup =
         [ "CollectAction", "classSignalWire_1_1Relay_1_1CollectAction.html", "classSignalWire_1_1Relay_1_1CollectAction" ],
         [ "Constants", "classSignalWire_1_1Relay_1_1Constants.html", "classSignalWire_1_1Relay_1_1Constants" ],
         [ "DetectAction", "classSignalWire_1_1Relay_1_1DetectAction.html", "classSignalWire_1_1Relay_1_1DetectAction" ],
+        [ "Device", "classSignalWire_1_1Relay_1_1Device.html", "classSignalWire_1_1Relay_1_1Device" ],
         [ "Event", "classSignalWire_1_1Relay_1_1Event.html", "classSignalWire_1_1Relay_1_1Event" ],
         [ "FaxAction", "classSignalWire_1_1Relay_1_1FaxAction.html", "classSignalWire_1_1Relay_1_1FaxAction" ],
         [ "Message", "classSignalWire_1_1Relay_1_1Message.html", "classSignalWire_1_1Relay_1_1Message" ],
@@ -115,13 +116,13 @@ var annotated_dup =
       [ "Security", "namespaceSignalWire_1_1Security.html", [
         [ "SessionManager", "classSignalWire_1_1Security_1_1SessionManager.html", "classSignalWire_1_1Security_1_1SessionManager" ],
         [ "WebhookMiddleware", "classSignalWire_1_1Security_1_1WebhookMiddleware.html", "classSignalWire_1_1Security_1_1WebhookMiddleware" ],
-        [ "WebhookValidator", "classSignalWire_1_1Security_1_1WebhookValidator.html", null ]
+        [ "WebhookValidator", "classSignalWire_1_1Security_1_1WebhookValidator.html", "classSignalWire_1_1Security_1_1WebhookValidator" ]
       ] ],
       [ "Server", "namespaceSignalWire_1_1Server.html", [
         [ "AgentServer", "classSignalWire_1_1Server_1_1AgentServer.html", "classSignalWire_1_1Server_1_1AgentServer" ]
       ] ],
       [ "Serverless", "namespaceSignalWire_1_1Serverless.html", [
-        [ "Adapter", "classSignalWire_1_1Serverless_1_1Adapter.html", null ]
+        [ "Adapter", "classSignalWire_1_1Serverless_1_1Adapter.html", "classSignalWire_1_1Serverless_1_1Adapter" ]
       ] ],
       [ "Skills", "namespaceSignalWire_1_1Skills.html", [
         [ "Builtin", "namespaceSignalWire_1_1Skills_1_1Builtin.html", [
@@ -149,7 +150,8 @@ var annotated_dup =
         [ "SkillRegistry", "classSignalWire_1_1Skills_1_1SkillRegistry.html", "classSignalWire_1_1Skills_1_1SkillRegistry" ]
       ] ],
       [ "SWAIG", "namespaceSignalWire_1_1SWAIG.html", [
-        [ "FunctionResult", "classSignalWire_1_1SWAIG_1_1FunctionResult.html", "classSignalWire_1_1SWAIG_1_1FunctionResult" ]
+        [ "FunctionResult", "classSignalWire_1_1SWAIG_1_1FunctionResult.html", "classSignalWire_1_1SWAIG_1_1FunctionResult" ],
+        [ "ParameterSchema", "classSignalWire_1_1SWAIG_1_1ParameterSchema.html", "classSignalWire_1_1SWAIG_1_1ParameterSchema" ]
       ] ],
       [ "SWML", "namespaceSignalWire_1_1SWML.html", [
         [ "Document", "classSignalWire_1_1SWML_1_1Document.html", "classSignalWire_1_1SWML_1_1Document" ],

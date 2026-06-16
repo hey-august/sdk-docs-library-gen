@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\SWAIG\FunctionResult Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -143,26 +130,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb7986f587d97f6f44eff748f87641df" id="r_abb7986f587d97f6f44eff748f87641df"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abb7986f587d97f6f44eff748f87641df">addActions</a> (array $actions)</td></tr>
 <tr class="memitem:a60325296eaca782cc969769c634277d3" id="r_a60325296eaca782cc969769c634277d3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a60325296eaca782cc969769c634277d3">toArray</a> ()</td></tr>
 <tr class="memitem:aed8a6a310765a447ae068514a9189b91" id="r_aed8a6a310765a447ae068514a9189b91"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aed8a6a310765a447ae068514a9189b91">toJson</a> ()</td></tr>
-<tr class="memitem:aa3febe2100638c717fd938b40c88498d" id="r_aa3febe2100638c717fd938b40c88498d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa3febe2100638c717fd938b40c88498d">connect</a> (string $destination, bool $final=false, string $from='')</td></tr>
-<tr class="memitem:ac18a72e3ee88e05b583b41acf7190630" id="r_ac18a72e3ee88e05b583b41acf7190630"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac18a72e3ee88e05b583b41acf7190630">swmlTransfer</a> (string $dest, string $aiResponse='', bool $final=false)</td></tr>
+<tr class="memitem:a0ace6beec59c2e79a4dd91932eb4f83c" id="r_a0ace6beec59c2e79a4dd91932eb4f83c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0ace6beec59c2e79a4dd91932eb4f83c">connect</a> (string $destination, bool $final=true, string $from='')</td></tr>
+<tr class="memitem:a96215985fa86a19e739dcb3c0ecb8777" id="r_a96215985fa86a19e739dcb3c0ecb8777"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a96215985fa86a19e739dcb3c0ecb8777">swmlTransfer</a> (string $dest, string $aiResponse, bool $final=true)</td></tr>
 <tr class="memitem:a5deaaba36751a1e0c2d0f58387b2e253" id="r_a5deaaba36751a1e0c2d0f58387b2e253"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5deaaba36751a1e0c2d0f58387b2e253">hangup</a> ()</td></tr>
 <tr class="memitem:ad50142fdb0391d073c9fb40ed619bfd5" id="r_ad50142fdb0391d073c9fb40ed619bfd5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad50142fdb0391d073c9fb40ed619bfd5">hold</a> (int $timeout=300)</td></tr>
-<tr class="memitem:a961593b9476878c11935eab7bd12bf6b" id="r_a961593b9476878c11935eab7bd12bf6b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a961593b9476878c11935eab7bd12bf6b">waitForUser</a> (?bool $enabled=null, ?int $timeout=null, ?bool $answerFirst=null)</td></tr>
+<tr class="memitem:ab3b1d47971c5d16e923431a0f09fb8f9" id="r_ab3b1d47971c5d16e923431a0f09fb8f9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab3b1d47971c5d16e923431a0f09fb8f9">waitForUser</a> (?bool $enabled=null, ?int $timeout=null, bool $answerFirst=false)</td></tr>
 <tr class="memitem:a368b8dfe1f54f1bb0a18725ad4a04dda" id="r_a368b8dfe1f54f1bb0a18725ad4a04dda"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a368b8dfe1f54f1bb0a18725ad4a04dda">stop</a> ()</td></tr>
 <tr class="memitem:a3f470a8b3864e5168304845ba33c59c9" id="r_a3f470a8b3864e5168304845ba33c59c9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3f470a8b3864e5168304845ba33c59c9">updateGlobalData</a> (array $data)</td></tr>
-<tr class="memitem:af8aaf7e914303b0f73e658b22b999146" id="r_af8aaf7e914303b0f73e658b22b999146"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af8aaf7e914303b0f73e658b22b999146">removeGlobalData</a> (array $keys)</td></tr>
+<tr class="memitem:ab095935fbe5785db3e18e735e304f950" id="r_ab095935fbe5785db3e18e735e304f950"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab095935fbe5785db3e18e735e304f950">removeGlobalData</a> (string|array $keys)</td></tr>
 <tr class="memitem:aa36d19b5ad7f9766ffb60e7e23e9ff2a" id="r_aa36d19b5ad7f9766ffb60e7e23e9ff2a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa36d19b5ad7f9766ffb60e7e23e9ff2a">setMetadata</a> (array $data)</td></tr>
-<tr class="memitem:ab52e8b15e3a85f0914d50cbd4fe3b329" id="r_ab52e8b15e3a85f0914d50cbd4fe3b329"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab52e8b15e3a85f0914d50cbd4fe3b329">removeMetadata</a> (array $keys)</td></tr>
+<tr class="memitem:af5d6952b7dd36e9e341c3edc85b658bf" id="r_af5d6952b7dd36e9e341c3edc85b658bf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af5d6952b7dd36e9e341c3edc85b658bf">removeMetadata</a> (string|array $keys)</td></tr>
 <tr class="memitem:a3d2da6baf0bc0133fe91167a9daa52b0" id="r_a3d2da6baf0bc0133fe91167a9daa52b0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3d2da6baf0bc0133fe91167a9daa52b0">swmlUserEvent</a> (array $eventData)</td></tr>
 <tr class="memitem:a174e756424a88a5c848bb6bf5ea1207a" id="r_a174e756424a88a5c848bb6bf5ea1207a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a174e756424a88a5c848bb6bf5ea1207a">swmlChangeStep</a> (string $stepName)</td></tr>
 <tr class="memitem:a9f75c33efcb73984a99b84cd6de1a52a" id="r_a9f75c33efcb73984a99b84cd6de1a52a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9f75c33efcb73984a99b84cd6de1a52a">swmlChangeContext</a> (string $contextName)</td></tr>
 <tr class="memitem:a53683dddef52c25bb3dbc80341969640" id="r_a53683dddef52c25bb3dbc80341969640"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a53683dddef52c25bb3dbc80341969640">switchContext</a> (string $systemPrompt, string $userPrompt='', bool $consolidate=false, bool $fullReset=false, bool $isolated=false)</td></tr>
-<tr class="memitem:a08fd1c75df2b968670bd0c5880a9a34d" id="r_a08fd1c75df2b968670bd0c5880a9a34d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a08fd1c75df2b968670bd0c5880a9a34d">replaceInHistory</a> ($text)</td></tr>
+<tr class="memitem:a95a9f497e969f03c5a82a14a3fb9abcf" id="r_a95a9f497e969f03c5a82a14a3fb9abcf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a95a9f497e969f03c5a82a14a3fb9abcf">replaceInHistory</a> (string|bool $text=true)</td></tr>
 <tr class="memitem:aea3f0a64b0912e93543a93b3c574946c" id="r_aea3f0a64b0912e93543a93b3c574946c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aea3f0a64b0912e93543a93b3c574946c">say</a> (string $text)</td></tr>
 <tr class="memitem:ac73c4bfcd98c173599f5c63882e2717e" id="r_ac73c4bfcd98c173599f5c63882e2717e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac73c4bfcd98c173599f5c63882e2717e">playBackgroundFile</a> (string $filename, bool $wait=false)</td></tr>
 <tr class="memitem:a63fecc20ced273a5c83214d156076e3c" id="r_a63fecc20ced273a5c83214d156076e3c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a63fecc20ced273a5c83214d156076e3c">stopBackgroundFile</a> ()</td></tr>
-<tr class="memitem:abb98ec62f64bfa0bdb014837c5d35c4b" id="r_abb98ec62f64bfa0bdb014837c5d35c4b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abb98ec62f64bfa0bdb014837c5d35c4b">recordCall</a> (string $controlId='', bool $stereo=false, string $format='wav', string $direction='both')</td></tr>
-<tr class="memitem:aa56c6294ae9ef8e35abf45ba89c6ddaf" id="r_aa56c6294ae9ef8e35abf45ba89c6ddaf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa56c6294ae9ef8e35abf45ba89c6ddaf">stopRecordCall</a> (string $controlId='')</td></tr>
+<tr class="memitem:a2170926425c752f243a187d5434c0477" id="r_a2170926425c752f243a187d5434c0477"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2170926425c752f243a187d5434c0477">recordCall</a> (?string $controlId=null, bool $stereo=false, <a class="el" href="namespaceSignalWire_1_1SWAIG.html#af59371734721b249462a1eda6b48c1df">RecordFormat</a>|string $format='wav', <a class="el" href="namespaceSignalWire_1_1SWAIG.html#a890d757c99eb972cd3d2f7f7076b09e0">RecordDirection</a>|string $direction='both', ?string $terminators=null, bool $beep=false, float $inputSensitivity=44.0, ?float $initialTimeout=null, ?float $endSilenceTimeout=null, ?float $maxLength=null, ?string $statusUrl=null)</td></tr>
+<tr class="memitem:a2855a31936059e2d2a55e40642f46ae0" id="r_a2855a31936059e2d2a55e40642f46ae0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2855a31936059e2d2a55e40642f46ae0">stopRecordCall</a> (?string $controlId=null)</td></tr>
 <tr class="memitem:ac2dbd0a5776de95b8654969f4b981f0d" id="r_ac2dbd0a5776de95b8654969f4b981f0d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac2dbd0a5776de95b8654969f4b981f0d">addDynamicHints</a> (array $hints)</td></tr>
 <tr class="memitem:a70629f93731d0eebb07dd2a5c8d35b00" id="r_a70629f93731d0eebb07dd2a5c8d35b00"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a70629f93731d0eebb07dd2a5c8d35b00">clearDynamicHints</a> ()</td></tr>
 <tr class="memitem:a1c0ead96969a0d215209cb595d45af2e" id="r_a1c0ead96969a0d215209cb595d45af2e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1c0ead96969a0d215209cb595d45af2e">setEndOfSpeechTimeout</a> (int $ms)</td></tr>
@@ -172,24 +159,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abf245ecae5b3ba0b2a18b41e928e9fbc" id="r_abf245ecae5b3ba0b2a18b41e928e9fbc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abf245ecae5b3ba0b2a18b41e928e9fbc">enableExtensiveData</a> (bool $enabled=true)</td></tr>
 <tr class="memitem:a4c849de585e954c4d78f8670e11227fc" id="r_a4c849de585e954c4d78f8670e11227fc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4c849de585e954c4d78f8670e11227fc">updateSettings</a> (array $settings)</td></tr>
 <tr class="memitem:aa5067816481db528138e170292d57383" id="r_aa5067816481db528138e170292d57383"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa5067816481db528138e170292d57383">executeSwml</a> ($swmlContent, bool $transfer=false)</td></tr>
-<tr class="memitem:a1c375a7240023d466f6cfc41a9f16e88" id="r_a1c375a7240023d466f6cfc41a9f16e88"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1c375a7240023d466f6cfc41a9f16e88">joinConference</a> (string $name, bool $muted=false, string $beep='true', string $holdAudio='ring')</td></tr>
+<tr class="memitem:aa74dcf3df9e0177c7fb5b4bc15a2f170" id="r_aa74dcf3df9e0177c7fb5b4bc15a2f170"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa74dcf3df9e0177c7fb5b4bc15a2f170">joinConference</a> (string $name, bool $muted=false, string $beep='true', bool $startOnEnter=true, bool $endOnExit=false, ?string $waitUrl=null, int $maxParticipants=250, string $record='do-not-record', ?string $region=null, string $trim='trim-silence', ?string $coach=null, ?string $statusCallbackEvent=null, ?string $statusCallback=null, string $statusCallbackMethod='POST', ?string $recordingStatusCallback=null, string $recordingStatusCallbackMethod='POST', string $recordingStatusCallbackEvent='completed', mixed $result=null)</td></tr>
 <tr class="memitem:aa088e549e076d661404940b4c263ad24" id="r_aa088e549e076d661404940b4c263ad24"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa088e549e076d661404940b4c263ad24">joinRoom</a> (string $name)</td></tr>
 <tr class="memitem:a29504649e697a52afe27e2c6dae9044c" id="r_a29504649e697a52afe27e2c6dae9044c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a29504649e697a52afe27e2c6dae9044c">sipRefer</a> (string $toUri)</td></tr>
-<tr class="memitem:afdc5b698d2ced211925b40d74b089c5b" id="r_afdc5b698d2ced211925b40d74b089c5b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afdc5b698d2ced211925b40d74b089c5b">tap</a> (string $uri, string $controlId='', string $direction='both', string $codec='PCMU')</td></tr>
-<tr class="memitem:a6f1143d01b8845e5ece64e0286228547" id="r_a6f1143d01b8845e5ece64e0286228547"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6f1143d01b8845e5ece64e0286228547">stopTap</a> (string $controlId='')</td></tr>
-<tr class="memitem:a3dcd92c811ae348cd38aae8004f5926b" id="r_a3dcd92c811ae348cd38aae8004f5926b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3dcd92c811ae348cd38aae8004f5926b">sendSms</a> (string $to, string $from, string $body, array $media=[], array $tags=[])</td></tr>
-<tr class="memitem:a78e5a7e0901f5c77084b74fab3f0e5df" id="r_a78e5a7e0901f5c77084b74fab3f0e5df"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a78e5a7e0901f5c77084b74fab3f0e5df">pay</a> (string $connectorUrl, string $inputMethod='dtmf', string $actionUrl='', int $timeout=600, int $maxAttempts=3)</td></tr>
-<tr class="memitem:ac30f965e8685b9afcc71107dd48ee498" id="r_ac30f965e8685b9afcc71107dd48ee498"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac30f965e8685b9afcc71107dd48ee498">executeRpc</a> (string $method, array $params=[])</td></tr>
-<tr class="memitem:a133228285d35697357d09ebe81b39e85" id="r_a133228285d35697357d09ebe81b39e85"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a133228285d35697357d09ebe81b39e85">rpcDial</a> (string $to, string $from='', ?string $destSwml=null, ?int $callTimeout=null, string $region='')</td></tr>
-<tr class="memitem:ac367c3753fb487f417962540a47d51a6" id="r_ac367c3753fb487f417962540a47d51a6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac367c3753fb487f417962540a47d51a6">rpcAiMessage</a> (string $callId, string $messageText)</td></tr>
+<tr class="memitem:abaf2fa080046f5af89abd9f1dfb263be" id="r_abaf2fa080046f5af89abd9f1dfb263be"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abaf2fa080046f5af89abd9f1dfb263be">tap</a> (string $uri, ?string $controlId=null, <a class="el" href="namespaceSignalWire_1_1SWAIG.html#ae39a98d8f826256220a815d8416a4f23">TapDirection</a>|string $direction='both', <a class="el" href="namespaceSignalWire_1_1SWAIG.html#af2ac9669aec9b5e9ab78d4e066d9fe3b">Codec</a>|string $codec='PCMU', int $rtpPtime=20, ?string $statusUrl=null)</td></tr>
+<tr class="memitem:a3a9b1f57e82dd9ecb76144aa347df259" id="r_a3a9b1f57e82dd9ecb76144aa347df259"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3a9b1f57e82dd9ecb76144aa347df259">stopTap</a> (?string $controlId=null)</td></tr>
+<tr class="memitem:ad39493ff0fa9218595c2118cd4cee96d" id="r_ad39493ff0fa9218595c2118cd4cee96d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad39493ff0fa9218595c2118cd4cee96d">sendSms</a> (string $toNumber, string $fromNumber, ?string $body=null, array $media=[], array $tags=[], ?string $region=null)</td></tr>
+<tr class="memitem:af59def574e1eee4b4f065bf6b0189a7c" id="r_af59def574e1eee4b4f065bf6b0189a7c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af59def574e1eee4b4f065bf6b0189a7c">pay</a> (string $paymentConnectorUrl, string $inputMethod='dtmf', ?string $statusUrl=null, string $paymentMethod='credit-card', int $timeout=5, int $maxAttempts=1, bool $securityCode=true, bool|string $postalCode=true, int $minPostalCodeLength=0, string $tokenType='reusable', ?string $chargeAmount=null, string $currency='usd', string $language='en-US', string $voice='woman', ?string $description=null, string $validCardTypes='visa mastercard amex', ?array $parameters=null, ?array $prompts=null, ?string $aiResponse='The payment status is ${pay_result}, do not mention anything else about collecting payment if successful.')</td></tr>
+<tr class="memitem:ad1ec3ad3559a7650a38ae2fa57da112d" id="r_ad1ec3ad3559a7650a38ae2fa57da112d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad1ec3ad3559a7650a38ae2fa57da112d">executeRpc</a> (string $method, ?array $params=null, ?string $callId=null, ?string $nodeId=null)</td></tr>
+<tr class="memitem:a5cac53bade8673ee58bfaf70fadb1d3f" id="r_a5cac53bade8673ee58bfaf70fadb1d3f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5cac53bade8673ee58bfaf70fadb1d3f">rpcDial</a> (string $toNumber, string $fromNumber, string $destSwml, string $deviceType='phone')</td></tr>
+<tr class="memitem:ae2acf9b09484ef7bb5c74b0051b31774" id="r_ae2acf9b09484ef7bb5c74b0051b31774"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae2acf9b09484ef7bb5c74b0051b31774">rpcAiMessage</a> (string $callId, string $messageText, string $role='system')</td></tr>
 <tr class="memitem:a51589a739d67549d571b394b1c7ff81d" id="r_a51589a739d67549d571b394b1c7ff81d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a51589a739d67549d571b394b1c7ff81d">rpcAiUnhold</a> (string $callId)</td></tr>
 <tr class="memitem:a5f9022e8e93fcf28737c5345dd26fc86" id="r_a5f9022e8e93fcf28737c5345dd26fc86"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5f9022e8e93fcf28737c5345dd26fc86">simulateUserInput</a> (string $text)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9ad69169bf7280077f37e9d831f75e73" id="r_a9ad69169bf7280077f37e9d831f75e73"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a9ad69169bf7280077f37e9d831f75e73">createPaymentPrompt</a> (string $text, string $language='en-US', string $voice='')</td></tr>
-<tr class="memitem:ab7e7c9ad1f658663c6962a4eecb6c452" id="r_ab7e7c9ad1f658663c6962a4eecb6c452"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#ab7e7c9ad1f658663c6962a4eecb6c452">createPaymentAction</a> (string $type, string $text, string $language='en-US', string $voice='')</td></tr>
-<tr class="memitem:a12841e84371d5d42a599bae963d0f951" id="r_a12841e84371d5d42a599bae963d0f951"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a12841e84371d5d42a599bae963d0f951">createPaymentParameter</a> (string $name, string $type, array $config=[])</td></tr>
+<tr class="memitem:a682869a4e8e7034233669ed4bf08995f" id="r_a682869a4e8e7034233669ed4bf08995f"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a682869a4e8e7034233669ed4bf08995f">createPaymentPrompt</a> (string $forSituation, array $actions, ?string $cardType=null, ?string $errorType=null)</td></tr>
+<tr class="memitem:a4495637fe587dcff848e57168352ef15" id="r_a4495637fe587dcff848e57168352ef15"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a4495637fe587dcff848e57168352ef15">createPaymentAction</a> (string $actionType, string $phrase)</td></tr>
+<tr class="memitem:a969ef91d78cfe1f615e280586e89a4de" id="r_a969ef91d78cfe1f615e280586e89a4de"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a969ef91d78cfe1f615e280586e89a4de">createPaymentParameter</a> (string $name, string $value)</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a39a8b0d86649b9829a65ff0e7058e309" name="a39a8b0d86649b9829a65ff0e7058e309"></a>
@@ -282,8 +269,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa3febe2100638c717fd938b40c88498d" name="aa3febe2100638c717fd938b40c88498d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3febe2100638c717fd938b40c88498d">&#9670;&#160;</a></span>connect()</h2>
+<a id="a0ace6beec59c2e79a4dd91932eb4f83c" name="a0ace6beec59c2e79a4dd91932eb4f83c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ace6beec59c2e79a4dd91932eb4f83c">&#9670;&#160;</a></span>connect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,7 +283,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>$final</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>$final</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -308,8 +295,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab7e7c9ad1f658663c6962a4eecb6c452" name="ab7e7c9ad1f658663c6962a4eecb6c452"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7e7c9ad1f658663c6962a4eecb6c452">&#9670;&#160;</a></span>createPaymentAction()</h2>
+<a id="a4495637fe587dcff848e57168352ef15" name="a4495637fe587dcff848e57168352ef15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4495637fe587dcff848e57168352ef15">&#9670;&#160;</a></span>createPaymentAction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,22 +307,12 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SignalWire\SWAIG\FunctionResult::createPaymentAction </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$type</em></span>, </td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$actionType</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$text</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$language</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'en-US'</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$voice</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>&#160;)</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$phrase</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -344,11 +321,13 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Create a payment action for use in payment prompts. Parity: {"type": $actionType, "phrase": $phrase}.</p>
+<dl class="section return"><dt>Returns</dt><dd>array&lt;string,string&gt; </dd></dl>
 
 </div>
 </div>
-<a id="a12841e84371d5d42a599bae963d0f951" name="a12841e84371d5d42a599bae963d0f951"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12841e84371d5d42a599bae963d0f951">&#9670;&#160;</a></span>createPaymentParameter()</h2>
+<a id="a969ef91d78cfe1f615e280586e89a4de" name="a969ef91d78cfe1f615e280586e89a4de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a969ef91d78cfe1f615e280586e89a4de">&#9670;&#160;</a></span>createPaymentParameter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -364,12 +343,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$type</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">array</td>          <td class="paramname"><span class="paramname"><em>$config</em></span><span class="paramdefsep"> = </span><span class="paramdefval">[]</span>&#160;)</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$value</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -378,11 +352,13 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Create a payment parameter (name/value pair) for {</p><dl class="section see"><dt>See also</dt><dd>FunctionResult::pay()}. Parity: {"name": $name, "value": $value}.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>array&lt;string,string&gt; </dd></dl>
 
 </div>
 </div>
-<a id="a9ad69169bf7280077f37e9d831f75e73" name="a9ad69169bf7280077f37e9d831f75e73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ad69169bf7280077f37e9d831f75e73">&#9670;&#160;</a></span>createPaymentPrompt()</h2>
+<a id="a682869a4e8e7034233669ed4bf08995f" name="a682869a4e8e7034233669ed4bf08995f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a682869a4e8e7034233669ed4bf08995f">&#9670;&#160;</a></span>createPaymentPrompt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -393,17 +369,22 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SignalWire\SWAIG\FunctionResult::createPaymentPrompt </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$text</em></span>, </td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$forSituation</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$language</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'en-US'</span>, </td>
+          <td class="paramtype">array</td>          <td class="paramname"><span class="paramname"><em>$actions</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$voice</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>&#160;)</td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$cardType</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$errorType</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -412,6 +393,16 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Create a payment-prompt structure for use with {</p><dl class="section see"><dt>See also</dt><dd>FunctionResult::pay()}. Parity with the Python reference <span class="tt">create_payment_prompt</span>: {"for": $forSituation, "actions": $actions, "card_type"?, "error_type"?}.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype"></td><td class="paramname">list&lt;array&lt;string,string&gt;&gt;</td><td>$actions actions with 'type'/'phrase' keys. </td></tr>
+    <tr><td class="paramtype">string&#160;|&#160;null</td><td class="paramname">$cardType</td><td>space-separated card types. </td></tr>
+    <tr><td class="paramtype">string&#160;|&#160;null</td><td class="paramname">$errorType</td><td>space-separated error types. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>array&lt;string,mixed&gt; </dd></dl>
 
 </div>
 </div>
@@ -449,8 +440,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac30f965e8685b9afcc71107dd48ee498" name="ac30f965e8685b9afcc71107dd48ee498"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac30f965e8685b9afcc71107dd48ee498">&#9670;&#160;</a></span>executeRpc()</h2>
+<a id="ad1ec3ad3559a7650a38ae2fa57da112d" name="ad1ec3ad3559a7650a38ae2fa57da112d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1ec3ad3559a7650a38ae2fa57da112d">&#9670;&#160;</a></span>executeRpc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -463,10 +454,28 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">array</td>          <td class="paramname"><span class="paramname"><em>$params</em></span><span class="paramdefsep"> = </span><span class="paramdefval">[]</span>&#160;)</td>
+          <td class="paramtype">?array</td>          <td class="paramname"><span class="paramname"><em>$params</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$callId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$nodeId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Execute an RPC method on a call using SWML.</p>
+<p>Parity with the Python reference <span class="tt">execute_rpc</span>: the rpc params are keyed {method, call_id?, node_id?, params?} (call_id/node_id are TOP-LEVEL siblings of method/params, NOT nested inside params) and the {"execute_rpc": ...} verb is wrapped in a full SWML document. There is no <span class="tt">jsonrpc</span> envelope — method strings are bare (e.g. "dial", not "calling.dial").</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array&lt;string,mixed&gt;|null</td><td>$params optional RPC method parameters. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -488,9 +497,10 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Execute SWML content with optional transfer behavior. Parity with the Python reference <span class="tt">execute_swml</span>: a string is parsed to an array (on parse failure it is wrapped as {"raw_swml": &lt;text&gt;}); when $transfer is true the key "transfer" =&gt; "true" is set INSIDE the SWML document; the action is ALWAYS added under the "SWML" key (there is no separate transfer key).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">array&#160;|&#160;string</td><td class="paramname">$swmlContent</td><td></td></tr>
+    <tr><td class="paramtype">array&#160;|&#160;string</td><td class="paramname">$swmlContent</td><td>SWML JSON string or already-decoded array. </td></tr>
   </table>
   </dd>
 </dl>
@@ -531,8 +541,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1c375a7240023d466f6cfc41a9f16e88" name="a1c375a7240023d466f6cfc41a9f16e88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c375a7240023d466f6cfc41a9f16e88">&#9670;&#160;</a></span>joinConference()</h2>
+<a id="aa74dcf3df9e0177c7fb5b4bc15a2f170" name="aa74dcf3df9e0177c7fb5b4bc15a2f170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa74dcf3df9e0177c7fb5b4bc15a2f170">&#9670;&#160;</a></span>joinConference()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -555,10 +565,96 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$holdAudio</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'ring'</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>$startOnEnter</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>$endOnExit</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$waitUrl</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>$maxParticipants</em></span><span class="paramdefsep"> = </span><span class="paramdefval">250</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$record</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'do-not-record'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$region</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$trim</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'trim-silence'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$coach</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$statusCallbackEvent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$statusCallback</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$statusCallbackMethod</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'POST'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$recordingStatusCallback</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$recordingStatusCallbackMethod</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'POST'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$recordingStatusCallbackEvent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'completed'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mixed</td>          <td class="paramname"><span class="paramname"><em>$result</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Join an ad-hoc audio conference with RELAY and CXML calls using SWML.</p>
+<p>Full parity with signalwire-python core/function_result.py <span class="tt">join_conference</span>: 18 optional parameters, 7 validations, and the same simple/full emission. When every parameter is at its default the payload collapses to the bare conference-NAME string ({"join_conference": "&lt;name&gt;"}); otherwise it is the object form keyed by snake_case wire keys, with each key emitted only when it differs from its default. The {"join_conference": ...} payload is wrapped in a full SWML document and emitted through {</p><dl class="section see"><dt>See also</dt><dd>FunctionResult::executeSwml()} — the same path Python's <span class="tt">record_call</span> uses — so it lands under the "SWML" action key.</dd></dl>
+<p>Note: Python uses <span class="tt">wait_url</span> (SWML URL) for hold music; there is no <span class="tt">hold_audio</span> parameter. (The previously-invented <span class="tt">holdAudio</span>/<span class="tt">hold_audio</span> had no Python equivalent and was removed.)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">mixed</td><td class="paramname">$result</td><td>Switch on return_value when object {} or cond when array []; null to omit (parity with Python <span class="tt">Optional[Any]</span>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>InvalidArgumentException on any of the 7 validation failures. </p>
 
 </div>
 </div>
@@ -579,8 +675,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a78e5a7e0901f5c77084b74fab3f0e5df" name="a78e5a7e0901f5c77084b74fab3f0e5df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78e5a7e0901f5c77084b74fab3f0e5df">&#9670;&#160;</a></span>pay()</h2>
+<a id="af59def574e1eee4b4f065bf6b0189a7c" name="af59def574e1eee4b4f065bf6b0189a7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af59def574e1eee4b4f065bf6b0189a7c">&#9670;&#160;</a></span>pay()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -588,7 +684,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SignalWire\SWAIG\FunctionResult::pay </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$connectorUrl</em></span>, </td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$paymentConnectorUrl</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -598,20 +694,105 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$actionUrl</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>, </td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$statusUrl</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>$timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">600</span>, </td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$paymentMethod</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'credit-card'</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>$maxAttempts</em></span><span class="paramdefsep"> = </span><span class="paramdefval">3</span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>$timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">5</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>$maxAttempts</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>$securityCode</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool|string</td>          <td class="paramname"><span class="paramname"><em>$postalCode</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>$minPostalCodeLength</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$tokenType</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'reusable'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$chargeAmount</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$currency</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'usd'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$language</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'en-US'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$voice</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'woman'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$description</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$validCardTypes</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'visa&#160;mastercard&#160;amex'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?array</td>          <td class="paramname"><span class="paramname"><em>$parameters</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?array</td>          <td class="paramname"><span class="paramname"><em>$prompts</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$aiResponse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'The&#160;payment&#160;status&#160;is&#160;${pay_result}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">do not mention anything else about collecting payment if successful.'</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Process payment using the SWML pay action.</p>
+<p>Full parity with the Python reference <span class="tt">pay</span> (19 user-facing params): the SWML document runs <span class="tt">{set:{ai_response}}</span> then <span class="tt">{pay:{...}}</span>. The wire key for the collection method is <span class="tt">input</span> (NOT <span class="tt">input_method</span>); numeric and boolean fields are stringified ("5"/"true"); <span class="tt">postal_code</span> is emitted as a lowercased bool-string when a bool, or verbatim when a string. Optional fields (status_url/charge_amount/description/parameters/prompts) are emitted only when supplied.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">bool&#160;|&#160;string</td><td class="paramname">$postalCode</td><td>prompt-for-postal (bool) or an actual postcode (string). </td></tr>
+    <tr><td class="paramtype"></td><td class="paramname">list&lt;array&lt;string,string&gt;&gt;</td><td>$parameters name/value pairs for the connector. </td></tr>
+    <tr><td class="paramtype"></td><td class="paramname">list&lt;array&lt;string,mixed&gt;&gt;</td><td>$prompts custom prompt configs. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -636,8 +817,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abb98ec62f64bfa0bdb014837c5d35c4b" name="abb98ec62f64bfa0bdb014837c5d35c4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb98ec62f64bfa0bdb014837c5d35c4b">&#9670;&#160;</a></span>recordCall()</h2>
+<a id="a2170926425c752f243a187d5434c0477" name="a2170926425c752f243a187d5434c0477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2170926425c752f243a187d5434c0477">&#9670;&#160;</a></span>recordCall()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -645,7 +826,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SignalWire\SWAIG\FunctionResult::recordCall </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$controlId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>, </td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$controlId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -655,20 +836,80 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$format</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'wav'</span>, </td>
+          <td class="paramtype"><a class="el" href="namespaceSignalWire_1_1SWAIG.html#af59371734721b249462a1eda6b48c1df">RecordFormat</a>|string</td>          <td class="paramname"><span class="paramname"><em>$format</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'wav'</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$direction</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'both'</span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="namespaceSignalWire_1_1SWAIG.html#a890d757c99eb972cd3d2f7f7076b09e0">RecordDirection</a>|string</td>          <td class="paramname"><span class="paramname"><em>$direction</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'both'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$terminators</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>$beep</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>$inputSensitivity</em></span><span class="paramdefsep"> = </span><span class="paramdefval">44.0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?float</td>          <td class="paramname"><span class="paramname"><em>$initialTimeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?float</td>          <td class="paramname"><span class="paramname"><em>$endSilenceTimeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?float</td>          <td class="paramname"><span class="paramname"><em>$maxLength</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$statusUrl</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Start background call recording using SWML.</p>
+<p>Full parity with the Python reference <span class="tt">record_call</span>: validates the format ({wav,mp3,mp4}) and direction ({speak,listen,both}) closed sets, ALWAYS emits stereo/format/direction/beep/input_sensitivity, adds the optional fields only when supplied, and wraps the {"record_call": ...} verb in a full SWML document emitted via {</p><dl class="section see"><dt>See also</dt><dd>FunctionResult::executeSwml()} (so it lands under the "SWML" action key).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">RecordFormat&#160;|&#160;string</td><td class="paramname">$format</td><td>recording container format — the typed {</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>RecordFormat} enum (typo-checked at the call site) or a bare string (parity with Python's <span class="tt">record_call</span>). Normalized to the wire string ('wav'/'mp3'/'mp4'). 'mp4' is valid for the SWML <span class="tt">record_call</span> verb, distinct from the RELAY <span class="tt">record</span> action's 2-value format set. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">RecordDirection&#160;|&#160;string</td><td class="paramname">$direction</td><td>stream direction — the typed {</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>RecordDirection} enum (typo-checked at the call site) or a bare string (parity with Python's <span class="tt">record_call</span>). Normalized to the wire string ('speak'/'listen'/'both'). Note <span class="tt">record_call</span> uses 'listen' where {</dd>
+<dd>
+FunctionResult::tap()} uses 'hear' — distinct closed sets. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>InvalidArgumentException on an invalid format or direction. </p>
 
 </div>
 </div>
-<a id="af8aaf7e914303b0f73e658b22b999146" name="af8aaf7e914303b0f73e658b22b999146"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8aaf7e914303b0f73e658b22b999146">&#9670;&#160;</a></span>removeGlobalData()</h2>
+<a id="ab095935fbe5785db3e18e735e304f950" name="ab095935fbe5785db3e18e735e304f950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab095935fbe5785db3e18e735e304f950">&#9670;&#160;</a></span>removeGlobalData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -676,16 +917,22 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SignalWire\SWAIG\FunctionResult::removeGlobalData </td>
           <td>(</td>
-          <td class="paramtype">array</td>          <td class="paramname"><span class="paramname"><em>$keys</em></span></td><td>)</td>
+          <td class="paramtype">string|array</td>          <td class="paramname"><span class="paramname"><em>$keys</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string|list&lt;string&gt;</td><td>$keys single key or list of keys to remove </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="ab52e8b15e3a85f0914d50cbd4fe3b329" name="ab52e8b15e3a85f0914d50cbd4fe3b329"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab52e8b15e3a85f0914d50cbd4fe3b329">&#9670;&#160;</a></span>removeMetadata()</h2>
+<a id="af5d6952b7dd36e9e341c3edc85b658bf" name="af5d6952b7dd36e9e341c3edc85b658bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5d6952b7dd36e9e341c3edc85b658bf">&#9670;&#160;</a></span>removeMetadata()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -693,16 +940,22 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SignalWire\SWAIG\FunctionResult::removeMetadata </td>
           <td>(</td>
-          <td class="paramtype">array</td>          <td class="paramname"><span class="paramname"><em>$keys</em></span></td><td>)</td>
+          <td class="paramtype">string|array</td>          <td class="paramname"><span class="paramname"><em>$keys</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string|list&lt;string&gt;</td><td>$keys single key or list of keys to remove </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a08fd1c75df2b968670bd0c5880a9a34d" name="a08fd1c75df2b968670bd0c5880a9a34d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08fd1c75df2b968670bd0c5880a9a34d">&#9670;&#160;</a></span>replaceInHistory()</h2>
+<a id="a95a9f497e969f03c5a82a14a3fb9abcf" name="a95a9f497e969f03c5a82a14a3fb9abcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a9f497e969f03c5a82a14a3fb9abcf">&#9670;&#160;</a></span>replaceInHistory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -710,22 +963,23 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SignalWire\SWAIG\FunctionResult::replaceInHistory </td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$text</em></span></td><td>)</td>
+          <td class="paramtype">string|bool</td>          <td class="paramname"><span class="paramname"><em>$text</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>After first send, replace the tool_call+result pair in history.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">string&#160;|&#160;bool</td><td class="paramname">$text</td><td></td></tr>
+    <tr><td class="paramtype">string&#160;|&#160;bool</td><td class="paramname">$text</td><td>String -&gt; replace the tool_call with an assistant message containing this text. True (default) -&gt; remove the pair entirely. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ac367c3753fb487f417962540a47d51a6" name="ac367c3753fb487f417962540a47d51a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac367c3753fb487f417962540a47d51a6">&#9670;&#160;</a></span>rpcAiMessage()</h2>
+<a id="ae2acf9b09484ef7bb5c74b0051b31774" name="ae2acf9b09484ef7bb5c74b0051b31774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2acf9b09484ef7bb5c74b0051b31774">&#9670;&#160;</a></span>rpcAiMessage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -738,10 +992,16 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$messageText</em></span>&#160;)</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$messageText</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$role</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'system'</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Inject a message into an AI agent on another call using execute_rpc. Parity: method="ai_message", call_id top-level, params={role, message_text}. <span class="tt">role</span> defaults to "system". </p>
 
 </div>
 </div>
@@ -759,11 +1019,12 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Unhold another call using execute_rpc. Parity: method="ai_unhold", call_id top-level, params={}. </p>
 
 </div>
 </div>
-<a id="a133228285d35697357d09ebe81b39e85" name="a133228285d35697357d09ebe81b39e85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a133228285d35697357d09ebe81b39e85">&#9670;&#160;</a></span>rpcDial()</h2>
+<a id="a5cac53bade8673ee58bfaf70fadb1d3f" name="a5cac53bade8673ee58bfaf70fadb1d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cac53bade8673ee58bfaf70fadb1d3f">&#9670;&#160;</a></span>rpcDial()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -771,30 +1032,26 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SignalWire\SWAIG\FunctionResult::rpcDial </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$to</em></span>, </td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$toNumber</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$from</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>, </td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$fromNumber</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$destSwml</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$destSwml</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">?int</td>          <td class="paramname"><span class="paramname"><em>$callTimeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$region</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>&#160;)</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$deviceType</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'phone'</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Dial out to a number with a destination SWML URL using execute_rpc. Parity: method="dial", params={devices:{type,params:{to_number, from_number}}, dest_swml}. </p>
 
 </div>
 </div>
@@ -815,8 +1072,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3dcd92c811ae348cd38aae8004f5926b" name="a3dcd92c811ae348cd38aae8004f5926b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dcd92c811ae348cd38aae8004f5926b">&#9670;&#160;</a></span>sendSms()</h2>
+<a id="ad39493ff0fa9218595c2118cd4cee96d" name="ad39493ff0fa9218595c2118cd4cee96d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad39493ff0fa9218595c2118cd4cee96d">&#9670;&#160;</a></span>sendSms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -824,17 +1081,17 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SignalWire\SWAIG\FunctionResult::sendSms </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$to</em></span>, </td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$toNumber</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$from</em></span>, </td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$fromNumber</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$body</em></span>, </td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$body</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -844,10 +1101,31 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">array</td>          <td class="paramname"><span class="paramname"><em>$tags</em></span><span class="paramdefsep"> = </span><span class="paramdefval">[]</span>&#160;)</td>
+          <td class="paramtype">array</td>          <td class="paramname"><span class="paramname"><em>$tags</em></span><span class="paramdefsep"> = </span><span class="paramdefval">[]</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$region</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Send a text message to a PSTN phone number using SWML.</p>
+<p>Full parity with the Python reference <span class="tt">send_sms</span>: either body or media (or both) must be provided; the {"send_sms": ...} verb is wrapped in a full SWML document via executeSwml. Optional fields (body/media/tags/ region) are emitted only when supplied.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list&lt;string&gt;</td><td>$media URLs to send (optional if $body is given). </td></tr>
+    <tr><td class="paramname">list&lt;string&gt;</td><td>$tags tags for UI searching. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>InvalidArgumentException if neither body nor media is provided. </p>
 
 </div>
 </div>
@@ -1004,8 +1282,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa56c6294ae9ef8e35abf45ba89c6ddaf" name="aa56c6294ae9ef8e35abf45ba89c6ddaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa56c6294ae9ef8e35abf45ba89c6ddaf">&#9670;&#160;</a></span>stopRecordCall()</h2>
+<a id="a2855a31936059e2d2a55e40642f46ae0" name="a2855a31936059e2d2a55e40642f46ae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2855a31936059e2d2a55e40642f46ae0">&#9670;&#160;</a></span>stopRecordCall()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1013,7 +1291,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SignalWire\SWAIG\FunctionResult::stopRecordCall </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$controlId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span></td><td>)</td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$controlId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1021,8 +1299,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6f1143d01b8845e5ece64e0286228547" name="a6f1143d01b8845e5ece64e0286228547"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f1143d01b8845e5ece64e0286228547">&#9670;&#160;</a></span>stopTap()</h2>
+<a id="a3a9b1f57e82dd9ecb76144aa347df259" name="a3a9b1f57e82dd9ecb76144aa347df259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a9b1f57e82dd9ecb76144aa347df259">&#9670;&#160;</a></span>stopTap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1030,7 +1308,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">SignalWire\SWAIG\FunctionResult::stopTap </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$controlId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span></td><td>)</td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$controlId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1108,8 +1386,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac18a72e3ee88e05b583b41acf7190630" name="ac18a72e3ee88e05b583b41acf7190630"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac18a72e3ee88e05b583b41acf7190630">&#9670;&#160;</a></span>swmlTransfer()</h2>
+<a id="a96215985fa86a19e739dcb3c0ecb8777" name="a96215985fa86a19e739dcb3c0ecb8777"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96215985fa86a19e739dcb3c0ecb8777">&#9670;&#160;</a></span>swmlTransfer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1122,15 +1400,16 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$aiResponse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>, </td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$aiResponse</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>$final</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>$final</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Add a SWML transfer action with AI-response setup for when the transfer completes. Parity with the Python reference <span class="tt">swml_transfer</span>: builds a SWML document whose <span class="tt">main</span> runs <span class="tt">{set:{ai_response}}</span> then <span class="tt">{transfer:{dest}}</span>, and emits a top-level <span class="tt">transfer</span> = str($final).lower() that marks the call (non-)final. <span class="tt">$final</span> defaults TRUE (permanent transfer), same as connect(). </p>
 
 </div>
 </div>
@@ -1151,8 +1430,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afdc5b698d2ced211925b40d74b089c5b" name="afdc5b698d2ced211925b40d74b089c5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdc5b698d2ced211925b40d74b089c5b">&#9670;&#160;</a></span>tap()</h2>
+<a id="abaf2fa080046f5af89abd9f1dfb263be" name="abaf2fa080046f5af89abd9f1dfb263be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaf2fa080046f5af89abd9f1dfb263be">&#9670;&#160;</a></span>tap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1165,20 +1444,53 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$controlId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>, </td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$controlId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$direction</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'both'</span>, </td>
+          <td class="paramtype"><a class="el" href="namespaceSignalWire_1_1SWAIG.html#ae39a98d8f826256220a815d8416a4f23">TapDirection</a>|string</td>          <td class="paramname"><span class="paramname"><em>$direction</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'both'</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$codec</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'PCMU'</span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="namespaceSignalWire_1_1SWAIG.html#af2ac9669aec9b5e9ab78d4e066d9fe3b">Codec</a>|string</td>          <td class="paramname"><span class="paramname"><em>$codec</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'PCMU'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>$rtpPtime</em></span><span class="paramdefsep"> = </span><span class="paramdefval">20</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$statusUrl</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Start background call tap using SWML.</p>
+<p>Full parity with the Python reference <span class="tt">tap</span>: validates direction ({speak,hear,both}), codec ({PCMU,PCMA}) and rtp_ptime (&gt; 0); the only always-emitted field is <span class="tt">uri</span>; control_id/direction/codec/rtp_ptime/ status_url are added only when they differ from their defaults; the {"tap": ...} verb is wrapped in a full SWML document via executeSwml.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">TapDirection&#160;|&#160;string</td><td class="paramname">$direction</td><td>stream direction — the typed {</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>TapDirection} enum (typo-checked at the call site) or a bare string (parity with Python's <span class="tt">tap</span>). Normalized to the wire string ('speak'/'hear'/'both'). </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">Codec&#160;|&#160;string</td><td class="paramname">$codec</td><td>media codec — the typed {</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>Codec} enum (typo-checked at the call site) or a bare string (parity with Python's <span class="tt">tap</span>). Normalized to the wire string ('PCMU'/'PCMA'). This is the SWAIG tap codec set only, NOT the larger RELAY stream/connect codec superset. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>InvalidArgumentException on invalid direction, codec, or rtp_ptime. </p>
 
 </div>
 </div>
@@ -1267,8 +1579,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a961593b9476878c11935eab7bd12bf6b" name="a961593b9476878c11935eab7bd12bf6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a961593b9476878c11935eab7bd12bf6b">&#9670;&#160;</a></span>waitForUser()</h2>
+<a id="ab3b1d47971c5d16e923431a0f09fb8f9" name="ab3b1d47971c5d16e923431a0f09fb8f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3b1d47971c5d16e923431a0f09fb8f9">&#9670;&#160;</a></span>waitForUser()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1286,7 +1598,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">?bool</td>          <td class="paramname"><span class="paramname"><em>$answerFirst</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>$answerFirst</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1294,7 +1606,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/SWAIG/<a class="el" href="FunctionResult_8php.html">FunctionResult.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/SWAIG/<a class="el" href="FunctionResult_8php.html">FunctionResult.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

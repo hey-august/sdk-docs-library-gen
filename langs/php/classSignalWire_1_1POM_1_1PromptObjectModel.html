@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\POM\PromptObjectModel Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,31 +120,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\POM\PromptObjectModel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>A structured data format for composing, organizing, and rendering prompt instructions for large language models.  
- <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6a0201619a7498a3215e74387d6c06c0" id="r_a6a0201619a7498a3215e74387d6c06c0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6a0201619a7498a3215e74387d6c06c0">__construct</a> (bool $debug=false)</td></tr>
 <tr class="memitem:a17f9201a2917dead8183e06b7c5093e4" id="r_a17f9201a2917dead8183e06b7c5093e4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a17f9201a2917dead8183e06b7c5093e4">addSection</a> (?string $title=null, array $params=[])</td></tr>
-<tr class="memdesc:a17f9201a2917dead8183e06b7c5093e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a top-level section to the model.  <br /></td></tr>
 <tr class="memitem:aa45a45d14c56440a5d13e6241cbdd136" id="r_aa45a45d14c56440a5d13e6241cbdd136"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa45a45d14c56440a5d13e6241cbdd136">findSection</a> (string $title)</td></tr>
-<tr class="memdesc:aa45a45d14c56440a5d13e6241cbdd136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively search for a section by title.  <br /></td></tr>
 <tr class="memitem:a00f5ebe01de1df63e1cc5cbfaa477beb" id="r_a00f5ebe01de1df63e1cc5cbfaa477beb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a00f5ebe01de1df63e1cc5cbfaa477beb">toArray</a> ()</td></tr>
 <tr class="memitem:a52138dfea4bc44eb5f05fc38b1233512" id="r_a52138dfea4bc44eb5f05fc38b1233512"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a52138dfea4bc44eb5f05fc38b1233512">toJson</a> ()</td></tr>
-<tr class="memdesc:a52138dfea4bc44eb5f05fc38b1233512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize the model as JSON.  <br /></td></tr>
 <tr class="memitem:aee98cea700a1ab176c0aa74a628c5999" id="r_aee98cea700a1ab176c0aa74a628c5999"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aee98cea700a1ab176c0aa74a628c5999">toYaml</a> ()</td></tr>
-<tr class="memdesc:aee98cea700a1ab176c0aa74a628c5999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize the model as YAML.  <br /></td></tr>
 <tr class="memitem:a696f12f01ca527b6bf7048707f228369" id="r_a696f12f01ca527b6bf7048707f228369"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a696f12f01ca527b6bf7048707f228369">renderMarkdown</a> ()</td></tr>
 <tr class="memitem:ac65192fd09bf89b8e3d28c76524a8fd7" id="r_ac65192fd09bf89b8e3d28c76524a8fd7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac65192fd09bf89b8e3d28c76524a8fd7">renderXml</a> ()</td></tr>
 <tr class="memitem:a3b1c12c0a5268fb2dc673028d7d9a4a5" id="r_a3b1c12c0a5268fb2dc673028d7d9a4a5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3b1c12c0a5268fb2dc673028d7d9a4a5">addPomAsSubsection</a> (string|<a class="el" href="classSignalWire_1_1POM_1_1Section.html">Section</a> $target, <a class="el" href="classSignalWire_1_1POM_1_1PromptObjectModel.html">PromptObjectModel</a> $pomToAdd)</td></tr>
-<tr class="memdesc:a3b1c12c0a5268fb2dc673028d7d9a4a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add another PromptObjectModel as a subsection block under a target.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e4f7c3511164fe9b834982139c1a64d" id="r_a4e4f7c3511164fe9b834982139c1a64d"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a4e4f7c3511164fe9b834982139c1a64d">fromYaml</a> (string|array $yamlData)</td></tr>
-<tr class="memdesc:a4e4f7c3511164fe9b834982139c1a64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a PromptObjectModel from a YAML string or a parsed array.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -165,7 +143,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aa78882be1a29b0e2122639e7a0d73bf4" id="r_aa78882be1a29b0e2122639e7a0d73bf4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa78882be1a29b0e2122639e7a0d73bf4">$debug</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A structured data format for composing, organizing, and rendering prompt instructions for large language models. </p>
+<div class="textblock"><p>A structured data format for composing, organizing, and rendering prompt instructions for large language models.</p>
 <p>Mirrors Python's <span class="tt">signalwire.pom.pom.PromptObjectModel</span>. Provides a tree-based representation of nested sections, supporting JSON / YAML serialization and Markdown / XML rendering.</p>
 <p>YAML support: a small bundled emitter and parser implement the subset of PyYAML's default block style needed for round-tripping POM documents. Composer-installed yaml extensions are not required. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -205,8 +183,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add another PromptObjectModel as a subsection block under a target. </p>
+<p>Add another PromptObjectModel as a subsection block under a target.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">string&#160;|&#160;Section</td><td class="paramname">$target</td><td>Either a section title or a Section instance.</td></tr>
@@ -241,8 +218,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add a top-level section to the model. </p>
+<p>Add a top-level section to the model.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array{</td><td>body?: string, bullets?: list&lt;string&gt;|string|null, numbered?: bool|null, numberedBullets?: bool } $params</td></tr>
@@ -273,7 +249,6 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Recursively search for a section by title. </p>
 
 </div>
@@ -300,8 +275,7 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Create a PromptObjectModel from a YAML string or a parsed array. </p>
+<p>Create a PromptObjectModel from a YAML string or a parsed array.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">string|array&lt;int,mixed&gt;</td><td>$yamlData </td></tr>
@@ -377,9 +351,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serialize the model as JSON. </p>
-<p>Matches Python <span class="tt">json.dumps(.., indent=2)</span>. </p>
+<p>Serialize the model as JSON. Matches Python <span class="tt">json.dumps(.., indent=2)</span>. </p>
 
 </div>
 </div>
@@ -397,9 +369,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serialize the model as YAML. </p>
-<p>Matches PyYAML's default block style with <span class="tt">default_flow_style=False, sort_keys=False</span>. </p>
+<p>Serialize the model as YAML. Matches PyYAML's default block style with <span class="tt">default_flow_style=False, sort_keys=False</span>. </p>
 
 </div>
 </div>
@@ -433,7 +403,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/POM/<a class="el" href="PromptObjectModel_8php.html">PromptObjectModel.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/POM/<a class="el" href="PromptObjectModel_8php.html">PromptObjectModel.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

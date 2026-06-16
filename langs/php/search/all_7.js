@@ -26,12 +26,14 @@ var searchData=
   ['faxes_23',['faxes',['../classSignalWire_1_1REST_1_1Namespaces_1_1Compat.html#a55da4c100644c88e500429820a1b4d88',1,'SignalWire::REST::Namespaces::Compat']]],
   ['faxlogs_24',['FaxLogs',['../classSignalWire_1_1REST_1_1Namespaces_1_1FaxLogs.html',1,'SignalWire::REST::Namespaces']]],
   ['faxlogs_2ephp_25',['FaxLogs.php',['../FaxLogs_8php.html',1,'']]],
-  ['findsection_26',['findSection',['../classSignalWire_1_1POM_1_1PromptObjectModel.html#aa45a45d14c56440a5d13e6241cbdd136',1,'SignalWire::POM::PromptObjectModel']]],
-  ['foreach_27',['foreach',['../classSignalWire_1_1DataMap_1_1DataMap.html#a160849ea36c3e027b2e3cf9bbbf896a5',1,'SignalWire::DataMap::DataMap']]],
-  ['freeclimbapps_28',['freeclimbApps',['../classSignalWire_1_1REST_1_1Namespaces_1_1Fabric.html#aae5c1f137b1818cc26cb562dcc251124',1,'SignalWire::REST::Namespaces::Fabric']]],
-  ['freeswitchconnectors_29',['freeswitchConnectors',['../classSignalWire_1_1REST_1_1Namespaces_1_1Fabric.html#aa9c6bd2123457dbc7f3a366c7d105666',1,'SignalWire::REST::Namespaces::Fabric']]],
-  ['fromyaml_30',['fromYaml',['../classSignalWire_1_1POM_1_1PromptObjectModel.html#a4e4f7c3511164fe9b834982139c1a64d',1,'SignalWire::POM::PromptObjectModel']]],
-  ['function_20whitelisting_20step_3a_3asetfunctions_31',['Function whitelisting (Step::setFunctions)',['../classSignalWire_1_1Contexts_1_1ContextBuilder.html#autotoc_md1',1,'']]],
-  ['functionresult_32',['FunctionResult',['../classSignalWire_1_1SWAIG_1_1FunctionResult.html',1,'SignalWire::SWAIG']]],
-  ['functionresult_2ephp_33',['FunctionResult.php',['../FunctionResult_8php.html',1,'']]]
+  ['features_26',['Features',['../index.html#autotoc_md5',1,'Agent Features'],['../index.html#autotoc_md15',1,'Core Features']]],
+  ['findsection_27',['findSection',['../classSignalWire_1_1POM_1_1PromptObjectModel.html#aa45a45d14c56440a5d13e6241cbdd136',1,'SignalWire::POM::PromptObjectModel']]],
+  ['for_20php_28',['SignalWire SDK for PHP',['../index.html#autotoc_md0',1,'']]],
+  ['foreach_29',['foreach',['../classSignalWire_1_1DataMap_1_1DataMap.html#a160849ea36c3e027b2e3cf9bbbf896a5',1,'SignalWire::DataMap::DataMap']]],
+  ['freeclimbapps_30',['freeclimbApps',['../classSignalWire_1_1REST_1_1Namespaces_1_1Fabric.html#aae5c1f137b1818cc26cb562dcc251124',1,'SignalWire::REST::Namespaces::Fabric']]],
+  ['freeswitchconnectors_31',['freeswitchConnectors',['../classSignalWire_1_1REST_1_1Namespaces_1_1Fabric.html#aa9c6bd2123457dbc7f3a366c7d105666',1,'SignalWire::REST::Namespaces::Fabric']]],
+  ['fromyaml_32',['fromYaml',['../classSignalWire_1_1POM_1_1PromptObjectModel.html#a4e4f7c3511164fe9b834982139c1a64d',1,'SignalWire::POM::PromptObjectModel']]],
+  ['function_20whitelisting_20step_3a_3asetfunctions_33',['Function whitelisting (Step::setFunctions)',['../classSignalWire_1_1Contexts_1_1ContextBuilder.html#autotoc_md23',1,'']]],
+  ['functionresult_34',['FunctionResult',['../classSignalWire_1_1SWAIG_1_1FunctionResult.html',1,'SignalWire::SWAIG']]],
+  ['functionresult_2ephp_35',['FunctionResult.php',['../FunctionResult_8php.html',1,'']]]
 ];

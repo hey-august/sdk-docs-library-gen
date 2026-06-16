@@ -25,12 +25,34 @@
 var NAVTREE =
 [
   [ "SignalWire PHP SDK", "index.html", [
+    [ "SignalWire SDK for PHP", "index.html#autotoc_md0", [
+      [ "What's in this SDK", "index.html#autotoc_md2", null ],
+      [ "AI Agents", "index.html#autotoc_md4", [
+        [ "Agent Features", "index.html#autotoc_md5", null ],
+        [ "Agent Examples", "index.html#autotoc_md6", null ]
+      ] ],
+      [ "RELAY Client", "index.html#autotoc_md8", null ],
+      [ "REST Client", "index.html#autotoc_md10", null ],
+      [ "Installation", "index.html#autotoc_md12", null ],
+      [ "Documentation", "index.html#autotoc_md13", [
+        [ "Getting Started", "index.html#autotoc_md14", null ],
+        [ "Core Features", "index.html#autotoc_md15", null ],
+        [ "Skills and Extensions", "index.html#autotoc_md16", null ],
+        [ "Deployment", "index.html#autotoc_md17", null ],
+        [ "Reference", "index.html#autotoc_md18", null ]
+      ] ],
+      [ "Environment Variables", "index.html#autotoc_md19", null ],
+      [ "Testing", "index.html#autotoc_md20", null ],
+      [ "License", "index.html#autotoc_md21", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ]
+        [ "Variables", "namespacemembers_vars.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -52,17 +74,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AIAction_8php.html",
-"classSignalWire_1_1Agent_1_1AgentBase.html#a80a93d76e325d9c2b4188cdf6dbcbda9",
-"classSignalWire_1_1DataMap_1_1DataMap.html#a7bae8130d68d750c0dfdf475f1563e2c",
-"classSignalWire_1_1REST_1_1Namespaces_1_1Calling.html#a03599105a3e096fe2ddbfa3bedc2ecd8",
-"classSignalWire_1_1REST_1_1Namespaces_1_1CompatTokens.html",
-"classSignalWire_1_1REST_1_1Namespaces_1_1ProjectTokens.html#a47e7688dab0b500cbae558d6aaf520a2",
-"classSignalWire_1_1REST_1_1RestClient.html#a06b5bc7320d22eec9681b7eb407afeb4",
-"classSignalWire_1_1Relay_1_1Client.html#abd3e1b33fa6be68edd7d153dbd6d53ab",
-"classSignalWire_1_1SWAIG_1_1FunctionResult.html#a39a8b0d86649b9829a65ff0e7058e309",
-"classSignalWire_1_1Security_1_1WebhookMiddleware.html#a4fd38303753303eba783e9f4bbe8623b",
-"classSignalWire_1_1Skills_1_1Builtin_1_1SwmlTransfer.html#a2c6df8d666c3bf07b0190316c7280def",
-"namespaceSignalWire_1_1REST.html"
+"classSignalWire_1_1Agent_1_1AgentBase.html#a717c7ce9b2956c29e5f6ae54ebbb99ac",
+"classSignalWire_1_1Contexts_1_1Step.html#ae69ab592da8ad4dce9ab8b7073e2545e",
+"classSignalWire_1_1REST_1_1HttpClient.html#a81bfa16911c356d745f19d566eaa37a9",
+"classSignalWire_1_1REST_1_1Namespaces_1_1CompatPhoneNumbers.html#ac76653bbb0689dac73ba94cd3da0decd",
+"classSignalWire_1_1REST_1_1Namespaces_1_1Mfa.html#a73fa5b92f6e1f1d1e75d64ca4e199c4f",
+"classSignalWire_1_1REST_1_1Namespaces_1_1VoiceLogs.html#afdab526ba428e0deb65d48b0f2f5bec9",
+"classSignalWire_1_1Relay_1_1Client.html#a65b5694989cc7bcd9557d0e12b18e58e",
+"classSignalWire_1_1Relay_1_1RecordAction.html#a06881dcd2f9e8cab006dac12d47d310e",
+"classSignalWire_1_1SWML_1_1Service.html#a44f776c08c0a9555e0f149b4db0aa869",
+"classSignalWire_1_1Skills_1_1Builtin_1_1Datetime.html#a165a89cb3804dbe8b6fbcaebe3418732",
+"classSignalWire_1_1Skills_1_1SkillManager.html#acaf020ba09b0e44b3fad4912abb52d14"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\Contexts Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -141,17 +128,14 @@ Classes</h2></td></tr>
 <tr class="memitem:Step" id="r_Step"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Contexts_1_1Step.html">Step</a></td></tr>
 <tr class="memitem:Context" id="r_Context"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Contexts_1_1Context.html">Context</a></td></tr>
 <tr class="memitem:ContextBuilder" id="r_ContextBuilder"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Contexts_1_1ContextBuilder.html">ContextBuilder</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builder for multi-step, multi-context AI agent workflows.  <a href="classSignalWire_1_1Contexts_1_1ContextBuilder.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a8cf41a3755a3f3491446b31a676d3629" id="r_a8cf41a3755a3f3491446b31a676d3629"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8cf41a3755a3f3491446b31a676d3629">create_simple_context</a> (string $name='default')</td></tr>
-<tr class="memdesc:a8cf41a3755a3f3491446b31a676d3629"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to create a simple single Context.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a10f4767f93e8de9cae5f0ed27844c029" id="r_a10f4767f93e8de9cae5f0ed27844c029"><td class="memItemLeft">const&#160;</td><td class="memItemRight"><a class="el" href="#a10f4767f93e8de9cae5f0ed27844c029">RESERVED_NATIVE_TOOL_NAMES</a></td></tr>
-<tr class="memdesc:a10f4767f93e8de9cae5f0ed27844c029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved tool names auto-injected by the runtime when contexts/steps are present.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a8cf41a3755a3f3491446b31a676d3629" name="a8cf41a3755a3f3491446b31a676d3629"></a>
@@ -168,8 +152,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Helper function to create a simple single Context. </p>
+<p>Helper function to create a simple single Context.</p>
 <p>Mirrors Python's signalwire.core.contexts.create_simple_context — returns a standalone Context (NOT a builder). Use ContextBuilder::createSimpleContext if you want a fully-populated builder.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -197,9 +180,7 @@ Variables</h2></td></tr>
 <div class="line">    <span class="stringliteral">&#39;change_context&#39;</span>,</div>
 <div class="line">    <span class="stringliteral">&#39;gather_submit&#39;</span>,</div>
 <div class="line">]</div>
-</div><!-- fragment -->
-<p>Reserved tool names auto-injected by the runtime when contexts/steps are present. </p>
-<p>User-defined SWAIG tools must not collide with these names:</p><ul>
+</div><!-- fragment --><p>Reserved tool names auto-injected by the runtime when contexts/steps are present. User-defined SWAIG tools must not collide with these names:</p><ul>
 <li>next_step / change_context are injected when valid_steps or valid_contexts is set so the model can navigate the flow.</li>
 <li>gather_submit is injected while a step's gather_info is collecting answers.</li>
 </ul>

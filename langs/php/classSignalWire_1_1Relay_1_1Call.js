@@ -2,6 +2,7 @@ var classSignalWire_1_1Relay_1_1Call =
 [
     [ "__construct", "classSignalWire_1_1Relay_1_1Call.html#a7f46d01c48c40ed061e2f6c6b1d98ece", null ],
     [ "answer", "classSignalWire_1_1Relay_1_1Call.html#ac8bfe4b524b9e28e67ac85873a25a5c5", null ],
+    [ "callState", "classSignalWire_1_1Relay_1_1Call.html#ac91472d3a4c007672f678235e5808611", null ],
     [ "connect", "classSignalWire_1_1Relay_1_1Call.html#aeaeca7944ca733d40c4ff11a2023fb11", null ],
     [ "denoise", "classSignalWire_1_1Relay_1_1Call.html#a9441c2a4c28e38176226a13e2d150f89", null ],
     [ "denoiseStop", "classSignalWire_1_1Relay_1_1Call.html#a038a478756d6c75f90866654009628da", null ],
@@ -16,6 +17,9 @@ var classSignalWire_1_1Relay_1_1Call =
     [ "resolveAllActions", "classSignalWire_1_1Relay_1_1Call.html#a773c09d02c2c3d42252189e46f5c207c", null ],
     [ "transfer", "classSignalWire_1_1Relay_1_1Call.html#a1231eab251bfd2383ae048adc0cdac6e", null ],
     [ "unhold", "classSignalWire_1_1Relay_1_1Call.html#aefd9c1d49648a23f75f75b09c964a349", null ],
+    [ "waitForAnswered", "classSignalWire_1_1Relay_1_1Call.html#ac2e2c857d539170ef4fe6ec9c4ffa8dd", null ],
+    [ "waitForEnding", "classSignalWire_1_1Relay_1_1Call.html#ac4b900943756fc25964ef42902f5f75b", null ],
+    [ "waitForRinging", "classSignalWire_1_1Relay_1_1Call.html#a28fbc7a6506e6dc5d64254f03c4ff0bc", null ],
     [ "$actions", "classSignalWire_1_1Relay_1_1Call.html#a22e7a1451beef290280c371f2563eff1", null ],
     [ "$callId", "classSignalWire_1_1Relay_1_1Call.html#a47bd985f82aeef7b9855dd48bd55a465", null ],
     [ "$client", "classSignalWire_1_1Relay_1_1Call.html#ae23c043dde783943c23c6a96975560f1", null ],

@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\POM\Section Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,25 +120,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\POM\Section Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Represents a section in the Prompt Object Model.  
- <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa3c442d5963122b23f7c28151177ce9" id="r_aaa3c442d5963122b23f7c28151177ce9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aaa3c442d5963122b23f7c28151177ce9">__construct</a> (?string $title=null, array $params=[])</td></tr>
 <tr class="memitem:a42d970f6266e614cf47e4be42bc0ea12" id="r_a42d970f6266e614cf47e4be42bc0ea12"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a42d970f6266e614cf47e4be42bc0ea12">addBody</a> (string $body)</td></tr>
-<tr class="memdesc:a42d970f6266e614cf47e4be42bc0ea12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add or replace the body text for this section.  <br /></td></tr>
 <tr class="memitem:ab874c7770c5cccc74de91bffbaddab8f" id="r_ab874c7770c5cccc74de91bffbaddab8f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab874c7770c5cccc74de91bffbaddab8f">addBullets</a> (array $bullets)</td></tr>
-<tr class="memdesc:ab874c7770c5cccc74de91bffbaddab8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append bullet points to this section.  <br /></td></tr>
 <tr class="memitem:a04113af1b1058b610dce841706016aae" id="r_a04113af1b1058b610dce841706016aae"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a04113af1b1058b610dce841706016aae">addSubsection</a> (string $title, array $params=[])</td></tr>
-<tr class="memdesc:a04113af1b1058b610dce841706016aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a subsection to this section.  <br /></td></tr>
 <tr class="memitem:a5bdc42e55e2470c4a1e8ff58751ae04e" id="r_a5bdc42e55e2470c4a1e8ff58751ae04e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5bdc42e55e2470c4a1e8ff58751ae04e">toArray</a> ()</td></tr>
-<tr class="memdesc:a5bdc42e55e2470c4a1e8ff58751ae04e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the section to a dictionary representation.  <br /></td></tr>
 <tr class="memitem:ab2bf28cc0cae27b391e7e4565a7ac928" id="r_ab2bf28cc0cae27b391e7e4565a7ac928"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab2bf28cc0cae27b391e7e4565a7ac928">renderMarkdown</a> (int $level=2, ?array $sectionNumber=null)</td></tr>
-<tr class="memdesc:ab2bf28cc0cae27b391e7e4565a7ac928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render this section and all its subsections as Markdown.  <br /></td></tr>
 <tr class="memitem:a111b29c0e96edd7c0a8ed2e7620cc08e" id="r_a111b29c0e96edd7c0a8ed2e7620cc08e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a111b29c0e96edd7c0a8ed2e7620cc08e">renderXml</a> (int $indent=0, ?array $sectionNumber=null)</td></tr>
-<tr class="memdesc:a111b29c0e96edd7c0a8ed2e7620cc08e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render this section and all its subsections as XML.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -163,7 +141,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ae16f4e9b65673b7384e313144d694681" id="r_ae16f4e9b65673b7384e313144d694681"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae16f4e9b65673b7384e313144d694681">$numberedBullets</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a section in the Prompt Object Model. </p>
+<div class="textblock"><p>Represents a section in the Prompt Object Model.</p>
 <p>Each section contains a title, optional body text, optional bullet points, and any number of nested subsections. Mirrors Python's <span class="tt">signalwire.pom.pom.Section</span> byte-for-byte for <span class="tt">render_markdown</span>, <span class="tt">render_xml</span>, <span class="tt">to_dict</span> (and indirectly <span class="tt">to_json</span> / <span class="tt">to_yaml</span>).</p>
 <p>Python parity: signalwire/signalwire/pom/pom.py::Section</p>
 <p>Constructor params (<span class="tt">params</span> array — PHP idiom for kwargs):</p><ul>
@@ -216,7 +194,6 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Add or replace the body text for this section. </p>
 
 </div>
@@ -235,8 +212,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Append bullet points to this section. </p>
+<p>Append bullet points to this section.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list&lt;string&gt;</td><td>$bullets </td></tr>
@@ -264,8 +240,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add a subsection to this section. </p>
+<p>Add a subsection to this section.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array{</td><td>body?: string, bullets?: list&lt;string&gt;|null, numbered?: bool|null, numberedBullets?: bool } $params</td></tr>
@@ -300,8 +275,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Render this section and all its subsections as Markdown. </p>
+<p>Render this section and all its subsections as Markdown.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">int</td><td class="paramname">$level</td><td>heading level (default 2 -&gt; ##) </td></tr>
@@ -330,8 +304,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Render this section and all its subsections as XML. </p>
+<p>Render this section and all its subsections as XML.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">int</td><td class="paramname">$indent</td><td>indentation level (each = 2 spaces) </td></tr>
@@ -356,8 +329,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Convert the section to a dictionary representation. </p>
+<p>Convert the section to a dictionary representation.</p>
 <p>Key ordering (must match Python): title, body, bullets, subsections, numbered, numberedBullets.</p>
 <dl class="section return"><dt>Returns</dt><dd>array&lt;string, mixed&gt; </dd></dl>
 
@@ -449,7 +421,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/POM/<a class="el" href="Section_8php.html">Section.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/POM/<a class="el" href="Section_8php.html">Section.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

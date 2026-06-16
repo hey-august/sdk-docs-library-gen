@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\Utils\SchemaValidationError Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,9 +120,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\Utils\SchemaValidationError Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>SchemaValidationError — PHP port of signalwire.utils.schema_utils.SchemaValidationError.  
- <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SignalWire\Utils\SchemaValidationError:</div>
 <div class="dyncontent">
@@ -146,12 +130,11 @@ Inheritance diagram for SignalWire\Utils\SchemaValidationError:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0cd863d6bbb6e210137cb5c4f1f28685" id="r_a0cd863d6bbb6e210137cb5c4f1f28685"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0cd863d6bbb6e210137cb5c4f1f28685">__construct</a> (string $verbName, array $errors)</td></tr>
-<tr class="memdesc:a0cd863d6bbb6e210137cb5c4f1f28685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a SchemaValidationError.  <br /></td></tr>
 <tr class="memitem:aa3edb0bc1ca4dad56f366a1e208a7829" id="r_aa3edb0bc1ca4dad56f366a1e208a7829"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa3edb0bc1ca4dad56f366a1e208a7829">getVerbName</a> ()</td></tr>
 <tr class="memitem:a0e78a62e2601cb2534a8050efc0bfec2" id="r_a0e78a62e2601cb2534a8050efc0bfec2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0e78a62e2601cb2534a8050efc0bfec2">getErrors</a> ()</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>SchemaValidationError — PHP port of signalwire.utils.schema_utils.SchemaValidationError. </p>
+<div class="textblock"><p>SchemaValidationError — PHP port of signalwire.utils.schema_utils.SchemaValidationError.</p>
 <p>Thrown when SWML schema validation of a verb config fails. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0cd863d6bbb6e210137cb5c4f1f28685" name="a0cd863d6bbb6e210137cb5c4f1f28685"></a>
@@ -172,9 +155,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Construct a SchemaValidationError. </p>
-<p>Mirrors Python's SchemaValidationError(verb_name, errors).</p>
+<p>Construct a SchemaValidationError. Mirrors Python's SchemaValidationError(verb_name, errors).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$verbName</td><td>the verb whose validation failed </td></tr>
@@ -222,7 +203,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/Utils/<a class="el" href="SchemaValidationError_8php.html">SchemaValidationError.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/Utils/<a class="el" href="SchemaValidationError_8php.html">SchemaValidationError.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

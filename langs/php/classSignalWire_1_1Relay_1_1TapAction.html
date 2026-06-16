@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\Relay\TapAction Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,27 +120,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\Relay\TapAction Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Handle for calling.tap operations.  
- <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SignalWire\Relay\TapAction:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classSignalWire_1_1Relay_1_1TapAction.png" usemap="#SignalWire_5CRelay_5CTapAction_map" alt=""/>
   <map id="SignalWire_5CRelay_5CTapAction_map" name="SignalWire_5CRelay_5CTapAction_map">
-<area href="classSignalWire_1_1Relay_1_1Action.html" title="Base class for all RELAY call actions (play, record, collect, etc.)." alt="SignalWire\Relay\Action" shape="rect" coords="0,0,170,24"/>
+<area href="classSignalWire_1_1Relay_1_1Action.html" alt="SignalWire\Relay\Action" shape="rect" coords="0,0,170,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6139a4dbcfa18706b923ff45a8e5d866" id="r_a6139a4dbcfa18706b923ff45a8e5d866"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6139a4dbcfa18706b923ff45a8e5d866">getStopMethod</a> ()</td></tr>
-<tr class="memdesc:a6139a4dbcfa18706b923ff45a8e5d866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the RELAY RPC method that stops this action.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classSignalWire_1_1Relay_1_1Action"><td colspan="2">Public Member Functions inherited from <a class="el" href="classSignalWire_1_1Relay_1_1Action.html">SignalWire\Relay\Action</a></td></tr>
 <tr class="memitem:a3a706cd2ab8518cc21461d17b5daeccc pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_a3a706cd2ab8518cc21461d17b5daeccc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#a3a706cd2ab8518cc21461d17b5daeccc">__construct</a> (string $controlId, string $callId, string $nodeId, object $client)</td></tr>
 <tr class="memitem:a2fa3058dc240af25b16c5019f90e16df pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_a2fa3058dc240af25b16c5019f90e16df"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#a2fa3058dc240af25b16c5019f90e16df">wait</a> (int|float $timeout=30)</td></tr>
-<tr class="memdesc:a2fa3058dc240af25b16c5019f90e16df pub_methods_classSignalWire_1_1Relay_1_1Action"><td class="mdescLeft">&#160;</td><td class="mdescRight">Block until the action completes or $timeout seconds elapse.  <br /></td></tr>
 <tr class="memitem:a57731e980a41d1504639c86207066096 pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_a57731e980a41d1504639c86207066096"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#a57731e980a41d1504639c86207066096">isDone</a> ()</td></tr>
 <tr class="memitem:aef6bbfc108ce371e51e81e047c0857b8 pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_aef6bbfc108ce371e51e81e047c0857b8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#aef6bbfc108ce371e51e81e047c0857b8">getResult</a> ()</td></tr>
 <tr class="memitem:adad0024cf7ab03cf3867882104a5dd9b pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_adad0024cf7ab03cf3867882104a5dd9b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#adad0024cf7ab03cf3867882104a5dd9b">getState</a> ()</td></tr>
@@ -163,15 +145,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab72e236a7843f2f5f240ef1f844e1a67 pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_ab72e236a7843f2f5f240ef1f844e1a67"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#ab72e236a7843f2f5f240ef1f844e1a67">getCallId</a> ()</td></tr>
 <tr class="memitem:ac5c04d91b1c376cadcf7cc95d1ae6118 pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_ac5c04d91b1c376cadcf7cc95d1ae6118"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#ac5c04d91b1c376cadcf7cc95d1ae6118">getNodeId</a> ()</td></tr>
 <tr class="memitem:a405294484ca07eee486d28a4585cca1b pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_a405294484ca07eee486d28a4585cca1b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#a405294484ca07eee486d28a4585cca1b">onCompleted</a> (callable $cb)</td></tr>
-<tr class="memdesc:a405294484ca07eee486d28a4585cca1b pub_methods_classSignalWire_1_1Relay_1_1Action"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a callback to fire when the action completes.  <br /></td></tr>
 <tr class="memitem:ad1ad757bc49508376a513f0b81cf662e pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_ad1ad757bc49508376a513f0b81cf662e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#ad1ad757bc49508376a513f0b81cf662e">handleEvent</a> (<a class="el" href="classSignalWire_1_1Relay_1_1Event.html">Event</a> $event)</td></tr>
-<tr class="memdesc:ad1ad757bc49508376a513f0b81cf662e pub_methods_classSignalWire_1_1Relay_1_1Action"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append an incoming event and update local state / payload.  <br /></td></tr>
 <tr class="memitem:ac3bad086a672128844253029471841ec pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_ac3bad086a672128844253029471841ec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#ac3bad086a672128844253029471841ec">resolve</a> ($result=null)</td></tr>
-<tr class="memdesc:ac3bad086a672128844253029471841ec pub_methods_classSignalWire_1_1Relay_1_1Action"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark this action as completed.  <br /></td></tr>
 <tr class="memitem:a64965de85b50976ab078f318d513f142 pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_a64965de85b50976ab078f318d513f142"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#a64965de85b50976ab078f318d513f142">stop</a> ()</td></tr>
-<tr class="memdesc:a64965de85b50976ab078f318d513f142 pub_methods_classSignalWire_1_1Relay_1_1Action"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the running action by sending its stop sub-command.  <br /></td></tr>
 <tr class="memitem:ab0e1f2d30a6fa43068fbfee2193fab97 pub_methods_classSignalWire_1_1Relay_1_1Action" id="r_ab0e1f2d30a6fa43068fbfee2193fab97"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html#ab0e1f2d30a6fa43068fbfee2193fab97">executeSubcommand</a> (string $method, array $extraParams=[])</td></tr>
-<tr class="memdesc:ab0e1f2d30a6fa43068fbfee2193fab97 pub_methods_classSignalWire_1_1Relay_1_1Action"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a sub-command RPC through the client.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -204,8 +181,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Return the RELAY RPC method that stops this action. </p>
+<p>Return the RELAY RPC method that stops this action.</p>
 <p>Subclasses MUST override this to return the correct method name (e.g. 'calling.play.stop'). </p>
 
 <p>Reimplemented from <a class="el" href="classSignalWire_1_1Relay_1_1Action.html#a37e52e4432f6e86a2fee4b8453111a32">SignalWire\Relay\Action</a>.</p>
@@ -213,7 +189,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/Relay/<a class="el" href="Action_8php.html">Action.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/Relay/<a class="el" href="Action_8php.html">Action.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

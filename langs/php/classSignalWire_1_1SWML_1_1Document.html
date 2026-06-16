@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\SWML\Document Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -139,26 +126,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a17402f16600d296966602c53f1b71336" id="r_a17402f16600d296966602c53f1b71336"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a17402f16600d296966602c53f1b71336">__construct</a> ()</td></tr>
 <tr class="memitem:a42db69e7b8f5fcae04d8e800350d3702" id="r_a42db69e7b8f5fcae04d8e800350d3702"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a42db69e7b8f5fcae04d8e800350d3702">getVersion</a> ()</td></tr>
 <tr class="memitem:abb4160eadf9756651062afca31428990" id="r_abb4160eadf9756651062afca31428990"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abb4160eadf9756651062afca31428990">addSection</a> (string $name)</td></tr>
-<tr class="memdesc:abb4160eadf9756651062afca31428990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new named section.  <br /></td></tr>
 <tr class="memitem:a2e4b2713fc56e23d852610177b691996" id="r_a2e4b2713fc56e23d852610177b691996"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2e4b2713fc56e23d852610177b691996">hasSection</a> (string $name)</td></tr>
 <tr class="memitem:aa2febeaa3c8e42e7e33e495b74054257" id="r_aa2febeaa3c8e42e7e33e495b74054257"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa2febeaa3c8e42e7e33e495b74054257">getVerbs</a> (string $section='main')</td></tr>
-<tr class="memdesc:aa2febeaa3c8e42e7e33e495b74054257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a copy of the verbs for a section.  <br /></td></tr>
 <tr class="memitem:a7fc0442557b086e6158235e03ef8bbf8" id="r_a7fc0442557b086e6158235e03ef8bbf8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7fc0442557b086e6158235e03ef8bbf8">addVerb</a> (string $verbName, mixed $config)</td></tr>
-<tr class="memdesc:a7fc0442557b086e6158235e03ef8bbf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a verb to the main section.  <br /></td></tr>
 <tr class="memitem:af953fba2fce0ce75806b23048695ad46" id="r_af953fba2fce0ce75806b23048695ad46"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af953fba2fce0ce75806b23048695ad46">addVerbToSection</a> (string $section, string $verbName, mixed $config)</td></tr>
-<tr class="memdesc:af953fba2fce0ce75806b23048695ad46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a verb to a named section.  <br /></td></tr>
 <tr class="memitem:ad41ab88ec8dc5726f2a95f1f5478c28d" id="r_ad41ab88ec8dc5726f2a95f1f5478c28d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad41ab88ec8dc5726f2a95f1f5478c28d">addRawVerb</a> (string $section, array $verbHash)</td></tr>
-<tr class="memdesc:ad41ab88ec8dc5726f2a95f1f5478c28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a pre-formatted verb hash to a section.  <br /></td></tr>
 <tr class="memitem:a52f29f5139d6bae20d82eea7991034b5" id="r_a52f29f5139d6bae20d82eea7991034b5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a52f29f5139d6bae20d82eea7991034b5">clearSection</a> (string $section)</td></tr>
-<tr class="memdesc:a52f29f5139d6bae20d82eea7991034b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all verbs in a section.  <br /></td></tr>
 <tr class="memitem:a65572907bdc7ec11746559e1b01a9c77" id="r_a65572907bdc7ec11746559e1b01a9c77"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a65572907bdc7ec11746559e1b01a9c77">reset</a> ()</td></tr>
-<tr class="memdesc:a65572907bdc7ec11746559e1b01a9c77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset document to initial state.  <br /></td></tr>
 <tr class="memitem:a0769cbe2a43bab54468d4bfb765215e6" id="r_a0769cbe2a43bab54468d4bfb765215e6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0769cbe2a43bab54468d4bfb765215e6">toArray</a> ()</td></tr>
-<tr class="memdesc:a0769cbe2a43bab54468d4bfb765215e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return document as associative array.  <br /></td></tr>
 <tr class="memitem:aa81049973a56a3ec83688b08a003566b" id="r_aa81049973a56a3ec83688b08a003566b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa81049973a56a3ec83688b08a003566b">render</a> ()</td></tr>
-<tr class="memdesc:aa81049973a56a3ec83688b08a003566b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compact JSON string.  <br /></td></tr>
 <tr class="memitem:a81a4ad56d25e08ab7c2164530ea35c3a" id="r_a81a4ad56d25e08ab7c2164530ea35c3a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a81a4ad56d25e08ab7c2164530ea35c3a">renderPretty</a> ()</td></tr>
-<tr class="memdesc:a81a4ad56d25e08ab7c2164530ea35c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pretty-printed JSON string.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a17402f16600d296966602c53f1b71336" name="a17402f16600d296966602c53f1b71336"></a>
@@ -197,7 +174,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Append a pre-formatted verb hash to a section. </p>
 
 </div>
@@ -216,9 +192,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add a new named section. </p>
-<p>Returns true if created, false if it already existed. </p>
+<p>Add a new named section. Returns true if created, false if it already existed. </p>
 
 </div>
 </div>
@@ -240,7 +214,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Append a verb to the main section. </p>
 
 </div>
@@ -268,7 +241,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Append a verb to a named section. </p>
 
 </div>
@@ -287,7 +259,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Clear all verbs in a section. </p>
 
 </div>
@@ -306,8 +277,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Get a copy of the verbs for a section. </p>
+<p>Get a copy of the verbs for a section.</p>
 <dl class="section return"><dt>Returns</dt><dd>list&lt;array&lt;string, mixed&gt;&gt; </dd></dl>
 
 </div>
@@ -360,7 +330,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Compact JSON string. </p>
 
 </div>
@@ -379,7 +348,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Pretty-printed JSON string. </p>
 
 </div>
@@ -398,7 +366,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Reset document to initial state. </p>
 
 </div>
@@ -417,14 +384,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Return document as associative array. </p>
+<p>Return document as associative array.</p>
 <dl class="section return"><dt>Returns</dt><dd>array{version: string, sections: array&lt;string, list&lt;array&lt;string, mixed&gt;&gt;&gt;} </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/SWML/<a class="el" href="Document_8php.html">Document.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/SWML/<a class="el" href="Document_8php.html">Document.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

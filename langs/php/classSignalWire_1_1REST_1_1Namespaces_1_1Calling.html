@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\REST\Namespaces\Calling Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,9 +120,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\REST\Namespaces\Calling Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Calling API namespace.  
- <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -145,7 +129,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aea289944c3d386a9b3fa2041c2f66f6e" id="r_aea289944c3d386a9b3fa2041c2f66f6e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aea289944c3d386a9b3fa2041c2f66f6e">getBasePath</a> ()</td></tr>
 <tr class="memitem:a78bb3333edbdacd460b1b632ec886ffd" id="r_a78bb3333edbdacd460b1b632ec886ffd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a78bb3333edbdacd460b1b632ec886ffd">dial</a> (array $params=[])</td></tr>
 <tr class="memitem:a6629c853987be8c2957441595daf5a8b" id="r_a6629c853987be8c2957441595daf5a8b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6629c853987be8c2957441595daf5a8b">update</a> (array $params=[])</td></tr>
-<tr class="memdesc:a6629c853987be8c2957441595daf5a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the bare <span class="tt">update</span> command (no call_id at body root; <span class="tt">id</span> is passed inside <span class="tt">params</span>).  <br /></td></tr>
 <tr class="memitem:a1ddc68e64dcf1b3fd56ebe597448de28" id="r_a1ddc68e64dcf1b3fd56ebe597448de28"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1ddc68e64dcf1b3fd56ebe597448de28">end</a> (string $callId, array $params=[])</td></tr>
 <tr class="memitem:a8724df4666d7934767d083d726434fe9" id="r_a8724df4666d7934767d083d726434fe9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8724df4666d7934767d083d726434fe9">transfer</a> (string $callId, array $params=[])</td></tr>
 <tr class="memitem:aa7c264522f5cd110d421bb23501d8c6a" id="r_aa7c264522f5cd110d421bb23501d8c6a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa7c264522f5cd110d421bb23501d8c6a">disconnect</a> (string $callId, array $params=[])</td></tr>
@@ -183,7 +166,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a0fa1375a443a148f2683518da63509" id="r_a7a0fa1375a443a148f2683518da63509"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7a0fa1375a443a148f2683518da63509">userEvent</a> (string $callId, array $params=[])</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Calling API namespace. </p>
+<div class="textblock"><p>Calling API namespace.</p>
 <p>Provides 37 call-control command methods that each POST to /api/calling/calls with a JSON body containing the command name, an optional call ID, and parameters. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a121f317908da359afd94c5e932312878" name="a121f317908da359afd94c5e932312878"></a>
@@ -1214,9 +1197,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Send the bare <span class="tt">update</span> command (no call_id at body root; <span class="tt">id</span> is passed inside <span class="tt">params</span>). </p>
-<p>Mirrors Python's <span class="tt">CallingNamespace.update(**params)</span>.</p>
+<p>Send the bare <span class="tt">update</span> command (no call_id at body root; <span class="tt">id</span> is passed inside <span class="tt">params</span>). Mirrors Python's <span class="tt">CallingNamespace.update(**params)</span>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array&lt;string,mixed&gt;</td><td>$params </td></tr>
@@ -1254,7 +1235,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/REST/Namespaces/<a class="el" href="Calling_8php.html">Calling.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/REST/Namespaces/<a class="el" href="Calling_8php.html">Calling.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

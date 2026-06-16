@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\Relay Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -137,40 +124,188 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespaceSigna
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:Action" id="r_Action"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Action.html">Action</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all RELAY call actions (play, record, collect, etc.).  <a href="classSignalWire_1_1Relay_1_1Action.html#details">More...</a><br /></td></tr>
 <tr class="memitem:AIAction" id="r_AIAction"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1AIAction.html">AIAction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle for calling.ai operations.  <a href="classSignalWire_1_1Relay_1_1AIAction.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Call" id="r_Call"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Call.html">Call</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a RELAY voice call.  <a href="classSignalWire_1_1Relay_1_1Call.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Client" id="r_Client"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Client.html">Client</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RELAY Client – manages the WebSocket connection to <a class="el" href="namespaceSignalWire.html">SignalWire</a>, sends JSON-RPC requests, and dispatches inbound events to the correct Call or Message objects.  <a href="classSignalWire_1_1Relay_1_1Client.html#details">More...</a><br /></td></tr>
 <tr class="memitem:CollectAction" id="r_CollectAction"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1CollectAction.html">CollectAction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle for calling.collect (and play_and_collect) operations.  <a href="classSignalWire_1_1Relay_1_1CollectAction.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Constants" id="r_Constants"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Constants.html">Constants</a></td></tr>
 <tr class="memitem:DetectAction" id="r_DetectAction"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1DetectAction.html">DetectAction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle for calling.detect operations (fax-tone, digit, machine, etc.).  <a href="classSignalWire_1_1Relay_1_1DetectAction.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Device" id="r_Device"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Device.html">Device</a></td></tr>
 <tr class="memitem:Event" id="r_Event"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Event.html">Event</a></td></tr>
 <tr class="memitem:FaxAction" id="r_FaxAction"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1FaxAction.html">FaxAction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle for calling.fax operations (send or receive).  <a href="classSignalWire_1_1Relay_1_1FaxAction.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Message" id="r_Message"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1Message.html">Message</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a RELAY messaging message (SMS / MMS).  <a href="classSignalWire_1_1Relay_1_1Message.html#details">More...</a><br /></td></tr>
 <tr class="memitem:PayAction" id="r_PayAction"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1PayAction.html">PayAction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle for calling.pay operations.  <a href="classSignalWire_1_1Relay_1_1PayAction.html#details">More...</a><br /></td></tr>
 <tr class="memitem:PlayAction" id="r_PlayAction"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1PlayAction.html">PlayAction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle for calling.play operations.  <a href="classSignalWire_1_1Relay_1_1PlayAction.html#details">More...</a><br /></td></tr>
 <tr class="memitem:RecordAction" id="r_RecordAction"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1RecordAction.html">RecordAction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle for calling.record operations.  <a href="classSignalWire_1_1Relay_1_1RecordAction.html#details">More...</a><br /></td></tr>
 <tr class="memitem:RelayError" id="r_RelayError"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1RelayError.html">RelayError</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception type for RELAY-protocol-level failures.  <a href="classSignalWire_1_1Relay_1_1RelayError.html#details">More...</a><br /></td></tr>
 <tr class="memitem:StreamAction" id="r_StreamAction"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1StreamAction.html">StreamAction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle for calling.stream operations.  <a href="classSignalWire_1_1Relay_1_1StreamAction.html#details">More...</a><br /></td></tr>
 <tr class="memitem:TapAction" id="r_TapAction"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1TapAction.html">TapAction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle for calling.tap operations.  <a href="classSignalWire_1_1Relay_1_1TapAction.html#details">More...</a><br /></td></tr>
 <tr class="memitem:TranscribeAction" id="r_TranscribeAction"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1TranscribeAction.html">TranscribeAction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle for calling.transcribe operations.  <a href="classSignalWire_1_1Relay_1_1TranscribeAction.html#details">More...</a><br /></td></tr>
 <tr class="memitem:WebSocket" id="r_WebSocket"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Relay_1_1WebSocket.html">WebSocket</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimal RFC 6455 WebSocket client built on PHP streams.  <a href="classSignalWire_1_1Relay_1_1WebSocket.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a4a73a783e20743f75b31ccc53c1fd906" id="r_a4a73a783e20743f75b31ccc53c1fd906"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a4a73a783e20743f75b31ccc53c1fd906">CallState</a> : string { <a class="el" href="#a307e941106f2b7639715ea50e5dc30b8a3081c9a58b54d83c35869e0b1e25244c">isTerminal</a>
+ }</td></tr>
+<tr class="memitem:aa6b0e5e98ebbf9ed775ff9c3349fb349" id="r_aa6b0e5e98ebbf9ed775ff9c3349fb349"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#aa6b0e5e98ebbf9ed775ff9c3349fb349">DialState</a> : string { <a class="el" href="#a307e941106f2b7639715ea50e5dc30b8a3081c9a58b54d83c35869e0b1e25244c">isTerminal</a>
+ }</td></tr>
+<tr class="memitem:a307e941106f2b7639715ea50e5dc30b8" id="r_a307e941106f2b7639715ea50e5dc30b8"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a307e941106f2b7639715ea50e5dc30b8">MessageState</a> : string { <a class="el" href="#a307e941106f2b7639715ea50e5dc30b8a3081c9a58b54d83c35869e0b1e25244c">isTerminal</a>
+ }</td></tr>
 </table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="a4a73a783e20743f75b31ccc53c1fd906" name="a4a73a783e20743f75b31ccc53c1fd906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a73a783e20743f75b31ccc53c1fd906">&#9670;&#160;</a></span>CallState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a4a73a783e20743f75b31ccc53c1fd906">SignalWire::Relay::CallState</a> : string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>RELAY call lifecycle state, as a typed, compile-time-checked closed set.</p>
+<p>A call moves through these states over its lifetime: </p><pre class="fragment">created → ringing → answered → ending → ended
+</pre><p>The five members are exactly the {</p><dl class="section see"><dt>See also</dt><dd>Constants}::CALL_STATE_* tokens (grounded in the Python reference's <span class="tt">relay/constants.py</span> CALL_STATES tuple); each backing string IS the wire value the server emits in a <span class="tt">calling.call.state</span> event's <span class="tt">call_state</span> / <span class="tt">state</span> field. {</dd>
+<dd>
+Call} keeps the bare-string <span class="tt">$state</span> property for parity with the Python reference (which models state as a plain <span class="tt">str</span>); this enum is offered ALONGSIDE it via the typed {</dd>
+<dd>
+Call::callState()} accessor — autocompletion and an exhaustive <span class="tt">match</span> at the call site, with the string preserved. <pre class="fragment">$call-&gt;state;          // 'answered'              (string, parity)
+$call-&gt;callState();    // CallState::Answered     (typed)
+$call-&gt;callState()?-&gt;isTerminal();  // false
+</pre></dd></dl>
+<p>Server states can GROW (the wire vocabulary is owned by the server, not the SDK), so {</p><dl class="section see"><dt>See also</dt><dd>CallState::tryFromWire()} maps an unknown value to <span class="tt">null</span> rather than throwing — a forward-compatible coerce. This is a PHP PORT_ADDITION: the Python reference uses a bare <span class="tt">str</span>.</dd></dl>
+<p>This is the CALL-state vocabulary ONLY. It is deliberately NOT unified with {</p><dl class="section see"><dt>See also</dt><dd>DialState} (dial-outcome) or {</dd>
+<dd>
+MessageState} (message-delivery) — three distinct vocabularies that must never be conflated. </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a307e941106f2b7639715ea50e5dc30b8a3081c9a58b54d83c35869e0b1e25244c" name="a307e941106f2b7639715ea50e5dc30b8a3081c9a58b54d83c35869e0b1e25244c"></a>isTerminal&#160;</td><td class="fielddoc"><p>The call object exists but nothing has happened yet (the default). The call is ringing the destination. The call has been answered and is up. The call is tearing down. The call has ended — the one terminal state. True once the call has reached its terminal state.</p>
+<p>Terminal = {</p><dl class="section see"><dt>See also</dt><dd>CallState::Ended} only, matching {</dd>
+<dd>
+Constants}::CALL_TERMINAL_STATES (<span class="tt">['ended' =&gt; true]</span>). A terminal state is what resolves every in-flight action on the call.</dd></dl>
+<p>The dial is in progress, no leg has been picked yet. A leg answered — the dial succeeded with a winner. The dial failed outright. No leg answered before the dial timed out. Every leg returned busy. True once the dial has reached a terminal outcome.</p>
+<p>Terminal = any state other than {</p><dl class="section see"><dt>See also</dt><dd>DialState::Dialing} — i.e. a winner answered ({</dd>
+<dd>
+DialState::Answered}) or the dial gave up (failed / no-answer / busy). This mirrors {</dd>
+<dd>
+Client::handleDialEvent()}, which resolves (or rejects) the pending dial on exactly these states and keeps waiting while <span class="tt">dialing</span>.</dd></dl>
+<p>The message is queued for sending (the initial state). Sending has been initiated. The message has left the platform. The message was delivered to the carrier/handset (terminal, success). Delivery was attempted but not confirmed (terminal, failure). The message failed to send (terminal, failure). An inbound message was received. True once the message has reached a terminal delivery state.</p>
+<p>Terminal = {</p><dl class="section see"><dt>See also</dt><dd>MessageState::Delivered}, {</dd>
+<dd>
+MessageState::Undelivered}, or {</dd>
+<dd>
+MessageState::Failed}, matching {</dd>
+<dd>
+Constants}::MESSAGE_TERMINAL_STATES — the three states on which {</dd>
+<dd>
+Message::dispatchEvent()} auto-resolves the message. Note <span class="tt">received</span> is NOT terminal here (it mirrors the Python reference, whose MESSAGE_TERMINAL_STATES excludes it). </dd></dl>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="aa6b0e5e98ebbf9ed775ff9c3349fb349" name="aa6b0e5e98ebbf9ed775ff9c3349fb349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6b0e5e98ebbf9ed775ff9c3349fb349">&#9670;&#160;</a></span>DialState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#aa6b0e5e98ebbf9ed775ff9c3349fb349">SignalWire::Relay::DialState</a> : string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>RELAY dial outcome state, as a typed, compile-time-checked closed set.</p>
+<p>A <span class="tt">calling.call.dial</span> event carries a <span class="tt">dial_state</span> (or legacy <span class="tt">state</span>) that reports how the outbound dial is progressing: </p><pre class="fragment">dialing → (answered | failed | no_answer | busy)
+</pre><p>The Python reference's <span class="tt">RelayClient</span> documents the core three (<span class="tt">dialing | answered | failed</span>, see <span class="tt">relay/client.py</span>'s dial-event handler); this port's {</p><dl class="section see"><dt>See also</dt><dd>Client::handleDialEvent()} additionally treats the wire's <span class="tt">no_answer</span> / <span class="tt">busy</span> as terminal failures, so they are modelled here too. Each backing string IS the wire value. {</dd>
+<dd>
+Constants}::DIAL_STATE_* keeps the bare-string constants for parity (the Python reference reads <span class="tt">dial_state</span> as a plain <span class="tt">str</span>); this enum is offered ALONGSIDE them. <pre class="fragment">DialState::Answered-&gt;value;            // 'answered'  (wire string)
+DialState::tryFromWire('failed');      // DialState::Failed
+DialState::Failed-&gt;isTerminal();       // true
+DialState::Dialing-&gt;isTerminal();      // false (still in progress)
+</pre></dd></dl>
+<p>Server states can GROW, so {</p><dl class="section see"><dt>See also</dt><dd>DialState::tryFromWire()} maps an unknown value to <span class="tt">null</span> rather than throwing — a forward-compatible coerce. This is a PHP PORT_ADDITION: the Python reference uses a bare <span class="tt">str</span>.</dd></dl>
+<p>This is the DIAL-outcome vocabulary ONLY. It is deliberately NOT unified with {</p><dl class="section see"><dt>See also</dt><dd>CallState} (call-lifecycle) or {</dd>
+<dd>
+MessageState} (message-delivery) — three distinct vocabularies that must never be conflated. (Note <span class="tt">answered</span> appears in both CallState and DialState but means different things — a call lifecycle phase vs a dial outcome — which is exactly why the vocabularies are kept apart.) </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a307e941106f2b7639715ea50e5dc30b8a3081c9a58b54d83c35869e0b1e25244c" name="a307e941106f2b7639715ea50e5dc30b8a3081c9a58b54d83c35869e0b1e25244c"></a>isTerminal&#160;</td><td class="fielddoc"><p>The call object exists but nothing has happened yet (the default). The call is ringing the destination. The call has been answered and is up. The call is tearing down. The call has ended — the one terminal state. True once the call has reached its terminal state.</p>
+<p>Terminal = {</p><dl class="section see"><dt>See also</dt><dd>CallState::Ended} only, matching {</dd>
+<dd>
+Constants}::CALL_TERMINAL_STATES (<span class="tt">['ended' =&gt; true]</span>). A terminal state is what resolves every in-flight action on the call.</dd></dl>
+<p>The dial is in progress, no leg has been picked yet. A leg answered — the dial succeeded with a winner. The dial failed outright. No leg answered before the dial timed out. Every leg returned busy. True once the dial has reached a terminal outcome.</p>
+<p>Terminal = any state other than {</p><dl class="section see"><dt>See also</dt><dd>DialState::Dialing} — i.e. a winner answered ({</dd>
+<dd>
+DialState::Answered}) or the dial gave up (failed / no-answer / busy). This mirrors {</dd>
+<dd>
+Client::handleDialEvent()}, which resolves (or rejects) the pending dial on exactly these states and keeps waiting while <span class="tt">dialing</span>.</dd></dl>
+<p>The message is queued for sending (the initial state). Sending has been initiated. The message has left the platform. The message was delivered to the carrier/handset (terminal, success). Delivery was attempted but not confirmed (terminal, failure). The message failed to send (terminal, failure). An inbound message was received. True once the message has reached a terminal delivery state.</p>
+<p>Terminal = {</p><dl class="section see"><dt>See also</dt><dd>MessageState::Delivered}, {</dd>
+<dd>
+MessageState::Undelivered}, or {</dd>
+<dd>
+MessageState::Failed}, matching {</dd>
+<dd>
+Constants}::MESSAGE_TERMINAL_STATES — the three states on which {</dd>
+<dd>
+Message::dispatchEvent()} auto-resolves the message. Note <span class="tt">received</span> is NOT terminal here (it mirrors the Python reference, whose MESSAGE_TERMINAL_STATES excludes it). </dd></dl>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a307e941106f2b7639715ea50e5dc30b8" name="a307e941106f2b7639715ea50e5dc30b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a307e941106f2b7639715ea50e5dc30b8">&#9670;&#160;</a></span>MessageState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a307e941106f2b7639715ea50e5dc30b8">SignalWire::Relay::MessageState</a> : string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>RELAY message delivery state, as a typed, compile-time-checked closed set.</p>
+<p>A {</p><dl class="section see"><dt>See also</dt><dd>Message} progresses through these states as the server reports delivery via <span class="tt">messaging.state</span> events: <pre class="fragment">queued → initiated → sent → (delivered | undelivered | failed)
+</pre></dd></dl>
+<p>plus <span class="tt">received</span> for an inbound message. The seven members are exactly the {</p><dl class="section see"><dt>See also</dt><dd>Constants}::MESSAGE_STATE_* tokens (grounded in the Python reference's <span class="tt">relay/constants.py</span> MESSAGE_STATE_* + MESSAGE_TERMINAL_STATES); each backing string IS the wire value the server emits in the <span class="tt">message_state</span> / <span class="tt">state</span> field. {</dd>
+<dd>
+Message} keeps the bare-string <span class="tt">getState()</span> accessor for parity with the Python reference (which models state as a plain <span class="tt">str</span>); this enum is offered ALONGSIDE it via the typed {</dd>
+<dd>
+Message::messageState()} accessor. <pre class="fragment">$msg-&gt;getState();          // 'delivered'                (string, parity)
+$msg-&gt;messageState();      // MessageState::Delivered     (typed)
+$msg-&gt;messageState()?-&gt;isTerminal();  // true
+</pre></dd></dl>
+<p>Server states can GROW, so {</p><dl class="section see"><dt>See also</dt><dd>MessageState::tryFromWire()} maps an unknown value to <span class="tt">null</span> rather than throwing — a forward-compatible coerce. This is a PHP PORT_ADDITION: the Python reference uses a bare <span class="tt">str</span>.</dd></dl>
+<p>This is the MESSAGE-delivery vocabulary ONLY. It is deliberately NOT unified with {</p><dl class="section see"><dt>See also</dt><dd>CallState} (call-lifecycle) or {</dd>
+<dd>
+DialState} (dial-outcome) — three distinct vocabularies that must never be conflated. (Note <span class="tt">failed</span> appears in both MessageState and DialState but means different things — message-delivery failure vs dial-outcome failure.) </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a307e941106f2b7639715ea50e5dc30b8a3081c9a58b54d83c35869e0b1e25244c" name="a307e941106f2b7639715ea50e5dc30b8a3081c9a58b54d83c35869e0b1e25244c"></a>isTerminal&#160;</td><td class="fielddoc"><p>The call object exists but nothing has happened yet (the default). The call is ringing the destination. The call has been answered and is up. The call is tearing down. The call has ended — the one terminal state. True once the call has reached its terminal state.</p>
+<p>Terminal = {</p><dl class="section see"><dt>See also</dt><dd>CallState::Ended} only, matching {</dd>
+<dd>
+Constants}::CALL_TERMINAL_STATES (<span class="tt">['ended' =&gt; true]</span>). A terminal state is what resolves every in-flight action on the call.</dd></dl>
+<p>The dial is in progress, no leg has been picked yet. A leg answered — the dial succeeded with a winner. The dial failed outright. No leg answered before the dial timed out. Every leg returned busy. True once the dial has reached a terminal outcome.</p>
+<p>Terminal = any state other than {</p><dl class="section see"><dt>See also</dt><dd>DialState::Dialing} — i.e. a winner answered ({</dd>
+<dd>
+DialState::Answered}) or the dial gave up (failed / no-answer / busy). This mirrors {</dd>
+<dd>
+Client::handleDialEvent()}, which resolves (or rejects) the pending dial on exactly these states and keeps waiting while <span class="tt">dialing</span>.</dd></dl>
+<p>The message is queued for sending (the initial state). Sending has been initiated. The message has left the platform. The message was delivered to the carrier/handset (terminal, success). Delivery was attempted but not confirmed (terminal, failure). The message failed to send (terminal, failure). An inbound message was received. True once the message has reached a terminal delivery state.</p>
+<p>Terminal = {</p><dl class="section see"><dt>See also</dt><dd>MessageState::Delivered}, {</dd>
+<dd>
+MessageState::Undelivered}, or {</dd>
+<dd>
+MessageState::Failed}, matching {</dd>
+<dd>
+Constants}::MESSAGE_TERMINAL_STATES — the three states on which {</dd>
+<dd>
+Message::dispatchEvent()} auto-resolves the message. Note <span class="tt">received</span> is NOT terminal here (it mirrors the Python reference, whose MESSAGE_TERMINAL_STATES excludes it). </dd></dl>
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

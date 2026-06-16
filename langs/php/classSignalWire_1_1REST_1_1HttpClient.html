@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\REST\HttpClient Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,13 +120,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\REST\HttpClient Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Low-level HTTP client for <a class="el" href="namespaceSignalWire.html">SignalWire</a> REST APIs.  
- <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa803b1f32a2eb5e3f40196590dfdb5b2" id="r_aa803b1f32a2eb5e3f40196590dfdb5b2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa803b1f32a2eb5e3f40196590dfdb5b2">__construct</a> (string $projectId, string $token, string $baseUrl)</td></tr>
+<tr class="memitem:a5b24be518a6886cb6ca444c3c6791ab9" id="r_a5b24be518a6886cb6ca444c3c6791ab9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5b24be518a6886cb6ca444c3c6791ab9">__construct</a> (string $projectId, string $token, string $baseUrl, ?string $caBundle=null)</td></tr>
 <tr class="memitem:a0ed0d3d1a8e1508df91ecab0b3b3ed4c" id="r_a0ed0d3d1a8e1508df91ecab0b3b3ed4c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0ed0d3d1a8e1508df91ecab0b3b3ed4c">getProjectId</a> ()</td></tr>
 <tr class="memitem:ab4989154a56b2c33f1ae3afb11d9577e" id="r_ab4989154a56b2c33f1ae3afb11d9577e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab4989154a56b2c33f1ae3afb11d9577e">getToken</a> ()</td></tr>
 <tr class="memitem:a919e3d2e110ab6bc2765dd97d4b12e64" id="r_a919e3d2e110ab6bc2765dd97d4b12e64"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a919e3d2e110ab6bc2765dd97d4b12e64">getBaseUrl</a> ()</td></tr>
@@ -150,14 +134,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af55ae743c6da35ff29cf1dd241af28b4" id="r_af55ae743c6da35ff29cf1dd241af28b4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af55ae743c6da35ff29cf1dd241af28b4">patch</a> (string $path, array $data=[])</td></tr>
 <tr class="memitem:a41dedfc7a2d24a5a364c5bb940cc66c7" id="r_a41dedfc7a2d24a5a364c5bb940cc66c7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a41dedfc7a2d24a5a364c5bb940cc66c7">delete</a> (string $path)</td></tr>
 <tr class="memitem:aa07e44b7a8191c3840c9eb4dc0443a79" id="r_aa07e44b7a8191c3840c9eb4dc0443a79"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa07e44b7a8191c3840c9eb4dc0443a79">listAll</a> (string $path, array $params=[])</td></tr>
-<tr class="memdesc:aa07e44b7a8191c3840c9eb4dc0443a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a generator that follows <span class="tt">next</span> links automatically.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Low-level HTTP client for <a class="el" href="namespaceSignalWire.html">SignalWire</a> REST APIs. </p>
+<div class="textblock"><p>Low-level HTTP client for <a class="el" href="namespaceSignalWire.html">SignalWire</a> REST APIs.</p>
 <p>Uses cURL for HTTP requests, Basic Auth with project_id:token, and returns parsed JSON responses as associative arrays. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa803b1f32a2eb5e3f40196590dfdb5b2" name="aa803b1f32a2eb5e3f40196590dfdb5b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa803b1f32a2eb5e3f40196590dfdb5b2">&#9670;&#160;</a></span>__construct()</h2>
+<a id="a5b24be518a6886cb6ca444c3c6791ab9" name="a5b24be518a6886cb6ca444c3c6791ab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b24be518a6886cb6ca444c3c6791ab9">&#9670;&#160;</a></span>__construct()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,10 +158,21 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$baseUrl</em></span>&#160;)</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$baseUrl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$caBundle</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string&#160;|&#160;null</td><td class="paramname">$caBundle</td><td>Optional CA bundle (PEM) for HTTPS peer verification. Falls back to the SIGNALWIRE_CA_FILE / SSL_CERT_FILE env vars (PHP's cURL does not honor those env vars on its own). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -315,8 +309,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Return a generator that follows <span class="tt">next</span> links automatically. </p>
+<p>Return a generator that follows <span class="tt">next</span> links automatically.</p>
 <p>Expects the API to return <span class="tt">{ "data": [...], "links": { "next": "..." } }</span> or similar paginated envelope. Each yield is one page (array of items).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -413,7 +406,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/REST/<a class="el" href="HttpClient_8php.html">HttpClient.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/REST/<a class="el" href="HttpClient_8php.html">HttpClient.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

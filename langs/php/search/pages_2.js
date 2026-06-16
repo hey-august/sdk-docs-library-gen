@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['function_20whitelisting_20step_3a_3asetfunctions_0',['Function whitelisting (Step::setFunctions)',['../classSignalWire_1_1Contexts_1_1ContextBuilder.html#autotoc_md1',1,'']]]
+  ['client_0',['Client',['../index.html#autotoc_md8',1,'RELAY Client'],['../index.html#autotoc_md10',1,'REST Client']]],
+  ['core_20features_1',['Core Features',['../index.html#autotoc_md15',1,'']]]
 ];

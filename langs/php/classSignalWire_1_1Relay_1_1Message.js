@@ -15,6 +15,7 @@ var classSignalWire_1_1Relay_1_1Message =
     [ "getToNumber", "classSignalWire_1_1Relay_1_1Message.html#ac9537d2734948197e2868f40d167ac10", null ],
     [ "handleEvent", "classSignalWire_1_1Relay_1_1Message.html#a12db9c2cff1f1aaf1f3c5ed8c654f671", null ],
     [ "isDone", "classSignalWire_1_1Relay_1_1Message.html#a5963a9ffcd81e2636a78da133df5645e", null ],
+    [ "messageState", "classSignalWire_1_1Relay_1_1Message.html#a0091666fef35d5f8fa18936aec80abf5", null ],
     [ "on", "classSignalWire_1_1Relay_1_1Message.html#a6ad27d255ff8b756b1254fd0e9ddc93a", null ],
     [ "onCompleted", "classSignalWire_1_1Relay_1_1Message.html#a57eea2b558760e3603f40a31f4f8837a", null ],
     [ "resolve", "classSignalWire_1_1Relay_1_1Message.html#acc475ebd938d348465b3301195fac24f", null ],

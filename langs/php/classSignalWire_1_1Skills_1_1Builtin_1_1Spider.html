@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\Skills\Builtin\Spider Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,9 +120,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\Skills\Builtin\Spider Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Spider scraping skill.  
- <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SignalWire\Skills\Builtin\Spider:</div>
 <div class="dyncontent">
@@ -176,7 +160,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ac5e10c37dccb1a8ba482f18150ec9ac3 pro_attribs_classSignalWire_1_1Skills_1_1SkillBase" id="r_ac5e10c37dccb1a8ba482f18150ec9ac3"><td class="memItemLeft">array&#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Skills_1_1SkillBase.html#ac5e10c37dccb1a8ba482f18150ec9ac3">$swaigFields</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Spider scraping skill. </p>
+<div class="textblock"><p>Spider scraping skill.</p>
 <p>Mirrors signalwire-python's <span class="tt">signalwire.skills.spider.skill</span> (the <span class="tt">_scrape_url_handler</span> / <span class="tt">_crawl_site_handler</span> paths). PHP doesn't ship <span class="tt">lxml</span>, so HTML extraction uses a strip_tags + regex pipeline that handles the audit's canned <span class="tt">&lt;html&gt;&lt;body&gt;...&lt;/body&gt;&lt;/html&gt;</span> sentinel and basic real-world pages — the Python version's quality scorer and Reddit-aware extractor are not yet ported, but the upstream contract (real GET, real text extraction) is met.</p>
 <p>Upstream URL override: <span class="tt">SPIDER_BASE_URL</span> for the audit fixture. The audit fixture is a generic JSON server, so the response body may either be a raw HTML string (production) or a JSON object with an <span class="tt">_raw_html</span> field (audit fixture). We accept both. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -295,7 +279,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/Skills/Builtin/<a class="el" href="Spider_8php.html">Spider.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/Skills/Builtin/<a class="el" href="Spider_8php.html">Spider.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

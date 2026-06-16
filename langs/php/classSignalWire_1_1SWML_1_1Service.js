@@ -7,6 +7,7 @@ var classSignalWire_1_1SWML_1_1Service =
     [ "defineTool", "classSignalWire_1_1SWML_1_1Service.html#a3281f98ca505f5707ba163306eee7fc9", null ],
     [ "defineTools", "classSignalWire_1_1SWML_1_1Service.html#a6163bcf6948381f67c7b52e9e67a48d9", null ],
     [ "dispatchFromGlobals", "classSignalWire_1_1SWML_1_1Service.html#af8f648aa4ffab11e128985f6d209d6e9", null ],
+    [ "extractSipUsername", "classSignalWire_1_1SWML_1_1Service.html#a4c2483095b5e8dbb355fa6a7903e7be6", null ],
     [ "getAllFunctions", "classSignalWire_1_1SWML_1_1Service.html#ad5b78ca6a2051811c504f4d2df785097", null ],
     [ "getBasicAuthCredentials", "classSignalWire_1_1SWML_1_1Service.html#ad9bdca9d826242332961a0f3d58f5e2e", null ],
     [ "getBasicAuthCredentialsWithSource", "classSignalWire_1_1SWML_1_1Service.html#a869028a2d92368a5123d6b3d25d6a2d7", null ],

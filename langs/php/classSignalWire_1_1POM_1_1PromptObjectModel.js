@@ -4,6 +4,7 @@ var classSignalWire_1_1POM_1_1PromptObjectModel =
     [ "addPomAsSubsection", "classSignalWire_1_1POM_1_1PromptObjectModel.html#a3b1c12c0a5268fb2dc673028d7d9a4a5", null ],
     [ "addSection", "classSignalWire_1_1POM_1_1PromptObjectModel.html#a17f9201a2917dead8183e06b7c5093e4", null ],
     [ "findSection", "classSignalWire_1_1POM_1_1PromptObjectModel.html#aa45a45d14c56440a5d13e6241cbdd136", null ],
+    [ "fromYaml", "classSignalWire_1_1POM_1_1PromptObjectModel.html#a4e4f7c3511164fe9b834982139c1a64d", null ],
     [ "renderMarkdown", "classSignalWire_1_1POM_1_1PromptObjectModel.html#a696f12f01ca527b6bf7048707f228369", null ],
     [ "renderXml", "classSignalWire_1_1POM_1_1PromptObjectModel.html#ac65192fd09bf89b8e3d28c76524a8fd7", null ],
     [ "toArray", "classSignalWire_1_1POM_1_1PromptObjectModel.html#a00f5ebe01de1df63e1cc5cbfaa477beb", null ],

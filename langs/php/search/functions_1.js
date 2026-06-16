@@ -16,7 +16,7 @@ var searchData=
   ['addhint_13',['addHint',['../classSignalWire_1_1Agent_1_1AgentBase.html#a82d6412ab33dcace65ccf2496a21df6d',1,'SignalWire::Agent::AgentBase']]],
   ['addhints_14',['addHints',['../classSignalWire_1_1Agent_1_1AgentBase.html#ac9781e4e954803ba2e2e0c56f98bc781',1,'SignalWire::Agent::AgentBase']]],
   ['addinternalfiller_15',['addInternalFiller',['../classSignalWire_1_1Agent_1_1AgentBase.html#a264808511c303e3a5660ce311aa4f662',1,'SignalWire::Agent::AgentBase']]],
-  ['addlanguage_16',['addLanguage',['../classSignalWire_1_1Agent_1_1AgentBase.html#a15331a85a5a55b0ef2b4693bdbc4b869',1,'SignalWire::Agent::AgentBase']]],
+  ['addlanguage_16',['addLanguage',['../classSignalWire_1_1Agent_1_1AgentBase.html#a7ad2764db374e36126cdd5956ba02f49',1,'SignalWire::Agent::AgentBase']]],
   ['addmembership_17',['addMembership',['../classSignalWire_1_1REST_1_1Namespaces_1_1NumberGroups.html#abab2f941b0271a43513c1033c85dec97',1,'SignalWire::REST::Namespaces::NumberGroups']]],
   ['addpatternhint_18',['addPatternHint',['../classSignalWire_1_1Agent_1_1AgentBase.html#adaa95d28a07e7bec58e11048250d67eb',1,'SignalWire::Agent::AgentBase']]],
   ['addpomassubsection_19',['addPomAsSubsection',['../classSignalWire_1_1POM_1_1PromptObjectModel.html#a3b1c12c0a5268fb2dc673028d7d9a4a5',1,'SignalWire::POM::PromptObjectModel']]],
@@ -28,7 +28,7 @@ var searchData=
   ['addrawverb_25',['addRawVerb',['../classSignalWire_1_1SWML_1_1Document.html#ad41ab88ec8dc5726f2a95f1f5478c28d',1,'SignalWire::SWML::Document']]],
   ['addresses_26',['addresses',['../classSignalWire_1_1REST_1_1Namespaces_1_1Fabric.html#a8fd830e6fcd0011aff112b59f6aaeb81',1,'SignalWire\\REST\\Namespaces\\Fabric\\addresses()'],['../classSignalWire_1_1REST_1_1RestClient.html#a6706d398c162a2a5c7a55715e101d0a2',1,'SignalWire\\REST\\RestClient\\addresses()']]],
   ['addsection_27',['addSection',['../classSignalWire_1_1Contexts_1_1Step.html#a63246b4925c3025e6149e922b5d3a36c',1,'SignalWire\\Contexts\\Step\\addSection()'],['../classSignalWire_1_1Contexts_1_1Context.html#a4ba0cb2b39ac0f39e5625e00681abbf5',1,'SignalWire\\Contexts\\Context\\addSection()'],['../classSignalWire_1_1POM_1_1PromptObjectModel.html#a17f9201a2917dead8183e06b7c5093e4',1,'SignalWire\\POM\\PromptObjectModel\\addSection()'],['../classSignalWire_1_1SWML_1_1Document.html#abb4160eadf9756651062afca31428990',1,'SignalWire\\SWML\\Document\\addSection()']]],
-  ['addskill_28',['addSkill',['../classSignalWire_1_1Agent_1_1AgentBase.html#a1bf7ca113a7819df77aaf221b82b65ff',1,'SignalWire::Agent::AgentBase']]],
+  ['addskill_28',['addSkill',['../classSignalWire_1_1Agent_1_1AgentBase.html#a466e0301995bae1ad08b6db39df8884a',1,'SignalWire::Agent::AgentBase']]],
   ['addskilldirectory_29',['addSkillDirectory',['../classSignalWire_1_1Skills_1_1SkillRegistry.html#ab1f342d617fdf6ac89b6a0280f330f7f',1,'SignalWire::Skills::SkillRegistry']]],
   ['addstep_30',['addStep',['../classSignalWire_1_1Contexts_1_1Context.html#a86f0c48e84274195d0d37a0a6c4f3852',1,'SignalWire::Contexts::Context']]],
   ['addsubsection_31',['addSubsection',['../classSignalWire_1_1POM_1_1Section.html#a04113af1b1058b610dce841706016aae',1,'SignalWire::POM::Section']]],
@@ -45,7 +45,8 @@ var searchData=
   ['answer_42',['answer',['../classSignalWire_1_1Relay_1_1Call.html#ac8bfe4b524b9e28e67ac85873a25a5c5',1,'SignalWire::Relay::Call']]],
   ['applications_43',['applications',['../classSignalWire_1_1REST_1_1Namespaces_1_1Compat.html#ae5f903ca8b6f58f8eec46667b6575823',1,'SignalWire::REST::Namespaces::Compat']]],
   ['applybaseurloverride_44',['applyBaseUrlOverride',['../classSignalWire_1_1Skills_1_1HttpHelper.html#a5c55dfc3d9ad171556b812c35a5164cf',1,'SignalWire::Skills::HttpHelper']]],
-  ['assigndomainapplication_45',['assignDomainApplication',['../classSignalWire_1_1REST_1_1Namespaces_1_1FabricGenericResources.html#a98c6827d5ccf90da08ee576ee96fdc95',1,'SignalWire::REST::Namespaces::FabricGenericResources']]],
-  ['attachtoolnamesupplier_46',['attachToolNameSupplier',['../classSignalWire_1_1Contexts_1_1ContextBuilder.html#ae22a93486df3e56eabcec243b3e9a457',1,'SignalWire::Contexts::ContextBuilder']]],
-  ['authenticate_47',['authenticate',['../classSignalWire_1_1Relay_1_1Client.html#a32a5265c7ec091eaf3543806a2c707f5',1,'SignalWire::Relay::Client']]]
+  ['array_45',['array',['../classSignalWire_1_1SWAIG_1_1ParameterSchema.html#a940e890f20a727a698d346a2c8bd60c6',1,'SignalWire::SWAIG::ParameterSchema']]],
+  ['assigndomainapplication_46',['assignDomainApplication',['../classSignalWire_1_1REST_1_1Namespaces_1_1FabricGenericResources.html#a98c6827d5ccf90da08ee576ee96fdc95',1,'SignalWire::REST::Namespaces::FabricGenericResources']]],
+  ['attachtoolnamesupplier_47',['attachToolNameSupplier',['../classSignalWire_1_1Contexts_1_1ContextBuilder.html#ae22a93486df3e56eabcec243b3e9a457',1,'SignalWire::Contexts::ContextBuilder']]],
+  ['authenticate_48',['authenticate',['../classSignalWire_1_1Relay_1_1Client.html#a32a5265c7ec091eaf3543806a2c707f5',1,'SignalWire::Relay::Client']]]
 ];

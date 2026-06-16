@@ -2,6 +2,8 @@ var classSignalWire_1_1DataMap_1_1DataMap =
 [
     [ "__construct", "classSignalWire_1_1DataMap_1_1DataMap.html#a24b9b524cab7c31c0dbfcce260d1a5e1", null ],
     [ "body", "classSignalWire_1_1DataMap_1_1DataMap.html#ad93519e109cf7f814ced38938ad6c298", null ],
+    [ "createExpressionTool", "classSignalWire_1_1DataMap_1_1DataMap.html#ad237d1915537f7b9abd98e0da593c4bc", null ],
+    [ "createSimpleApiTool", "classSignalWire_1_1DataMap_1_1DataMap.html#ab527b8b9a78c0d5fd3c4b2320dd25232", null ],
     [ "description", "classSignalWire_1_1DataMap_1_1DataMap.html#a8966d16e843d496ccf0402f690959172", null ],
     [ "errorKeys", "classSignalWire_1_1DataMap_1_1DataMap.html#a34ad8095354efc40d5c383047ab45171", null ],
     [ "expression", "classSignalWire_1_1DataMap_1_1DataMap.html#a967ad214afc71875d078c0c46edded84", null ],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['whitelisting_20step_3a_3asetfunctions_0',['Function whitelisting (Step::setFunctions)',['../classSignalWire_1_1Contexts_1_1ContextBuilder.html#autotoc_md1',1,'']]]
+  ['license_0',['License',['../index.html#autotoc_md21',1,'']]]
 ];

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['native_20tools_20auto_20injected_20by_20the_20runtime_0',['Native tools auto-injected by the runtime',['../classSignalWire_1_1Contexts_1_1ContextBuilder.html#autotoc_md0',1,'']]]
+  ['environment_20variables_0',['Environment Variables',['../index.html#autotoc_md19',1,'']]],
+  ['examples_1',['Agent Examples',['../index.html#autotoc_md6',1,'']]],
+  ['extensions_2',['Skills and Extensions',['../index.html#autotoc_md16',1,'']]]
 ];

@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -6,9 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SignalWire PHP SDK: Main Page</title>
+<title>SignalWire PHP SDK: SignalWire PHP SDK</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -129,10 +116,250 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">SignalWire PHP SDK Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title"><a class="el" href="namespaceSignalWire.html">SignalWire</a> PHP SDK </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md___build_2sdks_2signalwire-php_2README"></a></p>
+<div align="center"> <a href="https://signalwire.com" target="_blank"><img src="/assets/img/signalwire-wordmark.png" alt="" width="500" class="inline"/> </a></div><div align="center"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
+<div align="center">SignalWire SDK for PHP</div></h1>
+<div align="center"></div><div align="center"><em>Build AI voice agents, control live calls over WebSocket, and manage every <a class="el" href="namespaceSignalWire.html">SignalWire</a> resource over REST &ndash; all from one package.</em></div><div align="center"></div><div align="center"> <a href="https://developer.signalwire.com/sdks/agents-sdk" target="_blank">Documentation</a> &middot; <a href="https://github.com/signalwire/signalwire-docs/issues/new/choose" target="_blank">Report an Issue</a> &middot; <a href="https://packagist.org/packages/signalwire/sdk" target="_blank">Packagist</a> </div><div align="center"></div><div align="center"><a href="https://discord.com/invite/F2WNYTNjuF" target="_blank"><img src="https://img.shields.io/badge/Discord%20Community-5865F2" alt="Discord" class="inline"/></a> <a href="LICENSE"><img src="https://img.shields.io/badge/MIT-License-blue" alt="MIT License" class="inline"/></a> <a href="https://github.com/signalwire/signalwire-php" target="_blank"><img src="https://img.shields.io/github/stars/signalwire/signalwire-php" alt="GitHub Stars" class="inline"/></a></div><div align="center"></div><hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+What's in this SDK</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Capability  </th><th class="markdownTableHeadNone">What it does  </th><th class="markdownTableHeadNone">Quick link  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>AI Agents</b>  </td><td class="markdownTableBodyNone">Build voice agents that handle calls autonomously &ndash; the platform runs the AI pipeline, your code defines the persona, tools, and call flow  </td><td class="markdownTableBodyNone">Agent GuideAgent Guide  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>RELAY Client</b>  </td><td class="markdownTableBodyNone">Control live calls and SMS/MMS in real time over WebSocket &ndash; answer, play, record, collect DTMF, conference, transfer, and more  </td><td class="markdownTableBodyNone">RELAY docs  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>REST Client</b>  </td><td class="markdownTableBodyNone">Manage <a class="el" href="namespaceSignalWire.html">SignalWire</a> resources over HTTP &ndash; phone numbers, SIP endpoints, Fabric AI agents, video rooms, messaging, and 18+ API namespaces  </td><td class="markdownTableBodyNone">REST docs  </td></tr>
+</table>
+<div class="fragment"><div class="line">composer require signalwire/sdk</div>
+</div><!-- fragment --><hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+AI Agents</h2>
+<p>Each agent is a self-contained microservice that generates SWML (<a class="el" href="namespaceSignalWire.html">SignalWire</a> Markup Language) and handles SWAIG (<a class="el" href="namespaceSignalWire.html">SignalWire</a> AI Gateway) tool calls. The <a class="el" href="namespaceSignalWire.html">SignalWire</a> platform runs the entire AI pipeline (STT, LLM, TTS) &ndash; your agent just defines the behavior.</p>
+<div class="fragment"><div class="line">&lt;?php</div>
+<div class="line">require <span class="stringliteral">&#39;vendor/autoload.php&#39;</span>;</div>
+<div class="line"> </div>
+<div class="line">use <a class="code hl_class" href="classSignalWire_1_1Agent_1_1AgentBase.html">SignalWire\Agent\AgentBase</a>;</div>
+<div class="line">use <a class="code hl_class" href="classSignalWire_1_1SWAIG_1_1FunctionResult.html">SignalWire\SWAIG\FunctionResult</a>;</div>
+<div class="line"> </div>
+<div class="line">$agent = <span class="keyword">new</span> AgentBase(name: <span class="stringliteral">&#39;my-agent&#39;</span>, route: <span class="stringliteral">&#39;/agent&#39;</span>);</div>
+<div class="line"> </div>
+<div class="line">$agent-&gt;addLanguage(name: <span class="stringliteral">&#39;English&#39;</span>, code: <span class="stringliteral">&#39;en-US&#39;</span>, voice: <span class="stringliteral">&#39;inworld.Mark&#39;</span>);</div>
+<div class="line">$agent-&gt;promptAddSection(<span class="stringliteral">&#39;Role&#39;</span>, <span class="stringliteral">&#39;You are a helpful assistant.&#39;</span>);</div>
+<div class="line"> </div>
+<div class="line">$agent-&gt;defineTool(</div>
+<div class="line">    name:        <span class="stringliteral">&#39;get_time&#39;</span>,</div>
+<div class="line">    description: <span class="stringliteral">&#39;Get the current time&#39;</span>,</div>
+<div class="line">    parameters:  [<span class="stringliteral">&#39;type&#39;</span> =&gt; <span class="stringliteral">&#39;object&#39;</span>, <span class="stringliteral">&#39;properties&#39;</span> =&gt; []],</div>
+<div class="line">    handler: <span class="keyword">function</span> (array $args, array $rawData): FunctionResult {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">new</span> FunctionResult(<span class="stringliteral">&#39;The time is &#39;</span> . date(<span class="stringliteral">&#39;H:i:s&#39;</span>));</div>
+<div class="line">    },</div>
+<div class="line">);</div>
+<div class="line"> </div>
+<div class="line">$agent-&gt;run();</div>
+<div class="ttc" id="aclassSignalWire_1_1Agent_1_1AgentBase_html"><div class="ttname"><a href="classSignalWire_1_1Agent_1_1AgentBase.html">SignalWire\Agent\AgentBase</a></div><div class="ttdef"><b>Definition</b> AgentBase.php:18</div></div>
+<div class="ttc" id="aclassSignalWire_1_1SWAIG_1_1FunctionResult_html"><div class="ttname"><a href="classSignalWire_1_1SWAIG_1_1FunctionResult.html">SignalWire\SWAIG\FunctionResult</a></div><div class="ttdef"><b>Definition</b> FunctionResult.php:8</div></div>
+</div><!-- fragment --><p>Test locally without running a server:</p>
+<div class="fragment"><div class="line">vendor/bin/swaig-test examples/simple_agent.php --list-tools</div>
+<div class="line">vendor/bin/swaig-test examples/simple_agent.php --dump-swml</div>
+<div class="line">vendor/bin/swaig-test examples/simple_agent.php --exec get_time</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Agent Features</h3>
+<ul>
+<li><b>Prompt Object Model (POM)</b> &ndash; structured prompt composition via <span class="tt">promptAddSection()</span></li>
+<li><b>SWAIG tools</b> &ndash; define functions with <span class="tt">defineTool()</span> that the AI calls mid-conversation, with native access to the call's media stack</li>
+<li><b>Skills system</b> &ndash; add capabilities with one-liners: <span class="tt">$agent-&gt;addSkill('datetime')</span></li>
+<li><b>Contexts and steps</b> &ndash; structured multi-step workflows with navigation control</li>
+<li><b>DataMap tools</b> &ndash; tools that execute on <a class="el" href="namespaceSignalWire.html">SignalWire</a>'s servers, calling REST APIs without your own webhook</li>
+<li><b>Dynamic configuration</b> &ndash; per-request agent customization for multi-tenant deployments</li>
+<li><b>Call flow control</b> &ndash; pre-answer, post-answer, and post-AI verb insertion</li>
+<li><b>Prefab agents</b> &ndash; ready-to-use archetypes (InfoGatherer, Survey, FAQ, Receptionist, Concierge)</li>
+<li><b>Multi-agent hosting</b> &ndash; serve multiple agents on a single server with <span class="tt">AgentServer</span></li>
+<li><b>SIP routing</b> &ndash; route SIP calls to agents based on usernames</li>
+<li><b>Session state</b> &ndash; persistent conversation state with global data and post-prompt summaries</li>
+<li><b>Security</b> &ndash; auto-generated basic auth, function-specific HMAC tokens, SSL support</li>
+<li><b>Serverless</b> &ndash; native PHP/CGI support, plus Lambda and Cloud Functions adapters</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Agent Examples</h3>
+<p>The <a href="examples/"><span class="tt">examples/</span></a> directory contains working examples:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Example  </th><th class="markdownTableHeadNone">What it demonstrates  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="examples/simple_agent.php">simple_agent.php</a>  </td><td class="markdownTableBodyNone">POM prompts, SWAIG tools, multilingual support, LLM tuning  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a href="examples/contexts_demo.php">contexts_demo.php</a>  </td><td class="markdownTableBodyNone">Multi-persona workflow with context switching and step navigation  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="examples/datamap_demo.php">datamap_demo.php</a>  </td><td class="markdownTableBodyNone">Server-side API tools without webhooks  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a href="examples/skills_demo.php">skills_demo.php</a>  </td><td class="markdownTableBodyNone">Loading built-in skills (datetime, math)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="examples/call_flow.php">call_flow.php</a>  </td><td class="markdownTableBodyNone">Call flow verbs, debug events, FunctionResult actions  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a href="examples/session_state.php">session_state.php</a>  </td><td class="markdownTableBodyNone">on_summary, global data, post-prompt summaries  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="examples/multi_agent_server.php">multi_agent_server.php</a>  </td><td class="markdownTableBodyNone">Multiple agents on one server  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a href="examples/simple_dynamic_agent.php">simple_dynamic_agent.php</a>  </td><td class="markdownTableBodyNone">Per-request dynamic configuration, multi-tenant routing  </td></tr>
+</table>
+<p>See examples/README.md for the full list organized by category.</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+RELAY Client</h2>
+<p>Real-time call control and messaging over WebSocket. The RELAY client connects to <a class="el" href="namespaceSignalWire.html">SignalWire</a> via the Blade protocol and gives you imperative, blocking control over live phone calls and SMS/MMS.</p>
+<div class="fragment"><div class="line">&lt;?php</div>
+<div class="line">require <span class="stringliteral">&#39;vendor/autoload.php&#39;</span>;</div>
+<div class="line"> </div>
+<div class="line">use <a class="code hl_class" href="classSignalWire_1_1Relay_1_1Client.html">SignalWire\Relay\Client</a>;</div>
+<div class="line"> </div>
+<div class="line">$client = <span class="keyword">new</span> Client(</div>
+<div class="line">    project:  $_ENV[<span class="stringliteral">&#39;SIGNALWIRE_PROJECT_ID&#39;</span>],</div>
+<div class="line">    token:    $_ENV[<span class="stringliteral">&#39;SIGNALWIRE_API_TOKEN&#39;</span>],</div>
+<div class="line">    host:     $_ENV[<span class="stringliteral">&#39;SIGNALWIRE_SPACE&#39;</span>] ?? <span class="stringliteral">&#39;relay.signalwire.com&#39;</span>,</div>
+<div class="line">    contexts: [<span class="stringliteral">&#39;default&#39;</span>],</div>
+<div class="line">);</div>
+<div class="line"> </div>
+<div class="line">$client-&gt;onCall(<span class="keyword">function</span> ($call) {</div>
+<div class="line">    $call-&gt;answer();</div>
+<div class="line">    $action = $call-&gt;play(media: [</div>
+<div class="line">        [<span class="stringliteral">&#39;type&#39;</span> =&gt; <span class="stringliteral">&#39;tts&#39;</span>, <span class="stringliteral">&#39;params&#39;</span> =&gt; [<span class="stringliteral">&#39;text&#39;</span> =&gt; <span class="stringliteral">&#39;Welcome to SignalWire!&#39;</span>]],</div>
+<div class="line">    ]);</div>
+<div class="line">    $action-&gt;wait();</div>
+<div class="line">    $call-&gt;hangup();</div>
+<div class="line">});</div>
+<div class="line"> </div>
+<div class="line">$client-&gt;connectWs();</div>
+<div class="line">$client-&gt;authenticate();</div>
+<div class="line">$client-&gt;run();</div>
+<div class="ttc" id="aclassSignalWire_1_1Relay_1_1Client_html"><div class="ttname"><a href="classSignalWire_1_1Relay_1_1Client.html">SignalWire\Relay\Client</a></div><div class="ttdef"><b>Definition</b> Client.php:19</div></div>
+</div><!-- fragment --><ul>
+<li>57+ calling methods (play, record, collect, detect, tap, stream, AI, conferencing, and more)</li>
+<li>SMS/MMS messaging with delivery tracking</li>
+<li>Action objects with <span class="tt">wait()</span>, <span class="tt">stop()</span>, <span class="tt">pause()</span>, <span class="tt">resume()</span></li>
+<li>Auto-reconnect with exponential backoff</li>
+</ul>
+<p>See the <b>RELAY documentation</b> for the full guide, API reference, and examples.</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+REST Client</h2>
+<p>Synchronous REST client for managing <a class="el" href="namespaceSignalWire.html">SignalWire</a> resources and controlling calls over HTTP. No WebSocket required.</p>
+<div class="fragment"><div class="line">&lt;?php</div>
+<div class="line">require <span class="stringliteral">&#39;vendor/autoload.php&#39;</span>;</div>
+<div class="line"> </div>
+<div class="line">use <a class="code hl_class" href="classSignalWire_1_1REST_1_1RestClient.html">SignalWire\REST\RestClient</a>;</div>
+<div class="line"> </div>
+<div class="line">$client = <span class="keyword">new</span> RestClient(</div>
+<div class="line">    project: $_ENV[<span class="stringliteral">&#39;SIGNALWIRE_PROJECT_ID&#39;</span>],</div>
+<div class="line">    token:   $_ENV[<span class="stringliteral">&#39;SIGNALWIRE_API_TOKEN&#39;</span>],</div>
+<div class="line">    host:    $_ENV[<span class="stringliteral">&#39;SIGNALWIRE_SPACE&#39;</span>],</div>
+<div class="line">);</div>
+<div class="line"> </div>
+<div class="line">$client-&gt;fabric-&gt;aiAgents-&gt;create(name: <span class="stringliteral">&#39;Support Bot&#39;</span>, prompt: [<span class="stringliteral">&#39;text&#39;</span> =&gt; <span class="stringliteral">&#39;You are helpful.&#39;</span>]);</div>
+<div class="line">$client-&gt;calling-&gt;play($callId, play: [[<span class="stringliteral">&#39;type&#39;</span> =&gt; <span class="stringliteral">&#39;tts&#39;</span>, <span class="stringliteral">&#39;text&#39;</span> =&gt; <span class="stringliteral">&#39;Hello!&#39;</span>]]);</div>
+<div class="line">$client-&gt;phoneNumbers-&gt;search(areaCode: <span class="stringliteral">&#39;512&#39;</span>);</div>
+<div class="line">$client-&gt;datasphere-&gt;documents-&gt;search(queryString: <span class="stringliteral">&#39;billing policy&#39;</span>);</div>
+<div class="ttc" id="aclassSignalWire_1_1REST_1_1RestClient_html"><div class="ttname"><a href="classSignalWire_1_1REST_1_1RestClient.html">SignalWire\REST\RestClient</a></div><div class="ttdef"><b>Definition</b> RestClient.php:32</div></div>
+</div><!-- fragment --><ul>
+<li>21 namespaced API surfaces: Fabric (13 resource types), Calling (37 commands), Video, Datasphere, Compat (Twilio-compatible), Phone Numbers, SIP, Queues, Recordings, and more</li>
+<li>Lightweight HTTP via cURL with connection reuse</li>
+<li>Array returns &ndash; raw data, no wrapper objects</li>
+</ul>
+<p>See the <b>REST documentation</b> for the full guide, API reference, and examples.</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Installation</h2>
+<div class="fragment"><div class="line">composer require signalwire/sdk</div>
+</div><!-- fragment --><p>Requires PHP 8.1+ with the <span class="tt">json</span>, <span class="tt">openssl</span>, and <span class="tt">mbstring</span> extensions.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+Documentation</h2>
+<p>Full reference documentation is available at <b><a href="https://developer.signalwire.com/sdks/agents-sdk">developer.signalwire.com/sdks/agents-sdk</a></b>.</p>
+<p>Guides are also available in the <a href="docs/"><span class="tt">docs/</span></a> directory:</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+Getting Started</h3>
+<ul>
+<li>Agent Guide &ndash; creating agents, prompt configuration, dynamic setup</li>
+<li>Architecture &ndash; SDK architecture and core concepts</li>
+<li>SDK Features &ndash; feature overview, SDK vs raw SWML comparison</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+Core Features</h3>
+<ul>
+<li>SWAIG Reference &ndash; function results, actions, post_data lifecycle</li>
+<li>Contexts and Steps &ndash; structured workflows, navigation, gather mode</li>
+<li>DataMap Guide &ndash; serverless API tools without webhooks</li>
+<li>LLM Parameters &ndash; temperature, top_p, barge confidence tuning</li>
+<li>SWML Service Guide &ndash; low-level construction of SWML documents</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+Skills and Extensions</h3>
+<ul>
+<li>Skills System &ndash; built-in skills and the modular framework</li>
+<li>Third-Party Skills &ndash; creating and publishing custom skills</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+Deployment</h3>
+<ul>
+<li>CLI Guide &ndash; <span class="tt">swaig-test</span> command reference</li>
+<li>Configuration &ndash; environment variables, SSL, proxy setup</li>
+<li>Security &ndash; authentication and security model</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+Reference</h3>
+<ul>
+<li>API Reference &ndash; complete class and method reference</li>
+<li>Skills Parameter Schema &ndash; skill parameter definitions</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+Environment Variables</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Variable  </th><th class="markdownTableHeadNone">Used by  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">SIGNALWIRE_PROJECT_ID</span>  </td><td class="markdownTableBodyNone">RELAY, REST  </td><td class="markdownTableBodyNone">Project identifier  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">SIGNALWIRE_API_TOKEN</span>  </td><td class="markdownTableBodyNone">RELAY, REST  </td><td class="markdownTableBodyNone">API token  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">SIGNALWIRE_SPACE</span>  </td><td class="markdownTableBodyNone">RELAY, REST  </td><td class="markdownTableBodyNone">Space hostname (e.g. <span class="tt">example.signalwire.com</span>)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">SWML_BASIC_AUTH_USER</span>  </td><td class="markdownTableBodyNone">Agents  </td><td class="markdownTableBodyNone">Basic auth username (default: auto-generated)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">SWML_BASIC_AUTH_PASSWORD</span>  </td><td class="markdownTableBodyNone">Agents  </td><td class="markdownTableBodyNone">Basic auth password (default: auto-generated)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">SWML_PROXY_URL_BASE</span>  </td><td class="markdownTableBodyNone">Agents  </td><td class="markdownTableBodyNone">Base URL when behind a reverse proxy  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">SWML_SSL_ENABLED</span>  </td><td class="markdownTableBodyNone">Agents  </td><td class="markdownTableBodyNone">Enable HTTPS (<span class="tt">true</span>, <span class="tt">1</span>, <span class="tt">yes</span>)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">SWML_SSL_CERT_PATH</span>  </td><td class="markdownTableBodyNone">Agents  </td><td class="markdownTableBodyNone">Path to SSL certificate  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">SWML_SSL_KEY_PATH</span>  </td><td class="markdownTableBodyNone">Agents  </td><td class="markdownTableBodyNone">Path to SSL private key  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">SIGNALWIRE_LOG_LEVEL</span>  </td><td class="markdownTableBodyNone">All  </td><td class="markdownTableBodyNone">Logging level (<span class="tt">debug</span>, <span class="tt">info</span>, <span class="tt">warn</span>, <span class="tt">error</span>)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">SIGNALWIRE_LOG_MODE</span>  </td><td class="markdownTableBodyNone">All  </td><td class="markdownTableBodyNone">Set to <span class="tt">off</span> to suppress all logging  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+Testing</h2>
+<div class="fragment"><div class="line"># Install dependencies</div>
+<div class="line">composer install</div>
+<div class="line"> </div>
+<div class="line"># Run the test suite</div>
+<div class="line">composer test</div>
+<div class="line"> </div>
+<div class="line"># Run with verbose output</div>
+<div class="line">composer test:verbose</div>
+<div class="line"> </div>
+<div class="line"># Coverage (requires Xdebug or PCOV)</div>
+<div class="line">XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html coverage/</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+License</h2>
+<p>MIT &ndash; see [LICENSE](LICENSE) for details. </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

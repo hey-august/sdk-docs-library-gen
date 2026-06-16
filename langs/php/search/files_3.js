@@ -6,5 +6,7 @@ var searchData=
   ['datasphereserverless_2ephp_3',['DatasphereServerless.php',['../DatasphereServerless_8php.html',1,'']]],
   ['datetime_2ephp_4',['Datetime.php',['../Datetime_8php.html',1,'']]],
   ['detectaction_2ephp_5',['DetectAction.php',['../DetectAction_8php.html',1,'']]],
-  ['document_2ephp_6',['Document.php',['../Document_8php.html',1,'']]]
+  ['device_2ephp_6',['Device.php',['../Device_8php.html',1,'']]],
+  ['dialstate_2ephp_7',['DialState.php',['../DialState_8php.html',1,'']]],
+  ['document_2ephp_8',['Document.php',['../Document_8php.html',1,'']]]
 ];

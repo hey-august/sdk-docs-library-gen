@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\Security\SessionManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -138,17 +125,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aac2d446b884250f792452c635239463e" id="r_aac2d446b884250f792452c635239463e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aac2d446b884250f792452c635239463e">__construct</a> (int $tokenExpirySecs=3600)</td></tr>
 <tr class="memitem:ace118322f99ad1bd04b8b6a48c6452c3" id="r_ace118322f99ad1bd04b8b6a48c6452c3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ace118322f99ad1bd04b8b6a48c6452c3">createSession</a> (?string $callId=null)</td></tr>
-<tr class="memdesc:ace118322f99ad1bd04b8b6a48c6452c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create or confirm a session, returning the call ID.  <br /></td></tr>
 <tr class="memitem:ad87ad088853f3c51cd2a89da079297cc" id="r_ad87ad088853f3c51cd2a89da079297cc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad87ad088853f3c51cd2a89da079297cc">generateToken</a> (string $functionName, string $callId)</td></tr>
-<tr class="memdesc:ad87ad088853f3c51cd2a89da079297cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an HMAC-SHA256 signed token for a given function and call.  <br /></td></tr>
 <tr class="memitem:aa796dbe5122c64f85da81342c3bbd906" id="r_aa796dbe5122c64f85da81342c3bbd906"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa796dbe5122c64f85da81342c3bbd906">createToolToken</a> (string $functionName, string $callId)</td></tr>
-<tr class="memdesc:aa796dbe5122c64f85da81342c3bbd906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for generateToken().  <br /></td></tr>
 <tr class="memitem:ab08cd8a850927d569076c4b7e457ba31" id="r_ab08cd8a850927d569076c4b7e457ba31"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab08cd8a850927d569076c4b7e457ba31">validateToken</a> (string $callId, string $functionName, string $token)</td></tr>
-<tr class="memdesc:ab08cd8a850927d569076c4b7e457ba31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate a token against the expected call ID and function name.  <br /></td></tr>
 <tr class="memitem:ad30456763eccaabc2c9906b74bdda00d" id="r_ad30456763eccaabc2c9906b74bdda00d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad30456763eccaabc2c9906b74bdda00d">validateToolToken</a> (string $functionName, string $token, string $callId)</td></tr>
-<tr class="memdesc:ad30456763eccaabc2c9906b74bdda00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for validateToken() with reordered parameters.  <br /></td></tr>
 <tr class="memitem:a0ef8f79fcc82c42f158ba538d1b36a81" id="r_a0ef8f79fcc82c42f158ba538d1b36a81"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0ef8f79fcc82c42f158ba538d1b36a81">getTokenExpirySecs</a> ()</td></tr>
-<tr class="memdesc:a0ef8f79fcc82c42f158ba538d1b36a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the configured token expiry duration in seconds.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aac2d446b884250f792452c635239463e" name="aac2d446b884250f792452c635239463e"></a>
@@ -195,8 +176,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Create or confirm a session, returning the call ID. </p>
+<p>Create or confirm a session, returning the call ID.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">string&#160;|&#160;null</td><td class="paramname">$callId</td><td>An existing call ID, or null to generate one.</td></tr>
@@ -225,8 +205,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Alias for generateToken(). </p>
+<p>Alias for generateToken().</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$functionName</td><td>The function name to bind into the token. </td></tr>
@@ -256,8 +235,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Generate an HMAC-SHA256 signed token for a given function and call. </p>
+<p>Generate an HMAC-SHA256 signed token for a given function and call.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$functionName</td><td>The function name to bind into the token. </td></tr>
@@ -283,8 +261,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Get the configured token expiry duration in seconds. </p>
+<p>Get the configured token expiry duration in seconds.</p>
 <dl class="section return"><dt>Returns</dt><dd>int Token lifetime in seconds. </dd></dl>
 
 </div>
@@ -312,8 +289,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Validate a token against the expected call ID and function name. </p>
+<p>Validate a token against the expected call ID and function name.</p>
 <p>All comparisons use timing-safe equality checks to prevent side-channel attacks.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -350,8 +326,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Alias for validateToken() with reordered parameters. </p>
+<p>Alias for validateToken() with reordered parameters.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$functionName</td><td>The expected function name. </td></tr>
@@ -365,7 +340,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/Security/<a class="el" href="SessionManager_8php.html">SessionManager.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/Security/<a class="el" href="SessionManager_8php.html">SessionManager.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

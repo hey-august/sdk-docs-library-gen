@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\REST\RestClient Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,67 +120,43 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\REST\RestClient Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Top-level <a class="el" href="namespaceSignalWire.html">SignalWire</a> REST client.  
- <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aca4c1faeb1db08922c56b51117db1c62" id="r_aca4c1faeb1db08922c56b51117db1c62"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aca4c1faeb1db08922c56b51117db1c62">__construct</a> (string $projectId='', string $token='', string $space='')</td></tr>
+<tr class="memitem:ab1519200ab79f46e2536853fef81e242" id="r_ab1519200ab79f46e2536853fef81e242"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab1519200ab79f46e2536853fef81e242">__construct</a> (string $projectId='', string $token='', string $space='', ?string $caBundle=null)</td></tr>
 <tr class="memitem:a06b5bc7320d22eec9681b7eb407afeb4" id="r_a06b5bc7320d22eec9681b7eb407afeb4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a06b5bc7320d22eec9681b7eb407afeb4">getProjectId</a> ()</td></tr>
 <tr class="memitem:a948d84463bc6201e6da030b08d4b59f4" id="r_a948d84463bc6201e6da030b08d4b59f4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a948d84463bc6201e6da030b08d4b59f4">getToken</a> ()</td></tr>
 <tr class="memitem:acbf99d5269a346753b6296c128fa84e3" id="r_acbf99d5269a346753b6296c128fa84e3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acbf99d5269a346753b6296c128fa84e3">getSpace</a> ()</td></tr>
 <tr class="memitem:a2eb80e09c8b2005686189c66b3a1101d" id="r_a2eb80e09c8b2005686189c66b3a1101d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2eb80e09c8b2005686189c66b3a1101d">getBaseUrl</a> ()</td></tr>
 <tr class="memitem:ae45c0c2273a41ad93e4dc3e5c80100bd" id="r_ae45c0c2273a41ad93e4dc3e5c80100bd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae45c0c2273a41ad93e4dc3e5c80100bd">getHttp</a> ()</td></tr>
 <tr class="memitem:a4526e7bc3615c9bba0bf584fde2f3998" id="r_a4526e7bc3615c9bba0bf584fde2f3998"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4526e7bc3615c9bba0bf584fde2f3998">fabric</a> ()</td></tr>
-<tr class="memdesc:a4526e7bc3615c9bba0bf584fde2f3998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fabric API (sub-resources: subscribers, sip_endpoints, call_flows, ...).  <br /></td></tr>
 <tr class="memitem:a4e33808171a2ec1a3ece38fc7982465e" id="r_a4e33808171a2ec1a3ece38fc7982465e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4e33808171a2ec1a3ece38fc7982465e">calling</a> ()</td></tr>
-<tr class="memdesc:a4e33808171a2ec1a3ece38fc7982465e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calling API (37 call-control commands).  <br /></td></tr>
 <tr class="memitem:a469c7264675de45acb697eec21b995ea" id="r_a469c7264675de45acb697eec21b995ea"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a469c7264675de45acb697eec21b995ea">phoneNumbers</a> ()</td></tr>
-<tr class="memdesc:a469c7264675de45acb697eec21b995ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phone numbers.  <br /></td></tr>
 <tr class="memitem:adce9dd5212dad940757f980b12b5a7b5" id="r_adce9dd5212dad940757f980b12b5a7b5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adce9dd5212dad940757f980b12b5a7b5">datasphere</a> ()</td></tr>
-<tr class="memdesc:adce9dd5212dad940757f980b12b5a7b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Datasphere documents (CRUD + chunks + search).  <br /></td></tr>
 <tr class="memitem:a16c52bda45c873766ef87f422e4ffdea" id="r_a16c52bda45c873766ef87f422e4ffdea"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a16c52bda45c873766ef87f422e4ffdea">video</a> ()</td></tr>
-<tr class="memdesc:a16c52bda45c873766ef87f422e4ffdea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Video API namespace (rooms, room_sessions, room_recordings, conferences, conference_tokens, streams).  <br /></td></tr>
 <tr class="memitem:abaa4076aa8359920a8b4a5757140842b" id="r_abaa4076aa8359920a8b4a5757140842b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abaa4076aa8359920a8b4a5757140842b">compat</a> ()</td></tr>
-<tr class="memdesc:abaa4076aa8359920a8b4a5757140842b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compatibility (Twilio-compatible LaML) API.  <br /></td></tr>
 <tr class="memitem:a6706d398c162a2a5c7a55715e101d0a2" id="r_a6706d398c162a2a5c7a55715e101d0a2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6706d398c162a2a5c7a55715e101d0a2">addresses</a> ()</td></tr>
-<tr class="memdesc:a6706d398c162a2a5c7a55715e101d0a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addresses (list / create / get / delete — no update).  <br /></td></tr>
 <tr class="memitem:a3b911784e4f48bdcbe8f3de5b0838107" id="r_a3b911784e4f48bdcbe8f3de5b0838107"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3b911784e4f48bdcbe8f3de5b0838107">queues</a> ()</td></tr>
-<tr class="memdesc:a3b911784e4f48bdcbe8f3de5b0838107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues (CRUD + member operations).  <br /></td></tr>
 <tr class="memitem:a2b8ae670d6ca2c905e837d9127d1ff28" id="r_a2b8ae670d6ca2c905e837d9127d1ff28"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2b8ae670d6ca2c905e837d9127d1ff28">recordings</a> ()</td></tr>
-<tr class="memdesc:a2b8ae670d6ca2c905e837d9127d1ff28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recordings (list / get / delete only).  <br /></td></tr>
 <tr class="memitem:ad93eeba6fc783170ba2573fdb9f6b1b5" id="r_ad93eeba6fc783170ba2573fdb9f6b1b5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad93eeba6fc783170ba2573fdb9f6b1b5">numberGroups</a> ()</td></tr>
-<tr class="memdesc:ad93eeba6fc783170ba2573fdb9f6b1b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number groups (CRUD + membership operations).  <br /></td></tr>
 <tr class="memitem:aa49189bdf09555c3ddadcb7f2ad6446a" id="r_aa49189bdf09555c3ddadcb7f2ad6446a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa49189bdf09555c3ddadcb7f2ad6446a">verifiedCallers</a> ()</td></tr>
-<tr class="memdesc:aa49189bdf09555c3ddadcb7f2ad6446a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verified callers.  <br /></td></tr>
 <tr class="memitem:acd6d39c2c937c35a7cccaf703fc02c47" id="r_acd6d39c2c937c35a7cccaf703fc02c47"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acd6d39c2c937c35a7cccaf703fc02c47">sipProfile</a> ()</td></tr>
-<tr class="memdesc:acd6d39c2c937c35a7cccaf703fc02c47"><td class="mdescLeft">&#160;</td><td class="mdescRight">SIP profile (singleton, get + update).  <br /></td></tr>
 <tr class="memitem:a52a94d063ee241864994c78461bbbb92" id="r_a52a94d063ee241864994c78461bbbb92"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a52a94d063ee241864994c78461bbbb92">lookup</a> ()</td></tr>
-<tr class="memdesc:a52a94d063ee241864994c78461bbbb92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phone number lookup.  <br /></td></tr>
 <tr class="memitem:a7735f6f2cdb9b9f8e19749fc2bd2cf47" id="r_a7735f6f2cdb9b9f8e19749fc2bd2cf47"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7735f6f2cdb9b9f8e19749fc2bd2cf47">shortCodes</a> ()</td></tr>
-<tr class="memdesc:a7735f6f2cdb9b9f8e19749fc2bd2cf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short codes (list / get / update only).  <br /></td></tr>
 <tr class="memitem:ab87adeca83ffbfac1bc197f5921387c7" id="r_ab87adeca83ffbfac1bc197f5921387c7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab87adeca83ffbfac1bc197f5921387c7">importedNumbers</a> ()</td></tr>
-<tr class="memdesc:ab87adeca83ffbfac1bc197f5921387c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imported phone numbers (create only).  <br /></td></tr>
 <tr class="memitem:ad57e6a63a05d1b5b75ad935668af2130" id="r_ad57e6a63a05d1b5b75ad935668af2130"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad57e6a63a05d1b5b75ad935668af2130">mfa</a> ()</td></tr>
-<tr class="memdesc:ad57e6a63a05d1b5b75ad935668af2130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multi-factor authentication (sms / call / verify).  <br /></td></tr>
 <tr class="memitem:ac58297d7d1d29959c47a460a0f17fbef" id="r_ac58297d7d1d29959c47a460a0f17fbef"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac58297d7d1d29959c47a460a0f17fbef">registry</a> ()</td></tr>
-<tr class="memdesc:ac58297d7d1d29959c47a460a0f17fbef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registry (10DLC brands, campaigns, orders, numbers).  <br /></td></tr>
 <tr class="memitem:ac154ce8280309bddf448e8e1aa7450d4" id="r_ac154ce8280309bddf448e8e1aa7450d4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac154ce8280309bddf448e8e1aa7450d4">logs</a> ()</td></tr>
-<tr class="memdesc:ac154ce8280309bddf448e8e1aa7450d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs (messages, voice, fax, conferences).  <br /></td></tr>
 <tr class="memitem:a6d31d709cb29c07d6663ec77a6d38044" id="r_a6d31d709cb29c07d6663ec77a6d38044"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6d31d709cb29c07d6663ec77a6d38044">project</a> ()</td></tr>
-<tr class="memdesc:a6d31d709cb29c07d6663ec77a6d38044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project management (project tokens).  <br /></td></tr>
 <tr class="memitem:a6b7bea3c649601dbf046eb241b13a53f" id="r_a6b7bea3c649601dbf046eb241b13a53f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6b7bea3c649601dbf046eb241b13a53f">pubsub</a> ()</td></tr>
-<tr class="memdesc:a6b7bea3c649601dbf046eb241b13a53f"><td class="mdescLeft">&#160;</td><td class="mdescRight">PubSub tokens.  <br /></td></tr>
 <tr class="memitem:ade08a533e55ce173bb4b541f843908b6" id="r_ade08a533e55ce173bb4b541f843908b6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ade08a533e55ce173bb4b541f843908b6">chat</a> ()</td></tr>
-<tr class="memdesc:ade08a533e55ce173bb4b541f843908b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chat tokens.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Top-level <a class="el" href="namespaceSignalWire.html">SignalWire</a> REST client. </p>
+<div class="textblock"><p>Top-level <a class="el" href="namespaceSignalWire.html">SignalWire</a> REST client.</p>
 <p>Provides lazy access to every API namespace (fabric, calling, phone_numbers, datasphere, video, compat, etc.). Credentials can be supplied explicitly or pulled from environment variables. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aca4c1faeb1db08922c56b51117db1c62" name="aca4c1faeb1db08922c56b51117db1c62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca4c1faeb1db08922c56b51117db1c62">&#9670;&#160;</a></span>__construct()</h2>
+<a id="ab1519200ab79f46e2536853fef81e242" name="ab1519200ab79f46e2536853fef81e242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1519200ab79f46e2536853fef81e242">&#9670;&#160;</a></span>__construct()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,7 +174,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$space</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>&#160;)</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>$space</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">?string</td>          <td class="paramname"><span class="paramname"><em>$caBundle</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -246,7 +214,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Addresses (list / create / get / delete — no update). </p>
 
 </div>
@@ -265,7 +232,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Calling API (37 call-control commands). </p>
 
 </div>
@@ -284,7 +250,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Chat tokens. </p>
 
 </div>
@@ -303,8 +268,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Compatibility (Twilio-compatible LaML) API. </p>
+<p>Compatibility (Twilio-compatible LaML) API.</p>
 <p>Returns a <span class="tt">Compat</span> namespace object exposing the LAML sub-resources (calls, messages, faxes, conferences, phoneNumbers, recordings, ...). </p>
 
 </div>
@@ -323,7 +287,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Datasphere documents (CRUD + chunks + search). </p>
 
 </div>
@@ -342,7 +305,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Fabric API (sub-resources: subscribers, sip_endpoints, call_flows, ...). </p>
 
 </div>
@@ -446,7 +408,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Imported phone numbers (create only). </p>
 
 </div>
@@ -465,7 +426,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Logs (messages, voice, fax, conferences). </p>
 
 </div>
@@ -484,7 +444,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Phone number lookup. </p>
 
 </div>
@@ -503,7 +462,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Multi-factor authentication (sms / call / verify). </p>
 
 </div>
@@ -522,7 +480,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Number groups (CRUD + membership operations). </p>
 
 </div>
@@ -541,7 +498,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Phone numbers. </p>
 
 </div>
@@ -560,7 +516,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Project management (project tokens). </p>
 
 </div>
@@ -579,7 +534,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>PubSub tokens. </p>
 
 </div>
@@ -598,7 +552,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Queues (CRUD + member operations). </p>
 
 </div>
@@ -617,7 +570,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Recordings (list / get / delete only). </p>
 
 </div>
@@ -636,7 +588,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Registry (10DLC brands, campaigns, orders, numbers). </p>
 
 </div>
@@ -655,7 +606,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Short codes (list / get / update only). </p>
 
 </div>
@@ -674,7 +624,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>SIP profile (singleton, get + update). </p>
 
 </div>
@@ -693,7 +642,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Verified callers. </p>
 
 </div>
@@ -712,13 +660,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Video API namespace (rooms, room_sessions, room_recordings, conferences, conference_tokens, streams). </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/REST/<a class="el" href="RestClient_8php.html">RestClient.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/REST/<a class="el" href="RestClient_8php.html">RestClient.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

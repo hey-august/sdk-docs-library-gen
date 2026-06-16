@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\Contexts\ContextBuilder Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,37 +120,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\Contexts\ContextBuilder Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Builder for multi-step, multi-context AI agent workflows.  
- <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a612f3d9c2a20999c1d856ebd674110b1" id="r_a612f3d9c2a20999c1d856ebd674110b1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a612f3d9c2a20999c1d856ebd674110b1">__construct</a> (?object $agent=null)</td></tr>
-<tr class="memdesc:a612f3d9c2a20999c1d856ebd674110b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a builder.  <br /></td></tr>
 <tr class="memitem:ae22a93486df3e56eabcec243b3e9a457" id="r_ae22a93486df3e56eabcec243b3e9a457"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae22a93486df3e56eabcec243b3e9a457">attachToolNameSupplier</a> (callable $supplier)</td></tr>
-<tr class="memdesc:ae22a93486df3e56eabcec243b3e9a457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach a callable that returns registered SWAIG tool names so validate() can check them against RESERVED_NATIVE_TOOL_NAMES.  <br /></td></tr>
 <tr class="memitem:a504e246e7d51361719a301b1d1e3668f" id="r_a504e246e7d51361719a301b1d1e3668f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a504e246e7d51361719a301b1d1e3668f">reset</a> ()</td></tr>
-<tr class="memdesc:a504e246e7d51361719a301b1d1e3668f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all contexts, returning the builder to its initial state.  <br /></td></tr>
 <tr class="memitem:abd1380f91d1eb3f35ca2f20716f7dddf" id="r_abd1380f91d1eb3f35ca2f20716f7dddf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abd1380f91d1eb3f35ca2f20716f7dddf">addContext</a> (string $name)</td></tr>
-<tr class="memdesc:abd1380f91d1eb3f35ca2f20716f7dddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new context and return it for further configuration.  <br /></td></tr>
 <tr class="memitem:af4e08710301eac2ddaf4ffb4c851c116" id="r_af4e08710301eac2ddaf4ffb4c851c116"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af4e08710301eac2ddaf4ffb4c851c116">getContext</a> (string $name)</td></tr>
-<tr class="memdesc:af4e08710301eac2ddaf4ffb4c851c116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an existing context by name, or null if not found.  <br /></td></tr>
 <tr class="memitem:a9fba9b57e83ac294b47a1f24d64e90d5" id="r_a9fba9b57e83ac294b47a1f24d64e90d5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9fba9b57e83ac294b47a1f24d64e90d5">hasContexts</a> ()</td></tr>
 <tr class="memitem:a1b7070d481d1ec27eb1cd83f4ce5057e" id="r_a1b7070d481d1ec27eb1cd83f4ce5057e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1b7070d481d1ec27eb1cd83f4ce5057e">validate</a> ()</td></tr>
-<tr class="memdesc:a1b7070d481d1ec27eb1cd83f4ce5057e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate the contexts configuration.  <br /></td></tr>
 <tr class="memitem:a6c3adf0c93a09e8ef1c21b8d71ab3980" id="r_a6c3adf0c93a09e8ef1c21b8d71ab3980"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6c3adf0c93a09e8ef1c21b8d71ab3980">toArray</a> ()</td></tr>
-<tr class="memdesc:a6c3adf0c93a09e8ef1c21b8d71ab3980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize all contexts in order.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2693edb9be9d4b4ecbfd0a2067a267d6" id="r_a2693edb9be9d4b4ecbfd0a2067a267d6"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a2693edb9be9d4b4ecbfd0a2067a267d6">createSimpleContext</a> (string $name)</td></tr>
-<tr class="memdesc:a2693edb9be9d4b4ecbfd0a2067a267d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a builder pre-populated with a single named context.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Builder for multi-step, multi-context AI agent workflows. </p>
+<div class="textblock"><p>Builder for multi-step, multi-context AI agent workflows.</p>
 <p>A ContextBuilder owns one or more Contexts; each Context owns an ordered list of Steps. Only one context and one step is active at a time. Per chat turn, the runtime injects the current step's instructions as a system message, then asks the LLM for a response.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
 Native tools auto-injected by the runtime</h2>
 <p>When a step (or its enclosing context) declares valid_steps or valid_contexts, the runtime auto-injects two native tools so the model can navigate the flow:</p>
 <ul>
@@ -171,7 +147,7 @@ Native tools auto-injected by the runtime</h2>
 <li>change_context(context: enum) — present when valid_contexts is set</li>
 </ul>
 <p>A third native tool — gather_submit — is injected during gather_info questioning. These three names are reserved: validate() rejects any agent that defines a SWAIG tool with one of them. See the RESERVED_NATIVE_TOOL_NAMES constant.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 Function whitelisting (Step::setFunctions)</h2>
 <p>Each step may declare a functions whitelist. The whitelist is applied in-memory at the start of each LLM turn. CRITICALLY: if a step does NOT declare a functions field, it INHERITS the previous step's active set. See Step::setFunctions for details and examples. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -189,9 +165,7 @@ Function whitelisting (Step::setFunctions)</h2>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Construct a builder. </p>
-<p>The optional $agent reference mirrors Python's ContextBuilder(agent) so callers (typically AgentBase) can hand the builder a reference to the owning agent for tool-name collision checks during validate().</p>
+<p>Construct a builder. The optional $agent reference mirrors Python's ContextBuilder(agent) so callers (typically AgentBase) can hand the builder a reference to the owning agent for tool-name collision checks during validate().</p>
 <p>If $agent has a method named getRegisteredToolNames() returning an array of strings, validate() will use it automatically — no separate attachToolNameSupplier() call required. </p>
 
 </div>
@@ -211,7 +185,6 @@ Function whitelisting (Step::setFunctions)</h2>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Add a new context and return it for further configuration. </p>
 
 </div>
@@ -230,9 +203,7 @@ Function whitelisting (Step::setFunctions)</h2>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Attach a callable that returns registered SWAIG tool names so validate() can check them against RESERVED_NATIVE_TOOL_NAMES. </p>
-<p>Called internally by AgentBase::defineContexts().</p>
+<p>Attach a callable that returns registered SWAIG tool names so validate() can check them against RESERVED_NATIVE_TOOL_NAMES. Called internally by AgentBase::defineContexts().</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">callable</td><td class="paramname">$supplier</td><td>() =&gt; array&lt;string&gt; </td></tr>
@@ -264,7 +235,6 @@ Function whitelisting (Step::setFunctions)</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>Create a builder pre-populated with a single named context. </p>
 
 </div>
@@ -283,7 +253,6 @@ Function whitelisting (Step::setFunctions)</h2>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Get an existing context by name, or null if not found. </p>
 
 </div>
@@ -319,9 +288,7 @@ Function whitelisting (Step::setFunctions)</h2>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Remove all contexts, returning the builder to its initial state. </p>
-<p>Use this in a dynamic config callback when you need to rebuild contexts from scratch for a specific request. </p>
+<p>Remove all contexts, returning the builder to its initial state. Use this in a dynamic config callback when you need to rebuild contexts from scratch for a specific request. </p>
 
 </div>
 </div>
@@ -339,9 +306,7 @@ Function whitelisting (Step::setFunctions)</h2>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serialize all contexts in order. </p>
-<p>Validates before converting. </p>
+<p>Serialize all contexts in order. Validates before converting. </p>
 
 </div>
 </div>
@@ -359,14 +324,13 @@ Function whitelisting (Step::setFunctions)</h2>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Validate the contexts configuration. </p>
+<p>Validate the contexts configuration.</p>
 <dl class="section return"><dt>Returns</dt><dd>string[] Array of error strings (empty if valid) </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/Contexts/<a class="el" href="ContextBuilder_8php.html">ContextBuilder.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/Contexts/<a class="el" href="ContextBuilder_8php.html">ContextBuilder.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

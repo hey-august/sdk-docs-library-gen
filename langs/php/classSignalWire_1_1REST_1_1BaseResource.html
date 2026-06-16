@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\REST\BaseResource Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,32 +120,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\REST\BaseResource Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Common base class for namespace and resource classes.  
- <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SignalWire\REST\BaseResource:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classSignalWire_1_1REST_1_1BaseResource.png" usemap="#SignalWire_5CREST_5CBaseResource_map" alt=""/>
   <map id="SignalWire_5CREST_5CBaseResource_map" name="SignalWire_5CREST_5CBaseResource_map">
-<area href="classSignalWire_1_1REST_1_1CrudResource.html" title="Generic CRUD wrapper around an HttpClient and a base API path." alt="SignalWire\REST\CrudResource" shape="rect" coords="0,56,329,80"/>
-<area href="classSignalWire_1_1REST_1_1CrudWithAddresses.html" title="CRUD resource that also supports listing addresses for an item." alt="SignalWire\REST\CrudWithAddresses" shape="rect" coords="339,112,668,136"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatApplications.html" title="Compat application management." alt="SignalWire\REST\Namespaces\CompatApplications" shape="rect" coords="339,168,668,192"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatCalls.html" title="Compat call management with recording and stream sub-resources." alt="SignalWire\REST\Namespaces\CompatCalls" shape="rect" coords="339,224,668,248"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatFaxes.html" title="Compat fax management with media sub-resources." alt="SignalWire\REST\Namespaces\CompatFaxes" shape="rect" coords="339,280,668,304"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatLamlBins.html" title="Compat cXML / LaML script management." alt="SignalWire\REST\Namespaces\CompatLamlBins" shape="rect" coords="339,336,668,360"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatMessages.html" title="Compat message management with media sub-resources." alt="SignalWire\REST\Namespaces\CompatMessages" shape="rect" coords="339,392,668,416"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatQueues.html" title="Compat queue management with member sub-resources." alt="SignalWire\REST\Namespaces\CompatQueues" shape="rect" coords="339,448,668,472"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1DatasphereDocuments.html" title="Datasphere document management — full CRUD plus search and chunk operations." alt="SignalWire\REST\Namespaces\DatasphereDocuments" shape="rect" coords="339,504,668,528"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1FabricCallFlows.html" title="Call flows with version management." alt="SignalWire\REST\Namespaces\FabricCallFlows" shape="rect" coords="339,560,668,584"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1FabricConferenceRooms.html" title="Conference rooms — uses singular conference_room for sub-resource paths to mirror the Python SDK." alt="SignalWire\REST\Namespaces\FabricConferenceRooms" shape="rect" coords="339,616,668,640"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1FabricCxmlApplications.html" title="cXML applications — read-only by API design." alt="SignalWire\REST\Namespaces\FabricCxmlApplications" shape="rect" coords="339,672,668,696"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1FabricSubscribers.html" title="Subscribers with SIP endpoint management." alt="SignalWire\REST\Namespaces\FabricSubscribers" shape="rect" coords="339,728,668,752"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1NumberGroups.html" title="Number Groups namespace — CRUD (PUT-update) + membership management." alt="SignalWire\REST\Namespaces\NumberGroups" shape="rect" coords="339,784,668,808"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1Queues.html" title="Queues API namespace." alt="SignalWire\REST\Namespaces\Queues" shape="rect" coords="339,840,668,864"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1VideoConferences.html" title="Video conference management with conference_tokens and streams sub-resources." alt="SignalWire\REST\Namespaces\VideoConferences" shape="rect" coords="339,896,668,920"/>
-<area href="classSignalWire_1_1REST_1_1Namespaces_1_1VideoRooms.html" title="Video room management with stream sub-resources." alt="SignalWire\REST\Namespaces\VideoRooms" shape="rect" coords="339,952,668,976"/>
+<area href="classSignalWire_1_1REST_1_1CrudResource.html" alt="SignalWire\REST\CrudResource" shape="rect" coords="0,56,329,80"/>
+<area href="classSignalWire_1_1REST_1_1CrudWithAddresses.html" alt="SignalWire\REST\CrudWithAddresses" shape="rect" coords="339,112,668,136"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatApplications.html" alt="SignalWire\REST\Namespaces\CompatApplications" shape="rect" coords="339,168,668,192"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatCalls.html" alt="SignalWire\REST\Namespaces\CompatCalls" shape="rect" coords="339,224,668,248"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatFaxes.html" alt="SignalWire\REST\Namespaces\CompatFaxes" shape="rect" coords="339,280,668,304"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatLamlBins.html" alt="SignalWire\REST\Namespaces\CompatLamlBins" shape="rect" coords="339,336,668,360"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatMessages.html" alt="SignalWire\REST\Namespaces\CompatMessages" shape="rect" coords="339,392,668,416"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1CompatQueues.html" alt="SignalWire\REST\Namespaces\CompatQueues" shape="rect" coords="339,448,668,472"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1DatasphereDocuments.html" alt="SignalWire\REST\Namespaces\DatasphereDocuments" shape="rect" coords="339,504,668,528"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1FabricCallFlows.html" alt="SignalWire\REST\Namespaces\FabricCallFlows" shape="rect" coords="339,560,668,584"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1FabricConferenceRooms.html" alt="SignalWire\REST\Namespaces\FabricConferenceRooms" shape="rect" coords="339,616,668,640"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1FabricCxmlApplications.html" alt="SignalWire\REST\Namespaces\FabricCxmlApplications" shape="rect" coords="339,672,668,696"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1FabricSubscribers.html" alt="SignalWire\REST\Namespaces\FabricSubscribers" shape="rect" coords="339,728,668,752"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1NumberGroups.html" alt="SignalWire\REST\Namespaces\NumberGroups" shape="rect" coords="339,784,668,808"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1Queues.html" alt="SignalWire\REST\Namespaces\Queues" shape="rect" coords="339,840,668,864"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1VideoConferences.html" alt="SignalWire\REST\Namespaces\VideoConferences" shape="rect" coords="339,896,668,920"/>
+<area href="classSignalWire_1_1REST_1_1Namespaces_1_1VideoRooms.html" alt="SignalWire\REST\Namespaces\VideoRooms" shape="rect" coords="339,952,668,976"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -171,7 +155,6 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ab6778c7d06ca024118ce1939d2f46d8c" id="r_ab6778c7d06ca024118ce1939d2f46d8c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab6778c7d06ca024118ce1939d2f46d8c">path</a> (string ... $parts)</td></tr>
-<tr class="memdesc:ab6778c7d06ca024118ce1939d2f46d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a full path by appending segments to the base path.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -179,7 +162,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a95cfcce1750e0c8a8e366f5693c40a84" id="r_a95cfcce1750e0c8a8e366f5693c40a84"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a95cfcce1750e0c8a8e366f5693c40a84">$basePath</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Common base class for namespace and resource classes. </p>
+<div class="textblock"><p>Common base class for namespace and resource classes.</p>
 <p>Mirrors Python's signalwire.rest._base.BaseResource — minimal wrapper around an HttpClient and a base path. CrudResource extends this for standard REST collection+item access; namespace classes that want a shared base path (without inheriting list/create/get/update/delete) can subclass BaseResource directly. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a59be9498f105e0de42dc1ff195f743a5" name="a59be9498f105e0de42dc1ff195f743a5"></a>
@@ -264,7 +247,6 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>Build a full path by appending segments to the base path. </p>
 
 <p>Reimplemented in <a class="el" href="classSignalWire_1_1REST_1_1CrudResource.html#aea546ccb9f779c5b3969e8ba53e685dc">SignalWire\REST\CrudResource</a>.</p>
@@ -317,7 +299,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/REST/<a class="el" href="CrudResource_8php.html">CrudResource.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/REST/<a class="el" href="CrudResource_8php.html">CrudResource.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

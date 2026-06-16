@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\SWML\Service Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -152,88 +139,54 @@ Inheritance diagram for SignalWire\SWML\Service:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac2e51e5f24d7196fce8d7812f43b8f2c" id="r_ac2e51e5f24d7196fce8d7812f43b8f2c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac2e51e5f24d7196fce8d7812f43b8f2c">__construct</a> (string $name, string $route='/', ?string $host=null, ?int $port=null, ?string $basicAuthUser=null, ?string $basicAuthPassword=null)</td></tr>
 <tr class="memitem:ac405113f37af98a7dbe7c41b54822c4f" id="r_ac405113f37af98a7dbe7c41b54822c4f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac405113f37af98a7dbe7c41b54822c4f">__call</a> (string $method, array $args)</td></tr>
-<tr class="memdesc:ac405113f37af98a7dbe7c41b54822c4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamic verb methods from schema.  <br /></td></tr>
 <tr class="memitem:ad9bdca9d826242332961a0f3d58f5e2e" id="r_ad9bdca9d826242332961a0f3d58f5e2e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad9bdca9d826242332961a0f3d58f5e2e">getBasicAuthCredentials</a> ()</td></tr>
 <tr class="memitem:a5b27f3f5c99bd14630ec61d6e095915e" id="r_a5b27f3f5c99bd14630ec61d6e095915e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5b27f3f5c99bd14630ec61d6e095915e">validateBasicAuth</a> (string $username, string $password)</td></tr>
-<tr class="memdesc:a5b27f3f5c99bd14630ec61d6e095915e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate provided basic-auth credentials against the configured ones using a constant-time comparison.  <br /></td></tr>
 <tr class="memitem:a869028a2d92368a5123d6b3d25d6a2d7" id="r_a869028a2d92368a5123d6b3d25d6a2d7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a869028a2d92368a5123d6b3d25d6a2d7">getBasicAuthCredentialsWithSource</a> ()</td></tr>
-<tr class="memdesc:a869028a2d92368a5123d6b3d25d6a2d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get (user, password, source) where source is "provided", "environment", or "generated".  <br /></td></tr>
 <tr class="memitem:a8c86ebd3019b8edb816fc5bc064212ba" id="r_a8c86ebd3019b8edb816fc5bc064212ba"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8c86ebd3019b8edb816fc5bc064212ba">getFullUrl</a> (bool $includeAuth=false)</td></tr>
-<tr class="memdesc:a8c86ebd3019b8edb816fc5bc064212ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the full URL for this service.  <br /></td></tr>
 <tr class="memitem:a735880c630dd5a041495e748bd7a7907" id="r_a735880c630dd5a041495e748bd7a7907"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a735880c630dd5a041495e748bd7a7907">registerRoutingCallback</a> (string $path, callable $callback)</td></tr>
 <tr class="memitem:a3281f98ca505f5707ba163306eee7fc9" id="r_a3281f98ca505f5707ba163306eee7fc9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3281f98ca505f5707ba163306eee7fc9">defineTool</a> (string $name, string $description, array $parameters, callable $handler, bool $secure=false,)</td></tr>
-<tr class="memdesc:a3281f98ca505f5707ba163306eee7fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a SWAIG function the AI can call.  <br /></td></tr>
 <tr class="memitem:a06c886f1d017e5498e097dc487f3d9cd" id="r_a06c886f1d017e5498e097dc487f3d9cd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a06c886f1d017e5498e097dc487f3d9cd">registerSwaigFunction</a> (array $funcDef)</td></tr>
-<tr class="memdesc:a06c886f1d017e5498e097dc487f3d9cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a raw SWAIG function definition (e.g.  <br /></td></tr>
 <tr class="memitem:a6163bcf6948381f67c7b52e9e67a48d9" id="r_a6163bcf6948381f67c7b52e9e67a48d9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6163bcf6948381f67c7b52e9e67a48d9">defineTools</a> (array $toolDefs)</td></tr>
-<tr class="memdesc:a6163bcf6948381f67c7b52e9e67a48d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register multiple tool definitions at once.  <br /></td></tr>
 <tr class="memitem:a4240e83a2296894928937dcd6ebc2d62" id="r_a4240e83a2296894928937dcd6ebc2d62"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4240e83a2296894928937dcd6ebc2d62">getTools</a> ()</td></tr>
-<tr class="memdesc:a4240e83a2296894928937dcd6ebc2d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the registered SWAIG tool definitions.  <br /></td></tr>
 <tr class="memitem:a35b405703d0a7cf6330316fa18e0660a" id="r_a35b405703d0a7cf6330316fa18e0660a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a35b405703d0a7cf6330316fa18e0660a">hasFunction</a> (string $name)</td></tr>
-<tr class="memdesc:a35b405703d0a7cf6330316fa18e0660a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a SWAIG function with the given name is registered.  <br /></td></tr>
 <tr class="memitem:a419f1afab583f886df430bc2a6a28780" id="r_a419f1afab583f886df430bc2a6a28780"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a419f1afab583f886df430bc2a6a28780">getFunction</a> (string $name)</td></tr>
-<tr class="memdesc:a419f1afab583f886df430bc2a6a28780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a registered SWAIG function by name, or null when absent.  <br /></td></tr>
 <tr class="memitem:ad5b78ca6a2051811c504f4d2df785097" id="r_ad5b78ca6a2051811c504f4d2df785097"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad5b78ca6a2051811c504f4d2df785097">getAllFunctions</a> ()</td></tr>
-<tr class="memdesc:ad5b78ca6a2051811c504f4d2df785097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snapshot of all registered SWAIG functions keyed by name.  <br /></td></tr>
 <tr class="memitem:aa7978366d565c5504b9d620e11a07175" id="r_aa7978366d565c5504b9d620e11a07175"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa7978366d565c5504b9d620e11a07175">removeFunction</a> (string $name)</td></tr>
-<tr class="memdesc:aa7978366d565c5504b9d620e11a07175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a registered SWAIG function.  <br /></td></tr>
 <tr class="memitem:aa472d255da5d324173ac7dd3eeff3621" id="r_aa472d255da5d324173ac7dd3eeff3621"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa472d255da5d324173ac7dd3eeff3621">getToolNames</a> ()</td></tr>
-<tr class="memdesc:aa472d255da5d324173ac7dd3eeff3621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the names of registered tools in the order they were registered.  <br /></td></tr>
 <tr class="memitem:a406fe26de81471d5ded09a896b799996" id="r_a406fe26de81471d5ded09a896b799996"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a406fe26de81471d5ded09a896b799996">onFunctionCall</a> (string $name, array $args, array $rawData)</td></tr>
-<tr class="memdesc:a406fe26de81471d5ded09a896b799996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch a function call to the registered handler.  <br /></td></tr>
 <tr class="memitem:a89669d1c6c1dbab4a3d913caf06f8bfc" id="r_a89669d1c6c1dbab4a3d913caf06f8bfc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a89669d1c6c1dbab4a3d913caf06f8bfc">onRequest</a> (?array $requestData=null, ?string $callbackPath=null)</td></tr>
-<tr class="memdesc:a89669d1c6c1dbab4a3d913caf06f8bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Customization hook called when SWML is requested.  <br /></td></tr>
 <tr class="memitem:aeeae45cbd3a1f5f7409091040761ff47" id="r_aeeae45cbd3a1f5f7409091040761ff47"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aeeae45cbd3a1f5f7409091040761ff47">onSwmlRequest</a> (?array $requestData=null, ?string $callbackPath=null)</td></tr>
-<tr class="memdesc:aeeae45cbd3a1f5f7409091040761ff47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Customization point for subclasses to modify SWML based on request data.  <br /></td></tr>
 <tr class="memitem:aa897a8d23b9e3662c61f464d5c9b915c" id="r_aa897a8d23b9e3662c61f464d5c9b915c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa897a8d23b9e3662c61f464d5c9b915c">getName</a> ()</td></tr>
 <tr class="memitem:a98f068562d5f98cf51dcfec394a6dafa" id="r_a98f068562d5f98cf51dcfec394a6dafa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a98f068562d5f98cf51dcfec394a6dafa">getRoute</a> ()</td></tr>
 <tr class="memitem:af5baca0e008c66b47e809be08b842b85" id="r_af5baca0e008c66b47e809be08b842b85"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af5baca0e008c66b47e809be08b842b85">getHost</a> ()</td></tr>
 <tr class="memitem:a1fba041d65bb6818b3c63e4fda2c7b00" id="r_a1fba041d65bb6818b3c63e4fda2c7b00"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1fba041d65bb6818b3c63e4fda2c7b00">getPort</a> ()</td></tr>
 <tr class="memitem:a2c435762f45380858e38a6c260bbc9f6" id="r_a2c435762f45380858e38a6c260bbc9f6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2c435762f45380858e38a6c260bbc9f6">getDocument</a> ()</td></tr>
 <tr class="memitem:ac6c7eaf46bd3123bc17d95997bb03344" id="r_ac6c7eaf46bd3123bc17d95997bb03344"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac6c7eaf46bd3123bc17d95997bb03344">getSchemaUtils</a> ()</td></tr>
-<tr class="memdesc:ac6c7eaf46bd3123bc17d95997bb03344"><td class="mdescLeft">&#160;</td><td class="mdescRight">SchemaUtils helper bound to this Service.  <br /></td></tr>
 <tr class="memitem:a532beb31899bcc070a8c18f6de0848e3" id="r_a532beb31899bcc070a8c18f6de0848e3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a532beb31899bcc070a8c18f6de0848e3">render</a> ()</td></tr>
 <tr class="memitem:a3557fef5d08a2337c95de9fb879fbb0b" id="r_a3557fef5d08a2337c95de9fb879fbb0b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3557fef5d08a2337c95de9fb879fbb0b">renderPretty</a> ()</td></tr>
 <tr class="memitem:a44f776c08c0a9555e0f149b4db0aa869" id="r_a44f776c08c0a9555e0f149b4db0aa869"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a44f776c08c0a9555e0f149b4db0aa869">renderSwml</a> (?array $requestBody=null, array $headers=[])</td></tr>
-<tr class="memdesc:a44f776c08c0a9555e0f149b4db0aa869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render SWML for a request.  <br /></td></tr>
 <tr class="memitem:a153bdab630100b952b647be48704f4ac" id="r_a153bdab630100b952b647be48704f4ac"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a153bdab630100b952b647be48704f4ac">handleRequest</a> (string $method, string $path, array $headers=[], ?string $body=null,)</td></tr>
-<tr class="memdesc:a153bdab630100b952b647be48704f4ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an HTTP request.  <br /></td></tr>
 <tr class="memitem:aad956c9d7d5bb6956921dde9c6dfcde4" id="r_aad956c9d7d5bb6956921dde9c6dfcde4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aad956c9d7d5bb6956921dde9c6dfcde4">getProxyUrlBase</a> (array $headers=[])</td></tr>
-<tr class="memdesc:aad956c9d7d5bb6956921dde9c6dfcde4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect or construct the proxy URL base from request headers.  <br /></td></tr>
 <tr class="memitem:a212a3e29993f39f4a99e8086ee6ec7fb" id="r_a212a3e29993f39f4a99e8086ee6ec7fb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a212a3e29993f39f4a99e8086ee6ec7fb">serve</a> ()</td></tr>
-<tr class="memdesc:a212a3e29993f39f4a99e8086ee6ec7fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start serving using PHP's built-in server (blocking).  <br /></td></tr>
 <tr class="memitem:aae5a6ea1c8f0eeb8d3ff492a162ee4f4" id="r_aae5a6ea1c8f0eeb8d3ff492a162ee4f4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aae5a6ea1c8f0eeb8d3ff492a162ee4f4">run</a> ()</td></tr>
-<tr class="memdesc:aae5a6ea1c8f0eeb8d3ff492a162ee4f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the service (alias for serve).  <br /></td></tr>
 <tr class="memitem:af8f648aa4ffab11e128985f6d209d6e9" id="r_af8f648aa4ffab11e128985f6d209d6e9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af8f648aa4ffab11e128985f6d209d6e9">dispatchFromGlobals</a> ()</td></tr>
-<tr class="memdesc:af8f648aa4ffab11e128985f6d209d6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch the current PHP request (cli-server / php-fpm / mod_php) to handleRequest() and write the response.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a4c2483095b5e8dbb355fa6a7903e7be6" id="r_a4c2483095b5e8dbb355fa6a7903e7be6"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#a4c2483095b5e8dbb355fa6a7903e7be6">extractSipUsername</a> (?array $requestBody)</td></tr>
-<tr class="memdesc:a4c2483095b5e8dbb355fa6a7903e7be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract SIP username from a request body.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:af0dd15c99e589a8fca3f633c8864b356" id="r_af0dd15c99e589a8fca3f633c8864b356"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af0dd15c99e589a8fca3f633c8864b356">swaigPreDispatch</a> (array $requestData, array $headers, string $functionName)</td></tr>
-<tr class="memdesc:af0dd15c99e589a8fca3f633c8864b356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extension point: invoked between argument parsing and function dispatch.  <br /></td></tr>
 <tr class="memitem:a8b7e87978fbc64fb32c6d5bdf01fe11e" id="r_a8b7e87978fbc64fb32c6d5bdf01fe11e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8b7e87978fbc64fb32c6d5bdf01fe11e">handleSwmlRequest</a> (string $method, ?array $requestData, array $headers)</td></tr>
-<tr class="memdesc:a8b7e87978fbc64fb32c6d5bdf01fe11e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle SWML document request.  <br /></td></tr>
 <tr class="memitem:a2a2868bf3544ee5dd5649a19b3dc9cd1" id="r_a2a2868bf3544ee5dd5649a19b3dc9cd1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2a2868bf3544ee5dd5649a19b3dc9cd1">handleSwaigRequest</a> (string $method, ?array $requestData, array $headers)</td></tr>
-<tr class="memdesc:a2a2868bf3544ee5dd5649a19b3dc9cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle SWAIG function dispatch.  <br /></td></tr>
 <tr class="memitem:a13cc9d4b1cb4b5efaeaa401117001a66" id="r_a13cc9d4b1cb4b5efaeaa401117001a66"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a13cc9d4b1cb4b5efaeaa401117001a66">handlePostPrompt</a> (?array $requestData, array $headers)</td></tr>
-<tr class="memdesc:a13cc9d4b1cb4b5efaeaa401117001a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle post-prompt callback.  <br /></td></tr>
 <tr class="memitem:a31cfd4ae9be09a6f2932f65be49203ed" id="r_a31cfd4ae9be09a6f2932f65be49203ed"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a31cfd4ae9be09a6f2932f65be49203ed">checkWebhookSignature</a> (array $headers, string $rawBody, string $path, string $subPath,)</td></tr>
-<tr class="memdesc:a31cfd4ae9be09a6f2932f65be49203ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate the X-SignalWire-Signature header on a signed webhook POST.  <br /></td></tr>
 <tr class="memitem:a7f2d4f328c8cc6d6f745fafcc250bdf6" id="r_a7f2d4f328c8cc6d6f745fafcc250bdf6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7f2d4f328c8cc6d6f745fafcc250bdf6">reconstructPublicUrl</a> (array $headers, string $path)</td></tr>
-<tr class="memdesc:a7f2d4f328c8cc6d6f745fafcc250bdf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reconstruct the URL <a class="el" href="namespaceSignalWire.html">SignalWire</a> POSTed to, honouring proxy headers / env overrides via getProxyUrlBase(), then appending $path and the raw query string from REQUEST_URI / X-Original-URL when available.  <br /></td></tr>
 <tr class="memitem:a8abd82f64917670ad430df0ae227eb6f" id="r_a8abd82f64917670ad430df0ae227eb6f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8abd82f64917670ad430df0ae227eb6f">checkBasicAuth</a> (array $headers)</td></tr>
-<tr class="memdesc:a8abd82f64917670ad430df0ae227eb6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check Basic Auth from request headers.  <br /></td></tr>
 <tr class="memitem:a93701b32e57e9858df757e09a2dc5e98" id="r_a93701b32e57e9858df757e09a2dc5e98"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a93701b32e57e9858df757e09a2dc5e98">securityHeaders</a> ()</td></tr>
-<tr class="memdesc:a93701b32e57e9858df757e09a2dc5e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Security headers applied to all authenticated responses.  <br /></td></tr>
 <tr class="memitem:acd7cc6617bfaac0ffba0ffdd2166ebfa" id="r_acd7cc6617bfaac0ffba0ffdd2166ebfa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acd7cc6617bfaac0ffba0ffdd2166ebfa">jsonResponse</a> (int $status, mixed $data)</td></tr>
-<tr class="memdesc:acd7cc6617bfaac0ffba0ffdd2166ebfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a JSON response tuple.  <br /></td></tr>
 <tr class="memitem:ad8ce3ce319b88760bea661980cf53693" id="r_ad8ce3ce319b88760bea661980cf53693"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad8ce3ce319b88760bea661980cf53693">randomHex</a> (int $bytes)</td></tr>
-<tr class="memdesc:ad8ce3ce319b88760bea661980cf53693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate cryptographically secure random hex string.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -243,7 +196,6 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:af2793e9ff488c2bda1253634f345178c" id="r_af2793e9ff488c2bda1253634f345178c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#af2793e9ff488c2bda1253634f345178c">$port</a></td></tr>
 <tr class="memitem:a0861ef1cb13732431011672189ca0994" id="r_a0861ef1cb13732431011672189ca0994"><td class="memItemLeft"><a class="el" href="classSignalWire_1_1SWML_1_1Document.html">Document</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0861ef1cb13732431011672189ca0994">$document</a></td></tr>
 <tr class="memitem:a1b22458defd70f37b903a9c8fa23ba83" id="r_a1b22458defd70f37b903a9c8fa23ba83"><td class="memItemLeft"><a class="el" href="classSignalWire_1_1Utils_1_1SchemaUtils.html">SchemaUtils</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1b22458defd70f37b903a9c8fa23ba83">$schemaUtils</a> = null</td></tr>
-<tr class="memdesc:a1b22458defd70f37b903a9c8fa23ba83"><td class="mdescLeft">&#160;</td><td class="mdescRight">SchemaUtils helper exposed via getSchemaUtils().  <br /></td></tr>
 <tr class="memitem:ab0ce6df773ac7e2112ac638dfafe7516" id="r_ab0ce6df773ac7e2112ac638dfafe7516"><td class="memItemLeft"><a class="el" href="classSignalWire_1_1Logging_1_1Logger.html">Logger</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab0ce6df773ac7e2112ac638dfafe7516">$logger</a></td></tr>
 <tr class="memitem:ad23075b19f3b868c2d1bb9b74254c2af" id="r_ad23075b19f3b868c2d1bb9b74254c2af"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#ad23075b19f3b868c2d1bb9b74254c2af">$basicAuthUser</a></td></tr>
 <tr class="memitem:aae3d08cd4bff6bbda4bac524a45e2858" id="r_aae3d08cd4bff6bbda4bac524a45e2858"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#aae3d08cd4bff6bbda4bac524a45e2858">$basicAuthPassword</a></td></tr>
@@ -323,8 +275,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Dynamic verb methods from schema. </p>
+<p>Dynamic verb methods from schema.</p>
 <p>$service-&gt;answer('main', ['max_duration' =&gt; 3600]); $service-&gt;sleep('main', 2000); $service-&gt;hangup(); </p>
 
 </div>
@@ -351,7 +302,6 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>Check Basic Auth from request headers. </p>
 
 </div>
@@ -392,8 +342,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Validate the X-SignalWire-Signature header on a signed webhook POST. </p>
+<p>Validate the X-SignalWire-Signature header on a signed webhook POST.</p>
 <p>Reconstructs the platform-public URL from request headers (proxy-aware) and runs both Scheme A (RELAY/JSON hex) and Scheme B (Compat/cXML base64) via WebhookValidator. Returns null on success (caller proceeds with normal dispatch) or a 403 response tuple on failure / missing header.</p>
 <p>Only invoked when a $signingKey is set on the subclass — see the call site in handleRequest().</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -442,8 +391,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Define a SWAIG function the AI can call. </p>
+<p>Define a SWAIG function the AI can call.</p>
 <p>Tool descriptions and parameter descriptions are LLM-facing prompt engineering, not internal documentation. See PORTING_GUIDE for guidance. </p>
 
 </div>
@@ -462,7 +410,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Register multiple tool definitions at once. </p>
 
 </div>
@@ -481,9 +428,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Dispatch the current PHP request (cli-server / php-fpm / mod_php) to handleRequest() and write the response. </p>
-<p>Must be called inside a SAPI that has populated $_SERVER for the inbound request. </p>
+<p>Dispatch the current PHP request (cli-server / php-fpm / mod_php) to handleRequest() and write the response. Must be called inside a SAPI that has populated $_SERVER for the inbound request. </p>
 
 </div>
 </div>
@@ -509,9 +454,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Extract SIP username from a request body. </p>
-<p>Validates format: only [a-zA-Z0-9._-], max 64 chars. </p>
+<p>Extract SIP username from a request body. Validates format: only [a-zA-Z0-9._-], max 64 chars. </p>
 
 </div>
 </div>
@@ -529,9 +472,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Snapshot of all registered SWAIG functions keyed by name. </p>
-<p>Python parity: <span class="tt">ToolRegistry.get_all_functions</span>. </p>
+<p>Snapshot of all registered SWAIG functions keyed by name. Python parity: <span class="tt">ToolRegistry.get_all_functions</span>. </p>
 
 </div>
 </div>
@@ -567,9 +508,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Get (user, password, source) where source is "provided", "environment", or "generated". </p>
-<p>Python parity: AuthMixin.get_basic_auth_credentials(include_source=True). </p>
+<p>Get (user, password, source) where source is "provided", "environment", or "generated". Python parity: AuthMixin.get_basic_auth_credentials(include_source=True). </p>
 
 </div>
 </div>
@@ -604,7 +543,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Build the full URL for this service. </p>
 
 </div>
@@ -623,9 +561,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Get a registered SWAIG function by name, or null when absent. </p>
-<p>Python parity: <span class="tt">ToolRegistry.get_function</span>. </p>
+<p>Get a registered SWAIG function by name, or null when absent. Python parity: <span class="tt">ToolRegistry.get_function</span>. </p>
 
 </div>
 </div>
@@ -694,7 +630,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Detect or construct the proxy URL base from request headers. </p>
 
 </div>
@@ -730,9 +665,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>SchemaUtils helper bound to this Service. </p>
-<p>Mirrors Python's self.schema_utils public instance attribute on SWMLService. Built lazily on first access. </p>
+<p>SchemaUtils helper bound to this Service. Mirrors Python's self.schema_utils public instance attribute on SWMLService. Built lazily on first access. </p>
 
 </div>
 </div>
@@ -750,9 +683,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Return the names of registered tools in the order they were registered. </p>
-<p>Stable ordering matters for CLI output and for tests that rely on deterministic enumeration.</p>
+<p>Return the names of registered tools in the order they were registered. Stable ordering matters for CLI output and for tests that rely on deterministic enumeration.</p>
 <dl class="section return"><dt>Returns</dt><dd>list&lt;string&gt; </dd></dl>
 
 </div>
@@ -771,8 +702,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Return the registered SWAIG tool definitions. </p>
+<p>Return the registered SWAIG tool definitions.</p>
 <p>Used by introspection (CLI &ndash;list-tools, the skills audit harness, and any test that needs to inspect what's been registered without going through a HTTP round trip).</p>
 <dl class="section return"><dt>Returns</dt><dd>array&lt;string, array&gt; name =&gt; tool definition </dd></dl>
 
@@ -804,9 +734,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Handle post-prompt callback. </p>
-<p>Override in AgentBase. </p>
+<p>Handle post-prompt callback. Override in AgentBase. </p>
 
 <p>Reimplemented in <a class="el" href="classSignalWire_1_1Agent_1_1AgentBase.html#ab24df181135d1fe11c87d9aff8df5fde">SignalWire\Agent\AgentBase</a>.</p>
 
@@ -840,9 +768,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Handle an HTTP request. </p>
-<p>Returns [status, headers, body].</p>
+<p>Handle an HTTP request. Returns [status, headers, body].</p>
 <dl class="section return"><dt>Returns</dt><dd>array{int, array&lt;string, string&gt;, string} </dd></dl>
 
 </div>
@@ -878,8 +804,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Handle SWAIG function dispatch. </p>
+<p>Handle SWAIG function dispatch.</p>
 <p>GET: return the rendered SWML document (parallel to root /). POST: parse {function, argument, call_id}, validate, run pre-dispatch hook, call onFunctionCall, return the FunctionResult.</p>
 <p>Lifted from AgentBase so non-agent SWMLServices (e.g. ai_sidecar host) can serve /swaig without subclassing AgentBase. </p>
 
@@ -916,7 +841,6 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>Handle SWML document request. </p>
 
 <p>Reimplemented in <a class="el" href="classSignalWire_1_1Agent_1_1AgentBase.html#a810265038a8b773173eeebbdaa360eb1">SignalWire\Agent\AgentBase</a>.</p>
@@ -937,9 +861,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Whether a SWAIG function with the given name is registered. </p>
-<p>Python parity: <span class="tt">ToolRegistry.has_function</span>. </p>
+<p>Whether a SWAIG function with the given name is registered. Python parity: <span class="tt">ToolRegistry.has_function</span>. </p>
 
 </div>
 </div>
@@ -969,8 +891,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Build a JSON response tuple. </p>
+<p>Build a JSON response tuple.</p>
 <dl class="section return"><dt>Returns</dt><dd>array{int, array&lt;string, string&gt;, string} </dd></dl>
 
 </div>
@@ -998,7 +919,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Dispatch a function call to the registered handler. </p>
 
 </div>
@@ -1021,9 +941,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Customization hook called when SWML is requested. </p>
-<p>Default delegates to {</p><dl class="section see"><dt>See also</dt><dd>onSwmlRequest()}; subclasses typically override <span class="tt">onSwmlRequest</span> rather than this method.</dd></dl>
+<p>Customization hook called when SWML is requested. Default delegates to {</p><dl class="section see"><dt>See also</dt><dd>onSwmlRequest()}; subclasses typically override <span class="tt">onSwmlRequest</span> rather than this method.</dd></dl>
 <p>Return null to use the default SWML rendering, or an array of modifications to merge into the rendered document.</p>
 <p>Python parity: WebMixin.on_request(request_data, callback_path). The Python third <span class="tt">request</span> arg is FastAPI-specific and is not mirrored. </p>
 
@@ -1047,9 +965,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Customization point for subclasses to modify SWML based on request data. </p>
-<p>The default implementation returns null (no modification). Subclasses override to inspect the body or callback path and return an associative array of overrides.</p>
+<p>Customization point for subclasses to modify SWML based on request data. The default implementation returns null (no modification). Subclasses override to inspect the body or callback path and return an associative array of overrides.</p>
 <p>Python parity: WebMixin.on_swml_request(request_data, callback_path). </p>
 
 </div>
@@ -1076,7 +992,6 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>Generate cryptographically secure random hex string. </p>
 
 </div>
@@ -1107,8 +1022,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Reconstruct the URL <a class="el" href="namespaceSignalWire.html">SignalWire</a> POSTed to, honouring proxy headers / env overrides via getProxyUrlBase(), then appending $path and the raw query string from REQUEST_URI / X-Original-URL when available. </p>
+<p>Reconstruct the URL <a class="el" href="namespaceSignalWire.html">SignalWire</a> POSTed to, honouring proxy headers / env overrides via getProxyUrlBase(), then appending $path and the raw query string from REQUEST_URI / X-Original-URL when available.</p>
 <p>Handles edge cases:</p><ul>
 <li>Headers may pass either a full URL via X-Original-URL or just proto + host. getProxyUrlBase already normalises this.</li>
 <li>The query string MUST be preserved (Scheme A signs URL+body and cXML bodySHA256 lives in the query). </li>
@@ -1151,9 +1065,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Register a raw SWAIG function definition (e.g. </p>
-<p>DataMap tools). </p>
+<p>Register a raw SWAIG function definition (e.g. DataMap tools). </p>
 
 </div>
 </div>
@@ -1171,9 +1083,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Remove a registered SWAIG function. </p>
-<p>True on success, false if absent. Python parity: <span class="tt">ToolRegistry.remove_function</span>. </p>
+<p>Remove a registered SWAIG function. True on success, false if absent. Python parity: <span class="tt">ToolRegistry.remove_function</span>. </p>
 
 </div>
 </div>
@@ -1229,9 +1139,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Render SWML for a request. </p>
-<p>Subclasses override this. </p>
+<p>Render SWML for a request. Subclasses override this. </p>
 
 <p>Reimplemented in <a class="el" href="classSignalWire_1_1Agent_1_1AgentBase.html#a09ea9f5d6c54dd55235ad8fe76e00d6a">SignalWire\Agent\AgentBase</a>.</p>
 
@@ -1251,7 +1159,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Run the service (alias for serve). </p>
 
 </div>
@@ -1278,8 +1185,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Security headers applied to all authenticated responses. </p>
+<p>Security headers applied to all authenticated responses.</p>
 <dl class="section return"><dt>Returns</dt><dd>array&lt;string, string&gt; </dd></dl>
 
 </div>
@@ -1298,8 +1204,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Start serving using PHP's built-in server (blocking). </p>
+<p>Start serving using PHP's built-in server (blocking).</p>
 <p>In CLI mode: spawns <span class="tt">php -S host:port &lt;entry-script&gt;</span> where entry-script is the example file the user ran. The entry script is responsible for (re)building the service and calling run() — under the cli-server SAPI, run() dispatches from $_SERVER instead of re-spawning.</p>
 <p>Under cli-server SAPI: directly dispatches the inbound request to handleRequest() and writes the result to the response. </p>
 
@@ -1336,9 +1241,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Extension point: invoked between argument parsing and function dispatch. </p>
-<p>AgentBase may override to add session-token validation or ephemeral config. Returns [target, shortCircuit]: shortCircuit non-null replies directly without dispatch.</p>
+<p>Extension point: invoked between argument parsing and function dispatch. AgentBase may override to add session-token validation or ephemeral config. Returns [target, shortCircuit]: shortCircuit non-null replies directly without dispatch.</p>
 <dl class="section return"><dt>Returns</dt><dd>array{0: object, 1: ?array} </dd></dl>
 
 </div>
@@ -1361,9 +1264,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Validate provided basic-auth credentials against the configured ones using a constant-time comparison. </p>
-<p>Python parity: AuthMixin.validate_basic_auth(username, password). </p>
+<p>Validate provided basic-auth credentials against the configured ones using a constant-time comparison. Python parity: AuthMixin.validate_basic_auth(username, password). </p>
 
 </div>
 </div>
@@ -1585,9 +1486,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>SchemaUtils helper exposed via getSchemaUtils(). </p>
-<p>Built lazily so existing subclasses constructed without the schema env still work. </p>
+<p>SchemaUtils helper exposed via getSchemaUtils(). Built lazily so existing subclasses constructed without the schema env still work. </p>
 
 </div>
 </div>
@@ -1636,7 +1535,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/SWML/<a class="el" href="Service_8php.html">Service.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/SWML/<a class="el" href="Service_8php.html">Service.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

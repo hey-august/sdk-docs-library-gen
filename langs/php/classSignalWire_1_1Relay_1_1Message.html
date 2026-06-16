@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\Relay\Message Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -133,24 +120,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
   <div class="headertitle"><div class="title">SignalWire\Relay\Message Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Represents a RELAY messaging message (SMS / MMS).  
- <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab97420bc61fefc3ff59d475d8c819529" id="r_ab97420bc61fefc3ff59d475d8c819529"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab97420bc61fefc3ff59d475d8c819529">__construct</a> (array $params=[])</td></tr>
-<tr class="memdesc:ab97420bc61fefc3ff59d475d8c819529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a Message from a params array (as returned by the server).  <br /></td></tr>
 <tr class="memitem:ac41f11565c89c1ec76417627f2448613" id="r_ac41f11565c89c1ec76417627f2448613"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac41f11565c89c1ec76417627f2448613">dispatchEvent</a> (<a class="el" href="classSignalWire_1_1Relay_1_1Event.html">Event</a> $event)</td></tr>
-<tr class="memdesc:ac41f11565c89c1ec76417627f2448613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process an inbound event for this message.  <br /></td></tr>
 <tr class="memitem:a12db9c2cff1f1aaf1f3c5ed8c654f671" id="r_a12db9c2cff1f1aaf1f3c5ed8c654f671"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a12db9c2cff1f1aaf1f3c5ed8c654f671">handleEvent</a> (<a class="el" href="classSignalWire_1_1Relay_1_1Event.html">Event</a> $event)</td></tr>
-<tr class="memdesc:a12db9c2cff1f1aaf1f3c5ed8c654f671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for <span class="tt">dispatchEvent</span> so the Client's event router (which calls <span class="tt">handleEvent</span> for symmetry with Action) doesn't need a special case.  <br /></td></tr>
 <tr class="memitem:ac80b45e3212762aac1e1d271b52ecff4" id="r_ac80b45e3212762aac1e1d271b52ecff4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac80b45e3212762aac1e1d271b52ecff4">wait</a> (int $timeout=30)</td></tr>
-<tr class="memdesc:ac80b45e3212762aac1e1d271b52ecff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Block until the message completes or $timeout seconds elapse.  <br /></td></tr>
 <tr class="memitem:a6ad27d255ff8b756b1254fd0e9ddc93a" id="r_a6ad27d255ff8b756b1254fd0e9ddc93a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6ad27d255ff8b756b1254fd0e9ddc93a">on</a> (callable $cb)</td></tr>
-<tr class="memdesc:a6ad27d255ff8b756b1254fd0e9ddc93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a listener that fires on every state-change event.  <br /></td></tr>
 <tr class="memitem:a57eea2b558760e3603f40a31f4f8837a" id="r_a57eea2b558760e3603f40a31f4f8837a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a57eea2b558760e3603f40a31f4f8837a">onCompleted</a> (callable $cb)</td></tr>
-<tr class="memdesc:a57eea2b558760e3603f40a31f4f8837a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a callback to fire when the message reaches a terminal state.  <br /></td></tr>
 <tr class="memitem:a5963a9ffcd81e2636a78da133df5645e" id="r_a5963a9ffcd81e2636a78da133df5645e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5963a9ffcd81e2636a78da133df5645e">isDone</a> ()</td></tr>
 <tr class="memitem:a3dba295e7cc7f4f266a2abc4d49e07bb" id="r_a3dba295e7cc7f4f266a2abc4d49e07bb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3dba295e7cc7f4f266a2abc4d49e07bb">getMessageId</a> ()</td></tr>
 <tr class="memitem:a927f888e7771a6ff7fd1b7a6eebf7035" id="r_a927f888e7771a6ff7fd1b7a6eebf7035"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a927f888e7771a6ff7fd1b7a6eebf7035">getContext</a> ()</td></tr>
@@ -161,10 +139,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac590e6d67694f7cd7fda10297d35298a" id="r_ac590e6d67694f7cd7fda10297d35298a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac590e6d67694f7cd7fda10297d35298a">getMedia</a> ()</td></tr>
 <tr class="memitem:a739cd8773d204d05c784a8613bb9020b" id="r_a739cd8773d204d05c784a8613bb9020b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a739cd8773d204d05c784a8613bb9020b">getTags</a> ()</td></tr>
 <tr class="memitem:abaa60d4811dca4be53b926f0592f67c6" id="r_abaa60d4811dca4be53b926f0592f67c6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abaa60d4811dca4be53b926f0592f67c6">getState</a> ()</td></tr>
+<tr class="memitem:a0091666fef35d5f8fa18936aec80abf5" id="r_a0091666fef35d5f8fa18936aec80abf5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0091666fef35d5f8fa18936aec80abf5">messageState</a> ()</td></tr>
 <tr class="memitem:af6d057a2438b29252b3f93aa8bea9106" id="r_af6d057a2438b29252b3f93aa8bea9106"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af6d057a2438b29252b3f93aa8bea9106">getReason</a> ()</td></tr>
 <tr class="memitem:a19ee7f7a78a81af76e5a4105959e6b84" id="r_a19ee7f7a78a81af76e5a4105959e6b84"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a19ee7f7a78a81af76e5a4105959e6b84">getResult</a> ()</td></tr>
 <tr class="memitem:acc475ebd938d348465b3301195fac24f" id="r_acc475ebd938d348465b3301195fac24f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acc475ebd938d348465b3301195fac24f">resolve</a> ($result=null)</td></tr>
-<tr class="memdesc:acc475ebd938d348465b3301195fac24f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark this message as completed.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -184,7 +162,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a282311f615caeea0a0b68c54e8ce9471" id="r_a282311f615caeea0a0b68c54e8ce9471"><td class="memItemLeft">array&#160;</td><td class="memItemRight"><a class="el" href="#a282311f615caeea0a0b68c54e8ce9471">$onEventCallbacks</a> = []</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a RELAY messaging message (SMS / MMS). </p>
+<div class="textblock"><p>Represents a RELAY messaging message (SMS / MMS).</p>
 <p>A Message is created when you send or receive a message through the RELAY messaging namespace. It accumulates state-change events and resolves once the message reaches a terminal state (delivered, undelivered, or failed). </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab97420bc61fefc3ff59d475d8c819529" name="ab97420bc61fefc3ff59d475d8c819529"></a>
@@ -201,8 +179,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Build a Message from a params array (as returned by the server). </p>
+<p>Build a Message from a params array (as returned by the server).</p>
 <p>Expected keys (all optional with sane defaults): message_id, context, direction, from_number / from, to_number / to, body, media, tags, state, reason </p>
 
 </div>
@@ -222,8 +199,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Process an inbound event for this message. </p>
+<p>Process an inbound event for this message.</p>
 <p>Updates state/reason, fires any registered event listeners, and auto-resolves the message when it reaches a terminal state.</p>
 <p>Accepts both <span class="tt">state</span> and <span class="tt">message_state</span> keys on the event payload — production RELAY emits <span class="tt">message_state</span> while older fixtures use <span class="tt">state</span>. </p>
 
@@ -431,9 +407,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Alias for <span class="tt">dispatchEvent</span> so the Client's event router (which calls <span class="tt">handleEvent</span> for symmetry with Action) doesn't need a special case. </p>
-<p>Both names route the same way. </p>
+<p>Alias for <span class="tt">dispatchEvent</span> so the Client's event router (which calls <span class="tt">handleEvent</span> for symmetry with Action) doesn't need a special case. Both names route the same way. </p>
 
 </div>
 </div>
@@ -454,6 +428,27 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a0091666fef35d5f8fa18936aec80abf5" name="a0091666fef35d5f8fa18936aec80abf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0091666fef35d5f8fa18936aec80abf5">&#9670;&#160;</a></span>messageState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SignalWire\Relay\Message::messageState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current delivery state as a typed {</p><dl class="section see"><dt>See also</dt><dd>MessageState}, or null when the raw {</dd>
+<dd>
+getState()} string is outside the known closed set (a forward-compatible server value).</dd></dl>
+<p>Offered ALONGSIDE the bare-string {</p><dl class="section see"><dt>See also</dt><dd>getState()} accessor for parity with the Python reference: <span class="tt">getState()</span> stays the canonical string; <span class="tt">messageState()</span> is the typed view for autocompletion + an exhaustive <span class="tt">match</span> + <span class="tt">-&gt;isTerminal()</span>. PORT_ADDITION. </dd></dl>
+
+</div>
+</div>
 <a id="a6ad27d255ff8b756b1254fd0e9ddc93a" name="a6ad27d255ff8b756b1254fd0e9ddc93a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ad27d255ff8b756b1254fd0e9ddc93a">&#9670;&#160;</a></span>on()</h2>
 
@@ -468,7 +463,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Register a listener that fires on every state-change event. </p>
 
 </div>
@@ -487,8 +481,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Register a callback to fire when the message reaches a terminal state. </p>
+<p>Register a callback to fire when the message reaches a terminal state.</p>
 <p>If the message is already complete the callback fires immediately. </p>
 
 </div>
@@ -507,8 +500,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Mark this message as completed. </p>
+<p>Mark this message as completed.</p>
 <p>The optional $result is stored and the onCompleted callback fires exactly once.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -533,8 +525,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Block until the message completes or $timeout seconds elapse. </p>
+<p>Block until the message completes or $timeout seconds elapse.</p>
 <p>The caller is expected to feed events into dispatchEvent() from another mechanism (e.g. the client's read loop). This method simply spins until completion.</p>
 <dl class="section return"><dt>Returns</dt><dd>mixed The resolved result, or null on timeout. </dd></dl>
 
@@ -850,7 +841,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/Relay/<a class="el" href="Message_8php.html">Message.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/Relay/<a class="el" href="Message_8php.html">Message.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

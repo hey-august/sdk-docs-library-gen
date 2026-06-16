@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\DataMap\DataMap Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -138,40 +125,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classSignalWir
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a24b9b524cab7c31c0dbfcce260d1a5e1" id="r_a24b9b524cab7c31c0dbfcce260d1a5e1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a24b9b524cab7c31c0dbfcce260d1a5e1">__construct</a> (string $functionName)</td></tr>
 <tr class="memitem:a35683fb2a233afca2c21164afb065509" id="r_a35683fb2a233afca2c21164afb065509"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a35683fb2a233afca2c21164afb065509">purpose</a> (string $desc)</td></tr>
-<tr class="memdesc:a35683fb2a233afca2c21164afb065509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the LLM-facing tool description (the "purpose").  <br /></td></tr>
 <tr class="memitem:a8966d16e843d496ccf0402f690959172" id="r_a8966d16e843d496ccf0402f690959172"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8966d16e843d496ccf0402f690959172">description</a> (string $desc)</td></tr>
-<tr class="memdesc:a8966d16e843d496ccf0402f690959172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for purpose().  <br /></td></tr>
 <tr class="memitem:ac66cd1de223ae1938c44dabbae378744" id="r_ac66cd1de223ae1938c44dabbae378744"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac66cd1de223ae1938c44dabbae378744">parameter</a> (string $name, string $type, string $<a class="el" href="#a8966d16e843d496ccf0402f690959172">description</a>, bool $required=false, array $enum=[])</td></tr>
-<tr class="memdesc:ac66cd1de223ae1938c44dabbae378744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a parameter to this data-map tool — the <span class="tt">$description</span> is LLM-FACING.  <br /></td></tr>
 <tr class="memitem:a967ad214afc71875d078c0c46edded84" id="r_a967ad214afc71875d078c0c46edded84"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a967ad214afc71875d078c0c46edded84">expression</a> (string $testValue, string $pattern, mixed $<a class="el" href="#aadb414ba82ef05768058e38b0d783854">output</a>, mixed $nomatchOutput=null)</td></tr>
-<tr class="memdesc:a967ad214afc71875d078c0c46edded84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an expression rule.  <br /></td></tr>
 <tr class="memitem:a8117cfd6cb52f33f081cf8b2b79b0179" id="r_a8117cfd6cb52f33f081cf8b2b79b0179"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8117cfd6cb52f33f081cf8b2b79b0179">webhook</a> (string $method, string $url, array $headers=[], string $formParam='', bool $inputArgsAsParams=false, array $requireArgs=[])</td></tr>
-<tr class="memdesc:a8117cfd6cb52f33f081cf8b2b79b0179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a webhook definition.  <br /></td></tr>
 <tr class="memitem:a4d0c01addebdbbe5341465d6c30c09ab" id="r_a4d0c01addebdbbe5341465d6c30c09ab"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4d0c01addebdbbe5341465d6c30c09ab">webhookExpressions</a> (array $expressions)</td></tr>
-<tr class="memdesc:a4d0c01addebdbbe5341465d6c30c09ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set expressions on the last webhook.  <br /></td></tr>
 <tr class="memitem:ad93519e109cf7f814ced38938ad6c298" id="r_ad93519e109cf7f814ced38938ad6c298"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad93519e109cf7f814ced38938ad6c298">body</a> (array $data)</td></tr>
-<tr class="memdesc:ad93519e109cf7f814ced38938ad6c298"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set body on the last webhook.  <br /></td></tr>
 <tr class="memitem:af3a72f0355dc505e1ec5324aedb9176f" id="r_af3a72f0355dc505e1ec5324aedb9176f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af3a72f0355dc505e1ec5324aedb9176f">params</a> (array $data)</td></tr>
-<tr class="memdesc:af3a72f0355dc505e1ec5324aedb9176f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set params on the last webhook.  <br /></td></tr>
 <tr class="memitem:a160849ea36c3e027b2e3cf9bbbf896a5" id="r_a160849ea36c3e027b2e3cf9bbbf896a5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a160849ea36c3e027b2e3cf9bbbf896a5">foreach</a> (array $config)</td></tr>
-<tr class="memdesc:a160849ea36c3e027b2e3cf9bbbf896a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set foreach on the last webhook.  <br /></td></tr>
 <tr class="memitem:aadb414ba82ef05768058e38b0d783854" id="r_aadb414ba82ef05768058e38b0d783854"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aadb414ba82ef05768058e38b0d783854">output</a> (mixed $result)</td></tr>
-<tr class="memdesc:aadb414ba82ef05768058e38b0d783854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set output on the last webhook.  <br /></td></tr>
 <tr class="memitem:a334edf67dcf8e7d3fb90c8a39f2b3e3d" id="r_a334edf67dcf8e7d3fb90c8a39f2b3e3d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a334edf67dcf8e7d3fb90c8a39f2b3e3d">fallbackOutput</a> (mixed $result)</td></tr>
-<tr class="memdesc:a334edf67dcf8e7d3fb90c8a39f2b3e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set global fallback output.  <br /></td></tr>
 <tr class="memitem:a34ad8095354efc40d5c383047ab45171" id="r_a34ad8095354efc40d5c383047ab45171"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a34ad8095354efc40d5c383047ab45171">errorKeys</a> (array $keys)</td></tr>
-<tr class="memdesc:a34ad8095354efc40d5c383047ab45171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set error_keys on the last webhook.  <br /></td></tr>
 <tr class="memitem:a7bae8130d68d750c0dfdf475f1563e2c" id="r_a7bae8130d68d750c0dfdf475f1563e2c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7bae8130d68d750c0dfdf475f1563e2c">globalErrorKeys</a> (array $keys)</td></tr>
-<tr class="memdesc:a7bae8130d68d750c0dfdf475f1563e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set global error_keys.  <br /></td></tr>
 <tr class="memitem:a2fa26fdeb1839e564f7f14565dc9f2b6" id="r_a2fa26fdeb1839e564f7f14565dc9f2b6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2fa26fdeb1839e564f7f14565dc9f2b6">toSwaigFunction</a> ()</td></tr>
-<tr class="memdesc:a2fa26fdeb1839e564f7f14565dc9f2b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize to a SWAIG function definition array.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab527b8b9a78c0d5fd3c4b2320dd25232" id="r_ab527b8b9a78c0d5fd3c4b2320dd25232"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#ab527b8b9a78c0d5fd3c4b2320dd25232">createSimpleApiTool</a> (string $name, string $<a class="el" href="#a35683fb2a233afca2c21164afb065509">purpose</a>, array $parameters, string $method, string $url, mixed $<a class="el" href="#aadb414ba82ef05768058e38b0d783854">output</a>, array $headers=[])</td></tr>
-<tr class="memdesc:ab527b8b9a78c0d5fd3c4b2320dd25232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a complete SWAIG function definition with a single webhook.  <br /></td></tr>
 <tr class="memitem:ad237d1915537f7b9abd98e0da593c4bc" id="r_ad237d1915537f7b9abd98e0da593c4bc"><td class="memItemLeft">static&#160;</td><td class="memItemRight"><a class="el" href="#ad237d1915537f7b9abd98e0da593c4bc">createExpressionTool</a> (string $name, string $<a class="el" href="#a35683fb2a233afca2c21164afb065509">purpose</a>, array $parameters, array $expressions)</td></tr>
-<tr class="memdesc:ad237d1915537f7b9abd98e0da593c4bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a complete SWAIG function definition with expressions only.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a24b9b524cab7c31c0dbfcce260d1a5e1" name="a24b9b524cab7c31c0dbfcce260d1a5e1"></a>
@@ -206,8 +177,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set body on the last webhook. </p>
+<p>Set body on the last webhook.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array&lt;string,mixed&gt;</td><td>$data </td></tr>
@@ -253,8 +223,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Build a complete SWAIG function definition with expressions only. </p>
+<p>Build a complete SWAIG function definition with expressions only.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array&lt;array{name</td><td>string, type: string, description: string, required?: bool, enum?: array&lt;string&gt;}&gt; $parameters </td></tr>
@@ -317,8 +286,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Build a complete SWAIG function definition with a single webhook. </p>
+<p>Build a complete SWAIG function definition with a single webhook.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array&lt;array{name</td><td>string, type: string, description: string, required?: bool, enum?: array&lt;string&gt;}&gt; $parameters </td></tr>
@@ -344,9 +312,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Alias for purpose(). </p>
-<p>Sets the LLM-facing tool description. This string is read by the model to decide WHEN to call this tool. See purpose() for bad-vs-good examples. </p>
+<p>Alias for purpose(). Sets the LLM-facing tool description. This string is read by the model to decide WHEN to call this tool. See purpose() for bad-vs-good examples. </p>
 
 </div>
 </div>
@@ -364,8 +330,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set error_keys on the last webhook. </p>
+<p>Set error_keys on the last webhook.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array&lt;string&gt;</td><td>$keys </td></tr>
@@ -403,7 +368,6 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Add an expression rule. </p>
 
 </div>
@@ -422,8 +386,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set global fallback output. </p>
+<p>Set global fallback output.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">mixed</td><td class="paramname">$result</td><td>FunctionResult, array, or string </td></tr>
@@ -447,8 +410,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set foreach on the last webhook. </p>
+<p>Set foreach on the last webhook.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array{input_key</td><td>string, output_key: string, append?: bool} $config </td></tr>
@@ -472,8 +434,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set global error_keys. </p>
+<p>Set global error_keys.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array&lt;string&gt;</td><td>$keys </td></tr>
@@ -497,8 +458,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set output on the last webhook. </p>
+<p>Set output on the last webhook.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">mixed</td><td class="paramname">$result</td><td>FunctionResult, array, or string </td></tr>
@@ -541,8 +501,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add a parameter to this data-map tool — the <span class="tt">$description</span> is LLM-FACING. </p>
+<p>Add a parameter to this data-map tool — the <span class="tt">$description</span> is LLM-FACING.</p>
 <p>Each parameter description is rendered into the OpenAI tool schema under parameters.properties.&lt;name&gt;.description and sent to the model. The model uses it to decide HOW to fill in the argument from user speech. It is prompt engineering, not developer FYI.</p>
 <p>Bad vs good:</p>
 <p>BAD : -&gt;parameter('city', 'string', 'the city') GOOD: -&gt;parameter('city', 'string', 'The name of the city to get weather for, e.g. ' . '"San Francisco". Ask the user if they did not ' . 'provide one. Include the state or country if the ' . 'city name is ambiguous.')</p>
@@ -569,8 +528,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set params on the last webhook. </p>
+<p>Set params on the last webhook.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array&lt;string,mixed&gt;</td><td>$data </td></tr>
@@ -594,9 +552,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set the LLM-facing tool description (the "purpose"). </p>
-<p>PROMPT ENGINEERING, not developer documentation.</p>
+<p>Set the LLM-facing tool description (the "purpose"). PROMPT ENGINEERING, not developer documentation.</p>
 <p>The description string is rendered into the OpenAI tool schema <span class="tt">description</span> field on every LLM turn. The model reads it to decide WHEN to call this tool. A vague purpose() is the #1 cause of "the model has the right tool but doesn't call it" failures with data-map tools.</p>
 <p>Bad vs good:</p>
 <p>BAD : -&gt;purpose('weather api') GOOD: -&gt;purpose('Get the current weather conditions and ' . 'forecast for a specific city. Use this ' . 'whenever the user asks about weather, ' . 'temperature, rain, or similar conditions ' . 'in a named location.') </p>
@@ -617,8 +573,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serialize to a SWAIG function definition array. </p>
+<p>Serialize to a SWAIG function definition array.</p>
 <dl class="section return"><dt>Returns</dt><dd>array&lt;string, mixed&gt; </dd></dl>
 
 </div>
@@ -661,8 +616,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add a webhook definition. </p>
+<p>Add a webhook definition.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array&lt;string,string&gt;</td><td>$headers </td></tr>
@@ -687,8 +641,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set expressions on the last webhook. </p>
+<p>Set expressions on the last webhook.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list&lt;array&lt;string,mixed&gt;&gt;</td><td>$expressions </td></tr>
@@ -699,7 +652,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/DataMap/<a class="el" href="DataMap_8php.html">DataMap.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/DataMap/<a class="el" href="DataMap_8php.html">DataMap.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

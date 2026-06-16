@@ -18,8 +18,12 @@ var searchData=
   ['messagelogs_15',['MessageLogs',['../classSignalWire_1_1REST_1_1Namespaces_1_1MessageLogs.html',1,'SignalWire::REST::Namespaces']]],
   ['messagelogs_2ephp_16',['MessageLogs.php',['../MessageLogs_8php.html',1,'']]],
   ['messages_17',['messages',['../classSignalWire_1_1REST_1_1Namespaces_1_1Compat.html#acbc3a21a3112289b7a7777e31a6322a4',1,'SignalWire\\REST\\Namespaces\\Compat\\messages()'],['../classSignalWire_1_1REST_1_1Namespaces_1_1Logs.html#af234893c0eb2955d6c8215c306848200',1,'SignalWire\\REST\\Namespaces\\Logs\\messages()']]],
-  ['mfa_18',['Mfa',['../classSignalWire_1_1REST_1_1Namespaces_1_1Mfa.html',1,'SignalWire::REST::Namespaces']]],
-  ['mfa_19',['mfa',['../classSignalWire_1_1REST_1_1RestClient.html#ad57e6a63a05d1b5b75ad935668af2130',1,'SignalWire::REST::RestClient']]],
-  ['mfa_2ephp_20',['Mfa.php',['../Mfa_8php.html',1,'']]],
-  ['movestep_21',['moveStep',['../classSignalWire_1_1Contexts_1_1Context.html#a150857638e69b0af863e949015cb6de0',1,'SignalWire::Contexts::Context']]]
+  ['messagestate_18',['MessageState',['../namespaceSignalWire_1_1Relay.html#a307e941106f2b7639715ea50e5dc30b8',1,'SignalWire::Relay']]],
+  ['messagestate_19',['messageState',['../classSignalWire_1_1Relay_1_1Message.html#a0091666fef35d5f8fa18936aec80abf5',1,'SignalWire::Relay::Message']]],
+  ['messagestate_2ephp_20',['MessageState.php',['../MessageState_8php.html',1,'']]],
+  ['mfa_21',['Mfa',['../classSignalWire_1_1REST_1_1Namespaces_1_1Mfa.html',1,'SignalWire::REST::Namespaces']]],
+  ['mfa_22',['mfa',['../classSignalWire_1_1REST_1_1RestClient.html#ad57e6a63a05d1b5b75ad935668af2130',1,'SignalWire::REST::RestClient']]],
+  ['mfa_2ephp_23',['Mfa.php',['../Mfa_8php.html',1,'']]],
+  ['movestep_24',['moveStep',['../classSignalWire_1_1Contexts_1_1Context.html#a150857638e69b0af863e949015cb6de0',1,'SignalWire::Contexts::Context']]],
+  ['mp4_25',['Mp4',['../namespaceSignalWire_1_1SWAIG.html#af59371734721b249462a1eda6b48c1dfa3293d8b13100ed70a5c93a39702d9d6e',1,'SignalWire::SWAIG']]]
 ];

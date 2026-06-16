@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\Contexts\Step Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -139,26 +126,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae69ab592da8ad4dce9ab8b7073e2545e" id="r_ae69ab592da8ad4dce9ab8b7073e2545e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae69ab592da8ad4dce9ab8b7073e2545e">__construct</a> (string $name)</td></tr>
 <tr class="memitem:a6f6a1e85ca7db4cb13f0c0268cecdbaf" id="r_a6f6a1e85ca7db4cb13f0c0268cecdbaf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6f6a1e85ca7db4cb13f0c0268cecdbaf">getName</a> ()</td></tr>
 <tr class="memitem:adc11177ad82ad9d72d9ab7dae7c24f60" id="r_adc11177ad82ad9d72d9ab7dae7c24f60"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adc11177ad82ad9d72d9ab7dae7c24f60">setText</a> (string $text)</td></tr>
-<tr class="memdesc:adc11177ad82ad9d72d9ab7dae7c24f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the step's prompt text directly.  <br /></td></tr>
 <tr class="memitem:a63246b4925c3025e6149e922b5d3a36c" id="r_a63246b4925c3025e6149e922b5d3a36c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a63246b4925c3025e6149e922b5d3a36c">addSection</a> (string $title, string $body)</td></tr>
-<tr class="memdesc:a63246b4925c3025e6149e922b5d3a36c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a POM section with a body paragraph.  <br /></td></tr>
 <tr class="memitem:a896a824586b9df0b7dd3c67d8d4de785" id="r_a896a824586b9df0b7dd3c67d8d4de785"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a896a824586b9df0b7dd3c67d8d4de785">addBullets</a> (string $title, array $bullets)</td></tr>
-<tr class="memdesc:a896a824586b9df0b7dd3c67d8d4de785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a POM section with bullet points.  <br /></td></tr>
 <tr class="memitem:ac6009669fe20d9411d394d34b61de8a0" id="r_ac6009669fe20d9411d394d34b61de8a0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac6009669fe20d9411d394d34b61de8a0">clearSections</a> ()</td></tr>
-<tr class="memdesc:ac6009669fe20d9411d394d34b61de8a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all content (both text and sections).  <br /></td></tr>
 <tr class="memitem:a708776f6e08c322203ba9a04e12d0e9c" id="r_a708776f6e08c322203ba9a04e12d0e9c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a708776f6e08c322203ba9a04e12d0e9c">setStepCriteria</a> (string $criteria)</td></tr>
 <tr class="memitem:a347ef3c65bd1748047cfcc8ce30b8642" id="r_a347ef3c65bd1748047cfcc8ce30b8642"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a347ef3c65bd1748047cfcc8ce30b8642">setFunctions</a> ($functions)</td></tr>
-<tr class="memdesc:a347ef3c65bd1748047cfcc8ce30b8642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set which non-internal functions are callable while this step is active.  <br /></td></tr>
 <tr class="memitem:a3ba93bfd361ef404de9d717f4f5e697a" id="r_a3ba93bfd361ef404de9d717f4f5e697a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3ba93bfd361ef404de9d717f4f5e697a">setValidSteps</a> (array $steps)</td></tr>
 <tr class="memitem:a5e761ddfbecfd9b300d73dcfd7d93658" id="r_a5e761ddfbecfd9b300d73dcfd7d93658"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5e761ddfbecfd9b300d73dcfd7d93658">setValidContexts</a> (array $contexts)</td></tr>
 <tr class="memitem:aa3ab87388b6ba6a0519f87d12819dae9" id="r_aa3ab87388b6ba6a0519f87d12819dae9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa3ab87388b6ba6a0519f87d12819dae9">setEnd</a> (bool $end)</td></tr>
-<tr class="memdesc:aa3ab87388b6ba6a0519f87d12819dae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark this step as terminal for the step flow.  <br /></td></tr>
 <tr class="memitem:a3e27c6e12cf212736784a07fed546999" id="r_a3e27c6e12cf212736784a07fed546999"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3e27c6e12cf212736784a07fed546999">setSkipUserTurn</a> (bool $skip)</td></tr>
 <tr class="memitem:aa8ef33ddbf20dfe04e483f508436714e" id="r_aa8ef33ddbf20dfe04e483f508436714e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa8ef33ddbf20dfe04e483f508436714e">setSkipToNextStep</a> (bool $skip)</td></tr>
 <tr class="memitem:a129877143765235a68e74f2f88c3e0ad" id="r_a129877143765235a68e74f2f88c3e0ad"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a129877143765235a68e74f2f88c3e0ad">setGatherInfo</a> (?string $output_key=null, ?string $completion_action=null, ?string $prompt=null)</td></tr>
-<tr class="memdesc:a129877143765235a68e74f2f88c3e0ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the gather_info configuration for this step.  <br /></td></tr>
 <tr class="memitem:a827f834fdf9ab305ac00b92995657831" id="r_a827f834fdf9ab305ac00b92995657831"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a827f834fdf9ab305ac00b92995657831">addGatherQuestion</a> (string $key, string $question, string $type='string', bool $confirm=false, ?string $prompt=null, ?array $functions=null)</td></tr>
-<tr class="memdesc:a827f834fdf9ab305ac00b92995657831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a question to this step's gather_info.  <br /></td></tr>
 <tr class="memitem:a5cc8c8fdd229d551f436cf24a11c08ab" id="r_a5cc8c8fdd229d551f436cf24a11c08ab"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5cc8c8fdd229d551f436cf24a11c08ab">setResetSystemPrompt</a> (string $systemPrompt)</td></tr>
 <tr class="memitem:a77f0d0d1d19bfeb2869b1f52c4063af3" id="r_a77f0d0d1d19bfeb2869b1f52c4063af3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a77f0d0d1d19bfeb2869b1f52c4063af3">setResetUserPrompt</a> (string $userPrompt)</td></tr>
 <tr class="memitem:a0c6a4fcf85f890cf960c9e50583d4454" id="r_a0c6a4fcf85f890cf960c9e50583d4454"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0c6a4fcf85f890cf960c9e50583d4454">setResetConsolidate</a> (bool $consolidate)</td></tr>
@@ -205,7 +184,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Add a POM section with bullet points. </p>
 
 </div>
@@ -248,9 +226,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Add a question to this step's gather_info. </p>
-<p>Initializes gather_info if not yet set.</p>
+<p>Add a question to this step's gather_info. Initializes gather_info if not yet set.</p>
 <p>IMPORTANT — gather mode locks function access: While the model is asking gather questions, the runtime forcibly deactivates ALL of the step's other functions. The only callable tools during a gather question are:</p>
 <ul>
 <li>gather_submit (the native answer-submission tool)</li>
@@ -279,7 +255,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Add a POM section with a body paragraph. </p>
 
 </div>
@@ -298,7 +273,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Clear all content (both text and sections). </p>
 
 </div>
@@ -385,8 +359,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Mark this step as terminal for the step flow. </p>
+<p>Mark this step as terminal for the step flow.</p>
 <p>IMPORTANT: $end = true does NOT end the conversation or hang up the call. It exits step mode entirely after this step executes — clearing the steps list, current step index, valid_steps, and valid_contexts. The agent keeps running, but operates only under the base system prompt and the context-level prompt; no more step instructions are injected and no more next_step tool is offered.</p>
 <p>To actually end the call, call a hangup tool or define a hangup hook. </p>
 
@@ -406,8 +379,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set which non-internal functions are callable while this step is active. </p>
+<p>Set which non-internal functions are callable while this step is active.</p>
 <p>IMPORTANT — inheritance behavior: If you do NOT call this method, the step inherits whichever function set was active on the previous step (or the previous context's last step). The server-side runtime only resets the active set when a step explicitly declares its <span class="tt">functions</span> field. This is the most common source of bugs in multi-step agents: forgetting setFunctions() on a later step lets the previous step's tools leak through. Best practice is to call setFunctions() explicitly on every step that should differ from the previous one.</p>
 <p>Keep the per-step active set small: LLM tool selection accuracy degrades noticeably past ~7-8 simultaneously-active tools per call. Use per-step whitelisting to partition large tool collections.</p>
 <p>Internal functions (e.g. gather_submit, hangup hook) are ALWAYS protected and cannot be deactivated by this whitelist. The native navigation tools next_step and change_context are injected automatically when setValidSteps / setValidContexts is used; they are not affected by this list and do not need to appear in it.</p>
@@ -448,9 +420,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Initialize the gather_info configuration for this step. </p>
-<p>Questions are presented one at a time via dynamic step instruction re-injection, producing zero tool_call/tool_result entries in LLM-visible history.</p>
+<p>Initialize the gather_info configuration for this step. Questions are presented one at a time via dynamic step instruction re-injection, producing zero tool_call/tool_result entries in LLM-visible history.</p>
 <p>After calling this, use addGatherQuestion() to define questions.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -596,9 +566,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set the step's prompt text directly. </p>
-<p>Mutually exclusive with POM sections. </p>
+<p>Set the step's prompt text directly. Mutually exclusive with POM sections. </p>
 
 </div>
 </div>
@@ -654,7 +622,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/airlock/sdks/php/src/SignalWire/Contexts/<a class="el" href="ContextBuilder_8php.html">ContextBuilder.php</a></li>
+<li>_build/sdks/signalwire-php/src/SignalWire/Contexts/<a class="el" href="ContextBuilder_8php.html">ContextBuilder.php</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

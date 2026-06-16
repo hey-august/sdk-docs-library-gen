@@ -12,10 +12,11 @@ var searchData=
   ['sipprofile_2ephp_9',['SipProfile.php',['../SipProfile_8php.html',1,'']]],
   ['skillbase_2ephp_10',['SkillBase.php',['../SkillBase_8php.html',1,'']]],
   ['skillmanager_2ephp_11',['SkillManager.php',['../SkillManager_8php.html',1,'']]],
-  ['skillregistry_2ephp_12',['SkillRegistry.php',['../SkillRegistry_8php.html',1,'']]],
-  ['spider_2ephp_13',['Spider.php',['../Spider_8php.html',1,'']]],
-  ['step_2ephp_14',['Step.php',['../Step_8php.html',1,'']]],
-  ['streamaction_2ephp_15',['StreamAction.php',['../StreamAction_8php.html',1,'']]],
-  ['surveyagent_2ephp_16',['SurveyAgent.php',['../SurveyAgent_8php.html',1,'']]],
-  ['swmltransfer_2ephp_17',['SwmlTransfer.php',['../SwmlTransfer_8php.html',1,'']]]
+  ['skillname_2ephp_12',['SkillName.php',['../SkillName_8php.html',1,'']]],
+  ['skillregistry_2ephp_13',['SkillRegistry.php',['../SkillRegistry_8php.html',1,'']]],
+  ['spider_2ephp_14',['Spider.php',['../Spider_8php.html',1,'']]],
+  ['step_2ephp_15',['Step.php',['../Step_8php.html',1,'']]],
+  ['streamaction_2ephp_16',['StreamAction.php',['../StreamAction_8php.html',1,'']]],
+  ['surveyagent_2ephp_17',['SurveyAgent.php',['../SurveyAgent_8php.html',1,'']]],
+  ['swmltransfer_2ephp_18',['SwmlTransfer.php',['../SwmlTransfer_8php.html',1,'']]]
 ];

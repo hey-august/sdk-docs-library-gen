@@ -24,6 +24,7 @@ var classSignalWire_1_1Relay_1_1Client =
     [ "unreceive", "classSignalWire_1_1Relay_1_1Client.html#abafdec748727debf5fc90626b4bd12a9", null ],
     [ "$agent", "classSignalWire_1_1Relay_1_1Client.html#a1fc5da1dc92ce8ce8eac6a2b1803e61b", null ],
     [ "$authorizationState", "classSignalWire_1_1Relay_1_1Client.html#a8bad5c777f15953cde062bf74d32cdb0", null ],
+    [ "$caFile", "classSignalWire_1_1Relay_1_1Client.html#a9d0fbcb02e78304aa6e2f29adad94e1b", null ],
     [ "$calls", "classSignalWire_1_1Relay_1_1Client.html#a7e19d9e41f5597898b3bb8fc678ac0e7", null ],
     [ "$connected", "classSignalWire_1_1Relay_1_1Client.html#ab3de1aa280c63d76f2bfbc103f58d868", null ],
     [ "$contexts", "classSignalWire_1_1Relay_1_1Client.html#aba574d977fd63f2a902b515df244f24d", null ],

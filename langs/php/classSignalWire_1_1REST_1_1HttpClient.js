@@ -1,6 +1,6 @@
 var classSignalWire_1_1REST_1_1HttpClient =
 [
-    [ "__construct", "classSignalWire_1_1REST_1_1HttpClient.html#aa803b1f32a2eb5e3f40196590dfdb5b2", null ],
+    [ "__construct", "classSignalWire_1_1REST_1_1HttpClient.html#a5b24be518a6886cb6ca444c3c6791ab9", null ],
     [ "delete", "classSignalWire_1_1REST_1_1HttpClient.html#a41dedfc7a2d24a5a364c5bb940cc66c7", null ],
     [ "get", "classSignalWire_1_1REST_1_1HttpClient.html#a0d290f8ded501c3dbffd4006a4c2c30e", null ],
     [ "getAuthHeader", "classSignalWire_1_1REST_1_1HttpClient.html#add024eb0430971eaddc835a9fed55c0e", null ],

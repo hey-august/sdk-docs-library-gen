@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.17.0-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,6 +8,7 @@
 <title>SignalWire PHP SDK: SignalWire\Skills Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -24,18 +24,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript">
-  $(function() {
-    DoxygenAwesomeDarkModeToggle.init && DoxygenAwesomeDarkModeToggle.init();
-    DoxygenAwesomeFragmentCopyButton.init && DoxygenAwesomeFragmentCopyButton.init();
-    DoxygenAwesomeParagraphLink.init && DoxygenAwesomeParagraphLink.init();
-    DoxygenAwesomeInteractiveToc.init && DoxygenAwesomeInteractiveToc.init();
-  });
-</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,7 +34,6 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
   <td id="projectalign">
    <div id="projectname">SignalWire PHP SDK
    </div>
-   <div id="projectbrief">PHP SDK for SignalWire — AI agents, SWML, REST, Relay</div>
   </td>
  </tr>
  </tbody>
@@ -141,11 +128,38 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:HttpHelper" id="r_HttpHelper"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Skills_1_1HttpHelper.html">HttpHelper</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tiny HTTP helper for skill upstream calls.  <a href="classSignalWire_1_1Skills_1_1HttpHelper.html#details">More...</a><br /></td></tr>
 <tr class="memitem:SkillBase" id="r_SkillBase"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Skills_1_1SkillBase.html">SkillBase</a></td></tr>
 <tr class="memitem:SkillManager" id="r_SkillManager"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Skills_1_1SkillManager.html">SkillManager</a></td></tr>
 <tr class="memitem:SkillRegistry" id="r_SkillRegistry"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classSignalWire_1_1Skills_1_1SkillRegistry.html">SkillRegistry</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a2a179f89ef1ac3811b51634d85f37032" id="r_a2a179f89ef1ac3811b51634d85f37032"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a2a179f89ef1ac3811b51634d85f37032">SkillName</a> : string { <a class="el" href="#a2a179f89ef1ac3811b51634d85f37032a84e0d1402b2ce44f905423b8dc005f9d">WikipediaSearch</a> = 'wikipedia_search'
+ }</td></tr>
 </table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="a2a179f89ef1ac3811b51634d85f37032" name="a2a179f89ef1ac3811b51634d85f37032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a179f89ef1ac3811b51634d85f37032">&#9670;&#160;</a></span>SkillName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a2a179f89ef1ac3811b51634d85f37032">SignalWire::Skills::SkillName</a> : string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Built-in skill names as a typed, compile-time-checked closed set.</p>
+<p>{</p><dl class="section see"><dt>See also</dt><dd>\SignalWire\Agent\AgentBase::addSkill()} accepts this enum OR a string. The enum gives editor autocompletion and makes a typo fail at the call site (a bare string like <span class="tt">'datetiem'</span> only fails at runtime, on the server); strings keep parity with the Python reference (which uses bare <span class="tt">str</span>) and still allow custom / third-party skills that aren't built in. <pre class="fragment">$agent-&gt;addSkill(SkillName::Datetime);   // typed, autocompleted
+$agent-&gt;addSkill('datetime');            // string still works (parity)
+$agent-&gt;addSkill('my_custom_skill');     // open set: custom skills ok
+</pre> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2a179f89ef1ac3811b51634d85f37032a84e0d1402b2ce44f905423b8dc005f9d" name="a2a179f89ef1ac3811b51634d85f37032a84e0d1402b2ce44f905423b8dc005f9d"></a>WikipediaSearch&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
